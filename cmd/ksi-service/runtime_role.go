@@ -28,7 +28,10 @@ func provisionRuntime(ctx context.Context, db *pgxpool.Pool, password string) er
 	statements := []string{
 		`SELECT pg_advisory_xact_lock(817034)`,
 		`DO $$ BEGIN IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname='ksi_runtime') THEN CREATE ROLE ksi_runtime LOGIN; END IF; END $$`,
-		`ALTER ROLE ksi_runtime WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION PASSWORD '` + password + `'`,
+		// RDS administrators are not PostgreSQL superusers. These attributes
+		// default to false; verify them rather than using superuser-only ALTERs.
+		`DO $$ BEGIN IF EXISTS (SELECT 1 FROM pg_roles WHERE rolname='ksi_runtime' AND (rolsuper OR rolreplication OR rolbypassrls)) THEN RAISE EXCEPTION 'runtime role is privileged'; END IF; END $$`,
+		`ALTER ROLE ksi_runtime WITH LOGIN NOCREATEDB NOCREATEROLE PASSWORD '` + password + `'`,
 		`REVOKE CREATE ON SCHEMA public FROM PUBLIC`,
 		`GRANT USAGE ON SCHEMA public TO ksi_runtime`,
 		`GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO ksi_runtime`,
