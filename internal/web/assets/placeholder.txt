@@ -1,0 +1,1 @@
+Backend-only development placeholder. Release builds replace this with the Vite bundle.

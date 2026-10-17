@@ -1,0 +1,15 @@
+.git
+.opencode
+.env
+.data
+bin
+2026-markdown
+openspec
+testdata
+coverage.out
+frontend/node_modules
+frontend/dist
+frontend/test-results
+frontend/playwright-report
+internal/web/assets/assets
+internal/web/assets/index.html

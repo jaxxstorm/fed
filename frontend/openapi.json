@@ -1,0 +1,3759 @@
+{
+  "components": {
+    "schemas": {
+      "AccessHealth": {
+        "properties": {
+          "actor_id": {
+            "type": "string"
+          },
+          "checked_at": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "generation": {
+            "type": "integer"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "principal": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "valid_until": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "verified_account_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "generation",
+          "limitations"
+        ],
+        "type": "object"
+      },
+      "AuthorizationHandoff": {
+        "properties": {
+          "expires_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "operation_id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation_id",
+          "url",
+          "expires_at"
+        ],
+        "type": "object"
+      },
+      "CitationCard": {
+        "properties": {
+          "EndLine": {
+            "type": "integer"
+          },
+          "Evidence": {
+            "$ref": "#/components/schemas/Record"
+          },
+          "JSONPointer": {
+            "allOf": [
+              {
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "Label": {
+            "type": "string"
+          },
+          "StartLine": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "Evidence",
+          "StartLine",
+          "EndLine",
+          "JSONPointer",
+          "Label"
+        ],
+        "type": "object"
+      },
+      "Configuration": {
+        "properties": {
+          "account_id": {
+            "type": "string"
+          },
+          "cluster_id": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          },
+          "installation_id": {
+            "type": "string"
+          },
+          "known_namespaces": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "profile": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "role_arn": {
+            "type": "string"
+          },
+          "server": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_id"
+        ],
+        "type": "object"
+      },
+      "ConfigureInput": {
+        "properties": {
+          "access_mode": {
+            "type": "string"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/Configuration"
+          },
+          "expected_revision": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "id",
+          "expected_revision",
+          "idempotency_key",
+          "provider",
+          "name",
+          "access_mode",
+          "configuration"
+        ],
+        "type": "object"
+      },
+      "Connection": {
+        "properties": {
+          "access_mode": {
+            "type": "string"
+          },
+          "actor_id": {
+            "type": "string"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/Configuration"
+          },
+          "generation": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "imported": {
+            "type": "boolean"
+          },
+          "lifecycle": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "verified_account_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "service_id",
+          "provider",
+          "name",
+          "access_mode",
+          "configuration",
+          "lifecycle",
+          "revision",
+          "generation",
+          "actor_id",
+          "updated_at",
+          "imported"
+        ],
+        "type": "object"
+      },
+      "Detail": {
+        "properties": {
+          "access": {
+            "$ref": "#/components/schemas/AccessHealth"
+          },
+          "connection": {
+            "$ref": "#/components/schemas/Connection"
+          },
+          "discovered_count": {
+            "type": "integer"
+          },
+          "remote_revocation": {
+            "type": "string"
+          },
+          "selected_count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "discovered_count",
+          "selected_count",
+          "connection",
+          "access"
+        ],
+        "type": "object"
+      },
+      "DiscoveredResource": {
+        "properties": {
+          "available": {
+            "type": "boolean"
+          },
+          "default_branch": {
+            "type": "string"
+          },
+          "last_seen_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "permissions": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "resource": {
+            "$ref": "#/components/schemas/ResourceKey"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource",
+          "name",
+          "locator",
+          "last_seen_at",
+          "available"
+        ],
+        "type": "object"
+      },
+      "DiscoveryReceipt": {
+        "properties": {
+          "accepted": {
+            "type": "integer"
+          },
+          "access_mode": {
+            "type": "string"
+          },
+          "actor_id": {
+            "type": "string"
+          },
+          "coverage": {
+            "items": {
+              "$ref": "#/components/schemas/KindCoverage"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "method": {
+            "type": "string"
+          },
+          "next_cursor": {
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "session_id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "session_id",
+          "state",
+          "accepted",
+          "actor_id",
+          "access_mode",
+          "method",
+          "observed_at",
+          "limitations",
+          "coverage"
+        ],
+        "type": "object"
+      },
+      "DiscoverySession": {
+        "properties": {
+          "access_mode": {
+            "type": "string"
+          },
+          "actor_id": {
+            "type": "string"
+          },
+          "connection_id": {
+            "type": "string"
+          },
+          "coverage": {
+            "items": {
+              "$ref": "#/components/schemas/KindCoverage"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "finished_at": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "generation": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "next_cursor": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "started_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "service_id",
+          "connection_id",
+          "generation",
+          "actor_id",
+          "access_mode",
+          "state",
+          "started_at",
+          "coverage"
+        ],
+        "type": "object"
+      },
+      "EvidenceCard": {
+        "properties": {
+          "Action": {
+            "type": "string"
+          },
+          "Metadata": {
+            "type": "string"
+          },
+          "Observed": {
+            "type": "string"
+          },
+          "Source": {
+            "type": "string"
+          },
+          "Target": {
+            "type": "string"
+          },
+          "Title": {
+            "type": "string"
+          },
+          "URL": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Title",
+          "Source",
+          "Observed",
+          "Target",
+          "URL",
+          "Action",
+          "Metadata"
+        ],
+        "type": "object"
+      },
+      "EvidenceSource": {
+        "properties": {
+          "access_hint": {
+            "type": "string"
+          },
+          "account_id": {
+            "type": "string"
+          },
+          "cluster": {
+            "type": "string"
+          },
+          "cluster_id": {
+            "type": "string"
+          },
+          "commit": {
+            "type": "string"
+          },
+          "connection_id": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "freshness_hours": {
+            "type": "integer"
+          },
+          "lifecycle": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "namespace_uid": {
+            "type": "string"
+          },
+          "paths": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "provider_tenant": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "repository": {
+            "type": "string"
+          },
+          "requirement_ids": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "resource_id": {
+            "type": "string"
+          },
+          "resource_kind": {
+            "type": "string"
+          },
+          "scope_revision": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "name",
+          "locator",
+          "scope_revision",
+          "paths",
+          "requirement_ids",
+          "enabled",
+          "freshness_hours"
+        ],
+        "type": "object"
+      },
+      "Field": {
+        "properties": {
+          "Label": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Options": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Type": {
+            "type": "string"
+          },
+          "Value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Name",
+          "Label",
+          "Value",
+          "Type",
+          "Options"
+        ],
+        "type": "object"
+      },
+      "Form": {
+        "properties": {
+          "Action": {
+            "type": "string"
+          },
+          "Button": {
+            "type": "string"
+          },
+          "CSRF": {
+            "type": "string"
+          },
+          "Fields": {
+            "items": {
+              "$ref": "#/components/schemas/Field"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Hints": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "References": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceOption"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Action",
+          "Title",
+          "Button",
+          "CSRF",
+          "Fields"
+        ],
+        "type": "object"
+      },
+      "InventoryPage": {
+        "properties": {
+          "generation": {
+            "type": "integer"
+          },
+          "next_cursor": {
+            "type": "string"
+          },
+          "resources": {
+            "items": {
+              "$ref": "#/components/schemas/InventoryResource"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "resources",
+          "generation"
+        ],
+        "type": "object"
+      },
+      "InventoryResource": {
+        "properties": {
+          "access_mode": {
+            "type": "string"
+          },
+          "actor_id": {
+            "type": "string"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "binding_revision": {
+            "type": "integer"
+          },
+          "bound_connection_id": {
+            "type": "string"
+          },
+          "default_branch": {
+            "type": "string"
+          },
+          "last_seen_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "permissions": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "resource": {
+            "$ref": "#/components/schemas/ResourceKey"
+          },
+          "session_id": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "source_lifecycle": {
+            "type": "string"
+          },
+          "source_revision": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "source_revision",
+          "binding_revision",
+          "resource",
+          "name",
+          "locator",
+          "last_seen_at",
+          "available",
+          "actor_id",
+          "access_mode",
+          "session_id"
+        ],
+        "type": "object"
+      },
+      "KindCoverage": {
+        "properties": {
+          "authoritative": {
+            "type": "boolean"
+          },
+          "complete": {
+            "type": "boolean"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "complete",
+          "authoritative",
+          "limitations"
+        ],
+        "type": "object"
+      },
+      "Link": {
+        "properties": {
+          "Text": {
+            "type": "string"
+          },
+          "URL": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Text",
+          "URL"
+        ],
+        "type": "object"
+      },
+      "Metric": {
+        "properties": {
+          "Label": {
+            "type": "string"
+          },
+          "Value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Label",
+          "Value"
+        ],
+        "type": "object"
+      },
+      "Operation": {
+        "properties": {
+          "access": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AccessHealth"
+              }
+            ],
+            "nullable": true
+          },
+          "connection_id": {
+            "type": "string"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "connection_id",
+          "state"
+        ],
+        "type": "object"
+      },
+      "OperationInput": {
+        "properties": {
+          "connection_id": {
+            "type": "string"
+          },
+          "expected_revision": {
+            "type": "integer"
+          },
+          "generation": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "connection_id",
+          "expected_revision",
+          "generation",
+          "idempotency_key"
+        ],
+        "type": "object"
+      },
+      "Page": {
+        "properties": {
+          "Activities": {
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Citations": {
+            "items": {
+              "$ref": "#/components/schemas/CitationCard"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Detail": {
+            "type": "boolean"
+          },
+          "Diagnostics": {
+            "items": {
+              "$ref": "#/components/schemas/Section"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Error": {
+            "type": "string"
+          },
+          "Evidence": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceCard"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Findings": {
+            "items": {
+              "$ref": "#/components/schemas/Section"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Forms": {
+            "items": {
+              "$ref": "#/components/schemas/Form"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Links": {
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Metrics": {
+            "items": {
+              "$ref": "#/components/schemas/Metric"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Notice": {
+            "type": "string"
+          },
+          "Pagination": {
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Primary": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RequirementPresentation"
+              }
+            ],
+            "nullable": true
+          },
+          "Rows": {
+            "items": {
+              "$ref": "#/components/schemas/Row"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Sections": {
+            "items": {
+              "$ref": "#/components/schemas/Section"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "Title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Primary",
+          "Citations",
+          "Title",
+          "Notice",
+          "Error",
+          "Links",
+          "Forms",
+          "Rows",
+          "Sections",
+          "Detail",
+          "Metrics",
+          "Evidence",
+          "Findings",
+          "Diagnostics",
+          "Activities",
+          "Pagination"
+        ],
+        "type": "object"
+      },
+      "ProgressCounts": {
+        "properties": {
+          "evidence_complete": {
+            "type": "integer"
+          },
+          "not_applicable": {
+            "type": "integer"
+          },
+          "optional": {
+            "type": "integer"
+          },
+          "passing": {
+            "type": "integer"
+          },
+          "recommended": {
+            "type": "integer"
+          },
+          "required": {
+            "type": "integer"
+          },
+          "reviews_remaining": {
+            "type": "integer"
+          },
+          "scope_decisions": {
+            "type": "integer"
+          },
+          "statuses": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "nullable": true,
+            "type": "object"
+          }
+        },
+        "required": [
+          "required",
+          "passing",
+          "evidence_complete",
+          "reviews_remaining",
+          "scope_decisions",
+          "recommended",
+          "optional",
+          "not_applicable",
+          "statuses"
+        ],
+        "type": "object"
+      },
+      "ProviderDefinition": {
+        "properties": {
+          "access_modes": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "evidence_operations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "guide": {
+            "$ref": "#/components/schemas/SetupGuide"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "permissions": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "resource_kinds": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "server_adapter_available": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "server_adapter_available",
+          "id",
+          "name",
+          "access_modes",
+          "resource_kinds",
+          "evidence_operations",
+          "permissions",
+          "guide"
+        ],
+        "type": "object"
+      },
+      "Record": {
+        "properties": {
+          "actor_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "data": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "requirement_id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "kind",
+          "id",
+          "revision",
+          "requirement_id",
+          "actor_id",
+          "data",
+          "created_at"
+        ],
+        "type": "object"
+      },
+      "ReferenceOption": {
+        "properties": {
+          "ID": {
+            "type": "string"
+          },
+          "Kind": {
+            "type": "string"
+          },
+          "Label": {
+            "type": "string"
+          },
+          "Revision": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ID",
+          "Revision",
+          "Label",
+          "Kind"
+        ],
+        "type": "object"
+      },
+      "RefreshSourceInput": {
+        "properties": {
+          "expected_revision": {
+            "type": "integer"
+          },
+          "generation": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "scope_revision": {
+            "type": "integer"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "source_id",
+          "expected_revision",
+          "generation",
+          "scope_revision",
+          "idempotency_key"
+        ],
+        "type": "object"
+      },
+      "RequirementNextStep": {
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "targets": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "explanation",
+          "targets",
+          "action"
+        ],
+        "type": "object"
+      },
+      "RequirementPresentation": {
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "evidence_complete": {
+            "type": "boolean"
+          },
+          "human_reviewed": {
+            "type": "boolean"
+          },
+          "label": {
+            "type": "string"
+          },
+          "next_steps": {
+            "items": {
+              "$ref": "#/components/schemas/RequirementNextStep"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "review_remaining": {
+            "type": "boolean"
+          },
+          "secondary": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "human_reviewed",
+          "status",
+          "label",
+          "reason",
+          "action",
+          "evidence_complete",
+          "review_remaining",
+          "secondary"
+        ],
+        "type": "object"
+      },
+      "ResolveCommitInput": {
+        "properties": {
+          "connection_id": {
+            "type": "string"
+          },
+          "generation": {
+            "type": "integer"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "repository_id": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "connection_id",
+          "generation",
+          "repository_id",
+          "ref"
+        ],
+        "type": "object"
+      },
+      "ResolvedCommit": {
+        "properties": {
+          "commit": {
+            "type": "string"
+          },
+          "generation": {
+            "type": "integer"
+          },
+          "repository_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "commit",
+          "repository_id",
+          "generation"
+        ],
+        "type": "object"
+      },
+      "ResourceKey": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "tenant": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "provider",
+          "tenant",
+          "kind",
+          "id"
+        ],
+        "type": "object"
+      },
+      "Row": {
+        "properties": {
+          "Applicability": {
+            "type": "string"
+          },
+          "Freshness": {
+            "type": "string"
+          },
+          "ID": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Review": {
+            "type": "string"
+          },
+          "Technical": {
+            "type": "string"
+          },
+          "URL": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ID",
+          "Name",
+          "Applicability",
+          "Technical",
+          "Freshness",
+          "Review",
+          "URL"
+        ],
+        "type": "object"
+      },
+      "Section": {
+        "properties": {
+          "Text": {
+            "type": "string"
+          },
+          "Title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Title",
+          "Text"
+        ],
+        "type": "object"
+      },
+      "SelectionInput": {
+        "properties": {
+          "add_to_scope": {
+            "type": "boolean"
+          },
+          "expected_scope_revision": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceConfigurationInput"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "service_id",
+          "expected_scope_revision",
+          "idempotency_key",
+          "add_to_scope",
+          "sources"
+        ],
+        "type": "object"
+      },
+      "SelectionReceipt": {
+        "properties": {
+          "scope_additions": {
+            "items": {
+              "$ref": "#/components/schemas/ResourceKey"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "scope_revision": {
+            "type": "integer"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Record"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "scope_revision",
+          "scope_additions",
+          "sources"
+        ],
+        "type": "object"
+      },
+      "ServerDiscoveryInput": {
+        "properties": {
+          "cursor": {
+            "type": "string"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "session_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "session_id",
+          "idempotency_key",
+          "cursor",
+          "limit"
+        ],
+        "type": "object"
+      },
+      "Service": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "organization_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "organization_id"
+        ],
+        "type": "object"
+      },
+      "SetupGuide": {
+        "properties": {
+          "callback_path": {
+            "type": "string"
+          },
+          "configuration_names": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "execution": {
+            "type": "string"
+          },
+          "steps": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "execution",
+          "steps",
+          "configuration_names"
+        ],
+        "type": "object"
+      },
+      "SourceConfigurationInput": {
+        "properties": {
+          "connection_id": {
+            "type": "string"
+          },
+          "expected_binding_revision": {
+            "type": "integer"
+          },
+          "expected_revision": {
+            "type": "integer"
+          },
+          "generation": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "resource": {
+            "$ref": "#/components/schemas/ResourceKey"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/components/schemas/EvidenceSource"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "source_id",
+          "connection_id",
+          "generation",
+          "expected_revision",
+          "expected_binding_revision",
+          "idempotency_key",
+          "resource",
+          "source"
+        ],
+        "type": "object"
+      },
+      "SourceOperationInput": {
+        "properties": {
+          "expected_binding_revision": {
+            "type": "integer"
+          },
+          "expected_revision": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "target_connection_id": {
+            "type": "string"
+          },
+          "target_generation": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "service_id",
+          "source_id",
+          "expected_revision",
+          "expected_binding_revision",
+          "idempotency_key"
+        ],
+        "type": "object"
+      },
+      "UIBootstrap": {
+        "properties": {
+          "can_create": {
+            "type": "boolean"
+          },
+          "capabilities": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "nullable": true,
+              "type": "array"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "csrf": {
+            "type": "string"
+          },
+          "profiles": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "services": {
+            "items": {
+              "$ref": "#/components/schemas/Service"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "services",
+          "csrf",
+          "capabilities",
+          "can_create"
+        ],
+        "type": "object"
+      },
+      "UIError": {
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "field_errors": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "title",
+          "explanation",
+          "retryable",
+          "reference",
+          "action"
+        ],
+        "type": "object"
+      },
+      "UIOverview": {
+        "properties": {
+          "as_of": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "categories": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ProgressCounts"
+                }
+              ],
+              "nullable": true
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "counts": {
+            "$ref": "#/components/schemas/ProgressCounts"
+          },
+          "evidence_records": {
+            "type": "integer"
+          },
+          "rules": {
+            "items": {
+              "$ref": "#/components/schemas/UIRule"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "setup_required": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "evidence_records",
+          "as_of",
+          "rules",
+          "counts",
+          "categories",
+          "setup_required"
+        ],
+        "type": "object"
+      },
+      "UIRule": {
+        "properties": {
+          "applicability": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "open_gap": {
+            "type": "boolean"
+          },
+          "state": {
+            "$ref": "#/components/schemas/RequirementPresentation"
+          },
+          "statement": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "open_gap",
+          "id",
+          "name",
+          "category",
+          "kind",
+          "applicability",
+          "statement",
+          "state"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "Assessment browser API",
+    "version": "1"
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/api/ui/v1/bootstrap": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIBootstrap"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Page"
+                    },
+                    {
+                      "properties": {
+                        "redirect": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "redirect"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/actions/{action}": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "action",
+            "required": true,
+            "schema": {
+              "enum": [
+                "evidence-source",
+                "collect",
+                "collection-config",
+                "scope",
+                "preview-profile",
+                "profile",
+                "measure",
+                "evidence",
+                "draft",
+                "review",
+                "gap",
+                "check",
+                "token",
+                "revoke-token",
+                "destination",
+                "prepare"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Page"
+                    },
+                    {
+                      "properties": {
+                        "redirect": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "redirect"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Detail"
+                  },
+                  "nullable": true,
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/authorize": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorizationHandoff"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/configure": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigureInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detail"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/configure-source": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SourceConfigurationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Record"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/delete": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detail"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/disable-source": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SourceOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Record"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/disconnect": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detail"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/discover": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoverySession"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/discover-page": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServerDiscoveryInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveryReceipt"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/operations/{operation}/status": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "operation",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/providers": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ProviderDefinition"
+                  },
+                  "nullable": true,
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/rebind-source": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SourceOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Record"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/refresh-source": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshSourceInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Record"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/renew": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/resolve-commit": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveCommitInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResolvedCommit"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/restore": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detail"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/restore-source": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SourceOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Record"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/retire-source": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SourceOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Record"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/scope": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Record"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/select": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectionInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SelectionReceipt"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/test": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/{connection}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Detail"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/{connection}/inventory": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "connection",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InventoryPage"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/overview": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIOverview"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/pages/{page}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "page",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/pages/{page}/{requirement}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "page",
+            "required": true,
+            "schema": {
+              "enum": [
+                "requirement",
+                "run"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "requirement",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/preview/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "revision",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "content": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "content"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/records/{kind}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "kind",
+            "required": true,
+            "schema": {
+              "enum": [
+                "evidence",
+                "rule_result",
+                "evidence_source",
+                "snapshot",
+                "publication"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "freshness",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "requirement",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "items": {
+                      "items": {
+                        "$ref": "#/components/schemas/Record"
+                      },
+                      "type": "array"
+                    },
+                    "offset": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "items",
+                    "has_more",
+                    "offset"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/connections/upload/aws": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "properties": {
+                  "csrf_token": {
+                    "type": "string",
+                    "writeOnly": true
+                  },
+                  "external_id": {
+                    "format": "password",
+                    "type": "string",
+                    "writeOnly": true
+                  },
+                  "state": {
+                    "type": "string",
+                    "writeOnly": true
+                  }
+                },
+                "required": [
+                  "csrf_token",
+                  "state",
+                  "external_id"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "303": {
+            "description": "Redirect to the source connection and resumable operation status"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/connections/upload/kubernetes": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "properties": {
+                  "csrf_token": {
+                    "type": "string",
+                    "writeOnly": true
+                  },
+                  "kubeconfig": {
+                    "format": "password",
+                    "type": "string",
+                    "writeOnly": true
+                  },
+                  "state": {
+                    "type": "string",
+                    "writeOnly": true
+                  }
+                },
+                "required": [
+                  "csrf_token",
+                  "state",
+                  "kubeconfig"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "303": {
+            "description": "Redirect to the source connection and resumable operation status"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "assessment-workspace",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "contracts": "bun scripts/contracts.mjs",
+    "contracts:check": "bun scripts/contracts.mjs --check",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "test:docker": "playwright test --config playwright.docker.config.ts"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "1.1.15",
+    "@tanstack/react-query": "5.90.21",
+    "lucide-react": "0.577.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-router-dom": "7.13.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@biomejs/biome": "2.4.6",
+    "@playwright/test": "1.58.2",
+    "@tailwindcss/vite": "4.2.1",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.1.4",
+    "openapi-typescript": "7.13.0",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vite": "7.3.1",
+    "vitest": "4.0.18"
+  }
+}

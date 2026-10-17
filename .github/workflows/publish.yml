@@ -1,0 +1,62 @@
+name: Publish container
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  IMAGE: ghcr.io/jaxxstorm/fed
+
+jobs:
+  publish:
+    if: github.repository_owner == 'jaxxstorm'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # GHCR creates new packages as private. Never push to an existing
+      # package whose visibility was changed to public or internal.
+      - name: Verify package is private
+        uses: actions/github-script@v7
+        with:
+          script: |
+            try {
+              const { data } = await github.request('GET /users/{username}/packages/{package_type}/{package_name}', {
+                username: 'jaxxstorm',
+                package_type: 'container',
+                package_name: 'fed',
+              });
+              if (data.visibility !== 'private') {
+                core.setFailed(`Refusing to publish: jaxxstorm/fed visibility is ${data.visibility}; set it to private in package settings.`);
+              }
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              core.info('Package is not visible yet; a new GHCR package defaults to private.');
+            }
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Sign in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and publish
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:sha-${{ github.sha }}
+            ${{ env.IMAGE }}:latest
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
