@@ -40,7 +40,7 @@ func run() error {
 		command = os.Args[1]
 	}
 	cfg, err := config.FromEnv(func(key string) string {
-		if key == "KSI_MODE" && (command == "import-catalog" || command == "migrate" || command == "import-connections" || command == "rotate-connection-keys") {
+		if key == "KSI_MODE" && (command == "import-catalog" || command == "migrate" || command == "provision-runtime" || command == "import-connections" || command == "rotate-connection-keys") {
 			return "migrate"
 		}
 		return os.Getenv(key)
@@ -82,6 +82,9 @@ func run() error {
 	}
 	if command == "import-connections" || command == "rotate-connection-keys" {
 		return maintainConnections(ctx, db, cfg, command)
+	}
+	if command == "provision-runtime" {
+		return provisionRuntime(ctx, db, os.Getenv("KSI_RUNTIME_DATABASE_PASSWORD"))
 	}
 	if cfg.Mode == "migrate" {
 		if err := storage.Migrate(ctx, db); err != nil {
