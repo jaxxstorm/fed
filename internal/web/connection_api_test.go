@@ -34,9 +34,10 @@ func TestConnectionAPISessionCSRFRevisionAndWriteOnlyInputs(t *testing.T) {
 	registry, _ := connections.NewRegistry(nil)
 	s := &connections.Service{DB: db, Registry: registry, Credentials: connections.CredentialStore{DB: db}}
 	handler := (&auth.Browser{DB: db}).Protect((&App{Store: store, Connections: s}).Handler())
+	action := "configure"
 	post := func(input any, csrf string) *httptest.ResponseRecorder {
 		body, _ := json.Marshal(input)
-		r := httptest.NewRequest("POST", "https://app.example/api/ui/v1/services/"+service.ID+"/connections/configure", bytes.NewReader(body))
+		r := httptest.NewRequest("POST", "https://app.example/api/ui/v1/services/"+service.ID+"/connections/"+action, bytes.NewReader(body))
 		r.Header.Set("Content-Type", "application/json")
 		r.Header.Set("X-CSRF-Token", csrf)
 		r.AddCookie(&http.Cookie{Name: "ksi_session", Value: "session"})
@@ -71,5 +72,35 @@ func TestConnectionAPISessionCSRFRevisionAndWriteOnlyInputs(t *testing.T) {
 	got, err := s.Get(ctx, a, service.ID, created.Connection.ID)
 	if err != nil || got.Connection.Revision != 1 {
 		t.Fatal("browser operation diverged from shared service")
+	}
+	action = "setups/begin"
+	begin := connections.BeginSetupInput{ServiceID: service.ID, Provider: connections.Workspace, IdempotencyKey: "setup", Input: connections.SetupInput{Name: "Guided Workspace"}}
+	if w = post(begin, ""); w.Code != 403 {
+		t.Fatal("setup bypassed CSRF", w.Code)
+	}
+	w = post(begin, "csrf")
+	var setup connections.Setup
+	if w.Code != 200 || json.Unmarshal(w.Body.Bytes(), &setup) != nil || setup.ConnectionID != "" {
+		t.Fatal("setup response", w.Code, w.Body.String())
+	}
+	if w.Header().Get("Cache-Control") != "no-store" {
+		t.Fatal("setup responses cacheable")
+	}
+	status, err := s.GetSetup(ctx, a, service.ID, setup.ID)
+	if err != nil || status.Input.Name != begin.Input.Name {
+		t.Fatal("shared setup state diverged", err)
+	}
+	action = "setups/update"
+	if w = post(map[string]any{"service_id": service.ID, "setup_id": setup.ID, "expected_revision": 1, "verified_account_id": "attacker", "input": map[string]string{"name": "Injected"}}, "csrf"); w.Code != 400 {
+		t.Fatal("client claimed verified identity", w.Code)
+	}
+	action = "setups/cancel"
+	w = post(connections.SetupOperationInput{ServiceID: service.ID, SetupID: setup.ID, ExpectedRevision: 1, IdempotencyKey: "cancel"}, "csrf")
+	if w.Code != 200 {
+		t.Fatal("cancel", w.Code, w.Body.String())
+	}
+	status, err = s.GetSetup(ctx, a, service.ID, setup.ID)
+	if err != nil || status.Step != connections.SetupCancelled {
+		t.Fatal("cancel not durable", err)
 	}
 }

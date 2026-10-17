@@ -30,6 +30,7 @@ test("provider catalog and named setup fields stay accessible at every viewport"
   await page.screenshot({ path: info.outputPath("Connection-catalog.png"), fullPage: true });
   for (const provider of providers) {
     await page.getByRole("button", { name: `${provider.name} Server integration available`, exact: true }).click();
+    if (provider.id !== "kubernetes") await page.getByRole("button", { name: "Advanced / agent-managed setup" }).click();
     await expect(page.getByRole("heading", { name: `Configure ${provider.name}` })).toBeVisible();
     await page.getByLabel("Name", { exact: true }).fill(`${provider.name} production`);
     await expect(page.getByLabel("Access mode", { exact: true })).toBeVisible();

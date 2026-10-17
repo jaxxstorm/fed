@@ -29,6 +29,8 @@ func TestGitHubInstallationOwnershipAndRestrictedTokens(t *testing.T) {
 	}
 	denied := false
 	removed := false
+	wrongApp := false
+	suspended := false
 	rateLimited := false
 	mints := 0
 	p, err := NewGitHub(GitHubConfig{AppID: "42", Slug: "evidence", ClientID: "client", ClientSecret: "secret", PrivateKey: pem.EncodeToMemory(&pem.Block{Type: "RSA PRIVATE KEY", Bytes: x509.MarshalPKCS1PrivateKey(key)}), Transport: roundTripFunc(func(r *http.Request) (*http.Response, error) {
@@ -46,6 +48,12 @@ func TestGitHubInstallationOwnershipAndRestrictedTokens(t *testing.T) {
 		case "/app/installations/7":
 			if removed {
 				return jsonResponse(404, `{}`), nil
+			}
+			if wrongApp {
+				return jsonResponse(200, `{"id":7,"app_id":43,"account":{"id":99,"login":"example"},"permissions":{"contents":"read"}}`), nil
+			}
+			if suspended {
+				return jsonResponse(200, `{"id":7,"app_id":42,"suspended_at":"2026-10-17T00:00:00Z","account":{"id":99,"login":"example"},"permissions":{"contents":"read"}}`), nil
 			}
 			return jsonResponse(200, `{"id":7,"app_id":42,"account":{"id":99,"login":"example"},"permissions":{"contents":"read"}}`), nil
 		case "/app/installations/7/access_tokens":
@@ -128,6 +136,16 @@ func TestGitHubInstallationOwnershipAndRestrictedTokens(t *testing.T) {
 		t.Fatal("removed installation accepted")
 	}
 	removed = false
+	suspended = true
+	if _, err = p.Test(ctx, c, grant.Credentials); err == nil || err.Error() != "installation_suspended" {
+		t.Fatal("suspension not distinguished", err)
+	}
+	suspended = false
+	wrongApp = true
+	if _, err = p.ExchangeAuthorization(ctx, c, claim, response); err == nil {
+		t.Fatal("another App installation accepted")
+	}
+	wrongApp = false
 	response.InstallationID = "8"
 	if _, err = p.ExchangeAuthorization(ctx, c, claim, response); err == nil {
 		t.Fatal("substituted installation accepted")
@@ -145,6 +163,7 @@ func TestGitHubInstallationOwnershipAndRestrictedTokens(t *testing.T) {
 	denied = false
 	rateLimited = false
 	t.Run("shared-service-journey", func(t *testing.T) { verifyOAuthJourney(t, connections.GitHub, p, c.Configuration, grant) })
+	t.Run("guided-setup-journey", func(t *testing.T) { verifySetupJourney(t, connections.GitHub, p, "7") })
 }
 
 func TestWorkspaceOfflineIdentityPartialDiscoveryAndRenewal(t *testing.T) {
@@ -231,4 +250,5 @@ func TestWorkspaceOfflineIdentityPartialDiscoveryAndRenewal(t *testing.T) {
 	customer = "C123"
 	revoked = false
 	t.Run("shared-service-journey", func(t *testing.T) { verifyOAuthJourney(t, connections.Workspace, p, c.Configuration, grant) })
+	t.Run("guided-setup-journey", func(t *testing.T) { verifySetupJourney(t, connections.Workspace, p, "") })
 }

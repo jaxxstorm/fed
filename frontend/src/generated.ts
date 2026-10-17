@@ -853,6 +853,44 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/ui/v1/services/{service}/connections/readiness/{provider}/status": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    service: string;
+                    provider: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SetupReadiness"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/ui/v1/services/{service}/connections/rebind-source": {
         parameters: {
             query?: never;
@@ -1450,6 +1488,604 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/ui/v1/services/{service}/connections/setups/authorize": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header: {
+                    "X-CSRF-Token": string;
+                };
+                path: {
+                    service: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SetupOperationInput"];
+                };
+            };
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AuthorizationHandoff"];
+                    };
+                };
+                /** @description Authorized browser response */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                403: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/services/{service}/connections/setups/aws-material": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header: {
+                    "X-CSRF-Token": string;
+                };
+                path: {
+                    service: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SetupOperationInput"];
+                };
+            };
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SetupMaterial"];
+                    };
+                };
+                /** @description Authorized browser response */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                403: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/services/{service}/connections/setups/aws-rotate": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header: {
+                    "X-CSRF-Token": string;
+                };
+                path: {
+                    service: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SetupOperationInput"];
+                };
+            };
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Setup"];
+                    };
+                };
+                /** @description Authorized browser response */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                403: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/services/{service}/connections/setups/aws-verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header: {
+                    "X-CSRF-Token": string;
+                };
+                path: {
+                    service: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SetupOperationInput"];
+                };
+            };
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Setup"];
+                    };
+                };
+                /** @description Authorized browser response */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                403: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/services/{service}/connections/setups/begin": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header: {
+                    "X-CSRF-Token": string;
+                };
+                path: {
+                    service: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["BeginSetupInput"];
+                };
+            };
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Setup"];
+                    };
+                };
+                /** @description Authorized browser response */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                403: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/services/{service}/connections/setups/cancel": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header: {
+                    "X-CSRF-Token": string;
+                };
+                path: {
+                    service: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SetupOperationInput"];
+                };
+            };
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Setup"];
+                    };
+                };
+                /** @description Authorized browser response */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                403: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/services/{service}/connections/setups/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header: {
+                    "X-CSRF-Token": string;
+                };
+                path: {
+                    service: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SetupOperationInput"];
+                };
+            };
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Setup"];
+                    };
+                };
+                /** @description Authorized browser response */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                403: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/services/{service}/connections/setups/update": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header: {
+                    "X-CSRF-Token": string;
+                };
+                path: {
+                    service: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["UpdateSetupInput"];
+                };
+            };
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Setup"];
+                    };
+                };
+                /** @description Authorized browser response */
+                400: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                403: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+                /** @description Authorized browser response */
+                409: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["UIError"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/services/{service}/connections/setups/{setup}/status": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    service: string;
+                    setup: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Authorized browser response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Setup"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/ui/v1/services/{service}/connections/test": {
         parameters: {
             query?: never;
@@ -1924,6 +2560,15 @@ export interface components {
             operation_id: string;
             url: string;
         };
+        BeginSetupInput: {
+            connection_id?: string;
+            expected_revision?: number;
+            generation?: number;
+            idempotency_key: string;
+            input: components["schemas"]["SetupInput"];
+            provider: string;
+            service_id: string;
+        };
         CitationCard: {
             EndLine: number;
             Evidence: components["schemas"]["Record"];
@@ -1954,6 +2599,7 @@ export interface components {
         };
         Connection: {
             access_mode: string;
+            access_strategy?: string;
             actor_id: string;
             configuration: components["schemas"]["Configuration"];
             generation: number;
@@ -2259,11 +2905,62 @@ export interface components {
             name: string;
             organization_id: string;
         };
+        Setup: {
+            actor_id: string;
+            connection_id?: string;
+            error_code?: string;
+            /** Format: date-time */
+            expires_at: string;
+            id: string;
+            input: components["schemas"]["SetupInput"];
+            provider: string;
+            revision: number;
+            service_id: string;
+            step: string;
+            strategy: string;
+            /** Format: date-time */
+            updated_at: string;
+            verified_account_id?: string;
+        };
         SetupGuide: {
             callback_path?: string;
             configuration_names: string[] | null;
             execution: string;
             steps: string[] | null;
+            version: string;
+        };
+        SetupInput: {
+            account_id?: string;
+            name: string;
+            role_arn?: string;
+        };
+        SetupMaterial: {
+            cli: string;
+            instructions: string[] | null;
+            read_policy: {
+                [key: string]: unknown;
+            };
+            role_arn: string;
+            trust_policy: {
+                [key: string]: unknown;
+            };
+            version: string;
+        };
+        SetupOperationInput: {
+            expected_revision: number;
+            idempotency_key: string;
+            service_id: string;
+            setup_id: string;
+        };
+        SetupReadiness: {
+            customer_actions: string[] | null;
+            error_code?: string;
+            missing_configuration: string[] | null;
+            operator_actions: string[] | null;
+            permissions: string[] | null;
+            provider: string;
+            ready: boolean;
+            strategy: string;
             version: string;
         };
         SourceConfigurationInput: {
@@ -2328,6 +3025,13 @@ export interface components {
             open_gap: boolean;
             state: components["schemas"]["RequirementPresentation"];
             statement: string;
+        };
+        UpdateSetupInput: {
+            expected_revision: number;
+            idempotency_key: string;
+            input: components["schemas"]["SetupInput"];
+            service_id: string;
+            setup_id: string;
         };
     };
     responses: never;

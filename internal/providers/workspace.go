@@ -3,6 +3,7 @@ package providers
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -47,6 +48,9 @@ func (p *Workspace) customer(ctx context.Context, token string) (string, error) 
 	}
 	_, err := requestJSON(ctx, p.http, "GET", "https://admin.googleapis.com/admin/directory/v1/customers/my_customer", token, nil, &result)
 	if err != nil {
+		if err.Error() == "insufficient_permissions" {
+			return "", ProviderError("customer_identity_permission_required")
+		}
 		return "", err
 	}
 	if result.ID == "" {
@@ -60,6 +64,10 @@ func (p *Workspace) ExchangeAuthorization(ctx context.Context, c connections.Con
 	config.RedirectURL = claim.RedirectURI
 	token, err := config.Exchange(oauthContext(ctx, p.http), response.Code, oauth2.VerifierOption(claim.Verifier.Value("verifier")))
 	if err != nil {
+		var oauthErr *oauth2.RetrieveError
+		if errors.As(err, &oauthErr) && (oauthErr.ErrorCode == "admin_policy_enforced" || oauthErr.ErrorCode == "org_internal") {
+			return connections.AuthorizedGrant{}, ProviderError("workspace_policy_restricted")
+		}
 		return connections.AuthorizedGrant{}, ProviderError("authorization_exchange_failed")
 	}
 	if token.RefreshToken == "" {
@@ -69,7 +77,7 @@ func (p *Workspace) ExchangeAuthorization(ctx context.Context, c connections.Con
 	if err != nil {
 		return connections.AuthorizedGrant{}, err
 	}
-	if id != c.Configuration.AccountID {
+	if id != c.Configuration.AccountID && !(c.Strategy == connections.WorkspaceConsent && c.Configuration.AccountID == "") {
 		return connections.AuthorizedGrant{}, ProviderError("wrong_tenant")
 	}
 	return connections.AuthorizedGrant{AccountID: id, Credentials: workspaceCredentials(token, connections.Credentials{})}, nil

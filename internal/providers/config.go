@@ -10,7 +10,7 @@ import (
 // FromEnv exposes only successfully configured adapters. Missing applications
 // remain visible in the catalog with server_adapter_available=false.
 func FromEnv(get func(string) string) (map[connections.Provider]connections.Adapter, error) {
-	adapters := map[connections.Provider]connections.Adapter{connections.AWS: AWS{}}
+	adapters := map[connections.Provider]connections.Adapter{connections.AWS: AWS{FedRoleARN: get("KSI_AWS_FED_ROLE_ARN"), sessions: &awsRoleSessions{}}}
 	if get("KSI_KUBERNETES_ALLOWED_SERVERS") != "" || get("KSI_KUBERNETES_CONTEXTS") != "" {
 		var servers, contexts []string
 		if raw := get("KSI_KUBERNETES_ALLOWED_SERVERS"); raw != "" && json.Unmarshal([]byte(raw), &servers) != nil {
@@ -37,7 +37,7 @@ func FromEnv(get func(string) string) (map[connections.Provider]connections.Adap
 		}
 		adapters[connections.Kubernetes] = Kubernetes{AllowedServers: servers, AllowedContexts: contexts, LegacyProfiles: profiles}
 	}
-	if get("KSI_GITHUB_APP_ID") != "" || get("KSI_GITHUB_CLIENT_ID") != "" || get("KSI_GITHUB_PRIVATE_KEY_FILE") != "" {
+	if configured(get, "KSI_GITHUB_APP_ID", "KSI_GITHUB_APP_SLUG", "KSI_GITHUB_CLIENT_ID", "KSI_GITHUB_CLIENT_SECRET", "KSI_GITHUB_PRIVATE_KEY_FILE") {
 		key, err := os.ReadFile(get("KSI_GITHUB_PRIVATE_KEY_FILE"))
 		if err != nil {
 			return nil, ProviderError("github_application_configuration_invalid")
@@ -49,7 +49,7 @@ func FromEnv(get func(string) string) (map[connections.Provider]connections.Adap
 		}
 		adapters[connections.GitHub] = adapter
 	}
-	if get("KSI_GOOGLE_CLIENT_ID") != "" || get("KSI_GOOGLE_CLIENT_SECRET") != "" {
+	if configured(get, "KSI_GOOGLE_CLIENT_ID", "KSI_GOOGLE_CLIENT_SECRET") {
 		adapter, err := NewWorkspace(get("KSI_GOOGLE_CLIENT_ID"), get("KSI_GOOGLE_CLIENT_SECRET"), nil)
 		if err != nil {
 			return nil, ProviderError("google_application_configuration_invalid")
@@ -57,4 +57,13 @@ func FromEnv(get func(string) string) (map[connections.Provider]connections.Adap
 		adapters[connections.Workspace] = adapter
 	}
 	return adapters, nil
+}
+
+func configured(get func(string) string, keys ...string) bool {
+	for _, key := range keys {
+		if get(key) == "" {
+			return false
+		}
+	}
+	return true
 }

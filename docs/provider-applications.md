@@ -13,13 +13,13 @@ outside the database and retain old key versions while rotating stored grants.
    for assessment. Do not grant repository write permissions.
 2. Set the user authorization callback to
    `https://YOUR_ORIGIN/connections/callback/github`. Enable user authorization
-   for the app. Install the application separately, then copy its installation
-   ID from the installation settings URL into the connection configuration.
-   The callback requires the service-created state; an installation setup
-   redirect by itself cannot activate a connection. The optional installation
-   setup URL is `https://YOUR_ORIGIN/connections/setup/github`; it returns users
-   to service selection without treating installation query parameters as proof
-   of ownership.
+   for the app. Set the installation setup URL to
+   `https://YOUR_ORIGIN/connections/setup/github`. Disable **Request user
+   authorization during installation**: Fed performs installation return and
+   user authorization as separately bound stages. Start from Fed's guided setup,
+   select the organization and repositories in GitHub, and return to confirm the
+   verified account. No installation-ID copying is required. An installation
+   return alone never activates a connection.
 3. Configure `KSI_GITHUB_APP_ID`, `KSI_GITHUB_APP_SLUG`,
    `KSI_GITHUB_CLIENT_ID`, `KSI_GITHUB_CLIENT_SECRET`, and
    `KSI_GITHUB_PRIVATE_KEY_FILE` on the server. The private key file must contain
@@ -42,7 +42,8 @@ GitHub installation settings; existing evidence remains retained.
 2. Register a **Web application** OAuth client with redirect URI
    `https://YOUR_ORIGIN/connections/callback/google_workspace`.
 3. Configure `KSI_GOOGLE_CLIENT_ID` and `KSI_GOOGLE_CLIENT_SECRET` on the
-   server. Enter the canonical Workspace customer ID in connection setup.
+   server. Guided setup discovers the canonical customer ID after consent and
+   asks the administrator to confirm it; no customer ID entry is required.
 4. Have an authorized administrator consent to these scopes:
    - `https://www.googleapis.com/auth/admin.directory.customer.readonly`
    - `https://www.googleapis.com/auth/admin.directory.orgunit.readonly`
@@ -60,9 +61,11 @@ access to every resource kind.
 
 ## Deployment readiness
 
-The provider catalog reports `server_adapter_available`. Missing application
-configuration leaves agent-managed discovery available. Partially configured
-applications fail startup with a redacted configuration error. Never paste
+The provider catalog reports `server_adapter_available`; guided setup additionally
+reports missing configuration names and operator/customer next steps. Missing or
+partial registration leaves unrelated providers and agent-managed discovery
+available. Invalid fully configured signing keys fail startup with a redacted
+configuration error. Never paste
 provider secrets into MCP parameters, source hints, browser storage or evidence.
 Agent tokens need explicit `connect`; selecting scope also requires `edit`.
 
@@ -96,7 +99,36 @@ never returned through MCP or the connection metadata API. Start another handoff
 to replace expiring credentials. Local disconnect deletes local credentials;
 rotate/revoke the token or certificate separately at the cluster.
 
-## AWS profiles and role trust
+## AWS delegated role setup
+
+Standard setup uses the Fed **application task role**, not the ECS execution role
+used to pull images. Set `KSI_AWS_FED_ROLE_ARN` to its complete stable IAM role ARN,
+including any role path. Give that role `iam:GetRole` on itself (to verify the
+exact ARN/RoleId against the STS session) and `sts:AssumeRole` on approved customer
+role ARNs. Keep artifact-bucket access separate.
+
+Enter the customer account ID in guided setup and generate CLI/manual instructions.
+Fed generates and encrypts a unique external ID, stable across retries. The trust
+policy pins the configured Fed role and this external ID. The versioned read
+manifest covers registered RDS, ElastiCache (including serverless), EKS and GuardDuty
+collectors and restricts reads to `us-east-1`. Review the generated policy rather
+than attaching a broad managed security policy.
+
+The customer administrator runs the script with AWS CLI and jq, or creates the
+role manually with the same policy documents. The script checks the active account
+and refuses conflicting existing trust/policies instead of overwriting them.
+Fed's runtime never creates IAM resources. Submit the role ARN, verify access,
+confirm identity, then discover and explicitly select sources.
+
+For external-ID replacement, open the delegated connection's authorization/setup
+flow and choose **Replace external ID**. This invalidates existing Fed credential
+use and generation-fences in-flight collection. Generate the replacement trust
+document, update the existing customer role manually, and verify before confirming.
+Routine reauthorization retains the existing external ID. Local disconnect does
+not revoke already issued AWS sessions remotely; remove the customer trust/role
+or revoke sessions separately when remote revocation is required.
+
+## Advanced AWS profiles and role trust
 
 Profiles execute in the **server's** SDK environment. Populate
 `KSI_AWS_ACCOUNT_PROFILES` for existing account/profile mappings, and use the

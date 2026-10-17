@@ -876,3 +876,20 @@ summary:focus-visible {
 .next-step code {
   overflow-wrap: anywhere;
 }
+/* Generated setup material stays within the responsive connection panel. */
+.setup-code {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.setup-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding-left: 1.5rem;
+}

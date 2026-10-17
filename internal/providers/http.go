@@ -52,6 +52,23 @@ func requestJSON(ctx context.Context, client *connections.ProviderHTTP, method, 
 			if response.Header.Get("X-RateLimit-Remaining") == "0" {
 				return "", ProviderError("rate_limited")
 			}
+			if req.URL.Host == "admin.googleapis.com" {
+				var failure struct {
+					Error struct {
+						Errors []struct {
+							Reason string `json:"reason"`
+						} `json:"errors"`
+					} `json:"error"`
+				}
+				if json.Unmarshal(data, &failure) == nil {
+					for _, item := range failure.Error.Errors {
+						switch item.Reason {
+						case "domainPolicy", "accessNotConfigured", "adminPolicyEnforced":
+							return "", ProviderError("workspace_policy_restricted")
+						}
+					}
+				}
+			}
 			return "", ProviderError("insufficient_permissions")
 		case 404:
 			return "", ProviderError("resource_unavailable")

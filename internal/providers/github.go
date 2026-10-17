@@ -104,7 +104,13 @@ func (p *GitHub) installation(ctx context.Context, id string) (githubInstallatio
 	}
 	_, err = requestJSON(ctx, p.http, "GET", "https://api.github.com/app/installations/"+id, token, nil, &out)
 	if err != nil {
+		if err.Error() == "resource_unavailable" {
+			return out, ProviderError("installation_removed")
+		}
 		return out, err
+	}
+	if out.SuspendedAt != nil {
+		return out, ProviderError("installation_suspended")
 	}
 	if strconv.FormatInt(out.ID, 10) != id || strconv.FormatInt(out.AppID, 10) != p.appID || out.SuspendedAt != nil || out.Account.ID == 0 || out.Permissions["contents"] != "read" {
 		return out, ProviderError("insufficient_permissions")
@@ -116,6 +122,10 @@ func (p *GitHub) AuthorizationURL(_ connections.Connection, c connections.Author
 	config := p.oauth
 	config.RedirectURL = c.RedirectURI
 	return config.AuthCodeURL(c.State, oauth2.SetAuthURLParam("code_challenge", c.PKCEChallenge), oauth2.SetAuthURLParam("code_challenge_method", "S256")), nil
+}
+
+func (p *GitHub) InstallationURL(state string) string {
+	return "https://github.com/apps/" + url.PathEscape(p.slug) + "/installations/new?state=" + url.QueryEscape(state)
 }
 func (p *GitHub) ExchangeAuthorization(ctx context.Context, c connections.Connection, claim connections.AuthorizationClaim, response connections.AuthorizationResponse) (connections.AuthorizedGrant, error) {
 	id := c.Configuration.InstallationID
@@ -147,7 +157,7 @@ func (p *GitHub) ExchangeAuthorization(ctx context.Context, c connections.Connec
 		return connections.AuthorizedGrant{}, err
 	}
 	account := strconv.FormatInt(installation.Account.ID, 10)
-	if c.Configuration.AccountID != account && !strings.EqualFold(c.Configuration.AccountID, installation.Account.Login) {
+	if c.Configuration.AccountID != account && !strings.EqualFold(c.Configuration.AccountID, installation.Account.Login) && !(c.Strategy == connections.GitHubInstallation && c.Configuration.AccountID == "") {
 		return connections.AuthorizedGrant{}, ProviderError("wrong_tenant")
 	}
 	return connections.AuthorizedGrant{AccountID: account, AccountHint: c.Configuration.AccountID, Credentials: connections.NewCredentials(map[string]string{"installation_id": id, "account_id": account})}, nil

@@ -34,10 +34,6 @@ func (app *App) Handler() http.Handler {
 	if app.Connections != nil {
 		app.registerConnectionAPI(m)
 		m.HandleFunc("POST /connections/upload/{provider}", app.connectionUpload)
-		m.HandleFunc("GET /connections/setup/github", func(w http.ResponseWriter, r *http.Request) {
-			w.Header().Set("Content-Type", "text/html; charset=utf-8")
-			_, _ = w.Write([]byte(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHub installation ready</title><main><h1>Return to connection setup</h1><p>Your GitHub installation is ready for verification. Copy its installation ID from GitHub settings, select your assessment service, and open Connections. Authorize access there to verify your account and selected repositories.</p><a href="/">Choose an assessment service</a></main></html>`))
-		})
 		m.HandleFunc("GET /connections/authorize/{service}/{operation}", app.connectionAuthorize)
 		m.HandleFunc("GET /connections/callback/{provider}", app.connectionCallback)
 	}

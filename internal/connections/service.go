@@ -17,10 +17,11 @@ import (
 )
 
 type Service struct {
-	Artifacts   storage.Artifacts
-	DB          *pgxpool.Pool
-	Registry    *Registry
-	Credentials CredentialStore
+	SetupReadiness map[Provider]SetupReadiness
+	Artifacts      storage.Artifacts
+	DB             *pgxpool.Pool
+	Registry       *Registry
+	Credentials    CredentialStore
 }
 
 type ConfigureInput struct {
@@ -78,7 +79,8 @@ func validateConfiguration(r *Registry, in ConfigureInput) error {
 func readConnection(ctx context.Context, q auth.Querier, service, id string) (Detail, error) {
 	var out Detail
 	var metadata, health []byte
-	err := q.QueryRow(ctx, `SELECT data,access_health,revision,generation,lifecycle,updated_at,verified_account_id FROM evidence_connections WHERE service_id=$1 AND id=$2`, service, id).Scan(&metadata, &health, &out.Connection.Revision, &out.Connection.Generation, &out.Connection.Lifecycle, &out.Connection.UpdatedAt, &out.Connection.VerifiedAccountID)
+	var strategy AccessStrategy
+	err := q.QueryRow(ctx, `SELECT data,access_health,revision,generation,lifecycle,updated_at,verified_account_id,access_strategy FROM evidence_connections WHERE service_id=$1 AND id=$2`, service, id).Scan(&metadata, &health, &out.Connection.Revision, &out.Connection.Generation, &out.Connection.Lifecycle, &out.Connection.UpdatedAt, &out.Connection.VerifiedAccountID, &strategy)
 	if err != nil {
 		return out, err
 	}
@@ -91,6 +93,7 @@ func readConnection(ctx context.Context, q auth.Querier, service, id string) (De
 	out.Connection.Revision, out.Connection.Generation, out.Connection.Lifecycle = revision, generation, lifecycle
 	out.Connection.UpdatedAt = updatedAt
 	out.Connection.VerifiedAccountID = verifiedAccount
+	out.Connection.Strategy = strategy
 	err = json.Unmarshal(health, &out.Access)
 	if err == nil {
 		err = q.QueryRow(ctx, `SELECT (SELECT count(*) FROM connection_inventory WHERE service_id=$1 AND connection_id=$2 AND available),(SELECT count(*) FROM connection_source_bindings WHERE service_id=$1 AND connection_id=$2 AND lifecycle<>'retired')`, service, id).Scan(&out.DiscoveredCount, &out.SelectedCount)

@@ -43,6 +43,17 @@ func connectionFailure(w http.ResponseWriter, err error) {
 		}
 	}
 	e := UIError{Code: code, Title: "Connection action needs attention", Explanation: "Review the provider setup and current revisions, then retry. Your form entries are preserved.", Retryable: status >= 500, Action: "Review connection setup"}
+	if explanation, ok := map[string]string{
+		"setup_account_locked":         "Generated trust is already bound to this AWS account. Cancel this setup and start a new one for a different account.",
+		"aws_setup_material_required":  "Generate the AWS role setup first, apply its trust and read policies in the customer account, then verify the role ARN.",
+		"role_trust_denied":            "Check the Fed principal, generated external ID and customer role trust policy. Allow IAM changes to propagate, then retry verification.",
+		"fed_role_verification_denied": "The Fed task role needs iam:GetRole on its configured IAM role to verify its identity. Ask the operator to update the task-role permissions.",
+		"fed_runtime_role_mismatch":    "The running Fed identity does not match KSI_AWS_FED_ROLE_ARN. Ask the operator to configure the application task role and its full IAM path.",
+	}[code]; ok {
+		e.Explanation = explanation
+		e.Retryable = false
+		status = http.StatusConflict
+	}
 	if status == 400 {
 		e.FieldErrors = map[string]string{"configuration": "Check the account, provider-specific fields, source scope and required revisions."}
 	}
@@ -51,6 +62,7 @@ func connectionFailure(w http.ResponseWriter, err error) {
 
 func connectionAction[I any, O any](mux *http.ServeMux, path string, call func(context.Context, auth.Actor, I) (O, error)) {
 	mux.HandleFunc("POST /api/ui/v1/services/{service}/connections/"+path, func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "no-store")
 		body, err := io.ReadAll(http.MaxBytesReader(w, r.Body, 2<<20))
 		if err != nil {
 			connectionFailure(w, connections.ErrInvalid)
@@ -80,6 +92,7 @@ func connectionAction[I any, O any](mux *http.ServeMux, path string, call func(c
 }
 
 func (app *App) registerConnectionAPI(mux *http.ServeMux) {
+	app.registerSetupAPI(mux)
 	s := app.Connections
 	mux.HandleFunc("GET /api/ui/v1/services/{service}/connections/scope", func(w http.ResponseWriter, r *http.Request) {
 		out, err := app.Store.Get(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), "scope", "scope")

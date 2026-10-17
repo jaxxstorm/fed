@@ -114,6 +114,8 @@ func run() error {
 	registry, _ := connections.NewRegistry(adapters)
 	keys, _ := connections.LoadKeyring()
 	connectionService := &connections.Service{DB: db, Registry: registry, Credentials: connections.CredentialStore{DB: db, Keys: keys}, Artifacts: artifacts}
+	connectionService.SetupReadiness = providers.SetupReadiness(os.Getenv)
+	go connectionService.MaintainSetups(ctx)
 	// Workers must respect existing bindings even when the setup UI is disabled.
 	runner.Connections = connectionService
 	if cfg.Mode == "worker" {

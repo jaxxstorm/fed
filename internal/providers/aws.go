@@ -2,16 +2,21 @@ package providers
 
 import (
 	"context"
+	"crypto/sha256"
 	"encoding/json"
 	"errors"
 	"net/http"
+	"regexp"
 	"strconv"
+	"strings"
+	"sync"
 	"time"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	awsconfig "github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials/stscreds"
 	"github.com/aws/aws-sdk-go-v2/service/eks"
+	"github.com/aws/aws-sdk-go-v2/service/iam"
 	"github.com/aws/aws-sdk-go-v2/service/sts"
 	"github.com/aws/smithy-go"
 	"github.com/jaxxstorm/fed/internal/connections"
@@ -25,7 +30,9 @@ func (e ProviderError) RecoveryCode() string { return string(e) }
 // AWS resolves each connection independently. Load is injectable for controlled
 // SDK endpoint tests; production uses the ordinary server SDK credential chain.
 type AWS struct {
-	Load func(context.Context, ...func(*awsconfig.LoadOptions) error) (aws.Config, error)
+	FedRoleARN string
+	sessions   *awsRoleSessions
+	Load       func(context.Context, ...func(*awsconfig.LoadOptions) error) (aws.Config, error)
 }
 
 func (p AWS) Configuration(ctx context.Context, c connections.Connection, credentials connections.Credentials) (aws.Config, error) {
@@ -34,6 +41,10 @@ func (p AWS) Configuration(ctx context.Context, c connections.Connection, creden
 }
 
 func (p AWS) configuration(ctx context.Context, c connections.Connection, credentials connections.Credentials) (aws.Config, string, error) {
+	delegated := c.Strategy == connections.DelegatedRole
+	if delegated && (c.Configuration.Profile != "" || !validRole(c.Configuration.RoleARN, c.Configuration.AccountID) || credentials.Value("external_id") == "") {
+		return aws.Config{}, "", ProviderError("delegated_role_configuration_required")
+	}
 	if c.Provider != connections.AWS || c.Configuration.Region != "us-east-1" || len(c.Configuration.AccountID) != 12 {
 		return aws.Config{}, "", ProviderError("wrong_tenant")
 	}
@@ -58,13 +69,13 @@ func (p AWS) configuration(ctx context.Context, c connections.Connection, creden
 		return cfg, "", ProviderError("profile_sign_in_required")
 	}
 	principal := aws.ToString(identity.Arn)
+	if delegated {
+		if err = p.verifyPrincipal(ctx, cfg, identity); err != nil {
+			return cfg, principal, err
+		}
+	}
 	if c.Configuration.RoleARN != "" {
-		cfg.Credentials = aws.NewCredentialsCache(stscreds.NewAssumeRoleProvider(sts.NewFromConfig(cfg), c.Configuration.RoleARN, func(options *stscreds.AssumeRoleOptions) {
-			if external := credentials.Value("external_id"); external != "" {
-				options.ExternalID = aws.String(external)
-			}
-			options.RoleSessionName = "fed-evidence"
-		}))
+		cfg.Credentials = p.roleCredentials(cfg, c, credentials, principal)
 		identity, err = sts.NewFromConfig(cfg).GetCallerIdentity(ctx, &sts.GetCallerIdentityInput{})
 		if err != nil {
 			return cfg, principal, ProviderError("role_trust_denied")
@@ -74,6 +85,113 @@ func (p AWS) configuration(ctx context.Context, c connections.Connection, creden
 		return cfg, principal, ProviderError("wrong_tenant")
 	}
 	return cfg, principal, nil
+}
+
+type awsRoleSessionKey struct {
+	service, connection, role, principal string
+	generation                           int64
+	external                             [32]byte
+}
+type awsRoleSession struct {
+	credentials *aws.CredentialsCache
+	created     time.Time
+}
+type awsRoleSessions struct {
+	mu      sync.Mutex
+	entries map[awsRoleSessionKey]awsRoleSession
+}
+
+func (p AWS) roleCredentials(cfg aws.Config, c connections.Connection, credentials connections.Credentials, principal string) *aws.CredentialsCache {
+	create := func() *aws.CredentialsCache {
+		return aws.NewCredentialsCache(stscreds.NewAssumeRoleProvider(sts.NewFromConfig(cfg), c.Configuration.RoleARN, func(options *stscreds.AssumeRoleOptions) {
+			if external := credentials.Value("external_id"); external != "" {
+				options.ExternalID = aws.String(external)
+			}
+			options.RoleSessionName = "fed-evidence"
+		}))
+	}
+	if p.sessions == nil || c.Strategy != connections.DelegatedRole {
+		return create()
+	}
+	key := awsRoleSessionKey{service: c.ServiceID, connection: c.ID, role: c.Configuration.RoleARN, principal: principal, generation: c.Generation, external: sha256.Sum256([]byte(credentials.Value("external_id")))}
+	p.sessions.mu.Lock()
+	defer p.sessions.mu.Unlock()
+	if p.sessions.entries == nil {
+		p.sessions.entries = map[awsRoleSessionKey]awsRoleSession{}
+	}
+	now := time.Now()
+	for key, entry := range p.sessions.entries {
+		if now.Sub(entry.created) > time.Hour {
+			delete(p.sessions.entries, key)
+		}
+	}
+	if cached, ok := p.sessions.entries[key]; ok {
+		return cached.credentials
+	}
+	cache := create()
+	// Limit retained provider instances as well as temporary AWS credentials.
+	if len(p.sessions.entries) >= 1024 {
+		for old := range p.sessions.entries {
+			delete(p.sessions.entries, old)
+			break
+		}
+	}
+	p.sessions.entries[key] = awsRoleSession{credentials: cache, created: now}
+	return cache
+}
+
+func validRole(role, account string) bool {
+	prefix := "arn:aws:iam::" + account + ":role/"
+	return regexp.MustCompile(`^[0-9]{12}$`).MatchString(account) && strings.HasPrefix(role, prefix) && regexp.MustCompile(`^arn:aws:iam::[0-9]{12}:role/[A-Za-z0-9_+=,.@/-]+$`).MatchString(role) && len(role) <= 2048 && !strings.HasSuffix(role, "/")
+}
+
+// Resolve the configured IAM path via GetRole rather than deriving an IAM ARN
+// from an STS session ARN (which omits the role path). RoleId also detects role
+// deletion/recreation while old sessions are still alive.
+func (p AWS) verifyPrincipal(ctx context.Context, cfg aws.Config, identity *sts.GetCallerIdentityOutput) error {
+	account := aws.ToString(identity.Account)
+	if !validRole(p.FedRoleARN, account) {
+		return ProviderError("fed_runtime_role_mismatch")
+	}
+	name := p.FedRoleARN[strings.LastIndex(p.FedRoleARN, "/")+1:]
+	role, err := iam.NewFromConfig(cfg).GetRole(ctx, &iam.GetRoleInput{RoleName: aws.String(name)})
+	if err != nil || role.Role == nil {
+		return ProviderError("fed_role_verification_denied")
+	}
+	if aws.ToString(role.Role.Arn) != p.FedRoleARN || aws.ToString(role.Role.RoleId) == "" {
+		return ProviderError("fed_runtime_role_mismatch")
+	}
+	caller := aws.ToString(identity.Arn)
+	if caller == p.FedRoleARN && aws.ToString(identity.UserId) == aws.ToString(role.Role.RoleId) {
+		return nil
+	}
+	prefix := "arn:aws:sts::" + account + ":assumed-role/" + name + "/"
+	if !strings.HasPrefix(caller, prefix) || len(caller) == len(prefix) || !strings.HasPrefix(aws.ToString(identity.UserId), aws.ToString(role.Role.RoleId)+":") {
+		return ProviderError("fed_runtime_role_mismatch")
+	}
+	return nil
+}
+
+func (p AWS) SetupPrincipal(ctx context.Context) (string, error) {
+	if p.FedRoleARN == "" {
+		return "", ProviderError("missing_fed_role_configuration")
+	}
+	load := p.Load
+	if load == nil {
+		load = awsconfig.LoadDefaultConfig
+	}
+	cfg, err := load(ctx, awsconfig.WithRegion("us-east-1"), awsconfig.WithRetryMaxAttempts(2))
+	if err != nil {
+		return "", ProviderError("fed_credentials_unavailable")
+	}
+	identity, err := sts.NewFromConfig(cfg).GetCallerIdentity(ctx, &sts.GetCallerIdentityInput{})
+	if err != nil {
+		return "", ProviderError("fed_credentials_unavailable")
+	}
+	if err = p.verifyPrincipal(ctx, cfg, identity); err != nil {
+		return "", err
+	}
+	return p.FedRoleARN, nil
 }
 
 func (p AWS) Test(ctx context.Context, c connections.Connection, credentials connections.Credentials) (connections.AccessHealth, error) {

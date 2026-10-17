@@ -30,6 +30,34 @@ type DiscoveryStartInput struct {
 
 func registerConnections(server *sdk.Server, a auth.Actor, options ConnectionOptions) {
 	s := options.Service
+	add(server, "rotate_aws_setup_external_id", "Explicitly replace the setup external ID, fence existing connection access and require updated customer trust and retesting.", func(ctx context.Context, in connections.SetupOperationInput) (any, error) {
+		return s.RotateAWSSetupExternalID(ctx, a, in)
+	})
+	add(server, "get_provider_setup_readiness", "Check operator registration, permissions and runtime readiness without exposing secrets.", func(ctx context.Context, in ProviderInput) (any, error) {
+		return s.ProviderSetupReadiness(ctx, a, in.ServiceID, in.Provider)
+	})
+	add(server, "begin_provider_setup", "Save a temporary provider setup before consent. Does not create sources or evidence.", func(ctx context.Context, in connections.BeginSetupInput) (any, error) {
+		return s.BeginSetup(ctx, a, in)
+	})
+	add(server, "get_provider_setup", "Read redacted setup progress and verified identity.", func(ctx context.Context, in GetInput) (any, error) { return s.GetSetup(ctx, a, in.ServiceID, in.ID) })
+	add(server, "update_provider_setup", "Save declarations with expected revision; edits invalidate earlier consent attempts.", func(ctx context.Context, in connections.UpdateSetupInput) (any, error) {
+		return s.UpdateSetup(ctx, a, in.SetupOperationInput, in.Input)
+	})
+	add(server, "cancel_provider_setup", "Cancel setup and remove staged grants, retaining existing evidence.", func(ctx context.Context, in connections.SetupOperationInput) (any, error) {
+		return s.CancelSetup(ctx, a, in)
+	})
+	add(server, "complete_provider_setup", "Confirm the provider-verified identity and atomically activate one connection. Scope selection remains explicit.", func(ctx context.Context, in connections.SetupOperationInput) (any, error) {
+		return s.CompleteSetup(ctx, a, in)
+	})
+	add(server, "get_aws_setup_material", "Retrieve generated customer trust/read policies and CLI instructions. Requires connect permission; material contains a connection-specific external ID.", func(ctx context.Context, in connections.SetupOperationInput) (any, error) {
+		return s.AWSSetupMaterial(ctx, a, in)
+	})
+	add(server, "verify_aws_setup", "Verify customer role delegation using Fed runtime credentials, never agent credentials.", func(ctx context.Context, in connections.SetupOperationInput) (any, error) {
+		return s.VerifyAWSSetup(ctx, a, in)
+	})
+	add(server, "authorize_provider_setup", "Create a short-lived same-origin handoff for an authorized human browser to grant provider consent.", func(ctx context.Context, in connections.SetupOperationInput) (any, error) {
+		return s.SetupHandoff(ctx, a, in, options.PublicOrigin)
+	})
 	add(server, "resolve_connection_repository_commit", "Resolve a discovered repository branch or ref to a full immutable commit using the selected installation. Select evidence paths only after resolving the commit.", func(ctx context.Context, in connections.ResolveCommitInput) (any, error) {
 		return s.ResolveRepositoryCommit(ctx, a, in)
 	})

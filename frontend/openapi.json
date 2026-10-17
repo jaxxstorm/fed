@@ -74,6 +74,38 @@
         ],
         "type": "object"
       },
+      "BeginSetupInput": {
+        "properties": {
+          "connection_id": {
+            "type": "string"
+          },
+          "expected_revision": {
+            "type": "integer"
+          },
+          "generation": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "input": {
+            "$ref": "#/components/schemas/SetupInput"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "provider",
+          "idempotency_key",
+          "input"
+        ],
+        "type": "object"
+      },
       "CitationCard": {
         "properties": {
           "EndLine": {
@@ -187,6 +219,9 @@
       "Connection": {
         "properties": {
           "access_mode": {
+            "type": "string"
+          },
+          "access_strategy": {
             "type": "string"
           },
           "actor_id": {
@@ -1451,6 +1486,64 @@
         ],
         "type": "object"
       },
+      "Setup": {
+        "properties": {
+          "actor_id": {
+            "type": "string"
+          },
+          "connection_id": {
+            "type": "string"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "expires_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "input": {
+            "$ref": "#/components/schemas/SetupInput"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "step": {
+            "type": "string"
+          },
+          "strategy": {
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "verified_account_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "service_id",
+          "provider",
+          "strategy",
+          "step",
+          "revision",
+          "input",
+          "actor_id",
+          "expires_at",
+          "updated_at"
+        ],
+        "type": "object"
+      },
       "SetupGuide": {
         "properties": {
           "callback_path": {
@@ -1482,6 +1575,141 @@
           "execution",
           "steps",
           "configuration_names"
+        ],
+        "type": "object"
+      },
+      "SetupInput": {
+        "properties": {
+          "account_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role_arn": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "SetupMaterial": {
+        "properties": {
+          "cli": {
+            "type": "string"
+          },
+          "instructions": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "read_policy": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "role_arn": {
+            "type": "string"
+          },
+          "trust_policy": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "role_arn",
+          "version",
+          "trust_policy",
+          "read_policy",
+          "cli",
+          "instructions"
+        ],
+        "type": "object"
+      },
+      "SetupOperationInput": {
+        "properties": {
+          "expected_revision": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "setup_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "setup_id",
+          "expected_revision",
+          "idempotency_key"
+        ],
+        "type": "object"
+      },
+      "SetupReadiness": {
+        "properties": {
+          "customer_actions": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "missing_configuration": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "operator_actions": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "permissions": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "strategy": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "provider",
+          "ready",
+          "version",
+          "strategy",
+          "missing_configuration",
+          "permissions",
+          "operator_actions",
+          "customer_actions"
         ],
         "type": "object"
       },
@@ -1722,6 +1950,33 @@
           "applicability",
           "statement",
           "state"
+        ],
+        "type": "object"
+      },
+      "UpdateSetupInput": {
+        "properties": {
+          "expected_revision": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "input": {
+            "$ref": "#/components/schemas/SetupInput"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "setup_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "setup_id",
+          "expected_revision",
+          "idempotency_key",
+          "input"
         ],
         "type": "object"
       }
@@ -2638,6 +2893,40 @@
         }
       }
     },
+    "/api/ui/v1/services/{service}/connections/readiness/{provider}/status": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetupReadiness"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
     "/api/ui/v1/services/{service}/connections/rebind-source": {
       "post": {
         "parameters": [
@@ -3248,6 +3537,632 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/setups/authorize": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetupOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorizationHandoff"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/setups/aws-material": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetupOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetupMaterial"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/setups/aws-rotate": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetupOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Setup"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/setups/aws-verify": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetupOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Setup"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/setups/begin": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginSetupInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Setup"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/setups/cancel": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetupOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Setup"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/setups/complete": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetupOperationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Setup"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/setups/update": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSetupInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Setup"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/connections/setups/{setup}/status": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "setup",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Setup"
                 }
               }
             },

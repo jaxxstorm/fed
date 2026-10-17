@@ -2,9 +2,11 @@ package checks
 
 import (
 	"context"
+	"encoding/base64"
 	"fmt"
 	"net/http"
 	"net/http/httptest"
+	"strings"
 	"testing"
 	"time"
 
@@ -19,9 +21,26 @@ import (
 )
 
 func TestAWSConnectionSelectionCollectionAndAgentParity(t *testing.T) {
+	t.Run("legacy", func(t *testing.T) { testAWSConnectionJourney(t, false) })
+	t.Run("delegated", func(t *testing.T) { testAWSConnectionJourney(t, true) })
+}
+
+func testAWSConnectionJourney(t *testing.T, delegated bool) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/" {
 			_ = r.ParseForm()
+			w.Header().Set("Content-Type", "text/xml")
+			if delegated && r.Form.Get("Action") == "GetRole" {
+				fmt.Fprint(w, `<GetRoleResponse><GetRoleResult><Role><Arn>arn:aws:iam::123456789012:role/reader</Arn><RoleId>reader</RoleId><RoleName>reader</RoleName><Path>/</Path></Role></GetRoleResult></GetRoleResponse>`)
+				return
+			}
+			if delegated && r.Form.Get("Action") == "AssumeRole" {
+				if len(r.Form.Get("ExternalId")) != 64 {
+					t.Error("generated external ID not used")
+				}
+				fmt.Fprint(w, `<AssumeRoleResponse><AssumeRoleResult><Credentials><AccessKeyId>ASSUMED</AccessKeyId><SecretAccessKey>secret</SecretAccessKey><SessionToken>session</SessionToken><Expiration>2099-01-01T00:00:00Z</Expiration></Credentials><AssumedRoleUser><Arn>arn:aws:sts::123456789012:assumed-role/Customer/fed</Arn><AssumedRoleId>TARGET:fed</AssumedRoleId></AssumedRoleUser></AssumeRoleResult></AssumeRoleResponse>`)
+				return
+			}
 			if r.Form.Get("Action") != "GetCallerIdentity" {
 				t.Error("unexpected STS operation")
 			}
@@ -31,6 +50,9 @@ func TestAWSConnectionSelectionCollectionAndAgentParity(t *testing.T) {
 		}
 		if r.Method != "GET" {
 			t.Error("infrastructure write attempted")
+		}
+		if delegated && !strings.Contains(r.Header.Get("Authorization"), "ASSUMED") {
+			t.Error("collector used ambient credentials")
 		}
 		w.Header().Set("Content-Type", "application/json")
 		switch r.URL.Path {
@@ -49,14 +71,18 @@ func TestAWSConnectionSelectionCollectionAndAgentParity(t *testing.T) {
 		}
 	}))
 	defer server.Close()
-	provider := providers.AWS{Load: func(ctx context.Context, options ...func(*awsconfig.LoadOptions) error) (aws.Config, error) {
+	provider := providers.AWS{FedRoleARN: "arn:aws:iam::123456789012:role/reader", Load: func(ctx context.Context, options ...func(*awsconfig.LoadOptions) error) (aws.Config, error) {
 		var configured awsconfig.LoadOptions
 		for _, option := range options {
 			if err := option(&configured); err != nil {
 				t.Fatal(err)
 			}
 		}
-		if configured.SharedConfigProfile != "read-only" || configured.Region != "us-east-1" {
+		expectedProfile := "read-only"
+		if delegated {
+			expectedProfile = ""
+		}
+		if configured.SharedConfigProfile != expectedProfile || configured.Region != "us-east-1" {
 			t.Fatal("connection credentials or region not applied")
 		}
 		return aws.Config{Region: "us-east-1", BaseEndpoint: aws.String(server.URL), HTTPClient: server.Client(), Credentials: credentials.NewStaticCredentialsProvider("test", "secret", "")}, nil
@@ -74,7 +100,38 @@ func TestAWSConnectionSelectionCollectionAndAgentParity(t *testing.T) {
 	}
 	registry, _ := connections.NewRegistry(map[connections.Provider]connections.Adapter{connections.AWS: provider})
 	s := &connections.Service{DB: db, Registry: registry, Credentials: connections.CredentialStore{DB: db}}
-	d, err := s.Configure(ctx, a, connections.ConfigureInput{ServiceID: service.ID, IdempotencyKey: "configure", Provider: connections.AWS, Name: "AWS", Mode: connections.ServerEnvironment, Configuration: connections.Configuration{AccountID: "123456789012", Region: "us-east-1", Profile: "read-only"}})
+	var d connections.Detail
+	if delegated {
+		s.Credentials.Keys, _ = connections.NewKeyring("test", map[string]string{"test": base64.StdEncoding.EncodeToString(make([]byte, 32))})
+		setup, e := s.BeginSetup(ctx, a, connections.BeginSetupInput{ServiceID: service.ID, Provider: connections.AWS, IdempotencyKey: "begin", Input: connections.SetupInput{Name: "AWS", AccountID: "123456789012"}})
+		if e != nil {
+			t.Fatal(e)
+		}
+		op := connections.SetupOperationInput{ServiceID: service.ID, SetupID: setup.ID, ExpectedRevision: setup.Revision, IdempotencyKey: "configure"}
+		material, e := s.AWSSetupMaterial(ctx, a, op)
+		if e != nil {
+			t.Fatal(e)
+		}
+		setup.Input.RoleARN = material.RoleARN
+		setup, e = s.UpdateSetup(ctx, a, op, setup.Input)
+		if e != nil {
+			t.Fatal(e)
+		}
+		op.ExpectedRevision = setup.Revision
+		setup, e = s.VerifyAWSSetup(ctx, a, op)
+		if e != nil {
+			t.Fatal(e)
+		}
+		op.ExpectedRevision = setup.Revision
+		op.IdempotencyKey = "complete"
+		setup, e = s.CompleteSetup(ctx, a, op)
+		if e != nil {
+			t.Fatal(e)
+		}
+		d, err = s.Get(ctx, a, service.ID, setup.ConnectionID)
+	} else {
+		d, err = s.Configure(ctx, a, connections.ConfigureInput{ServiceID: service.ID, IdempotencyKey: "configure", Provider: connections.AWS, Name: "AWS", Mode: connections.ServerEnvironment, Configuration: connections.Configuration{AccountID: "123456789012", Region: "us-east-1", Profile: "read-only"}})
+	}
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -113,8 +170,15 @@ func TestAWSConnectionSelectionCollectionAndAgentParity(t *testing.T) {
 		t.Fatal("agent parity attribution", err)
 	}
 	in.IdempotencyKey = "renew"
-	if renewed, err := s.Renew(ctx, a, in); err != nil || renewed.Access == nil || renewed.Access.State != connections.AuthorizationRequired {
+	expectedHealth := connections.AuthorizationRequired
+	if delegated {
+		expectedHealth = connections.NotConfigured
+	}
+	if renewed, err := s.Renew(ctx, a, in); err != nil || renewed.Access == nil || renewed.Access.State != expectedHealth {
 		t.Fatal("environment renewal instructions missing", err)
+	}
+	if delegated {
+		in.Generation++
 	}
 	in.IdempotencyKey = "disconnect"
 	if _, err = s.ChangeLifecycle(ctx, a, in, "disconnect"); err != nil {

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
+	"net/url"
 	"strings"
 	"testing"
 	"time"
@@ -103,8 +104,32 @@ func TestAgentConnectionDiscoverySelectionAndRetirement(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	setup := unpack[connections.Setup](t, call("begin_provider_setup", connections.BeginSetupInput{ServiceID: service.ID, Provider: connections.Workspace, IdempotencyKey: "setup", Input: connections.SetupInput{Name: "Workspace"}}))
+	handoff := unpack[connections.AuthorizationHandoff](t, call("authorize_provider_setup", connections.SetupOperationInput{ServiceID: service.ID, SetupID: setup.ID, ExpectedRevision: 1, IdempotencyKey: "handoff"}))
+	u, err := url.Parse(handoff.URL)
+	if err != nil || u.Scheme != "https" || u.Host != "app.example" {
+		t.Fatal("handoff escaped configured origin", err)
+	}
+	w = httptest.NewRecorder()
+	browser.ServeHTTP(w, httptest.NewRequest("GET", "http://127.0.0.1/api/ui/v1/services/"+service.ID+"/connections/setups/"+setup.ID+"/status", nil))
+	var browserSetup connections.Setup
+	if w.Code != 200 || json.Unmarshal(w.Body.Bytes(), &browserSetup) != nil || browserSetup.ID != setup.ID || browserSetup.ActorID != agent.ID {
+		t.Fatal("browser/MCP setup divergence", w.Code, w.Body.String())
+	}
+	if strings.Contains(w.Body.String(), agent.TokenHash) || strings.Contains(w.Body.String(), "refresh_token") {
+		t.Fatal("setup status leaked credentials")
+	}
+	if result := call("get_provider_setup", adapter.GetInput{ServiceID: other.ID, ID: setup.ID}); !result.IsError {
+		t.Fatal("cross-service setup access")
+	}
+	if _, err = db.Exec(ctx, `INSERT INTO sessions(hash,identity_id,csrf_token,expires_at) VALUES('setup-browser',$1,'csrf',now()+interval '1 hour')`, a.ID); err != nil {
+		t.Fatal(err)
+	}
 	if err = auth.RevokeToken(ctx, db, a, service.ID, agent.TokenHash); err != nil {
 		t.Fatal(err)
+	}
+	if _, err = connectionService.ClaimSetupHandoff(ctx, a, u.Query().Get("handoff"), "setup-browser"); err == nil {
+		t.Fatal("revoked initiating agent completed handoff")
 	}
 	// Authorization is checked on each HTTP operation, not just MCP initialize.
 	if _, err = session.CallTool(ctx, &sdk.CallToolParams{Name: "list_evidence_connections", Arguments: adapter.ConnectionListInput{ServiceID: service.ID}}); err == nil {

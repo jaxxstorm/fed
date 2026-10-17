@@ -77,20 +77,21 @@ type Configuration struct {
 }
 
 type Connection struct {
-	VerifiedAccountID   string        `json:"verified_account_id,omitempty"`
-	ID                  string        `json:"id"`
-	ServiceID           string        `json:"service_id"`
-	Provider            Provider      `json:"provider"`
-	Name                string        `json:"name"`
-	Mode                AccessMode    `json:"access_mode"`
-	Configuration       Configuration `json:"configuration"`
-	Lifecycle           Lifecycle     `json:"lifecycle"`
-	Revision            int           `json:"revision"`
-	Generation          int64         `json:"generation"`
-	CredentialReference string        `json:"-"`
-	ActorID             string        `json:"actor_id"`
-	UpdatedAt           time.Time     `json:"updated_at"`
-	Imported            bool          `json:"imported"`
+	Strategy            AccessStrategy `json:"access_strategy,omitempty"`
+	VerifiedAccountID   string         `json:"verified_account_id,omitempty"`
+	ID                  string         `json:"id"`
+	ServiceID           string         `json:"service_id"`
+	Provider            Provider       `json:"provider"`
+	Name                string         `json:"name"`
+	Mode                AccessMode     `json:"access_mode"`
+	Configuration       Configuration  `json:"configuration"`
+	Lifecycle           Lifecycle      `json:"lifecycle"`
+	Revision            int            `json:"revision"`
+	Generation          int64          `json:"generation"`
+	CredentialReference string         `json:"-"`
+	ActorID             string         `json:"actor_id"`
+	UpdatedAt           time.Time      `json:"updated_at"`
+	Imported            bool           `json:"imported"`
 }
 
 // Tenant uses provider-verified identity when available while retaining the

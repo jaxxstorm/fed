@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { api, date, human, request } from "./api";
 import { ErrorPanel } from "./forms";
 import type { components } from "./generated";
+import { ProviderSetup } from "./provider-setup";
 
 type Schema = components["schemas"];
 type Detail = Schema["Detail"];
@@ -33,6 +34,8 @@ export function ConnectionsPage({
   const [params, setParams] = useSearchParams();
   const cache = useQueryClient();
   const [provider, setProvider] = useState(params.get("provider") || "");
+  const [advanced, setAdvanced] = useState(false);
+  const standard = ["aws", "github", "google_workspace"].includes(provider);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<Error | null>(null);
   const [notice, setNotice] = useState("");
@@ -101,6 +104,33 @@ export function ConnectionsPage({
   async function operation(action: string) {
     await run(async () => {
       if (action === "authorize") {
+        if (
+          selected?.connection.access_strategy &&
+          selected.connection.access_strategy !== "legacy"
+        ) {
+          const connection = selected.connection;
+          const setup = await post<Schema["Setup"]>("setups/begin", {
+            ...input(),
+            provider: connection.provider,
+            input: {
+              name: connection.name,
+              ...(connection.provider === "aws"
+                ? {
+                    account_id: connection.configuration.account_id,
+                    role_arn: connection.configuration.role_arn,
+                  }
+                : {}),
+            },
+          });
+          setProvider(connection.provider);
+          setAdvanced(false);
+          setParams({
+            page: "Connections",
+            provider: connection.provider,
+            setup: setup.id,
+          });
+          return;
+        }
         const handoff = await post<Schema["AuthorizationHandoff"]>(
           action,
           input(),
@@ -204,6 +234,7 @@ export function ConnectionsPage({
               key={item.id}
               onClick={() => {
                 setProvider(item.id);
+                setAdvanced(false);
                 setParams({ page: "Connections" });
               }}
             >
@@ -217,7 +248,7 @@ export function ConnectionsPage({
           ))}
         </aside>
         <div className="connection-main">
-          {guide && (
+          {guide && (selected || advanced || !standard) && (
             <section className="panel">
               <h2>{guide.name} setup</h2>
               <p>{guide.guide.execution}</p>
@@ -251,7 +282,25 @@ export function ConnectionsPage({
               </details>
             </section>
           )}
-          {provider && guide && !selected && (
+          {standard && !selected && (
+            <>
+              <button type="button" onClick={() => setAdvanced(!advanced)}>
+                {advanced
+                  ? "Use guided setup"
+                  : "Advanced / agent-managed setup"}
+              </button>
+              {!advanced && (
+                <ProviderSetup
+                  key={provider}
+                  service={service}
+                  provider={provider}
+                  csrf={csrf}
+                  canConnect={canConnect}
+                />
+              )}
+            </>
+          )}
+          {provider && guide && !selected && (!standard || advanced) && (
             <form
               className="panel connection-form"
               onSubmit={(event) => {

@@ -114,6 +114,8 @@ func main() {
 	}
 	out := schema{"openapi": "3.0.3", "info": schema{"title": "Assessment browser API", "version": "1"}, "paths": paths, "components": schema{"schemas": definitions}}
 	connectionBase := "/api/ui/v1/services/{service}/connections"
+	paths[connectionBase+"/setups/{setup}/status"] = schema{"get": schema{"parameters": []any{serviceParameter, schema{"name": "setup", "in": "path", "required": true, "schema": schema{"type": "string"}}}, "responses": schema{"200": response(describe(reflect.TypeFor[connections.Setup]()))}}}
+	paths[connectionBase+"/readiness/{provider}/status"] = schema{"get": schema{"parameters": []any{serviceParameter, schema{"name": "provider", "in": "path", "required": true, "schema": schema{"type": "string"}}}, "responses": schema{"200": response(describe(reflect.TypeFor[connections.SetupReadiness]()))}}}
 	paths[connectionBase+"/scope"] = schema{"get": schema{"parameters": []any{serviceParameter}, "responses": schema{"200": response(describe(reflect.TypeFor[assessment.Record]()))}}}
 	connectionParameter := schema{"name": "connection", "in": "path", "required": true, "schema": schema{"type": "string"}}
 	for suffix, typ := range map[string]reflect.Type{"": reflect.TypeFor[[]connections.Detail](), "/providers": reflect.TypeFor[[]connections.ProviderDefinition](), "/{connection}": reflect.TypeFor[connections.Detail](), "/{connection}/inventory": reflect.TypeFor[connections.InventoryPage](), "/operations/{operation}/status": reflect.TypeFor[connections.Operation]()} {
@@ -128,16 +130,24 @@ func main() {
 	}
 	type actionContract struct{ Input, Output reflect.Type }
 	actions := map[string]actionContract{
-		"resolve-commit":   {reflect.TypeFor[connections.ResolveCommitInput](), reflect.TypeFor[connections.ResolvedCommit]()},
-		"configure":        {reflect.TypeFor[connections.ConfigureInput](), reflect.TypeFor[connections.Detail]()},
-		"test":             {reflect.TypeFor[connections.OperationInput](), reflect.TypeFor[connections.Operation]()},
-		"renew":            {reflect.TypeFor[connections.OperationInput](), reflect.TypeFor[connections.Operation]()},
-		"authorize":        {reflect.TypeFor[connections.OperationInput](), reflect.TypeFor[connections.AuthorizationHandoff]()},
-		"discover":         {reflect.TypeFor[connections.OperationInput](), reflect.TypeFor[connections.DiscoverySession]()},
-		"discover-page":    {reflect.TypeFor[connections.ServerDiscoveryInput](), reflect.TypeFor[connections.DiscoveryReceipt]()},
-		"select":           {reflect.TypeFor[connections.SelectionInput](), reflect.TypeFor[connections.SelectionReceipt]()},
-		"configure-source": {reflect.TypeFor[connections.SourceConfigurationInput](), reflect.TypeFor[assessment.Record]()},
-		"refresh-source":   {reflect.TypeFor[connections.RefreshSourceInput](), reflect.TypeFor[assessment.Record]()},
+		"setups/aws-rotate":   {reflect.TypeFor[connections.SetupOperationInput](), reflect.TypeFor[connections.Setup]()},
+		"setups/begin":        {reflect.TypeFor[connections.BeginSetupInput](), reflect.TypeFor[connections.Setup]()},
+		"setups/update":       {reflect.TypeFor[connections.UpdateSetupInput](), reflect.TypeFor[connections.Setup]()},
+		"setups/cancel":       {reflect.TypeFor[connections.SetupOperationInput](), reflect.TypeFor[connections.Setup]()},
+		"setups/complete":     {reflect.TypeFor[connections.SetupOperationInput](), reflect.TypeFor[connections.Setup]()},
+		"setups/aws-material": {reflect.TypeFor[connections.SetupOperationInput](), reflect.TypeFor[connections.SetupMaterial]()},
+		"setups/aws-verify":   {reflect.TypeFor[connections.SetupOperationInput](), reflect.TypeFor[connections.Setup]()},
+		"setups/authorize":    {reflect.TypeFor[connections.SetupOperationInput](), reflect.TypeFor[connections.AuthorizationHandoff]()},
+		"resolve-commit":      {reflect.TypeFor[connections.ResolveCommitInput](), reflect.TypeFor[connections.ResolvedCommit]()},
+		"configure":           {reflect.TypeFor[connections.ConfigureInput](), reflect.TypeFor[connections.Detail]()},
+		"test":                {reflect.TypeFor[connections.OperationInput](), reflect.TypeFor[connections.Operation]()},
+		"renew":               {reflect.TypeFor[connections.OperationInput](), reflect.TypeFor[connections.Operation]()},
+		"authorize":           {reflect.TypeFor[connections.OperationInput](), reflect.TypeFor[connections.AuthorizationHandoff]()},
+		"discover":            {reflect.TypeFor[connections.OperationInput](), reflect.TypeFor[connections.DiscoverySession]()},
+		"discover-page":       {reflect.TypeFor[connections.ServerDiscoveryInput](), reflect.TypeFor[connections.DiscoveryReceipt]()},
+		"select":              {reflect.TypeFor[connections.SelectionInput](), reflect.TypeFor[connections.SelectionReceipt]()},
+		"configure-source":    {reflect.TypeFor[connections.SourceConfigurationInput](), reflect.TypeFor[assessment.Record]()},
+		"refresh-source":      {reflect.TypeFor[connections.RefreshSourceInput](), reflect.TypeFor[assessment.Record]()},
 	}
 	for _, name := range []string{"disconnect", "delete", "restore"} {
 		actions[name] = actionContract{reflect.TypeFor[connections.OperationInput](), reflect.TypeFor[connections.Detail]()}

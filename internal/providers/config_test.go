@@ -14,8 +14,12 @@ func TestApplicationReadiness(t *testing.T) {
 		t.Fatal("missing applications prevented environment provider", err)
 	}
 	values["KSI_GOOGLE_CLIENT_ID"] = "client"
-	if _, err = FromEnv(get); err == nil {
-		t.Fatal("partial OAuth configuration accepted")
+	adapters, err = FromEnv(get)
+	if err != nil || adapters[connections.Workspace] != nil || adapters[connections.AWS] == nil {
+		t.Fatal("partial OAuth configuration disabled unrelated provider", err)
+	}
+	if SetupReadiness(get)[connections.Workspace].Ready {
+		t.Fatal("incomplete registration marked ready")
 	}
 	values["KSI_GOOGLE_CLIENT_SECRET"] = "secret"
 	adapters, err = FromEnv(get)
@@ -23,7 +27,8 @@ func TestApplicationReadiness(t *testing.T) {
 		t.Fatal("configured Workspace unavailable")
 	}
 	values["KSI_GITHUB_APP_ID"] = "42"
-	if _, err = FromEnv(get); err == nil {
-		t.Fatal("partial GitHub configuration accepted")
+	adapters, err = FromEnv(get)
+	if err != nil || adapters[connections.GitHub] != nil || adapters[connections.Workspace] == nil {
+		t.Fatal("partial GitHub configuration disabled Workspace", err)
 	}
 }
