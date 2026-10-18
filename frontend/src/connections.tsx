@@ -169,8 +169,8 @@ export function ConnectionsPage({
           <p className="eyebrow">Evidence access</p>
           <h1>Connections</h1>
           <p className="muted">
-            Connect once, choose resources, collect evidence. Access health and
-            assessment progress are tracked separately.
+            Finding a resource, verifying access and collecting evidence are
+            separate steps. Discovery alone does not mean Fed can read it.
           </p>
         </div>
         <Link className="button" to="?page=Sources">
@@ -219,7 +219,17 @@ export function ConnectionsPage({
                 {human(item.connection.access_mode)} ·{" "}
                 {human(item.connection.lifecycle)}
               </span>
-              <span>Access: {human(item.access.state)}</span>
+              <span>
+                {item.connection.provider === "aws"
+                  ? "AWS access"
+                  : item.connection.provider === "kubernetes"
+                    ? "Kubernetes API access"
+                    : "Provider access"}
+                : {human(item.access.state)}
+              </span>
+              {item.connection.access_mode === "agent_managed" && (
+                <span>Collected by an external agent, not the Fed server</span>
+              )}
             </button>
           ))}
           {!list.isPending && !list.data?.length && (
@@ -412,6 +422,7 @@ export function ConnectionsPage({
             <>
               <section className="panel">
                 <h2>{selected.connection.name}</h2>
+                <ConnectionReadiness detail={selected} />
                 <p>
                   {selected.discovered_count} discovered ·{" "}
                   {selected.selected_count} selected sources
@@ -422,7 +433,13 @@ export function ConnectionsPage({
                     selected.connection.configuration.account_id}
                 </p>
                 <dl>
-                  <dt>Access</dt>
+                  <dt>
+                    {selected.connection.provider === "aws"
+                      ? "AWS access test"
+                      : selected.connection.provider === "kubernetes"
+                        ? "Kubernetes API access test"
+                        : "Provider access test"}
+                  </dt>
                   <dd>{human(selected.access.state)}</dd>
                   <dt>Last checked</dt>
                   <dd>
@@ -458,6 +475,10 @@ export function ConnectionsPage({
                           disabled={
                             pending ||
                             !canConnect ||
+                            (action === "test" &&
+                              ["agent_managed", "manual"].includes(
+                                selected.connection.access_mode,
+                              )) ||
                             (action === "authorize" &&
                               (selected.connection.access_mode !==
                                 "server_managed" ||
@@ -468,7 +489,9 @@ export function ConnectionsPage({
                           {action === "authorize" &&
                           selected.connection.provider === "kubernetes"
                             ? "Upload access"
-                            : human(action)}
+                            : action === "test"
+                              ? "Test access"
+                              : human(action)}
                         </button>
                       ),
                     )
@@ -595,6 +618,76 @@ export function ConnectionsPage({
         </div>
       </div>
     </section>
+  );
+}
+
+function ConnectionReadiness({ detail }: { detail: Detail }) {
+  const c = detail.connection;
+  const external =
+    c.access_mode === "agent_managed" || c.access_mode === "manual";
+  const verified = detail.access.state === "verified";
+  return (
+    <div className="connection-readiness">
+      <h3>What is ready?</h3>
+      <ol>
+        <li>
+          <strong>Inventory:</strong> {detail.discovered_count} resources
+          recorded; {detail.selected_count} selected as evidence sources.
+          Selection does not prove access or collect evidence.
+        </li>
+        <li>
+          <strong>Access:</strong>{" "}
+          {c.lifecycle !== "active"
+            ? "This connection is inactive. Restore it before testing or collecting."
+            : external
+              ? "Fed is not configured to collect through this connection. An external agent uses its own credentials; server access testing is unavailable in this mode."
+              : verified
+                ? "The recorded access test passed. Individual resources or workloads may still have narrower permissions."
+                : detail.access.checked_at
+                  ? "Access is not currently verified. Review the last test result below before collecting."
+                  : "Access has not been tested. A discovered or configured resource is not yet a verified connection."}
+        </li>
+        <li>
+          <strong>Evidence:</strong> Tests and discovery do not collect
+          evidence. Check{" "}
+          <Link className="text-link" to="?page=Activity">
+            Activity
+          </Link>{" "}
+          for collection results and{" "}
+          <Link className="text-link" to="?page=Sources">
+            Sources
+          </Link>{" "}
+          for evidence freshness.
+        </li>
+      </ol>
+      {c.provider === "aws" && (
+        <p>
+          <strong>EKS discovery is not Kubernetes access.</strong> AWS can list
+          a cluster without granting access to its Kubernetes API. AWS role
+          verification does not verify cluster credentials, Kubernetes RBAC or
+          network reachability. For workload evidence, configure Kubernetes
+          access separately or use an external agent that can reach the cluster.
+        </p>
+      )}
+      {c.provider === "kubernetes" && (
+        <p>
+          <strong>To collect Kubernetes evidence:</strong> the collecting server
+          or agent needs cluster credentials, read permissions and network
+          access to the API endpoint. A private EKS endpoint must be reachable
+          from that collector; AWS discovery alone does not establish this.
+        </p>
+      )}
+      {c.lifecycle === "active" && (
+        <p>
+          <strong>Next:</strong>{" "}
+          {external
+            ? "Use an external agent with access to this resource to submit observations. To let Fed collect directly, edit the access mode and configure server credentials first."
+            : !verified
+              ? "Configure access if needed, then choose Test access. Use the returned error to distinguish missing credentials, permissions and endpoint connectivity."
+              : "Choose the resources and scope you want assessed, then run supported collection from Activity. Check each collection result rather than treating a successful access test as completed evidence."}
+        </p>
+      )}
+    </div>
   );
 }
 
@@ -743,6 +836,13 @@ function SourcePicker({
                 <small>
                   {human(resource.access_mode)} · {date(resource.last_seen_at)}
                 </small>
+                {resource.resource.kind === "eks_cluster" && (
+                  <small>
+                    Found through AWS · Kubernetes API access is not established
+                    by discovery. Configure cluster access or collect with an
+                    external agent.
+                  </small>
+                )}
               </span>
             </label>
             {resource.source_id && resource.bound_connection_id === c.id && (

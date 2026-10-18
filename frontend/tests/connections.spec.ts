@@ -8,6 +8,30 @@ const providers = [
   { id: "kubernetes", name: "Kubernetes" },
 ].map((provider) => ({ ...provider, server_adapter_available: true, access_modes: ["server_managed", "agent_managed"], resource_kinds: ["repository"], permissions: ["Read-only provider metadata"], guide: { version: "1", execution: "Credentials execute on the server; agents may use their own tools.", configuration_names: ["KSI_PUBLIC_URL"], callback_path: `/connections/callback/${provider.id}`, steps: ["Register the provider application with read-only permissions.", "Authorize access and verify the intended account.", "Discover resources, select scope and collect evidence."] } }));
 
+test("EKS discovery and agent-managed cluster access have distinct next steps", async ({ page }) => {
+  const details = [
+    { connection: { id: "aws", name: "AWS inventory", provider: "aws", access_mode: "server_managed", lifecycle: "active", revision: 1, generation: 1, configuration: { account_id: "123456789012" } }, access: { state: "verified", checked_at: "2026-10-17T12:00:00Z", limitations: [] }, discovered_count: 1, selected_count: 0 },
+    { connection: { id: "cluster", name: "Development cluster", provider: "kubernetes", access_mode: "agent_managed", lifecycle: "active", revision: 1, generation: 1, configuration: { account_id: "123456789012/us-east-1/development" } }, access: { state: "not_configured", limitations: [] }, discovered_count: 0, selected_count: 1 },
+  ];
+  await page.route("**/api/ui/v1/**", route => {
+    const path = new URL(route.request().url()).pathname;
+    if (path.endsWith("bootstrap")) return route.fulfill({ json: { services: [{ id: "fixture", name: "Assessment" }], csrf: "csrf", capabilities: { fixture: ["read", "edit", "connect", "check"] } } });
+    if (path.endsWith("providers")) return route.fulfill({ json: providers });
+    if (path.endsWith("scope")) return route.fulfill({ json: { revision: 1 } });
+    if (path.endsWith("inventory")) return route.fulfill({ json: { resources: path.includes("/aws/") ? [{ resource: { provider: "aws", tenant: "123456789012", kind: "eks_cluster", id: "development" }, name: "development", available: true, access_mode: "server_managed", last_seen_at: "2026-10-17T12:00:00Z" }] : [] } });
+    return route.fulfill({ json: details });
+  });
+  await page.goto("/services/fixture?page=Connections&connection=aws");
+  await expect(page.getByText("EKS discovery is not Kubernetes access.", { exact: true })).toBeVisible();
+  await expect(page.getByText(/Found through AWS · Kubernetes API access is not established/)).toBeVisible();
+  await expect(page.getByRole("button", { name: "Test access", exact: true })).toBeEnabled();
+  await page.getByRole("button", { name: /Development cluster/ }).click();
+  await expect(page.getByText(/server access testing is unavailable in this mode/)).toBeVisible();
+  await expect(page.getByRole("button", { name: "Test access", exact: true })).toBeDisabled();
+  await expect(page.getByText(/Use an external agent with access to this resource to submit observations/)).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
 test("provider catalog and named setup fields stay accessible at every viewport", async ({ page }, info) => {
   const created: object[] = [];
   await page.route("**/api/ui/v1/**", (route) => {
