@@ -186,6 +186,9 @@ func (g GitHub) Collect(ctx context.Context, scope assessment.Scope, m assessmen
 			r.Observations = append(r.Observations, Observation{Scope: repo.Name + "@" + repo.Commit, Outcome: "unknown", Error: "no_paths_configured"})
 		}
 		for _, path := range repo.Paths {
+			if !workflowEvidencePath(path) {
+				continue
+			}
 			label := repo.Name + "@" + repo.Commit + ":" + path
 			if g.Token == "" {
 				r.Observations = append(r.Observations, Observation{Scope: label, Outcome: "error", Error: "github_credentials_missing"})
@@ -237,4 +240,13 @@ func (g GitHub) Collect(ctx context.Context, scope assessment.Scope, m assessmen
 	}
 	r.Summarize()
 	return r, nil
+}
+
+func workflowEvidencePath(path string) bool {
+	const prefix = ".github/workflows/"
+	if !strings.HasPrefix(path, prefix) {
+		return false
+	}
+	name := strings.TrimPrefix(path, prefix)
+	return !strings.Contains(name, "/") && (strings.HasSuffix(name, ".yml") || strings.HasSuffix(name, ".yaml"))
 }

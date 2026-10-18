@@ -84,10 +84,12 @@ func (s *Service) RefreshSource(ctx context.Context, a auth.Actor, in RefreshSou
 		p, ok := adapter.(interface {
 			ReadPinned(context.Context, Connection, Credentials, DiscoveredResource, string, string) (Snapshot, error)
 		})
-		if !ok || len(source.Paths) != 1 {
+		if !ok || len(source.Paths) == 0 {
 			return assessment.Record{}, ErrInvalid
 		}
-		snapshot, err = p.ReadPinned(call, access.Connection, access.Credentials, resource, source.Commit, source.Paths[0])
+		snapshot, err = repositorySnapshot(source.Commit, source.Paths, func(path string) (Snapshot, error) {
+			return p.ReadPinned(call, access.Connection, access.Credentials, resource, source.Commit, path)
+		})
 	} else {
 		snapshot, err = adapter.Read(call, access.Connection, access.Credentials, resource)
 	}
@@ -132,4 +134,52 @@ func (s *Service) RefreshSource(ctx context.Context, a auth.Actor, in RefreshSou
 		return out, err
 	}
 	return out, logging.Commit(ctx, tx, logging.Fields{Event: "connection.evidence.refreshed", Component: "connections", ServiceID: in.ServiceID, ActorID: a.ID})
+}
+
+// Explicitly selected files are retained together so a partial read cannot be
+// mistaken for a complete snapshot. []byte encodes losslessly as base64 in JSON.
+func repositorySnapshot(commit string, paths []string, read func(string) (Snapshot, error)) (Snapshot, error) {
+	if len(paths) == 1 {
+		return read(paths[0])
+	}
+	if len(paths) == 0 {
+		return Snapshot{}, ErrInvalid
+	}
+	type file struct {
+		Path        string    `json:"path"`
+		Content     []byte    `json:"content_base64"`
+		ContentHash string    `json:"content_hash"`
+		MediaType   string    `json:"media_type"`
+		ETag        string    `json:"etag"`
+		ObservedAt  time.Time `json:"observed_at"`
+	}
+	files := make([]file, 0, len(paths))
+	var observed time.Time
+	total := 0
+	for _, path := range paths {
+		snapshot, err := read(path)
+		if err != nil {
+			return Snapshot{}, err
+		}
+		total += len(snapshot.Content)
+		if total > MaxResponseBytes {
+			return Snapshot{}, ErrInvalid
+		}
+		if observed.IsZero() || snapshot.ObservedAt.Before(observed) {
+			observed = snapshot.ObservedAt
+		}
+		files = append(files, file{path, snapshot.Content, storage.Hash(snapshot.Content), snapshot.MediaType, snapshot.ETag, snapshot.ObservedAt})
+	}
+	content, err := json.Marshal(struct {
+		Format string `json:"format"`
+		Commit string `json:"commit"`
+		Files  []file `json:"files"`
+	}{"repository-files/v1", commit, files})
+	if err != nil {
+		return Snapshot{}, err
+	}
+	if len(content) > MaxResponseBytes || len(content) > assessment.MaxAgentArtifactBytes {
+		return Snapshot{}, ErrInvalid
+	}
+	return Snapshot{Content: content, MediaType: "application/json", ObservedAt: observed}, nil
 }

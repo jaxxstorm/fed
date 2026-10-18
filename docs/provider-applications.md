@@ -31,7 +31,14 @@ outside the database and retain old key versions while rotating stored grants.
    to the installation. The service checks both user access and the App's
    installation/account identity before storing the binding.
 5. Discover repositories, then select exact full commits and evidence paths.
-   Branch names must be resolved to full commit hashes before collection.
+    Branch names must be resolved to full commit hashes before collection.
+    Refreshing a source with multiple files retains a `repository-files/v1` JSON
+    snapshot with the pinned commit and each path's lossless base64 content,
+    content hash, media type, ETag and observation time. Any failed read aborts
+    the snapshot; aggregate size limits apply. Single-file snapshots retain
+    their original format. The Pulumi workflow check only evaluates direct
+    `.github/workflows/*.yml` and `*.yaml` files; other selected files remain
+    documentary evidence rather than workflow keyword checks.
 
 Installation tokens are short-lived and repository-restricted for file reads.
 Local disconnect does not uninstall the App. Remote removal is performed in

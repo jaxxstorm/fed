@@ -135,6 +135,9 @@ func (r *Runner) collectConnected(ctx context.Context, a auth.Actor, service str
 				continue
 			}
 			for _, path := range repo.Paths {
+				if !workflowEvidencePath(path) {
+					continue
+				}
 				label := repo.Name + "@" + repo.Commit + ":" + path
 				allowed := false
 				for _, selected := range access.Source.Paths {

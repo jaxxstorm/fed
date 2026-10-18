@@ -24,7 +24,7 @@ func TestBoundGitHubNeverFallsBackToGlobalCredentials(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	scope := assessment.Scope{Description: "Repositories", Repositories: []assessment.Repository{{Name: "example/repo", Commit: "1111111111111111111111111111111111111111", Paths: []string{"ci.yaml"}}}}
+	scope := assessment.Scope{Description: "Repositories", Repositories: []assessment.Repository{{Name: "example/repo", Commit: "1111111111111111111111111111111111111111", Paths: []string{".github/workflows/ci.yaml"}}}}
 	if _, err = store.SaveScope(ctx, a, service.ID, 0, scope); err != nil {
 		t.Fatal(err)
 	}
