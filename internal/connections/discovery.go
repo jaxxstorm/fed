@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
 	"net/url"
 	"regexp"
 	"slices"
@@ -87,7 +88,7 @@ func (s *Service) startDiscovery(ctx context.Context, a auth.Actor, in Operation
 		if err = json.Unmarshal(old, &out); err != nil {
 			return out, err
 		}
-		return out, tx.Commit(ctx)
+		return out, commitConnection(ctx, tx, a, "discovery.started", d.Connection, "replayed")
 	}
 	if !errors.Is(err, pgx.ErrNoRows) {
 		return DiscoverySession{}, err
@@ -102,7 +103,7 @@ func (s *Service) startDiscovery(ctx context.Context, a auth.Actor, in Operation
 	if err != nil {
 		return out, err
 	}
-	return out, tx.Commit(ctx)
+	return out, commitConnection(ctx, tx, a, "discovery.started", d.Connection, "")
 }
 
 func (s *Service) SubmitAgentDiscovery(ctx context.Context, a auth.Actor, in DiscoverySubmission) (DiscoveryReceipt, error) {
@@ -198,7 +199,7 @@ func (s *Service) submitDiscovery(ctx context.Context, a auth.Actor, in Discover
 		if err = json.Unmarshal(prior, &out); err != nil {
 			return out, err
 		}
-		return out, tx.Commit(ctx)
+		return out, logging.Commit(ctx, tx, logging.Fields{Event: "connection.discovery.page", Component: "connections", ActorID: a.ID, ServiceID: in.ServiceID, ConnectionID: session.ConnectionID, Outcome: "replayed", Count: out.Accepted})
 	}
 	if !errors.Is(err, pgx.ErrNoRows) {
 		return DiscoveryReceipt{}, err
@@ -308,5 +309,5 @@ func (s *Service) submitDiscovery(ctx context.Context, a auth.Actor, in Discover
 	if err = audit(ctx, tx, a, d.Connection, "discovery.page"); err != nil {
 		return DiscoveryReceipt{}, err
 	}
-	return out, tx.Commit(ctx)
+	return out, logging.Commit(ctx, tx, logging.Fields{Event: "connection.discovery.page", Component: "connections", ActorID: a.ID, ServiceID: in.ServiceID, ConnectionID: session.ConnectionID, Outcome: string(out.State), Count: out.Accepted, Generation: session.Generation})
 }

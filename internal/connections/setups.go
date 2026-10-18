@@ -4,7 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"log/slog"
+	"github.com/jaxxstorm/fed/internal/logging"
+	"github.com/rs/zerolog"
 	"regexp"
 	"strings"
 	"time"
@@ -121,7 +122,7 @@ func (s *Service) BeginSetup(ctx context.Context, a auth.Actor, in BeginSetupInp
 		if err != nil {
 			return out, err
 		}
-		return out, tx.Commit(ctx)
+		return out, commitSetup(ctx, tx, a, "begun", out, "replayed")
 	}
 	now := time.Now().UTC()
 	if in.ConnectionID != "" {
@@ -164,7 +165,7 @@ func (s *Service) BeginSetup(ctx context.Context, a auth.Actor, in BeginSetupInp
 	if err != nil {
 		return out, err
 	}
-	return out, tx.Commit(ctx)
+	return out, commitSetup(ctx, tx, a, "begun", out, "")
 }
 
 // readSetup lazily expires a setup and destroys staged secrets/PKCE values.
@@ -252,7 +253,7 @@ func (s *Service) changeSetup(ctx context.Context, a auth.Actor, in SetupOperati
 		return out, err
 	}
 	if id != "" {
-		return out, tx.Commit(ctx)
+		return out, commitSetup(ctx, tx, a, "changed", out, "replayed")
 	}
 	if out.Step == SetupExpired {
 		if err = tx.Commit(ctx); err != nil {
@@ -295,7 +296,7 @@ func (s *Service) changeSetup(ctx context.Context, a auth.Actor, in SetupOperati
 	if err = saveSetupReceipt(ctx, tx, a, in.ServiceID, operation, in.IdempotencyKey, digest, out.ID); err != nil {
 		return out, err
 	}
-	return out, tx.Commit(ctx)
+	return out, commitSetup(ctx, tx, a, "changed", out, "")
 }
 
 // ExpireSetups is bounded for periodic worker use. It never returns grant data.
@@ -341,6 +342,9 @@ func (s *Service) ExpireSetups(ctx context.Context, limit int) (int, error) {
 		}
 		count++
 	}
+	if count > 0 {
+		logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "connection.setup.cleanup.completed", Component: "connections", Count: count, Outcome: "success"})
+	}
 	return count, nil
 }
 
@@ -354,7 +358,7 @@ func (s *Service) MaintainSetups(ctx context.Context) {
 		_, err := s.ExpireSetups(call, 100)
 		cancel()
 		if err != nil && ctx.Err() == nil {
-			slog.Warn("provider setup cleanup failed")
+			logging.Emit(ctx, zerolog.WarnLevel, logging.Fields{Event: "connection.setup.cleanup.failed", Component: "connections", ErrorCode: logging.Code(err)})
 		}
 		select {
 		case <-ctx.Done():

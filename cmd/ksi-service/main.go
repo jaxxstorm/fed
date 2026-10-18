@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"errors"
-	"log/slog"
+	"net"
 	"net/http"
 	"os"
 	"os/signal"
@@ -19,22 +19,52 @@ import (
 	"github.com/jaxxstorm/fed/internal/checks"
 	"github.com/jaxxstorm/fed/internal/config"
 	"github.com/jaxxstorm/fed/internal/connections"
+	"github.com/jaxxstorm/fed/internal/logging"
 	mcpserver "github.com/jaxxstorm/fed/internal/mcp"
 	"github.com/jaxxstorm/fed/internal/providers"
 	"github.com/jaxxstorm/fed/internal/storage"
 	"github.com/jaxxstorm/fed/internal/web"
 	"github.com/labstack/echo/v4"
+	"github.com/rs/zerolog"
 )
 
 func main() {
 	if err := run(); err != nil {
-		// Driver errors can contain connection details: do not log them here.
-		slog.Error("service stopped", "reason", err.Error())
 		os.Exit(1)
 	}
 }
 
-func run() error {
+func run() (runErr error) {
+	mode := os.Getenv("KSI_MODE")
+	if len(os.Args) > 1 {
+		switch os.Args[1] {
+		case "migrate", "import-catalog", "provision-runtime", "import-connections", "rotate-connection-keys":
+			mode = "migrate"
+		}
+	}
+	switch mode {
+	case "server", "worker", "all", "migrate":
+	default:
+		mode = "server"
+	}
+	logger, err := logging.FromEnv(os.Getenv, mode)
+	if err != nil {
+		logger, _ = logging.New(os.Stdout, os.Stderr, "info", "json", mode)
+		logging.Emit(logging.WithLogger(context.Background(), logger), zerolog.ErrorLevel, logging.Fields{Event: "runtime.configuration.failed", Component: "runtime", ErrorCode: "invalid_logging_configuration"})
+		return err
+	}
+	root := logging.WithLogger(context.Background(), logger)
+	stage := "configuration"
+	logging.Emit(root, zerolog.InfoLevel, logging.Fields{Event: "runtime.starting", Component: "runtime"})
+	defer func() {
+		level := zerolog.InfoLevel
+		outcome := "success"
+		if runErr != nil {
+			level = zerolog.ErrorLevel
+			outcome = "failed"
+		}
+		logging.Emit(root, level, logging.Fields{Event: "runtime.stopped", Component: "runtime", Stage: stage, Outcome: outcome, ErrorCode: logging.Code(runErr)})
+	}()
 	command := ""
 	if len(os.Args) > 1 {
 		command = os.Args[1]
@@ -48,8 +78,9 @@ func run() error {
 	if err != nil {
 		return err
 	}
-	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	ctx, stop := signal.NotifyContext(root, os.Interrupt, syscall.SIGTERM)
 	defer stop()
+	stage = "database"
 	db, err := pgxpool.New(ctx, cfg.DatabaseURL)
 	if err != nil {
 		return errors.New("database configuration failed")
@@ -62,6 +93,7 @@ func run() error {
 		return errors.New("database connection failed")
 	}
 	if command == "import-catalog" {
+		stage = "import_catalog"
 		if len(os.Args) != 5 {
 			return errors.New("usage: ksi-service import-catalog rules.json schema.json commit-sha")
 		}
@@ -73,26 +105,30 @@ func run() error {
 		if err != nil {
 			return errors.New("cannot read schema file")
 		}
-		id, err := catalog.Import(ctx, db, payload, schema, os.Args[4])
+		_, err = catalog.Import(ctx, db, payload, schema, os.Args[4])
 		if err != nil {
 			return err
 		}
-		slog.Info("catalog imported", "catalog_id", id)
+		logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "runtime.catalog.imported", Component: "runtime", Outcome: "success"})
 		return nil
 	}
 	if command == "import-connections" || command == "rotate-connection-keys" {
+		stage = command
 		return maintainConnections(ctx, db, cfg, command)
 	}
 	if command == "provision-runtime" {
+		stage = "provision_runtime"
 		return provisionRuntime(ctx, db, os.Getenv("KSI_RUNTIME_DATABASE_PASSWORD"))
 	}
 	if cfg.Mode == "migrate" {
+		stage = "migration"
 		if err := storage.Migrate(ctx, db); err != nil {
 			return errors.New("database migration failed")
 		}
 		return nil
 	}
 	var artifacts storage.Artifacts = storage.Files{Directory: cfg.ArtifactDirectory}
+	stage = "providers"
 	if cfg.ArtifactBucket != "" {
 		awsCfg, err := awsconfig.LoadDefaultConfig(ctx)
 		if err != nil {
@@ -115,10 +151,19 @@ func run() error {
 	keys, _ := connections.LoadKeyring()
 	connectionService := &connections.Service{DB: db, Registry: registry, Credentials: connections.CredentialStore{DB: db, Keys: keys}, Artifacts: artifacts}
 	connectionService.SetupReadiness = providers.SetupReadiness(os.Getenv)
+	for provider, readiness := range connectionService.SetupReadiness {
+		outcome, level := "configured", zerolog.InfoLevel
+		if !readiness.Ready {
+			outcome = "configuration_required"
+			level = zerolog.WarnLevel
+		}
+		logging.Emit(ctx, level, logging.Fields{Event: "runtime.provider.configuration", Component: "runtime", Provider: string(provider), Outcome: outcome, Count: len(readiness.MissingConfiguration)})
+	}
 	go connectionService.MaintainSetups(ctx)
 	// Workers must respect existing bindings even when the setup UI is disabled.
 	runner.Connections = connectionService
 	if cfg.Mode == "worker" {
+		stage = "worker"
 		return runner.Run(ctx)
 	}
 	workerResult := make(chan error, 1)
@@ -126,6 +171,7 @@ func run() error {
 		go func() { workerResult <- runner.Run(ctx) }()
 	}
 	var browser *auth.Browser
+	stage = "authentication"
 	if cfg.DevIdentity {
 		actor, err := auth.BootstrapAdmin(ctx, db, "local-development", "developer")
 		if err != nil {
@@ -161,12 +207,18 @@ func run() error {
 	if cfg.ConnectionsEnabled {
 		e.Any("/connections/*", protected)
 	}
-	srv := &http.Server{Addr: cfg.Listen, Handler: e, ReadHeaderTimeout: 5 * time.Second, IdleTimeout: 60 * time.Second}
+	srv := &http.Server{Addr: cfg.Listen, Handler: e, ReadHeaderTimeout: 5 * time.Second, IdleTimeout: 60 * time.Second, BaseContext: func(net.Listener) context.Context { return root }}
 	result := make(chan error, 1)
-	go func() { result <- srv.ListenAndServe() }()
-	slog.Info("server started", "address", cfg.Listen, "development_identity", cfg.DevIdentity)
+	stage = "listener"
+	listener, err := net.Listen("tcp", cfg.Listen)
+	if err != nil {
+		return errors.New("HTTP listener failed")
+	}
+	go func() { result <- srv.Serve(listener) }()
+	logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "runtime.server.ready", Component: "runtime"})
 	select {
 	case err := <-workerResult:
+		stage = "worker"
 		stop()
 		shutdown, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
@@ -181,6 +233,7 @@ func run() error {
 		}
 		return errors.New("HTTP listener failed")
 	case <-ctx.Done():
+		logging.Emit(root, zerolog.InfoLevel, logging.Fields{Event: "runtime.shutdown.started", Component: "runtime"})
 		shutdown, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
 		return srv.Shutdown(shutdown)

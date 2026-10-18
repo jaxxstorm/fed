@@ -35,7 +35,9 @@ type AWS struct {
 	Load       func(context.Context, ...func(*awsconfig.LoadOptions) error) (aws.Config, error)
 }
 
-func (p AWS) Configuration(ctx context.Context, c connections.Connection, credentials connections.Credentials) (aws.Config, error) {
+func (p AWS) Configuration(ctx context.Context, c connections.Connection, credentials connections.Credentials) (_ aws.Config, resultErr error) {
+	finish := observeOperation(ctx, c, "aws.configuration")
+	defer func() { finish(resultErr) }()
 	cfg, _, err := p.configuration(ctx, c, credentials)
 	return cfg, err
 }
@@ -271,7 +273,9 @@ func (p AWS) Discover(ctx context.Context, c connections.Connection, credentials
 	return out, nil
 }
 
-func (p AWS) Renew(ctx context.Context, c connections.Connection, credentials connections.Credentials) (connections.Credentials, error) {
+func (p AWS) Renew(ctx context.Context, c connections.Connection, credentials connections.Credentials) (_ connections.Credentials, resultErr error) {
+	finish := observeOperation(ctx, c, "aws.renew")
+	defer func() { finish(resultErr) }()
 	_, err := p.Configuration(ctx, c, credentials)
 	return credentials, err
 }

@@ -59,7 +59,9 @@ func (p *Workspace) customer(ctx context.Context, token string) (string, error) 
 	return result.ID, nil
 }
 
-func (p *Workspace) ExchangeAuthorization(ctx context.Context, c connections.Connection, claim connections.AuthorizationClaim, response connections.AuthorizationResponse) (connections.AuthorizedGrant, error) {
+func (p *Workspace) ExchangeAuthorization(ctx context.Context, c connections.Connection, claim connections.AuthorizationClaim, response connections.AuthorizationResponse) (_ connections.AuthorizedGrant, resultErr error) {
+	finish := observeOperation(ctx, c, "workspace.consent.exchange")
+	defer func() { finish(resultErr) }()
 	config := p.oauth
 	config.RedirectURL = claim.RedirectURI
 	token, err := config.Exchange(oauthContext(ctx, p.http), response.Code, oauth2.VerifierOption(claim.Verifier.Value("verifier")))
@@ -85,7 +87,9 @@ func (p *Workspace) ExchangeAuthorization(ctx context.Context, c connections.Con
 
 // Refresh is explicitly coordinated by the connection service; ordinary reads
 // never rotate an offline grant behind its generation fence.
-func (p *Workspace) Renew(ctx context.Context, c connections.Connection, k connections.Credentials) (connections.Credentials, error) {
+func (p *Workspace) Renew(ctx context.Context, c connections.Connection, k connections.Credentials) (_ connections.Credentials, resultErr error) {
+	finish := observeOperation(ctx, c, "workspace.renew")
+	defer func() { finish(resultErr) }()
 	if k.Value("refresh_token") == "" {
 		return connections.Credentials{}, ProviderError("offline_consent_required")
 	}

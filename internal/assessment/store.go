@@ -6,6 +6,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
 	"time"
 
 	"github.com/google/uuid"
@@ -81,7 +82,7 @@ func (s *Store) CreateService(ctx context.Context, a auth.Actor, name string) (S
 	if err = audit(ctx, tx, a, v.ID, "service.created", v.ID, 1); err != nil {
 		return Service{}, err
 	}
-	return v, tx.Commit(ctx)
+	return v, logging.Commit(ctx, tx, logging.Fields{Event: "assessment.service.created", Component: "assessment", ActorID: a.ID, ServiceID: v.ID})
 }
 
 func (s *Store) Services(ctx context.Context, a auth.Actor) ([]Service, error) {
@@ -203,5 +204,5 @@ func (s *Store) mutate(ctx context.Context, a auth.Actor, r Record, expected int
 	if err = audit(ctx, tx, a, r.ServiceID, r.Kind+".saved", r.ID, r.Revision); err != nil {
 		return Record{}, err
 	}
-	return r, tx.Commit(ctx)
+	return r, logging.Commit(ctx, tx, logging.Fields{Event: "assessment.record.committed", Component: "assessment", ActorID: a.ID, ServiceID: r.ServiceID, RecordID: r.ID, Stage: r.Kind, Revision: r.Revision})
 }

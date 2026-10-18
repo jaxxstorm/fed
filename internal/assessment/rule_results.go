@@ -220,7 +220,7 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 	if err = saveOperation(ctx, tx, a, in.ServiceID, "submit_rule_result", in.IdempotencyKey, digest, receipt); err != nil {
 		return receipt, err
 	}
-	return receipt, tx.Commit(ctx)
+	return receipt, commitOperation(ctx, tx, a, in.ServiceID, "rule_result.submitted", Record{ID: receipt.Draft.ID, Revision: receipt.Draft.Revision})
 }
 
 // WorkStatus does not require a collection plan or a draft.

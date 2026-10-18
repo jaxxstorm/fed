@@ -14,8 +14,10 @@ import (
 	"github.com/jaxxstorm/fed/internal/assessment"
 	"github.com/jaxxstorm/fed/internal/auth"
 	"github.com/jaxxstorm/fed/internal/connections"
+	"github.com/jaxxstorm/fed/internal/logging"
 	"github.com/jaxxstorm/fed/internal/observation"
 	"github.com/jaxxstorm/fed/internal/storage"
+	"github.com/rs/zerolog"
 )
 
 type Input struct {
@@ -79,6 +81,7 @@ type Runner struct {
 	Registry    map[string]Collector
 }
 type Job struct {
+	BatchID       string    `json:"-"`
 	ID            string    `json:"id"`
 	ServiceID     string    `json:"service_id"`
 	ActorID       string    `json:"actor_id"`
@@ -126,6 +129,9 @@ func (r *Runner) Enqueue(ctx context.Context, a auth.Actor, service, requirement
 		}
 		var j Job
 		err = json.Unmarshal(response, &j)
+		if err == nil {
+			logging.Emit(ctx, zerolog.InfoLevel, jobFields(j, "enqueued", "replayed"))
+		}
 		return j, err
 	}
 	if !errors.Is(err, pgx.ErrNoRows) {
@@ -162,7 +168,7 @@ func (r *Runner) Enqueue(ctx context.Context, a auth.Actor, service, requirement
 	if _, err = tx.Exec(ctx, `INSERT INTO audit_events(organization_id,service_id,actor_id,action,target) VALUES($1,$2,$3,'check.queued',$4)`, a.OrganizationID, service, a.ID, j.ID); err != nil {
 		return Job{}, err
 	}
-	return j, tx.Commit(ctx)
+	return j, logging.Commit(ctx, tx, jobFields(j, "enqueued", "success"))
 }
 
 func loadInput(ctx context.Context, q auth.Querier, service, requirement, check string, in Input, current bool) (assessment.Scope, assessment.Measure, error) {
@@ -278,8 +284,26 @@ func (r *Runner) claim(ctx context.Context) (Job, error) {
 		return Job{}, err
 	}
 	defer tx.Rollback(ctx)
-	if _, err = tx.Exec(ctx, `UPDATE jobs SET state=CASE WHEN deadline<=now() THEN 'timed-out' ELSE 'failed' END,updated_at=now() WHERE state IN ('queued','running') AND (lease_until IS NULL OR lease_until<now()) AND (deadline<=now() OR attempts>=max_attempts)`); err != nil {
+	rows, err := tx.Query(ctx, `UPDATE jobs SET state=CASE WHEN deadline<=now() THEN 'timed-out' ELSE 'failed' END,updated_at=now() WHERE state IN ('queued','running') AND (lease_until IS NULL OR lease_until<now()) AND (deadline<=now() OR attempts>=max_attempts) RETURNING id,service_id,attempts,state`)
+	if err != nil {
 		return Job{}, err
+	}
+	expired, err := pgx.CollectRows(rows, func(row pgx.CollectableRow) (Job, error) {
+		var j Job
+		err := row.Scan(&j.ID, &j.ServiceID, &j.Attempts, &j.State)
+		return j, err
+	})
+	if err != nil {
+		return Job{}, err
+	}
+	commit := func() error {
+		err := tx.Commit(ctx)
+		if err == nil {
+			for _, j := range expired {
+				logging.Emit(ctx, zerolog.ErrorLevel, jobFields(j, "exhausted", j.State))
+			}
+		}
+		return err
 	}
 	var j Job
 	var raw []byte
@@ -287,7 +311,7 @@ func (r *Runner) claim(ctx context.Context) (Job, error) {
 AND available_at<=now() AND NOT EXISTS(SELECT 1 FROM collection_batch_jobs bj JOIN collection_batches b ON b.service_id=bj.service_id AND b.id=bj.batch_id JOIN collection_schedules s ON s.service_id=b.service_id WHERE bj.job_id=jobs.id AND bj.service_id=jobs.service_id AND b.slot LIKE 'schedule:%' AND s.paused)
 ORDER BY created_at FOR UPDATE SKIP LOCKED LIMIT 1`).Scan(&j.ID, &j.ServiceID, &j.ActorID, &j.TokenHash, &j.RequirementID, &j.CheckID, &raw, &j.Attempts)
 	if errors.Is(err, pgx.ErrNoRows) {
-		if commitErr := tx.Commit(ctx); commitErr != nil {
+		if commitErr := commit(); commitErr != nil {
 			return j, commitErr
 		}
 		return j, err
@@ -298,7 +322,8 @@ ORDER BY created_at FOR UPDATE SKIP LOCKED LIMIT 1`).Scan(&j.ID, &j.ServiceID, &
 	if err = json.Unmarshal(raw, &j.Input); err != nil {
 		return j, err
 	}
-	if _, err = tx.Exec(ctx, `UPDATE job_attempts SET finished_at=now(),outcome='lease_expired' WHERE job_id=$1 AND finished_at IS NULL`, j.ID); err != nil {
+	recovered, err := tx.Exec(ctx, `UPDATE job_attempts SET finished_at=now(),outcome='lease_expired' WHERE job_id=$1 AND finished_at IS NULL`, j.ID)
+	if err != nil {
 		return j, err
 	}
 	j.Attempts++
@@ -310,17 +335,30 @@ ORDER BY created_at FOR UPDATE SKIP LOCKED LIMIT 1`).Scan(&j.ID, &j.ServiceID, &
 	if _, err = tx.Exec(ctx, `INSERT INTO job_attempts(job_id,attempt,lease_id) VALUES($1,$2,$3)`, j.ID, j.Attempts, j.LeaseID); err != nil {
 		return j, err
 	}
-	return j, tx.Commit(ctx)
+	err = commit()
+	if err == nil {
+		if recovered.RowsAffected() > 0 {
+			logging.Emit(ctx, zerolog.WarnLevel, jobFields(j, "lease_recovered", "retry"))
+		}
+		logging.Emit(ctx, zerolog.InfoLevel, jobFields(j, "claimed", "success"))
+	}
+	return j, err
 }
 
 func (r *Runner) RunOnce(ctx context.Context) (bool, error) {
+	ctx = logging.Operation(ctx)
 	j, err := r.claim(ctx)
 	if errors.Is(err, pgx.ErrNoRows) {
+		logging.Emit(ctx, zerolog.DebugLevel, logging.Fields{Event: "collection.queue.idle", Component: "worker"})
 		return false, nil
 	}
 	if err != nil {
 		return false, err
 	}
+	_ = r.DB.QueryRow(ctx, `SELECT batch_id FROM collection_batch_jobs WHERE service_id=$1 AND job_id=$2 LIMIT 1`, j.ServiceID, j.ID).Scan(&j.BatchID)
+	ctx = logging.Identity(ctx, j.ActorID, j.ServiceID)
+	logging.Emit(ctx, zerolog.InfoLevel, jobFields(j, "attempt.started", "running"))
+	started := time.Now()
 	a := auth.Actor{ID: j.ActorID}
 	if j.TokenHash != nil {
 		a.TokenHash = *j.TokenHash
@@ -342,6 +380,15 @@ func (r *Runner) RunOnce(ctx context.Context) (bool, error) {
 			} else {
 				deadline, cancel := context.WithTimeout(ctx, 60*time.Second)
 				result, connectionAccess, err = r.collectConnected(deadline, a, j.ServiceID, collector, scope, measure)
+				fields := jobFields(j, "collector.completed", "success")
+				fields.Duration = time.Since(started)
+				fields.ErrorCode = logging.Code(err)
+				level := zerolog.DebugLevel
+				if err != nil {
+					level = zerolog.WarnLevel
+					fields.Outcome = "failed"
+				}
+				logging.Emit(ctx, level, fields)
 				cancel()
 			}
 		}
@@ -353,6 +400,11 @@ func (r *Runner) RunOnce(ctx context.Context) (bool, error) {
 	}
 	result.CollectorVersion = "1"
 	result.Summarize()
+	if result.Observed < result.Expected {
+		fields := jobFields(j, "coverage", "partial")
+		fields.Count = result.Observed
+		logging.Emit(ctx, zerolog.WarnLevel, fields)
+	}
 	if r.Artifacts == nil {
 		return true, r.retry(ctx, j, errors.New("artifact storage unavailable"))
 	}
@@ -397,7 +449,21 @@ func (r *Runner) retry(ctx context.Context, j Job, cause error) error {
 	if _, err = tx.Exec(ctx, `UPDATE job_attempts SET finished_at=now(),outcome=$3 WHERE job_id=$1 AND attempt=$2`, j.ID, j.Attempts, reason); err != nil {
 		return err
 	}
-	return tx.Commit(ctx)
+	if err = tx.QueryRow(ctx, `SELECT state FROM jobs WHERE id=$1`, j.ID).Scan(&state); err != nil {
+		return err
+	}
+	err = tx.Commit(ctx)
+	if err == nil {
+		event, level := "retry_scheduled", zerolog.WarnLevel
+		if state != "queued" {
+			event = "failed"
+			level = zerolog.ErrorLevel
+		}
+		fields := jobFields(j, event, state)
+		fields.ErrorCode = reason
+		logging.Emit(ctx, level, fields)
+	}
+	return err
 }
 
 func (r *Runner) finish(ctx context.Context, a auth.Actor, j Job, result Result, key string, accesses ...connections.CollectionAccess) error {
@@ -484,16 +550,30 @@ func (r *Runner) finish(ctx context.Context, a auth.Actor, j Job, result Result,
 	if _, err = tx.Exec(ctx, `INSERT INTO audit_events(organization_id,service_id,actor_id,action,target) VALUES($1,$2,$3,'check.completed',$4)`, a.OrganizationID, j.ServiceID, a.ID, j.ID); err != nil {
 		return err
 	}
-	return tx.Commit(ctx)
+	return logging.Commit(ctx, tx, jobFields(j, "completed", "success"))
 }
 
-func (r *Runner) Run(ctx context.Context) error {
+func jobFields(j Job, event, outcome string) logging.Fields {
+	return logging.Fields{Event: "collection.job." + event, Component: "worker", JobID: j.ID, BatchID: j.BatchID, ServiceID: j.ServiceID, ActorID: j.ActorID, Attempt: j.Attempts, Outcome: outcome, Stage: j.CheckID}
+}
+
+func (r *Runner) Run(ctx context.Context) (runErr error) {
+	logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "runtime.worker.starting", Component: "worker"})
+	defer func() {
+		level, outcome := zerolog.InfoLevel, "stopped"
+		if runErr != nil {
+			level = zerolog.ErrorLevel
+			outcome = "failed"
+		}
+		logging.Emit(ctx, level, logging.Fields{Event: "runtime.worker.stopped", Component: "worker", Outcome: outcome, ErrorCode: logging.Code(runErr)})
+	}()
 	if _, err := r.DB.Exec(ctx, `INSERT INTO collection_outbox(service_id) SELECT id FROM services ON CONFLICT(service_id) DO UPDATE SET generation=collection_outbox.generation+1,updated_at=now()`); err != nil {
 		if ctx.Err() != nil {
 			return nil
 		}
 		return err
 	}
+	logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "runtime.worker.ready", Component: "worker"})
 	ticker := time.NewTicker(time.Second)
 	defer ticker.Stop()
 	for {

@@ -14,12 +14,12 @@ import (
 	"github.com/jaxxstorm/fed/internal/connections"
 )
 
-func connectionFailure(w http.ResponseWriter, err error) {
+func connectionFailure(w http.ResponseWriter, err error, r *http.Request) {
 	code := "connection_operation_failed"
 	status := http.StatusBadGateway
 	switch {
 	case errors.Is(err, auth.ErrForbidden):
-		uiFailure(w, err)
+		uiFailure(w, err, r.Context())
 		return
 	case errors.Is(err, connections.ErrInvalid):
 		code = "invalid_input"
@@ -57,6 +57,7 @@ func connectionFailure(w http.ResponseWriter, err error) {
 	if status == 400 {
 		e.FieldErrors = map[string]string{"configuration": "Check the account, provider-specific fields, source scope and required revisions."}
 	}
+	diagnostic(r.Context(), e, status)
 	jsonResponse(w, status, e)
 }
 
@@ -65,26 +66,26 @@ func connectionAction[I any, O any](mux *http.ServeMux, path string, call func(c
 		w.Header().Set("Cache-Control", "no-store")
 		body, err := io.ReadAll(http.MaxBytesReader(w, r.Body, 2<<20))
 		if err != nil {
-			connectionFailure(w, connections.ErrInvalid)
+			connectionFailure(w, connections.ErrInvalid, r)
 			return
 		}
 		var envelope struct {
 			ServiceID string `json:"service_id"`
 		}
 		if json.Unmarshal(body, &envelope) != nil || envelope.ServiceID != r.PathValue("service") {
-			connectionFailure(w, connections.ErrInvalid)
+			connectionFailure(w, connections.ErrInvalid, r)
 			return
 		}
 		var in I
 		decoder := json.NewDecoder(bytes.NewReader(body))
 		decoder.DisallowUnknownFields()
 		if decoder.Decode(&in) != nil {
-			connectionFailure(w, connections.ErrInvalid)
+			connectionFailure(w, connections.ErrInvalid, r)
 			return
 		}
 		out, err := call(r.Context(), auth.FromContext(r.Context()), in)
 		if err != nil {
-			connectionFailure(w, err)
+			connectionFailure(w, err, r)
 			return
 		}
 		jsonResponse(w, 200, out)
@@ -101,7 +102,7 @@ func (app *App) registerConnectionAPI(mux *http.ServeMux) {
 			return
 		}
 		if err != nil {
-			connectionFailure(w, err)
+			connectionFailure(w, err, r)
 			return
 		}
 		jsonResponse(w, 200, out)
@@ -109,14 +110,14 @@ func (app *App) registerConnectionAPI(mux *http.ServeMux) {
 	mux.HandleFunc("GET /api/ui/v1/services/{service}/connections", func(w http.ResponseWriter, r *http.Request) {
 		out, err := s.List(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), r.URL.Query().Get("include_deleted") == "true")
 		if err != nil {
-			connectionFailure(w, err)
+			connectionFailure(w, err, r)
 			return
 		}
 		jsonResponse(w, 200, out)
 	})
 	mux.HandleFunc("GET /api/ui/v1/services/{service}/connections/providers", func(w http.ResponseWriter, r *http.Request) {
 		if err := auth.Authorize(r.Context(), s.DB, auth.FromContext(r.Context()), r.PathValue("service"), "read"); err != nil {
-			connectionFailure(w, err)
+			connectionFailure(w, err, r)
 			return
 		}
 		jsonResponse(w, 200, s.Registry.Providers())
@@ -124,7 +125,7 @@ func (app *App) registerConnectionAPI(mux *http.ServeMux) {
 	mux.HandleFunc("GET /api/ui/v1/services/{service}/connections/{connection}", func(w http.ResponseWriter, r *http.Request) {
 		out, err := s.Get(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), r.PathValue("connection"))
 		if err != nil {
-			connectionFailure(w, err)
+			connectionFailure(w, err, r)
 			return
 		}
 		jsonResponse(w, 200, out)
@@ -136,13 +137,13 @@ func (app *App) registerConnectionAPI(mux *http.ServeMux) {
 			var err error
 			limit, err = strconv.Atoi(query.Get("limit"))
 			if err != nil {
-				connectionFailure(w, connections.ErrInvalid)
+				connectionFailure(w, connections.ErrInvalid, r)
 				return
 			}
 		}
 		out, err := s.ListInventory(r.Context(), auth.FromContext(r.Context()), connections.InventoryQuery{ServiceID: r.PathValue("service"), ConnectionID: r.PathValue("connection"), Limit: limit, Cursor: query.Get("cursor"), Search: query.Get("q"), Selection: query.Get("selection"), Kind: query.Get("kind")})
 		if err != nil {
-			connectionFailure(w, err)
+			connectionFailure(w, err, r)
 			return
 		}
 		jsonResponse(w, 200, out)
@@ -150,7 +151,7 @@ func (app *App) registerConnectionAPI(mux *http.ServeMux) {
 	mux.HandleFunc("GET /api/ui/v1/services/{service}/connections/operations/{operation}/status", func(w http.ResponseWriter, r *http.Request) {
 		out, err := s.GetOperation(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), r.PathValue("operation"))
 		if err != nil {
-			connectionFailure(w, err)
+			connectionFailure(w, err, r)
 			return
 		}
 		jsonResponse(w, 200, out)

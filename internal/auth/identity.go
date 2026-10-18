@@ -11,6 +11,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/jaxxstorm/fed/internal/logging"
 	"github.com/jaxxstorm/fed/internal/storage"
 )
 
@@ -26,6 +27,8 @@ type Actor struct {
 type actorKey struct{}
 
 func WithActor(ctx context.Context, a Actor) context.Context {
+	logging.Actor(ctx, a.ID)
+	ctx = logging.Identity(ctx, a.ID, "")
 	return context.WithValue(ctx, actorKey{}, a)
 }
 func FromContext(ctx context.Context) Actor { a, _ := ctx.Value(actorKey{}).(Actor); return a }
@@ -67,6 +70,7 @@ func Authorize(ctx context.Context, q Querier, a Actor, service, action string) 
 	if err != nil || !allowed {
 		return ErrForbidden
 	}
+	logging.Authorized(ctx, a.ID, service)
 	return nil
 }
 
@@ -143,7 +147,7 @@ func IssueToken(ctx context.Context, db *pgxpool.Pool, admin Actor, service stri
 	if _, err = tx.Exec(ctx, `INSERT INTO audit_events(organization_id,service_id,actor_id,action,target) VALUES($1,$2,$3,'token.issued',$4)`, admin.OrganizationID, service, admin.ID, id); err != nil {
 		return "", err
 	}
-	return token, tx.Commit(ctx)
+	return token, logging.Commit(ctx, tx, logging.Fields{Event: "auth.token.issued", Component: "auth", ActorID: admin.ID, ServiceID: service, LifetimeSeconds: int64(lifetime / time.Second), Actions: actions})
 }
 
 func RevokeToken(ctx context.Context, db *pgxpool.Pool, admin Actor, service, hash string) error {
@@ -165,5 +169,5 @@ func RevokeToken(ctx context.Context, db *pgxpool.Pool, admin Actor, service, ha
 	if _, err = tx.Exec(ctx, `INSERT INTO audit_events(organization_id,service_id,actor_id,action,target) VALUES($1,$2,$3,'token.revoked',$4)`, admin.OrganizationID, service, admin.ID, hash); err != nil {
 		return err
 	}
-	return tx.Commit(ctx)
+	return logging.Commit(ctx, tx, logging.Fields{Event: "auth.token.revoked", Component: "auth", ActorID: admin.ID, ServiceID: service})
 }

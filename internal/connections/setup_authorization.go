@@ -184,5 +184,5 @@ func (s *Service) finishSetupAuthorization(ctx context.Context, a auth.Actor, cl
 	if err != nil {
 		return setup, err
 	}
-	return setup, tx.Commit(ctx)
+	return setup, commitSetup(ctx, tx, a, "consent.verified", setup, "")
 }

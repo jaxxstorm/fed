@@ -4,6 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
+	"github.com/rs/zerolog"
 	"time"
 
 	"github.com/google/uuid"
@@ -154,7 +156,14 @@ func (r *Runner) enqueueBatch(ctx context.Context, a auth.Actor, service, slot s
 		return batch, err
 	}
 	batch.summarize()
-	return batch, tx.Commit(ctx)
+	err = logging.Commit(ctx, tx, logging.Fields{Event: "collection.batch.enqueued", Component: "worker", ServiceID: service, ActorID: a.ID, BatchID: batch.ID, Count: len(batch.Jobs)})
+	if err == nil {
+		for _, j := range batch.Jobs {
+			j.BatchID = batch.ID
+			logging.Emit(ctx, zerolog.InfoLevel, jobFields(j, "enqueued", "success"))
+		}
+	}
+	return batch, err
 }
 
 func (r *Runner) GetBatch(ctx context.Context, a auth.Actor, service, id string) (Batch, error) {

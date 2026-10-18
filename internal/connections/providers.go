@@ -3,6 +3,8 @@ package connections
 import (
 	"context"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
+	"github.com/rs/zerolog"
 	"io"
 	"net/http"
 	"net/url"
@@ -150,7 +152,26 @@ func (p *ProviderHTTP) Do(req *http.Request) (*http.Response, error) {
 	if req.URL == nil || req.URL.Scheme != "https" || req.URL.User != nil || !slices.Contains(p.hosts, req.URL.Host) || (req.Host != "" && req.Host != req.URL.Host) {
 		return nil, errors.New("provider endpoint not allowed")
 	}
-	return p.client.Do(req)
+	start := time.Now()
+	response, err := p.client.Do(req)
+	provider := "registered"
+	switch req.URL.Host {
+	case "github.com", "api.github.com":
+		provider = "github"
+	case "admin.googleapis.com", "oauth2.googleapis.com", "accounts.google.com":
+		provider = "google_workspace"
+	}
+	status := 0
+	if response != nil {
+		status = response.StatusCode
+	}
+	level, outcome := zerolog.DebugLevel, "success"
+	if err != nil || status >= 400 {
+		level = zerolog.WarnLevel
+		outcome = "failed"
+	}
+	logging.Emit(req.Context(), level, logging.Fields{Event: "provider.operation.http", Component: "provider", Provider: provider, Stage: "request", Status: status, Duration: time.Since(start), ErrorCode: logging.Code(err), Outcome: outcome})
+	return response, err
 }
 func ReadProviderBody(body io.ReadCloser) ([]byte, error) {
 	defer body.Close()

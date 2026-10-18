@@ -317,5 +317,6 @@ func (s *Service) CompleteAuthorization(ctx context.Context, a auth.Actor, claim
 	if err = audit(ctx, tx, a, d.Connection, "authorized"); err != nil {
 		return Operation{}, err
 	}
-	return out, tx.Commit(ctx)
+	d.Connection.Generation = next
+	return out, commitConnection(ctx, tx, a, "consent.verified", d.Connection, "")
 }

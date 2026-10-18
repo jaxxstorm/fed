@@ -310,7 +310,9 @@ func (p Kubernetes) Read(ctx context.Context, c connections.Connection, k connec
 	return connections.Snapshot{Content: content, MediaType: "application/json", ObservedAt: time.Now().UTC(), ETag: namespace.ResourceVersion}, nil
 }
 
-func (p Kubernetes) Renew(ctx context.Context, c connections.Connection, k connections.Credentials) (connections.Credentials, error) {
+func (p Kubernetes) Renew(ctx context.Context, c connections.Connection, k connections.Credentials) (_ connections.Credentials, resultErr error) {
+	finish := observeOperation(ctx, c, "kubernetes.renew")
+	defer func() { finish(resultErr) }()
 	_, err := p.Test(ctx, c, k)
 	return k, err
 }

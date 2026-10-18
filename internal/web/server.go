@@ -14,6 +14,7 @@ func Bootstrap(ping func(context.Context) error) *echo.Echo {
 	e := echo.New()
 	e.HideBanner = true
 	e.HidePort = true
+	e.Use(requestLogging)
 	e.GET("/healthz", func(c echo.Context) error { return c.NoContent(http.StatusOK) })
 	e.GET("/readyz", func(c echo.Context) error {
 		ctx, cancel := context.WithTimeout(c.Request().Context(), 2*time.Second)

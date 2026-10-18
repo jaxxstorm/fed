@@ -62,7 +62,7 @@ func (app *App) Handler() http.Handler {
 	})
 	m.HandleFunc("GET /services/{service}/exports/{id}/{format}", app.export)
 	m.HandleFunc("GET /services/{service}/artifacts/{id}", app.artifact)
-	return m
+	return loggedMux(m)
 }
 func pretty(v any) string                   { b, _ := json.MarshalIndent(v, "", "  "); return string(b) }
 func field(name, label, value string) Field { return Field{Name: name, Label: label, Value: value} }
@@ -87,7 +87,7 @@ func render(w http.ResponseWriter, r *http.Request, p Page) {
 }
 func failure(w http.ResponseWriter, r *http.Request, err error) {
 	if isUI(r) {
-		uiFailure(w, err)
+		uiFailure(w, err, r.Context())
 		return
 	}
 	status := 500

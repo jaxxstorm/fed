@@ -18,8 +18,10 @@ import (
 	"github.com/jaxxstorm/fed/internal/checks"
 	"github.com/jaxxstorm/fed/internal/connections"
 	"github.com/jaxxstorm/fed/internal/integrations"
+	"github.com/jaxxstorm/fed/internal/logging"
 	"github.com/jaxxstorm/fed/internal/observation"
 	sdk "github.com/modelcontextprotocol/go-sdk/mcp"
+	"github.com/rs/zerolog"
 )
 
 type Response struct {
@@ -131,9 +133,16 @@ func add[In any](s *sdk.Server, name, description string, fn func(context.Contex
 		panic(err)
 	}
 	sdk.AddTool(s, &sdk.Tool{Name: name, Description: description, InputSchema: schema}, func(ctx context.Context, _ *sdk.CallToolRequest, in In) (*sdk.CallToolResult, Response, error) {
+		start := time.Now()
+		logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "mcp.tool.started", Component: "mcp", Tool: name})
 		value, err := fn(ctx, in)
 		if err != nil {
 			code := ErrorCode(err)
+			level := zerolog.WarnLevel
+			if code == "internal_error" {
+				level = zerolog.ErrorLevel
+			}
+			logging.Emit(ctx, level, logging.Fields{Event: "mcp.tool.completed", Component: "mcp", Tool: name, Outcome: "failed", ErrorCode: code, Duration: time.Since(start)})
 			detail := ""
 			if errors.Is(err, assessment.ErrInvalid) && err != assessment.ErrInvalid {
 				detail = err.Error()
@@ -146,19 +155,32 @@ func add[In any](s *sdk.Server, name, description string, fn func(context.Contex
 			}
 			return &sdk.CallToolResult{IsError: true, Content: []sdk.Content{&sdk.TextContent{Text: strings.TrimSpace(code + " " + detail)}}}, Response{ErrorCode: code, ErrorDetails: detail}, nil
 		}
+		logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "mcp.tool.completed", Component: "mcp", Tool: name, Outcome: "success", Duration: time.Since(start)})
 		return nil, Response{Data: value}, nil
 	})
 }
 
 func Handler(store *assessment.Store, runner *checks.Runner, options ...ConnectionOptions) http.Handler {
 	h := sdk.NewStreamableHTTPHandler(func(r *http.Request) *sdk.Server {
-		return NewServer(store, runner, auth.FromContext(r.Context()), options...)
+		s := NewServer(store, runner, auth.FromContext(r.Context()), options...)
+		s.AddReceivingMiddleware(func(next sdk.MethodHandler) sdk.MethodHandler {
+			return func(ctx context.Context, method string, req sdk.Request) (sdk.Result, error) {
+				return next(logging.Inherit(ctx, r.Context()), method, req)
+			}
+		})
+		return s
 	}, &sdk.StreamableHTTPOptions{Stateless: true, JSONResponse: true, MaxRequestBodyBytes: 2 << 20})
-	return http.NewCrossOriginProtection().Handler(auth.Bearer(store.DB, h))
+	return http.NewCrossOriginProtection().Handler(auth.Bearer(store.DB, observeProtocolErrors(h)))
 }
 
 func NewServer(store *assessment.Store, runner *checks.Runner, a auth.Actor, options ...ConnectionOptions) *sdk.Server {
 	s := sdk.NewServer(&sdk.Implementation{Name: "ksi-service", Version: "0.1.0"}, nil)
+	s.AddReceivingMiddleware(methodLogging)
+	s.AddReceivingMiddleware(func(next sdk.MethodHandler) sdk.MethodHandler {
+		return func(ctx context.Context, method string, req sdk.Request) (sdk.Result, error) {
+			return next(logging.Identity(ctx, a.ID, ""), method, req)
+		}
+	})
 	registerEvidencePrompt(s, store, a)
 	registerAgentEvidence(s, store, a)
 	if len(options) > 0 && options[0].Service != nil {

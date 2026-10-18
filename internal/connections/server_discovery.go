@@ -4,6 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
+	"github.com/rs/zerolog"
 	"time"
 
 	"github.com/jackc/pgx/v5"
@@ -70,6 +72,9 @@ func (s *Service) DiscoverServerPage(ctx context.Context, a auth.Actor, in Serve
 		}
 		var out DiscoveryReceipt
 		err = json.Unmarshal(prior, &out)
+		if err == nil {
+			logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "connection.discovery.page", Component: "connections", ActorID: a.ID, ServiceID: in.ServiceID, ConnectionID: session.ConnectionID, Outcome: "replayed", Count: out.Accepted})
+		}
 		return out, err
 	}
 	if !errors.Is(err, pgx.ErrNoRows) {
@@ -91,7 +96,16 @@ func (s *Service) DiscoverServerPage(ctx context.Context, a auth.Actor, in Serve
 	}
 	call, cancel := context.WithTimeout(ctx, 30*time.Second)
 	defer cancel()
+	start := time.Now()
 	page, callErr := adapter.Discover(call, d.Connection, credentials, in.Cursor, limit)
+	partial := false
+	for _, coverage := range page.Coverage {
+		if coverage.ErrorCode != "" {
+			partial = true
+			logging.Emit(ctx, zerolog.WarnLevel, logging.Fields{Event: "provider.discovery.coverage", Component: "provider", Provider: string(d.Connection.Provider), ServiceID: in.ServiceID, ConnectionID: session.ConnectionID, Outcome: "partial", ErrorCode: coverage.ErrorCode})
+		}
+	}
+	providerResult(ctx, d.Connection, "discover", start, callErr, partial)
 	complete := page.NextCursor == ""
 	if callErr != nil {
 		complete = false

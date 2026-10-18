@@ -185,7 +185,7 @@ func (s *Service) VerifyAWSSetup(ctx context.Context, a auth.Actor, in SetupOper
 	if err != nil {
 		return current, err
 	}
-	return current, tx.Commit(ctx)
+	return current, commitSetup(ctx, tx, a, "aws.verified", current, "")
 }
 
 func (s *Service) RotateAWSSetupExternalID(ctx context.Context, a auth.Actor, in SetupOperationInput) (Setup, error) {
@@ -257,5 +257,5 @@ func (s *Service) RotateAWSSetupExternalID(ctx context.Context, a auth.Actor, in
 	if err = saveSetupReceipt(ctx, tx, a, setup.ServiceID, "setup.rotate-external-id", in.IdempotencyKey, digest, setup.ID); err != nil {
 		return setup, err
 	}
-	return setup, tx.Commit(ctx)
+	return setup, commitSetup(ctx, tx, a, "external_id.rotated", setup, "")
 }

@@ -64,5 +64,5 @@ func (s *Service) recordSetupFailure(ctx context.Context, a auth.Actor, expected
 	if err = writeSetup(ctx, tx, setup); err != nil {
 		return err
 	}
-	return tx.Commit(ctx)
+	return commitSetup(ctx, tx, a, "consent.failed", setup, "failed")
 }

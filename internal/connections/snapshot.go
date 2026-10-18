@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
 	"time"
 
 	"github.com/jackc/pgx/v5"
@@ -130,5 +131,5 @@ func (s *Service) RefreshSource(ctx context.Context, a auth.Actor, in RefreshSou
 	if err != nil {
 		return out, err
 	}
-	return out, tx.Commit(ctx)
+	return out, logging.Commit(ctx, tx, logging.Fields{Event: "connection.evidence.refreshed", Component: "connections", ServiceID: in.ServiceID, ActorID: a.ID})
 }

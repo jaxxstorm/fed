@@ -162,7 +162,7 @@ func (s *Store) PreparePublication(ctx context.Context, a auth.Actor, service, k
 	if err = audit(ctx, tx, a, service, "snapshot.prepared", id, 1); err != nil {
 		return Record{}, err
 	}
-	return r, tx.Commit(ctx)
+	return r, commitOperation(ctx, tx, a, service, "export.prepared", r)
 }
 
 func (s *Store) Export(ctx context.Context, a auth.Actor, service, id, format string) ([]byte, string, error) {

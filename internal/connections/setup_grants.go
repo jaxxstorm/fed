@@ -88,7 +88,7 @@ func (s *Service) CompleteSetup(ctx context.Context, a auth.Actor, in SetupOpera
 		return setup, err
 	}
 	if id != "" {
-		return setup, tx.Commit(ctx)
+		return setup, commitSetup(ctx, tx, a, "completed", setup, "replayed")
 	}
 	if setup.Step == SetupExpired {
 		if err = tx.Commit(ctx); err != nil {
@@ -189,5 +189,5 @@ func (s *Service) CompleteSetup(ctx context.Context, a auth.Actor, in SetupOpera
 	if err = saveSetupReceipt(ctx, tx, a, setup.ServiceID, "setup.complete", in.IdempotencyKey, digest, setup.ID); err != nil {
 		return setup, err
 	}
-	return setup, tx.Commit(ctx)
+	return setup, commitSetup(ctx, tx, a, "completed", setup, "")
 }

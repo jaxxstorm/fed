@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"log/slog"
 	"net/http"
 	"net/url"
 	"path"
@@ -37,7 +36,7 @@ type UIError struct {
 	FieldErrors map[string]string `json:"field_errors,omitempty"`
 }
 
-func uiFailure(w http.ResponseWriter, err error) {
+func uiFailure(w http.ResponseWriter, err error, contexts ...context.Context) {
 	status := 500
 	e := UIError{Code: "operation_failed", Title: "We couldn’t complete this action", Explanation: "Your changes have not been confirmed. Use the diagnostic reference when contacting the service administrator.", Reference: uuid.NewString()}
 	switch {
@@ -63,9 +62,11 @@ func uiFailure(w http.ResponseWriter, err error) {
 		e.Title = "Additional access is needed"
 		e.Explanation = "Ask a service administrator for permission to perform this action."
 	}
-	if status == 500 {
-		slog.Error("browser request failed", "reference", e.Reference, "cause", err)
+	ctx := context.Background()
+	if len(contexts) > 0 {
+		ctx = contexts[0]
 	}
+	diagnostic(ctx, e, status)
 	jsonResponse(w, status, e)
 }
 
@@ -73,7 +74,7 @@ func (app *App) uiBootstrap(w http.ResponseWriter, r *http.Request) {
 	a := auth.FromContext(r.Context())
 	services, err := app.Store.Services(r.Context(), a)
 	if err != nil {
-		uiFailure(w, err)
+		uiFailure(w, err, r.Context())
 		return
 	}
 	capabilities := map[string][]string{}
@@ -91,14 +92,14 @@ func (app *App) uiBootstrap(w http.ResponseWriter, r *http.Request) {
 	}
 	rows, err := app.Store.DB.Query(r.Context(), `SELECT DISTINCT ON(service_id) service_id,data->>'class',data->>'path' FROM records WHERE service_id=ANY($1) AND kind='profile' AND id='profile' ORDER BY service_id,revision DESC`, ids)
 	if err != nil {
-		uiFailure(w, err)
+		uiFailure(w, err, r.Context())
 		return
 	}
 	for rows.Next() {
 		var service, class, path string
 		if err = rows.Scan(&service, &class, &path); err != nil {
 			rows.Close()
-			uiFailure(w, err)
+			uiFailure(w, err, r.Context())
 			return
 		}
 		profiles[service] = "Class " + class + " · " + path
@@ -106,7 +107,7 @@ func (app *App) uiBootstrap(w http.ResponseWriter, r *http.Request) {
 	err = rows.Err()
 	rows.Close()
 	if err != nil {
-		uiFailure(w, err)
+		uiFailure(w, err, r.Context())
 		return
 	}
 	jsonResponse(w, 200, UIBootstrap{services, auth.CSRF(r.Context()), capabilities, auth.Authorize(r.Context(), app.Store.DB, a, "", "admin") == nil, profiles})
@@ -129,7 +130,7 @@ func (app *App) uiPage(w http.ResponseWriter, r *http.Request) {
 		r.SetPathValue("id", r.PathValue("requirement"))
 		app.run(w, r)
 	default:
-		uiFailure(w, assessment.ErrNotFound)
+		uiFailure(w, assessment.ErrNotFound, r.Context())
 	}
 }
 func (app *App) uiAction(w http.ResponseWriter, r *http.Request) {
@@ -221,7 +222,7 @@ func (app *App) uiOverview(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 	snapshot, err := app.Store.Presentation(ctx, a, id)
 	if err != nil {
-		uiFailure(w, err)
+		uiFailure(w, err, r.Context())
 		return
 	}
 	now := snapshot.AsOf
@@ -251,19 +252,19 @@ func (app *App) uiRecords(w http.ResponseWriter, r *http.Request) {
 	switch kind {
 	case "evidence", "rule_result", "evidence_source", "snapshot", "publication":
 	default:
-		uiFailure(w, assessment.ErrInvalid)
+		uiFailure(w, assessment.ErrInvalid, r.Context())
 		return
 	}
 	offset, _ := strconv.Atoi(r.URL.Query().Get("offset"))
 	if offset < 0 {
-		uiFailure(w, assessment.ErrInvalid)
+		uiFailure(w, assessment.ErrInvalid, r.Context())
 		return
 	}
 	if kind == "evidence" {
 		q := r.URL.Query()
 		items, err := app.Store.EvidencePage(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), assessment.EvidenceFilter{Search: q.Get("q"), Source: q.Get("source"), Freshness: q.Get("freshness"), Requirement: q.Get("requirement"), Type: q.Get("type"), Offset: offset}, time.Now().UTC())
 		if err != nil {
-			uiFailure(w, err)
+			uiFailure(w, err, r.Context())
 			return
 		}
 		more := len(items) > 25
@@ -278,7 +279,7 @@ func (app *App) uiRecords(w http.ResponseWriter, r *http.Request) {
 		items, err = app.Store.ActivityPage(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), r.URL.Query().Get("q"), offset)
 	}
 	if err != nil {
-		uiFailure(w, err)
+		uiFailure(w, err, r.Context())
 		return
 	}
 	more := len(items) > 25
@@ -291,12 +292,12 @@ func (app *App) uiRecords(w http.ResponseWriter, r *http.Request) {
 func (app *App) uiArtifact(w http.ResponseWriter, r *http.Request) {
 	revision, _ := strconv.Atoi(r.URL.Query().Get("revision"))
 	if revision < 1 {
-		uiFailure(w, assessment.ErrInvalid)
+		uiFailure(w, assessment.ErrInvalid, r.Context())
 		return
 	}
 	b, err := app.Store.ArtifactRevision(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), assessment.Ref{ID: r.PathValue("id"), Revision: revision})
 	if err != nil {
-		uiFailure(w, err)
+		uiFailure(w, err, r.Context())
 		return
 	}
 	jsonResponse(w, 200, map[string]string{"content": string(b)})

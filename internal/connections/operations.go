@@ -4,6 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
+	"github.com/rs/zerolog"
 	"time"
 
 	"github.com/google/uuid"
@@ -151,5 +153,10 @@ func (s *Service) runOperation(ctx context.Context, a auth.Actor, in OperationIn
 	if saveErr != nil {
 		return Operation{}, saveErr
 	}
+	level := zerolog.InfoLevel
+	if out.State != "succeeded" {
+		level = zerolog.WarnLevel
+	}
+	logging.Emit(ctx, level, logging.Fields{Event: "connection.operation.completed", Component: "connections", ActorID: a.ID, ServiceID: in.ServiceID, ConnectionID: in.ConnectionID, OperationID: out.ID, Stage: operation, Outcome: out.State, ErrorCode: out.ErrorCode, Generation: in.Generation})
 	return readOperation(finish, s.DB, in.ServiceID, out.ID)
 }

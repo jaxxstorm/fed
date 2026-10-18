@@ -4,7 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"log/slog"
+	"github.com/jaxxstorm/fed/internal/logging"
+	"github.com/rs/zerolog"
 	"os"
 
 	"github.com/jackc/pgx/v5/pgxpool"
@@ -84,6 +85,6 @@ func maintainConnections(ctx context.Context, db *pgxpool.Pool, cfg config.Confi
 			}
 		}
 	}
-	slog.Info("connection maintenance completed", "operation", command, "services", len(services))
+	logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "runtime.connection_maintenance.completed", Component: "runtime", Stage: command, Count: len(services), Outcome: "success"})
 	return nil
 }

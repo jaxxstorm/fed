@@ -45,7 +45,7 @@ func (s *Service) ChangeLifecycle(ctx context.Context, a auth.Actor, in Operatio
 		if err = json.Unmarshal(prior, &out); err != nil {
 			return out, err
 		}
-		return out, tx.Commit(ctx)
+		return out, commitConnection(ctx, tx, a, operation, out.Connection, "replayed")
 	}
 	if !errors.Is(err, pgx.ErrNoRows) {
 		return Detail{}, err
@@ -117,5 +117,5 @@ func (s *Service) ChangeLifecycle(ctx context.Context, a auth.Actor, in Operatio
 	if err != nil {
 		return Detail{}, err
 	}
-	return out, tx.Commit(ctx)
+	return out, commitConnection(ctx, tx, a, operation, out.Connection, "")
 }

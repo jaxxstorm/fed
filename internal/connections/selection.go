@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
 	"slices"
 
 	"github.com/jackc/pgx/v5"
@@ -59,7 +60,7 @@ func (s *Service) SelectSources(ctx context.Context, a auth.Actor, in SelectionI
 		if err = json.Unmarshal(prior, &out); err != nil {
 			return out, err
 		}
-		return out, tx.Commit(ctx)
+		return out, logging.Commit(ctx, tx, logging.Fields{Event: "connection.sources.selected", Component: "connections", ServiceID: in.ServiceID, ActorID: a.ID, Outcome: "replayed", Count: len(out.Sources)})
 	}
 	if !errors.Is(err, pgx.ErrNoRows) {
 		return SelectionReceipt{}, err
@@ -130,7 +131,7 @@ func (s *Service) SelectSources(ctx context.Context, a auth.Actor, in SelectionI
 	if err != nil {
 		return SelectionReceipt{}, err
 	}
-	return out, tx.Commit(ctx)
+	return out, logging.Commit(ctx, tx, logging.Fields{Event: "connection.sources.selected", Component: "connections", ServiceID: in.ServiceID, ActorID: a.ID, Count: len(out.Sources), Revision: out.ScopeRevision})
 }
 
 func addSelectedScope(scope *assessment.Scope, c Connection, item SourceConfigurationInput) error {

@@ -1,14 +1,17 @@
 package checks
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"errors"
+	"strings"
 	"testing"
 
 	"github.com/jackc/pgx/v5"
 	"github.com/jaxxstorm/fed/internal/assessment"
 	"github.com/jaxxstorm/fed/internal/auth"
+	"github.com/jaxxstorm/fed/internal/logging"
 	"github.com/jaxxstorm/fed/internal/storage"
 	"github.com/jaxxstorm/fed/internal/testutil"
 )
@@ -20,7 +23,9 @@ func (fixtureCollector) Collect(context.Context, assessment.Scope, assessment.Me
 }
 
 func TestDurableRunner(t *testing.T) {
-	ctx := context.Background()
+	var logs bytes.Buffer
+	l, _ := logging.New(&logs, nil, "debug", "json", "worker")
+	ctx := logging.WithLogger(context.Background(), l)
 	db := testutil.Database(t)
 	a, err := auth.BootstrapAdmin(ctx, db, "test", "admin")
 	if err != nil {
@@ -109,5 +114,16 @@ func TestDurableRunner(t *testing.T) {
 	}
 	if _, err = r.claim(ctx); err != nil {
 		t.Fatal("backed-off job not recoverable", err)
+	}
+	for _, event := range []string{"collection.job.enqueued", "collection.job.claimed", "collection.job.lease_recovered", "collection.job.completed", "collection.job.retry_scheduled", "collection.job.exhausted", "collection.job.coverage"} {
+		if !strings.Contains(logs.String(), `"event":"`+event+`"`) {
+			t.Fatal("missing event", event)
+		}
+	}
+	if !strings.Contains(logs.String(), `"outcome":"replayed"`) || !strings.Contains(logs.String(), j.ID) {
+		t.Fatal("missing replay/job correlation")
+	}
+	if strings.Contains(logs.String(), "transient fixture failure") || strings.Contains(logs.String(), "Fixture scope") {
+		t.Fatal("raw error or scope leaked")
 	}
 }

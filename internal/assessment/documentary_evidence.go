@@ -4,6 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
+	"github.com/rs/zerolog"
 	"strings"
 	"time"
 	"unicode/utf8"
@@ -89,7 +91,7 @@ func (s *Store) SubmitEvidenceArtifact(ctx context.Context, a auth.Actor, in Art
 	if err = saveOperation(ctx, tx, a, in.ServiceID, "submit_evidence_artifact", in.IdempotencyKey, digest, r); err != nil {
 		return Record{}, err
 	}
-	return r, tx.Commit(ctx)
+	return r, commitOperation(ctx, tx, a, in.ServiceID, "evidence.submitted", r)
 }
 
 func insertRecord(ctx context.Context, tx pgx.Tx, a auth.Actor, r Record, revision int) (Record, error) {
@@ -115,7 +117,11 @@ func readOperation(ctx context.Context, tx pgx.Tx, a auth.Actor, service, operat
 	if prior != digest {
 		return true, ErrConflict
 	}
-	return true, json.Unmarshal(raw, out)
+	err = json.Unmarshal(raw, out)
+	if err == nil {
+		logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "assessment.operation.replayed", Component: "assessment", ActorID: a.ID, ServiceID: service, Stage: operation, Outcome: "replayed"})
+	}
+	return true, err
 }
 
 func saveOperation(ctx context.Context, tx pgx.Tx, a auth.Actor, service, operation, key, digest string, out any) error {

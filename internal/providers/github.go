@@ -127,7 +127,9 @@ func (p *GitHub) AuthorizationURL(_ connections.Connection, c connections.Author
 func (p *GitHub) InstallationURL(state string) string {
 	return "https://github.com/apps/" + url.PathEscape(p.slug) + "/installations/new?state=" + url.QueryEscape(state)
 }
-func (p *GitHub) ExchangeAuthorization(ctx context.Context, c connections.Connection, claim connections.AuthorizationClaim, response connections.AuthorizationResponse) (connections.AuthorizedGrant, error) {
+func (p *GitHub) ExchangeAuthorization(ctx context.Context, c connections.Connection, claim connections.AuthorizationClaim, response connections.AuthorizationResponse) (_ connections.AuthorizedGrant, resultErr error) {
+	finish := observeOperation(ctx, c, "github.consent.exchange")
+	defer func() { finish(resultErr) }()
 	id := c.Configuration.InstallationID
 	if id == "" {
 		id = response.InstallationID
@@ -219,7 +221,9 @@ func (p *GitHub) Test(ctx context.Context, c connections.Connection, k connectio
 	}
 	return connections.AccessHealth{State: connections.Verified, VerifiedAccountID: c.Tenant(), Limitations: []string{}}, nil
 }
-func (p *GitHub) Renew(ctx context.Context, c connections.Connection, k connections.Credentials) (connections.Credentials, error) {
+func (p *GitHub) Renew(ctx context.Context, c connections.Connection, k connections.Credentials) (_ connections.Credentials, resultErr error) {
+	finish := observeOperation(ctx, c, "github.renew")
+	defer func() { finish(resultErr) }()
 	p.mu.Lock()
 	for key := range p.tokens {
 		if strings.HasPrefix(key, c.ServiceID+"/"+c.ID+"/") {

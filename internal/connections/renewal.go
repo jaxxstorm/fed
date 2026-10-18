@@ -74,7 +74,7 @@ func (s *Service) Renew(ctx context.Context, a auth.Actor, in OperationInput) (O
 		if err = audit(ctx, tx, a, c, "renew"); err != nil {
 			return AccessHealth{}, err
 		}
-		return health, tx.Commit(ctx)
+		return health, commitConnection(ctx, tx, a, "credentials.renewed", c, "")
 	})
 }
 

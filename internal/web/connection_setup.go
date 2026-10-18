@@ -29,7 +29,7 @@ func (app *App) registerSetupAPI(mux *http.ServeMux) {
 		w.Header().Set("Cache-Control", "no-store")
 		out, err := s.GetSetup(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), r.PathValue("setup"))
 		if err != nil {
-			connectionFailure(w, err)
+			connectionFailure(w, err, r)
 			return
 		}
 		jsonResponse(w, 200, out)
@@ -37,7 +37,7 @@ func (app *App) registerSetupAPI(mux *http.ServeMux) {
 	mux.HandleFunc("GET /api/ui/v1/services/{service}/connections/readiness/{provider}/status", func(w http.ResponseWriter, r *http.Request) {
 		out, err := s.ProviderSetupReadiness(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), connections.Provider(r.PathValue("provider")))
 		if err != nil {
-			connectionFailure(w, err)
+			connectionFailure(w, err, r)
 			return
 		}
 		jsonResponse(w, 200, out)
@@ -56,7 +56,7 @@ func (app *App) setupAuthorize(w http.ResponseWriter, r *http.Request) {
 	a := auth.FromContext(r.Context())
 	setup, err := app.Connections.ClaimSetupHandoff(r.Context(), a, r.URL.Query().Get("handoff"), connectionSessionHash(r))
 	if err != nil {
-		connectionFailure(w, err)
+		connectionFailure(w, err, r)
 		return
 	}
 	stage := "oauth"
@@ -65,11 +65,11 @@ func (app *App) setupAuthorize(w http.ResponseWriter, r *http.Request) {
 	}
 	target, err := app.Connections.SetupAuthorizationURL(r.Context(), a, connections.SetupOperationInput{ServiceID: setup.ServiceID, SetupID: setup.ID, ExpectedRevision: setup.Revision}, connectionSessionHash(r), app.ConnectionOrigin, stage)
 	if err != nil {
-		connectionFailure(w, err)
+		connectionFailure(w, err, r)
 		return
 	}
 	if !connections.AllowedAuthorizationURL(setup.Provider, target) {
-		connectionFailure(w, connections.ErrInvalid)
+		connectionFailure(w, connections.ErrInvalid, r)
 		return
 	}
 	http.Redirect(w, r, target, http.StatusFound)
@@ -85,7 +85,7 @@ func (app *App) setupGitHubReturn(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, setupTarget(setup)+"&setup_error=authorization_expired", http.StatusSeeOther)
 			return
 		}
-		connectionFailure(w, err)
+		connectionFailure(w, err, r)
 		return
 	}
 	if r.URL.Query().Get("setup_action") == "request" || r.URL.Query().Get("installation_id") == "" {
@@ -94,12 +94,12 @@ func (app *App) setupGitHubReturn(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if err = app.Connections.ReturnSetupInstallation(r.Context(), a, claim, connectionSessionHash(r), r.URL.Query().Get("installation_id")); err != nil {
-		connectionFailure(w, err)
+		connectionFailure(w, err, r)
 		return
 	}
 	target, err := app.Connections.SetupAuthorizationURL(r.Context(), a, connections.SetupOperationInput{ServiceID: claim.Setup.ServiceID, SetupID: claim.Setup.ID, ExpectedRevision: claim.Setup.Revision}, connectionSessionHash(r), app.ConnectionOrigin, "oauth")
 	if err != nil {
-		connectionFailure(w, err)
+		connectionFailure(w, err, r)
 		return
 	}
 	http.Redirect(w, r, target, http.StatusFound)
@@ -116,7 +116,7 @@ func (app *App) setupCallback(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, setupTarget(setup)+"&setup_error=authorization_expired", http.StatusSeeOther)
 			return
 		}
-		connectionFailure(w, err)
+		connectionFailure(w, err, r)
 		return
 	}
 	code := ""

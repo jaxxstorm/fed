@@ -4,6 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/jaxxstorm/fed/internal/logging"
+	"github.com/rs/zerolog"
 	"slices"
 	"strings"
 	"time"
@@ -63,6 +65,9 @@ func (s *Store) IngestObservation(ctx context.Context, a auth.Actor, in observat
 		}
 		var out observation.Receipt
 		err = json.Unmarshal(old, &out)
+		if err == nil {
+			logging.Emit(ctx, zerolog.InfoLevel, logging.Fields{Event: "assessment.observation.submitted", Component: "assessment", ServiceID: in.ServiceID, ActorID: a.ID, Outcome: "replayed"})
+		}
 		return out, err
 	}
 	if !errors.Is(err, pgx.ErrNoRows) {
@@ -119,7 +124,7 @@ func (s *Store) IngestObservation(ctx context.Context, a auth.Actor, in observat
 	if err != nil {
 		return observation.Receipt{}, err
 	}
-	return out, tx.Commit(ctx)
+	return out, commitOperation(ctx, tx, a, in.ServiceID, "observation.submitted")
 }
 
 func persistObservation(ctx context.Context, tx pgx.Tx, a auth.Actor, in observation.Submission, key, source, digest string) (observation.Receipt, error) {

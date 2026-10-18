@@ -170,7 +170,7 @@ func (s *Service) Configure(ctx context.Context, a auth.Actor, in ConfigureInput
 		if err = json.Unmarshal(prior, &out); err != nil {
 			return out, err
 		}
-		return out, tx.Commit(ctx)
+		return out, commitConnection(ctx, tx, a, "configured", out.Connection, "replayed")
 	}
 	if !errors.Is(err, pgx.ErrNoRows) {
 		return Detail{}, err
@@ -223,7 +223,7 @@ func (s *Service) Configure(ctx context.Context, a auth.Actor, in ConfigureInput
 	if err != nil {
 		return Detail{}, err
 	}
-	return out, tx.Commit(ctx)
+	return out, commitConnection(ctx, tx, a, "configured", out.Connection, "")
 }
 
 func (s *Service) Test(ctx context.Context, a auth.Actor, service, id string, generation int64) (AccessHealth, error) {
@@ -253,7 +253,9 @@ func (s *Service) Test(ctx context.Context, a auth.Actor, service, id string, ge
 	}
 	callCtx, cancel := context.WithTimeout(ctx, 30*time.Second)
 	defer cancel()
+	start := time.Now()
 	health, callErr := adapter.Test(callCtx, d.Connection, credentials)
+	providerResult(ctx, d.Connection, "verify_access", start, callErr, health.State != Verified)
 	if callErr != nil {
 		health = AccessHealth{State: AccessError, ErrorCode: "provider_error", Limitations: []string{}}
 		var recovery interface{ RecoveryCode() string }
@@ -287,5 +289,5 @@ func (s *Service) Test(ctx context.Context, a auth.Actor, service, id string, ge
 	if err = audit(ctx, tx, a, d.Connection, "test"); err != nil {
 		return AccessHealth{}, err
 	}
-	return health, tx.Commit(ctx)
+	return health, commitConnection(ctx, tx, a, "access.tested", d.Connection, string(health.State))
 }
