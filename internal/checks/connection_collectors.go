@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/eks"
 	"github.com/jaxxstorm/fed/internal/assessment"
 	"github.com/jaxxstorm/fed/internal/auth"
 	"github.com/jaxxstorm/fed/internal/connections"
@@ -57,6 +58,9 @@ func (r *Runner) collectConnected(ctx context.Context, a auth.Actor, service str
 					clusters = []string{""}
 				}
 				for _, cluster := range clusters {
+					if cluster != "" && standaloneObservedEKS(ctx, scope, standalone, account, region, cluster, resolveAWS) {
+						continue
+					}
 					access, bound, err := r.Connections.CollectorAccess(ctx, a, service, "kubernetes", account.ID+"/"+region, cluster)
 					if err != nil {
 						standalone.Observations = append(standalone.Observations, Observation{Scope: account.ID + "/" + region + "/" + cluster, Outcome: "error", Error: connections.CollectionError(err)})
@@ -166,4 +170,35 @@ func (r *Runner) collectConnected(ctx context.Context, a auth.Actor, service str
 	}
 	result, err := collector.Collect(ctx, scope, m)
 	return result, accesses, err
+}
+
+// An AWS inventory entry is not a second Kubernetes credential binding. Avoid
+// retrying it only when a cluster-wide source actually produced workload
+// observations and AWS independently identifies the same API endpoint. Names or
+// namespace-only coverage are insufficient; original scope and history remain.
+func standaloneObservedEKS(ctx context.Context, scope assessment.Scope, result Result, account assessment.Account, region, cluster string, resolve func(context.Context, assessment.Account, string) (aws.Config, error)) bool {
+	servers := map[string]bool{}
+	for _, selected := range scope.Kubernetes {
+		if !selected.ClusterWide || selected.Server == "" {
+			continue
+		}
+		for _, observed := range result.Observations {
+			if observed.Target != nil && observed.Target.Kind == "kubernetes" && observed.Target.ClusterID == selected.ClusterID && observed.Error == "" {
+				servers[strings.TrimRight(selected.Server, "/")] = true
+				break
+			}
+		}
+	}
+	if len(servers) == 0 || region != "us-east-1" {
+		return false
+	}
+	config, err := resolve(ctx, account, region)
+	if err != nil {
+		return false
+	}
+	described, err := eks.NewFromConfig(config).DescribeCluster(ctx, &eks.DescribeClusterInput{Name: aws.String(cluster)})
+	if err != nil || described.Cluster == nil || aws.ToString(described.Cluster.Arn) != "arn:aws:eks:"+region+":"+account.ID+":cluster/"+cluster {
+		return false
+	}
+	return servers[strings.TrimRight(aws.ToString(described.Cluster.Endpoint), "/")]
 }
