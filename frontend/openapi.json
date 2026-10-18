@@ -54,6 +54,21 @@
         ],
         "type": "object"
       },
+      "ApprovalStatus": {
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "email"
+        ],
+        "type": "object"
+      },
       "AuthorizationHandoff": {
         "properties": {
           "expires_at": {
@@ -794,6 +809,87 @@
         ],
         "type": "object"
       },
+      "MemberPage": {
+        "properties": {
+          "members": {
+            "items": {
+              "$ref": "#/components/schemas/Membership"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "next_offset": {
+            "allOf": [
+              {
+                "type": "integer"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "required": [
+          "members"
+        ],
+        "type": "object"
+      },
+      "Membership": {
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "identity_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "role": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "identity_id",
+          "organization_id",
+          "email",
+          "name",
+          "role",
+          "state",
+          "revision"
+        ],
+        "type": "object"
+      },
+      "MembershipChange": {
+        "properties": {
+          "expected_revision": {
+            "type": "integer"
+          },
+          "identity_id": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "identity_id",
+          "expected_revision",
+          "operation",
+          "role"
+        ],
+        "type": "object"
+      },
       "Metric": {
         "properties": {
           "Label": {
@@ -863,6 +959,56 @@
           "expected_revision",
           "generation",
           "idempotency_key"
+        ],
+        "type": "object"
+      },
+      "Organization": {
+        "properties": {
+          "allowed_domains": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "allowed_domains",
+          "revision"
+        ],
+        "type": "object"
+      },
+      "OrganizationUpdate": {
+        "properties": {
+          "allowed_domains": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "expected_revision": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "allowed_domains",
+          "expected_revision"
         ],
         "type": "object"
       },
@@ -1794,6 +1940,9 @@
           "can_create": {
             "type": "boolean"
           },
+          "can_manage_organization": {
+            "type": "boolean"
+          },
           "capabilities": {
             "additionalProperties": {
               "items": {
@@ -1814,6 +1963,9 @@
             },
             "nullable": true,
             "type": "object"
+          },
+          "role": {
+            "type": "string"
           },
           "services": {
             "items": {
@@ -2001,6 +2153,99 @@
               }
             },
             "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/members": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemberPage"
+                }
+              }
+            },
+            "description": "Authorized membership response"
+          }
+        }
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MembershipChange"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Committed organization change"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/membership-status": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApprovalStatus"
+                }
+              }
+            },
+            "description": "Authorized membership response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/organization": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            },
+            "description": "Authorized membership response"
+          }
+        }
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrganizationUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Committed organization change"
           }
         }
       }

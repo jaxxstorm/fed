@@ -106,6 +106,8 @@ func ErrorCode(err error) string {
 		return "invalid_observation"
 	case errors.Is(err, auth.ErrForbidden):
 		return "forbidden"
+	case errors.Is(err, auth.ErrMembershipPending):
+		return "membership_pending"
 	case errors.Is(err, connections.ErrConflict):
 		return "revision_conflict"
 	case errors.Is(err, connections.ErrInactive):

@@ -3,6 +3,9 @@ package auth
 import (
 	"context"
 	"crypto/subtle"
+	"encoding/json"
+	"errors"
+	"html/template"
 	"net/http"
 	"strings"
 	"time"
@@ -14,10 +17,11 @@ import (
 )
 
 type Browser struct {
-	DB       *pgxpool.Pool
-	OAuth    oauth2.Config
-	Verifier *oidc.IDTokenVerifier
-	Dev      *Actor
+	DB        *pgxpool.Pool
+	OAuth     oauth2.Config
+	Verifier  *oidc.IDTokenVerifier
+	Dev       *Actor
+	Admission AdmissionConfig
 }
 
 func NewBrowser(ctx context.Context, db *pgxpool.Pool, issuer, clientID, clientSecret, publicURL string) (*Browser, error) {
@@ -80,19 +84,30 @@ func (b *Browser) Callback(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "invalid identity token", 401)
 		return
 	}
-	var actorID string
-	err = b.DB.QueryRow(r.Context(), `SELECT id FROM identities WHERE issuer=$1 AND subject=$2 AND kind='human'`, id.Issuer, id.Subject).Scan(&actorID)
+	var claims map[string]any
+	if err = id.Claims(&claims); err != nil {
+		http.Error(w, "invalid identity claims", 401)
+		return
+	}
+	email, _ := claims["email"].(string)
+	verified, _ := claims["email_verified"].(bool)
+	name, _ := claims["name"].(string)
+	member, err := Admit(r.Context(), b.DB, b.Admission, VerifiedIdentity{Issuer: id.Issuer, Subject: id.Subject, Email: email, EmailVerified: verified, Name: name, Claims: claims})
 	if err != nil {
 		http.Error(w, "identity has no access", 403)
 		return
 	}
 	session, csrf := Secret(), Secret()
-	_, err = b.DB.Exec(r.Context(), `INSERT INTO sessions(hash,identity_id,csrf_token,expires_at) VALUES($1,$2,$3,$4)`, storage.Hash([]byte(session)), actorID, csrf, time.Now().Add(8*time.Hour))
+	_, err = b.DB.Exec(r.Context(), `INSERT INTO sessions(hash,identity_id,csrf_token,expires_at,policy_fingerprint) VALUES($1,$2,$3,$4,$5)`, storage.Hash([]byte(session)), member.IdentityID, csrf, time.Now().Add(8*time.Hour), b.Admission.Fingerprint())
 	if err != nil {
 		http.Error(w, "session unavailable", 503)
 		return
 	}
 	cookie(w, "ksi_session", session, 8*3600, true)
+	if member.State == "pending" {
+		http.Redirect(w, r, "/approval", http.StatusFound)
+		return
+	}
 	http.Redirect(w, r, "/", http.StatusFound)
 }
 
@@ -138,7 +153,11 @@ func (b *Browser) Protect(next http.Handler) http.Handler {
 				return
 			}
 			sessionHash = storage.Hash([]byte(c.Value))
-			err = b.DB.QueryRow(r.Context(), `SELECT i.id,i.organization_id,i.kind,s.csrf_token FROM sessions s JOIN identities i ON i.id=s.identity_id WHERE s.hash=$1 AND s.expires_at>now()`, sessionHash).Scan(&a.ID, &a.OrganizationID, &a.Kind, &csrf)
+			var fingerprint string
+			err = b.DB.QueryRow(r.Context(), `SELECT i.id,i.organization_id,i.kind,s.csrf_token,s.policy_fingerprint FROM sessions s JOIN identities i ON i.id=s.identity_id WHERE s.hash=$1 AND s.expires_at>now()`, sessionHash).Scan(&a.ID, &a.OrganizationID, &a.Kind, &csrf, &fingerprint)
+			if err == nil && fingerprint != b.Admission.Fingerprint() {
+				err = ErrForbidden
+			}
 			if err != nil {
 				if strings.HasPrefix(r.URL.Path, "/api/ui/") {
 					browserAPIError(w, 401, "session_expired", "Sign in to continue", "Your session is no longer available.")
@@ -168,16 +187,62 @@ func (b *Browser) Protect(next http.Handler) http.Handler {
 		w.Header().Set("Content-Security-Policy", "default-src 'self'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'")
 		ctx := context.WithValue(WithActor(r.Context(), a), csrfKey{}, csrf)
 		ctx = context.WithValue(ctx, sessionKey{}, sessionHash)
+		// A still-authenticated session must be able to sign out even when a
+		// policy edit has made its identity ineligible for application access.
+		if r.URL.Path == "/auth/logout" {
+			next.ServeHTTP(w, r.WithContext(ctx))
+			return
+		}
+		if b.DB != nil {
+			m, err := ActiveMember(ctx, b.DB, a)
+			if err != nil && !errors.Is(err, ErrMembershipPending) {
+				browserAPIError(w, 403, "membership_disabled", "Access unavailable", "Contact your administrator for access.")
+				return
+			}
+			if r.URL.Path == "/api/ui/v1/membership-status" && r.Method == "GET" {
+				w.Header().Set("Content-Type", "application/json")
+				_ = json.NewEncoder(w).Encode(ApprovalStatus{m.State, m.Email})
+				return
+			}
+			if r.URL.Path == "/approval" && r.Method == "GET" {
+				if err == nil {
+					http.Redirect(w, r, "/", http.StatusSeeOther)
+					return
+				}
+				w.Header().Set("Content-Type", "text/html; charset=utf-8")
+				_ = approvalPage.Execute(w, struct{ Email, CSRF string }{m.Email, csrf})
+				return
+			}
+			if errors.Is(err, ErrMembershipPending) && r.URL.Path != "/auth/logout" {
+				if strings.HasPrefix(r.URL.Path, "/api/") {
+					browserAPIError(w, 403, "membership_pending", "Waiting for approval", "An administrator must approve your access.")
+				} else {
+					http.Redirect(w, r, "/approval", http.StatusSeeOther)
+				}
+				return
+			}
+		}
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }
+
+type ApprovalStatus struct {
+	State string `json:"state"`
+	Email string `json:"email"`
+}
+
+var approvalPage = template.Must(template.New("approval").Parse(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Waiting for approval · Fed</title><style>body{margin:0;background:#f6f7fb;color:#172033;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif}main{max-width:560px;margin:10vh auto;padding:32px;background:white;border:1px solid #dce2eb;border-radius:12px}h1{font-size:32px;letter-spacing:-1px;line-height:1.2}p{overflow-wrap:anywhere}.brand{color:#4f46e5;font-weight:650}nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}a,button{display:inline-block;box-sizing:border-box;min-height:44px;padding:10px 16px;border:1px solid #dce2eb;border-radius:8px;background:white;color:inherit;font:inherit;text-decoration:none;cursor:pointer}:focus-visible{outline:3px solid #4f46e5;outline-offset:3px}@media(max-width:600px){main{margin:24px 16px;padding:24px}}</style></head><body><main><p class="brand">Fed · Assessment evidence workspace</p><h1>Waiting for approval</h1><p>You are signed in as {{.Email}}. An administrator must approve your access before you can view assessments or evidence.</p><nav aria-label="Approval actions"><a href="/approval">Refresh status</a><form method="post" action="/auth/logout"><input type="hidden" name="csrf_token" value="{{.CSRF}}"><button type="submit">Sign out</button></form></nav></main></body></html>`))
 
 func browserAPIError(w http.ResponseWriter, status int, code, title, explanation string) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Cache-Control", "no-store")
 	w.WriteHeader(status)
 	// Values are fixed strings owned by this package.
-	_, _ = w.Write([]byte(`{"code":"` + code + `","title":"` + title + `","explanation":"` + explanation + `","action":"/auth/login","retryable":false}`))
+	action := "/auth/login"
+	if code == "membership_pending" {
+		action = "/approval"
+	}
+	_, _ = w.Write([]byte(`{"code":"` + code + `","title":"` + title + `","explanation":"` + explanation + `","action":"` + action + `","retryable":false}`))
 }
 
 func (b *Browser) Logout(w http.ResponseWriter, r *http.Request) {

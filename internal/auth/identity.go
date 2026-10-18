@@ -37,6 +37,22 @@ type Querier interface {
 	QueryRow(context.Context, string, ...any) pgx.Row
 }
 
+// Read-only snapshots cannot acquire row locks. Writable transactions retain
+// locks until commit; pool queries have no enclosing mutation to fence.
+func authorizationLock(ctx context.Context, q Querier) (string, error) {
+	if _, ok := q.(pgx.Tx); !ok {
+		return "", nil
+	}
+	var readOnly string
+	if err := q.QueryRow(ctx, `SHOW transaction_read_only`).Scan(&readOnly); err != nil {
+		return "", err
+	}
+	if readOnly == "on" {
+		return "", nil
+	}
+	return " FOR SHARE", nil
+}
+
 // Authorize rechecks grants and token revocation on every operation, including
 // worker execution. The actor's service scope is never trusted from input JSON.
 func Authorize(ctx context.Context, q Querier, a Actor, service, action string) error {
@@ -58,7 +74,11 @@ func Authorize(ctx context.Context, q Querier, a Actor, service, action string) 
 	}
 	if a.TokenHash != "" {
 		var services, actions []string
-		if err := q.QueryRow(ctx, `SELECT service_ids,actions FROM api_tokens WHERE hash=$1 AND identity_id=$2 AND revoked_at IS NULL AND expires_at>now()`, a.TokenHash, a.ID).Scan(&services, &actions); err != nil {
+		lock, err := authorizationLock(ctx, q)
+		if err != nil {
+			return ErrForbidden
+		}
+		if err := q.QueryRow(ctx, `SELECT service_ids,actions FROM api_tokens WHERE hash=$1 AND identity_id=$2 AND revoked_at IS NULL AND expires_at>now()`+lock, a.TokenHash, a.ID).Scan(&services, &actions); err != nil {
 			return ErrForbidden
 		}
 		if !slices.Contains(services, service) || !slices.Contains(actions, action) {
@@ -66,6 +86,21 @@ func Authorize(ctx context.Context, q Querier, a Actor, service, action string) 
 		}
 	}
 	var allowed bool
+	if kind == "human" {
+		m, err := ActiveMember(ctx, q, a)
+		if err != nil {
+			return err
+		}
+		allowed = m.Role == "admin" || action == "read" || (m.Role == "user" && slices.Contains([]string{"edit", "check", "connect", "review", "export"}, action))
+		if !allowed {
+			return ErrForbidden
+		}
+		logging.Authorized(ctx, a.ID, service)
+		return nil
+	}
+	if service == "" || action == "admin" {
+		return ErrForbidden
+	}
 	err := q.QueryRow(ctx, `SELECT EXISTS(SELECT 1 FROM permissions WHERE identity_id=$1 AND (service_id=$2 OR service_id='*') AND (action=$3 OR action='admin'))`, a.ID, service, action).Scan(&allowed)
 	if err != nil || !allowed {
 		return ErrForbidden
@@ -100,15 +135,31 @@ func BootstrapAdmin(ctx context.Context, db *pgxpool.Pool, issuer, subject strin
 	if _, err = tx.Exec(ctx, `SELECT pg_advisory_xact_lock(817032)`); err != nil {
 		return Actor{}, err
 	}
-	if _, err = tx.Exec(ctx, `INSERT INTO organizations(id,name) VALUES('default','Default organization') ON CONFLICT DO NOTHING`); err != nil {
+	var org string
+	var complete bool
+	if err = tx.QueryRow(ctx, `SELECT organization_id,bootstrap_complete FROM organization_settings WHERE singleton FOR UPDATE`).Scan(&org, &complete); err != nil {
 		return Actor{}, err
 	}
-	a := Actor{ID: uuid.NewString(), OrganizationID: "default", Kind: "human"}
+	if complete {
+		var a Actor
+		if err = tx.QueryRow(ctx, `SELECT id,organization_id,kind FROM identities WHERE issuer=$1 AND subject=$2 AND kind='human'`, issuer, subject).Scan(&a.ID, &a.OrganizationID, &a.Kind); err != nil {
+			return Actor{}, ErrForbidden
+		}
+		// A restart may resolve the configured identity, but never restore its role.
+		return a, tx.Commit(ctx)
+	}
+	a := Actor{ID: uuid.NewString(), OrganizationID: org, Kind: "human"}
 	err = tx.QueryRow(ctx, `INSERT INTO identities(id,organization_id,kind,issuer,subject,name) VALUES($1,$2,'human',$3,$4,'Administrator') ON CONFLICT(issuer,subject) DO UPDATE SET subject=excluded.subject RETURNING id,organization_id,kind`, a.ID, a.OrganizationID, issuer, subject).Scan(&a.ID, &a.OrganizationID, &a.Kind)
 	if err != nil {
 		return Actor{}, err
 	}
 	if _, err = tx.Exec(ctx, `INSERT INTO permissions(identity_id,service_id,action) VALUES($1,'*','admin') ON CONFLICT DO NOTHING`, a.ID); err != nil {
+		return Actor{}, err
+	}
+	if _, err = tx.Exec(ctx, `INSERT INTO organization_memberships(identity_id,organization_id,legacy_subject,role,state) VALUES($1,$2,true,'admin','active')`, a.ID, org); err != nil {
+		return Actor{}, err
+	}
+	if _, err = tx.Exec(ctx, `UPDATE organization_settings SET bootstrap_complete=true WHERE singleton`); err != nil {
 		return Actor{}, err
 	}
 	return a, tx.Commit(ctx)
@@ -141,7 +192,7 @@ func IssueToken(ctx context.Context, db *pgxpool.Pool, admin Actor, service stri
 			return "", err
 		}
 	}
-	if _, err = tx.Exec(ctx, `INSERT INTO api_tokens(hash,identity_id,service_ids,actions,expires_at) VALUES($1,$2,$3,$4,$5)`, storage.Hash([]byte(token)), id, []string{service}, actions, time.Now().Add(lifetime)); err != nil {
+	if _, err = tx.Exec(ctx, `INSERT INTO api_tokens(hash,identity_id,service_ids,actions,expires_at,issuer_identity_id) VALUES($1,$2,$3,$4,$5,$6)`, storage.Hash([]byte(token)), id, []string{service}, actions, time.Now().Add(lifetime), admin.ID); err != nil {
 		return "", err
 	}
 	if _, err = tx.Exec(ctx, `INSERT INTO audit_events(organization_id,service_id,actor_id,action,target) VALUES($1,$2,$3,'token.issued',$4)`, admin.OrganizationID, service, admin.ID, id); err != nil {

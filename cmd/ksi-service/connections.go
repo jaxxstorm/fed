@@ -20,10 +20,10 @@ func maintainConnections(ctx context.Context, db *pgxpool.Pool, cfg config.Confi
 	if cfg.DevIdentity {
 		issuer, subject = "local-development", "developer"
 	}
-	if issuer == "" || subject == "" {
+	if issuer == "" || (subject == "" && cfg.AdminEmail == "") {
 		return errors.New("connection maintenance requires an administrator identity configuration")
 	}
-	a, err := auth.BootstrapAdmin(ctx, db, issuer, subject)
+	a, err := auth.ResolveAdministrator(ctx, db, issuer, subject, cfg.AdminEmail)
 	if err != nil {
 		return errors.New("connection maintenance identity unavailable")
 	}

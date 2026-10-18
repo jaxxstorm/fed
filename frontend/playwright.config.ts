@@ -7,6 +7,7 @@ export default defineConfig({
     "connections.spec.ts",
     "connection-handoff.spec.ts",
     "provider-setup.spec.ts",
+    "organization.spec.ts",
   ],
   use: { baseURL: "http://127.0.0.1:5173" },
   webServer: {

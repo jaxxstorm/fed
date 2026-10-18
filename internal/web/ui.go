@@ -40,6 +40,27 @@ func uiFailure(w http.ResponseWriter, err error, contexts ...context.Context) {
 	status := 500
 	e := UIError{Code: "operation_failed", Title: "We couldn’t complete this action", Explanation: "Your changes have not been confirmed. Use the diagnostic reference when contacting the service administrator.", Reference: uuid.NewString()}
 	switch {
+	case errors.Is(err, auth.ErrMembershipPending):
+		status = 403
+		e.Code = "membership_pending"
+		e.Title = "Waiting for approval"
+		e.Explanation = "An administrator must approve your access."
+		e.Action = "/approval"
+	case errors.Is(err, auth.ErrLastAdmin):
+		status = 409
+		e.Code = "last_administrator"
+		e.Title = "Keep an eligible administrator"
+		e.Explanation = "Approve another administrator first and ensure your account remains eligible for the organization policy."
+	case errors.Is(err, auth.ErrMembershipInvalid):
+		status = 400
+		e.Code = "invalid_input"
+		e.Title = "Check organization inputs"
+		e.Explanation = "Provide a valid role, email domain, name and current revision."
+	case errors.Is(err, auth.ErrMembershipConflict):
+		status = 409
+		e.Code = "revision_conflict"
+		e.Title = "Membership changed"
+		e.Explanation = "Refresh the users list and review its current status before retrying."
 	case errors.Is(err, assessment.ErrInvalid):
 		status = 400
 		e.Code = "invalid_input"
@@ -110,7 +131,13 @@ func (app *App) uiBootstrap(w http.ResponseWriter, r *http.Request) {
 		uiFailure(w, err, r.Context())
 		return
 	}
-	jsonResponse(w, 200, UIBootstrap{services, auth.CSRF(r.Context()), capabilities, auth.Authorize(r.Context(), app.Store.DB, a, "", "admin") == nil, profiles})
+	member, err := auth.ActiveMember(r.Context(), app.Store.DB, a)
+	if err != nil {
+		uiFailure(w, err, r.Context())
+		return
+	}
+	admin := member.Role == "admin"
+	jsonResponse(w, 200, UIBootstrap{Services: services, CSRF: auth.CSRF(r.Context()), Capabilities: capabilities, CanCreate: admin, Profiles: profiles, Role: member.Role, CanManageOrganization: admin})
 }
 
 // Browser pages reuse the same authorized domain adapters as the original UI.
@@ -201,11 +228,13 @@ type UIRule struct {
 	State         assessment.RequirementPresentation `json:"state"`
 }
 type UIBootstrap struct {
-	Services     []assessment.Service `json:"services"`
-	CSRF         string               `json:"csrf"`
-	Capabilities map[string][]string  `json:"capabilities"`
-	CanCreate    bool                 `json:"can_create"`
-	Profiles     map[string]string    `json:"profiles,omitempty"`
+	Role                  string               `json:"role,omitempty"`
+	CanManageOrganization bool                 `json:"can_manage_organization,omitempty"`
+	Services              []assessment.Service `json:"services"`
+	CSRF                  string               `json:"csrf"`
+	Capabilities          map[string][]string  `json:"capabilities"`
+	CanCreate             bool                 `json:"can_create"`
+	Profiles              map[string]string    `json:"profiles,omitempty"`
 }
 type UIOverview struct {
 	EvidenceRecords int                                   `json:"evidence_records"`

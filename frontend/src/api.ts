@@ -8,6 +8,8 @@ export type BrowserContractCheck =
   | MatchesContract<Overview, components["schemas"]["UIOverview"]>;
 
 export interface Bootstrap {
+  role?: string;
+  can_manage_organization?: boolean;
   profiles?: Record<string, string>;
   services: { id: string; name: string; organization_id: string }[];
   csrf: string;

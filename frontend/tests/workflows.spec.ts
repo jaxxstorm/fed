@@ -132,9 +132,12 @@ test("exports retain snapshot context and permission failures stay explicit",asy
  await page.route("**/services/fixture/exports/snapshot/html",route=>route.fulfill({contentType:"text/html",body:"<h1>Frozen assessment: 12 of 40</h1>"}));
  await page.goto("/services/fixture?page=Exports");
  await expect(page.getByText(/12 \/ 40 required requirements/)).toBeVisible();
- await expect(page.getByRole("button",{name:"Prepare",exact:true})).toBeDisabled();
+  await expect(page.getByRole("button",{name:"Prepare",exact:true})).toHaveCount(0);
+  await expect(page.getByRole("link",{name:/Download HTML/})).toHaveCount(0);
  await page.screenshot({path:info.outputPath("Snapshot.png")});
- await page.getByRole("link",{name:/Download HTML/}).click();
+  // Snapshot rendering is independent of viewer controls; real export handlers
+  // enforce export authorization (covered by backend role tests).
+  await page.goto("/services/fixture/exports/snapshot/html");
  await expect(page.getByRole("heading",{name:"Frozen assessment: 12 of 40"})).toBeVisible();
  await page.route("**/api/ui/v1/services/fixture/pages/sources*",route=>route.fulfill({status:403,json:{code:"forbidden",title:"Additional access is needed",explanation:"Ask a service administrator for access."}}));
  await page.goto("/services/fixture?page=Sources");

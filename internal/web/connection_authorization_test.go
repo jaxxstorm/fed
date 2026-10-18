@@ -62,7 +62,7 @@ func TestProviderCallbackBoundSessionAndConfiguredOrigin(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if _, err = db.Exec(ctx, `INSERT INTO sessions(hash,identity_id,csrf_token,expires_at) VALUES($1,$2,'csrf',now()+interval '1 hour')`, storage.Hash([]byte("session")), a.ID); err != nil {
+	if _, err = db.Exec(ctx, `INSERT INTO sessions(hash,identity_id,csrf_token,expires_at,policy_fingerprint) VALUES($1,$2,'csrf',now()+interval '1 hour',$3)`, storage.Hash([]byte("session")), a.ID, (auth.AdmissionConfig{}).Fingerprint()); err != nil {
 		t.Fatal(err)
 	}
 	app := &App{Store: store, Connections: s, ConnectionOrigin: "https://app.example"}

@@ -261,6 +261,8 @@ func Emit(ctx context.Context, level zerolog.Level, f Fields) {
 // SafeCode never treats arbitrary provider/driver error text as log metadata.
 func SafeCode(code string) string {
 	switch code {
+	case "membership_pending", "membership_conflict", "invalid_membership", "last_administrator", "membership_disabled":
+		return code
 	case "", "internal_error", "cancelled", "deadline_exceeded", "invalid_logging_configuration", "handler_panic", "transport_rejected", "protocol_error", "tool_error", "forbidden", "invalid_input", "not_found", "revision_conflict", "view_changed", "out_of_scope", "artifact_too_large", "invalid_observation", "connection_inactive", "connection_credentials_unavailable", "integration_unavailable", "connection_operation_failed", "connection_changed", "authorization_revoked", "collection_error", "scope_or_permission_changed", "wrong_tenant", "insufficient_permissions", "rate_limited", "grant_expired", "resource_unavailable", "role_trust_denied", "provider_error", "profile_sign_in_required", "fed_runtime_role_mismatch", "fed_role_verification_denied", "workspace_policy_restricted", "installation_removed", "installation_suspended", "authorization_cancelled", "authorization_exchange_failed", "administrator_approval_pending", "offline_consent_required", "customer_identity_permission_required", "missing_application_configuration", "setup_account_locked", "aws_setup_material_required", "delegated_role_configuration_required":
 		return code
 	default:

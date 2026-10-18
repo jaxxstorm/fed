@@ -52,8 +52,12 @@ func TestProvisionRuntimePermissions(t *testing.T) {
 		t.Fatal(err)
 	}
 	defer runtime.Close()
-	if _, err := auth.BootstrapAdmin(ctx, runtime, "https://test.invalid", "test-subject"); err != nil {
+	actor, err := auth.BootstrapAdmin(ctx, runtime, "https://test.invalid", "test-subject")
+	if err != nil {
 		t.Fatalf("runtime cannot bootstrap administrator: %v", err)
+	}
+	if err := auth.RecoverAdministrator(ctx, runtime, actor.ID, false); err == nil {
+		t.Fatal("runtime unexpectedly allowed operator recovery")
 	}
 	for _, sql := range []string{
 		`CREATE TABLE forbidden(id int)`,

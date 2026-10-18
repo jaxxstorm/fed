@@ -4,6 +4,7 @@ package config
 import (
 	"errors"
 	"fmt"
+	"github.com/jaxxstorm/fed/internal/auth"
 	"net"
 	"net/url"
 	"os"
@@ -21,6 +22,9 @@ type Config struct {
 	OIDCClientSecret   string
 	PublicURL          string
 	AdminSubject       string
+	AdminEmail         string
+	OIDCOrgClaim       string
+	OIDCOrgValue       string
 	ArtifactDirectory  string
 	ArtifactBucket     string
 	ArtifactEndpoint   string
@@ -50,12 +54,16 @@ func FromEnv(get func(string) string) (Config, error) {
 		OIDCIssuer:         get("KSI_OIDC_ISSUER"), OIDCClientID: get("KSI_OIDC_CLIENT_ID"),
 		OIDCClientSecret: get("KSI_OIDC_CLIENT_SECRET"), PublicURL: get("KSI_PUBLIC_URL"),
 		AdminSubject: get("KSI_ADMIN_SUBJECT"), ArtifactDirectory: value("KSI_ARTIFACT_DIRECTORY", ".data/artifacts"),
+		AdminEmail: get("KSI_ADMIN_EMAIL"), OIDCOrgClaim: get("KSI_OIDC_ORG_CLAIM"), OIDCOrgValue: get("KSI_OIDC_ORG_VALUE"),
 		ArtifactBucket: get("KSI_ARTIFACT_BUCKET"), ArtifactEndpoint: get("KSI_ARTIFACT_ENDPOINT"),
 	}
 	return c, c.Validate()
 }
 
 func (c Config) Validate() error {
+	if err := (auth.AdmissionConfig{AdminEmail: c.AdminEmail, AdminSubject: c.AdminSubject, OrganizationClaim: c.OIDCOrgClaim, OrganizationValue: c.OIDCOrgValue}).Validate(); err != nil {
+		return err
+	}
 	if c.Mode != "server" && c.Mode != "worker" && c.Mode != "all" && c.Mode != "migrate" {
 		return errors.New("KSI_MODE must be server, worker, all, or migrate")
 	}
@@ -74,7 +82,7 @@ func (c Config) Validate() error {
 			return errors.New("development identity requires a literal loopback listen address")
 		}
 	} else if c.Mode == "server" || c.Mode == "all" {
-		for _, pair := range [][2]string{{"KSI_OIDC_ISSUER", c.OIDCIssuer}, {"KSI_OIDC_CLIENT_ID", c.OIDCClientID}, {"KSI_OIDC_CLIENT_SECRET", c.OIDCClientSecret}, {"KSI_PUBLIC_URL", c.PublicURL}, {"KSI_ADMIN_SUBJECT", c.AdminSubject}} {
+		for _, pair := range [][2]string{{"KSI_OIDC_ISSUER", c.OIDCIssuer}, {"KSI_OIDC_CLIENT_ID", c.OIDCClientID}, {"KSI_OIDC_CLIENT_SECRET", c.OIDCClientSecret}, {"KSI_PUBLIC_URL", c.PublicURL}} {
 			if pair[1] == "" {
 				return fmt.Errorf("%s is required for authenticated startup", pair[0])
 			}

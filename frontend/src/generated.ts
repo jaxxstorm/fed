@@ -34,6 +34,155 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/ui/v1/members": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: {
+                    offset?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Authorized membership response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MemberPage"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["MembershipChange"];
+                };
+            };
+            responses: {
+                /** @description Committed organization change */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/membership-status": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Authorized membership response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ApprovalStatus"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/ui/v1/organization": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Authorized membership response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Organization"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["OrganizationUpdate"];
+                };
+            };
+            responses: {
+                /** @description Committed organization change */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/ui/v1/services": {
         parameters: {
             query?: never;
@@ -2554,6 +2703,10 @@ export interface components {
             valid_until?: string | null;
             verified_account_id?: string;
         };
+        ApprovalStatus: {
+            email: string;
+            state: string;
+        };
         AuthorizationHandoff: {
             /** Format: date-time */
             expires_at: string;
@@ -2746,6 +2899,25 @@ export interface components {
             Text: string;
             URL: string;
         };
+        MemberPage: {
+            members: components["schemas"]["Membership"][] | null;
+            next_offset?: number | null;
+        };
+        Membership: {
+            email: string;
+            identity_id: string;
+            name: string;
+            organization_id: string;
+            revision: number;
+            role: string;
+            state: string;
+        };
+        MembershipChange: {
+            expected_revision: number;
+            identity_id: string;
+            operation: string;
+            role: string;
+        };
         Metric: {
             Label: string;
             Value: string;
@@ -2763,6 +2935,17 @@ export interface components {
             generation: number;
             idempotency_key: string;
             service_id: string;
+        };
+        Organization: {
+            allowed_domains: string[] | null;
+            id: string;
+            name: string;
+            revision: number;
+        };
+        OrganizationUpdate: {
+            allowed_domains: string[] | null;
+            expected_revision: number;
+            name: string;
         };
         Page: {
             Activities: components["schemas"]["Link"][] | null;
@@ -2985,6 +3168,7 @@ export interface components {
         };
         UIBootstrap: {
             can_create: boolean;
+            can_manage_organization?: boolean;
             capabilities: {
                 [key: string]: string[] | null;
             } | null;
@@ -2992,6 +3176,7 @@ export interface components {
             profiles?: {
                 [key: string]: string;
             } | null;
+            role?: string;
             services: components["schemas"]["Service"][] | null;
         };
         UIError: {

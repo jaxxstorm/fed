@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/jaxxstorm/fed/internal/assessment"
+	"github.com/jaxxstorm/fed/internal/auth"
 	"github.com/jaxxstorm/fed/internal/connections"
 	"github.com/jaxxstorm/fed/internal/web"
 	"os"
@@ -81,6 +82,14 @@ func describe(t reflect.Type) schema {
 }
 func main() {
 	paths := map[string]any{}
+	for path, typ := range map[string]reflect.Type{"/api/ui/v1/organization": reflect.TypeFor[auth.Organization](), "/api/ui/v1/members": reflect.TypeFor[auth.MemberPage](), "/api/ui/v1/membership-status": reflect.TypeFor[auth.ApprovalStatus]()} {
+		paths[path] = schema{"get": schema{"responses": schema{"200": schema{"description": "Authorized membership response", "content": schema{"application/json": schema{"schema": describe(typ)}}}}}}
+	}
+	for path, typ := range map[string]reflect.Type{"/api/ui/v1/organization": reflect.TypeFor[auth.OrganizationUpdate](), "/api/ui/v1/members": reflect.TypeFor[auth.MembershipChange]()} {
+		entry := paths[path].(schema)
+		entry["post"] = schema{"requestBody": schema{"required": true, "content": schema{"application/json": schema{"schema": describe(typ)}}}, "responses": schema{"200": schema{"description": "Committed organization change"}}}
+	}
+	paths["/api/ui/v1/members"].(schema)["get"].(schema)["parameters"] = []schema{{"name": "offset", "in": "query", "required": false, "schema": schema{"type": "integer", "minimum": 0}}}
 	for path, typ := range map[string]reflect.Type{"/api/ui/v1/bootstrap": reflect.TypeFor[web.UIBootstrap](), "/api/ui/v1/services/{service}/overview": reflect.TypeFor[web.UIOverview](), "/api/ui/v1/services/{service}/pages/{page}": reflect.TypeFor[web.Page]()} {
 		parameters := []any{}
 		for _, name := range []string{"service", "page"} {

@@ -30,6 +30,7 @@ function asObject(v: Value | undefined): Record<string, Value> {
 
 import { ConnectionsPage } from "./connections";
 import { ActionForm, ErrorPanel, parseValue, Readable } from "./forms";
+import { OrganizationPage } from "./organization";
 import { StatusBadge } from "./workspace";
 
 const pages = [
@@ -140,6 +141,15 @@ export function LiveApp() {
         <Link className="nav-link" to="/">
           All services
         </Link>
+        {data.can_manage_organization && (
+          <Link
+            className="nav-link"
+            to="/organization"
+            onClick={() => setMenu(false)}
+          >
+            Organization & users
+          </Link>
+        )}
       </nav>
       <div className="sidebar-footer">Evidence · Findings · Human review</div>
     </>
@@ -189,7 +199,17 @@ export function LiveApp() {
           </span>
         </header>
         <main id="main" tabIndex={-1}>
-          {!id ? (
+          {location.pathname === "/organization" ? (
+            data.can_manage_organization ? (
+              <OrganizationPage csrf={data.csrf} />
+            ) : (
+              <section className="panel">
+                <h1>Administrator access required</h1>
+                <p>Your current role cannot manage organization users.</p>
+                <Link to="/">Return to services</Link>
+              </section>
+            )
+          ) : !id ? (
             <>
               <Heading
                 title="Your services"
@@ -1322,14 +1342,16 @@ function LegacyPage({
         </Link>
       ))}
       {p.Links?.filter(
-        (l) => l.URL.includes("/exports/") || l.URL.includes("batch="),
+        (l) =>
+          (l.URL.includes("/exports/") && caps.includes("export")) ||
+          l.URL.includes("batch="),
       ).map((l) => (
         <a className="panel attention" key={l.URL} href={l.URL}>
           {l.Text}
           <ArrowUpRight size={16} />
         </a>
       ))}
-      {p.Forms?.map((f) => (
+      {p.Forms?.filter((f) => caps.includes(permission(f.Action))).map((f) => (
         <details
           className="form-disclosure"
           key={

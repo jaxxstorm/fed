@@ -86,6 +86,11 @@ func (s *Store) CreateService(ctx context.Context, a auth.Actor, name string) (S
 }
 
 func (s *Store) Services(ctx context.Context, a auth.Actor) ([]Service, error) {
+	if a.Kind == "human" {
+		if _, err := auth.ActiveMember(ctx, s.DB, a); err != nil {
+			return nil, err
+		}
+	}
 	rows, err := s.DB.Query(ctx, `SELECT id,name,organization_id FROM services WHERE organization_id=$1 ORDER BY name,id`, a.OrganizationID)
 	if err != nil {
 		return nil, err

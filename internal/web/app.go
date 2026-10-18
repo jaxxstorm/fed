@@ -31,6 +31,7 @@ type App struct {
 
 func (app *App) Handler() http.Handler {
 	m := http.NewServeMux()
+	app.registerOrganizationAPI(m)
 	if app.Connections != nil {
 		app.registerConnectionAPI(m)
 		m.HandleFunc("POST /connections/upload/{provider}", app.connectionUpload)

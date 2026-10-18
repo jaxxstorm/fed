@@ -139,7 +139,12 @@ func TestSetupCallbackExpiryActorAndRevisionFences(t *testing.T) {
 			case "expired":
 				_, err = s.DB.Exec(ctx, `UPDATE connection_setup_authorizations SET expires_at=now()-interval '1 second' WHERE setup_id=$1`, setup.ID)
 			case "different-actor":
-				actor, err = auth.BootstrapAdmin(ctx, s.DB, "test", "other-browser")
+				var member auth.Membership
+				member, err = auth.Admit(ctx, s.DB, auth.AdmissionConfig{}, auth.VerifiedIdentity{Issuer: "test", Subject: "other-browser", Email: "other@example.com", EmailVerified: true})
+				if err == nil {
+					member, err = auth.ChangeMembership(ctx, s.DB, a, auth.MembershipChange{IdentityID: member.IdentityID, ExpectedRevision: member.Revision, Operation: "approve", Role: "admin"})
+				}
+				actor = auth.Actor{ID: member.IdentityID, OrganizationID: member.OrganizationID, Kind: "human"}
 				if err != nil {
 					t.Fatal(err)
 				}

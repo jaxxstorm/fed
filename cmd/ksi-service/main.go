@@ -38,7 +38,7 @@ func run() (runErr error) {
 	mode := os.Getenv("KSI_MODE")
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
-		case "migrate", "import-catalog", "provision-runtime", "import-connections", "rotate-connection-keys":
+		case "migrate", "import-catalog", "provision-runtime", "import-connections", "rotate-connection-keys", "recover-admin":
 			mode = "migrate"
 		}
 	}
@@ -70,7 +70,7 @@ func run() (runErr error) {
 		command = os.Args[1]
 	}
 	cfg, err := config.FromEnv(func(key string) string {
-		if key == "KSI_MODE" && (command == "import-catalog" || command == "migrate" || command == "provision-runtime" || command == "import-connections" || command == "rotate-connection-keys") {
+		if key == "KSI_MODE" && (command == "import-catalog" || command == "migrate" || command == "provision-runtime" || command == "import-connections" || command == "rotate-connection-keys" || command == "recover-admin") {
 			return "migrate"
 		}
 		return os.Getenv(key)
@@ -119,6 +119,13 @@ func run() (runErr error) {
 	if command == "provision-runtime" {
 		stage = "provision_runtime"
 		return provisionRuntime(ctx, db, os.Getenv("KSI_RUNTIME_DATABASE_PASSWORD"))
+	}
+	if command == "recover-admin" {
+		stage = "administrator_recovery"
+		if len(os.Args) < 3 || len(os.Args) > 4 || (len(os.Args) == 4 && os.Args[3] != "--clear-domains") {
+			return errors.New("usage: recover-admin ID [--clear-domains]")
+		}
+		return auth.RecoverAdministrator(ctx, db, os.Args[2], len(os.Args) == 4)
 	}
 	if cfg.Mode == "migrate" {
 		stage = "migration"
@@ -179,13 +186,20 @@ func run() (runErr error) {
 		}
 		browser = &auth.Browser{DB: db, Dev: &actor}
 	} else {
-		if _, err := auth.BootstrapAdmin(ctx, db, cfg.OIDCIssuer, cfg.AdminSubject); err != nil {
-			return errors.New("administrator provisioning failed")
+		admission := auth.AdmissionConfig{AdminEmail: cfg.AdminEmail, AdminSubject: cfg.AdminSubject, OrganizationClaim: cfg.OIDCOrgClaim, OrganizationValue: cfg.OIDCOrgValue}
+		if err := auth.CheckBootstrap(ctx, db, admission); err != nil {
+			return errors.New("initial administrator configuration unavailable; configure bootstrap and run migrations")
+		}
+		if cfg.AdminSubject != "" {
+			if _, err := auth.BootstrapAdmin(ctx, db, cfg.OIDCIssuer, cfg.AdminSubject); err != nil {
+				return errors.New("administrator provisioning failed")
+			}
 		}
 		browser, err = auth.NewBrowser(ctx, db, cfg.OIDCIssuer, cfg.OIDCClientID, cfg.OIDCClientSecret, cfg.PublicURL)
 		if err != nil {
 			return errors.New("OIDC initialization failed")
 		}
+		browser.Admission = admission
 	}
 	e := web.Bootstrap(db.Ping)
 	store := &assessment.Store{DB: db, Artifacts: artifacts}
@@ -200,6 +214,8 @@ func run() (runErr error) {
 	e.Any("/mcp", echo.WrapHandler(mcpserver.Handler(store, runner, mcpserver.ConnectionOptions{Service: app.Connections, PublicOrigin: cfg.PublicURL})))
 	protected := echo.WrapHandler(browser.Protect(app.Handler()))
 	e.GET("/", protected)
+	e.GET("/approval", protected)
+	e.GET("/organization", protected)
 	e.Any("/services", protected)
 	e.Any("/services/*", protected)
 	e.Any("/api/ui/v1/*", protected)

@@ -50,7 +50,7 @@ func TestSessionAndCSRF(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	_, err = db.Exec(ctx, `INSERT INTO sessions(hash,identity_id,csrf_token,expires_at) VALUES($1,$2,$3,$4)`, storage.Hash([]byte("session")), a.ID, "csrf", time.Now().Add(time.Hour))
+	_, err = db.Exec(ctx, `INSERT INTO sessions(hash,identity_id,csrf_token,expires_at,policy_fingerprint) VALUES($1,$2,$3,$4,$5)`, storage.Hash([]byte("session")), a.ID, "csrf", time.Now().Add(time.Hour), (AdmissionConfig{}).Fingerprint())
 	if err != nil {
 		t.Fatal(err)
 	}
