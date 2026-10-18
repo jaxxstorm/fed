@@ -38,7 +38,7 @@ func run() (runErr error) {
 	mode := os.Getenv("KSI_MODE")
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
-		case "migrate", "import-catalog", "provision-runtime", "import-connections", "rotate-connection-keys", "recover-admin":
+		case "migrate", "import-catalog", "provision-runtime", "import-connections", "rotate-connection-keys", "recover-admin", "provision-kubernetes":
 			mode = "migrate"
 		}
 	}
@@ -70,7 +70,7 @@ func run() (runErr error) {
 		command = os.Args[1]
 	}
 	cfg, err := config.FromEnv(func(key string) string {
-		if key == "KSI_MODE" && (command == "import-catalog" || command == "migrate" || command == "provision-runtime" || command == "import-connections" || command == "rotate-connection-keys" || command == "recover-admin") {
+		if key == "KSI_MODE" && (command == "import-catalog" || command == "migrate" || command == "provision-runtime" || command == "import-connections" || command == "rotate-connection-keys" || command == "recover-admin" || command == "provision-kubernetes") {
 			return "migrate"
 		}
 		return os.Getenv(key)
@@ -119,6 +119,10 @@ func run() (runErr error) {
 	if command == "provision-runtime" {
 		stage = "provision_runtime"
 		return provisionRuntime(ctx, db, os.Getenv("KSI_RUNTIME_DATABASE_PASSWORD"))
+	}
+	if command == "provision-kubernetes" {
+		stage = "provision_kubernetes"
+		return provisionKubernetes(ctx, db, cfg)
 	}
 	if command == "recover-admin" {
 		stage = "administrator_recovery"

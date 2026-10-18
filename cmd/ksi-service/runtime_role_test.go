@@ -9,6 +9,7 @@ import (
 
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/jaxxstorm/fed/internal/auth"
+	"github.com/jaxxstorm/fed/internal/connections"
 	"github.com/jaxxstorm/fed/internal/storage"
 )
 
@@ -58,6 +59,10 @@ func TestProvisionRuntimePermissions(t *testing.T) {
 	}
 	if err := auth.RecoverAdministrator(ctx, runtime, actor.ID, false); err == nil {
 		t.Fatal("runtime unexpectedly allowed operator recovery")
+	}
+	connectionService := connections.Service{DB: runtime}
+	if _, err := connectionService.ProvisionKubernetes(ctx, actor, "unused", "cluster", "uid", "https://cluster.example", "credential"); err == nil {
+		t.Fatal("runtime unexpectedly allowed operator credential provisioning")
 	}
 	for _, sql := range []string{
 		`CREATE TABLE forbidden(id int)`,
