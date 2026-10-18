@@ -84,7 +84,7 @@ func TestProviderCallbackBoundSessionAndConfiguredOrigin(t *testing.T) {
 		t.Fatal(err)
 	}
 	unauthenticated := request(handoff.URL, "")
-	if unauthenticated.Header().Get("Location") != "/auth/login" {
+	if unauthenticated.Code != http.StatusFound || unauthenticated.Header().Get("Location") != "/" {
 		t.Fatal("handoff bypassed login")
 	}
 	w := request(handoff.URL, "session")

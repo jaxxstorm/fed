@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/coreos/go-oidc/v3/oidc"
+	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/jaxxstorm/fed/internal/storage"
 	"golang.org/x/oauth2"
@@ -149,7 +150,7 @@ func (b *Browser) Protect(next http.Handler) http.Handler {
 					browserAPIError(w, 401, "session_expired", "Sign in to continue", "Your session has expired. Sign in, then retry your action.")
 					return
 				}
-				http.Redirect(w, r, "/auth/login", http.StatusFound)
+				signedOut(w, r)
 				return
 			}
 			sessionHash = storage.Hash([]byte(c.Value))
@@ -159,11 +160,21 @@ func (b *Browser) Protect(next http.Handler) http.Handler {
 				err = ErrForbidden
 			}
 			if err != nil {
+				w.Header().Set("Cache-Control", "no-store")
+				if !errors.Is(err, pgx.ErrNoRows) && !errors.Is(err, ErrForbidden) {
+					if strings.HasPrefix(r.URL.Path, "/api/ui/") {
+						browserAPIError(w, 503, "session_unavailable", "Sign-in temporarily unavailable", "Retry once the service is available.")
+					} else {
+						http.Error(w, "session unavailable", 503)
+					}
+					return
+				}
+				cookie(w, "ksi_session", "", -1, true)
 				if strings.HasPrefix(r.URL.Path, "/api/ui/") {
 					browserAPIError(w, 401, "session_expired", "Sign in to continue", "Your session is no longer available.")
 					return
 				}
-				http.Error(w, "unauthenticated", 401)
+				signedOut(w, r)
 				return
 			}
 		}
@@ -231,6 +242,30 @@ type ApprovalStatus struct {
 	Email string `json:"email"`
 }
 
+// Signed-out navigation always has a usable home page. No authenticated
+// bootstrap data or JavaScript application is loaded before sign-in.
+func signedOut(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Cache-Control", "no-store")
+	if r.Method != http.MethodGet && r.Method != http.MethodHead {
+		http.Error(w, "unauthenticated", http.StatusUnauthorized)
+		return
+	}
+	if r.URL.Path != "/" {
+		http.Redirect(w, r, "/", http.StatusFound)
+		return
+	}
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("X-Content-Type-Options", "nosniff")
+	w.Header().Set("Content-Security-Policy", "default-src 'self'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'")
+	if r.Method == http.MethodHead {
+		w.WriteHeader(http.StatusOK)
+		return
+	}
+	_ = signedOutPage.Execute(w, nil)
+}
+
+var signedOutPage = template.Must(template.New("signed-out").Parse(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fed · Assessment evidence workspace</title><style>body{margin:0;background:#f6f7fb;color:#172033;font:16px/1.6 Inter,ui-sans-serif,system-ui,sans-serif}main{box-sizing:border-box;max-width:680px;margin:12vh auto;padding:40px;background:white;border:1px solid #dce2eb;border-radius:12px}h1{font-size:36px;letter-spacing:-1px;line-height:1.2}.brand{color:#4f46e5;font-weight:650}a{display:inline-block;min-height:44px;box-sizing:border-box;margin-top:16px;padding:10px 24px;border-radius:8px;background:#4f46e5;color:white;font-weight:600;text-decoration:none}a:focus-visible{outline:3px solid #4f46e5;outline-offset:4px}.muted{color:#536078;font-size:14px}@media(max-width:720px){main{margin:32px 16px;padding:24px}h1{font-size:30px}}</style></head><body><main><p class="brand">Fed</p><h1>Assessment evidence workspace</h1><p>Collect evidence, track assessment progress and collaborate with your team.</p><a href="/auth/login">Sign in</a><p class="muted">Sign in with your organization account. New users wait for administrator approval before accessing assessments.</p></main></body></html>`))
+
 var approvalPage = template.Must(template.New("approval").Parse(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Waiting for approval · Fed</title><style>body{margin:0;background:#f6f7fb;color:#172033;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif}main{max-width:560px;margin:10vh auto;padding:32px;background:white;border:1px solid #dce2eb;border-radius:12px}h1{font-size:32px;letter-spacing:-1px;line-height:1.2}p{overflow-wrap:anywhere}.brand{color:#4f46e5;font-weight:650}nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}a,button{display:inline-block;box-sizing:border-box;min-height:44px;padding:10px 16px;border:1px solid #dce2eb;border-radius:8px;background:white;color:inherit;font:inherit;text-decoration:none;cursor:pointer}:focus-visible{outline:3px solid #4f46e5;outline-offset:3px}@media(max-width:600px){main{margin:24px 16px;padding:24px}}</style></head><body><main><p class="brand">Fed · Assessment evidence workspace</p><h1>Waiting for approval</h1><p>You are signed in as {{.Email}}. An administrator must approve your access before you can view assessments or evidence.</p><nav aria-label="Approval actions"><a href="/approval">Refresh status</a><form method="post" action="/auth/logout"><input type="hidden" name="csrf_token" value="{{.CSRF}}"><button type="submit">Sign out</button></form></nav></main></body></html>`))
 
 func browserAPIError(w http.ResponseWriter, status int, code, title, explanation string) {
@@ -257,7 +292,7 @@ func (b *Browser) Logout(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	cookie(w, "ksi_session", "", -1, b.Dev == nil)
-	http.Redirect(w, r, "/auth/login", http.StatusSeeOther)
+	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
 
 func Bearer(db *pgxpool.Pool, next http.Handler) http.Handler {

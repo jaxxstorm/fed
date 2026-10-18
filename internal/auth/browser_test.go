@@ -37,7 +37,7 @@ func TestDevelopmentBrowserBindingCannotAuthenticateProduction(t *testing.T) {
 		r.AddCookie(&http.Cookie{Name: "ksi_session", Value: value})
 		w = httptest.NewRecorder()
 		production.ServeHTTP(w, r)
-		if w.Code != 401 {
+		if w.Code != 200 || !strings.Contains(w.Body.String(), `href="/auth/login"`) {
 			t.Fatal("development credential authenticated production")
 		}
 	}
@@ -65,7 +65,7 @@ func TestSessionAndCSRF(t *testing.T) {
 		name, session, csrf string
 		status              int
 	}{
-		{"missing session", "", "", 302}, {"invalid session", "bad", "csrf", 401}, {"missing csrf", "session", "", 403}, {"valid", "session", "csrf", 204},
+		{"missing session", "", "", 401}, {"invalid session", "bad", "csrf", 401}, {"missing csrf", "session", "", 403}, {"valid", "session", "csrf", 204},
 	} {
 		t.Run(tt.name, func(t *testing.T) {
 			r := httptest.NewRequest("POST", "https://ksi.example/", nil)
@@ -95,5 +95,95 @@ func TestSessionAndCSRF(t *testing.T) {
 	var n int
 	if err = db.QueryRow(ctx, `SELECT count(*) FROM login_attempts`).Scan(&n); err != nil || n != 1 {
 		t.Fatalf("state was consumed: %d %v", n, err)
+	}
+}
+
+func TestExpiredSessionNavigationRecoversToLogin(t *testing.T) {
+	ctx := context.Background()
+	db := testutil.Database(t)
+	a, err := BootstrapAdmin(ctx, db, "https://id.example", "admin")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, session := range []struct {
+		name        string
+		expiry      time.Time
+		fingerprint string
+	}{
+		{"expired", time.Now().Add(-time.Hour), (AdmissionConfig{}).Fingerprint()},
+		{"policy-changed", time.Now().Add(time.Hour), "old-policy"},
+	} {
+		if _, err := db.Exec(ctx, `INSERT INTO sessions(hash,identity_id,csrf_token,expires_at,policy_fingerprint) VALUES($1,$2,'csrf',$3,$4)`, storage.Hash([]byte(session.name)), a.ID, session.expiry, session.fingerprint); err != nil {
+			t.Fatal(err)
+		}
+	}
+	b := Browser{DB: db}
+	h := b.Protect(http.HandlerFunc(func(http.ResponseWriter, *http.Request) { t.Error("invalid session reached protected handler") }))
+	for _, session := range []string{"deleted-by-migration", "expired", "policy-changed"} {
+		for _, request := range []struct {
+			method, path string
+			status       int
+		}{
+			{"GET", "/", 200}, {"GET", "/services/example", 302}, {"HEAD", "/", 200}, {"GET", "/api/ui/v1/bootstrap", 401}, {"POST", "/services", 401},
+		} {
+			t.Run(session+request.method+request.path, func(t *testing.T) {
+				r := httptest.NewRequest(request.method, "https://ksi.example"+request.path, nil)
+				r.AddCookie(&http.Cookie{Name: "ksi_session", Value: session})
+				w := httptest.NewRecorder()
+				h.ServeHTTP(w, r)
+				if w.Code != request.status {
+					t.Fatal(w.Code, w.Body.String())
+				}
+				if request.status == 302 && w.Header().Get("Location") != "/" {
+					t.Fatal("missing home redirect")
+				}
+				if request.method == "GET" && request.path == "/" && !strings.Contains(w.Body.String(), `href="/auth/login"`) {
+					t.Fatal("missing sign-in action")
+				}
+				if request.status == 401 && w.Header().Get("Location") != "" {
+					t.Fatal("API/mutation redirected")
+				}
+				cleared := false
+				for _, c := range w.Result().Cookies() {
+					if c.Name == "ksi_session" && c.MaxAge < 0 && c.Secure && c.HttpOnly {
+						cleared = true
+					}
+				}
+				if !cleared || w.Header().Get("Cache-Control") != "no-store" {
+					t.Fatal("stale cookie retained or response cacheable")
+				}
+			})
+		}
+	}
+}
+
+func TestSignedOutHomeDoesNotLoadProtectedApplication(t *testing.T) {
+	b := Browser{}
+	h := b.Protect(http.HandlerFunc(func(http.ResponseWriter, *http.Request) { t.Error("anonymous request reached application") }))
+	for _, path := range []string{"/", "/services/example", "/api/ui/v1/bootstrap"} {
+		w := httptest.NewRecorder()
+		h.ServeHTTP(w, httptest.NewRequest("GET", "https://ksi.example"+path, nil))
+		switch path {
+		case "/":
+			if w.Code != 200 || !strings.Contains(w.Body.String(), `href="/auth/login"`) {
+				t.Fatal("home unavailable", w.Code)
+			}
+			if strings.Contains(w.Body.String(), "<script") || strings.Contains(w.Body.String(), "/api/") {
+				t.Fatal("home loaded authenticated application")
+			}
+		case "/services/example":
+			if w.Code != 302 || w.Header().Get("Location") != "/" {
+				t.Fatal("missing home redirect")
+			}
+		default:
+			if w.Code != 401 {
+				t.Fatal("API did not reject anonymous request")
+			}
+		}
+	}
+	w := httptest.NewRecorder()
+	b.Logout(w, httptest.NewRequest("POST", "https://ksi.example/auth/logout", nil))
+	if w.Code != 303 || w.Header().Get("Location") != "/" {
+		t.Fatal("logout did not return home")
 	}
 }
