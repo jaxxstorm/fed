@@ -14,6 +14,9 @@ func SetupReadiness(get func(string) string) map[connections.Provider]connection
 		definition, _ := registry.Provider(provider)
 		out := connections.SetupReadiness{Provider: provider, Permissions: definition.Permissions, MissingConfiguration: []string{}, OperatorActions: []string{}, CustomerActions: []string{}}
 		for _, key := range keys {
+			if key == "KSI_GITHUB_PRIVATE_KEY_FILE" && get("KSI_GITHUB_PRIVATE_KEY") != "" {
+				continue
+			}
 			if get(key) == "" {
 				out.MissingConfiguration = append(out.MissingConfiguration, key)
 			}

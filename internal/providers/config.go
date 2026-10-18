@@ -37,10 +37,17 @@ func FromEnv(get func(string) string) (map[connections.Provider]connections.Adap
 		}
 		adapters[connections.Kubernetes] = Kubernetes{AllowedServers: servers, AllowedContexts: contexts, LegacyProfiles: profiles}
 	}
-	if configured(get, "KSI_GITHUB_APP_ID", "KSI_GITHUB_APP_SLUG", "KSI_GITHUB_CLIENT_ID", "KSI_GITHUB_CLIENT_SECRET", "KSI_GITHUB_PRIVATE_KEY_FILE") {
-		key, err := os.ReadFile(get("KSI_GITHUB_PRIVATE_KEY_FILE"))
-		if err != nil {
+	if configured(get, "KSI_GITHUB_APP_ID", "KSI_GITHUB_APP_SLUG", "KSI_GITHUB_CLIENT_ID", "KSI_GITHUB_CLIENT_SECRET") && (get("KSI_GITHUB_PRIVATE_KEY_FILE") != "" || get("KSI_GITHUB_PRIVATE_KEY") != "") {
+		if get("KSI_GITHUB_PRIVATE_KEY_FILE") != "" && get("KSI_GITHUB_PRIVATE_KEY") != "" {
 			return nil, ProviderError("github_application_configuration_invalid")
+		}
+		key := []byte(get("KSI_GITHUB_PRIVATE_KEY"))
+		if path := get("KSI_GITHUB_PRIVATE_KEY_FILE"); path != "" {
+			var err error
+			key, err = os.ReadFile(path)
+			if err != nil {
+				return nil, ProviderError("github_application_configuration_invalid")
+			}
 		}
 		defer clear(key)
 		adapter, err := NewGitHub(GitHubConfig{AppID: get("KSI_GITHUB_APP_ID"), Slug: get("KSI_GITHUB_APP_SLUG"), ClientID: get("KSI_GITHUB_CLIENT_ID"), ClientSecret: get("KSI_GITHUB_CLIENT_SECRET"), PrivateKey: key})

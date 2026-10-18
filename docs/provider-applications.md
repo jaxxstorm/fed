@@ -23,7 +23,10 @@ outside the database and retain old key versions while rotating stored grants.
 3. Configure `KSI_GITHUB_APP_ID`, `KSI_GITHUB_APP_SLUG`,
    `KSI_GITHUB_CLIENT_ID`, `KSI_GITHUB_CLIENT_SECRET`, and
    `KSI_GITHUB_PRIVATE_KEY_FILE` on the server. The private key file must contain
-   an RSA key of at least 2048 bits in PKCS#1 or PKCS#8 PEM format.
+    an RSA key of at least 2048 bits in PKCS#1 or PKCS#8 PEM format.
+    Alternatively, inject the PEM through `KSI_GITHUB_PRIVATE_KEY` using your
+    deployment secret manager. Configure exactly one of the key file or inline
+    secret; configuring both is rejected.
 4. Start authorization from the connection. The browser user must have access
    to the installation. The service checks both user access and the App's
    installation/account identity before storing the binding.
