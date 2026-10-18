@@ -1340,6 +1340,7 @@ function LegacyPage({
           }
           id={f.Action.endsWith("/review") ? "review" : undefined}
           open={
+            f.Action.endsWith("/token") ||
             (!p.Detail && (p.Forms?.length || 0) < 5) ||
             (f.Action.endsWith("/review") &&
               location.search.includes("review=1"))

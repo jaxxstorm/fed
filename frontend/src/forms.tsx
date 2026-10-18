@@ -330,11 +330,12 @@ export function ActionForm({
         body: new URLSearchParams(values),
       });
       setSaved(true);
+      // One-time results (especially agent tokens) must be visible immediately,
+      // independently of the background refresh of the surrounding page.
+      if (!out.redirect) setResult(out);
       await query.invalidateQueries();
       if (out.redirect) {
         navigate(out.redirect);
-      } else {
-        setResult(out);
       }
     } catch (e) {
       setError(e as Error);

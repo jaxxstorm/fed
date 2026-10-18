@@ -1,5 +1,32 @@
 import {expect,test} from "@playwright/test";
 
+test("issued agent token remains visible when settings gains a fifth form", async ({page}) => {
+ let issued = 0;
+ const forms = ["preview-profile", "scope", "token", "destination"].map(action => ({
+  Action:`/services/fixture/actions/${action}`, Title:action === "token" ? "Agent access" : action,
+  Button:action === "token" ? "Issue scoped token" : "Save", Fields:[],
+ }));
+ await page.route("**/api/ui/v1/**", async route => {
+  if (route.request().url().endsWith("bootstrap")) return route.fulfill({json:{services:[{id:"fixture",name:"Token fixture"}],csrf:"test",capabilities:{fixture:["read","admin"]}}});
+  if (route.request().method() === "POST") {
+   issued++;
+   return route.fulfill({json:{Title:"Agent token",Notice:"Copy this token now; it is only shown once.",Sections:[{Title:"Token",Text:`test-secret-token-${issued}`} ]}});
+  }
+  return route.fulfill({json:{Title:"Settings",Forms:[...forms,...Array.from({length:issued},(_,i)=>({Action:"/services/fixture/actions/revoke-token",Title:`Issued token ${i+1}`,Button:"Revoke this token",Fields:[{Name:"hash",Type:"hidden",Value:`hash-${i}`}]}))]}});
+ });
+ await page.goto("/services/fixture?page=Settings");
+ for (let i=1;i<=2;i++) {
+  await page.getByRole("button",{name:"Issue scoped token",exact:true}).click();
+  await expect(page.locator("summary").filter({hasText:`Issued token ${i}`})).toBeVisible();
+  await expect(page.getByText(`test-secret-token-${i}`,{exact:true})).toBeVisible();
+  await expect(page.getByText("Copy this token now; it is only shown once.")).toBeVisible();
+ }
+ expect(await page.evaluate(()=>JSON.stringify([localStorage,sessionStorage]))).not.toContain("test-secret-token");
+ await page.reload();
+ await expect(page.getByRole("button",{name:"Issue scoped token",exact:true})).toBeVisible();
+ await expect(page.getByText("test-secret-token-2",{exact:true})).toHaveCount(0);
+});
+
 test("blocked requirement explains recovery before evidence details",async({page})=>{
  await page.route("**/api/ui/v1/**",route=>route.fulfill({json:route.request().url().endsWith("bootstrap")?{services:[{id:"fixture",name:"Recovery"}],csrf:"test",capabilities:{fixture:["read"]}}:{Title:"KSI-SVC-ACM",Detail:true,Primary:{status:"blocked",action:"How to unblock this requirement",reason:"GitHub access is missing.",secondary:[],next_steps:[{title:"GitHub access is missing",explanation:"Authorize the installation, test access, then rerun collection.",action:"Configure repository access",provider:"github",targets:["example/repo@commit:workflow.yaml"]},{title:"Evidence still needed",explanation:"Dated drift-review records are missing.",action:"Submit exact citations",targets:[]}]},Sections:[],Forms:[]}}));
  await page.goto("/services/fixture/requirements/KSI-SVC-ACM");
