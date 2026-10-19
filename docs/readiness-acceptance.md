@@ -114,3 +114,33 @@ two-identity inventory cache address this without increasing request deadlines.
 The expanded full-catalog race test passed with `TZ=UTC` in 175.83 seconds;
 catalog/readiness/assessment/web/MCP race suites also passed. A full UTC race-suite
 rerun and updated container build are in progress before the corrected rollout.
+
+The corrected `17291e388d30aa11210e7bc859cfe22007a0a486` full UTC PostgreSQL-backed
+race suite passed, including guidance-content tests in 574.674 seconds. The
+updated Docker build and container publication run `39269221486` also passed.
+At the user's explicit deployment instruction, Pulumi apply was started with
+guidance disabled while hosted CI was still running. Live verification remains
+pending until apply completes and old workers have drained.
+
+Pulumi update https://app.pulumi.com/ignistech/fedramp/shared/updates/15 succeeded:
+web task revision **11**, migration revision **9**, commit `17291e3`, image
+`sha256:50fcab70a29e1c94fa63dbe7370eac1a996283256a902b4a4a9155f10df767fe`.
+The deployment hook verified private HTTPS readiness and the running digest.
+Guidance remains disabled. ECS reported the new task running and the previous
+deployment draining with zero running tasks; final stable/baseline verification
+is pending. Hosted CI passed all backend checks but failed six readiness browser
+cases (two scenarios across three viewports) in the Docker browser environment;
+that separate UI issue is being investigated before guidance activation.
+
+ECS subsequently reached service stability. The live task definition confirms
+`KSI_GUIDANCE_ENABLED=false` and the expected image digest. Post-rollout read-only
+verification matched **all 9,254 retained record revisions and 3,160 observations**
+against their pre-rollout row hashes, with no changes or missing baseline rows.
+Authenticated source-comparison recording has started under the approved
+short-lived Ignis-only read/edit agent grant; no human evidence approval is implied.
+
+The Docker browser failures reproduced as `crypto.randomUUID is not a function`
+on the insecure HTTP development origin. Declaration keys now use 128 bits from
+`crypto.getRandomValues`, retaining the existing idempotency-key rotation points.
+All six targeted cases and the full Docker browser suite passed (**96 passed,
+3 existing skips**), as did the production frontend build/typecheck and lint.

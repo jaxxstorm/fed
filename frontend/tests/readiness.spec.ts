@@ -1,5 +1,9 @@
 import { expect, test } from "@playwright/test";
 
+test.afterEach(async ({ page }) => {
+  expect(await page.pageErrors()).toEqual([]);
+});
+
 test("service work separates evidence from human review and resets pagination on filtering",async({page})=>{
   await page.route("**/api/ui/v1/**",route=>{
     const url=new URL(route.request().url());
@@ -67,6 +71,7 @@ test("guidance quality uses the full variant denominator and bounded pages",asyn
 test("readiness declarations preserve edits on conflict and remain distinct from proof", async ({page}) => {
   let revision=1;
   let writes=0;
+  let previousKey="";
   const binding={catalog_id:"catalog",release_revision:1,release_hash:"release",profile_revision:1,scope_revision:1};
   const scope={kind:"service"};
   const data={capability_id:"monitoring",scope,owner_role:"Security operations",implementation:"unknown",trigger:"unknown",decisions:{},evidence:[],notes:"Initial note"};
@@ -75,6 +80,9 @@ test("readiness declarations preserve edits on conflict and remain distinct from
     if(route.request().method()==="POST"){
       const body=route.request().postDataJSON();
       expect(route.request().headers()["x-csrf-token"]).toBe("test");
+      expect(body.idempotency_key).toMatch(/^[a-f0-9]{32}$/);
+      expect(body.idempotency_key).not.toBe(previousKey);
+      previousKey=body.idempotency_key;
       writes++;
       if(writes===1){revision=2;return route.fulfill({status:409,json:{code:"revision_conflict",title:"Changes were saved elsewhere",explanation:"Compare current declarations before retrying."}});}
       expect(body.expected_revision).toBe(2);

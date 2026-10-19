@@ -71,7 +71,7 @@ Run `go run ./cmd/guidance-package --coverage` for exact remaining IDs by batch.
 - [x] 7.3 Test authorization, revision conflicts, idempotency, stale guidance, assertion-binding changes and immutable historical exports using PostgreSQL-backed integration tests.
 - [x] 7.4 Verify equivalent browser/MCP context at identical revisions, old client compatibility, bounded pagination and batched query behavior.
 - [ ] 7.5 Exercise novice and agent journeys across multiple requirement domains: identify prerequisites, responsible role, first action, acceptable proof and remaining review without generic inference.
-- [ ] 7.6 Run repository-required contract, lint, unit, race, browser and build checks; confirm declarations and check completion cannot bypass contradictory findings or human review.
+- [x] 7.6 Run repository-required contract, lint, unit, race, browser and build checks; confirm declarations and check completion cannot bypass contradictory findings or human review.
 - [x] 7.7 Document guidance authoring/update procedures, reviewer responsibilities, coverage reports and feature-flag rollback; verify the supported-set publication gate.
 - [ ] 7.8 Deploy through the approved release workflow, verify representative live readiness views and compare preserved scope/evidence/assessment/review baselines; record acceptance results without marking unfinished content review complete.
 

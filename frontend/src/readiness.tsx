@@ -10,6 +10,14 @@ type Plan = components["schemas"]["ReadinessServicePlan"];
 type Capability = components["schemas"]["ReadinessCapabilityReadiness"];
 type WorkData = components["schemas"]["ReadinessWorkData"];
 
+function declarationKey() {
+  // getRandomValues also works on HTTP development origins, unlike randomUUID.
+  return Array.from(
+    globalThis.crypto.getRandomValues(new Uint8Array(16)),
+    (byte) => byte.toString(16).padStart(2, "0"),
+  ).join("");
+}
+
 export function ReadinessPage({
   service,
   csrf,
@@ -453,7 +461,7 @@ function WorkForm({
     },
   );
   const [revision, setRevision] = useState(node.declaration?.revision || 0);
-  const [key, setKey] = useState(() => crypto.randomUUID());
+  const [key, setKey] = useState(declarationKey);
   const [error, setError] = useState<Error | null>(null);
   const [pending, setPending] = useState(false);
   const [message, setMessage] = useState("");
@@ -462,7 +470,7 @@ function WorkForm({
   const [evidenceRevision, setEvidenceRevision] = useState(1);
   const update = (patch: Partial<WorkData>) => {
     setData({ ...data, ...patch });
-    setKey(crypto.randomUUID());
+    setKey(declarationKey());
     setMessage("");
   };
   const conflict =
@@ -493,7 +501,7 @@ function WorkForm({
               }),
             });
             setRevision(receipt.revision);
-            setKey(crypto.randomUUID());
+            setKey(declarationKey());
             setMessage(
               "Declaration saved. Evidence assessment and human review remain separate.",
             );
@@ -680,7 +688,7 @@ function WorkForm({
                   type="button"
                   onClick={() => {
                     setRevision(node.declaration?.revision || 0);
-                    setKey(crypto.randomUUID());
+                    setKey(declarationKey());
                     setError(null);
                     setCompared(false);
                   }}
