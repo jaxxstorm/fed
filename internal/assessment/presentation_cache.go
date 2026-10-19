@@ -216,6 +216,10 @@ func (s *Store) loadPresentationCache(ctx context.Context, service, actor string
 		if !slices.Contains(v.Sources, source) {
 			v.Sources = append(v.Sources, source)
 		}
+		if partitionAccessOnly(in) {
+			c.collection[rid] = v
+			continue
+		}
 		outcome := "pass"
 		if !in.Coverage.Complete || in.Coverage.State != "observed" || len(in.Evaluations) == 0 {
 			outcome = "unknown"
@@ -237,7 +241,7 @@ func (s *Store) loadPresentationCache(ctx context.Context, service, actor string
 		}
 		if in.Coverage.Error != "" {
 			outcome = "error"
-			target := in.Target.AccountID + "/" + in.Target.Region + "/" + in.Target.ResourceID
+			target := observationTargetLabel(in.Target)
 			v.Errors = append(v.Errors, target+": "+in.Coverage.Error)
 			v.Recovery = append(v.Recovery, observation.ExplainError(in.Coverage.Error, target, source))
 		}

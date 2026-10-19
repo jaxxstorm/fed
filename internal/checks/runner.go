@@ -45,6 +45,17 @@ type Result struct {
 	CollectorVersion string        `json:"collector_version"`
 }
 
+// A fresh partition access observation supersedes an older partition error at
+// the same target key without asserting that any resource control passed.
+func partitionAccessObserved(scope, explanation string) Observation {
+	return Observation{Scope: scope, Outcome: "unknown", Data: map[string]string{"inventory": "access_observed", "explanation": explanation}}
+}
+
+func accessObservation(o Observation) bool {
+	v, ok := o.Data.(map[string]string)
+	return ok && v["inventory"] == "access_observed" && o.Error == ""
+}
+
 func (r *Result) Summarize() {
 	r.Outcome = "pass"
 	r.Expected = len(r.Observations)
@@ -53,6 +64,10 @@ func (r *Result) Summarize() {
 		r.Outcome = "unknown"
 	}
 	for _, o := range r.Observations {
+		if accessObservation(o) {
+			r.Expected--
+			continue
+		}
 		if o.Error == "" {
 			r.Observed++
 		}
@@ -68,6 +83,9 @@ func (r *Result) Summarize() {
 				r.Outcome = "fail"
 			}
 		}
+	}
+	if r.Expected == 0 {
+		r.Outcome = "unknown"
 	}
 }
 
@@ -509,6 +527,10 @@ func (r *Runner) finish(ctx context.Context, a auth.Actor, j Job, result Result,
 			}
 			if inventory, ok := o.Data.(map[string]string); ok && inventory["inventory"] == "no_resources" {
 				in.Coverage = observation.Coverage{Complete: true, State: "no_resources"}
+			}
+			if accessObservation(o) {
+				in.Coverage = observation.Coverage{Complete: true, State: "observed"}
+				in.Evaluations = []observation.Evaluation{{Condition: "collection_access", Outcome: "unknown", Explanation: o.Data.(map[string]string)["explanation"]}}
 			}
 			if o.Target != nil {
 				in.Target = *o.Target

@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"slices"
+	"strings"
 	"time"
 
 	"github.com/jaxxstorm/fed/internal/observation"
@@ -22,6 +23,14 @@ type ObservationStatus struct {
 	Observed        int                    `json:"observed"`
 	Findings        []observation.Finding  `json:"findings"`
 	Sources         []string               `json:"sources"`
+}
+
+func partitionAccessOnly(in observation.Submission) bool {
+	return in.Coverage.Complete && in.Coverage.Error == "" && in.Coverage.Expected == 0 && in.Coverage.Observed == 0 && len(in.Evaluations) == 1 && in.Evaluations[0].Condition == "collection_access" && in.Evaluations[0].Outcome == "unknown"
+}
+
+func observationTargetLabel(target observation.Target) string {
+	return strings.Trim(target.AccountID+"/"+target.Region+"/"+target.ResourceID, "/")
 }
 
 func (s *Store) observationStatus(ctx context.Context, service, requirement string, now time.Time) (ObservationStatus, error) {
@@ -89,6 +98,9 @@ ORDER BY o.target_key,l.measure_id,o.observed_at DESC,o.received_at DESC`, servi
 			out.Sources = append(out.Sources, source)
 			sourceSeen[source] = true
 		}
+		if partitionAccessOnly(in) {
+			continue
+		}
 		outcome := "pass"
 		if !in.Coverage.Complete || in.Coverage.State != "observed" || len(in.Evaluations) == 0 {
 			outcome = "unknown"
@@ -114,9 +126,9 @@ ORDER BY o.target_key,l.measure_id,o.observed_at DESC,o.received_at DESC`, servi
 			outcome = "unknown"
 		}
 		if in.Coverage.Error != "" {
-			out.Recovery = append(out.Recovery, observation.ExplainError(in.Coverage.Error, in.Target.AccountID+"/"+in.Target.Region+"/"+in.Target.ResourceID, source))
+			out.Recovery = append(out.Recovery, observation.ExplainError(in.Coverage.Error, observationTargetLabel(in.Target), source))
 			outcome = "error"
-			out.Errors = append(out.Errors, in.Target.AccountID+"/"+in.Target.Region+"/"+in.Target.ResourceID+": "+in.Coverage.Error)
+			out.Errors = append(out.Errors, observationTargetLabel(in.Target)+": "+in.Coverage.Error)
 		}
 		value := map[string]int{"pass": 1, "unknown": 2, "fail": 3, "error": 4}[outcome]
 		if value > rank {

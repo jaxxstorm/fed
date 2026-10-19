@@ -246,12 +246,14 @@ func collectEndpoints(ctx context.Context, cfg aws.Config, a assessment.Account,
 	out := []Observation{}
 	names := append([]string{}, a.Clusters...)
 	label := a.ID + "/" + region
+	enumerated := true
 	if len(names) == 0 {
 		pages := eks.NewListClustersPaginator(client, &eks.ListClustersInput{})
 		for pages.HasMorePages() {
 			page, err := pages.NextPage(ctx)
 			if err != nil {
 				out = append(out, Observation{Scope: label, Outcome: "error", Error: "cluster_enumeration_failed"})
+				enumerated = false
 				break
 			}
 			names = append(names, page.Clusters...)
@@ -277,6 +279,9 @@ func collectEndpoints(ctx context.Context, cfg aws.Config, a assessment.Account,
 			}
 		}
 		out = append(out, configObservation(a.ID, region, aws.ToString(v.Cluster.Arn), "aws.eks.endpoint/v1", map[string]any{"public_access": c.EndpointPublicAccess, "private_access": c.EndpointPrivateAccess, "public_cidrs": c.PublicAccessCidrs}, e))
+	}
+	if enumerated && len(names) > 0 {
+		out = append(out, partitionAccessObserved(label, "EKS inventory access succeeded; endpoint observations retain their individual results."))
 	}
 	if len(out) == 0 {
 		out = append(out, Observation{Scope: label, Outcome: "unknown", Data: map[string]string{"inventory": "no_resources"}})

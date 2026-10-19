@@ -55,10 +55,36 @@ func (r *Runner) collectConnected(ctx context.Context, a auth.Actor, service str
 			for _, region := range account.Regions {
 				clusters := account.Clusters
 				if len(clusters) == 0 {
-					clusters = []string{""}
+					// Enumerate before matching: an empty scope cluster list means
+					// discover EKS, not bypass the standalone identity comparison.
+					config, err := resolveAWS(ctx, account, region)
+					if err != nil {
+						standalone.Observations = append(standalone.Observations, Observation{Scope: account.ID + "/" + region, Outcome: "error", Error: collectorErrorCode(err, "credentials_or_account_validation_failed")})
+						continue
+					}
+					pages := eks.NewListClustersPaginator(eks.NewFromConfig(config), &eks.ListClustersInput{})
+					failed := false
+					for pages.HasMorePages() {
+						page, err := pages.NextPage(ctx)
+						if err != nil {
+							failed = true
+							break
+						}
+						clusters = append(clusters, page.Clusters...)
+					}
+					if failed {
+						standalone.Observations = append(standalone.Observations, Observation{Scope: account.ID + "/" + region, Outcome: "error", Error: "cluster_enumeration_failed"})
+						continue
+					}
+					if len(clusters) == 0 {
+						standalone.Observations = append(standalone.Observations, Observation{Scope: account.ID + "/" + region, Outcome: "unknown", Data: map[string]string{"inventory": "no_resources"}})
+						continue
+					}
+					standalone.Observations = append(standalone.Observations, partitionAccessObserved(account.ID+"/"+region, "EKS enumeration completed; resource observations describe remaining coverage."))
 				}
 				for _, cluster := range clusters {
 					if cluster != "" && standaloneObservedEKS(ctx, scope, standalone, account, region, cluster, resolveAWS) {
+						standalone.Observations = append(standalone.Observations, partitionAccessObserved(account.ID+"/"+region+"/"+cluster, "AWS verified this endpoint matches a scoped cluster-wide Kubernetes source that produced observations; see those observations for coverage and findings."))
 						continue
 					}
 					access, bound, err := r.Connections.CollectorAccess(ctx, a, service, "kubernetes", account.ID+"/"+region, cluster)

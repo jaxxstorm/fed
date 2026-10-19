@@ -141,7 +141,12 @@ func PresentRequirement(applicability string, s Status, hasActivity bool) Requir
 		for _, why := range s.Work.Reasons {
 			p.NextSteps = append(p.NextSteps, RequirementNextStep{Title: "Assessment needs attention", Explanation: why, Targets: []string{}, Action: "Compare the assessment bindings with the current scope and evidence, then submit an updated assessment with exact citations."})
 		}
-		if (status == "failing" || status == "blocked") && len(p.NextSteps) > 0 {
+		if status == "failing" && len(p.FindingGroups) > 0 {
+			finding := p.FindingGroups[0]
+			p.Reason = finding.Explanation.Title + ": " + finding.Explanation.Observed
+			p.Action = "View findings"
+		}
+		if status == "blocked" && len(p.NextSteps) > 0 {
 			p.Action = p.NextSteps[0].Action
 			p.Reason = p.NextSteps[0].Title + ": " + p.NextSteps[0].Explanation
 		}
@@ -178,7 +183,7 @@ func PresentRequirement(applicability string, s Status, hasActivity bool) Requir
 		if len(p.NextSteps) > 0 {
 			reason = fmt.Sprintf("%s. Follow the steps below; existing evidence is retained. A successful connection test alone does not replace the failed collection result.", p.NextSteps[0].Title)
 		}
-		return set("blocked", "Blocked", reason, "How to unblock this requirement")
+		return set("blocked", "Evidence blocked", reason, "How to unblock this requirement")
 	}
 	if s.Work.State == "needs_refresh" || s.Evidence == "stale" {
 		p.EvidenceComplete = false

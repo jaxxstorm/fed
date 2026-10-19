@@ -29,6 +29,15 @@ func ExplainFinding(f Finding) FindingExplanation {
 	if f.Coverage == nil {
 		return e
 	}
+	if f.Condition == "collection_access" && f.Coverage.Complete && f.Coverage.Error == "" && f.Coverage.Expected == 0 {
+		e.Title = "Collection access established"
+		e.Expected = "Establish access to the collection partition or its verified Kubernetes source."
+		e.Observed = f.Explanation
+		e.Limitations = "This supersedes an earlier access error for the same partition. It does not establish resource coverage, enforcement or requirement compliance."
+		e.NextAction = "Review the separately retained resource observations and remaining collection gaps."
+		e.Known = true
+		return e
+	}
 	if f.Coverage.Error == "no_clusters_observed" && f.ArtifactSchema == "aws.eks.control-plane-logging/v1" {
 		e.Title = "EKS cluster inventory is unresolved"
 		e.Expected = "Identify the in-scope EKS clusters before comparing their enabled control-plane log types."

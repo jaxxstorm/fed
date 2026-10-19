@@ -57,6 +57,22 @@ func TestPresentationPrecedence(t *testing.T) {
 	}
 }
 
+func TestFailureHeadlineExplainsFindingInsteadOfAccessGap(t *testing.T) {
+	s := Status{Technical: "error", Collection: ObservationStatus{
+		Recovery: []observation.Recovery{observation.ExplainError("kubernetes_context_binding_missing", "cluster", "collector_observation")},
+		Findings: []observation.Finding{{ID: "finding", Condition: "public_endpoint", Outcome: "fail", Explanation: "Unrestricted public endpoint", ArtifactSchema: "aws.eks.endpoint/v1"}},
+	}}
+	p := PresentRequirement("required", s, false)
+	if p.Status != "failing" || strings.Contains(p.Reason, "Choose a Kubernetes context") || p.Action != "View findings" || len(p.ContextGaps) != 1 {
+		t.Fatalf("finding and access gap confused: %+v", p)
+	}
+	s.Collection.Findings = nil
+	p = PresentRequirement("required", s, false)
+	if p.Status != "blocked" || p.Label != "Evidence blocked" {
+		t.Fatalf("access gap presented as control failure: %+v", p)
+	}
+}
+
 func TestProgressDenominators(t *testing.T) {
 	var p ProgressCounts
 	for _, app := range []string{"required", "required", "recommended", "optional", "not_applicable", "unresolved"} {
