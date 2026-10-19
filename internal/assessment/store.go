@@ -29,6 +29,8 @@ type Store struct {
 	reader            recordReader
 	clock             func() time.Time
 	presentationCache *presentationCache
+	// Used only by a request-local snapshot, never shared between requests.
+	observationCache map[string]ObservationStatus
 }
 
 func (s *Store) now() time.Time {

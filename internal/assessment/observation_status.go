@@ -25,6 +25,10 @@ type ObservationStatus struct {
 }
 
 func (s *Store) observationStatus(ctx context.Context, service, requirement string, now time.Time) (ObservationStatus, error) {
+	key := service + "\x00" + requirement
+	if cached, ok := s.observationCache[key]; ok {
+		return cached, nil
+	}
 	if s.presentationCache != nil {
 		if v, ok := s.presentationCache.collection[requirement]; ok {
 			return v, nil
@@ -164,6 +168,9 @@ ORDER BY f.finding_id,o.observed_at DESC,o.received_at DESC) f WHERE f.outcome='
 	out.MissingMeasures = max(0, expectedMeasures-len(measuresSeen))
 	if out.MissingMeasures > 0 && out.Technical == "pass" {
 		out.Technical = "unknown"
+	}
+	if s.observationCache != nil {
+		s.observationCache[key] = out
 	}
 	return out, nil
 }

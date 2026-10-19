@@ -31,6 +31,9 @@ func (s *Store) RuleDetail(ctx context.Context, a auth.Actor, service, rid strin
 	defer tx.Rollback(ctx)
 	view := *s
 	view.reader = tx
+	view.observationCache = make(map[string]ObservationStatus)
+	now := view.now()
+	view.clock = func() time.Time { return now }
 	instructions, err := view.RuleInstructions(ctx, a, service, rid)
 	if err != nil {
 		if !errors.Is(err, ErrNotFound) {

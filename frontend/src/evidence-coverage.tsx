@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { api, date, human } from "./api";
 import type { components } from "./generated";
 
@@ -8,6 +9,7 @@ export function EvidenceCoveragePanel({
   service: string;
   coverage: components["schemas"]["RequirementEvidenceContext"];
 }) {
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
   return (
     <section className="panel" aria-label="Evidence coverage">
       <h2>What the evidence demonstrates</h2>
@@ -148,29 +150,40 @@ export function EvidenceCoveragePanel({
           <p>
             {group.explanation.owner_role}: {group.explanation.next_action}
           </p>
-          <details>
+          <details
+            onToggle={(event) => {
+              const open = event.currentTarget.open;
+              setExpandedGroups((current) => {
+                const next = new Set(current);
+                if (open) next.add(group.id);
+                else next.delete(group.id);
+                return next;
+              });
+            }}
+          >
             <summary>Resources and original observations</summary>
-            {group.findings?.map((f) => (
-              <div key={`${f.id}-${f.observation_id}`}>
-                <p>
-                  {Object.values(f.target).filter(Boolean).join(" · ")} ·{" "}
-                  {date(f.observed_at)}
-                </p>
-                {f.observation_id && (
-                  <a
-                    href={`${api(service)}/observations/${encodeURIComponent(f.observation_id)}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Open retained observation
-                  </a>
-                )}
-                <p>
-                  Diagnostic: {f.condition} · {f.outcome} · {f.basis}
-                </p>
-                <p>{f.explanation}</p>
-              </div>
-            ))}
+            {expandedGroups.has(group.id) &&
+              group.findings?.map((f) => (
+                <div key={`${f.id}-${f.observation_id}`}>
+                  <p>
+                    {Object.values(f.target).filter(Boolean).join(" · ")} ·{" "}
+                    {date(f.observed_at)}
+                  </p>
+                  {f.observation_id && (
+                    <a
+                      href={`${api(service)}/observations/${encodeURIComponent(f.observation_id)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Open retained observation
+                    </a>
+                  )}
+                  <p>
+                    Diagnostic: {f.condition} · {f.outcome} · {f.basis}
+                  </p>
+                  <p>{f.explanation}</p>
+                </div>
+              ))}
           </details>
         </article>
       ))}
