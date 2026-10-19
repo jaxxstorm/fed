@@ -79,6 +79,38 @@ authored RPL/INR/CED content, preserving two INR assertions and five CED asserti
 and their original trigger/authority fields. All nine focused browser cases pass.
 The full-catalog integration test also verifies authenticated browser/MCP parity
 for these real domains and retains synthetic partial evidence/gaps without human
-approval. Its extended non-race run passed in 42.6 seconds; the targeted race
-rerun is pending. Human novice comprehension remains unverified and guidance
+approval. Its extended non-race run passed in 42.6 seconds, but the targeted race
+rerun failed on an authenticated CED requirement-page read returning HTTP 500.
+That regression blocks deployment pending diagnosis and correction. The earlier
+full race-suite pass predates this expanded transport case. Human novice
+comprehension remains unverified and guidance
 activation remains disabled pending acceptance.
+
+### Release publication
+
+Implementation commit `68fe797c8bbc62b516cd13a8828610b2cf869087` was pushed to
+`main`. Container publication succeeded in
+https://github.com/jaxxstorm/fed/actions/runs/39265010190 . Application CI and
+Pulumi rollout verification are tracked separately; publication alone does not
+establish a completed deployment or readiness acceptance.
+
+Pulumi preview
+https://app.pulumi.com/ignistech/fedramp/shared/previews/35a37930-407a-4e47-b9bf-5481c3c2028d
+selected the published image and explicitly retained `KSI_GUIDANCE_ENABLED=false`.
+No apply occurred. The temporary Ignis read/edit agent token was revoked and its
+local file removed while the regression is investigated; no production guidance
+review records or release were written.
+
+Application CI run `39265010184` failed: the full-catalog integration exceeded
+its context deadline, and a synthetic MCP parity test compared host-dependent
+timestamp locations. The latter reproduced locally with `TZ=UTC`; normalizing
+the expected receipt timestamp to UTC fixed that test, confirmed with a targeted
+race run. No timestamp instant or persisted review content was changed. The
+full-catalog performance/read failure was traced to repeated JSON/source work,
+duplicate browser projections and duplicated inventory builds consuming the
+shared four-minute context budget. Request-local source verification, direct
+citation-reference traversal, shared snapshot projections and one bounded
+two-identity inventory cache address this without increasing request deadlines.
+The expanded full-catalog race test passed with `TZ=UTC` in 175.83 seconds;
+catalog/readiness/assessment/web/MCP race suites also passed. A full UTC race-suite
+rerun and updated container build are in progress before the corrected rollout.

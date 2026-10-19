@@ -123,6 +123,8 @@ func TestFullAuthoredCatalogPublicationGate(t *testing.T) {
 		if review.ReviewerType != "agent" || review.ReviewerID != agent.ID || review.ReviewedAt.IsZero() || review.ContentHash != comparisons.Comparisons[book.ID].ContentHash {
 			t.Fatal("review attribution/hash differs", book.ID)
 		}
+		// JSON transports canonicalize UTC; pgx can use time.Local when TZ=UTC.
+		review.ReviewedAt = review.ReviewedAt.UTC()
 		p.Playbooks[i].Review = &review
 	}
 	hash, err := store.Publish(ctx, agent, service, p)
@@ -193,7 +195,7 @@ func testAuthoredTransportParity(t *testing.T, ctx context.Context, guidance *re
 		t.Fatal(err)
 	}
 	defer session.Close()
-	call := func(name string, input, output any) {
+	call := func(t *testing.T, name string, input, output any) {
 		t.Helper()
 		result, err := session.CallTool(ctx, &sdk.CallToolParams{Name: name, Arguments: input})
 		if err != nil {
@@ -216,17 +218,17 @@ func testAuthoredTransportParity(t *testing.T, ctx context.Context, guidance *re
 	app := &web.App{Store: store, Runner: runner}
 	browserAuth := &auth.Browser{DB: guidance.DB, Dev: &admin}
 	browser := browserAuth.Protect(app.Handler())
-	get := func(path string, value any) {
+	get := func(t *testing.T, path string, value any) {
 		t.Helper()
 		response := httptest.NewRecorder()
 		browser.ServeHTTP(response, httptest.NewRequest("GET", "/api/ui/v1/services/"+service+path, nil).WithContext(ctx))
 		if response.Code != http.StatusOK || json.Unmarshal(response.Body.Bytes(), value) != nil {
-			t.Fatal("authenticated browser read failed", response.Code, response.Body.String())
+			t.Fatal("authenticated browser read failed", response.Code, response.Body.String(), "context:", ctx.Err())
 		}
 	}
 	var plan, browserPlan readiness.ServicePlan
-	call("get_service_readiness_plan", adapter.ListInput{ServiceID: service, Limit: 1}, &plan)
-	get("/readiness/plan?limit=1", &browserPlan)
+	call(t, "get_service_readiness_plan", adapter.ListInput{ServiceID: service, Limit: 1}, &plan)
+	get(t, "/readiness/plan?limit=1", &browserPlan)
 	if !reflect.DeepEqual(plan, browserPlan) {
 		t.Fatal("browser/MCP saved service plan differs")
 	}
@@ -243,9 +245,9 @@ func testAuthoredTransportParity(t *testing.T, ctx context.Context, guidance *re
 	} {
 		t.Run(tc.id, func(t *testing.T) {
 			var before assessment.RuleInstructions
-			call("get_rule_instructions", adapter.RequirementInput{ServiceID: service, RequirementID: tc.id}, &before)
+			call(t, "get_rule_instructions", adapter.RequirementInput{ServiceID: service, RequirementID: tc.id}, &before)
 			var page web.Page
-			get("/pages/requirement/"+tc.id, &page)
+			get(t, "/pages/requirement/"+tc.id, &page)
 			g := before.Guidance
 			if g == nil || g.Guidance == nil || len(g.Guidance.Playbooks) != 1 || g.State != "reviewed" || g.ReleaseHash != hash || g.CatalogID != p.CatalogID || g.ReleaseRevision != 1 || g.Label != readiness.AgentReviewLabel || g.Caveat != readiness.AgentReviewCaveat || !reflect.DeepEqual(g, page.Guidance) || !reflect.DeepEqual(before.EvidenceCoverage, page.EvidenceCoverage) {
 				t.Fatal("published authored guidance/evidence parity or release attribution lost")
@@ -297,7 +299,7 @@ func testAuthoredTransportParity(t *testing.T, ctx context.Context, guidance *re
 				t.Fatal("exact assertion/profile/scope/release bindings differ", binding)
 			}
 			var evidence assessment.Record
-			call("submit_evidence_artifact", assessment.ArtifactSubmission{ServiceID: service, IdempotencyKey: tc.id, Source: assessment.Ref{ID: "journey-records", Revision: 1}, ScopeRevision: 1, Locator: "https://docs.example/journeys/" + tc.id, SourceVersion: "synthetic-v1", MediaType: "text/plain", Content: tc.content, Description: "Synthetic incomplete proof", Method: "Read retained synthetic fixture", ObservedAt: time.Now().UTC(), RetrievedAt: time.Now().UTC()}, &evidence)
+			call(t, "submit_evidence_artifact", assessment.ArtifactSubmission{ServiceID: service, IdempotencyKey: tc.id, Source: assessment.Ref{ID: "journey-records", Revision: 1}, ScopeRevision: 1, Locator: "https://docs.example/journeys/" + tc.id, SourceVersion: "synthetic-v1", MediaType: "text/plain", Content: tc.content, Description: "Synthetic incomplete proof", Method: "Read retained synthetic fixture", ObservedAt: time.Now().UTC(), RetrievedAt: time.Now().UTC()}, &evidence)
 			gap := assessment.AssertionGap{Kind: "missing", Scope: "Saved service boundary", Period: "Current review period", Reason: tc.gap, NextAction: "Ask the accountable owner for attributable records covering the missing facts and scope."}
 			citation := assessment.Citation{Evidence: assessment.Ref{ID: evidence.ID, Revision: evidence.Revision}, StartLine: 1, EndLine: 1}
 			results := make([]assessment.AssertionResult, 0, len(ids))
@@ -305,13 +307,13 @@ func testAuthoredTransportParity(t *testing.T, ctx context.Context, guidance *re
 				results = append(results, assessment.AssertionResult{AssertionID: id, Outcome: "unknown", Rationale: tc.gap, Gaps: []assessment.AssertionGap{gap}, Citations: []assessment.Citation{citation}})
 			}
 			var receipt assessment.RuleReceipt
-			call("submit_rule_result", assessment.RuleResultSubmission{ServiceID: service, RequirementID: tc.id, IdempotencyKey: "assess-" + tc.id, Binding: binding, RequestedState: "partial", Explanation: tc.gap, Assertions: results}, &receipt)
+			call(t, "submit_rule_result", assessment.RuleResultSubmission{ServiceID: service, RequirementID: tc.id, IdempotencyKey: "assess-" + tc.id, Binding: binding, RequestedState: "partial", Explanation: tc.gap, Assertions: results}, &receipt)
 			if receipt.Review != "pending" || receipt.Work.State != "partial" {
 				t.Fatal("incomplete evidence bypassed human review", receipt)
 			}
 			var after assessment.RuleInstructions
-			call("get_rule_instructions", adapter.RequirementInput{ServiceID: service, RequirementID: tc.id}, &after)
-			get("/pages/requirement/"+tc.id, &page)
+			call(t, "get_rule_instructions", adapter.RequirementInput{ServiceID: service, RequirementID: tc.id}, &after)
+			get(t, "/pages/requirement/"+tc.id, &page)
 			if !reflect.DeepEqual(after.Guidance, page.Guidance) || !reflect.DeepEqual(after.EvidenceCoverage, page.EvidenceCoverage) || !reflect.DeepEqual(binding, after.Binding) || after.EvidenceCoverage == nil || len(after.EvidenceCoverage.Assertions) != len(ids) {
 				t.Fatal("post-submission transport parity or fixed-revision binding lost")
 			}

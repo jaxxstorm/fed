@@ -63,27 +63,28 @@ func (s *Store) contexts(ctx context.Context, q auth.Querier, a auth.Actor, serv
 		}
 	}
 	out := make([]GuidanceContext, 0, len(rules))
+	verifier := newSourceVerifier(s.Rules, s.Markdown)
 	for _, rule := range rules {
 		v, err := catalog.Variant(rule)
 		if err != nil {
 			return nil, err
 		}
 		item := GuidanceContext{State: "missing", CatalogID: catalogID, VariantID: v.ID, ReleaseRevision: revision, ReleaseHash: hash, Reason: "No published source-reviewed guidance covers this requirement variant."}
-		item, err = s.projectContext(p, item, now)
+		item, err = s.projectContext(p, item, now, verifier)
 		if err != nil {
 			return nil, err
 		}
 		out = append(out, item)
 	}
 	if len(p.Playbooks) > 0 {
-		if err := s.attachProgress(ctx, q, service, p, rules, out, now); err != nil {
+		if err := s.attachProgress(ctx, q, service, p, rules, out, now, verifier); err != nil {
 			return nil, err
 		}
 	}
 	return out, nil
 }
 
-func (s *Store) projectContext(p Package, out GuidanceContext, now time.Time) (GuidanceContext, error) {
+func (s *Store) projectContext(p Package, out GuidanceContext, now time.Time, verifier *sourceVerifier) (GuidanceContext, error) {
 	for _, b := range p.Playbooks {
 		if !slices.Contains(b.VariantIDs, out.VariantID) {
 			continue
@@ -92,8 +93,8 @@ func (s *Store) projectContext(p Package, out GuidanceContext, now time.Time) (G
 		if err != nil {
 			return out, err
 		}
-		subset.Playbooks[0].Review = b.Review
 		out.Guidance = &subset
+		defer func() { subset.Playbooks[0].Review = b.Review }()
 		if b.Review == nil {
 			out.State = "draft"
 			out.Reason = "Guidance has not completed source-comparison review."
@@ -108,11 +109,11 @@ func (s *Store) projectContext(p Package, out GuidanceContext, now time.Time) (G
 			out.Reason = "The official source corpus is unavailable for guidance verification."
 			return out, nil
 		}
-		hash, err := ReviewHash(p, b.ID)
+		hash, err := reviewSubsetHash(subset)
 		if err != nil {
 			return out, err
 		}
-		if b.Review == nil || b.Review.ContentHash != hash || b.Review.ReviewerID == "" || b.Review.ReviewedAt.IsZero() || b.Review.ReviewedAt.After(now) || ValidateComparison(p, b.ID, b.Review.Comparison) != nil || VerifySources(subset, s.Rules, s.Markdown) != nil {
+		if b.Review == nil || b.Review.ContentHash != hash || b.Review.ReviewerID == "" || b.Review.ReviewedAt.IsZero() || b.Review.ReviewedAt.After(now) || validateSubsetComparison(subset, b.Review.Comparison) != nil || verifier.verify(subset) != nil {
 			return out, nil
 		}
 		if b.Review.ReviewerType == "agent" {

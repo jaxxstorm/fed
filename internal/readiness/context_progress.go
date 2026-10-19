@@ -25,7 +25,7 @@ type RequirementProgress struct {
 // All work and exact candidate revisions are read once in the caller's snapshot,
 // regardless of the number of requirement cards. Never start an independent plan
 // transaction here: its scope or source revisions could differ from the caller.
-func (s *Store) attachProgress(ctx context.Context, q auth.Querier, service string, p Package, rules []catalog.Resolved, contexts []GuidanceContext, now time.Time) error {
+func (s *Store) attachProgress(ctx context.Context, q auth.Querier, service string, p Package, rules []catalog.Resolved, contexts []GuidanceContext, now time.Time, verifier *sourceVerifier) error {
 	if len(contexts) == 0 {
 		return nil
 	}
@@ -93,7 +93,7 @@ func (s *Store) attachProgress(ctx context.Context, q auth.Querier, service stri
 		}
 		g, ok := projected[variant.ID]
 		if !ok {
-			g, err = s.projectContext(p, GuidanceContext{VariantID: variant.ID}, now)
+			g, err = s.projectContext(p, GuidanceContext{VariantID: variant.ID}, now, verifier)
 			if err != nil {
 				return err
 			}

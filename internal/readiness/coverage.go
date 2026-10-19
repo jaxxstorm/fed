@@ -110,43 +110,9 @@ func RelevantPackage(p Package, id string) (Package, error) {
 		}
 	}
 	sort.Slice(out.Capabilities, func(i, j int) bool { return out.Capabilities[i].ID < out.Capabilities[j].ID })
-	// Walk only typed book/capability payloads to collect Statement.Citations.
-	raw, err := json.Marshal(struct {
-		Book         Playbook
-		Capabilities []Capability
-	}{book, out.Capabilities})
-	if err != nil {
-		return out, err
-	}
-	var value any
-	if err = json.Unmarshal(raw, &value); err != nil {
-		return out, err
-	}
-	refs := map[string]bool{}
-	var walk func(any)
-	walk = func(v any) {
-		switch x := v.(type) {
-		case map[string]any:
-			for key, child := range x {
-				if key == "citations" {
-					if ids, ok := child.([]any); ok {
-						for _, id := range ids {
-							if text, ok := id.(string); ok {
-								refs[text] = true
-							}
-						}
-					}
-				} else {
-					walk(child)
-				}
-			}
-		case []any:
-			for _, child := range x {
-				walk(child)
-			}
-		}
-	}
-	walk(value)
+	// Collect typed statement references without serializing and reparsing every
+	// book. This runs repeatedly during publication and full-catalog projection.
+	refs := statementReferences(book, out.Capabilities)
 	for _, c := range p.Citations {
 		if refs[c.ID] {
 			out.Citations = append(out.Citations, c)
@@ -161,6 +127,11 @@ func ReviewHash(p Package, id string) (string, error) {
 	if err != nil {
 		return "", err
 	}
+	return reviewSubsetHash(subset)
+}
+
+// The subset must come from RelevantPackage, with review metadata removed.
+func reviewSubsetHash(subset Package) (string, error) {
 	raw, err := json.Marshal(subset)
 	if err != nil {
 		return "", err
@@ -180,20 +151,21 @@ func Coverage(p Package, inventory catalog.GuidanceInventory, rules, markdown fs
 		return out, err
 	}
 	states, reasons, books := map[string]string{}, map[string]string{}, map[string]string{}
+	verifier := newSourceVerifier(rules, markdown)
 	for _, b := range p.Playbooks {
 		subset, err := RelevantPackage(p, b.ID)
 		if err != nil {
 			return out, err
 		}
 		state, reason := "draft", "Source-comparison review has not been recorded."
-		if err = VerifySources(subset, rules, markdown); err != nil {
+		if err = verifier.verify(subset); err != nil {
 			state, reason = "needs_revalidation", err.Error()
 		} else if b.Review != nil {
-			hash, err := ReviewHash(p, b.ID)
+			hash, err := reviewSubsetHash(subset)
 			if err != nil {
 				return out, err
 			}
-			if b.Review.ContentHash != hash || b.Review.ReviewerID == "" || (b.Review.ReviewerType != "agent" && b.Review.ReviewerType != "human") || b.Review.ReviewedAt.IsZero() || b.Review.ReviewedAt.After(now) || ValidateComparison(p, b.ID, b.Review.Comparison) != nil {
+			if b.Review.ContentHash != hash || b.Review.ReviewerID == "" || (b.Review.ReviewerType != "agent" && b.Review.ReviewerType != "human") || b.Review.ReviewedAt.IsZero() || b.Review.ReviewedAt.After(now) || validateSubsetComparison(subset, b.Review.Comparison) != nil {
 				state, reason = "needs_revalidation", "Review does not bind current guidance."
 			} else {
 				state, reason = "reviewed", ""

@@ -559,7 +559,7 @@ func (app *App) detail(w http.ResponseWriter, r *http.Request) {
 		failure(w, r, assessment.ErrNotFound)
 		return
 	}
-	status, err := app.Store.Status(r.Context(), a, id, reqID, time.Now())
+	instructions, status, err := app.Store.RuleDetail(r.Context(), a, id, reqID)
 	if err != nil {
 		failure(w, r, err)
 		return
@@ -569,7 +569,7 @@ func (app *App) detail(w http.ResponseWriter, r *http.Request) {
 	p.Primary = &primary
 	p.Metrics = []Metric{{"Evidence work", label(status.Work.State)}, {"Technical checks", label(status.Technical)}, {"Evidence freshness", label(status.Evidence)}, {"Human review", label(status.Review)}}
 	p.Diagnostics = append(p.Diagnostics, Section{"Evidence work · full details", pretty(status.Work)})
-	if instructions, e := app.Store.RuleInstructions(r.Context(), a, id, reqID); e == nil {
+	if instructions.ServiceID != "" {
 		p.Guidance = instructions.Guidance
 		p.EvidenceCoverage = instructions.EvidenceCoverage
 		if instructions.Guidance != nil {
@@ -614,9 +614,6 @@ func (app *App) detail(w http.ResponseWriter, r *http.Request) {
 			}
 			p.Sections = append(p.Sections, Section{"Evidence checklist · " + state, assertion.Statement + "\nSupporting records: " + strings.Join(assertion.EvidenceKinds, ", ")})
 		}
-	} else if !errors.Is(e, assessment.ErrNotFound) {
-		failure(w, r, e)
-		return
 	}
 	for _, recovery := range status.Collection.Recovery {
 		p.Sections = append(p.Sections, Section{recovery.Title, recovery.Target + " · " + recovery.Environment + "\n" + recovery.Explanation})

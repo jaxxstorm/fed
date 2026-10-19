@@ -153,6 +153,10 @@ func TestReadinessJourneyPublishedSyntheticGuidanceParity(t *testing.T) {
 		if receipt.ReviewerID != agent.ID || receipt.ReviewerType != "agent" || receipt.ReviewedAt.IsZero() {
 			t.Fatal("unauthenticated review receipt", receipt)
 		}
+		// PostgreSQL may return the UTC instant with time.Local as its location
+		// when the host uses UTC. JSON decodes Z as time.UTC; compare the same
+		// instant in the transport's location, not host-specific pointer identity.
+		receipt.ReviewedAt = receipt.ReviewedAt.UTC()
 		receipts[book.ID] = receipt
 	}
 	if _, err = guidance.Publish(ctx, agent, other.ID, p); !errors.Is(err, auth.ErrForbidden) {

@@ -12,6 +12,10 @@ func ValidateComparison(p Package, id string, comparison SourceComparison) error
 	if err != nil {
 		return err
 	}
+	return validateSubsetComparison(subset, comparison)
+}
+
+func validateSubsetComparison(subset Package, comparison SourceComparison) error {
 	available := map[string]bool{}
 	used := map[string]bool{}
 	for _, c := range subset.Citations {

@@ -17,6 +17,36 @@ import (
 
 const instructionVersion = "agent-evidence/v1"
 
+// RuleDetail projects instructions and status in one authorized snapshot. Both
+// need the same guidance, so reuse the request-local projection rather than
+// decoding and source-validating the full release twice for a browser page.
+func (s *Store) RuleDetail(ctx context.Context, a auth.Actor, service, rid string) (RuleInstructions, Status, error) {
+	if err := s.ReconcileEvidenceSources(ctx, a, service); err != nil {
+		return RuleInstructions{}, Status{}, err
+	}
+	tx, err := s.DB.BeginTx(ctx, pgx.TxOptions{IsoLevel: pgx.RepeatableRead, AccessMode: pgx.ReadOnly})
+	if err != nil {
+		return RuleInstructions{}, Status{}, err
+	}
+	defer tx.Rollback(ctx)
+	view := *s
+	view.reader = tx
+	instructions, err := view.RuleInstructions(ctx, a, service, rid)
+	if err != nil {
+		if !errors.Is(err, ErrNotFound) {
+			return instructions, Status{}, err
+		}
+		// A service without saved scope can still display its status, but has
+		// no actionable instruction binding yet.
+		instructions = RuleInstructions{}
+	}
+	status, err := view.Status(ctx, a, service, rid, view.now())
+	if err != nil {
+		return instructions, status, err
+	}
+	return instructions, status, tx.Commit(ctx)
+}
+
 func (s *Store) RuleInstructions(ctx context.Context, a auth.Actor, service, rid string) (RuleInstructions, error) {
 	if s.reader == nil {
 		if err := s.ReconcileEvidenceSources(ctx, a, service); err != nil {

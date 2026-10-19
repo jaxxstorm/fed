@@ -23,6 +23,17 @@ func ValidateDraft(p Package) error {
 		citations[c.ID] = true
 		excerpts[c.ID] = strings.ToLower(strings.Join(strings.Fields(c.Excerpt), " "))
 	}
+	// Many playbooks cite the same official timing definitions. Parse each
+	// distinct text once per validation, without caching any acceptance decision.
+	timingByText := map[string][]string{}
+	timings := func(text string) []string {
+		if found, ok := timingByText[text]; ok {
+			return found
+		}
+		found := numericTiming.FindAllString(strings.ToLower(strings.Join(strings.Fields(text), " ")), -1)
+		timingByText[text] = found
+		return found
+	}
 	statement := func(s Statement) error {
 		if strings.TrimSpace(s.Text) == "" || !slices.Contains([]Basis{Official, Recommendation, ServiceChoice}, s.Basis) || len(s.Citations) == 0 {
 			return fmt.Errorf("statement needs text, authority and citations")
@@ -36,10 +47,10 @@ func ValidateDraft(p Package) error {
 			return fmt.Errorf("interpretation needs rationale")
 		}
 		if s.Basis == Official {
-			for _, duration := range numericTiming.FindAllString(strings.ToLower(strings.Join(strings.Fields(s.Text), " ")), -1) {
+			for _, duration := range timings(s.Text) {
 				cited := false
 				for _, id := range s.Citations {
-					cited = cited || slices.Contains(numericTiming.FindAllString(excerpts[id], -1), duration)
+					cited = cited || slices.Contains(timings(excerpts[id]), duration)
 				}
 				if !cited {
 					return fmt.Errorf("statement invents uncited numeric timing %q; cite the official duration or label it a service choice", duration)

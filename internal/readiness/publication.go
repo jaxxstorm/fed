@@ -6,7 +6,6 @@ import (
 	"errors"
 	"fmt"
 	"io/fs"
-	"sync"
 	"time"
 
 	"github.com/jackc/pgx/v5"
@@ -30,15 +29,6 @@ func (s *Store) inventory(ctx context.Context, p Package) (catalog.GuidanceInven
 	return inventoryFrom(ctx, s.DB, p.CatalogID)
 }
 
-// Catalog identities include the immutable payload hash. Cache only catalog
-// inventory, never tenant data, reviews, source freshness or coverage decisions.
-// Bound retention because a full profile inventory is large.
-var inventoryCache = struct {
-	sync.Mutex
-	items map[string]catalog.GuidanceInventory
-	order []string
-}{items: map[string]catalog.GuidanceInventory{}}
-
 func inventoryFrom(ctx context.Context, q auth.Querier, catalogID string) (catalog.GuidanceInventory, error) {
 	var payload, schema []byte
 	var commit string
@@ -49,33 +39,7 @@ func inventoryFrom(ctx context.Context, q auth.Querier, catalogID string) (catal
 	if commit+":"+storage.Hash(payload) != catalogID {
 		return catalog.GuidanceInventory{}, fmt.Errorf("stored catalog identity mismatch")
 	}
-	inventoryCache.Lock()
-	defer inventoryCache.Unlock()
-	if err := ctx.Err(); err != nil {
-		return catalog.GuidanceInventory{}, err
-	}
-	cacheKey := catalogID + ":" + storage.Hash(schema)
-	if cached, ok := inventoryCache.items[cacheKey]; ok {
-		return cached, nil
-	}
-	snapshot, err := catalog.Parse(payload, schema, commit)
-	if err != nil {
-		return catalog.GuidanceInventory{}, err
-	}
-	if snapshot.ID != catalogID {
-		return catalog.GuidanceInventory{}, fmt.Errorf("stored catalog identity mismatch")
-	}
-	i, err := catalog.Inventory(snapshot)
-	if err != nil {
-		return i, err
-	}
-	if len(inventoryCache.order) == 2 {
-		delete(inventoryCache.items, inventoryCache.order[0])
-		inventoryCache.order = inventoryCache.order[1:]
-	}
-	inventoryCache.items[cacheKey] = i
-	inventoryCache.order = append(inventoryCache.order, cacheKey)
-	return i, nil
+	return catalog.CachedInventory(ctx, payload, schema, commit)
 }
 
 func (s *Store) validate(ctx context.Context, p Package) (catalog.GuidanceInventory, error) {
