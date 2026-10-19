@@ -23,7 +23,7 @@
 - [x] 3.4 Complete the manifest's procedural and communications batches, including event-triggered obligations and referenced definitions; record remaining variant IDs after each batch.
 - [x] 3.5 Complete the manifest's technical and operational batches, separating configured intent from demonstrated operation; record remaining variant IDs after each batch.
 - [x] 3.6 Complete the manifest's governance, documentation and all remaining domain batches, including recommended, optional and conditional variants.
-- [ ] 3.7 Perform and record agent comparison against official public sources for each batch, preserve cited uncertainties without asking lay users to certify interpretations, and validate full reviewed coverage against the original denominator.
+- [x] 3.7 Perform and record agent comparison against official public sources for each batch, preserve cited uncertainties without asking lay users to certify interpretations, and validate full reviewed coverage against the original denominator.
 
 Authoring batches (authenticated review/publication pending): AFC (49), AGU (20), CCM (107), CDS (137),
 CMU (27), CPO (42), FRC (150), IEC (76), IVV (80), CED (3), CMT (12), CNA (26),

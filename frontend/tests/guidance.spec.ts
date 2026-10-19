@@ -1,5 +1,22 @@
 import { expect, test } from "@playwright/test";
 
+test("required action box precedes evidence and preserves agency responsibility without guidance", async ({ page }) => {
+  const obligation = "Agencies MUST complete the Authorization to Operate process for federal information systems that use FedRAMP Certified cloud service offerings.";
+  await page.route("**/api/ui/v1/**", route => route.fulfill({ json: route.request().url().endsWith("bootstrap")
+    ? { services: [{ id: "fixture", name: "Agency example" }], capabilities: { fixture: ["read"] } }
+    : { Title: "Agency authorization", Detail: true, Sections: [{ Title: "What this requirement asks for", Text: obligation }], Forms: [], EvidenceCoverage: { assertions: [{ assertion_id: "ato", obligation, states: ["missing"], rationale: "No current cited assessment demonstrates this obligation." }], candidates: [], collection: {} } }
+  }));
+  await page.goto("/services/fixture/requirements/ATO");
+  const box = page.getByRole("region", { name: "This is what you need to do" });
+  await expect(box.getByRole("heading", { name: "What is required", exact: true })).toBeVisible();
+  await expect(box.getByText(obligation, { exact: true })).toBeVisible();
+  await expect(box.getByText("The party named in the requirement—not automatically the cloud provider.", { exact: false })).toBeVisible();
+  await expect(box.getByRole("heading", { name: "Your next evidence action" })).toBeVisible();
+  const actionPosition = await box.boundingBox();
+  const evidencePosition = await page.getByRole("region", { name: "Evidence coverage", exact: true }).boundingBox();
+  expect(actionPosition!.y + actionPosition!.height).toBeLessThanOrEqual(evidencePosition!.y);
+});
+
 test("agent guidance shows caveat and uncertainty without human content approval", async ({ page }) => {
   const caveat = "Checked against cited official FedRAMP sources. Interpretations may be incomplete or incorrect; this is not an official FedRAMP determination.";
   await page.route("**/api/ui/v1/**", route => route.fulfill({ json: route.request().url().endsWith("bootstrap") ? {

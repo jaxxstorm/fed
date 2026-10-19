@@ -144,3 +144,39 @@ on the insecure HTTP development origin. Declaration keys now use 128 bits from
 `crypto.getRandomValues`, retaining the existing idempotency-key rotation points.
 All six targeted cases and the full Docker browser suite passed (**96 passed,
 3 existing skips**), as did the production frontend build/typecheck and lint.
+
+The browser correction was published as `5a2248583cfcf949efef2d547803b75f19323abc`
+and deployed by https://app.pulumi.com/ignistech/fedramp/shared/updates/16 . Web
+task revision **12** and migration revision **10** use image
+`sha256:08b6ef1d3ccb27adecfbb451b03aaa8a22268d2a78b5d8381cf805f0b33ae147`.
+Private HTTPS readiness and the running digest were verified by the deployment
+hook. Guidance remains disabled; final ECS stability and repeated baseline
+comparison follow the rollout.
+
+Update 16 reached ECS stability. Its post-drain read-only baseline comparison
+again matched all **9,254 record revisions and 3,160 observations** exactly.
+
+Hosted application CI for the deployed `5a22485` commit passed in full:
+https://github.com/jaxxstorm/fed/actions/runs/39271945809 . This includes contracts,
+lint, unit/race tests, Docker browser tests and container build.
+
+All **1,338 authenticated source comparisons** were recorded for Ignis, and the
+full-coverage publication gate accepted all **1,340 variants**. Immutable release:
+`8d18f139c5bceebbfa08d88c883b6ca2dbc8a1c16d264f2a7956c3847dfbc47d`.
+The short-lived service-scoped agent token was revoked and its local file removed.
+Guidance remains disabled pending human comprehension acceptance and live
+readiness-view verification; publication does not approve service evidence.
+
+### Human feedback: required action is not clear
+
+The user reported that the agency ATO example buried the obligation in
+"What the evidence demonstrates" and requested a distinct "This is what you
+need to do" box. This is actionable comprehension feedback, not acceptance.
+The requirement page now places a contrasting action-plan box above guidance
+and evidence, separating the obligation, next evidence action and responsible
+party. Published instructions retain their authority labels; unavailable guidance
+uses an explicitly limited evidence-gathering fallback and preserves the actor
+named in the official text. Excluded and unresolved applicability states show
+their exclusion or scoping action instead of an implementation checklist.
+The change passed the production build and 12 responsive guidance browser tests;
+user confirmation of clarity remains open.

@@ -3,8 +3,10 @@
 The implementation includes guidance validation, agent source-comparison reviews,
 immutable service-scoped publication and shared browser/MCP/export attribution.
 All 1,340 catalog variants now have authored, validated guidance and distinct
-source-comparison inputs. Production authenticated recording and publication
-remain pending; local inputs and test-service receipts are not production reviews.
+source-comparison inputs. All 1,338 comparisons have been authenticated and the
+complete 1,340-variant release published for Ignis. Guidance activation remains
+disabled pending acceptance. Local inputs and test-service receipts remain
+distinct from the production service-scoped reviews; see `readiness-acceptance.md`.
 
 ## Inventory and domain batches
 
@@ -17,7 +19,8 @@ Both commands use the same pinned rules and production resolver. See
 Author each domain as a separate batch. Record progress per exact variant ID;
 one class's playbook does not automatically cover every class or path. The
 domain batches are below. Each now has a completed source-comparison input;
-all await authenticated production recording.
+all have authenticated Ignis recording. Other services require their own authorized
+review recording and publication.
 
 | Batch | Variants | Reviewer |
 | --- | ---: | --- |

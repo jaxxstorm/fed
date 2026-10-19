@@ -39,6 +39,7 @@ import {
   GuidanceState,
   ScopedReadiness,
 } from "./readiness-context";
+import { RequirementActions } from "./requirement-actions";
 import { StatusBadge } from "./workspace";
 
 const pages = [
@@ -1177,6 +1178,7 @@ function LegacyPage({
                   : "Inspect automatic collection results and retry incomplete reads."
         }
       />
+      {endpoint.startsWith("requirement/") && <RequirementActions page={p} />}
       {p.Guidance && (
         <section className="panel" aria-label="Requirement guidance">
           <h2>{p.Guidance.label || "Requirement guidance"}</h2>
