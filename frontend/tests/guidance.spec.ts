@@ -1,5 +1,23 @@
 import { expect, test } from "@playwright/test";
 
+test("action items show organizational work and preserve excluded context", async ({ page }) => {
+  await page.route("**/api/ui/v1/**", route => route.fulfill({ json: route.request().url().endsWith("bootstrap")
+    ? { services: [{ id: "fixture", name: "Inbox example" }], capabilities: { fixture: ["read"] } }
+    : { Title: "Maintain a FedRAMP Security Inbox", Detail: true, Primary: { status: "not_applicable", reason: "Outside the selected profile." }, Sections: [], Forms: [], ActionItems: [
+      { title: "Create the FedRAMP Security Inbox", action: "Establish an email address for FedRAMP messages.", owner: "Your organization's mail administrator", basis: "Implementation of AFC-CSO-INB", sources: ["AFC-CSO-INB"] },
+      { title: "Monitor the inbox and respond", action: "Assign security staff to monitor incoming messages and act on them.", owner: "Security communications owner", basis: "Implementation of AFC-CSO-RCV", sources: ["AFC-CSO-RCV"] },
+    ], ActionExpectations: ["Expected artifact (all): Email address to receive messages from FedRAMP"] }
+  }));
+  await page.goto("/services/fixture/requirements/AFC-CSO-INB");
+  const box = page.getByRole("region", { name: "Action Items", exact: true });
+  await expect(box.getByRole("heading", { name: "Create the FedRAMP Security Inbox" })).toBeVisible();
+  await expect(box.getByRole("heading", { name: "Monitor the inbox and respond" })).toBeVisible();
+  await expect(box.getByText("Not assigned by this profile.")).toBeVisible();
+  await expect(box.getByText("Ask the party named in the requirement", { exact: false })).toHaveCount(0);
+  await box.getByText("FedRAMP expectations and context", { exact: true }).click();
+  await expect(box.getByText("Expected artifact (all): Email address to receive messages from FedRAMP")).toBeVisible();
+});
+
 test("required action box precedes evidence and preserves agency responsibility without guidance", async ({ page }) => {
   const obligation = "Agencies MUST complete the Authorization to Operate process for federal information systems that use FedRAMP Certified cloud service offerings.";
   await page.route("**/api/ui/v1/**", route => route.fulfill({ json: route.request().url().endsWith("bootstrap")
@@ -7,11 +25,9 @@ test("required action box precedes evidence and preserves agency responsibility 
     : { Title: "Agency authorization", Detail: true, Sections: [{ Title: "What this requirement asks for", Text: obligation }], Forms: [], EvidenceCoverage: { assertions: [{ assertion_id: "ato", obligation, states: ["missing"], rationale: "No current cited assessment demonstrates this obligation." }], candidates: [], collection: {} } }
   }));
   await page.goto("/services/fixture/requirements/ATO");
-  const box = page.getByRole("region", { name: "This is what you need to do" });
-  await expect(box.getByRole("heading", { name: "What is required", exact: true })).toBeVisible();
+  const box = page.getByRole("region", { name: "Action Items", exact: true });
   await expect(box.getByText(obligation, { exact: true })).toBeVisible();
-  await expect(box.getByText("The party named in the requirement—not automatically the cloud provider.", { exact: false })).toBeVisible();
-  await expect(box.getByRole("heading", { name: "Your next evidence action" })).toBeVisible();
+  await expect(box.getByText("Your next evidence action")).toHaveCount(0);
   const actionPosition = await box.boundingBox();
   const evidencePosition = await page.getByRole("region", { name: "Evidence coverage", exact: true }).boundingBox();
   expect(actionPosition!.y + actionPosition!.height).toBeLessThanOrEqual(evidencePosition!.y);
@@ -43,7 +59,7 @@ test("agent guidance shows caveat and uncertainty without human content approval
   await expect(page.getByText("Uncertainty: The cited policy gives no numeric deadline.")).toBeVisible();
   await expect(page.getByRole("checkbox")).toHaveCount(0);
   await expect(page.getByRole("heading", {name: "What must exist first"})).toBeVisible();
-  await expect(page.getByText("Retain the event response record.", {exact: true})).toBeVisible();
+  await expect(page.getByRole("region", {name: "Action Items", exact: true}).getByText("Retain the event response record.", {exact: true})).toBeVisible();
   await expect(page.getByText("Establish whether the event occurred before treating this duty as due. No event is not proof of completed operation.")).toBeVisible();
   await page.getByText("Official sources and review details").click();
   await expect(page.getByText("Official requirement excerpt.")).toBeVisible();

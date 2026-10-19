@@ -3006,6 +3006,13 @@ export interface components {
             valid_until?: string | null;
             verified_account_id?: string;
         };
+        ActionItem: {
+            action: string;
+            basis: string;
+            owner: string;
+            sources: string[] | null;
+            title: string;
+        };
         ApprovalStatus: {
             email: string;
             state: string;
@@ -3377,6 +3384,8 @@ export interface components {
             name: string;
         };
         Page: {
+            ActionExpectations: string[] | null;
+            ActionItems: components["schemas"]["ActionItem"][] | null;
             Activities: components["schemas"]["Link"][] | null;
             Citations: components["schemas"]["CitationCard"][] | null;
             Detail: boolean;

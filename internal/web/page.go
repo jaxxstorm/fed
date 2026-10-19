@@ -35,6 +35,8 @@ type CitationCard struct {
 }
 type Section struct{ Title, Text string }
 type Page struct {
+	ActionItems          []assessment.ActionItem
+	ActionExpectations   []string
 	EvidenceCoverage     *assessment.RequirementEvidenceContext `json:"EvidenceCoverage,omitempty"`
 	Guidance             *readiness.GuidanceContext             `json:"Guidance,omitempty"`
 	Primary              *assessment.RequirementPresentation

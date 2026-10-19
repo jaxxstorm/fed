@@ -89,6 +89,8 @@ type InstructionBinding struct {
 }
 
 type RuleInstructions struct {
+	ActionItems            []ActionItem                `json:"action_items"`
+	ActionExpectations     []string                    `json:"action_expectations"`
 	EvidenceCoverage       *RequirementEvidenceContext `json:"evidence_coverage,omitempty"`
 	Guidance               *readiness.GuidanceContext  `json:"guidance,omitempty"`
 	ServiceID              string                      `json:"service_id"`

@@ -84,6 +84,8 @@ func (s *Store) RuleInstructions(ctx context.Context, a auth.Actor, service, rid
 	if !found {
 		return out, ErrNotFound
 	}
+	out.ActionItems = organizationActions(out.Rule, all)
+	out.ActionExpectations = actionExpectations(out.Rule)
 	pr, err := s.Get(ctx, a, service, "profile", "profile")
 	if err != nil {
 		return out, err

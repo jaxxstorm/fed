@@ -54,6 +54,37 @@
         ],
         "type": "object"
       },
+      "ActionItem": {
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "basis": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "sources": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "action",
+          "owner",
+          "basis",
+          "sources"
+        ],
+        "type": "object"
+      },
       "ApprovalStatus": {
         "properties": {
           "email": {
@@ -1538,6 +1569,20 @@
       },
       "Page": {
         "properties": {
+          "ActionExpectations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "ActionItems": {
+            "items": {
+              "$ref": "#/components/schemas/ActionItem"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "Activities": {
             "items": {
               "$ref": "#/components/schemas/Link"
@@ -1653,6 +1698,8 @@
           }
         },
         "required": [
+          "ActionItems",
+          "ActionExpectations",
           "Primary",
           "Citations",
           "Title",

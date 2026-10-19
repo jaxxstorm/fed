@@ -36,6 +36,8 @@ export interface Form {
   Fields: Field[];
 }
 export interface Page {
+  ActionItems: components["schemas"]["Page"]["ActionItems"];
+  ActionExpectations: components["schemas"]["Page"]["ActionExpectations"];
   EvidenceCoverage?: components["schemas"]["Page"]["EvidenceCoverage"];
   Guidance?: components["schemas"]["Page"]["Guidance"];
   Primary: Rule["state"] | null;

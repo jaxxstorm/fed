@@ -169,6 +169,27 @@ readiness-view verification; publication does not approve service evidence.
 
 ### Human feedback: required action is not clear
 
+Follow-up feedback rejected evidence-request instructions as a substitute for
+organizational implementation work. The box is now titled **Action Items**.
+Reviewed playbooks contribute setup and operating duties rather than collection
+steps. Without a reviewed playbook, the shared browser/MCP projection preserves
+the selected official duty and its specified artifacts, information fields,
+notes and cautions. The inbox example has exact-statement-bound implementation
+summaries: create the inbox, keep it working, and assign monitoring/reaction
+ownership when the related AFC-CSO-RCV duty is required. Assigned staff roles are
+implementation choices; no monitoring cadence is invented. Changed source text
+falls back to the official duty instead of reusing the summary.
+
+Sources checked: pinned Rules JSON AFC-CSO-INB and AFC-CSO-RCV, and
+`2026-markdown/providers/20x/rules/addressing-fedramp-communication.md`.
+Excluded requirements retain organizational context explicitly labeled as not
+assigned by the profile. Applicability is not changed by this presentation.
+Backend assessment/web/MCP race tests, contracts, lint, frontend unit tests and
+build passed. All responsive browser scenarios passed (three existing skips);
+the final scenario was rerun separately after the overall shell timeout.
+This feedback and automated verification do not establish human comprehension
+acceptance. Guidance activation remains separately gated.
+
 The user reported that the agency ATO example buried the obligation in
 "What the evidence demonstrates" and requested a distinct "This is what you
 need to do" box. This is actionable comprehension feedback, not acceptance.
