@@ -1,6 +1,9 @@
 package web
 
-import "github.com/jaxxstorm/fed/internal/assessment"
+import (
+	"github.com/jaxxstorm/fed/internal/assessment"
+	"github.com/jaxxstorm/fed/internal/readiness"
+)
 
 // Page is the browser adapter's typed view model. Mutations use the same domain
 // services as MCP; the React workspace owns rendering and interactive state.
@@ -32,6 +35,8 @@ type CitationCard struct {
 }
 type Section struct{ Title, Text string }
 type Page struct {
+	EvidenceCoverage     *assessment.RequirementEvidenceContext `json:"EvidenceCoverage,omitempty"`
+	Guidance             *readiness.GuidanceContext             `json:"Guidance,omitempty"`
 	Primary              *assessment.RequirementPresentation
 	Citations            []CitationCard
 	Title, Notice, Error string

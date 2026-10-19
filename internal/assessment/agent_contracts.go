@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/jaxxstorm/fed/internal/catalog"
+	"github.com/jaxxstorm/fed/internal/readiness"
 )
 
 const MaxAgentArtifactBytes = 1 << 20
@@ -76,25 +77,31 @@ type Assertion struct {
 }
 
 type InstructionBinding struct {
-	CatalogID       string `json:"catalog_id"`
-	ProfileRevision int    `json:"profile_revision"`
-	ScopeRevision   int    `json:"scope_revision"`
-	Version         string `json:"version"`
-	Sources         []Ref  `json:"sources"`
+	GuidanceRevision int    `json:"guidance_revision,omitempty"`
+	GuidanceHash     string `json:"guidance_hash,omitempty"`
+	GuidanceVariant  string `json:"guidance_variant,omitempty"`
+	AssertionHash    string `json:"assertion_hash,omitempty"`
+	CatalogID        string `json:"catalog_id"`
+	ProfileRevision  int    `json:"profile_revision"`
+	ScopeRevision    int    `json:"scope_revision"`
+	Version          string `json:"version"`
+	Sources          []Ref  `json:"sources"`
 }
 
 type RuleInstructions struct {
-	ServiceID              string             `json:"service_id"`
-	Rule                   catalog.Resolved   `json:"rule"`
-	Binding                InstructionBinding `json:"binding"`
-	GuidanceKind           string             `json:"guidance_kind"`
-	Assertions             []Assertion        `json:"assertions"`
-	Steps                  []string           `json:"steps"`
-	Sources                []Record           `json:"sources"`
-	ExistingEvidence       []Record           `json:"existing_evidence"`
-	Work                   EvidenceWork       `json:"work"`
-	ExpectedResultRevision int                `json:"expected_result_revision"`
-	ExpectedDraftRevision  int                `json:"expected_draft_revision"`
+	EvidenceCoverage       *RequirementEvidenceContext `json:"evidence_coverage,omitempty"`
+	Guidance               *readiness.GuidanceContext  `json:"guidance,omitempty"`
+	ServiceID              string                      `json:"service_id"`
+	Rule                   catalog.Resolved            `json:"rule"`
+	Binding                InstructionBinding          `json:"binding"`
+	GuidanceKind           string                      `json:"guidance_kind"`
+	Assertions             []Assertion                 `json:"assertions"`
+	Steps                  []string                    `json:"steps"`
+	Sources                []Record                    `json:"sources"`
+	ExistingEvidence       []Record                    `json:"existing_evidence"`
+	Work                   EvidenceWork                `json:"work"`
+	ExpectedResultRevision int                         `json:"expected_result_revision"`
+	ExpectedDraftRevision  int                         `json:"expected_draft_revision"`
 }
 
 type Citation struct {
@@ -105,10 +112,22 @@ type Citation struct {
 }
 
 type AssertionResult struct {
-	AssertionID string     `json:"assertion_id"`
-	Outcome     string     `json:"outcome"`
-	Rationale   string     `json:"rationale"`
-	Citations   []Citation `json:"citations"`
+	Gaps        []AssertionGap `json:"gaps,omitempty"`
+	AssertionID string         `json:"assertion_id"`
+	Outcome     string         `json:"outcome"`
+	Rationale   string         `json:"rationale"`
+	Citations   []Citation     `json:"citations"`
+}
+
+// AssertionGap records an assessor's explicit coverage limitation. Scope and
+// period are descriptions bound to the submission's saved service revisions;
+// their presence never infers that implementation is absent.
+type AssertionGap struct {
+	Kind       string `json:"kind"`
+	Scope      string `json:"scope"`
+	Period     string `json:"period,omitempty"`
+	Reason     string `json:"reason"`
+	NextAction string `json:"next_action"`
 }
 
 type RuleResultSubmission struct {

@@ -1,0 +1,149 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "abo-required": {
+      "content_hash": "dcddd3b25badc0cf444233ca84951454d4b641a99a5df1ebd19a3b5ad9e26ca1",
+      "comparison": {
+        "applicability": {"finding":"The required variant is distinct from the Class A exclusion and unresolved path. The Class A enumeration is context, not a reason to override those outcomes.","citations":["abo","class-a"]},
+        "obligations": {"finding":"Rules and the provider page agree: persistently review backup alignment with defined objectives. The information-resource and machine-based definitions preserve the technical resource scope; the draft does not substitute a particular database setting for the whole obligation.","citations":["abo","abo-page","information-resource","machine-based"]},
+        "prerequisites": {"finding":"Defined objectives and an identifiable resource/backup inventory are necessary objects of the comparison. RRO supplies the related objective context. Setup is labeled recommended, and missing inventory records are not treated as absent backups.","citations":["abo","rro"]},
+        "evidence": {"finding":"Both routes require actual resource/backup coverage and dated comparisons with objective versions. A nonzero retention setting is correctly insufficient without scope and alignment analysis. Successful recovery execution remains a distinct TRC fact, not an inferred consequence of backup configuration.","citations":["abo","abo-page"]},
+        "timing": {"finding":"The recurring duty binds FRD-PER, permitting intentional irregular cycles and interruptions with known status. No fixed review interval or mandatory retention duration is invented.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect and is not an official FedRAMP determination.","This comparison evaluates guidance, not service backup coverage. Authenticated service recording is pending."],
+        "uncertainties":[{"finding":"The statement supplies neither numeric retention thresholds nor a universal backup design. The assessor must compare the actual arrangements with the service's defined objectives and preserve uncovered resources.","citations":["abo","rro"]}]
+      }
+    },
+    "arp-required": {
+      "content_hash": "281df7a95abb7be37cf47e3f63e74dd9b30b7e16c9d0bdc6aab3c7b5653a1caa",
+      "comparison": {
+        "applicability": {"finding":"The bound required variant remains separate from Class A exclusion and unresolved-path explanations; no checklist is imposed through those other variants.","citations":["arp","class-a"]},
+        "obligations": {"finding":"The Rules and provider page concern persistent review of recovery-plan alignment, not merely possession or approval of a plan. The assertion preserves the comparison with defined objectives.","citations":["arp","arp-page"]},
+        "prerequisites": {"finding":"Identifiable plan versions and defined objectives supply the two objects of the alignment comparison. The objective capability is shared with RRO and other recovery requirements; a declaration does not complete their assessments.","citations":["arp","rro"]},
+        "evidence": {"finding":"The draft asks for plan/objective versions, substantive comparison rationale and review conclusions. Both system and documentary routes retain these facts. Plan approval alone is rejected, and alignment review is not represented as an executed recovery test.","citations":["arp"]},
+        "timing": {"finding":"FRD-PER supplies recurrence context without a numeric schedule. The draft preserves review dates, versions, known status and intentional interruptions.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect and is not an official FedRAMP determination.","No service plan has been assessed; authenticated source-review recording remains pending."],
+        "uncertainties":[{"finding":"The selected statement does not mandate a plan format or numeric review interval. Evidence must explain the comparison actually performed rather than infer it from a document signature.","citations":["arp","persistent"]}]
+      }
+    },
+    "rro-required": {
+      "content_hash": "4cc6e9d3931f36872a618396554cd0408f4b42b2bd151f782e88b6b8b46829f4",
+      "comparison": {
+        "applicability": {"finding":"The exact required variant is retained independently of its excluded and unresolved counterparts. The Class A context does not create an obligation in the excluded variant.","citations":["rro","class-a"]},
+        "obligations": {"finding":"Rules and the provider page contain two facts: desired RTO/RPO are defined, and persistently reviewed for alignment with business needs and capabilities. The draft separates these assertions and does not relabel RRO as recovery testing.","citations":["rro","rro-page"]},
+        "prerequisites": {"finding":"The shared objective capability locates actual desired targets, scope and rationale. Missing targets remain an explicit evidence/declaration gap. No provider-specific number is invented as an official recovery objective.","citations":["rro"]},
+        "evidence": {"finding":"Definition evidence identifies desired targets; review evidence separately identifies business/capability inputs and alignment conclusions over time. Backup frequency or an observed restore duration is not automatically the desired objective. The evidence routes preserve this distinction.","citations":["rro"]},
+        "timing": {"finding":"Only objective review is the recurring duty. FRD-PER supplies its timing context; the draft invents neither numeric RTO/RPO targets nor a fixed review cycle.","citations":["persistent","rro"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect and is not an official FedRAMP determination.","This does not assess the suitability of the service's actual objectives. Authenticated review recording is pending."],
+        "uncertainties":[{"finding":"Business needs and capabilities are service-specific inputs. The selected source supplies no universal recovery target or quantitative alignment threshold.","citations":["rro"]}]
+      }
+    },
+    "trc-required": {
+      "content_hash": "e5ae1e30ef79155f98e3b6186cbf35d59269d96076f74783dc278b4c581b47ad",
+      "comparison": {
+        "applicability": {"finding":"The required TRC variant remains distinct from its Class A exclusion and unresolved path. Objective review under RRO cannot substitute for this variant's testing obligation.","citations":["trc","class-a","rro"]},
+        "obligations": {"finding":"Rules and the provider page require persistent testing of recovery capability from incidents and contingencies aligned with defined objectives. The incident definition is contextual; testing need not wait for a real incident. The draft preserves actual executed testing rather than configuration intent.","citations":["trc","trc-page","incident"]},
+        "prerequisites": {"finding":"Defined objectives are needed to evaluate the test's alignment. The guidance does not impose a universal backup design or assume every scenario is a database restore.","citations":["trc","rro"]},
+        "evidence": {"finding":"Both routes require executed scenarios, actual results, relevant resource/environment scope and objective comparisons. Failed results and untested dependencies remain visible. A tabletop discussion cannot prove a technical restore that was never executed; this does not prohibit appropriately scoped nontechnical exercises.","citations":["trc","trc-page"]},
+        "timing": {"finding":"FRD-PER preserves repeated testing, known status and intentional interruptions without inventing an annual schedule or numeric minimum history.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect and is not an official FedRAMP determination.","No recovery test or service evidence is assessed by this source comparison; authenticated recording remains pending."],
+        "uncertainties":[{"finding":"The selected statement does not prescribe every test scenario or a universal method. The assessment must explain what the executed scenarios demonstrate and which dependencies or environments remain untested.","citations":["trc"]}]
+      }
+    },
+    "abo-path-decision": {
+      "content_hash":"8acc915a5837aaad4837e2bba249b84a50bb5e65e86ba0ddccf70cba38f51f01",
+      "comparison": {
+        "applicability":{"finding":"The saved path leaves backup-review applicability unresolved; the Class A enumeration cannot resolve the service's factual path.","citations":["abo","class-a"]},
+        "obligations":{"finding":"The Rules and provider page remain contextual. The machine-based and information-resource definitions clarify the subject without creating assertions in this decision-only plan.","citations":["abo","abo-page","machine-based","information-resource"]},
+        "prerequisites":{"finding":"No backup inventory or objective implementation prerequisite is imposed before applicability is resolved.","citations":["abo"]},
+        "evidence":{"finding":"No backup-alignment checklist is fabricated, and the unresolved explanation does not prove alignment.","citations":["abo"]},
+        "timing":{"finding":"The persistent definition remains contextual; no recurring duty or path-decision deadline is scheduled.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect, is not an official FedRAMP determination, and is pending authenticated service recording."],
+        "uncertainties":[{"finding":"The factual certification path and applicable KSI set remain unresolved.","citations":["abo","class-a"]}]
+      }
+    },
+    "abo-class-a-excluded": {
+      "content_hash":"c1f860a3c6d39a8d6f72167b88f82b2e11f84ef7cab31c907275d02216e417fa",
+      "comparison": {
+        "applicability":{"finding":"The exact inventory variant is excluded by the selected Class A enumeration. The exclusion does not extend to other profiles.","citations":["abo","class-a"]},
+        "obligations":{"finding":"The official backup-review statement and definitions remain context only; no assertion or checklist is created.","citations":["abo","abo-page","machine-based","information-resource"]},
+        "prerequisites":{"finding":"The excluded plan imposes no resource/backup inventory capability.","citations":["abo"]},
+        "evidence":{"finding":"Exclusion is not evidence of backup alignment or successful recovery, and no artifact is demanded by this excluded variant.","citations":["abo"]},
+        "timing":{"finding":"No review duty is scheduled from the contextual persistent definition.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect, is not an official FedRAMP determination, and is pending authenticated service recording."],
+        "uncertainties":[]
+      }
+    },
+    "arp-path-decision": {
+      "content_hash":"e26f7ff1ca4e9e6725feeaff14e2f7157c915174187eb722c6e588b0fdd10b87",
+      "comparison": {
+        "applicability":{"finding":"The bound path remains unresolved; the plan asks the assessment owner to establish the factual path rather than infer applicability from a recovery document.","citations":["arp","class-a"]},
+        "obligations":{"finding":"Rules and the provider page agree on plan alignment review, but this decision-only variant imposes no assertions.","citations":["arp","arp-page"]},
+        "prerequisites":{"finding":"No recovery-plan or objective prerequisite is imposed by the unresolved plan.","citations":["arp"]},
+        "evidence":{"finding":"The applicability explanation is not a plan-alignment assessment and requests no fabricated evidence checklist.","citations":["arp"]},
+        "timing":{"finding":"No recurring review or numeric decision deadline is inferred from the contextual persistent definition.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect, is not an official FedRAMP determination, and is pending authenticated service recording."],
+        "uncertainties":[{"finding":"The service's certification path remains a factual decision distinct from guidance source review.","citations":["arp","class-a"]}]
+      }
+    },
+    "arp-class-a-excluded": {
+      "content_hash":"e78b645e8e533ac97f3583cf3c745ba998b3c651f69d843b1958e1b1e96b1d93",
+      "comparison": {
+        "applicability":{"finding":"This exact Class A variant excludes ARP; the explanation does not claim that plans are unnecessary under other profiles.","citations":["arp","class-a"]},
+        "obligations":{"finding":"The retained statement and provider page are contextual with no assertions or operating checklist.","citations":["arp","arp-page"]},
+        "prerequisites":{"finding":"No recovery-plan implementation prerequisite is imposed by this excluded variant.","citations":["arp"]},
+        "evidence":{"finding":"The plan does not demand alignment artifacts or equate exclusion with successful plan review.","citations":["arp"]},
+        "timing":{"finding":"The persistent definition schedules no duty in the excluded plan.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect, is not an official FedRAMP determination, and is pending authenticated service recording."],
+        "uncertainties":[]
+      }
+    },
+    "rro-path-decision": {
+      "content_hash":"8f78be1ab338a77c639713ba0f79a3c0f5358781a89ccd319ce30d8dcb01ad9d",
+      "comparison": {
+        "applicability":{"finding":"The exact saved-path variant leaves RRO unresolved, with a concrete certification-path question for the assessment owner.","citations":["rro","class-a"]},
+        "obligations":{"finding":"The Rules and page provide objective-definition/review context; no target values or assertions are imposed here.","citations":["rro","rro-page"]},
+        "prerequisites":{"finding":"The unresolved plan does not require an objective capability before applicability is established.","citations":["rro"]},
+        "evidence":{"finding":"No objective evidence checklist is fabricated, and unresolved applicability is not evidence of objective suitability.","citations":["rro"]},
+        "timing":{"finding":"No fixed objective value, review interval or path-decision deadline is invented from FRD-PER.","citations":["persistent","rro"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect, is not an official FedRAMP determination, and is pending authenticated service recording."],
+        "uncertainties":[{"finding":"The factual certification path remains unresolved; source interpretation cannot supply that service fact.","citations":["rro","class-a"]}]
+      }
+    },
+    "rro-class-a-excluded": {
+      "content_hash":"e5c0606ac98bb15162717b9808b86b2fed9a7d83bb30b3d83693a74f6fb9e9ed",
+      "comparison": {
+        "applicability":{"finding":"The exact Class A enumerated variant excludes RRO. This exclusion is not generalized to other profiles.","citations":["rro","class-a"]},
+        "obligations":{"finding":"The objective definition/review statement and provider page remain contextual; no assertion or target value is introduced.","citations":["rro","rro-page"]},
+        "prerequisites":{"finding":"No objective implementation capability is imposed by the excluded plan.","citations":["rro"]},
+        "evidence":{"finding":"Exclusion is not proof of suitable objectives and does not demand objective review records.","citations":["rro"]},
+        "timing":{"finding":"The persistent definition creates no operating duty in the excluded variant.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect, is not an official FedRAMP determination, and is pending authenticated service recording."],
+        "uncertainties":[]
+      }
+    },
+    "trc-path-decision": {
+      "content_hash":"2f651d5aacb518cb4bfedaf315d2c9326f86b8370d78417f3a6f1843df147006",
+      "comparison": {
+        "applicability":{"finding":"The saved path leaves testing applicability unresolved; the Class A enumeration cannot determine the service's actual path.","citations":["trc","class-a"]},
+        "obligations":{"finding":"Rules, provider page and the incident definition provide context without imposing a testing assertion on the unresolved variant.","citations":["trc","trc-page","incident"]},
+        "prerequisites":{"finding":"No recovery capability or test prerequisite is imposed before the applicability decision.","citations":["trc"]},
+        "evidence":{"finding":"The plan does not fabricate a test evidence checklist or treat an unresolved explanation as executed recovery proof.","citations":["trc"]},
+        "timing":{"finding":"The persistent definition does not schedule tests or invent a decision deadline for this unresolved variant.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect, is not an official FedRAMP determination, and is pending authenticated service recording."],
+        "uncertainties":[{"finding":"The service's certification path remains unresolved independently of whether any recovery test has been performed.","citations":["trc","class-a"]}]
+      }
+    },
+    "trc-class-a-excluded": {
+      "content_hash":"0aab8e28d1b04f72ecaeff594c883064b317a19fee13f9e40bffee74a4ed5877",
+      "comparison": {
+        "applicability":{"finding":"The exact Class A variant excludes TRC from its enumeration without claiming recovery tests are irrelevant under other profiles.","citations":["trc","class-a"]},
+        "obligations":{"finding":"Rules, provider page and incident terminology remain context with no testing assertion or duty checklist.","citations":["trc","trc-page","incident"]},
+        "prerequisites":{"finding":"The excluded plan introduces no recovery-test prerequisite capability.","citations":["trc"]},
+        "evidence":{"finding":"No test artifact is required by this excluded variant, and exclusion does not establish tested capability.","citations":["trc"]},
+        "timing":{"finding":"No recurring testing schedule is inferred from the contextual persistent definition.","citations":["persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect, is not an official FedRAMP determination, and is pending authenticated service recording."],
+        "uncertainties":[]
+      }
+    }
+  }
+}

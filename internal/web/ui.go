@@ -14,6 +14,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/jaxxstorm/fed/internal/assessment"
 	"github.com/jaxxstorm/fed/internal/auth"
+	"github.com/jaxxstorm/fed/internal/readiness"
 )
 
 type uiContext struct{}
@@ -61,18 +62,23 @@ func uiFailure(w http.ResponseWriter, err error, contexts ...context.Context) {
 		e.Code = "revision_conflict"
 		e.Title = "Membership changed"
 		e.Explanation = "Refresh the users list and review its current status before retrying."
-	case errors.Is(err, assessment.ErrInvalid):
+	case errors.Is(err, assessment.ErrInvalid), errors.Is(err, readiness.ErrInvalid):
 		status = 400
 		e.Code = "invalid_input"
 		e.Title = "Check these inputs"
 		e.Explanation = "Check required fields, saved scope and evidence revisions before saving again."
-	case errors.Is(err, assessment.ErrConflict):
+	case errors.Is(err, assessment.ErrConflict), errors.Is(err, readiness.ErrConflict):
 		status = 409
 		e.Code = "revision_conflict"
 		e.Title = "Changes were saved elsewhere"
 		e.Explanation = "Your entries are preserved. Load the latest revision and compare it with your changes before saving."
 		e.Action = "Reload current revision"
-	case errors.Is(err, assessment.ErrNotFound):
+	case errors.Is(err, readiness.ErrReviewRequired):
+		status = 409
+		e.Code = "guidance_review_required"
+		e.Title = "Guidance needs source review"
+		e.Explanation = "Current source-reviewed guidance is required before saving this readiness change."
+	case errors.Is(err, assessment.ErrNotFound), errors.Is(err, readiness.ErrNotFound):
 		status = 404
 		e.Code = "not_found"
 		e.Title = "This item is not available"
@@ -137,7 +143,7 @@ func (app *App) uiBootstrap(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	admin := member.Role == "admin"
-	jsonResponse(w, 200, UIBootstrap{Services: services, CSRF: auth.CSRF(r.Context()), Capabilities: capabilities, CanCreate: admin, Profiles: profiles, Role: member.Role, CanManageOrganization: admin})
+	jsonResponse(w, 200, UIBootstrap{GuidanceEnabled: app.Store.Guidance != nil, Services: services, CSRF: auth.CSRF(r.Context()), Capabilities: capabilities, CanCreate: admin, Profiles: profiles, Role: member.Role, CanManageOrganization: admin})
 }
 
 // Browser pages reuse the same authorized domain adapters as the original UI.
@@ -228,6 +234,7 @@ type UIRule struct {
 	State         assessment.RequirementPresentation `json:"state"`
 }
 type UIBootstrap struct {
+	GuidanceEnabled       bool                 `json:"guidance_enabled,omitempty"`
 	Role                  string               `json:"role,omitempty"`
 	CanManageOrganization bool                 `json:"can_manage_organization,omitempty"`
 	Services              []assessment.Service `json:"services"`

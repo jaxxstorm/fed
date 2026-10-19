@@ -22,6 +22,7 @@ import (
 	"github.com/jaxxstorm/fed/internal/logging"
 	mcpserver "github.com/jaxxstorm/fed/internal/mcp"
 	"github.com/jaxxstorm/fed/internal/providers"
+	"github.com/jaxxstorm/fed/internal/readiness"
 	"github.com/jaxxstorm/fed/internal/storage"
 	"github.com/jaxxstorm/fed/internal/web"
 	"github.com/labstack/echo/v4"
@@ -207,6 +208,9 @@ func run() (runErr error) {
 	}
 	e := web.Bootstrap(db.Ping)
 	store := &assessment.Store{DB: db, Artifacts: artifacts}
+	if cfg.GuidanceEnabled {
+		store.Guidance = &readiness.Store{DB: db, Rules: os.DirFS(cfg.GuidanceRulesDirectory), Markdown: os.DirFS(cfg.GuidanceMarkdownDirectory)}
+	}
 	e.GET("/auth/login", func(c echo.Context) error { browser.Login(c.Response(), c.Request()); return nil })
 	e.GET("/auth/callback", func(c echo.Context) error { browser.Callback(c.Response(), c.Request()); return nil })
 	e.POST("/auth/logout", echo.WrapHandler(browser.Protect(http.HandlerFunc(browser.Logout))))

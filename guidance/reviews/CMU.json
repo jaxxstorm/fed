@@ -1,0 +1,1925 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "cmu-cso-cat-30b2410ffd0a2e475ad3922d48e293641fd31c9a218b455e54db64ac08c1d737": {
+      "content_hash": "d1ef0a91d2cad1842d768114762bd6fdbbbbc0e82c04cde108df6c84d678b1c0",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CAT: The source subset lists B/C/D. The excluded Class A profile does not gain an implementation checklist from generic any-type wording; no substantive compliance claim follows. Selected disposition: excluded.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. This excluded playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-CAT, no capability prerequisites are attached to this excluded variant. The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Provisioning templates plus effective newly provisioned settings and the list of default modules support this rule. Availability analysis and documented SHOULD treatment are distinct from proving a default. This excluded variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page"
+          ]
+        },
+        "timing": {
+          "finding": "No numeric reconfiguration/recertification period is stated. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Availability for each service and the distinction between provider defaults and customer overrides need factual determination.",
+            "citations": [
+              "cmu-cso-cat-source",
+              "cmu-cso-cat-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-cat-627fc0f5d079b1f03c41fbaaaeb7a924fe0c42506ab34a42d1cc199191285a9b": {
+      "content_hash": "f4955830fe64f0e99aa6d30993719a592c1eaad06ddc76d42b41d96cd5b575aa",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CAT: The selected actor/class/type/path/effective context resolves in the pinned inventory. The class-specific official statement is retained verbatim; recommendations and permissions are not upgraded to mandatory adoption. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. The actionable assertions retain the selected official context: Providers SHOULD configure agency tenants by default to use cryptographic services that use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when such modules are available. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. CMU-CSO-UVM: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Provisioning templates plus effective newly provisioned settings and the list of default modules support this rule. Availability analysis and documented SHOULD treatment are distinct from proving a default. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page"
+          ]
+        },
+        "timing": {
+          "finding": "No numeric reconfiguration/recertification period is stated. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Availability for each service and the distinction between provider defaults and customer overrides need factual determination.",
+            "citations": [
+              "cmu-cso-cat-source",
+              "cmu-cso-cat-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-cat-83dba3fc80d7bf5d5fa28305a767cbd3a8ca096a62e17f93797e36935e45cceb": {
+      "content_hash": "8907258861c1ca7768bc7b46a1c5a63b77f0ee5e3e162c53ea9e19ebbc109713",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CAT: The selected transition profile permits early adoption: initial/optional adoption begins 2026-07-04, ongoing requirement is 2027-01-01. Actionable guidance is conditional on election and does not make early adoption compulsory or erase the selected clause force. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. The actionable assertions retain the selected official context: Providers SHOULD configure agency tenants by default to use cryptographic services that use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when such modules are available. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. CMU-CSO-UVM: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Provisioning templates plus effective newly provisioned settings and the list of default modules support this rule. Availability analysis and documented SHOULD treatment are distinct from proving a default. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page"
+          ]
+        },
+        "timing": {
+          "finding": "No numeric reconfiguration/recertification period is stated. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Availability for each service and the distinction between provider defaults and customer overrides need factual determination.",
+            "citations": [
+              "cmu-cso-cat-source",
+              "cmu-cso-cat-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-cat-b3996f3658d9eba55770bf4a71edd03a1d3cd800c255c51b7b884f928e566683": {
+      "content_hash": "4e4fc4948a7e95b5b0e93329209f91bde5be2749d6ecd76926b1be2fa05868fc",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CAT: The profile precedes adoption/effectiveness for this 20x rule. The explanation is date-bound rather than a permanent exemption; source obtain/optional-adoption date is 2026-07-04. Selected disposition: excluded.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. This excluded playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-CAT, no capability prerequisites are attached to this excluded variant. The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Provisioning templates plus effective newly provisioned settings and the list of default modules support this rule. Availability analysis and documented SHOULD treatment are distinct from proving a default. This excluded variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page"
+          ]
+        },
+        "timing": {
+          "finding": "No numeric reconfiguration/recertification period is stated. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Availability for each service and the distinction between provider defaults and customer overrides need factual determination.",
+            "citations": [
+              "cmu-cso-cat-source",
+              "cmu-cso-cat-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-cat-d32604e0fb6d6a0598d529c62074e8f021fee8754ec715d495a6a2b6f97e9d5e": {
+      "content_hash": "3a55d5e55cb2824437fc33d81dd8b69642a5920f7135b05fbdc73bd9364ca1f5",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CAT: The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Selected disposition: needs_decision.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. This needs_decision playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-CAT, no capability prerequisites are attached to this needs_decision variant. The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Provisioning templates plus effective newly provisioned settings and the list of default modules support this rule. Availability analysis and documented SHOULD treatment are distinct from proving a default. This needs_decision variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page"
+          ]
+        },
+        "timing": {
+          "finding": "No numeric reconfiguration/recertification period is stated. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Availability for each service and the distinction between provider defaults and customer overrides need factual determination.",
+            "citations": [
+              "cmu-cso-cat-source",
+              "cmu-cso-cat-page"
+            ]
+          },
+          {
+            "finding": "The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Decision retained: Has the first independent assessment after the source transition boundary started for this service, and what evidence establishes the date and initial/ongoing context?",
+            "citations": [
+              "cmu-cso-cat-source",
+              "cmu-cso-cat-page",
+              "cmu-applicability",
+              "cmu-page-applicability"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-cmd-38892c1feacaa940b18722a569c5a99d1e6988ce6396e95f28d849947c68860f": {
+      "content_hash": "c385ebee9f685a641289dc710f16820445f1d685a3458edd957cc4bc3823c40c",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CMD: The selected transition profile permits early adoption: initial/optional adoption begins 2026-07-04, ongoing requirement is 2027-01-01. Actionable guidance is conditional on election and does not make early adoption compulsory or erase the selected clause force. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. The actionable assertions retain the selected official context: Providers MUST document the cryptographic modules used in each service (or groups of services that use the same modules) where cryptographic services are used to protect federal customer data, including whether these modules are validated under the NIST Cryptographic Module Validation Program or are update streams of such modules. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-UVM: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Service/module/version lineage and validation-status evidence address the required module list. Runtime and vendor provenance are recommended ways to substantiate entries, not new official artifact formats. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page"
+          ]
+        },
+        "timing": {
+          "finding": "CMD supplies no numeric refresh interval; deployment revision and status-observation dates establish what was documented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Module identity and update-stream lineage for inherited services may be unavailable; unknown status must remain visible rather than inferred from marketing claims.",
+            "citations": [
+              "cmu-cso-cmd-source",
+              "cmu-cso-cmd-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-cmd-a2397238ddb1bcb74ab7a1b00baf87adb55a16196e637eeb53f84b8abd31e173": {
+      "content_hash": "78901bcb6f5c9fb8ac1e616cd5af99be5e87a116b785442cbc74c66deb6f3af9",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CMD: The selected actor/class/type/path/effective context resolves in the pinned inventory. The class-specific official statement is retained verbatim; recommendations and permissions are not upgraded to mandatory adoption. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. The actionable assertions retain the selected official context: Providers MUST document the cryptographic modules used in each service (or groups of services that use the same modules) where cryptographic services are used to protect federal customer data, including whether these modules are validated under the NIST Cryptographic Module Validation Program or are update streams of such modules. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-UVM: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Service/module/version lineage and validation-status evidence address the required module list. Runtime and vendor provenance are recommended ways to substantiate entries, not new official artifact formats. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page"
+          ]
+        },
+        "timing": {
+          "finding": "CMD supplies no numeric refresh interval; deployment revision and status-observation dates establish what was documented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Module identity and update-stream lineage for inherited services may be unavailable; unknown status must remain visible rather than inferred from marketing claims.",
+            "citations": [
+              "cmu-cso-cmd-source",
+              "cmu-cso-cmd-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-cmd-bca56ea2367b0adeac09035c4da0ebc25651d7fd21051964062833b563b00649": {
+      "content_hash": "973d9503aedd00032a92f50f25c44b13cfc9ebaf7f785523bd144da82c0e9470",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CMD: The source subset lists B/C/D. The excluded Class A profile does not gain an implementation checklist from generic any-type wording; no substantive compliance claim follows. Selected disposition: excluded.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. This excluded playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-CMD, no capability prerequisites are attached to this excluded variant. The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Service/module/version lineage and validation-status evidence address the required module list. Runtime and vendor provenance are recommended ways to substantiate entries, not new official artifact formats. This excluded variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page"
+          ]
+        },
+        "timing": {
+          "finding": "CMD supplies no numeric refresh interval; deployment revision and status-observation dates establish what was documented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Module identity and update-stream lineage for inherited services may be unavailable; unknown status must remain visible rather than inferred from marketing claims.",
+            "citations": [
+              "cmu-cso-cmd-source",
+              "cmu-cso-cmd-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-cmd-ca77b8538f09c74116e4a7fdd0675c48fac94d6c5dbdeacbd9e84a4d5864e141": {
+      "content_hash": "a2d1404f3b148cc2d30209f04ac5c022ab480d2d7a38e880e57d9b15f29398ff",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CMD: The profile precedes adoption/effectiveness for this 20x rule. The explanation is date-bound rather than a permanent exemption; source obtain/optional-adoption date is 2026-07-04. Selected disposition: excluded.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. This excluded playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-CMD, no capability prerequisites are attached to this excluded variant. The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Service/module/version lineage and validation-status evidence address the required module list. Runtime and vendor provenance are recommended ways to substantiate entries, not new official artifact formats. This excluded variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page"
+          ]
+        },
+        "timing": {
+          "finding": "CMD supplies no numeric refresh interval; deployment revision and status-observation dates establish what was documented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Module identity and update-stream lineage for inherited services may be unavailable; unknown status must remain visible rather than inferred from marketing claims.",
+            "citations": [
+              "cmu-cso-cmd-source",
+              "cmu-cso-cmd-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-cmd-d8ecc6834a154301c893af3dd71ace12c6652b0f46c3d63e64b551976846e73f": {
+      "content_hash": "3272abc1c35bdf6f077f90022ea1efce9ba36b4569b8126ef4851c03a49459f1",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-CMD: The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Selected disposition: needs_decision.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. This needs_decision playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-CMD, no capability prerequisites are attached to this needs_decision variant. The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "Service/module/version lineage and validation-status evidence address the required module list. Runtime and vendor provenance are recommended ways to substantiate entries, not new official artifact formats. This needs_decision variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page"
+          ]
+        },
+        "timing": {
+          "finding": "CMD supplies no numeric refresh interval; deployment revision and status-observation dates establish what was documented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Module identity and update-stream lineage for inherited services may be unavailable; unknown status must remain visible rather than inferred from marketing claims.",
+            "citations": [
+              "cmu-cso-cmd-source",
+              "cmu-cso-cmd-page"
+            ]
+          },
+          {
+            "finding": "The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Decision retained: Has the first independent assessment after the source transition boundary started for this service, and what evidence establishes the date and initial/ongoing context?",
+            "citations": [
+              "cmu-cso-cmd-source",
+              "cmu-cso-cmd-page",
+              "cmu-applicability",
+              "cmu-page-applicability"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-0978fc79925ddbc0f33c9e6bc4b6bfa6edd53c194b86919b6bdb47897f7b9d11": {
+      "content_hash": "dafa7150bd861b1358c031564068308b5aecaf757ca2c4b14f97af97b5bda107",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Selected disposition: needs_decision.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. This needs_decision playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-UVM, no capability prerequisites are attached to this needs_decision variant. The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. This needs_decision variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          },
+          {
+            "finding": "The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Decision retained: Has the first independent assessment after the source transition boundary started for this service, and what evidence establishes the date and initial/ongoing context?",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page",
+              "cmu-applicability",
+              "cmu-page-applicability"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-208e71ff5e6adf1fb41f6be24989bbf6addef19bab24e2a29154ed2882f1114e": {
+      "content_hash": "cf418c4d0f0f488e14518f2c2db6e33af659e5966847a66f981188a21aa34325",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The profile precedes adoption/effectiveness for this 20x rule. The explanation is date-bound rather than a permanent exemption; source obtain/optional-adoption date is 2026-07-04. Selected disposition: excluded.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. This excluded playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-UVM, no capability prerequisites are attached to this excluded variant. The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. This excluded variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-320d37bc89b30efbc3fc7fa0a5a7b09c44e8ba3c8c6f09178355964fae5c1d2c": {
+      "content_hash": "0e52c0574373c156dc3f28b367335676b4f9730d9a62f916a2a802e1f9d23a5f",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The selected actor/class/type/path/effective context resolves in the pinned inventory. The class-specific official statement is retained verbatim; recommendations and permissions are not upgraded to mandatory adoption. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. The actionable assertions retain the selected official context: Providers with Class D Certifications MUST use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-4de77bfabcd396f036827b5212fbdc5bfe9bc0d0299a1f2aa3b538fe396a74b5": {
+      "content_hash": "be45d11282c6c2b38d1662e0bd2b072ce05a900227ea9722407958178e46f26c",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The selected actor/class/type/path/effective context resolves in the pinned inventory. The class-specific official statement is retained verbatim; recommendations and permissions are not upgraded to mandatory adoption. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. The actionable assertions retain the selected official context: Providers with Class B Certifications MAY use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-586161f774b93761cede0a5df39af753df81401ba5c760bc466fd85f848f04e3": {
+      "content_hash": "929f31a56e4d8250cbf626734a48ec9220857c414ec16fb1a82420059a98aab0",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The profile precedes adoption/effectiveness for this 20x rule. The explanation is date-bound rather than a permanent exemption; source obtain/optional-adoption date is 2026-07-04. Selected disposition: excluded.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. This excluded playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-UVM, no capability prerequisites are attached to this excluded variant. The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. This excluded variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-6ac44efd491fd180553c2704fb36c88496a967e12c99ae46303d533f9e686676": {
+      "content_hash": "81777f85cd2bc26392514bd11b0cc3c8bf67a5163f3b5b4103b2724418128aa2",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The profile precedes adoption/effectiveness for this 20x rule. The explanation is date-bound rather than a permanent exemption; source obtain/optional-adoption date is 2026-07-04. Selected disposition: excluded.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. This excluded playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-UVM, no capability prerequisites are attached to this excluded variant. The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. This excluded variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-a1b2447ae7ad01ba55ed71b3ad9216219fde785608658d55a9d274e199cd1c51": {
+      "content_hash": "8b5fff0ea4e4aa28345d854728ac99a3867150460d53b73db1495209f14e643a",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The source explicitly provides Class A wording but its containing subset lists only B/C/D. Both JSON and Markdown retain the inconsistency; the needs-decision outcome appropriately declines to choose either authority over the other. Selected disposition: needs_decision.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. This needs_decision playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-UVM, no capability prerequisites are attached to this needs_decision variant. The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. This needs_decision variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          },
+          {
+            "finding": "The source explicitly provides Class A wording but its containing subset lists only B/C/D. Both JSON and Markdown retain the inconsistency; the needs-decision outcome appropriately declines to choose either authority over the other. Decision retained: How should the conflict between the selected class text and the subset class list be resolved for this service? Obtain an authoritative clarification and retain the saved profile before selecting an actionable variant.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page",
+              "cmu-applicability",
+              "cmu-page-applicability"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-ab56de595f4fe1f5dc7a44bdf1a342b96d749af04e70d3fa402d65e64490200f": {
+      "content_hash": "21c1e02fb14183b41e53eae28d6ed1fafefc7b760404d524be199a6207f99678",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The selected transition profile permits early adoption: initial/optional adoption begins 2026-07-04, ongoing requirement is 2027-01-01. Actionable guidance is conditional on election and does not make early adoption compulsory or erase the selected clause force. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. The actionable assertions retain the selected official context: Providers with Class A Certifications MAY use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-b061d65299312ad3bf01079d24688cb70b8a1d1bfad656ad81759148a21525ab": {
+      "content_hash": "6b6108fa2682150963134933b056b12975301f0c2dd75dbf9feff0f859c293b3",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The selected actor/class/type/path/effective context resolves in the pinned inventory. The class-specific official statement is retained verbatim; recommendations and permissions are not upgraded to mandatory adoption. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. The actionable assertions retain the selected official context: Providers with Class A Certifications MAY use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-bbdfbcc2e46aa7b72b353b69e278846a3746fbf31992de16e53a22c15ee2febf": {
+      "content_hash": "4e151631a16b04199300422ec795903730ffb2b4253246742dbf9e8ae40cc5ef",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The profile precedes adoption/effectiveness for this 20x rule. The explanation is date-bound rather than a permanent exemption; source obtain/optional-adoption date is 2026-07-04. Selected disposition: excluded.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. This excluded playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-UVM, no capability prerequisites are attached to this excluded variant. The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. This excluded variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-c9fd51a00e99014b9738fe98c814839d45427def3e84cc62a3b4a08b5e465e15": {
+      "content_hash": "7d170991738159f4ccb9453505b1e501b96614851f3c09076f5c311a76ef8177",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Selected disposition: needs_decision.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. This needs_decision playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-UVM, no capability prerequisites are attached to this needs_decision variant. The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. This needs_decision variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          },
+          {
+            "finding": "The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Decision retained: Has the first independent assessment after the source transition boundary started for this service, and what evidence establishes the date and initial/ongoing context?",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page",
+              "cmu-applicability",
+              "cmu-page-applicability"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-d24814410b3c5cdbc26216e9e25acc06f35df6ae0c042cb79ccb8502328a7feb": {
+      "content_hash": "e98229f19b38c60f19902f8583815350beff6e1246698e64688d528d0331cd74",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The selected transition profile permits early adoption: initial/optional adoption begins 2026-07-04, ongoing requirement is 2027-01-01. Actionable guidance is conditional on election and does not make early adoption compulsory or erase the selected clause force. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. The actionable assertions retain the selected official context: Providers with Class D Certifications MUST use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-d7eb0266b2aad7d2def5fef3a3231d9cc9062d56cf4daee5762712b11618b22d": {
+      "content_hash": "9ea91d8de97033fc45f02b809124b188410abcd1806bcbe67357ff4607794b6e",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The selected transition profile permits early adoption: initial/optional adoption begins 2026-07-04, ongoing requirement is 2027-01-01. Actionable guidance is conditional on election and does not make early adoption compulsory or erase the selected clause force. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. The actionable assertions retain the selected official context: Providers with Class B Certifications MAY use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-e54a40d4ea8abc1aefe674bc7c667eed8ccae161a28c11a64a9c91ce42485145": {
+      "content_hash": "63b10ef98e556b931312f92beeb585b7560829085045c5b609264a4de75efd56",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The selected actor/class/type/path/effective context resolves in the pinned inventory. The class-specific official statement is retained verbatim; recommendations and permissions are not upgraded to mandatory adoption. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. The actionable assertions retain the selected official context: Providers with Class C Certifications SHOULD use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-e8a117a9f6ade333284483a31b27cb908462f4d1ca63273e5879c80950c4c8b3": {
+      "content_hash": "adb6c77719d58cfc1db713966c4bf2f603402a5d64d942a930f3ded4d2f5d822",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The selected transition profile permits early adoption: initial/optional adoption begins 2026-07-04, ongoing requirement is 2027-01-01. Actionable guidance is conditional on election and does not make early adoption compulsory or erase the selected clause force. Selected disposition: actionable.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. The actionable assertions retain the selected official context: Providers with Class C Certifications SHOULD use cryptographic modules or update streams of cryptographic modules with active validations under the NIST Cryptographic Module Validation Program when using cryptographic services to protect federal customer data. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The module capability maps federal-data protection paths to deployed versions, algorithms, environments and validation lineage, with agency-default controls. This is a reasonable inferred common input to documentation, use and default decisions, not a universal validated-use mandate. Compared the other rule citations used by this shared capability as setup context, not additional duties of this playbook: CMU-CSO-CAT: The SHOULD applies to agency-tenant defaults when qualifying modules are available. Separate default and availability checks avoid treating an opt-in or manually configured tenant as the default. CMU-CSO-CMD: The documentation MUST covers each service or justified same-module service group protecting federal customer data and whether modules are CMVP validated or update streams. Separate scope and status checks prevent an encryption-enabled flag from standing in for the module inventory.  The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-cso-cat-source",
+            "cmu-cso-cat-page",
+            "cmu-cso-cmd-source",
+            "cmu-cso-cmd-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. Both evidence routes preserve these substantive records, either through authorized system exports plus attributable decisions or retained documentary records. Neither collection success nor a retrospective declaration alone establishes the assertion. Scope/provenance recommendations identify the offering and exact event/artifact revisions.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. The operation timing binds the exact selected official statement; transition adoption dates remain separate from operating deadlines.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-ee6d8183a70bf9687d81a124816c9b9f19a2cf24d546efcfb085c8d37a4eef55": {
+      "content_hash": "1a0a22516ccb7a1ab9686f64c6a72a966166d436e4317ab931d54dd27e487c90",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Selected disposition: needs_decision.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. This needs_decision playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-UVM, no capability prerequisites are attached to this needs_decision variant. The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. This needs_decision variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          },
+          {
+            "finding": "The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Decision retained: Has the first independent assessment after the source transition boundary started for this service, and what evidence establishes the date and initial/ongoing context?",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page",
+              "cmu-applicability",
+              "cmu-page-applicability"
+            ]
+          }
+        ]
+      }
+    },
+    "cmu-cso-uvm-f5de176ce3f5c00bba5d4cb18c7b2d7983d9a7ea26105748baed13431ff4a0f0": {
+      "content_hash": "6296e38501a5338900f97dfd4f64da38334a0c53ba64c5f38248831279a677a6",
+      "comparison": {
+        "applicability": {
+          "finding": "CMU-CSO-UVM: The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Selected disposition: needs_decision.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared the pinned JSON rule and matching reference-page text: The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. This needs_decision playbook retains the source context without assertions or an implementation checklist. Definition comparison (context only where not invoked by this selected rule): Certification Data includes all initial/ongoing certification information, including the package; publication/history references are not reduced to package files alone. Certification Package is the essential authorization-decision information, not just the overview or one evidence file; setup and completeness reviews use that broader boundary. Federal Customer Data is agency/user-supplied electronic content, normally excluding provider-generated account/telemetry metadata; contractual ownership can affect scope. Service-flow mapping must establish the actual customer-data population. MAY is truly optional and documentation is SHOULD; the draft allows non-election while preserving any explicit conditions and embedded MUST clauses. MUST is an absolute requirement, including security-documentation treatment; recommended implementation mechanics do not weaken the official obligation. MUST NOT is an absolute prohibition with security-documentation treatment, not a discretionary risk acceptance. SHOULD permits justified departures only with understood, carefully weighed implications and mandatory documented decisions; the completion criteria preserve this distinction. SHOULD NOT likewise permits justified exceptions with weighed implications and mandatory documented treatment, rather than silently equaling MUST NOT. Validation requires objective evidence of suitability for intended certification use and expected outcomes. A declaration does not prove it; in CMU the express CMVP condition additionally requires module-specific validation scope, not just this generic definition.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-definition-certification-data",
+            "cmu-definition-certification-package",
+            "cmu-definition-federal-customer-data",
+            "cmu-definition-may",
+            "cmu-definition-must",
+            "cmu-definition-must-not",
+            "cmu-definition-should",
+            "cmu-definition-should-not",
+            "cmu-definition-validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "For CMU-CSO-UVM, no capability prerequisites are attached to this needs_decision variant. The class-dependent selected statement retains A/B MAY, C SHOULD and D MUST for active-CMVP module/update-stream use protecting federal customer data. The October 5 note expressly excludes new previously unvalidated algorithms; both operation and focused acceptance retain that limitation. Reusing the actionable setup here would prematurely impose implementation before the selected applicability context permits it. The provider narrative emphasizes effectiveness and resourced security/engineering work; the recommended workflow is a means to demonstrate the specific outcome, not an official extra product or document mandate.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-provider-context"
+          ]
+        },
+        "evidence": {
+          "finding": "A module list alone does not demonstrate deployed use or active status. Runtime/configuration observations matched to CMVP scope and update lineage support use without mistaking a historical or different-module certificate for validation. This needs_decision variant attaches no evidence acceptance route; the contextual comparison does not count a service as satisfying an unresolved or excluded duty.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page"
+          ]
+        },
+        "timing": {
+          "finding": "Active status must support the claimed use period; no numeric certificate-check interval is invented. This applicability-only variant schedules no operating duty; the retained source timing is context, not a newly imposed checklist.",
+          "citations": [
+            "cmu-cso-uvm-source",
+            "cmu-cso-uvm-page",
+            "cmu-applicability",
+            "cmu-page-applicability"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official sources, not an official FedRAMP determination; interpretation may be incomplete or incorrect.",
+          "No service implementation or actual evidence was assessed. Authenticated service-scoped review recording remains pending; this bundle is not a receipt or approval."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned sources do not determine a particular vendor version's update-stream lineage or CMVP status. Class A text also conflicts with the B/C/D subset list where that variant is selected.",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page"
+            ]
+          },
+          {
+            "finding": "The ongoing 20x grace boundary is the first independent assessment started after 2027-01-01. An unknown start fact remains a decision, not an assumed date or an unconditional operating checklist. Decision retained: Has the first independent assessment after the source transition boundary started for this service, and what evidence establishes the date and initial/ongoing context?",
+            "citations": [
+              "cmu-cso-uvm-source",
+              "cmu-cso-uvm-page",
+              "cmu-applicability",
+              "cmu-page-applicability"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

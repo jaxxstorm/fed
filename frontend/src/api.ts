@@ -8,6 +8,7 @@ export type BrowserContractCheck =
   | MatchesContract<Overview, components["schemas"]["UIOverview"]>;
 
 export interface Bootstrap {
+  guidance_enabled?: boolean;
   role?: string;
   can_manage_organization?: boolean;
   profiles?: Record<string, string>;
@@ -35,6 +36,8 @@ export interface Form {
   Fields: Field[];
 }
 export interface Page {
+  EvidenceCoverage?: components["schemas"]["Page"]["EvidenceCoverage"];
+  Guidance?: components["schemas"]["Page"]["Guidance"];
   Primary: Rule["state"] | null;
   Citations:
     | {
@@ -90,6 +93,10 @@ export interface Rule {
   applicability: string;
   statement: string;
   state: {
+    guidance_state?: string;
+    guidance_reason?: string;
+    context_gaps?: components["schemas"]["RequirementNextStep"][] | null;
+    readiness?: components["schemas"]["ReadinessRequirementProgress"] | null;
     next_steps?: components["schemas"]["RequirementNextStep"][] | null;
     human_reviewed: boolean;
     status: Status;

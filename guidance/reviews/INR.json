@@ -1,0 +1,101 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "aar-required": {
+      "content_hash": "afb2f07c0e18c0a2b34879a80d5e67539dcc4a5e2e1c0db6d99bb980d4616c98",
+      "comparison": {
+        "applicability": {"finding":"The required inventory variant is kept separate from Class A exclusion and the unresolved path. The Class A list expressly names RIR, not AAR; the draft does not use that list to impose AAR on the excluded profile.","citations":["aar","class-a","class-a-rir"]},
+        "obligations": {"finding":"Rules and the provider page agree: generate incident after-action reports AND persistently incorporate lessons. The two assertions and separate event/recurring duties preserve that conjunction. The incident definition supplies the event subject; a completed report is not evidence that lessons were incorporated.","citations":["aar","aar-page","incident"]},
+        "prerequisites": {"finding":"The shared incident-history capability supplies identifiable incidents and investigation records. Its setup is explicitly recommended and inferred, with no mandatory ticketing product. Missing access is not equated to no incidents.","citations":["aar","incident"]},
+        "evidence": {"finding":"Reporting evidence reconciles reports to incident identities. Incorporation evidence separately links lessons to dispositions and changes in practice. Both system-export and attributable documentary routes require substantive records; neither a template nor an open action list is treated as sufficient.","citations":["aar"]},
+        "timing": {"finding":"Event-dependent report generation is a labeled inference with no invented reporting deadline. Lesson incorporation binds the exact persistent definition and permits documented intentional interruptions. Separate incident communication deadlines are not collapsed into this KSI.","citations":["aar","persistent"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect and is not an official FedRAMP determination.","No service evidence was assessed. Authenticated service-scoped review recording and complete-catalog publication remain pending."],
+        "uncertainties":[{"finding":"The selected statement does not prescribe a report format or numeric completion deadline. A no-incident period needs attributable scope/history evidence and must not be inferred from missing records.","citations":["aar","incident"]}]
+      }
+    },
+    "aar-path-decision": {
+      "content_hash": "52da6299be1a4c976a5b19363236522ce5074ae2983db1e31d6b52fc7185e188",
+      "comparison": {
+        "applicability":{"finding":"The bound variant leaves KSI path applicability unresolved. The plan asks the assessment owner to establish the factual certification path rather than using the Class A list to guess an obligation.","citations":["aar","class-a"]},
+        "obligations":{"finding":"The official AAR statement and provider page are retained for context, with no assertions or duty checklist imposed by this unresolved variant.","citations":["aar","aar-page"]},
+        "prerequisites":{"finding":"No incident-history implementation requirement is imposed before applicability is resolved; the incident definition is contextual, not evidence of an actual service incident.","citations":["incident","aar"]},
+        "evidence":{"finding":"No reporting or lesson-incorporation evidence checklist is fabricated for the unresolved path. A later required variant needs its own assessed citations.","citations":["aar"]},
+        "timing":{"finding":"The contextual persistent definition does not schedule a duty or invent a path-decision deadline. No event is declared to have occurred.","citations":["persistent","aar"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect; this is not an official FedRAMP determination or an authenticated service review receipt."],
+        "uncertainties":[{"finding":"The saved path remains unresolved; official context alone cannot establish the service's factual certification path.","citations":["aar","class-a"]}]
+      }
+    },
+    "aar-class-a-excluded": {
+      "content_hash": "1b26f7aa5a26b6396a33847842e77f9618e25948bcf84d3302c79a9f9948546e",
+      "comparison": {
+        "applicability":{"finding":"The exact inventory variant excludes AAR from Class A enumerated obligations. The plan preserves that exclusion without extending it to other classes or claiming service compliance.","citations":["aar","class-a"]},
+        "obligations":{"finding":"The retained official statement and provider page explain AAR's subject but impose no assertion or action checklist for this excluded variant.","citations":["aar","aar-page"]},
+        "prerequisites":{"finding":"The excluded plan has no incident-history prerequisite. The incident definition provides context and does not create an implementation requirement here.","citations":["incident","aar"]},
+        "evidence":{"finding":"No after-action artifact is demanded as proof of an excluded obligation, and exclusion is not represented as evidence that the service meets incident-response obligations elsewhere.","citations":["aar"]},
+        "timing":{"finding":"No recurring or event duty is scheduled. The persistent definition remains contextual and supplies no invented deadline.","citations":["persistent","aar"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect and is not an official FedRAMP determination. This comparison is pending authenticated service recording."],
+        "uncertainties":[]
+      }
+    },
+    "rir-required": {
+      "content_hash": "e1418b80f42885fd9e94b7f7bf30110713caa7a24790322dc4d8bb922cde18e0",
+      "comparison": {
+        "applicability":{"finding":"Both required variants are retained, including explicit Class A inclusion of RIR. That inclusion is not generalized to the other incident indicators or to the unresolved path variant.","citations":["rir","class-a","class-a-rir"]},
+        "obligations":{"finding":"The Rules and provider page require persistent effectiveness review of documented incident response procedures. The assertion and evidence criteria preserve documented procedures, effectiveness and repeated review. The linked incident and vulnerability-response definitions do not add a requirement to experience a real incident before reviewing procedures.","citations":["rir","rir-page","incident","vulnerability-response"]},
+        "prerequisites":{"finding":"The prerequisite is an identifiable documented procedure/version, not an actual incident history. This permits justified exercise or other review methods without mandating a specific exercise schedule or tool.","citations":["rir"]},
+        "evidence":{"finding":"Both routes require procedure identity/version and attributable effectiveness conclusions. The draft correctly rejects a runbook alone, approval signatures and attendance lists as proof of effectiveness review. Findings can reveal ineffective procedures while still documenting that a review occurred.","citations":["rir"]},
+        "timing":{"finding":"The recurring duty uses the exact FRD-PER definition and makes current status, cycles and interruptions visible. No numeric recurrence or automatic successful-response claim is invented.","citations":["persistent","rir"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect and is not an official FedRAMP determination.","This comparison does not establish any service procedure's effectiveness. Authenticated source-review recording remains pending."],
+        "uncertainties":[{"finding":"The selected KSI supplies no mandated evaluation method, success threshold or fixed cycle. The service must justify its review method and actual persistent activity without claiming those choices are official mandates.","citations":["rir","persistent"]}]
+      }
+    },
+    "rir-path-decision": {
+      "content_hash": "ff40f2971e4d766c75d9ff5252be2455ef88bc37685d7e3e56059104dfb74aa9",
+      "comparison": {
+        "applicability":{"finding":"The path-specific inventory outcome remains unresolved despite RIR's separate Class A inclusion. The assessment owner must establish the factual path; the plan does not ask a lay user to certify policy interpretation.","citations":["rir","class-a"]},
+        "obligations":{"finding":"The official statement and provider page are retained as context, but the plan has no assertions or operating duties. Incident and vulnerability-response definitions do not resolve the service's certification path.","citations":["rir","rir-page","incident","vulnerability-response"]},
+        "prerequisites":{"finding":"No procedure implementation requirement is imposed by this unresolved plan.","citations":["rir"]},
+        "evidence":{"finding":"The plan does not fabricate a procedure-review evidence checklist or treat its applicability explanation as supporting evidence.","citations":["rir"]},
+        "timing":{"finding":"The contextual persistent definition does not create a current recurring duty or a numeric path-decision deadline.","citations":["persistent","rir"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect; this is not an official FedRAMP determination or an authenticated review receipt."],
+        "uncertainties":[{"finding":"The actual certification path and applicable KSI rule set remain unresolved service facts.","citations":["rir","class-a"]}]
+      }
+    },
+    "rpi-required": {
+      "content_hash": "4c082e170cf8128d52438640dc9ff2411460c0d5fe485f7e81431bee66bb944b",
+      "comparison": {
+        "applicability":{"finding":"The required RPI variant is separate from its Class A exclusion and unresolved path. The Class A list's explicit RIR inclusion does not extend RPI to an excluded profile.","citations":["rpi","class-a","class-a-rir"]},
+        "obligations":{"finding":"The Rules and provider page agree on persistent review of past incidents for previously unrecognized patterns or vulnerabilities. The vulnerability definition includes procedural/control weaknesses, not merely software scanner findings. The draft preserves retrospective scope rather than treating the latest incident investigation as the whole duty.","citations":["rpi","rpi-page","incident","vulnerability"]},
+        "prerequisites":{"finding":"The shared incident-history capability identifies the retained historical set and period. This is a justified inferred dependency, with no prescribed analytics vendor and no inference of no incidents from absent records.","citations":["rpi","incident"]},
+        "evidence":{"finding":"Both routes require the historical incident set, dated analysis and attributable conclusions. Justified no-new-finding conclusions can document review; a scanner result unrelated to incident history or a single current ticket cannot establish the whole fact.","citations":["rpi","vulnerability"]},
+        "timing":{"finding":"The duty binds FRD-PER exactly and does not impose a fixed historical window, review interval or minimum number of incidents. Intentional interruptions and current activity status remain visible.","citations":["persistent","rpi"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect and is not an official FedRAMP determination.","This source comparison assesses guidance, not the service's incident history. Authenticated review recording is pending."],
+        "uncertainties":[{"finding":"The selected statement does not define a minimum lookback or handling rule for a service with no past incidents. Establish the actual history and preserve that limitation rather than fabricating incidents or claiming a completed review from missing records.","citations":["rpi","incident","persistent"]}]
+      }
+    },
+    "rpi-path-decision": {
+      "content_hash": "49bdff9c615b39b9e3e688f29d55ed7b9b574374dc29d156a92048bd750226a9",
+      "comparison": {
+        "applicability":{"finding":"The exact path variant remains unresolved. The Class A list is contextual and cannot substitute for the factual certification path decision.","citations":["rpi","class-a"]},
+        "obligations":{"finding":"The Rules statement and provider page remain contextual, with no assertions or retrospective-review checklist. Incident and vulnerability definitions describe the subject, not a resolved duty for this path.","citations":["rpi","rpi-page","incident","vulnerability"]},
+        "prerequisites":{"finding":"No incident-history capability is imposed before this variant's applicability is resolved.","citations":["rpi"]},
+        "evidence":{"finding":"No historical-analysis artifact is demanded by this applicability-only plan; its explanation cannot satisfy a later required variant's evidence criteria.","citations":["rpi"]},
+        "timing":{"finding":"No recurring schedule or decision deadline is invented from the contextual persistent definition.","citations":["persistent","rpi"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect; this is not an official FedRAMP determination or an authenticated service review receipt."],
+        "uncertainties":[{"finding":"The saved certification path does not resolve RPI applicability and remains an explicit service decision.","citations":["rpi","class-a"]}]
+      }
+    },
+    "rpi-class-a-excluded": {
+      "content_hash": "49e8b5d70a2855607d1adc99f3723d0df63d15c6d1c53a454bb2514dcf962c77",
+      "comparison": {
+        "applicability":{"finding":"The exact Class A variant excludes RPI from its enumerated obligations. The explanation does not extend that exclusion to other profiles or imply that incident review is unnecessary.","citations":["rpi","class-a"]},
+        "obligations":{"finding":"The official statement and provider page are retained for context without assertions or duties. Incident and vulnerability definitions do not create a new requirement in the excluded variant.","citations":["rpi","rpi-page","incident","vulnerability"]},
+        "prerequisites":{"finding":"No incident-history implementation prerequisite is fabricated for the excluded variant.","citations":["rpi"]},
+        "evidence":{"finding":"No retrospective-review evidence checklist is imposed, and the exclusion explanation is not proof that the service satisfies any other incident obligation.","citations":["rpi"]},
+        "timing":{"finding":"No recurring duty or numeric deadline is scheduled from the contextual persistent definition.","citations":["persistent","rpi"]},
+        "limitations":["Agent interpretation may be incomplete or incorrect and is not an official FedRAMP determination. Authenticated service review recording remains pending."],
+        "uncertainties":[]
+      }
+    }
+  }
+}

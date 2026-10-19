@@ -1,0 +1,1073 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "ksi-iam-aam-209efca717e8": {
+      "content_hash": "d3130cc1cef60675b3eb510acb30d8e7c7e75dcd43944391e2034d964871cfe5",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 209efca717e827185daa16061f0f4e11c532a864962d44b9923f6b6ecab0a921 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Secure automated lifecycle management and automated privilege management cover all accounts, roles and groups. The two assertions preserve local, emergency and non-user populations through their common scope.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Authorized transitions and privilege policy must precede evaluation of the automation; directory synchronization alone is not the full capability. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Lifecycle execution records and privilege/group/role change records are separate evidence sets. Reports of original automation runs are alternatives to exports; manual onboarding records cannot replace automated operation. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies no specific identity platform or universal lifecycle timeout. Coverage and secure failure handling need explanation for each identity authority.",
+            "citations": [
+              "KSI-IAM-AAM",
+              "KSI-IAM-AAM-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-IAM-AAM",
+              "KSI-IAM-AAM-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-aam-23ef29337463": {
+      "content_hash": "96f5c847d2d789e25c46524b62dca34e4dd66b45b063534489b02d9341a37623",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 23ef29337463c43b91572bbfa8ef973cf330c31199f56edc6aa0ad3e72c70808 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Secure automated lifecycle management and automated privilege management cover all accounts, roles and groups. The two assertions preserve local, emergency and non-user populations through their common scope.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Authorized transitions and privilege policy must precede evaluation of the automation; directory synchronization alone is not the full capability. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Lifecycle execution records and privilege/group/role change records are separate evidence sets. Reports of original automation runs are alternatives to exports; manual onboarding records cannot replace automated operation. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies no specific identity platform or universal lifecycle timeout. Coverage and secure failure handling need explanation for each identity authority.",
+            "citations": [
+              "KSI-IAM-AAM",
+              "KSI-IAM-AAM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-aam-d530c7622c83": {
+      "content_hash": "b80eded22f1a5e071c56f5b062a7d92bbf2dc832f08353cf893afd2d026baab0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d530c7622c832753abdfda14d2b646c91ffc75a8f6af09d6e537486b398ac15e preserves required inclusion of KSI-IAM-AAM through FRC-CLA-MFR. Its Class A inclusion is distinct from ordinary class/profile resolution; the required outcome retains its full subject and conditions.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Secure automated lifecycle management and automated privilege management cover all accounts, roles and groups. The two assertions preserve local, emergency and non-user populations through their common scope.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Authorized transitions and privilege policy must precede evaluation of the automation; directory synchronization alone is not the full capability. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Lifecycle execution records and privilege/group/role change records are separate evidence sets. Reports of original automation runs are alternatives to exports; manual onboarding records cannot replace automated operation. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-IAM-AAM",
+            "KSI-IAM-AAM-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies no specific identity platform or universal lifecycle timeout. Coverage and secure failure handling need explanation for each identity authority.",
+            "citations": [
+              "KSI-IAM-AAM",
+              "KSI-IAM-AAM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-apm-061dd6edc3c5": {
+      "content_hash": "fa8c3a19541e3d7445cc2eca789e53558dd9996345e4a58db50a131fa9a78c8b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 061dd6edc3c5e805fd48fc0f6c46412558f275325e4ff39d8fe23aadfa7e38fb retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The feasibility branch is preserved: secure passwordless authentication AND authorization where feasible, otherwise strong passwords WITH phishing-resistant MFA. Four assertions now expose authentication, authorization and both fallback protections.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Path-specific feasibility and secure method design are prerequisites; the assessment owner cannot simply choose weaker fallback without explaining infeasibility. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Attributed sign-ins do not prove authorization; effective access decisions are separately required. Password-policy enforcement and phishing-resistant factor/bypass observations establish fallback. The alternative examination route must inspect actual enforcement, not enrollment screenshots. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not define feasibility or a numeric password-strength threshold. These remain justified service decisions; generic MFA must not be equated with phishing resistance.",
+            "citations": [
+              "KSI-IAM-APM",
+              "KSI-IAM-APM-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-IAM-APM",
+              "KSI-IAM-APM-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-apm-44f23820bad6": {
+      "content_hash": "32786d7040db4bf4a03107b4abdcfd80e3a5574ce4b6a0f91021d91440daba00",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 44f23820bad68e20e5649f8867e88fb57fe59f11fa27d020cde1283a177989bb preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The feasibility branch is preserved: secure passwordless authentication AND authorization where feasible, otherwise strong passwords WITH phishing-resistant MFA. Four assertions now expose authentication, authorization and both fallback protections.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Path-specific feasibility and secure method design are prerequisites; the assessment owner cannot simply choose weaker fallback without explaining infeasibility. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributed sign-ins do not prove authorization; effective access decisions are separately required. Password-policy enforcement and phishing-resistant factor/bypass observations establish fallback. The alternative examination route must inspect actual enforcement, not enrollment screenshots. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not define feasibility or a numeric password-strength threshold. These remain justified service decisions; generic MFA must not be equated with phishing resistance.",
+            "citations": [
+              "KSI-IAM-APM",
+              "KSI-IAM-APM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-apm-e8a931c15804": {
+      "content_hash": "bf3e4763e89f28e773fdb6e92be0ea3387ba9a85033942e8fdcc048712205e11",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e8a931c1580494c7ee81290beb4a51a06a1907662b40d7763d98a6b76dafaec9 preserves required inclusion of KSI-IAM-APM through FRC-CLA-MFR. Its Class A inclusion is distinct from ordinary class/profile resolution; the required outcome retains its full subject and conditions.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The feasibility branch is preserved: secure passwordless authentication AND authorization where feasible, otherwise strong passwords WITH phishing-resistant MFA. Four assertions now expose authentication, authorization and both fallback protections.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Path-specific feasibility and secure method design are prerequisites; the assessment owner cannot simply choose weaker fallback without explaining infeasibility. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributed sign-ins do not prove authorization; effective access decisions are separately required. Password-policy enforcement and phishing-resistant factor/bypass observations establish fallback. The alternative examination route must inspect actual enforcement, not enrollment screenshots. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-IAM-APM",
+            "KSI-IAM-APM-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not define feasibility or a numeric password-strength threshold. These remain justified service decisions; generic MFA must not be equated with phishing resistance.",
+            "citations": [
+              "KSI-IAM-APM",
+              "KSI-IAM-APM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-elp-2997e70ce1df": {
+      "content_hash": "d13f0a16c5958de045f361f2cfa33ac361de62b5f5969694b3f1737eb7aa97b0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 2997e70ce1df51b1b1309b0d921e52e28f55ecd5fd8bccc324db74028369f163 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Measures must actually restrict each user or device to needed resources and be persistently reviewed. Operation and review are separately asserted; users-only review misses the device population.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Justified needs and effective access evaluation are substantive prerequisites to least-privilege conclusions. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Need approvals and effective entitlement/authorization observations support operation; dated entitlement-to-need conclusions support review. Inherited and federated grants cannot be omitted from either export or documentary routes. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify one need-approval workflow or sampling rule. Every claimed population must be reconciled even when observations are sampled.",
+            "citations": [
+              "KSI-IAM-ELP",
+              "KSI-IAM-ELP-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-IAM-ELP",
+              "KSI-IAM-ELP-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-elp-5a8fb36660ec": {
+      "content_hash": "05b4a6a6f1e10fecf5807d9d5271d43cb7f3bdbde386d2410f3bc42885ebbd66",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 5a8fb36660ecf1dd2dfd07c996012388a83ea342e0fccacb65af4b2766aca34f preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Measures must actually restrict each user or device to needed resources and be persistently reviewed. Operation and review are separately asserted; users-only review misses the device population.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Justified needs and effective access evaluation are substantive prerequisites to least-privilege conclusions. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Need approvals and effective entitlement/authorization observations support operation; dated entitlement-to-need conclusions support review. Inherited and federated grants cannot be omitted from either export or documentary routes. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify one need-approval workflow or sampling rule. Every claimed population must be reconciled even when observations are sampled.",
+            "citations": [
+              "KSI-IAM-ELP",
+              "KSI-IAM-ELP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-elp-bdac528a2ff3": {
+      "content_hash": "55a5b38ca247c7eaa1f305b51e41312aad54e116c2493d7329aa132658b0a524",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant bdac528a2ff3fdc7270cd95d93324bde8c5cc375870417b73f9938910d04ab95 with FRC-CLA-MFR's enumerated KSI list: KSI-IAM-ELP is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Measures must actually restrict each user or device to needed resources and be persistently reviewed. Operation and review are separately asserted; users-only review misses the device population.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Justified needs and effective access evaluation are substantive prerequisites to least-privilege conclusions. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Need approvals and effective entitlement/authorization observations support operation; dated entitlement-to-need conclusions support review. Inherited and federated grants cannot be omitted from either export or documentary routes. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-ELP",
+            "KSI-IAM-ELP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify one need-approval workflow or sampling rule. Every claimed population must be reconciled even when observations are sampled.",
+            "citations": [
+              "KSI-IAM-ELP",
+              "KSI-IAM-ELP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-jit-2d310c35fc6f": {
+      "content_hash": "6f554fc355e80b76b9743c9fbef26da28137169349d712660f3d44c663ba9e3f",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 2d310c35fc6f7790cc3486c80cf183ae3fef3506af636134c502ee33843b2a51 with FRC-CLA-MFR's enumerated KSI list: KSI-IAM-JIT is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Least privilege, role/attribute decisions, just-in-time grants and persistent review across all user/non-user accounts/services are separately tested. A human administrator elevation feature does not establish the complete model.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Role and attribute authorities, resource-need policies and just-in-time grant mechanisms must exist before review evidence can establish the model. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Effective need-limited decisions, role/attribute traces, grant/expiry observations and full-population review history prove different duties. Retained source examinations are acceptable; standing privileges plus periodic review are not JIT. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source gives no maximum grant lifetime or approved attribute list. Bounded lifetime is an evidentiary inference about JIT, not an official numeric timeout.",
+            "citations": [
+              "KSI-IAM-JIT",
+              "KSI-IAM-JIT-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-jit-3481081d24c4": {
+      "content_hash": "89946f9d12592f6d269e84d41f7e5b4ac41864b836f4cff72060e4af9b38d380",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 3481081d24c42fe8e9111933574da65924ef783aee998c80022a4270304fbaea retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Least privilege, role/attribute decisions, just-in-time grants and persistent review across all user/non-user accounts/services are separately tested. A human administrator elevation feature does not establish the complete model.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Role and attribute authorities, resource-need policies and just-in-time grant mechanisms must exist before review evidence can establish the model. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Effective need-limited decisions, role/attribute traces, grant/expiry observations and full-population review history prove different duties. Retained source examinations are acceptable; standing privileges plus periodic review are not JIT. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source gives no maximum grant lifetime or approved attribute list. Bounded lifetime is an evidentiary inference about JIT, not an official numeric timeout.",
+            "citations": [
+              "KSI-IAM-JIT",
+              "KSI-IAM-JIT-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-IAM-JIT",
+              "KSI-IAM-JIT-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-jit-cac20b6a8421": {
+      "content_hash": "4f95254bbfcdf6d0845905b6d879f1a35abbd6678764de01b99065ccd8316e08",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant cac20b6a84211b78f386fa1cec6cd93157219f763f8c6250f26862ca58cb7edc preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Least privilege, role/attribute decisions, just-in-time grants and persistent review across all user/non-user accounts/services are separately tested. A human administrator elevation feature does not establish the complete model.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Role and attribute authorities, resource-need policies and just-in-time grant mechanisms must exist before review evidence can establish the model. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Effective need-limited decisions, role/attribute traces, grant/expiry observations and full-population review history prove different duties. Retained source examinations are acceptable; standing privileges plus periodic review are not JIT. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-IAM-JIT",
+            "KSI-IAM-JIT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source gives no maximum grant lifetime or approved attribute list. Bounded lifetime is an evidentiary inference about JIT, not an official numeric timeout.",
+            "citations": [
+              "KSI-IAM-JIT",
+              "KSI-IAM-JIT-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-snu-8701b281d6f8": {
+      "content_hash": "0b8ee94205355411736734d4173193331af8577633da8d0fd93dff6e0fb510dd",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 8701b281d6f84ecc293d8f41dadade8a30e3eab3c024f1dfae5f8aebd21a3051 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Appropriately secure non-user authentication must be operating and persistently reviewed. The review separates these duties and does not import human MFA as a machine-authentication requirement.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Trust-context security criteria and actual authentication methods are prerequisites to reviewing appropriateness. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Identity/method/trust mapping and authentication observations establish use; dated security evaluations establish review. Vault metadata and rotation logs alone establish neither full authentication-path security nor review. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Appropriateness varies with trust context; the source supplies no universal credential lifetime or mandatory workload identity technology.",
+            "citations": [
+              "KSI-IAM-SNU",
+              "KSI-IAM-SNU-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-snu-9e856690df88": {
+      "content_hash": "8972f45db99c91e5dc2b28ef8f683f1f06969a22cc7f8f6bad472fd01f5d77e2",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 9e856690df883aa26ca7cc32389366e05bdcda3a907cbb1c3a4503294a0fff19 with FRC-CLA-MFR's enumerated KSI list: KSI-IAM-SNU is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Appropriately secure non-user authentication must be operating and persistently reviewed. The review separates these duties and does not import human MFA as a machine-authentication requirement.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Trust-context security criteria and actual authentication methods are prerequisites to reviewing appropriateness. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Identity/method/trust mapping and authentication observations establish use; dated security evaluations establish review. Vault metadata and rotation logs alone establish neither full authentication-path security nor review. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Appropriateness varies with trust context; the source supplies no universal credential lifetime or mandatory workload identity technology.",
+            "citations": [
+              "KSI-IAM-SNU",
+              "KSI-IAM-SNU-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-snu-cb6fd27522e9": {
+      "content_hash": "722d949c928959b23dedcb3788ec4ba233d8c3c04bea66d521f1e6b0044c3abe",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant cb6fd27522e9538a43e5c98b94a58fa16fe798345593f57a030c7c80771ba0a4 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Appropriately secure non-user authentication must be operating and persistently reviewed. The review separates these duties and does not import human MFA as a machine-authentication requirement.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Trust-context security criteria and actual authentication methods are prerequisites to reviewing appropriateness. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Identity/method/trust mapping and authentication observations establish use; dated security evaluations establish review. Vault metadata and rotation logs alone establish neither full authentication-path security nor review. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-SNU",
+            "KSI-IAM-SNU-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Appropriateness varies with trust context; the source supplies no universal credential lifetime or mandatory workload identity technology.",
+            "citations": [
+              "KSI-IAM-SNU",
+              "KSI-IAM-SNU-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-IAM-SNU",
+              "KSI-IAM-SNU-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-sus-08a27c237b8b": {
+      "content_hash": "bd233f3c96325159f1e57f59ab3adf756510f3e0684466bae263f68bc8af064a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 08a27c237b8b3e255b9f09f02e70d993f1cacaba20c82b3f808f1257db5fe9ad retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The triggering condition is suspicious activity affecting privileged accounts; disablement OR other securing is permitted. The vulnerability-response definition supplies context, not an extra complete response-program checklist. Vulnerability Response describes systematic management of detected vulnerabilities; its context does not turn this suspicious-account indicator into all response duties. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "response"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Privileged identity identification, suspicious-activity escalation and an authorized securing mechanism are necessary to demonstrate the conditional response. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Event-to-account correlation and resulting access-state evidence establish response; an alert or closed ticket alone does not. A supported no-event period limits the operating claim, and an exercise demonstrates capability rather than an actual event response. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. Suspicious privileged-account activity is the response trigger. No-event periods and exercises do not prove an actual securing response. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The statement supplies no numeric securing deadline and does not enumerate every acceptable alternative to disablement. The service must explain why the chosen action secured that account.",
+            "citations": [
+              "KSI-IAM-SUS",
+              "KSI-IAM-SUS-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-IAM-SUS",
+              "KSI-IAM-SUS-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-sus-496038af64bf": {
+      "content_hash": "812aadbe55a67dca344070e2a8c5fe60fb78b079326c1778ce46108cca01ba7b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 496038af64bf7bd7b249b3633eadc319627cfc76347d59b946ffc04991a2afbf preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The triggering condition is suspicious activity affecting privileged accounts; disablement OR other securing is permitted. The vulnerability-response definition supplies context, not an extra complete response-program checklist. Vulnerability Response describes systematic management of detected vulnerabilities; its context does not turn this suspicious-account indicator into all response duties.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "response"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Privileged identity identification, suspicious-activity escalation and an authorized securing mechanism are necessary to demonstrate the conditional response. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Event-to-account correlation and resulting access-state evidence establish response; an alert or closed ticket alone does not. A supported no-event period limits the operating claim, and an exercise demonstrates capability rather than an actual event response. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. Suspicious privileged-account activity is the response trigger. No-event periods and exercises do not prove an actual securing response.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The statement supplies no numeric securing deadline and does not enumerate every acceptable alternative to disablement. The service must explain why the chosen action secured that account.",
+            "citations": [
+              "KSI-IAM-SUS",
+              "KSI-IAM-SUS-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-iam-sus-9ae70be93bd6": {
+      "content_hash": "560c4cd2a22d2b8d75e9458370e3724bc6faa3fe776ce1fd966e26858939d708",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 9ae70be93bd6dd0cd1af4e878c27189dcd3e8191d7edabedfa4e3c1a085909e9 with FRC-CLA-MFR's enumerated KSI list: KSI-IAM-SUS is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The triggering condition is suspicious activity affecting privileged accounts; disablement OR other securing is permitted. The vulnerability-response definition supplies context, not an extra complete response-program checklist. Vulnerability Response describes systematic management of detected vulnerabilities; its context does not turn this suspicious-account indicator into all response duties. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "response"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Privileged identity identification, suspicious-activity escalation and an authorized securing mechanism are necessary to demonstrate the conditional response. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Event-to-account correlation and resulting access-state evidence establish response; an alert or closed ticket alone does not. A supported no-event period limits the operating claim, and an exercise demonstrates capability rather than an actual event response. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. Suspicious privileged-account activity is the response trigger. No-event periods and exercises do not prove an actual securing response. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-IAM-SUS",
+            "KSI-IAM-SUS-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The statement supplies no numeric securing deadline and does not enumerate every acceptable alternative to disablement. The service must explain why the chosen action secured that account.",
+            "citations": [
+              "KSI-IAM-SUS",
+              "KSI-IAM-SUS-page"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

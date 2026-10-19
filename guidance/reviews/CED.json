@@ -1,0 +1,79 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "ksi-ced-rat-required": {
+      "content_hash": "26ea8e3d835f107569802ce4cbf476d7692dbe1c1395fdc2a37ba04a4a668326",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared both required inventory variants with the selected KSI statement and the Class A inclusion list. The draft retains FRC-CLA-MFR inclusion as a distinct variant from ordinary class/profile resolution; it does not turn the unresolved path variant into a required checklist.",
+          "citations": ["training", "class-a"]
+        },
+        "obligations": {
+          "finding": "The Rules statement and generated provider page agree. Five assertions preserve persistent effectiveness review plus the four expressly named populations: all employees, high-risk roles, development/engineering secure delivery, and incident-response/disaster-recovery staff. Attendance alone does not demonstrate the review fact. The linked Incident and Vulnerability Response definitions supply context; neither adds a fifth training population or makes this indicator proof of successful incident handling.",
+          "citations": ["training", "training-page", "incident", "vulnerability-response"]
+        },
+        "prerequisites": {
+          "finding": "A population/content map and review method are reasonable inferred prerequisites to demonstrating review across the named groups. The draft labels the setup as implementation recommendations and gives the inference rationale. It requires no particular vendor, learning system, quiz or pass score. Reuse is limited to the same service boundary rather than treating a parent-company training program as automatic coverage.",
+          "citations": ["training"]
+        },
+        "evidence": {
+          "finding": "Each assertion has population-specific records, sufficiency limits and two alternative combinations: learning-system exports with review reports, or attributable documentary/evaluation records with review conclusions. Scope, period and provenance expectations are recommendations, not falsely quoted official artifact mandates. Configuration, course catalogs and completion percentages are explicitly insufficient on their own. These routes support review activity and conclusions, not guaranteed employee behavior or successful security outcomes.",
+          "citations": ["training", "training-page"]
+        },
+        "timing": {
+          "finding": "The recurring duty binds the exact FRD-PER definition. It preserves intentional irregular cycles, interruptions, waiting periods and known activity status. It invents no annual, quarterly, monthly or minimum-history deadline; a single initial review cannot by itself demonstrate repetition over a long period.",
+          "citations": ["persistent"]
+        },
+        "limitations": [
+          "This is an agent interpretation of the pinned official sources and may be incomplete or incorrect; it is not an official FedRAMP determination.",
+          "This comparison does not assess a service's actual training program or evidence. Authenticated service-scoped review recording and the complete-catalog publication gate remain outstanding."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The selected statement supplies no numeric effectiveness score or mandated evaluation method. The service must establish and explain suitable methods; the guidance does not invent an official threshold.",
+            "citations": ["training"]
+          },
+          {
+            "finding": "The statement names employees and specified staff, but does not settle every contractor or shared-workforce boundary. Establish the relevant population and preserve unresolved boundary interpretations rather than assuming universal inclusion or exclusion.",
+            "citations": ["training"]
+          }
+        ]
+      }
+    },
+    "ksi-ced-rat-path-decision": {
+      "content_hash": "5a47db4e514337c6287f3d40f156c4536935699de58c2b390969df83e30bf7fc",
+      "comparison": {
+        "applicability": {
+          "finding": "The exact bound inventory variant is unresolved because KSI applicability for the saved path requires review. The Class A inclusion list gives relevant context but does not justify overriding that unresolved resolver outcome. The draft asks the assessment owner to establish the selected path and its applicable KSI rule set.",
+          "citations": ["class-a", "training"]
+        },
+        "obligations": {
+          "finding": "The retained official KSI statement matches the provider page. The purpose explains its subject, but the needs-decision plan has no assertions or action checklist, so it does not fabricate a current obligation or count the requirement as fulfilled.",
+          "citations": ["training", "training-page"]
+        },
+        "prerequisites": {
+          "finding": "No implementation prerequisite is imposed before applicability is resolved. The service assessment owner is responsible for the factual path decision, not for certifying this agent's policy interpretation.",
+          "citations": ["training", "class-a"]
+        },
+        "evidence": {
+          "finding": "No training evidence checklist is imposed by this applicability-only plan. A later resolved required variant must use its own assertion criteria; the unresolved explanation is not evidence of compliance or exclusion.",
+          "citations": ["training"]
+        },
+        "timing": {
+          "finding": "The applicability-only plan invents no deadline for resolving the path and no operating cycle. It preserves the selected official statement for context without scheduling an unresolved duty.",
+          "citations": ["training"]
+        },
+        "limitations": [
+          "This is an agent interpretation of the pinned official sources and may be incomplete or incorrect; it is not an official FedRAMP determination.",
+          "Authenticated service-scoped review recording is pending. This source comparison does not resolve the service's factual certification path."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The saved path has no resolved KSI applicability in this catalog variant. The Class A inclusion context cannot by itself establish which path the service is actually pursuing.",
+            "citations": ["training", "class-a"]
+          }
+        ]
+      }
+    }
+  }
+}

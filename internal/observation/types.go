@@ -82,14 +82,18 @@ type Submission struct {
 	Links           []Link       `json:"links"`
 }
 type Finding struct {
-	Target        Target    `json:"target"`
-	ObservationID string    `json:"observation_id"`
-	ObservedAt    time.Time `json:"observed_at"`
-	ID            string    `json:"id"`
-	Condition     string    `json:"condition"`
-	Outcome       string    `json:"outcome"`
-	Explanation   string    `json:"explanation"`
-	Basis         string    `json:"basis"`
+	Freshness      string                     `json:"freshness,omitempty"`
+	ArtifactSchema string                     `json:"artifact_schema,omitempty"`
+	Configuration  map[string]json.RawMessage `json:"configuration,omitempty"`
+	Coverage       *Coverage                  `json:"coverage,omitempty"`
+	Target         Target                     `json:"target"`
+	ObservationID  string                     `json:"observation_id"`
+	ObservedAt     time.Time                  `json:"observed_at"`
+	ID             string                     `json:"id"`
+	Condition      string                     `json:"condition"`
+	Outcome        string                     `json:"outcome"`
+	Explanation    string                     `json:"explanation"`
+	Basis          string                     `json:"basis"`
 }
 type Receipt struct {
 	ID           string    `json:"id"`

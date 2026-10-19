@@ -1,0 +1,2079 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "sdr-csf-ctf-51ff89b803742e1e89133db406d76a6ab3a2f58eb98fb60d1d54b895f26339ab": {
+      "content_hash": "9a19c2907666e35e7c34ad9e1f7ad7f9304f33e5efc2b4c29540c6c0e157a531",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 51ff89b803742e1e89133db406d76a6ab3a2f58eb98fb60d1d54b895f26339ab: SDR-CSF-CTF: not_applicable — Different certification type. Source force: MUST (published rule; resolver stopped before force selection). This is a Rev5 control record, not a 20x KSI record.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSF-CTF-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The Rev5-only summary includes organization-defined parameters, five allowed implementation statuses, mechanisms/inheritance, verification, validation, independent findings, clarifications and applicable artifacts. It is not substituted for 20x KSI summaries. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSF-CTF-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Rev5 Controls. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSF-CTF-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "A provider 20x exclusion establishes no fact about Rev5 control implementation; a later Rev5 assessment would need the full nine-topic control record. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSF-CTF-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST also include short and simple high-level summaries of at least the following for each applicable Rev5 Control:",
+          "citations": [
+            "SDR-CSF-CTF-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSF-CTF only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "This inventory does not resolve a service's Rev5 control implementation or organization-defined parameter values.",
+            "citations": [
+              "SDR-CSF-CTF-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-frr-01ea81c66750fea8ac1f0e74ff22fa052d8c98840881c26d800f001dd1815158": {
+      "content_hash": "4f72f801f155a5dec0a04e7494fde68bbbadbbdb0c096db1f852c2330ac4be06",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 01ea81c66750fea8ac1f0e74ff22fa052d8c98840881c26d800f001dd1815158: SDR-CSO-FRR: unresolved — Transition grace depends on next independent assessment. Source force: MUST. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Seven listed topics separate explanation/customer risk, verification of appropriateness, validation of working implementation, independent verification, independent validation, responses and applicable artifacts. Senior-official acceptance is an alternative only where stated, not invented independent assessment. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for FedRAMP Rules. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for SDR-CSO-FRR.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Both human-readable and JSON records, rule mappings and underlying attributable findings are required. Generated entries or a senior-official acceptance alone do not prove independent verification/validation. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers MUST supply a Security Decision Record, in both human-readable and JSON formats, that includes at least all of the following information for each applicable FedRAMP rule:",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-FRR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual nonimplementation acceptance and independent findings are not supplied here. The SDR definition requires persistent maintenance but gives no universal numeric cadence.",
+            "citations": [
+              "SDR-CSO-FRR-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for SDR-CSO-FRR. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "SDR-CSO-FRR-source",
+              "SDR-page",
+              "SDR-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-frr-0621a490d7db48d025e069f6ef94bde95679ceefc8e3343bb2b56f9a4c7d144e": {
+      "content_hash": "58af36597de9e6d645907f99352dd2994f17d21dc16c4cb7b58493e2582cfc1c",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 0621a490d7db48d025e069f6ef94bde95679ceefc8e3343bb2b56f9a4c7d144e: SDR-CSO-FRR: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Seven listed topics separate explanation/customer risk, verification of appropriateness, validation of working implementation, independent verification, independent validation, responses and applicable artifacts. Senior-official acceptance is an alternative only where stated, not invented independent assessment. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for FedRAMP Rules. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Both human-readable and JSON records, rule mappings and underlying attributable findings are required. Generated entries or a senior-official acceptance alone do not prove independent verification/validation. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST supply a Security Decision Record, in both human-readable and JSON formats, that includes at least all of the following information for each applicable FedRAMP rule:",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-FRR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual nonimplementation acceptance and independent findings are not supplied here. The SDR definition requires persistent maintenance but gives no universal numeric cadence.",
+            "citations": [
+              "SDR-CSO-FRR-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-frr-142a036ff67b3a373d7cb24b65ef20cff8aa3e0a0c343ead40037600cbf84e26": {
+      "content_hash": "355044bb8f6c6c4d24eb0313fc2ec6d08b17a06ffb887e1f97a5d88ae552414c",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 142a036ff67b3a373d7cb24b65ef20cff8aa3e0a0c343ead40037600cbf84e26: SDR-CSO-FRR: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Seven listed topics separate explanation/customer risk, verification of appropriateness, validation of working implementation, independent verification, independent validation, responses and applicable artifacts. Senior-official acceptance is an alternative only where stated, not invented independent assessment. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for FedRAMP Rules. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Both human-readable and JSON records, rule mappings and underlying attributable findings are required. Generated entries or a senior-official acceptance alone do not prove independent verification/validation. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST supply a Security Decision Record, in both human-readable and JSON formats, that includes at least all of the following information for each applicable FedRAMP rule:",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-FRR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual nonimplementation acceptance and independent findings are not supplied here. The SDR definition requires persistent maintenance but gives no universal numeric cadence.",
+            "citations": [
+              "SDR-CSO-FRR-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-frr-8f239b3b747ffb889abc2af1db3e994ffc0c6a3c2036b5236a8f699b8ca9f195": {
+      "content_hash": "e59b34134684adef2b52aca5762998e81229bfae50cc2ac4e93736911c2b1f95",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 8f239b3b747ffb889abc2af1db3e994ffc0c6a3c2036b5236a8f699b8ca9f195: SDR-CSO-FRR: optional — Optional adoption before required effective date. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Seven listed topics separate explanation/customer risk, verification of appropriateness, validation of working implementation, independent verification, independent validation, responses and applicable artifacts. Senior-official acceptance is an alternative only where stated, not invented independent assessment. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 8 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-cso-frr-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Resolve applicable rules and obtain implementation/risk records, objective evidence, senior-official decisions where invoked, and actual independent verification/validation findings. This is an implementation inference needed to test FedRAMP Rules; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Both human-readable and JSON records, rule mappings and underlying attributable findings are required. Generated entries or a senior-official acceptance alone do not prove independent verification/validation. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Retain actual decision, evidence and assessment dates and linked revisions. The SDR definition requires persistent maintenance, verification and validation; record cycles/status/intentional interruptions without inventing a numeric schedule. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-FRR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual nonimplementation acceptance and independent findings are not supplied here. The SDR definition requires persistent maintenance but gives no universal numeric cadence.",
+            "citations": [
+              "SDR-CSO-FRR-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-frr-e0e228179d39166a2323cf01c634d3436795419d918cdf74ade7c6b7fed2f3bf": {
+      "content_hash": "fab2a99ce9940160d83ea2825e76cd677bbf2d426c4f74b8855a31c77537510f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e0e228179d39166a2323cf01c634d3436795419d918cdf74ade7c6b7fed2f3bf: SDR-CSO-FRR: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Seven listed topics separate explanation/customer risk, verification of appropriateness, validation of working implementation, independent verification, independent validation, responses and applicable artifacts. Senior-official acceptance is an alternative only where stated, not invented independent assessment. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 8 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-cso-frr-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Resolve applicable rules and obtain implementation/risk records, objective evidence, senior-official decisions where invoked, and actual independent verification/validation findings. This is an implementation inference needed to test FedRAMP Rules; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Both human-readable and JSON records, rule mappings and underlying attributable findings are required. Generated entries or a senior-official acceptance alone do not prove independent verification/validation. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Retain actual decision, evidence and assessment dates and linked revisions. The SDR definition requires persistent maintenance, verification and validation; record cycles/status/intentional interruptions without inventing a numeric schedule.",
+          "citations": [
+            "SDR-CSO-FRR-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-FRR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual nonimplementation acceptance and independent findings are not supplied here. The SDR definition requires persistent maintenance but gives no universal numeric cadence.",
+            "citations": [
+              "SDR-CSO-FRR-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-mtd-2c06afa713d906afb51da1bc3418543acc5c7cab1a71083bf700ddafbedcf7ad": {
+      "content_hash": "1e8d4dbe7a89685adb0b379797dec085910decb4e21ac713db05d1605db0f796",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 2c06afa713d906afb51da1bc3418543acc5c7cab1a71083bf700ddafbedcf7ad: SDR-CSO-MTD: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "All three metadata fields survive as distinct assertions: version, date AND time of last update, and source of update. Capture/export time must not silently replace update time. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Security Decision Record Metadata. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Revision/change history tied to the released SDR corroborates metadata; a filename version or tool label without attribution is incomplete. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST also include the following basic metadata in their Security Decision Record:",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-MTD only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source leaves version syntax and update-source representation unspecified; attribution must be established from actual records.",
+            "citations": [
+              "SDR-CSO-MTD-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-mtd-7f2e86381c236a46b3ba4608ff43e4a5cdaf84497e9d5ea0531bd342106c9664": {
+      "content_hash": "a3908483859f2fb777c518d9a1913bb51018e09a1a98f5647b5f3a5422a62cfd",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7f2e86381c236a46b3ba4608ff43e4a5cdaf84497e9d5ea0531bd342106c9664: SDR-CSO-MTD: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "All three metadata fields survive as distinct assertions: version, date AND time of last update, and source of update. Capture/export time must not silently replace update time. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Security Decision Record Metadata. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Revision/change history tied to the released SDR corroborates metadata; a filename version or tool label without attribution is incomplete. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST also include the following basic metadata in their Security Decision Record:",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-MTD only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source leaves version syntax and update-source representation unspecified; attribution must be established from actual records.",
+            "citations": [
+              "SDR-CSO-MTD-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-mtd-c18bc0636d4df81f326dfa80b5203585ed47c5b48247af2fc92d0e80fc82a51e": {
+      "content_hash": "316da9917281eb17285f9533cbfa1f5b5b3b36ea6b1d57cbbda7cccd58383017",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant c18bc0636d4df81f326dfa80b5203585ed47c5b48247af2fc92d0e80fc82a51e: SDR-CSO-MTD: unresolved — Transition grace depends on next independent assessment. Source force: MUST. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "All three metadata fields survive as distinct assertions: version, date AND time of last update, and source of update. Capture/export time must not silently replace update time. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Security Decision Record Metadata. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for SDR-CSO-MTD.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Revision/change history tied to the released SDR corroborates metadata; a filename version or tool label without attribution is incomplete. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers MUST also include the following basic metadata in their Security Decision Record:",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-MTD only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source leaves version syntax and update-source representation unspecified; attribution must be established from actual records.",
+            "citations": [
+              "SDR-CSO-MTD-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for SDR-CSO-MTD. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "SDR-CSO-MTD-source",
+              "SDR-page",
+              "SDR-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-mtd-c1fb98128fb2debe704a2a23672117bbe493c87e90b0a1141be8d06a116b8005": {
+      "content_hash": "fbdac6c8574ee95a83c5334bfa3bbdf8d0afb4bf89b3e9ee94d40cfd10f32691",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant c1fb98128fb2debe704a2a23672117bbe493c87e90b0a1141be8d06a116b8005: SDR-CSO-MTD: optional — Optional adoption before required effective date. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "All three metadata fields survive as distinct assertions: version, date AND time of last update, and source of update. Capture/export time must not silently replace update time. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 4 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-cso-mtd-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the SDR revision mechanism and authoritative update events, including the person or system producing each update. This is an implementation inference needed to test Security Decision Record Metadata; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Revision/change history tied to the released SDR corroborates metadata; a filename version or tool label without attribution is incomplete. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: At each SDR update; record actual date AND time of last update, not an invented periodic refresh timestamp. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-MTD only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source leaves version syntax and update-source representation unspecified; attribution must be established from actual records.",
+            "citations": [
+              "SDR-CSO-MTD-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-cso-mtd-e299a3986da29d5b175762efaf1d4e38d4105ce447392c76d2c76dcd80f928b8": {
+      "content_hash": "cc7b4d33441a8af9168dd3bb22de2d52870335ab39d1ebe2173ccbab05fd8709",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e299a3986da29d5b175762efaf1d4e38d4105ce447392c76d2c76dcd80f928b8: SDR-CSO-MTD: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "All three metadata fields survive as distinct assertions: version, date AND time of last update, and source of update. Capture/export time must not silently replace update time. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 4 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-cso-mtd-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the SDR revision mechanism and authoritative update events, including the person or system producing each update. This is an implementation inference needed to test Security Decision Record Metadata; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Revision/change history tied to the released SDR corroborates metadata; a filename version or tool label without attribution is incomplete. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: At each SDR update; record actual date AND time of last update, not an invented periodic refresh timestamp.",
+          "citations": [
+            "SDR-CSO-MTD-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSO-MTD only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source leaves version syntax and update-source representation unspecified; attribution must be established from actual records.",
+            "citations": [
+              "SDR-CSO-MTD-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-0f08a8b4538d3eb89cb5466b47ae6cd6cb0748e18c6c6880ac0f3f67f001f8c5": {
+      "content_hash": "10db45be264d56b6a2ed24cb14277e785833b6fcc056e7bd0cdf6f258de8247b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 0f08a8b4538d3eb89cb5466b47ae6cd6cb0748e18c6c6880ac0f3f67f001f8c5: SDR-CSX-KMT: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Key Security Indicator Metrics. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers with 20x Class D Certifications MUST significantly supersede the minimum requirements for lower Classes, with specifics to be set during the 20x Phase 4 Pilot. Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-13a8a955ba0833d15f5b56479d34f51166ad0a0e63edf535542f903f06a58402": {
+      "content_hash": "5eb13e0510efa1ad179530df1e881141c86d4a17376a65ca168820a4be8d1b62",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 13a8a955ba0833d15f5b56479d34f51166ad0a0e63edf535542f903f06a58402: SDR-CSX-KMT: not_applicable — Requirement not yet effective. Source force: MAY. Explicit inclusion: FRC-CLA-OFR. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption. FRC-CLA-OFR permits this Class A metric rule; its inclusion retains MAY rather than requiring lower-class history.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Key Security Indicator Metrics. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers with 20x Class A Certifications MAY also include historical metrics in their Security Decision Record. Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-153731e45d1f39be09920accb6b698afff68c145bc8f1bd410fc781a5f7dc43a": {
+      "content_hash": "c20e403dd7de933827ea548d556a1af2f08cf0c547d528fad189838461c9531c",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 153731e45d1f39be09920accb6b698afff68c145bc8f1bd410fc781a5f7dc43a: SDR-CSX-KMT: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 3 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-csx-kmt-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the selected 20x class, applicable KSIs, metric definitions, available historical start dates and initial/ongoing status; for Class D obtain the actual Phase 4 Pilot specifics from FedRAMP. This is an implementation inference needed to test Key Security Indicator Metrics; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Class B/C: summary of each metric over the past 30 days and summary up to the past year where available. Class C additionally: all daily metric data including persistent-validation status up to the past year where available. Initial certification may use mechanisms plus agreement when history is unavailable. No Class D numeric minimum is published here.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-205f8f9cffa6aa7cd9bcf035b47cf692fc5f32549afede5bb9f4411506c7bdf8": {
+      "content_hash": "c5afdeffc096d834108f30d95c14e1e6fc4ee3ba4fe6b09886e09af7c485c6ec",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 205f8f9cffa6aa7cd9bcf035b47cf692fc5f32549afede5bb9f4411506c7bdf8: SDR-CSX-KMT: unresolved — Transition grace depends on next independent assessment. Source force: MUST. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Key Security Indicator Metrics. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for SDR-CSX-KMT.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers with 20x Class D Certifications MUST significantly supersede the minimum requirements for lower Classes, with specifics to be set during the 20x Phase 4 Pilot. Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for SDR-CSX-KMT. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-34b293fed1ca73dc3a7d38342a9eda5b4e7849045a745bc81d069e11a6472f92": {
+      "content_hash": "ee22ee4005089e61fcd15b9c868134c50a777291400fd258d480a7bf67f0846b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 34b293fed1ca73dc3a7d38342a9eda5b4e7849045a745bc81d069e11a6472f92: SDR-CSX-KMT: unresolved — Source contains a condition requiring applicability review. Source force: MUST. The rule contains a condition the resolver cannot settle. A profile match alone cannot establish the condition or a Class D pilot criterion.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Key Security Indicator Metrics. The named decision owner must resolve Which source condition applies to SDR-CSX-KMT for this profile, and what FedRAMP determination resolves it? For Class D metrics, obtain the 20x Phase 4 Pilot specifics instead of inventing a threshold.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers with 20x Class D Certifications MUST significantly supersede the minimum requirements for lower Classes, with specifics to be set during the 20x Phase 4 Pilot. Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-484507ccef7a07bccaf7366a3accc517c80c1cfb12a2b742067e87581b4783fd": {
+      "content_hash": "689d2394a9584c70944b8d3e46e574473edb99b111c0bad6070f5fb1a9e931a4",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 484507ccef7a07bccaf7366a3accc517c80c1cfb12a2b742067e87581b4783fd: SDR-CSX-KMT: unresolved — Transition grace depends on next independent assessment. Source force: MUST. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. Corrected applicability-only purpose text now preserves the selected 30-day/up-to-year list and, for C, daily data including persistent-validation status; these topics were previously lost because they are nested under varies_by_class.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Key Security Indicator Metrics. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for SDR-CSX-KMT.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers with 20x Class C Certifications MUST also include historical metrics in their Security Decision Record, supplying at least the following information for each applicable Key Security Indicator: Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for SDR-CSX-KMT. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-487c4332196fbb408620ce4203c80f8ab0f9ff3f24487ab64abeef4c3bb5b303": {
+      "content_hash": "82f29b3926f145c0cc45cc8134b0332358620e0eb3ac361aa0f536c77a6ebfd1",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 487c4332196fbb408620ce4203c80f8ab0f9ff3f24487ab64abeef4c3bb5b303: SDR-CSX-KMT: optional — Optional adoption before required effective date. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 3 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-csx-kmt-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the selected 20x class, applicable KSIs, metric definitions, available historical start dates and initial/ongoing status; for Class D obtain the actual Phase 4 Pilot specifics from FedRAMP. This is an implementation inference needed to test Key Security Indicator Metrics; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Class B/C: summary of each metric over the past 30 days and summary up to the past year where available. Class C additionally: all daily metric data including persistent-validation status up to the past year where available. Initial certification may use mechanisms plus agreement when history is unavailable. No Class D numeric minimum is published here. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-49eae771e4b5a6e91f390bd8abd70daf0423a9a550e58e59214ae7e3d04d660d": {
+      "content_hash": "8953b47bfa8d35e9f960ed083f2bab6e6616dbcb0619ab8088a0c1d4d826bd8c",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 49eae771e4b5a6e91f390bd8abd70daf0423a9a550e58e59214ae7e3d04d660d: SDR-CSX-KMT: optional — Optional adoption before required effective date. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-csx-kmt-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the selected 20x class, applicable KSIs, metric definitions, available historical start dates and initial/ongoing status; for Class D obtain the actual Phase 4 Pilot specifics from FedRAMP. This is an implementation inference needed to test Key Security Indicator Metrics; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Class B/C: summary of each metric over the past 30 days and summary up to the past year where available. Class C additionally: all daily metric data including persistent-validation status up to the past year where available. Initial certification may use mechanisms plus agreement when history is unavailable. No Class D numeric minimum is published here. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-523afd3543bd0d61a9a2ff449f9089b771b2ac4a3b4635a5326db9f52ecccc44": {
+      "content_hash": "34c45f5be063d76c59f0d6cbe9e0e3d185ad9addf72f90952a0cacabb8a8bb06",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 523afd3543bd0d61a9a2ff449f9089b771b2ac4a3b4635a5326db9f52ecccc44: SDR-CSX-KMT: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 4 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-csx-kmt-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the selected 20x class, applicable KSIs, metric definitions, available historical start dates and initial/ongoing status; for Class D obtain the actual Phase 4 Pilot specifics from FedRAMP. This is an implementation inference needed to test Key Security Indicator Metrics; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Class B/C: summary of each metric over the past 30 days and summary up to the past year where available. Class C additionally: all daily metric data including persistent-validation status up to the past year where available. Initial certification may use mechanisms plus agreement when history is unavailable. No Class D numeric minimum is published here.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-77864e8d00bc640ce7e636961d13e65eb3d36ee23b40060a4c28b4a9660b0d0c": {
+      "content_hash": "e7b70a54dfe751c57f1d2ef1fa306fe8aa5196b3fc42fd449ecb9baa3060ea96",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 77864e8d00bc640ce7e636961d13e65eb3d36ee23b40060a4c28b4a9660b0d0c: SDR-CSX-KMT: optional — Optional adoption before required effective date. Source force: MAY. Explicit inclusion: FRC-CLA-OFR. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged. FRC-CLA-OFR permits this Class A metric rule; its inclusion retains MAY rather than requiring lower-class history.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-csx-kmt-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the selected 20x class, applicable KSIs, metric definitions, available historical start dates and initial/ongoing status; for Class D obtain the actual Phase 4 Pilot specifics from FedRAMP. This is an implementation inference needed to test Key Security Indicator Metrics; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Class B/C: summary of each metric over the past 30 days and summary up to the past year where available. Class C additionally: all daily metric data including persistent-validation status up to the past year where available. Initial certification may use mechanisms plus agreement when history is unavailable. No Class D numeric minimum is published here. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-7a9ca9fa3a85cc6d21f8aaa04bd32e78541cdeff4d067dd67005a333ff863334": {
+      "content_hash": "579f95ba13ff539393baeef1f168cfe4a1125e8faf9dfc32baed88f942d2692f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7a9ca9fa3a85cc6d21f8aaa04bd32e78541cdeff4d067dd67005a333ff863334: SDR-CSX-KMT: not_applicable — Different subset type or path. Source force: class-dependent (resolver stopped before class force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D.The resolver selects no class statement for this path exclusion. The corrected purpose retains all four published class statements as context, expressly not selected obligations; it no longer presents an empty rule explanation. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Key Security Indicator Metrics. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains:  Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-7ce75eb4bb0d5bc44cf7ba14aaae85539dfe638a4bcdab6c3f8cd7c5c871b969": {
+      "content_hash": "9c3fdd684b4d80a9f3687731d2090ab0c0a19ebc2eb00581eca2df8c275c3de9",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7ce75eb4bb0d5bc44cf7ba14aaae85539dfe638a4bcdab6c3f8cd7c5c871b969: SDR-CSX-KMT: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. Corrected applicability-only purpose text now preserves the selected 30-day/up-to-year list and, for C, daily data including persistent-validation status; these topics were previously lost because they are nested under varies_by_class.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Key Security Indicator Metrics. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers with 20x Class C Certifications MUST also include historical metrics in their Security Decision Record, supplying at least the following information for each applicable Key Security Indicator: Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-8b9dfda92724a1c6f3ff8179410955f9a01fbf5a1b0d24b9b82cb881d6a77eb8": {
+      "content_hash": "812d4859be3f9ff97ac5c201f749739198d639ce921beb9fd80ae93048167930",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 8b9dfda92724a1c6f3ff8179410955f9a01fbf5a1b0d24b9b82cb881d6a77eb8: SDR-CSX-KMT: optional — Resolved from source class and profile metadata. Source force: MAY. Explicit inclusion: FRC-CLA-OFR. FRC-CLA-OFR permits this Class A metric rule; its inclusion retains MAY rather than requiring lower-class history.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-csx-kmt-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the selected 20x class, applicable KSIs, metric definitions, available historical start dates and initial/ongoing status; for Class D obtain the actual Phase 4 Pilot specifics from FedRAMP. This is an implementation inference needed to test Key Security Indicator Metrics; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Class B/C: summary of each metric over the past 30 days and summary up to the past year where available. Class C additionally: all daily metric data including persistent-validation status up to the past year where available. Initial certification may use mechanisms plus agreement when history is unavailable. No Class D numeric minimum is published here. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-8ccd9943e7b58edf96893f45921a0f575555a0917eddc6140a530b97da3e649a": {
+      "content_hash": "3b4a824a6ccce100345c85dc8806062affe7ef526c96dba05e9d4caab361b586",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 8ccd9943e7b58edf96893f45921a0f575555a0917eddc6140a530b97da3e649a: SDR-CSX-KMT: optional — Optional adoption before required effective date. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 4 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-csx-kmt-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the selected 20x class, applicable KSIs, metric definitions, available historical start dates and initial/ongoing status; for Class D obtain the actual Phase 4 Pilot specifics from FedRAMP. This is an implementation inference needed to test Key Security Indicator Metrics; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Class B/C: summary of each metric over the past 30 days and summary up to the past year where available. Class C additionally: all daily metric data including persistent-validation status up to the past year where available. Initial certification may use mechanisms plus agreement when history is unavailable. No Class D numeric minimum is published here. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-d368a4a1da8059169a0f2993a827810c924a3880bda3fb48b6922865f3a1c716": {
+      "content_hash": "1820f1f1fa22ace6ec07310d9d730fe996b821890de4ed5d1b8ffdb39e6e3348",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d368a4a1da8059169a0f2993a827810c924a3880bda3fb48b6922865f3a1c716: SDR-CSX-KMT: unresolved — Transition grace depends on next independent assessment. Source force: MAY. Explicit inclusion: FRC-CLA-OFR. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved. FRC-CLA-OFR permits this Class A metric rule; its inclusion retains MAY rather than requiring lower-class history.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Key Security Indicator Metrics. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for SDR-CSX-KMT.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "FRC-CLA-OFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers with 20x Class A Certifications MAY also include historical metrics in their Security Decision Record. Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for SDR-CSX-KMT. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-efadb26da58cbde30a6982734d449006fdffc5cae6ccbd12c08e85e26d06278e": {
+      "content_hash": "2e660c7e60cfc3fba44bcb4216f751293422033ffa91d6a8f6bbf0ffe7b14ef3",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant efadb26da58cbde30a6982734d449006fdffc5cae6ccbd12c08e85e26d06278e: SDR-CSX-KMT: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. Corrected applicability-only purpose text now preserves the selected 30-day/up-to-year list and, for C, daily data including persistent-validation status; these topics were previously lost because they are nested under varies_by_class.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Key Security Indicator Metrics. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers with 20x Class B Certifications SHOULD also include historical metrics in their Security Decision Record, supplying at least the following information for each applicable Key Security Indicator: Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-kmt-f95510afd710222cf896424bc3b7460e03804597943afee18b27ae4224cf0d58": {
+      "content_hash": "d66de75cc3dfddbda30c35f2a97e4aca06267474aa118763b0cb4bcf73de8e8e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant f95510afd710222cf896424bc3b7460e03804597943afee18b27ae4224cf0d58: SDR-CSX-KMT: unresolved — Transition grace depends on next independent assessment. Source force: SHOULD. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Class A MAY include history; B SHOULD supply 30-day and up-to-year available summaries; C MUST additionally supply all available daily data up to a year including persistent-validation status. Class D must significantly supersede lower classes with specifics set in Phase 4; lower-class data alone cannot demonstrate D. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. Corrected applicability-only purpose text now preserves the selected 30-day/up-to-year list and, for C, daily data including persistent-validation status; these topics were previously lost because they are nested under varies_by_class.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Key Security Indicator Metrics. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for SDR-CSX-KMT.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable metric history and reproducible summaries establish coverage. Initial certification may use mechanisms plus agreement where operating history is unavailable; this is not permission to backfill invented history or ignore available history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers with 20x Class B Certifications SHOULD also include historical metrics in their Security Decision Record, supplying at least the following information for each applicable Key Security Indicator: Source note: For initial FedRAMP Certification, providers will need to have mechanisms in place and agree to meet this requirement in the event the cloud service has not been operating with related metrics available for the required period prior to applying for initial certification.",
+          "citations": [
+            "SDR-CSX-KMT-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KMT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Class D pilot specifics are absent from this pinned rule. Even an optional-adoption actionable variant cannot establish sufficiency without those criteria. The initial-history accommodation needs actual mechanisms and agreement.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for SDR-CSX-KMT. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "SDR-CSX-KMT-source",
+              "SDR-page",
+              "SDR-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-ksi-10dd7f1f9c0f7687470a6623e24296b015ee27c5787c7f0b47d9ac5b7e7642e9": {
+      "content_hash": "5ba3f7d3bd677caa0dd43e59dff4b6adfdf09f827101671d0986b03fdcc6e7b3",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 10dd7f1f9c0f7687470a6623e24296b015ee27c5787c7f0b47d9ac5b7e7642e9: SDR-CSX-KSI: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Five topics retain measures/objectives or absence/customer risk, persistent cycles where applicable, measure verification, automation verification or non-necessity, and validation of accurate working production or valid absence. A dashboard value alone cannot establish these judgments. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Key Security Indicators. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-KSI summaries linked to objective definitions, production/automation evidence and separate verification/validation conclusions support the clauses. Absence reasons cannot be fabricated from missing data. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST also include short and simple high-level summaries of at least the following for each applicable Key Security Indicator:",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KSI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source distinguishes accepted absence reasons from valid absence reasons without prescribing a universal metric threshold or requiring automation for every measure.",
+            "citations": [
+              "SDR-CSX-KSI-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-ksi-28d992b112635d775b900fa8ebc7c059abbac998bbc5652f138f28d1cac34fac": {
+      "content_hash": "81a660d90dedd1f7e17d36012959847f0aa1d97f432129481916e21dee7bd3a3",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 28d992b112635d775b900fa8ebc7c059abbac998bbc5652f138f28d1cac34fac: SDR-CSX-KSI: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Five topics retain measures/objectives or absence/customer risk, persistent cycles where applicable, measure verification, automation verification or non-necessity, and validation of accurate working production or valid absence. A dashboard value alone cannot establish these judgments. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 6 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-csx-ksi-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Resolve applicable KSIs; locate measure definitions/objectives, production mechanisms, automation logic, observed results and documented rationale for absent measures or unnecessary automation. This is an implementation inference needed to test Key Security Indicators; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-KSI summaries linked to objective definitions, production/automation evidence and separate verification/validation conclusions support the clauses. Absence reasons cannot be fabricated from missing data. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Retain actual measure production and review periods. For persistent measures document intentional cycles, interruptions and known status under the official definition; no universal collection interval is added.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KSI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source distinguishes accepted absence reasons from valid absence reasons without prescribing a universal metric threshold or requiring automation for every measure.",
+            "citations": [
+              "SDR-CSX-KSI-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-ksi-60ae449330ff80296b0cc5dc598d6dc78cef1be071256b3da84c698ead7bf231": {
+      "content_hash": "555f91d0dbff0bb92bdb9750a3bb18886bb52a3f7809f4128fff9d4184ef6116",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 60ae449330ff80296b0cc5dc598d6dc78cef1be071256b3da84c698ead7bf231: SDR-CSX-KSI: unresolved — Transition grace depends on next independent assessment. Source force: MUST. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Five topics retain measures/objectives or absence/customer risk, persistent cycles where applicable, measure verification, automation verification or non-necessity, and validation of accurate working production or valid absence. A dashboard value alone cannot establish these judgments. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Key Security Indicators. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for SDR-CSX-KSI.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-KSI summaries linked to objective definitions, production/automation evidence and separate verification/validation conclusions support the clauses. Absence reasons cannot be fabricated from missing data. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers MUST also include short and simple high-level summaries of at least the following for each applicable Key Security Indicator:",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KSI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source distinguishes accepted absence reasons from valid absence reasons without prescribing a universal metric threshold or requiring automation for every measure.",
+            "citations": [
+              "SDR-CSX-KSI-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for SDR-CSX-KSI. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "SDR-CSX-KSI-source",
+              "SDR-page",
+              "SDR-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-ksi-8170919efca4a0f43daaee73baf013dfc7fe10f4a18f165586ff6462bba1a088": {
+      "content_hash": "3d8711515d675c2ba08caecf99c6d789b2eddf3fd3cb61a4657f7f04152eb7f0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 8170919efca4a0f43daaee73baf013dfc7fe10f4a18f165586ff6462bba1a088: SDR-CSX-KSI: optional — Optional adoption before required effective date. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Five topics retain measures/objectives or absence/customer risk, persistent cycles where applicable, measure verification, automation verification or non-necessity, and validation of accurate working production or valid absence. A dashboard value alone cannot establish these judgments. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 6 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped sdr-csx-ksi-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Resolve applicable KSIs; locate measure definitions/objectives, production mechanisms, automation logic, observed results and documented rationale for absent measures or unnecessary automation. This is an implementation inference needed to test Key Security Indicators; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-KSI summaries linked to objective definitions, production/automation evidence and separate verification/validation conclusions support the clauses. Absence reasons cannot be fabricated from missing data. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. Operational timing: Retain actual measure production and review periods. For persistent measures document intentional cycles, interruptions and known status under the official definition; no universal collection interval is added. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KSI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source distinguishes accepted absence reasons from valid absence reasons without prescribing a universal metric threshold or requiring automation for every measure.",
+            "citations": [
+              "SDR-CSX-KSI-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-ksi-c339bee9cf836b9ee515ed00b65dd2527a74c2712f8843bff31949d0680f080e": {
+      "content_hash": "c76737f3dccba16df2692eb45721d4a36a2e09e02b31cd2c0bfe5d01e4ea82c0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant c339bee9cf836b9ee515ed00b65dd2527a74c2712f8843bff31949d0680f080e: SDR-CSX-KSI: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Five topics retain measures/objectives or absence/customer risk, persistent cycles where applicable, measure verification, automation verification or non-necessity, and validation of accurate working production or valid absence. A dashboard value alone cannot establish these judgments. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Key Security Indicators. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-KSI summaries linked to objective definitions, production/automation evidence and separate verification/validation conclusions support the clauses. Absence reasons cannot be fabricated from missing data. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST also include short and simple high-level summaries of at least the following for each applicable Key Security Indicator:",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KSI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source distinguishes accepted absence reasons from valid absence reasons without prescribing a universal metric threshold or requiring automation for every measure.",
+            "citations": [
+              "SDR-CSX-KSI-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "sdr-csx-ksi-ca99fce8e4586f8817e42ace13198f337f06027cff48bdfbcb479c59a5d7c026": {
+      "content_hash": "c68365eab1990a4373c0f96808e25e25a01c529e929da6bdca7c171c5f8e4b38",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ca99fce8e4586f8817e42ace13198f337f06027cff48bdfbcb479c59a5d7c026: SDR-CSX-KSI: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SDR-metadata",
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Five topics retain measures/objectives or absence/customer risk, persistent cycles where applicable, measure verification, automation verification or non-necessity, and validation of accurate working production or valid absence. A dashboard value alone cannot establish these judgments. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Key Security Indicators. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-KSI summaries linked to objective definitions, production/automation evidence and separate verification/validation conclusions support the clauses. Absence reasons cannot be fabricated from missing data. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain January 1 and maintain/grace August 1, 2027 are distinct. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST also include short and simple high-level summaries of at least the following for each applicable Key Security Indicator:",
+          "citations": [
+            "SDR-CSX-KSI-source",
+            "SDR-page",
+            "SDR-metadata",
+            "SDR-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SDR-CSX-KSI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source distinguishes accepted absence reasons from valid absence reasons without prescribing a universal metric threshold or requiring automation for every measure.",
+            "citations": [
+              "SDR-CSX-KSI-source",
+              "SDR-page",
+              "SDR-definitions"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

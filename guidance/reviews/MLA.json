@@ -1,0 +1,1037 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "ksi-mla-ala-4e92161a043f": {
+      "content_hash": "211da78e2cf8258d6dc7a9700f01b4596807860d9ddedcc8dbed3a24170eb00a",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 4e92161a043fc9a80607010b87a5711fbd98af857a92b39453e0cfbe1069bd9c with FRC-CLA-MFR's enumerated KSI list: KSI-MLA-ALA is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Least privilege, role/attribute decisions, JIT access, organizational log sensitivity and persistent model review are separately asserted. Optionality is preserved for the exact B variant rather than imposed as a certification gate.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Organizational sensitivity definitions and enforceable authorization/JIT mechanisms must precede evaluation; a role catalog alone is insufficient. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Effective decisions, timed grants, sensitivity mapping and recurring reviews have distinct acceptance duties. Both exports and attributable examinations must cover archives/exports and bypass paths, not just the SIEM interface. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a sensitivity taxonomy nor a JIT lifetime. Missing Class D text must not be converted into optionality or a required checklist.",
+            "citations": [
+              "KSI-MLA-ALA",
+              "KSI-MLA-ALA-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-ala-547785f13512": {
+      "content_hash": "373aa68ba1d7f38c3870e87d7240a648828c913e65ad4f682aeae8020b9ea7de",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 547785f13512ed9395f35cdaa8aa611ee9b98eee972f4f3c88eadbdc6d3396b0 binds the explicit Class B Optional statement in Rules JSON, matching the page's B tab. The elective workflow does not become a mandatory certification gate. Missing D text is represented separately as unresolved, not as a Class-D optional variant.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "KSI-MLA-ALA-optional",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Least privilege, role/attribute decisions, JIT access, organizational log sensitivity and persistent model review are separately asserted. Optionality is preserved for the exact B variant rather than imposed as a certification gate.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "KSI-MLA-ALA-optional"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Organizational sensitivity definitions and enforceable authorization/JIT mechanisms must precede evaluation; a role catalog alone is insufficient. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "KSI-MLA-ALA-optional",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Effective decisions, timed grants, sensitivity mapping and recurring reviews have distinct acceptance duties. Both exports and attributable examinations must cover archives/exports and bypass paths, not just the SIEM interface. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "KSI-MLA-ALA-optional",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "KSI-MLA-ALA-optional",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a sensitivity taxonomy nor a JIT lifetime. Missing Class D text must not be converted into optionality or a required checklist.",
+            "citations": [
+              "KSI-MLA-ALA",
+              "KSI-MLA-ALA-page",
+              "KSI-MLA-ALA-optional"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-ala-5d8533c2a753": {
+      "content_hash": "d9f4cba3c20f0f48bb9a390fbe530f3d8836ec3e1fbcd06551bcf56a90d33abb",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 5d8533c2a753c6a452ebdd0a1f5dea514a0468a20d9fc6bb0721fe13e4f89237 preserves the required outcome selected from pinned source/profile metadata. For this class-varying indicator it is the explicit Class C statement; neither B optionality nor missing D text overrides it.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Least privilege, role/attribute decisions, JIT access, organizational log sensitivity and persistent model review are separately asserted. Optionality is preserved for the exact B variant rather than imposed as a certification gate.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Organizational sensitivity definitions and enforceable authorization/JIT mechanisms must precede evaluation; a role catalog alone is insufficient. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Effective decisions, timed grants, sensitivity mapping and recurring reviews have distinct acceptance duties. Both exports and attributable examinations must cover archives/exports and bypass paths, not just the SIEM interface. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a sensitivity taxonomy nor a JIT lifetime. Missing Class D text must not be converted into optionality or a required checklist.",
+            "citations": [
+              "KSI-MLA-ALA",
+              "KSI-MLA-ALA-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-ala-92c87e795010": {
+      "content_hash": "4e9d2c303db56993c809c30ce321a1f894cdbdb1e6aa616be07b684dad8c1913",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 92c87e795010320a60d36101da0431ed45690e7db7ae3ee6699f464a0a37789a retains the unresolved selected-class result. Rules JSON and the matching page provide B optional and C unprefixed statements for KSI-MLA-ALA, but no D statement. The pinned resolver does not inherit B or C into D. The decision-only plan correctly imposes no assertions.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Least privilege, role/attribute decisions, JIT access, organizational log sensitivity and persistent model review are separately asserted. Optionality is preserved for the exact B variant rather than imposed as a certification gate.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Organizational sensitivity definitions and enforceable authorization/JIT mechanisms must precede evaluation; a role catalog alone is insufficient. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Effective decisions, timed grants, sensitivity mapping and recurring reviews have distinct acceptance duties. Both exports and attributable examinations must cover archives/exports and bypass paths, not just the SIEM interface. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a sensitivity taxonomy nor a JIT lifetime. Missing Class D text must not be converted into optionality or a required checklist.",
+            "citations": [
+              "KSI-MLA-ALA",
+              "KSI-MLA-ALA-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-MLA-ALA",
+              "KSI-MLA-ALA-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-ala-f7ee3c7dec37": {
+      "content_hash": "10aa23795b75ea89743f31ed2fc2322e5ac449e9f841a1df89b8e86ce3fae904",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant f7ee3c7dec37be189eb07b8455e2bfcdcd2f7ef807f6e2447981bbbc425f24a6 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Least privilege, role/attribute decisions, JIT access, organizational log sensitivity and persistent model review are separately asserted. Optionality is preserved for the exact B variant rather than imposed as a certification gate.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Organizational sensitivity definitions and enforceable authorization/JIT mechanisms must precede evaluation; a role catalog alone is insufficient. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Effective decisions, timed grants, sensitivity mapping and recurring reviews have distinct acceptance duties. Both exports and attributable examinations must cover archives/exports and bypass paths, not just the SIEM interface. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-ALA",
+            "KSI-MLA-ALA-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a sensitivity taxonomy nor a JIT lifetime. Missing Class D text must not be converted into optionality or a required checklist.",
+            "citations": [
+              "KSI-MLA-ALA",
+              "KSI-MLA-ALA-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-MLA-ALA",
+              "KSI-MLA-ALA-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-evc-008cf426dc64": {
+      "content_hash": "2a5d6eb50bfd7f259e43f3000a37d20150360b937943708a1c03bb071eb9cd54",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 008cf426dc641f2e3ba8d7163d06f1e0a45cca2bebeecb871a909e093ac1ccf3 with FRC-CLA-MFR's enumerated KSI list: KSI-MLA-EVC is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Configuration evaluation and testing are independent repeated duties, with special attention to IaC but no exclusion of manually configured machine resources. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Substantive criteria and tests matched to deployed configurations are needed; finding a repository is only evidence setup. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Dated evaluation findings and executed test definitions/results prove separate duties. Reports can substitute for direct collection if configuration revisions are attributable; a syntax-only success is not the entire security outcome. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe a test suite or universal pass threshold. Relevance of the selected tests and coverage outside IaC need service-specific justification.",
+            "citations": [
+              "KSI-MLA-EVC",
+              "KSI-MLA-EVC-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-evc-41f4ac3a99c5": {
+      "content_hash": "2fcaa40271abe5e3eb0fa3fc66c9ed02ad5516af72fe18db2d7f048ef2bc4c84",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 41f4ac3a99c50e78cd97eea97d7238a332816617430bbed8ea3646414369567b retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Configuration evaluation and testing are independent repeated duties, with special attention to IaC but no exclusion of manually configured machine resources. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Substantive criteria and tests matched to deployed configurations are needed; finding a repository is only evidence setup. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Dated evaluation findings and executed test definitions/results prove separate duties. Reports can substitute for direct collection if configuration revisions are attributable; a syntax-only success is not the entire security outcome. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe a test suite or universal pass threshold. Relevance of the selected tests and coverage outside IaC need service-specific justification.",
+            "citations": [
+              "KSI-MLA-EVC",
+              "KSI-MLA-EVC-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-MLA-EVC",
+              "KSI-MLA-EVC-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-evc-6a2e66f0174f": {
+      "content_hash": "5015082143ec38bac8f3b6b7fe38027b60f6d090d7d7aeaca99b0ce3cf6d3afc",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 6a2e66f0174f6bac3558437817f2d9cc9e3fee71e35aac8cc34ae96e28dc4418 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Configuration evaluation and testing are independent repeated duties, with special attention to IaC but no exclusion of manually configured machine resources. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Substantive criteria and tests matched to deployed configurations are needed; finding a repository is only evidence setup. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Dated evaluation findings and executed test definitions/results prove separate duties. Reports can substitute for direct collection if configuration revisions are attributable; a syntax-only success is not the entire security outcome. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-MLA-EVC",
+            "KSI-MLA-EVC-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe a test suite or universal pass threshold. Relevance of the selected tests and coverage outside IaC need service-specific justification.",
+            "citations": [
+              "KSI-MLA-EVC",
+              "KSI-MLA-EVC-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-let-2da432d6b710": {
+      "content_hash": "3a6d898e82360d2dc23cabbd48e8dfcff81468a4c76c6a5aadada4ef8df5097f",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 2da432d6b71036cb61f31013e3335d11165684670949174b6835016737b90620 with FRC-CLA-MFR's enumerated KSI list: KSI-MLA-LET is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. A maintained resource/event-type list and persistent review that logging, monitoring and auditing actually occur create four separate proof duties. The review split the previous combined activity assertion. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "resources"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Assigned logging, monitoring and audit methods and a coverage-review process must exist beyond a list of desired events. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Versioned lists, received events, monitoring outputs and audit records each support distinct assertions. Documentary review is an alternative collection route but cannot turn received logs into evidence that monitoring or audit occurred. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not itself enumerate every event type. The service must explain the list and review coverage, including relevant non-machine resources.",
+            "citations": [
+              "KSI-MLA-LET",
+              "KSI-MLA-LET-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-let-e88bfe1d622f": {
+      "content_hash": "fdebd9a7404b68f7672d6e684b453b72e4a82861375711f229983374e2079068",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e88bfe1d622fbd8c48638ed09821225fa6b2ad84d7790cc3d45d367a517d581a preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. A maintained resource/event-type list and persistent review that logging, monitoring and auditing actually occur create four separate proof duties. The review split the previous combined activity assertion. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "resources"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Assigned logging, monitoring and audit methods and a coverage-review process must exist beyond a list of desired events. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Versioned lists, received events, monitoring outputs and audit records each support distinct assertions. Documentary review is an alternative collection route but cannot turn received logs into evidence that monitoring or audit occurred. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not itself enumerate every event type. The service must explain the list and review coverage, including relevant non-machine resources.",
+            "citations": [
+              "KSI-MLA-LET",
+              "KSI-MLA-LET-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-let-ec32dc050ccf": {
+      "content_hash": "64655675f23944a171c34049648d151ff5e7bc7b40d41c68d9d16302b9f3ec0a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ec32dc050ccf033aac77a17169260dc08bfaea991fd24e9b109571297fbf9f5d retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. A maintained resource/event-type list and persistent review that logging, monitoring and auditing actually occur create four separate proof duties. The review split the previous combined activity assertion. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "resources"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Assigned logging, monitoring and audit methods and a coverage-review process must exist beyond a list of desired events. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Versioned lists, received events, monitoring outputs and audit records each support distinct assertions. Documentary review is an alternative collection route but cannot turn received logs into evidence that monitoring or audit occurred. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-LET",
+            "KSI-MLA-LET-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not itself enumerate every event type. The service must explain the list and review coverage, including relevant non-machine resources.",
+            "citations": [
+              "KSI-MLA-LET",
+              "KSI-MLA-LET-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-MLA-LET",
+              "KSI-MLA-LET-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-osm-4de1efa5f868": {
+      "content_hash": "c9f74faaba826783e2ed105a327eb9735444811505304f9cdb9ca31b9f98363a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4de1efa5f8686b193cbe19f0c8ed4b06d5d98c6257cb7aa6ade4fa98d5172e71 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. An operating SIEM OR similar systems must provide centralized tamper-resistant logging and be persistently reviewed. Centralization, tamper resistance and recurring system review are separate assertions.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Central logging architecture and modification/deletion protections must exist before the review can evaluate the logging system. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Source-to-store reconciliation and received records support centralization; effective privileges and integrity observations support tamper resistance; dated reviews establish persistence. Encryption alone and licenses are specifically insufficient. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Equivalent multi-system architecture is allowed. The source does not mandate a SIEM vendor, immutability product or log retention duration.",
+            "citations": [
+              "KSI-MLA-OSM",
+              "KSI-MLA-OSM-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-MLA-OSM",
+              "KSI-MLA-OSM-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-osm-5541af3a030e": {
+      "content_hash": "dca51f7d4b17a2f3be6e6453542500fe2c97b298249612695e21d1c35c2effc2",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 5541af3a030e7e160ec9dfbd91da5998587d61b67184606b1951b678a7743eb8 with FRC-CLA-MFR's enumerated KSI list: KSI-MLA-OSM is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. An operating SIEM OR similar systems must provide centralized tamper-resistant logging and be persistently reviewed. Centralization, tamper resistance and recurring system review are separate assertions.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Central logging architecture and modification/deletion protections must exist before the review can evaluate the logging system. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Source-to-store reconciliation and received records support centralization; effective privileges and integrity observations support tamper resistance; dated reviews establish persistence. Encryption alone and licenses are specifically insufficient. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Equivalent multi-system architecture is allowed. The source does not mandate a SIEM vendor, immutability product or log retention duration.",
+            "citations": [
+              "KSI-MLA-OSM",
+              "KSI-MLA-OSM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-osm-9a7e5de2ec0a": {
+      "content_hash": "fdc9ff59e4a263b4ecef7e04e48fd9d7f8140d36747dc57e83d67cf14ba63774",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 9a7e5de2ec0af94e78264e5b61f65519734873db274e9f3566320b39838b235f preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. An operating SIEM OR similar systems must provide centralized tamper-resistant logging and be persistently reviewed. Centralization, tamper resistance and recurring system review are separate assertions.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Central logging architecture and modification/deletion protections must exist before the review can evaluate the logging system. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Source-to-store reconciliation and received records support centralization; effective privileges and integrity observations support tamper resistance; dated reviews establish persistence. Encryption alone and licenses are specifically insufficient. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-MLA-OSM",
+            "KSI-MLA-OSM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Equivalent multi-system architecture is allowed. The source does not mandate a SIEM vendor, immutability product or log retention duration.",
+            "citations": [
+              "KSI-MLA-OSM",
+              "KSI-MLA-OSM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-rvl-2bbebf006716": {
+      "content_hash": "7991802ffe0d2ef9c691f690ddcc184a3195eaa5596a159801b3e2953dade31c",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 2bbebf00671698d2b6907b7c65c9524f67c20c5df1d3aa902c3ff92c8f26ab0e with FRC-CLA-MFR's enumerated KSI list: KSI-MLA-RVL is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent log review and log audit are separately asserted; ingestion and alert production cannot discharge both.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Review and audit methods and access to the examined log populations are substantive prerequisites. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Dated review queries/windows/conclusions and audit working records/methods prove different duties. Attributable reports are acceptable, but an empty alert queue or dashboard login does not establish examination. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe an audit sampling method or numeric cadence. The guidance must not represent every automated alert as a completed audit.",
+            "citations": [
+              "KSI-MLA-RVL",
+              "KSI-MLA-RVL-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-rvl-7b110881334d": {
+      "content_hash": "af6ce6be60410aa500e346a7421dc1aced92550517aa1ef51f7e43ca2b2d230a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7b110881334dd9e2de335487b4c50653bba68b5725ac1631bc7a719394c64417 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent log review and log audit are separately asserted; ingestion and alert production cannot discharge both.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Review and audit methods and access to the examined log populations are substantive prerequisites. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Dated review queries/windows/conclusions and audit working records/methods prove different duties. Attributable reports are acceptable, but an empty alert queue or dashboard login does not establish examination. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe an audit sampling method or numeric cadence. The guidance must not represent every automated alert as a completed audit.",
+            "citations": [
+              "KSI-MLA-RVL",
+              "KSI-MLA-RVL-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-mla-rvl-f27a862b8530": {
+      "content_hash": "05df35bbc1df13915e60b8f52acf835fea681141c929e9e59d7d517dbe2edb43",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant f27a862b8530c4352a1f50cd592149c280e47c7afd832ba001e343331fe8aa09 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent log review and log audit are separately asserted; ingestion and alert production cannot discharge both.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Review and audit methods and access to the examined log populations are substantive prerequisites. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Dated review queries/windows/conclusions and audit working records/methods prove different duties. Attributable reports are acceptable, but an empty alert queue or dashboard login does not establish examination. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-MLA-RVL",
+            "KSI-MLA-RVL-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe an audit sampling method or numeric cadence. The guidance must not represent every automated alert as a completed audit.",
+            "citations": [
+              "KSI-MLA-RVL",
+              "KSI-MLA-RVL-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-MLA-RVL",
+              "KSI-MLA-RVL-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

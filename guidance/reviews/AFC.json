@@ -1,0 +1,2941 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "afc-cso-ack-6b3b65eddb1e440d5677b90239d900c1ec53ee8f6c1b9c17446d5046033c5523": {
+      "content_hash": "b9bf4b14d41dbd477a4f116d61ec02df138be3e765fad337b8c1b4c56071be9a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 6b3b65eddb1e440d5677b90239d900c1ec53ee8f6c1b9c17446d5046033c5523: AFC-CSO-ACK: optional — Within published transition grace period. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-ACK-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Both promptness and automation are retained. Promptly means without unnecessary delay, and a staff-authored reply is not an automatic acknowledgment. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-ack-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the FSI receipt records and acknowledgment mechanism or documented reason for declining automatic acknowledgment. This is an implementation inference needed to test Acknowledge Receipt; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Correlated incoming/outgoing message identifiers and timestamps plus automation configuration establish execution; an auto-reply template alone does not. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Promptly means without unnecessary delay. Retain actual receipt and acknowledgment timestamps; no fixed number of minutes is imposed. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-ACK only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The definition gives no fixed minute threshold. A departure rationale can address SHOULD but cannot claim that manual replies demonstrate automation.",
+            "citations": [
+              "AFC-CSO-ACK-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-ack-b28638160f199060d1efc0d1cf988f8ebd354fd1cea4fe9fa6e9366de24e10ac": {
+      "content_hash": "8fc455ae9b23d88d470f11fc3a5fd8bee8e2431320092e0343c9faa1d40053d5",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b28638160f199060d1efc0d1cf988f8ebd354fd1cea4fe9fa6e9366de24e10ac: AFC-CSO-ACK: not_applicable — Class excluded by subset. Source force: SHOULD (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-ACK-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Both promptness and automation are retained. Promptly means without unnecessary delay, and a staff-authored reply is not an automatic acknowledgment. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Acknowledge Receipt. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Correlated incoming/outgoing message identifiers and timestamps plus automation configuration establish execution; an auto-reply template alone does not. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD promptly and automatically acknowledge the receipt of messages received from FedRAMP in their FedRAMP Security Inbox.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-ACK only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The definition gives no fixed minute threshold. A departure rationale can address SHOULD but cannot claim that manual replies demonstrate automation.",
+            "citations": [
+              "AFC-CSO-ACK-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-ack-d463dfad799cd53a1303ca9687a34f1791f4d15c1de30b3838715c92c3ab6c36": {
+      "content_hash": "56b24173df21bc2eb298fe2b57b3b83379d2ee33a309c0345cd5923f4bf5c5f0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d463dfad799cd53a1303ca9687a34f1791f4d15c1de30b3838715c92c3ab6c36: AFC-CSO-ACK: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-ACK-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Both promptness and automation are retained. Promptly means without unnecessary delay, and a staff-authored reply is not an automatic acknowledgment. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Acknowledge Receipt. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Correlated incoming/outgoing message identifiers and timestamps plus automation configuration establish execution; an auto-reply template alone does not. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD promptly and automatically acknowledge the receipt of messages received from FedRAMP in their FedRAMP Security Inbox.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-ACK only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The definition gives no fixed minute threshold. A departure rationale can address SHOULD but cannot claim that manual replies demonstrate automation.",
+            "citations": [
+              "AFC-CSO-ACK-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-ack-f486625b0ddd30f24594ccc167b408699b655f260bf322beaf98345f6ccecd39": {
+      "content_hash": "4c33ccbcd7ad3cfcf9b08052786d8253394a5b4ade8436e9bed58b79cb7b644e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant f486625b0ddd30f24594ccc167b408699b655f260bf322beaf98345f6ccecd39: AFC-CSO-ACK: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-ACK-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Both promptness and automation are retained. Promptly means without unnecessary delay, and a staff-authored reply is not an automatic acknowledgment. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-ack-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the FSI receipt records and acknowledgment mechanism or documented reason for declining automatic acknowledgment. This is an implementation inference needed to test Acknowledge Receipt; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Correlated incoming/outgoing message identifiers and timestamps plus automation configuration establish execution; an auto-reply template alone does not. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Promptly means without unnecessary delay. Retain actual receipt and acknowledgment timestamps; no fixed number of minutes is imposed.",
+          "citations": [
+            "AFC-CSO-ACK-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-ACK only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The definition gives no fixed minute threshold. A departure rationale can address SHOULD but cannot claim that manual replies demonstrate automation.",
+            "citations": [
+              "AFC-CSO-ACK-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-cra-1e379047b18566464793b8a8714b8ddde5d91ba98e6b2f6e4e5b724b789e6285": {
+      "content_hash": "1306649a32dc8a91117a1a2b90c29608cae1effc8b0e26f4a97afc4e36ca08ad",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1e379047b18566464793b8a8714b8ddde5d91ba98e6b2f6e4e5b724b789e6285: AFC-CSO-CRA: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-CRA-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Emergency and Emergency Test required actions must actually be completed. The recipe correctly distinguishes AFC-FRP-ERT estimated-resolution defaults from the deadline to complete each action; an acknowledgment is neither. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Complete Required Actions. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The original designated message and per-action completion records bind proof to actual instructions, class and deadline. An estimated resolution time cannot replace execution results. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST complete the required actions in Emergency or Emergency Test designated messages sent by FedRAMP within the timeframe included in the message. Source note: Timeframes may vary by FedRAMP Certification class.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-CRA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Messages may demand faster action. Class D 12 hours and C/B/A 3 p.m. Eastern on the 2nd/3rd/5th business day are estimated-resolution defaults, not universal remediation deadlines.",
+            "citations": [
+              "AFC-CSO-CRA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-cra-29b27278307475aa3d767e2cdac7c55255210014e09f1e8ea44b71f02abd7d57": {
+      "content_hash": "5f0ff473b7baf3587a55ab60af3d8a4f5ecfdc54f00a141b232bf9a47f7c807b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 29b27278307475aa3d767e2cdac7c55255210014e09f1e8ea44b71f02abd7d57: AFC-CSO-CRA: optional — Within published transition grace period. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Emergency and Emergency Test required actions must actually be completed. The recipe correctly distinguishes AFC-FRP-ERT estimated-resolution defaults from the deadline to complete each action; an acknowledgment is neither. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-cra-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Retain the original designated message, its instructions, service class and explicit action timeframes; identify the staff able to complete each action. This is an implementation inference needed to test Complete Required Actions; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "The original designated message and per-action completion records bind proof to actual instructions, class and deadline. An estimated resolution time cannot replace execution results. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Within the timeframe included in the message. Preserve time zone, business-day calculation where applicable, receipt time and actual completion time; use the message's instructions rather than replacing them with a default. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-CRA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Messages may demand faster action. Class D 12 hours and C/B/A 3 p.m. Eastern on the 2nd/3rd/5th business day are estimated-resolution defaults, not universal remediation deadlines.",
+            "citations": [
+              "AFC-CSO-CRA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-cra-3f3fa54ed13e3e7b197d3c4ab0d4c30835cb3c4935af1bda3c6f11a2e6a6ea64": {
+      "content_hash": "2ae04fd184c0b9cac823e4eb61ecb7491fd59e1b8064bb2883df6c45c2e8de2e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 3f3fa54ed13e3e7b197d3c4ab0d4c30835cb3c4935af1bda3c6f11a2e6a6ea64: AFC-CSO-CRA: required — Resolved from source class and profile metadata. Source force: MUST. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Emergency and Emergency Test required actions must actually be completed. The recipe correctly distinguishes AFC-FRP-ERT estimated-resolution defaults from the deadline to complete each action; an acknowledgment is neither. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-cra-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Retain the original designated message, its instructions, service class and explicit action timeframes; identify the staff able to complete each action. This is an implementation inference needed to test Complete Required Actions; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "The original designated message and per-action completion records bind proof to actual instructions, class and deadline. An estimated resolution time cannot replace execution results. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Within the timeframe included in the message. Preserve time zone, business-day calculation where applicable, receipt time and actual completion time; use the message's instructions rather than replacing them with a default.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-CRA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Messages may demand faster action. Class D 12 hours and C/B/A 3 p.m. Eastern on the 2nd/3rd/5th business day are estimated-resolution defaults, not universal remediation deadlines.",
+            "citations": [
+              "AFC-CSO-CRA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-cra-6f7352da1fb5b081e6119374246b536c9b98955181c008287ab8e5e54cda3f54": {
+      "content_hash": "00e9ce524711b595f553efa99ba416363b0d7e2f5f9666face3d01fe9a89cead",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 6f7352da1fb5b081e6119374246b536c9b98955181c008287ab8e5e54cda3f54: AFC-CSO-CRA: optional — Within published transition grace period. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Emergency and Emergency Test required actions must actually be completed. The recipe correctly distinguishes AFC-FRP-ERT estimated-resolution defaults from the deadline to complete each action; an acknowledgment is neither. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-cra-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Retain the original designated message, its instructions, service class and explicit action timeframes; identify the staff able to complete each action. This is an implementation inference needed to test Complete Required Actions; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "The original designated message and per-action completion records bind proof to actual instructions, class and deadline. An estimated resolution time cannot replace execution results. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Within the timeframe included in the message. Preserve time zone, business-day calculation where applicable, receipt time and actual completion time; use the message's instructions rather than replacing them with a default. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-CRA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Messages may demand faster action. Class D 12 hours and C/B/A 3 p.m. Eastern on the 2nd/3rd/5th business day are estimated-resolution defaults, not universal remediation deadlines.",
+            "citations": [
+              "AFC-CSO-CRA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-cra-9b859aa9a2f675ea70578e76c7e5839a8b7fd357561f629d45b12a8d37335c6a": {
+      "content_hash": "b80a06f5b58495f2ae1a0c847b9c1c26b939ce85e9cc8339d9760cab308c0503",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 9b859aa9a2f675ea70578e76c7e5839a8b7fd357561f629d45b12a8d37335c6a: AFC-CSO-CRA: not_applicable — Requirement not yet effective. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Emergency and Emergency Test required actions must actually be completed. The recipe correctly distinguishes AFC-FRP-ERT estimated-resolution defaults from the deadline to complete each action; an acknowledgment is neither. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Complete Required Actions. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "The original designated message and per-action completion records bind proof to actual instructions, class and deadline. An estimated resolution time cannot replace execution results. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST complete the required actions in Emergency or Emergency Test designated messages sent by FedRAMP within the timeframe included in the message. Source note: Timeframes may vary by FedRAMP Certification class.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-CRA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Messages may demand faster action. Class D 12 hours and C/B/A 3 p.m. Eastern on the 2nd/3rd/5th business day are estimated-resolution defaults, not universal remediation deadlines.",
+            "citations": [
+              "AFC-CSO-CRA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-cra-b1a125c7def3839dd7f42c93b0922dde5005177945635386e73ec653890fbeb9": {
+      "content_hash": "348552444fc598df3be81a9bcddc76b70abf8e82dc4f311856f366b2d0190332",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b1a125c7def3839dd7f42c93b0922dde5005177945635386e73ec653890fbeb9: AFC-CSO-CRA: required — Resolved from source class and profile metadata. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Emergency and Emergency Test required actions must actually be completed. The recipe correctly distinguishes AFC-FRP-ERT estimated-resolution defaults from the deadline to complete each action; an acknowledgment is neither. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-cra-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Retain the original designated message, its instructions, service class and explicit action timeframes; identify the staff able to complete each action. This is an implementation inference needed to test Complete Required Actions; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "The original designated message and per-action completion records bind proof to actual instructions, class and deadline. An estimated resolution time cannot replace execution results. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Within the timeframe included in the message. Preserve time zone, business-day calculation where applicable, receipt time and actual completion time; use the message's instructions rather than replacing them with a default.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-CRA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Messages may demand faster action. Class D 12 hours and C/B/A 3 p.m. Eastern on the 2nd/3rd/5th business day are estimated-resolution defaults, not universal remediation deadlines.",
+            "citations": [
+              "AFC-CSO-CRA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-cra-d16a702740a3163d338818811e8f31124e1c4c621ed79031323280938420e849": {
+      "content_hash": "2f5dd59730e212820cd6d8fe17ce1f2e06d226eacb25ccad7288493d3e674ab1",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d16a702740a3163d338818811e8f31124e1c4c621ed79031323280938420e849: AFC-CSO-CRA: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-CRA-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Emergency and Emergency Test required actions must actually be completed. The recipe correctly distinguishes AFC-FRP-ERT estimated-resolution defaults from the deadline to complete each action; an acknowledgment is neither. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Complete Required Actions. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The original designated message and per-action completion records bind proof to actual instructions, class and deadline. An estimated resolution time cannot replace execution results. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST complete the required actions in Emergency or Emergency Test designated messages sent by FedRAMP within the timeframe included in the message. Source note: Timeframes may vary by FedRAMP Certification class.",
+          "citations": [
+            "AFC-CSO-CRA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-CRA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Messages may demand faster action. Class D 12 hours and C/B/A 3 p.m. Eastern on the 2nd/3rd/5th business day are estimated-resolution defaults, not universal remediation deadlines.",
+            "citations": [
+              "AFC-CSO-CRA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-emr-1aeed991b4cca74337f615c8e1bbcf86144341b0df519d267b506ab9e7974df5": {
+      "content_hash": "64c315e17f203d3652af473957d5c11e833f956be9ff3ee7af51585da0e533ad",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1aeed991b4cca74337f615c8e1bbcf86144341b0df519d267b506ab9e7974df5: AFC-CSO-EMR: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-EMR-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The routing duty names Emergency messages and a provider-designated senior security official. It does not independently extend the same mandate to Emergency Test or all ordinary mail. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Emergency Message Routing. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Configuration plus automated validation are source artifacts; designation and delivery records establish that the actual senior official was reached, rather than merely a support queue. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST route Emergency designated messages sent by FedRAMP to a senior security official for their awareness. Source note: Senior security officials are determined by the provider.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-EMR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The provider chooses the senior security official; no numeric routing deadline is specified.",
+            "citations": [
+              "AFC-CSO-EMR-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-emr-7d5ccad60f4aa8e9cae9e3f477bd6f279f7ce2638590f18f8b11aab98ca7f451": {
+      "content_hash": "bd2239b47510905679e991c25d78f3a0438c6c6a5f39289c71761b0e49f00dba",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7d5ccad60f4aa8e9cae9e3f477bd6f279f7ce2638590f18f8b11aab98ca7f451: AFC-CSO-EMR: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-EMR-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The routing duty names Emergency messages and a provider-designated senior security official. It does not independently extend the same mandate to Emergency Test or all ordinary mail. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Emergency Message Routing. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Configuration plus automated validation are source artifacts; designation and delivery records establish that the actual senior official was reached, rather than merely a support queue. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST route Emergency designated messages sent by FedRAMP to a senior security official for their awareness. Source note: Senior security officials are determined by the provider.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-EMR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The provider chooses the senior security official; no numeric routing deadline is specified.",
+            "citations": [
+              "AFC-CSO-EMR-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-emr-85a87a8e3115e694af4868ac2fc0fee59d7711cab6328caafb038f0aefc354d7": {
+      "content_hash": "daece47830ff2fe9666e8a5ae53160a0b1dd3dbcc579b16ebafdb25f2924c8ad",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 85a87a8e3115e694af4868ac2fc0fee59d7711cab6328caafb038f0aefc354d7: AFC-CSO-EMR: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-EMR-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The routing duty names Emergency messages and a provider-designated senior security official. It does not independently extend the same mandate to Emergency Test or all ordinary mail. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-emr-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the senior security official selected by the provider and the FSI's Emergency-message routing path. This is an implementation inference needed to test Emergency Message Routing; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Configuration plus automated validation are source artifacts; designation and delivery records establish that the actual senior official was reached, rather than merely a support queue. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: When an Emergency designated message is received. Retain receipt and routing times; no numeric routing interval is stated.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-EMR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The provider chooses the senior security official; no numeric routing deadline is specified.",
+            "citations": [
+              "AFC-CSO-EMR-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-emr-f83c58a2913276d9da0351793936ec965ea0e2db070437a40c30f722cc431eb6": {
+      "content_hash": "67d47e002a4ee9f4495ee7684ac10260f8494a82850db19abe8c99a1f60f00c1",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant f83c58a2913276d9da0351793936ec965ea0e2db070437a40c30f722cc431eb6: AFC-CSO-EMR: optional — Within published transition grace period. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-EMR-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The routing duty names Emergency messages and a provider-designated senior security official. It does not independently extend the same mandate to Emergency Test or all ordinary mail. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-emr-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the senior security official selected by the provider and the FSI's Emergency-message routing path. This is an implementation inference needed to test Emergency Message Routing; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Configuration plus automated validation are source artifacts; designation and delivery records establish that the actual senior official was reached, rather than merely a support queue. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: When an Emergency designated message is received. Retain receipt and routing times; no numeric routing interval is stated. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-EMR-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-EMR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The provider chooses the senior security official; no numeric routing deadline is specified.",
+            "citations": [
+              "AFC-CSO-EMR-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-ima-1f4c22e06bcd8bb74763e4bf680d24e78c2cf636669d1b7c55ba4e3074b8e81b": {
+      "content_hash": "760dabd48daf7a7565b59fdfdbb1e4bb265558e6d91964ad6fdedd6f499a7419",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1f4c22e06bcd8bb74763e4bf680d24e78c2cf636669d1b7c55ba4e3074b8e81b: AFC-CSO-IMA: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-IMA-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Important-message action completion is SHOULD even though the message contains required actions. The recipe preserves reasoned departure rather than silently rewriting the recommendation to MUST. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-ima-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate original Important messages, their required actions and specified timeframes, and any documented decision not to follow the recommendation. This is an implementation inference needed to test Important Message Actions; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Original message instructions and timestamped action results show completion; a documented, weighed departure proves disposition only, not completion. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Within the timeframe specified in each Important message; timeframes may vary by certification class.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-IMA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The actual message sets the timeframe, which may vary by class; no class-independent Important deadline is supplied.",
+            "citations": [
+              "AFC-CSO-IMA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-ima-793fbb1a5b61a28c659b5d607ea1ec7464d1acd6b3671f61a0bb379e22efbcbe": {
+      "content_hash": "5464dc75f2c9eded366709aa77030baca3f1be2399f6b9178340c7279d941c5c",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 793fbb1a5b61a28c659b5d607ea1ec7464d1acd6b3671f61a0bb379e22efbcbe: AFC-CSO-IMA: optional — Within published transition grace period. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-IMA-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Important-message action completion is SHOULD even though the message contains required actions. The recipe preserves reasoned departure rather than silently rewriting the recommendation to MUST. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-ima-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate original Important messages, their required actions and specified timeframes, and any documented decision not to follow the recommendation. This is an implementation inference needed to test Important Message Actions; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Original message instructions and timestamped action results show completion; a documented, weighed departure proves disposition only, not completion. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Within the timeframe specified in each Important message; timeframes may vary by certification class. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-IMA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The actual message sets the timeframe, which may vary by class; no class-independent Important deadline is supplied.",
+            "citations": [
+              "AFC-CSO-IMA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-ima-c4d21e3215bc85b2c7752fd74a0510c1ce19c97596befb45495c8aa39bf219b2": {
+      "content_hash": "65253069e2adaa52c56b2cb8ca2341f52b68408ee6eea884866297365a34233e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant c4d21e3215bc85b2c7752fd74a0510c1ce19c97596befb45495c8aa39bf219b2: AFC-CSO-IMA: not_applicable — Class excluded by subset. Source force: SHOULD (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-IMA-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Important-message action completion is SHOULD even though the message contains required actions. The recipe preserves reasoned departure rather than silently rewriting the recommendation to MUST. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Important Message Actions. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Original message instructions and timestamped action results show completion; a documented, weighed departure proves disposition only, not completion. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD complete the required actions in Important designated messages sent by FedRAMP within the timeframe specified in the message. Source note: Timeframes may vary by FedRAMP Certification class.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-IMA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The actual message sets the timeframe, which may vary by class; no class-independent Important deadline is supplied.",
+            "citations": [
+              "AFC-CSO-IMA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-ima-d4d0860b143533a30d6b64a40aabf91002c4eb9ff524a9a3408a62543cc060a4": {
+      "content_hash": "dd2b58d64f9f2ce15859bc9e85e7312012410c2a7b7df0bf43048a74b17d42d4",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d4d0860b143533a30d6b64a40aabf91002c4eb9ff524a9a3408a62543cc060a4: AFC-CSO-IMA: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-IMA-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Important-message action completion is SHOULD even though the message contains required actions. The recipe preserves reasoned departure rather than silently rewriting the recommendation to MUST. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Important Message Actions. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Original message instructions and timestamped action results show completion; a documented, weighed departure proves disposition only, not completion. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD complete the required actions in Important designated messages sent by FedRAMP within the timeframe specified in the message. Source note: Timeframes may vary by FedRAMP Certification class.",
+          "citations": [
+            "AFC-CSO-IMA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-IMA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The actual message sets the timeframe, which may vary by class; no class-independent Important deadline is supplied.",
+            "citations": [
+              "AFC-CSO-IMA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-inb-3df267dc58b1a79aec92d1cdd0eac2a42a48b4ddc5684b37ac320e521af3601e": {
+      "content_hash": "281ed4f2365e29bbf07f6087630daaa41827d321ab6cca34fecc48058bc8701e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 3df267dc58b1a79aec92d1cdd0eac2a42a48b4ddc5684b37ac320e521af3601e: AFC-CSO-INB: optional — Within published transition grace period. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Establishment and continued maintenance both matter. The Marketplace Security Email is the default destination unless notified otherwise; a staff name is not a durable inbox. The recipe preserves personnel-change continuity without banning personal addresses outright. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-inb-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the Marketplace Security Email, the actual receiving mailbox and responsible security/compliance staff; reconcile any separately notified replacement address. This is an implementation inference needed to test Maintain a FedRAMP Security Inbox; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "Address/ownership history and delivery observations substantiate maintenance; the source artifact is the receiving address, while delivery testing is an inferred proof method. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Establish for the applicable certification and maintain during operation; retain actual change and delivery dates. The rule supplies no numeric mailbox test interval. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-INB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual mailbox ownership and unnotified address changes require service records; the source supplies no mandatory test interval.",
+            "citations": [
+              "AFC-CSO-INB-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-inb-3e1cf248a64392db033a4fe97bfd2f93fbd9c39a7dad407c75d0e28ba1515d1f": {
+      "content_hash": "f7091a1f31fc8bd09810259f0a4e4ebd768f8dbcedbc67a8a43f794e6cd47e9d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 3e1cf248a64392db033a4fe97bfd2f93fbd9c39a7dad407c75d0e28ba1515d1f: AFC-CSO-INB: optional — Within published transition grace period. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Establishment and continued maintenance both matter. The Marketplace Security Email is the default destination unless notified otherwise; a staff name is not a durable inbox. The recipe preserves personnel-change continuity without banning personal addresses outright. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-inb-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the Marketplace Security Email, the actual receiving mailbox and responsible security/compliance staff; reconcile any separately notified replacement address. This is an implementation inference needed to test Maintain a FedRAMP Security Inbox; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "Address/ownership history and delivery observations substantiate maintenance; the source artifact is the receiving address, while delivery testing is an inferred proof method. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Establish for the applicable certification and maintain during operation; retain actual change and delivery dates. The rule supplies no numeric mailbox test interval. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-INB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual mailbox ownership and unnotified address changes require service records; the source supplies no mandatory test interval.",
+            "citations": [
+              "AFC-CSO-INB-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-inb-603481e4f101111c80b4bf09afde66a3a02abac0690a85506c4a735482b3444f": {
+      "content_hash": "b4380f226d240a84b3cf060f1ab1b24a9014d61d0752717adc037bf4cb031476",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 603481e4f101111c80b4bf09afde66a3a02abac0690a85506c4a735482b3444f: AFC-CSO-INB: not_applicable — Requirement not yet effective. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Establishment and continued maintenance both matter. The Marketplace Security Email is the default destination unless notified otherwise; a staff name is not a durable inbox. The recipe preserves personnel-change continuity without banning personal addresses outright. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Maintain a FedRAMP Security Inbox. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "Address/ownership history and delivery observations substantiate maintenance; the source artifact is the receiving address, while delivery testing is an inferred proof method. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST establish and maintain an email address to receive messages from FedRAMP; this inbox is a FedRAMP Security Inbox (FSI).",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-INB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual mailbox ownership and unnotified address changes require service records; the source supplies no mandatory test interval.",
+            "citations": [
+              "AFC-CSO-INB-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-inb-aadb388dd3ebe84f6f6841e46e73d85d1472ffeab9fa3bd881ef053d7c5d1d01": {
+      "content_hash": "88c0b08285c57339d126de4fb84129c07cfe99050ae553f5e9f3ca67f96d2297",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant aadb388dd3ebe84f6f6841e46e73d85d1472ffeab9fa3bd881ef053d7c5d1d01: AFC-CSO-INB: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-INB-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Establishment and continued maintenance both matter. The Marketplace Security Email is the default destination unless notified otherwise; a staff name is not a durable inbox. The recipe preserves personnel-change continuity without banning personal addresses outright. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Maintain a FedRAMP Security Inbox. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Address/ownership history and delivery observations substantiate maintenance; the source artifact is the receiving address, while delivery testing is an inferred proof method. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST establish and maintain an email address to receive messages from FedRAMP; this inbox is a FedRAMP Security Inbox (FSI).",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-INB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual mailbox ownership and unnotified address changes require service records; the source supplies no mandatory test interval.",
+            "citations": [
+              "AFC-CSO-INB-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-inb-abca31d5a2aea6241bd88fe8688fe7e516196488043fabf94651dc8a708c1ced": {
+      "content_hash": "d7af7f14343dd65bed6537ea0ece7c1ddd3199b079a6f61bc530eaa5a27fead2",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant abca31d5a2aea6241bd88fe8688fe7e516196488043fabf94651dc8a708c1ced: AFC-CSO-INB: required — Resolved from source class and profile metadata. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Establishment and continued maintenance both matter. The Marketplace Security Email is the default destination unless notified otherwise; a staff name is not a durable inbox. The recipe preserves personnel-change continuity without banning personal addresses outright. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-inb-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the Marketplace Security Email, the actual receiving mailbox and responsible security/compliance staff; reconcile any separately notified replacement address. This is an implementation inference needed to test Maintain a FedRAMP Security Inbox; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "Address/ownership history and delivery observations substantiate maintenance; the source artifact is the receiving address, while delivery testing is an inferred proof method. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Establish for the applicable certification and maintain during operation; retain actual change and delivery dates. The rule supplies no numeric mailbox test interval.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-INB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual mailbox ownership and unnotified address changes require service records; the source supplies no mandatory test interval.",
+            "citations": [
+              "AFC-CSO-INB-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-inb-b5bc6e66134cb288865d2c5261a31e8c31105c098c4adec165c686ff9ffda90c": {
+      "content_hash": "f3df61ed06d739a6424369310689a0c36d5848a61a537208ab5e35164a034a18",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b5bc6e66134cb288865d2c5261a31e8c31105c098c4adec165c686ff9ffda90c: AFC-CSO-INB: required — Resolved from source class and profile metadata. Source force: MUST. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Establishment and continued maintenance both matter. The Marketplace Security Email is the default destination unless notified otherwise; a staff name is not a durable inbox. The recipe preserves personnel-change continuity without banning personal addresses outright. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-inb-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the Marketplace Security Email, the actual receiving mailbox and responsible security/compliance staff; reconcile any separately notified replacement address. This is an implementation inference needed to test Maintain a FedRAMP Security Inbox; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "Address/ownership history and delivery observations substantiate maintenance; the source artifact is the receiving address, while delivery testing is an inferred proof method. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Establish for the applicable certification and maintain during operation; retain actual change and delivery dates. The rule supplies no numeric mailbox test interval.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-INB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual mailbox ownership and unnotified address changes require service records; the source supplies no mandatory test interval.",
+            "citations": [
+              "AFC-CSO-INB-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-inb-d0706bef3ceb7325cea1aa3b81818e19462d5ee9bc9313baa4f4a08edba3a1eb": {
+      "content_hash": "f0598a588cb3a2a9b8eb7d45ef4de8a2f3f53f3101b60a16cb6d1ed078c3c03d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d0706bef3ceb7325cea1aa3b81818e19462d5ee9bc9313baa4f4a08edba3a1eb: AFC-CSO-INB: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-INB-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Establishment and continued maintenance both matter. The Marketplace Security Email is the default destination unless notified otherwise; a staff name is not a durable inbox. The recipe preserves personnel-change continuity without banning personal addresses outright. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Maintain a FedRAMP Security Inbox. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Address/ownership history and delivery observations substantiate maintenance; the source artifact is the receiving address, while delivery testing is an inferred proof method. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST establish and maintain an email address to receive messages from FedRAMP; this inbox is a FedRAMP Security Inbox (FSI).",
+          "citations": [
+            "AFC-CSO-INB-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-INB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Actual mailbox ownership and unnotified address changes require service records; the source supplies no mandatory test interval.",
+            "citations": [
+              "AFC-CSO-INB-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-noc-85fa62e04e444102241d88e4479cda1665a5ffc920c58c3094570e52e834f247": {
+      "content_hash": "307516daa9f40ec93f1fb94715b4c718aeb76dd866423a24c60057393f7526de",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 85fa62e04e444102241d88e4479cda1665a5ffc920c58c3094570e52e834f247: AFC-CSO-NOC: optional — Within published transition grace period. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-NOC-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Every FSI address change triggers immediate notification, including a newly established inbox different from the listed Security Email. The form requirement is retained and internal change approval is not substituted for notification. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-noc-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the old and new FSI addresses, actual change time and person authorized to submit the CSP Notification of Changes form. This is an implementation inference needed to test Notification of Changes; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The manual or automated notification process, change timestamps and official form receipt jointly establish the event and notification; a receipt alone cannot establish immediacy. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Immediately on any change to the FSI email address; retain the change time and submission time. No numeric substitute for immediately is specified. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-NOC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Immediately has no published numeric grace allowance; event chronology must be judged rather than inventing an hourly SLA.",
+            "citations": [
+              "AFC-CSO-NOC-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-noc-91a953495dd484b7a4cecf89935eb045cc2bfb32565c303b2af1973a397e56d4": {
+      "content_hash": "c6addb17031128819894936ea46b450115e5fe6b5a9b1539b267278dd076f9a3",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 91a953495dd484b7a4cecf89935eb045cc2bfb32565c303b2af1973a397e56d4: AFC-CSO-NOC: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-NOC-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Every FSI address change triggers immediate notification, including a newly established inbox different from the listed Security Email. The form requirement is retained and internal change approval is not substituted for notification. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Notification of Changes. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The manual or automated notification process, change timestamps and official form receipt jointly establish the event and notification; a receipt alone cannot establish immediacy. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST immediately notify FedRAMP of any changes to the email address for their FedRAMP Security Inbox.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-NOC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Immediately has no published numeric grace allowance; event chronology must be judged rather than inventing an hourly SLA.",
+            "citations": [
+              "AFC-CSO-NOC-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-noc-b12c89dc2cc748e45c07ad691d0a09fd49b56e1faea847477d85088e2f0bd423": {
+      "content_hash": "1f4266b93c3abd5a5a1ae465f67e39e0580165f70191a06f9857cc5afcd9988b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b12c89dc2cc748e45c07ad691d0a09fd49b56e1faea847477d85088e2f0bd423: AFC-CSO-NOC: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-NOC-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Every FSI address change triggers immediate notification, including a newly established inbox different from the listed Security Email. The form requirement is retained and internal change approval is not substituted for notification. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-noc-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify the old and new FSI addresses, actual change time and person authorized to submit the CSP Notification of Changes form. This is an implementation inference needed to test Notification of Changes; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The manual or automated notification process, change timestamps and official form receipt jointly establish the event and notification; a receipt alone cannot establish immediacy. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Immediately on any change to the FSI email address; retain the change time and submission time. No numeric substitute for immediately is specified.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-NOC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Immediately has no published numeric grace allowance; event chronology must be judged rather than inventing an hourly SLA.",
+            "citations": [
+              "AFC-CSO-NOC-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-noc-bf069521e293c7546ed5e39eac4a93fd42c724da295bf9037adf3758621e2488": {
+      "content_hash": "3c1f92ea4b90bfbaa11f04e9d028e51f9764b2cf06919a9a86f2cb98cb3696dc",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant bf069521e293c7546ed5e39eac4a93fd42c724da295bf9037adf3758621e2488: AFC-CSO-NOC: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-NOC-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Every FSI address change triggers immediate notification, including a newly established inbox different from the listed Security Email. The form requirement is retained and internal change approval is not substituted for notification. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Notification of Changes. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The manual or automated notification process, change timestamps and official form receipt jointly establish the event and notification; a receipt alone cannot establish immediacy. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST immediately notify FedRAMP of any changes to the email address for their FedRAMP Security Inbox.",
+          "citations": [
+            "AFC-CSO-NOC-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-NOC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Immediately has no published numeric grace allowance; event chronology must be judged rather than inventing an hourly SLA.",
+            "citations": [
+              "AFC-CSO-NOC-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-rcv-03ce06076ff506ad200a9dd6c0e45e5a5a72a7edb08d6357fbc8a04371848da8": {
+      "content_hash": "74773565878d7621ebeede70699a83b4522d5fb03e90dc577d2c3b5668829945",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 03ce06076ff506ad200a9dd6c0e45e5a5a72a7edb08d6357fbc8a04371848da8: AFC-CSO-RCV: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-RCV-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Receive AND react are preserved. Removing CAPTCHA/customer-portal barriers addresses the note, but successful SMTP delivery alone does not show that security staff reacted. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Receive Email Without Disruption. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "End-to-end delivery and staff reaction records support the two parts; configuration diagrams without observed downstream handling are insufficient. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST receive and react to email messages from FedRAMP without disruption and without requiring additional actions from FedRAMP. Source note: This requirement is intended to prevent cloud service providers from requiring FedRAMP to complete a CAPTCHA, log into a customer portal, or otherwise take service-specific actions that might prevent the security team from receiving the message.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-RCV only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The rule does not specify a universal response SLA; designated-message instructions control any additional deadlines.",
+            "citations": [
+              "AFC-CSO-RCV-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-rcv-13f3624287c96f4c168bf72dd14e73d0fcff4d8e228448ce86d9c2d7f145212b": {
+      "content_hash": "fd608d025ad286d365ebc313c208ccccc2cad5585feeab1e17f37388e7999a79",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 13f3624287c96f4c168bf72dd14e73d0fcff4d8e228448ce86d9c2d7f145212b: AFC-CSO-RCV: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-RCV-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Receive AND react are preserved. Removing CAPTCHA/customer-portal barriers addresses the note, but successful SMTP delivery alone does not show that security staff reacted. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Receive Email Without Disruption. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "End-to-end delivery and staff reaction records support the two parts; configuration diagrams without observed downstream handling are insufficient. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST receive and react to email messages from FedRAMP without disruption and without requiring additional actions from FedRAMP. Source note: This requirement is intended to prevent cloud service providers from requiring FedRAMP to complete a CAPTCHA, log into a customer portal, or otherwise take service-specific actions that might prevent the security team from receiving the message.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-RCV only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The rule does not specify a universal response SLA; designated-message instructions control any additional deadlines.",
+            "citations": [
+              "AFC-CSO-RCV-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-rcv-1e29426da6057d0eeadfd8dbbdd2a0530f71af230800d62d074d8d7c9c16c42c": {
+      "content_hash": "3e40aa278d9f381b395735e97495cf27b0fb956b578b2206bac28ccba5ebd1e8",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1e29426da6057d0eeadfd8dbbdd2a0530f71af230800d62d074d8d7c9c16c42c: AFC-CSO-RCV: required — Resolved from source class and profile metadata. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Receive AND react are preserved. Removing CAPTCHA/customer-portal barriers addresses the note, but successful SMTP delivery alone does not show that security staff reacted. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-rcv-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Map ingress filters, quarantine, forwarding, ticket creation and the staff reaction path from the FSI. This is an implementation inference needed to test Receive Email Without Disruption; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "End-to-end delivery and staff reaction records support the two parts; configuration diagrams without observed downstream handling are insufficient. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: During receipt and handling of FedRAMP messages; retain actual delivery and reaction times. Apply separate designated-message deadlines where relevant, not an invented SLA here.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-RCV only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The rule does not specify a universal response SLA; designated-message instructions control any additional deadlines.",
+            "citations": [
+              "AFC-CSO-RCV-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-rcv-2e6b989c5fbb0d9e8feede50c412ec8daf65cb7e71aeed4b01be176a12d9fc6f": {
+      "content_hash": "c008ddc63a8b45cad99a3fd939b82a69ff5ce6d3a68594811c63cd10bcf7a2fa",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 2e6b989c5fbb0d9e8feede50c412ec8daf65cb7e71aeed4b01be176a12d9fc6f: AFC-CSO-RCV: required — Resolved from source class and profile metadata. Source force: MUST. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Receive AND react are preserved. Removing CAPTCHA/customer-portal barriers addresses the note, but successful SMTP delivery alone does not show that security staff reacted. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-rcv-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Map ingress filters, quarantine, forwarding, ticket creation and the staff reaction path from the FSI. This is an implementation inference needed to test Receive Email Without Disruption; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "End-to-end delivery and staff reaction records support the two parts; configuration diagrams without observed downstream handling are insufficient. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: During receipt and handling of FedRAMP messages; retain actual delivery and reaction times. Apply separate designated-message deadlines where relevant, not an invented SLA here.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-RCV only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The rule does not specify a universal response SLA; designated-message instructions control any additional deadlines.",
+            "citations": [
+              "AFC-CSO-RCV-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-rcv-33e813654da1e7c33fd6ffb3544245a32cc3c7bb16f26847191e1a75438b620a": {
+      "content_hash": "a0aa60f230dae62e5c5c02146ea64a66d66935ad1099f2f5aa2d44e0c06d4746",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 33e813654da1e7c33fd6ffb3544245a32cc3c7bb16f26847191e1a75438b620a: AFC-CSO-RCV: optional — Within published transition grace period. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Receive AND react are preserved. Removing CAPTCHA/customer-portal barriers addresses the note, but successful SMTP delivery alone does not show that security staff reacted. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-rcv-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Map ingress filters, quarantine, forwarding, ticket creation and the staff reaction path from the FSI. This is an implementation inference needed to test Receive Email Without Disruption; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "End-to-end delivery and staff reaction records support the two parts; configuration diagrams without observed downstream handling are insufficient. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: During receipt and handling of FedRAMP messages; retain actual delivery and reaction times. Apply separate designated-message deadlines where relevant, not an invented SLA here. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-RCV only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The rule does not specify a universal response SLA; designated-message instructions control any additional deadlines.",
+            "citations": [
+              "AFC-CSO-RCV-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-rcv-8358452c45730df53bf13fd863c8ee247ad6dddce9a20497a01c2b78568422b5": {
+      "content_hash": "8fcd84ee0e08a5fd697ba00f347fa5157f23fb0a1ec44c461353bc105845c725",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 8358452c45730df53bf13fd863c8ee247ad6dddce9a20497a01c2b78568422b5: AFC-CSO-RCV: not_applicable — Requirement not yet effective. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Receive AND react are preserved. Removing CAPTCHA/customer-portal barriers addresses the note, but successful SMTP delivery alone does not show that security staff reacted. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Receive Email Without Disruption. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "End-to-end delivery and staff reaction records support the two parts; configuration diagrams without observed downstream handling are insufficient. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST receive and react to email messages from FedRAMP without disruption and without requiring additional actions from FedRAMP. Source note: This requirement is intended to prevent cloud service providers from requiring FedRAMP to complete a CAPTCHA, log into a customer portal, or otherwise take service-specific actions that might prevent the security team from receiving the message.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-RCV only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The rule does not specify a universal response SLA; designated-message instructions control any additional deadlines.",
+            "citations": [
+              "AFC-CSO-RCV-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-rcv-de8e3663f21f2b90905977380cf846059f016b24410482812179cc1cfa11dc9a": {
+      "content_hash": "c3cdf3afaebc593f21ea45f1304d651ffeea0220983a5adee451137df08bfdd4",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant de8e3663f21f2b90905977380cf846059f016b24410482812179cc1cfa11dc9a: AFC-CSO-RCV: optional — Within published transition grace period. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "Receive AND react are preserved. Removing CAPTCHA/customer-portal barriers addresses the note, but successful SMTP delivery alone does not show that security staff reacted. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-rcv-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Map ingress filters, quarantine, forwarding, ticket creation and the staff reaction path from the FSI. This is an implementation inference needed to test Receive Email Without Disruption; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "evidence": {
+          "finding": "End-to-end delivery and staff reaction records support the two parts; configuration diagrams without observed downstream handling are insufficient. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: During receipt and handling of FedRAMP messages; retain actual delivery and reaction times. Apply separate designated-message deadlines where relevant, not an invented SLA here. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-RCV-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-RCV only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The rule does not specify a universal response SLA; designated-message instructions control any additional deadlines.",
+            "citations": [
+              "AFC-CSO-RCV-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-tfg-090a530e98b60828236cc4594ab3416b0c4b26950c4246b1f3f6eed56fa2ab4e": {
+      "content_hash": "0d52e9da8e6cc10df2ddb1512a5d40fa45c2c09b748bf55ff3989cfb6e2c5fa2",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 090a530e98b60828236cc4594ab3416b0c4b26950c4246b1f3f6eed56fa2ab4e: AFC-CSO-TFG: optional — Within published transition grace period. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-TFG-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Both government domains receive the default treatment. Only affirmative confirmation of a non-FedRAMP origin removes the FSI rules for that message; a display-name filter would improperly narrow the rule. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-tfg-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate FSI mail handling rules, sender authentication results, and the method used to confirm whether a government sender is outside FedRAMP. This is an implementation inference needed to test Trust @fedramp.gov and @gsa.gov; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Mailbox configuration and automated configuration validation are named artifacts. Full headers and exception records explain actual handling; a known-sender allowlist cannot prove the two-domain default. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Apply on receipt; preserve receipt, routing and origin-confirmation times. This rule sets no numeric processing deadline. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-TFG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Domain origin and any claimed non-FedRAMP exception need actual message evidence; names containing FedRAMP or F20B are not enforceable identifiers.",
+            "citations": [
+              "AFC-CSO-TFG-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-tfg-4853506a9a9b16f77740f12443de0623d75e733c4ac093924b48c5c31f8c7b0d": {
+      "content_hash": "37232e76f7c55a15e7190d583e114865ec6b5edeb65c923d059aa4ae7bef6f5f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4853506a9a9b16f77740f12443de0623d75e733c4ac093924b48c5c31f8c7b0d: AFC-CSO-TFG: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-TFG-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Both government domains receive the default treatment. Only affirmative confirmation of a non-FedRAMP origin removes the FSI rules for that message; a display-name filter would improperly narrow the rule. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped afc-cso-tfg-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate FSI mail handling rules, sender authentication results, and the method used to confirm whether a government sender is outside FedRAMP. This is an implementation inference needed to test Trust @fedramp.gov and @gsa.gov; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Mailbox configuration and automated configuration validation are named artifacts. Full headers and exception records explain actual handling; a known-sender allowlist cannot prove the two-domain default. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Apply on receipt; preserve receipt, routing and origin-confirmation times. This rule sets no numeric processing deadline.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-TFG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Domain origin and any claimed non-FedRAMP exception need actual message evidence; names containing FedRAMP or F20B are not enforceable identifiers.",
+            "citations": [
+              "AFC-CSO-TFG-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-tfg-6196ef1c19eaeb31f9b9c45275f31d1dac7f9c72f3accf2e8945d307ea83abe5": {
+      "content_hash": "2bd01f5c49d8507d7b7ec6a6df2ec0a7650e56e5fe5e0b3f0540fdb17c20d2ff",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 6196ef1c19eaeb31f9b9c45275f31d1dac7f9c72f3accf2e8945d307ea83abe5: AFC-CSO-TFG: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-TFG-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Both government domains receive the default treatment. Only affirmative confirmation of a non-FedRAMP origin removes the FSI rules for that message; a display-name filter would improperly narrow the rule. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Trust @fedramp.gov and @gsa.gov. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Mailbox configuration and automated configuration validation are named artifacts. Full headers and exception records explain actual handling; a known-sender allowlist cannot prove the two-domain default. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST treat any email originating from an @fedramp.gov or @gsa.gov email address as if it was sent from FedRAMP by default; if such a message is confirmed to originate from someone other than FedRAMP then the FedRAMP Security Inbox rules no longer apply.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-TFG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Domain origin and any claimed non-FedRAMP exception need actual message evidence; names containing FedRAMP or F20B are not enforceable identifiers.",
+            "citations": [
+              "AFC-CSO-TFG-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-cso-tfg-f66448bc0518553b53a9293e5340d4344159422e7f135ff4e0ce1f60c5048556": {
+      "content_hash": "5d13e30676736b9863c9b5ec35e91822f7750b24455065a07340570a805aca49",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant f66448bc0518553b53a9293e5340d4344159422e7f135ff4e0ce1f60c5048556: AFC-CSO-TFG: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-CSO-TFG-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Both government domains receive the default treatment. Only affirmative confirmation of a non-FedRAMP origin removes the FSI rules for that message; a display-name filter would improperly narrow the rule. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Trust @fedramp.gov and @gsa.gov. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Mailbox configuration and automated configuration validation are named artifacts. Full headers and exception records explain actual handling; a known-sender allowlist cannot prove the two-domain default. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST treat any email originating from an @fedramp.gov or @gsa.gov email address as if it was sent from FedRAMP by default; if such a message is confirmed to originate from someone other than FedRAMP then the FedRAMP Security Inbox rules no longer apply.",
+          "citations": [
+            "AFC-CSO-TFG-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-CSO-TFG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Domain origin and any claimed non-FedRAMP exception need actual message evidence; names containing FedRAMP or F20B are not enforceable identifiers.",
+            "citations": [
+              "AFC-CSO-TFG-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-frp-cds-7768e8377e7ac54f763a1995d0f3b8a35212c3a0b338e4f62804800fc23ca51f": {
+      "content_hash": "0ad410156d5433b55ce7c57072974684e39fcca317074c5fc7911f957547cb9e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7768e8377e7ac54f763a1995d0f3b8a35212c3a0b338e4f62804800fc23ca51f: AFC-FRP-CDS: not_applicable — Different affected audience. Source force: MUST (published rule; resolver stopped before force selection). The source names FedRAMP, an agency, assessor or advisor rather than the provider selected by this inventory. This is an actor boundary, not a waiver for that named actor.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-FRP-CDS-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Elevated-reaction messages use Emergency, Emergency Test or Important in the subject. Ordinary messages without these designators remain general communications, not automatic emergencies. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-FRP-CDS-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Criticality Designators. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-FRP-CDS-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Criticality Designators statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-FRP-CDS-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST convey the criticality of the message in the subject line, IF the message requires an elevated reaction, using one of the following designators: Source note: Messages sent by FedRAMP without one of these designators are considered general communications and do not require an elevated reaction; these may be resolved in the normal course of business by the cloud service provider.",
+          "citations": [
+            "AFC-FRP-CDS-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-FRP-CDS only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Criticality Designators were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AFC-FRP-CDS-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-frp-cor-937931317039a71376d1a4cbae83123a99dc76ab429ab03004bfab343d47d227": {
+      "content_hash": "07ee2d3dfc00963cd9645a9958d6291cc437c0f53390a5d957a7fad368f7562b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 937931317039a71376d1a4cbae83123a99dc76ab429ab03004bfab343d47d227: AFC-FRP-COR: not_applicable — Different affected audience. Source force: MUST (published rule; resolver stopped before force selection). The source names FedRAMP, an agency, assessor or advisor rather than the provider selected by this inventory. This is an actor boundary, not a waiver for that named actor.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-FRP-COR-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "FedRAMP specifies corrective actions in the message body; possible ratings or suspension depend on event severity, not an automatically prescribed provider penalty. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-FRP-COR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Explain Corrective Actions. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-FRP-COR-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Explain Corrective Actions statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-FRP-COR-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST clearly specify the corrective actions that will result from failure to complete the required actions in the body of messages that require an elevated reaction; such actions may vary from negative ratings in the FedRAMP Marketplace to suspension of FedRAMP Certification depending on the severity of the event.",
+          "citations": [
+            "AFC-FRP-COR-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-FRP-COR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Explain Corrective Actions were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AFC-FRP-COR-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-frp-ert-ab7d7643e97472010592ce68d9066c61f2e94718e9966a5d21d7c062af64f24e": {
+      "content_hash": "72a638242678c6bcb5f03a879a2d2fbe0b935c49dc8c7377724f4cc53dded234",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ab7d7643e97472010592ce68d9066c61f2e94718e9966a5d21d7c062af64f24e: AFC-FRP-ERT: not_applicable — Different affected audience. Source force: MUST (published rule; resolver stopped before force selection). The source names FedRAMP, an agency, assessor or advisor rather than the provider selected by this inventory. This is an actor boundary, not a waiver for that named actor.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-FRP-ERT-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The four class defaults are for providing an estimated resolution time: D 12 hours; C/B/A 3 p.m. Eastern on business day 2/3/5. Actual message instructions can be faster; none is a universal remediation deadline. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-FRP-ERT-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Elevated Reaction Timeframes. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-FRP-ERT-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Elevated Reaction Timeframes statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-FRP-ERT-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST clearly specify the expected timeframe for completing required actions in the body of messages that require an elevated reaction; timeframes for actions will vary depending on the situation but the default timeframes to provide an estimated resolution time for Emergency and Emergency Test designated messages will be as follows: Source note: FedRAMP Class D Certified cloud service providers are expected to address Emergency messages (including tests) from FedRAMP with a reaction time appropriate to operating a service where failure to react rapidly might have a severe or debilitating customer effect on the U.S. Government; some Emergency messages may require faster reaction and all such messages should be addressed as quickly as possible.",
+          "citations": [
+            "AFC-FRP-ERT-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-FRP-ERT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Elevated Reaction Timeframes were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AFC-FRP-ERT-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-frp-pnt-be20c69174ec1773d19f315349aa37241c41571c18aeed4042d7246378822140": {
+      "content_hash": "be173e10a6456f42ced72a5e1a604d7aa24b8ca701b0bac41bda689913cff044",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant be20c69174ec1773d19f315349aa37241c41571c18aeed4042d7246378822140: AFC-FRP-PNT: not_applicable — Different affected audience. Source force: MUST (published rule; resolver stopped before force selection). The source names FedRAMP, an agency, assessor or advisor rather than the provider selected by this inventory. This is an actor boundary, not a waiver for that named actor.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-FRP-PNT-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Public notice is at least 10 business days before an Emergency Test and includes expected actions/timeframes. This is FedRAMP notice, not a provider waiting period before reacting. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-FRP-PNT-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Public Notice of Emergency Tests. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-FRP-PNT-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Public Notice of Emergency Tests statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-FRP-PNT-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST post a public notice at least 10 business days in advance of sending an Emergency Test message; such notices MUST include explanation of the likely expected actions and timeframes for the Emergency Test message. Structured timeframe: 10 bizdays.",
+          "citations": [
+            "AFC-FRP-PNT-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-FRP-PNT only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Public Notice of Emergency Tests were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AFC-FRP-PNT-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-frp-rpm-833669942c60ab25906d67afde51e0d7f0ddc2b2ac0d0e52720d67ffa1c23247": {
+      "content_hash": "a7b594a84fe01db4f758bc28f17b946f13d2de6519d359f41ec563523c9e39c5",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 833669942c60ab25906d67afde51e0d7f0ddc2b2ac0d0e52720d67ffa1c23247: AFC-FRP-RPM: not_applicable — Different affected audience. Source force: MAY (published rule; resolver stopped before force selection). The source names FedRAMP, an agency, assessor or advisor rather than the provider selected by this inventory. This is an actor boundary, not a waiver for that named actor.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-FRP-RPM-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "FedRAMP MAY track and publicly share reaction times. The provider cannot attest that this optional government publication occurred merely by logging its own responses. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-FRP-RPM-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Reaction Metrics. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-FRP-RPM-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Reaction Metrics statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-FRP-RPM-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MAY track and publicly share the time required by cloud service providers to take the actions specified in messages that require an elevated reaction.",
+          "citations": [
+            "AFC-FRP-RPM-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-FRP-RPM only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Reaction Metrics were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AFC-FRP-RPM-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-frp-rqa-48f6caa3c18aa561fa2ac73d74492c404f09f0c4ff7db88156f93bba4e1c485c": {
+      "content_hash": "4145f5ac47ee2098acb43281b599068e7a5172b91c97bee7d981f32eb454413a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 48f6caa3c18aa561fa2ac73d74492c404f09f0c4ff7db88156f93bba4e1c485c: AFC-FRP-RQA: not_applicable — Different affected audience. Source force: MUST (published rule; resolver stopped before force selection). The source names FedRAMP, an agency, assessor or advisor rather than the provider selected by this inventory. This is an actor boundary, not a waiver for that named actor.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-FRP-RQA-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "FedRAMP must put required actions in the body of elevated-reaction messages. Provider completion evidence cannot establish whether FedRAMP clearly authored those instructions. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-FRP-RQA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Required Actions. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-FRP-RQA-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Required Actions statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-FRP-RQA-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST clearly specify the required actions in the body of messages that require an elevated reaction.",
+          "citations": [
+            "AFC-FRP-RQA-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-FRP-RQA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Required Actions were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AFC-FRP-RQA-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-frp-ufs-57980651042f3779fcd8c4957bdc065c39c751da2f8c6fd732595f6e91ec225e": {
+      "content_hash": "b6b2be36a36b8f53601dae865bae7a82f257c3734ddfd3313d6fe09cabfbc708",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 57980651042f3779fcd8c4957bdc065c39c751da2f8c6fd732595f6e91ec225e: AFC-FRP-UFS: not_applicable — Different affected audience. Source force: MUST (published rule; resolver stopped before force selection). The source names FedRAMP, an agency, assessor or advisor rather than the provider selected by this inventory. This is an actor boundary, not a waiver for that named actor.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-FRP-UFS-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Emergency and Emergency Test must use either published fedramp_security address; the OR is preserved and does not require simultaneous sending from both. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-FRP-UFS-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Use FedRAMP_Security Email in Emergencies. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-FRP-UFS-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Use FedRAMP_Security Email in Emergencies statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-FRP-UFS-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST send Emergency and Emergency Test designated messages from fedramp_security@gsa.gov OR fedramp_security@fedramp.gov.",
+          "citations": [
+            "AFC-FRP-UFS-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-FRP-UFS only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Use FedRAMP_Security Email in Emergencies were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AFC-FRP-UFS-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "afc-frp-vre-a433a78d92da923c2cca5c2262678dfd6d3782c239243873555ce8be56758e4f": {
+      "content_hash": "c536d553331bb1516e9ca3e0e6792826375b7aeb7618f8ffbbff4b1a6f5a79eb",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a433a78d92da923c2cca5c2262678dfd6d3782c239243873555ce8be56758e4f: AFC-FRP-VRE: not_applicable — Different affected audience. Source force: MUST (published rule; resolver stopped before force selection). The source names FedRAMP, an agency, assessor or advisor rather than the provider selected by this inventory. This is an actor boundary, not a waiver for that named actor.",
+          "citations": [
+            "AFC-metadata",
+            "AFC-FRP-VRE-source",
+            "AFC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The sender duty includes SPF, DKIM and DMARC configuration for either official domain; display-name FedRAMP/F20B labels are expressly unreliable. Provider trust handling is separate from FedRAMP sender configuration. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "AFC-FRP-VRE-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Verified Emails. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "AFC-FRP-VRE-source",
+            "AFC-page"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Verified Emails statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AFC-FRP-VRE-source",
+            "AFC-page",
+            "AFC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AFC metadata gives January 5, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST send messages to cloud service providers using an official @fedramp.gov or @gsa.gov email address with properly configured Sender Policy Framework (SPF), DomainKeys Identified Mail (DKIM), and Domain-based Message Authentication Reporting and Conformance (DMARC) email authentication. Source note: Anyone at GSA can send email from @fedramp.gov or @gsa.gov - FedRAMP team members will typically have \"FedRAMP\" or \"F20B\" in their name but this is not universal or enforceable. The nature of government enterprise IT services makes it difficult for FedRAMP to isolate FedRAMP-specific team members with enforceable identifiers.",
+          "citations": [
+            "AFC-FRP-VRE-source",
+            "AFC-page",
+            "AFC-metadata",
+            "AFC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AFC-FRP-VRE only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Verified Emails were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AFC-FRP-VRE-source",
+              "AFC-page",
+              "AFC-definitions"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

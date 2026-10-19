@@ -20,6 +20,7 @@ import (
 	"github.com/jaxxstorm/fed/internal/integrations"
 	"github.com/jaxxstorm/fed/internal/logging"
 	"github.com/jaxxstorm/fed/internal/observation"
+	"github.com/jaxxstorm/fed/internal/readiness"
 	sdk "github.com/modelcontextprotocol/go-sdk/mcp"
 	"github.com/rs/zerolog"
 )
@@ -96,6 +97,12 @@ type Page struct {
 
 func ErrorCode(err error) string {
 	switch {
+	case errors.Is(err, readiness.ErrConflict):
+		return "revision_conflict"
+	case errors.Is(err, readiness.ErrReviewRequired):
+		return "guidance_review_required"
+	case errors.Is(err, readiness.ErrInvalid):
+		return "invalid_guidance"
 	case errors.Is(err, assessment.ErrViewChanged):
 		return "view_changed"
 	case errors.Is(err, observation.ErrScope):
@@ -118,7 +125,7 @@ func ErrorCode(err error) string {
 		return "connection_credentials_unavailable"
 	case errors.Is(err, assessment.ErrConflict):
 		return "revision_conflict"
-	case errors.Is(err, assessment.ErrNotFound):
+	case errors.Is(err, assessment.ErrNotFound), errors.Is(err, readiness.ErrNotFound):
 		return "not_found"
 	case errors.Is(err, assessment.ErrInvalid):
 		return "invalid_input"

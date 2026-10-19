@@ -1,0 +1,1874 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "ksi-svc-acm-142d946f3de8": {
+      "content_hash": "4874ab48eac4b54b1977a736cf4ff4f32c94033f8704fc7b891a7a01cf0e8768",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 142d946f3de8e48b84c7ac315441aeb6ce978ebc036cfb4a8d94bcca8b4b394f retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Automated configuration management and persistent drift review are separately asserted. Drift is deviation from intended AND assessed state, not merely a difference from arbitrary desired code. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Drift means deviations from intended and assessed state, including configuration, software, privilege, process and availability changes. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "resources",
+            "machine",
+            "drift"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. A defined intended/assessed baseline, automation and a drift-review method are necessary, beyond locating snapshots. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Execution/coverage evidence proves management; baseline comparisons and dated conclusions prove review. Export and report routes both distinguish desired configuration from actual state. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe automatic remediation of every drift item; the separate CNA intended-state indicator must not be silently imported here.",
+            "citations": [
+              "KSI-SVC-ACM",
+              "KSI-SVC-ACM-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-ACM",
+              "KSI-SVC-ACM-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-acm-8fc7de9f96a3": {
+      "content_hash": "1fe2ac0967e04bb6f89a6c8730131891f2c93d753ff53738d3e7a7b58f5a8618",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 8fc7de9f96a36a2b046283431243f9295ee2c7e1bfa0f38a766a593b62178e2a with FRC-CLA-MFR's enumerated KSI list: KSI-SVC-ACM is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Automated configuration management and persistent drift review are separately asserted. Drift is deviation from intended AND assessed state, not merely a difference from arbitrary desired code. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Drift means deviations from intended and assessed state, including configuration, software, privilege, process and availability changes. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "resources",
+            "machine",
+            "drift"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. A defined intended/assessed baseline, automation and a drift-review method are necessary, beyond locating snapshots. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Execution/coverage evidence proves management; baseline comparisons and dated conclusions prove review. Export and report routes both distinguish desired configuration from actual state. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe automatic remediation of every drift item; the separate CNA intended-state indicator must not be silently imported here.",
+            "citations": [
+              "KSI-SVC-ACM",
+              "KSI-SVC-ACM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-acm-dec43a21be97": {
+      "content_hash": "bd997ab59fa89131b52dcd941d5b32d71d3bfbb5dd66c9fa29eadcb306177bae",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant dec43a21be97a50eae65628e67e08770ae963fa00e7aa8f6baf9c975e4d563c1 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Automated configuration management and persistent drift review are separately asserted. Drift is deviation from intended AND assessed state, not merely a difference from arbitrary desired code. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Drift means deviations from intended and assessed state, including configuration, software, privilege, process and availability changes.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "resources",
+            "machine",
+            "drift"
+          ]
+        },
+        "prerequisites": {
+          "finding": "A defined intended/assessed baseline, automation and a drift-review method are necessary, beyond locating snapshots. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Execution/coverage evidence proves management; baseline comparisons and dated conclusions prove review. Export and report routes both distinguish desired configuration from actual state. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-SVC-ACM",
+            "KSI-SVC-ACM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe automatic remediation of every drift item; the separate CNA intended-state indicator must not be silently imported here.",
+            "citations": [
+              "KSI-SVC-ACM",
+              "KSI-SVC-ACM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-asm-237f8511b123": {
+      "content_hash": "a4c246f91ed2040ad0119ed9e05aa5a8907d113ec97fffb31b1608eb35f122bc",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 237f8511b1234ed57274a905d2b7da0b64c911c5fa7e98e056951cd69854dfb3 with FRC-CLA-MFR's enumerated KSI list: KSI-SVC-ASM is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Management, protection and regular rotation must all be automated and persistently reviewed for keys, certificates and other secrets. The review split management from protection so rotation alone cannot hide either duty.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Lifecycle/protection policies and documented per-activity rotation intervals are needed before automation and review can be assessed. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Lifecycle runs, protection-enforcement observations and dated rotation/version transitions support three distinct assertions. Metadata and attributable reports suffice without exposing plaintext secrets; expiration dates or vault subscriptions do not establish operation. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Secret rotation separately follows FRD-RGL: consistent, predictable repeated set intervals under a documented plan, variable by activity. This is distinct from persistent review. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "persistent",
+            "regular"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No numeric rotation period or universal secret technology is supplied. Activity-specific intervals require explanation; persistent review is not interchangeable with regular rotation.",
+            "citations": [
+              "KSI-SVC-ASM",
+              "KSI-SVC-ASM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-asm-8c4c818cccba": {
+      "content_hash": "b3a111e0423ca46f175a3180bd58c2bcac18f3f5bd418390dfdb779c22460f2f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 8c4c818cccba23a5dd8ad16942f186bca3e1e1952e175542cb18cff64ce6d1ab retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Management, protection and regular rotation must all be automated and persistently reviewed for keys, certificates and other secrets. The review split management from protection so rotation alone cannot hide either duty.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Lifecycle/protection policies and documented per-activity rotation intervals are needed before automation and review can be assessed. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Lifecycle runs, protection-enforcement observations and dated rotation/version transitions support three distinct assertions. Metadata and attributable reports suffice without exposing plaintext secrets; expiration dates or vault subscriptions do not establish operation. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Secret rotation separately follows FRD-RGL: consistent, predictable repeated set intervals under a documented plan, variable by activity. This is distinct from persistent review. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "persistent",
+            "regular"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No numeric rotation period or universal secret technology is supplied. Activity-specific intervals require explanation; persistent review is not interchangeable with regular rotation.",
+            "citations": [
+              "KSI-SVC-ASM",
+              "KSI-SVC-ASM-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-ASM",
+              "KSI-SVC-ASM-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-asm-d192d9967e25": {
+      "content_hash": "035e7151330bd6096dac44b6bd90f5bd95345ef97a737750f8737b1442144d08",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d192d9967e2583377c68a1cdfea3bd9933d3e0d959221032c91b9c71c99be6b9 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Management, protection and regular rotation must all be automated and persistently reviewed for keys, certificates and other secrets. The review split management from protection so rotation alone cannot hide either duty.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Lifecycle/protection policies and documented per-activity rotation intervals are needed before automation and review can be assessed. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Lifecycle runs, protection-enforcement observations and dated rotation/version transitions support three distinct assertions. Metadata and attributable reports suffice without exposing plaintext secrets; expiration dates or vault subscriptions do not establish operation. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Secret rotation separately follows FRD-RGL: consistent, predictable repeated set intervals under a documented plan, variable by activity. This is distinct from persistent review.",
+          "citations": [
+            "KSI-SVC-ASM",
+            "KSI-SVC-ASM-page",
+            "persistent",
+            "regular"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No numeric rotation period or universal secret technology is supplied. Activity-specific intervals require explanation; persistent review is not interchangeable with regular rotation.",
+            "citations": [
+              "KSI-SVC-ASM",
+              "KSI-SVC-ASM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-eis-26218be3b597": {
+      "content_hash": "056d5632c2504bd8e236e17679d61e0e4d9652e43239f116c0856e14df546c53",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 26218be3b59719dcf7bf5959fe9e5adf330c09fc3eb946bbcbb18ec4fc0c5276 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent opportunity evaluation and persistent implementation of improvements are distinct outcomes. Unqualified information resources include managerial and personnel resources, not only machines. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "resources"
+          ]
+        },
+        "prerequisites": {
+          "finding": "An evaluation method and a process able to implement selected improvements are needed beyond a backlog. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Dated evaluations support the first assertion; resulting changed practices/resources linked to opportunities support the second. Reports of completed outcomes can replace exports, but a roadmap or ticket status alone cannot. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not state a numeric improvement quota or require every identified idea to be implemented immediately; selection and unresolved opportunities require explanation.",
+            "citations": [
+              "KSI-SVC-EIS",
+              "KSI-SVC-EIS-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-eis-85fba83aa7e1": {
+      "content_hash": "ca0561f8671ce04c657fccab59681ab712d94e4c4dcee451193f3970e23d649d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 85fba83aa7e121b45b3c679f89af3cbb2701586ea77eb86d9aed8053174d8564 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent opportunity evaluation and persistent implementation of improvements are distinct outcomes. Unqualified information resources include managerial and personnel resources, not only machines. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "resources"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. An evaluation method and a process able to implement selected improvements are needed beyond a backlog. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Dated evaluations support the first assertion; resulting changed practices/resources linked to opportunities support the second. Reports of completed outcomes can replace exports, but a roadmap or ticket status alone cannot. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not state a numeric improvement quota or require every identified idea to be implemented immediately; selection and unresolved opportunities require explanation.",
+            "citations": [
+              "KSI-SVC-EIS",
+              "KSI-SVC-EIS-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-EIS",
+              "KSI-SVC-EIS-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-eis-e1753ee6b4b3": {
+      "content_hash": "097cad24afd26fc60e553953c791811bcc3c869c24d8f731684fce506292e170",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant e1753ee6b4b3f85723dea019ee514a9fa81b57fa99e8ce8651ca6827f60bcdee with FRC-CLA-MFR's enumerated KSI list: KSI-SVC-EIS is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent opportunity evaluation and persistent implementation of improvements are distinct outcomes. Unqualified information resources include managerial and personnel resources, not only machines. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "resources"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. An evaluation method and a process able to implement selected improvements are needed beyond a backlog. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Dated evaluations support the first assertion; resulting changed practices/resources linked to opportunities support the second. Reports of completed outcomes can replace exports, but a roadmap or ticket status alone cannot. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-EIS",
+            "KSI-SVC-EIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not state a numeric improvement quota or require every identified idea to be implemented immediately; selection and unresolved opportunities require explanation.",
+            "citations": [
+              "KSI-SVC-EIS",
+              "KSI-SVC-EIS-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-prr-3935cf441a8d": {
+      "content_hash": "3239d131f86e87c9042e8e9717e0becc5a3a67d91f2527bdf41a7297cf98a2ac",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 3935cf441a8daba9d8a6a55373487c00fdf6ede0c0c93126d5a2ffb5aa839adc binds the explicit Class B Optional statement in Rules JSON, matching the page's B tab. The elective workflow does not become a mandatory certification gate. Missing D text is represented separately as unresolved, not as a Class-D optional variant.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "KSI-SVC-PRR-optional",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Post-change persistent review covers plans, procedures and actual resource state separately, with limiting/removing residuals likely to harm federal customer-data confidentiality, integrity or availability. The harmful-residual condition is retained rather than treating every remnant as prohibited. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Likely is a contextual reasonable probability; the plan does not invent a numerical probability threshold. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "KSI-SVC-PRR-optional",
+            "resources",
+            "likely",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "A post-change method, contextual risk criteria and limiting/removal mechanisms are needed; a cleanup checklist alone cannot establish the outcome. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "KSI-SVC-PRR-optional",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Changed plan/procedure versions, observed resource states and post-change findings support separate subject reviews; attributable limiting/removal outcomes support residual treatment. Reports must retain customer-data and likelihood analysis, not merely deletion logs. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "KSI-SVC-PRR-optional",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Reviews follow completed changes; pre-change approval alone cannot establish post-change review.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "KSI-SVC-PRR-optional",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not enumerate harmful residuals or impose a fixed post-change deadline. Whether a residual likely causes harm is contextual; provider metadata is not automatically federal customer data.",
+            "citations": [
+              "KSI-SVC-PRR",
+              "KSI-SVC-PRR-page",
+              "KSI-SVC-PRR-optional"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-prr-59e4239f0127": {
+      "content_hash": "8562e471ce18f37de238e58aac4ed71f13717a324532926d9fd9e98d58235556",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 59e4239f012722147f84cc3980bf288ef565353ffa9a956ad4370ae02fe3747f retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Post-change persistent review covers plans, procedures and actual resource state separately, with limiting/removing residuals likely to harm federal customer-data confidentiality, integrity or availability. The harmful-residual condition is retained rather than treating every remnant as prohibited. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Likely is a contextual reasonable probability; the plan does not invent a numerical probability threshold. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "resources",
+            "likely",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. A post-change method, contextual risk criteria and limiting/removal mechanisms are needed; a cleanup checklist alone cannot establish the outcome. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Changed plan/procedure versions, observed resource states and post-change findings support separate subject reviews; attributable limiting/removal outcomes support residual treatment. Reports must retain customer-data and likelihood analysis, not merely deletion logs. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Reviews follow completed changes; pre-change approval alone cannot establish post-change review. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not enumerate harmful residuals or impose a fixed post-change deadline. Whether a residual likely causes harm is contextual; provider metadata is not automatically federal customer data.",
+            "citations": [
+              "KSI-SVC-PRR",
+              "KSI-SVC-PRR-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-PRR",
+              "KSI-SVC-PRR-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-prr-7909f7a2298b": {
+      "content_hash": "77b920a0c58513dede82bb64ab71a6b8ec8150469620c9280b9b81ffbe767c30",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7909f7a2298b18b3dc46943b002bbb3e6893d867dc7a7317d18a693dd9752cd2 preserves the required outcome selected from pinned source/profile metadata. For this class-varying indicator it is the explicit Class C statement; neither B optionality nor missing D text overrides it.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Post-change persistent review covers plans, procedures and actual resource state separately, with limiting/removing residuals likely to harm federal customer-data confidentiality, integrity or availability. The harmful-residual condition is retained rather than treating every remnant as prohibited. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Likely is a contextual reasonable probability; the plan does not invent a numerical probability threshold. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "resources",
+            "likely",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "A post-change method, contextual risk criteria and limiting/removal mechanisms are needed; a cleanup checklist alone cannot establish the outcome. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Changed plan/procedure versions, observed resource states and post-change findings support separate subject reviews; attributable limiting/removal outcomes support residual treatment. Reports must retain customer-data and likelihood analysis, not merely deletion logs. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Reviews follow completed changes; pre-change approval alone cannot establish post-change review.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not enumerate harmful residuals or impose a fixed post-change deadline. Whether a residual likely causes harm is contextual; provider metadata is not automatically federal customer data.",
+            "citations": [
+              "KSI-SVC-PRR",
+              "KSI-SVC-PRR-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-prr-7ac540d79d3c": {
+      "content_hash": "c4a2424503673069171bf15fe90c84adb95039e91c4752762f6bd4fb7935a54d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7ac540d79d3c1ed923486c8534f4c29cf0a745d224bc4faffff4f5170bbff5d8 retains the unresolved selected-class result. Rules JSON and the matching page provide B optional and C unprefixed statements for KSI-SVC-PRR, but no D statement. The pinned resolver does not inherit B or C into D. The decision-only plan correctly imposes no assertions.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Post-change persistent review covers plans, procedures and actual resource state separately, with limiting/removing residuals likely to harm federal customer-data confidentiality, integrity or availability. The harmful-residual condition is retained rather than treating every remnant as prohibited. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Likely is a contextual reasonable probability; the plan does not invent a numerical probability threshold. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "resources",
+            "likely",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. A post-change method, contextual risk criteria and limiting/removal mechanisms are needed; a cleanup checklist alone cannot establish the outcome. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Changed plan/procedure versions, observed resource states and post-change findings support separate subject reviews; attributable limiting/removal outcomes support residual treatment. Reports must retain customer-data and likelihood analysis, not merely deletion logs. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Reviews follow completed changes; pre-change approval alone cannot establish post-change review. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not enumerate harmful residuals or impose a fixed post-change deadline. Whether a residual likely causes harm is contextual; provider metadata is not automatically federal customer data.",
+            "citations": [
+              "KSI-SVC-PRR",
+              "KSI-SVC-PRR-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-PRR",
+              "KSI-SVC-PRR-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-prr-ae98f1dd4498": {
+      "content_hash": "76c2c6556e16f7ee6df984541ee50552942fec0712a804ae6e298d596bb77bcf",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant ae98f1dd4498846a7d468ea922c3fdff929ee9aa49524a203b149a746b1f3ee1 with FRC-CLA-MFR's enumerated KSI list: KSI-SVC-PRR is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Post-change persistent review covers plans, procedures and actual resource state separately, with limiting/removing residuals likely to harm federal customer-data confidentiality, integrity or availability. The harmful-residual condition is retained rather than treating every remnant as prohibited. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Likely is a contextual reasonable probability; the plan does not invent a numerical probability threshold. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "resources",
+            "likely",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. A post-change method, contextual risk criteria and limiting/removal mechanisms are needed; a cleanup checklist alone cannot establish the outcome. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Changed plan/procedure versions, observed resource states and post-change findings support separate subject reviews; attributable limiting/removal outcomes support residual treatment. Reports must retain customer-data and likelihood analysis, not merely deletion logs. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Reviews follow completed changes; pre-change approval alone cannot establish post-change review. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-PRR",
+            "KSI-SVC-PRR-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not enumerate harmful residuals or impose a fixed post-change deadline. Whether a residual likely causes harm is contextual; provider metadata is not automatically federal customer data.",
+            "citations": [
+              "KSI-SVC-PRR",
+              "KSI-SVC-PRR-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-rud-5821fefd3113": {
+      "content_hash": "930e36cfb78a8d5ef8d15c10045c2b08f0a5cd7755380fe7a432d99f632f35ad",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 5821fefd3113edb62c8ca6f5191fc8f2317a52a22f72e4cbeb108afacb417217 retains the unresolved selected-class result. Rules JSON and the matching page provide B optional and C unprefixed statements for KSI-SVC-RUD, but no D statement. The pinned resolver does not inherit B or C into D. The decision-only plan correctly imposes no assertions.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Agency-requested removal follows agreements, is prompt and includes backups if appropriate. Spills and changed usage are typical examples, not exclusive triggering events; backup removal is conditional rather than universally mandatory. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Request authority, agreement version, data-copy mapping and removal/verification capability are necessary before a removal claim is assessable. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Request-linked removal/verification timelines support primary removal and promptness; backup mapping and appropriateness decisions support the backup assertion. Closed tickets and unexplained backup exclusion are insufficient; reports need original request/action attribution. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "Agency-requested removal is prompt: FRD-PRO means without unnecessary delay. Request, action and verification chronology and agreement commitments support a contextual delay assessment, not a universal numeric deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "prompt"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Promptness has no universal hour/day deadline. Backup appropriateness and agreement-specific commitments remain contextual, and a supported no-request period does not prove an executed removal.",
+            "citations": [
+              "KSI-SVC-RUD",
+              "KSI-SVC-RUD-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-RUD",
+              "KSI-SVC-RUD-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-rud-737f46ac0adf": {
+      "content_hash": "6439979beafbe4320e38de0412946ea450095531ad730de0730f09f9cdf3b88a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 737f46ac0adfaf4ef5cadd504d587a5477c5b35b075e9d4d726c0c1e0947f938 binds the explicit Class B Optional statement in Rules JSON, matching the page's B tab. The elective workflow does not become a mandatory certification gate. Missing D text is represented separately as unresolved, not as a Class-D optional variant.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "KSI-SVC-RUD-optional",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Agency-requested removal follows agreements, is prompt and includes backups if appropriate. Spills and changed usage are typical examples, not exclusive triggering events; backup removal is conditional rather than universally mandatory. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "KSI-SVC-RUD-optional",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Request authority, agreement version, data-copy mapping and removal/verification capability are necessary before a removal claim is assessable. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "KSI-SVC-RUD-optional",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Request-linked removal/verification timelines support primary removal and promptness; backup mapping and appropriateness decisions support the backup assertion. Closed tickets and unexplained backup exclusion are insufficient; reports need original request/action attribution. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "KSI-SVC-RUD-optional",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "Agency-requested removal is prompt: FRD-PRO means without unnecessary delay. Request, action and verification chronology and agreement commitments support a contextual delay assessment, not a universal numeric deadline.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "KSI-SVC-RUD-optional",
+            "prompt"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Promptness has no universal hour/day deadline. Backup appropriateness and agreement-specific commitments remain contextual, and a supported no-request period does not prove an executed removal.",
+            "citations": [
+              "KSI-SVC-RUD",
+              "KSI-SVC-RUD-page",
+              "KSI-SVC-RUD-optional"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-rud-77bc1ebd3798": {
+      "content_hash": "ff3dcd55e8570938abeb8c266819f199c807fdd5026f236571b06faf4c196cc7",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 77bc1ebd3798c98b84657c6b5317ab73fd147493428b27578a497de509f8d617 with FRC-CLA-MFR's enumerated KSI list: KSI-SVC-RUD is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Agency-requested removal follows agreements, is prompt and includes backups if appropriate. Spills and changed usage are typical examples, not exclusive triggering events; backup removal is conditional rather than universally mandatory. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Request authority, agreement version, data-copy mapping and removal/verification capability are necessary before a removal claim is assessable. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Request-linked removal/verification timelines support primary removal and promptness; backup mapping and appropriateness decisions support the backup assertion. Closed tickets and unexplained backup exclusion are insufficient; reports need original request/action attribution. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "Agency-requested removal is prompt: FRD-PRO means without unnecessary delay. Request, action and verification chronology and agreement commitments support a contextual delay assessment, not a universal numeric deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "prompt"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Promptness has no universal hour/day deadline. Backup appropriateness and agreement-specific commitments remain contextual, and a supported no-request period does not prove an executed removal.",
+            "citations": [
+              "KSI-SVC-RUD",
+              "KSI-SVC-RUD-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-rud-afbb2c68b1d3": {
+      "content_hash": "d9d673ab85f6f6e337be2a17025fe6913c60a1d7e45beb073fc91b3804952a0b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant afbb2c68b1d32b9db9a0767c464f3b3bf41a97d4235f793863e51a33e8dd7410 preserves the required outcome selected from pinned source/profile metadata. For this class-varying indicator it is the explicit Class C statement; neither B optionality nor missing D text overrides it.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Agency-requested removal follows agreements, is prompt and includes backups if appropriate. Spills and changed usage are typical examples, not exclusive triggering events; backup removal is conditional rather than universally mandatory. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Request authority, agreement version, data-copy mapping and removal/verification capability are necessary before a removal claim is assessable. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Request-linked removal/verification timelines support primary removal and promptness; backup mapping and appropriateness decisions support the backup assertion. Closed tickets and unexplained backup exclusion are insufficient; reports need original request/action attribution. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "Agency-requested removal is prompt: FRD-PRO means without unnecessary delay. Request, action and verification chronology and agreement commitments support a contextual delay assessment, not a universal numeric deadline.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "prompt"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Promptness has no universal hour/day deadline. Backup appropriateness and agreement-specific commitments remain contextual, and a supported no-request period does not prove an executed removal.",
+            "citations": [
+              "KSI-SVC-RUD",
+              "KSI-SVC-RUD-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-rud-e93eb8425f5c": {
+      "content_hash": "c11bb44d1941c6ee0cb3a7888177d17ff6169ab03e7c625b2fb2cb0b153f2752",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e93eb8425f5cadebc5f08954fd1653a4e1eb06ccdf87a45b7559d06e217bfe21 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Agency-requested removal follows agreements, is prompt and includes backups if appropriate. Spills and changed usage are typical examples, not exclusive triggering events; backup removal is conditional rather than universally mandatory. Federal Customer Data is agency-supplied electronic content and excludes provider-generated account information, telemetry and similar metadata by default; agreements may affect the concrete boundary. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "customer-data"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Request authority, agreement version, data-copy mapping and removal/verification capability are necessary before a removal claim is assessable. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Request-linked removal/verification timelines support primary removal and promptness; backup mapping and appropriateness decisions support the backup assertion. Closed tickets and unexplained backup exclusion are insufficient; reports need original request/action attribution. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "Agency-requested removal is prompt: FRD-PRO means without unnecessary delay. Request, action and verification chronology and agreement commitments support a contextual delay assessment, not a universal numeric deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-RUD",
+            "KSI-SVC-RUD-page",
+            "prompt"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Promptness has no universal hour/day deadline. Backup appropriateness and agreement-specific commitments remain contextual, and a supported no-request period does not prove an executed removal.",
+            "citations": [
+              "KSI-SVC-RUD",
+              "KSI-SVC-RUD-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-RUD",
+              "KSI-SVC-RUD-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-sin-03756d248e61": {
+      "content_hash": "64ccc6925516bca41948fd8bd4d77cf477413649f2ad64d873bb28fb6863d26e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 03756d248e61fd5ba6810bf34311c8bf72a97903ff55657a951b7b22ab53775f retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Information must be protected against unwanted access and modification, using encryption OR other suitable protection. Separate assertions preserve both threats without mandating encryption as the only implementation.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. An information-flow/protection design must cover read and write paths; enabling storage encryption is not the complete prerequisite. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Effective read/key-access protection and observed authorization support access protection; write/integrity controls and validation support modification protection. Equivalent attributable examinations are acceptable; encryption at rest alone does not establish write protection. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify algorithms or one permitted alternative mechanism. Responsibility boundaries and otherwise-secured paths require a reasoned demonstration.",
+            "citations": [
+              "KSI-SVC-SIN",
+              "KSI-SVC-SIN-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-SIN",
+              "KSI-SVC-SIN-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-sin-5aeb64437363": {
+      "content_hash": "c6c1180757e0df3af9d0b88970a43ab5e89af788b7c081129d6de33660ab5046",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 5aeb644373639380548ebab69a7fe48d5473f093ccb2638a0ff6dec1dfcfd379 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Information must be protected against unwanted access and modification, using encryption OR other suitable protection. Separate assertions preserve both threats without mandating encryption as the only implementation.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "An information-flow/protection design must cover read and write paths; enabling storage encryption is not the complete prerequisite. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Effective read/key-access protection and observed authorization support access protection; write/integrity controls and validation support modification protection. Equivalent attributable examinations are acceptable; encryption at rest alone does not establish write protection. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify algorithms or one permitted alternative mechanism. Responsibility boundaries and otherwise-secured paths require a reasoned demonstration.",
+            "citations": [
+              "KSI-SVC-SIN",
+              "KSI-SVC-SIN-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-sin-86eec1df67d1": {
+      "content_hash": "495e9370335b7d2e3e33a12d1e09636d0cc93a0ff163ecc0ec7d331e7501c527",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 86eec1df67d1cacbfa192119f5ce95f9fce5eb759e5bed8e5178b68f1d067acf preserves required inclusion of KSI-SVC-SIN through FRC-CLA-MFR. Its Class A inclusion is distinct from ordinary class/profile resolution; the required outcome retains its full subject and conditions.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Information must be protected against unwanted access and modification, using encryption OR other suitable protection. Separate assertions preserve both threats without mandating encryption as the only implementation.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "An information-flow/protection design must cover read and write paths; enabling storage encryption is not the complete prerequisite. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Effective read/key-access protection and observed authorization support access protection; write/integrity controls and validation support modification protection. Equivalent attributable examinations are acceptable; encryption at rest alone does not establish write protection. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-SVC-SIN",
+            "KSI-SVC-SIN-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify algorithms or one permitted alternative mechanism. Responsibility boundaries and otherwise-secured paths require a reasoned demonstration.",
+            "citations": [
+              "KSI-SVC-SIN",
+              "KSI-SVC-SIN-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-vcm-1b7ad204f27c": {
+      "content_hash": "006a4df1288fea8798033326a97178fb694e6f621b4e2567cc9f04dfa5040e72",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1b7ad204f27c8e8139ec889e7631b7f105ad436d2d926b5f0242611bfd87eacf retains the unresolved selected-class result. Rules JSON and the matching page provide B optional and C unprefixed statements for KSI-SVC-VCM, but no D statement. The pinned resolver does not inherit B or C into D. The decision-only plan correctly imposes no assertions.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Authenticity and integrity of machine-to-machine communications require persistent automated validation as separate facts. Configured TLS cannot by itself prove either validation outcome. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "resources",
+            "machine",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Trust identities/anchors and integrity criteria plus automated verification mechanisms are needed before results can be evaluated. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Peer/message identity results and integrity-verification results support distinct assertions with path coverage. Retained protocol observations may substitute for direct integration while preserving automation and objective outcome evidence. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe protocol or universal numeric cadence; trust bypasses and uncovered communication classes cannot be treated as validated.",
+            "citations": [
+              "KSI-SVC-VCM",
+              "KSI-SVC-VCM-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-VCM",
+              "KSI-SVC-VCM-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-vcm-1bbc10c741cd": {
+      "content_hash": "300da6b521109e7e5b1d31da1b69536c992acb89026c22a04e1a323247ec01fb",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 1bbc10c741cd3fcde71ee8db263faf29d0dc033e98ba76bfd8493ea0ee72b2a0 with FRC-CLA-MFR's enumerated KSI list: KSI-SVC-VCM is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Authenticity and integrity of machine-to-machine communications require persistent automated validation as separate facts. Configured TLS cannot by itself prove either validation outcome. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "resources",
+            "machine",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Trust identities/anchors and integrity criteria plus automated verification mechanisms are needed before results can be evaluated. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Peer/message identity results and integrity-verification results support distinct assertions with path coverage. Retained protocol observations may substitute for direct integration while preserving automation and objective outcome evidence. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe protocol or universal numeric cadence; trust bypasses and uncovered communication classes cannot be treated as validated.",
+            "citations": [
+              "KSI-SVC-VCM",
+              "KSI-SVC-VCM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-vcm-7b749ddd6f0f": {
+      "content_hash": "a0412ff962bec7d77708c82eb24acd9f86f2738212941d5937b3a901ca2c8b76",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7b749ddd6f0fc5f6f6775540c1f1133d73695c305f063d9a79e151a6f8097e77 preserves the required outcome selected from pinned source/profile metadata. For this class-varying indicator it is the explicit Class C statement; neither B optionality nor missing D text overrides it.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Authenticity and integrity of machine-to-machine communications require persistent automated validation as separate facts. Configured TLS cannot by itself prove either validation outcome. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "resources",
+            "machine",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Trust identities/anchors and integrity criteria plus automated verification mechanisms are needed before results can be evaluated. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Peer/message identity results and integrity-verification results support distinct assertions with path coverage. Retained protocol observations may substitute for direct integration while preserving automation and objective outcome evidence. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe protocol or universal numeric cadence; trust bypasses and uncovered communication classes cannot be treated as validated.",
+            "citations": [
+              "KSI-SVC-VCM",
+              "KSI-SVC-VCM-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-vcm-a63a018159e8": {
+      "content_hash": "f3dedc62b9c6c022d8d23c734048957d91107597a3b12966d2725454dac11478",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a63a018159e8e99a179973ec54db66049df71722508abe646af9a2eacf8e4d8f retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Authenticity and integrity of machine-to-machine communications require persistent automated validation as separate facts. Configured TLS cannot by itself prove either validation outcome. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "resources",
+            "machine",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Trust identities/anchors and integrity criteria plus automated verification mechanisms are needed before results can be evaluated. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Peer/message identity results and integrity-verification results support distinct assertions with path coverage. Retained protocol observations may substitute for direct integration while preserving automation and objective outcome evidence. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe protocol or universal numeric cadence; trust bypasses and uncovered communication classes cannot be treated as validated.",
+            "citations": [
+              "KSI-SVC-VCM",
+              "KSI-SVC-VCM-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-VCM",
+              "KSI-SVC-VCM-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-vcm-cca0236fac42": {
+      "content_hash": "ded725a313234e22bb5aee68c8fe01ffa2ab525aca4d6f0c260bd58467d094e0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant cca0236fac42445e87870ccf4a39149a8d6a7d0c6d330bb454a5539d05e4b40b binds the explicit Class B Optional statement in Rules JSON, matching the page's B tab. The elective workflow does not become a mandatory certification gate. Missing D text is represented separately as unresolved, not as a Class-D optional variant.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "KSI-SVC-VCM-optional",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Authenticity and integrity of machine-to-machine communications require persistent automated validation as separate facts. Configured TLS cannot by itself prove either validation outcome. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "KSI-SVC-VCM-optional",
+            "resources",
+            "machine",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Trust identities/anchors and integrity criteria plus automated verification mechanisms are needed before results can be evaluated. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "KSI-SVC-VCM-optional",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Peer/message identity results and integrity-verification results support distinct assertions with path coverage. Retained protocol observations may substitute for direct integration while preserving automation and objective outcome evidence. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "KSI-SVC-VCM-optional",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-SVC-VCM",
+            "KSI-SVC-VCM-page",
+            "KSI-SVC-VCM-optional",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not prescribe protocol or universal numeric cadence; trust bypasses and uncovered communication classes cannot be treated as validated.",
+            "citations": [
+              "KSI-SVC-VCM",
+              "KSI-SVC-VCM-page",
+              "KSI-SVC-VCM-optional"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-vri-07ba8e82c1bf": {
+      "content_hash": "ba1453b1a7b4f67367e329ccab1cf42b4a52ede9bcd751fcabe951812a3691b1",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 07ba8e82c1bfda942bef3c8ec1b115eb91df7654f202e86ce2f8509da8d2894d with FRC-CLA-MFR's enumerated KSI list: KSI-SVC-VRI is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The single outcome is cryptographic validation of actual machine-resource integrity. The method must establish integrity rather than merely compute an unexplained checksum. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "resources",
+            "machine",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. A trustworthy reference or trust anchor, verifier and resource-version mapping are necessary to make cryptographic comparison meaningful. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Verification runs/results tied to used or deployed resource revisions support acceptance; retained verification reports are alternatives to exports. Repository signatures alone cannot prove the integrity of different deployed bytes. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not select cryptographic algorithms or a fixed verification interval. Trustworthiness and representativeness of references must be justified for the resource classes examined.",
+            "citations": [
+              "KSI-SVC-VRI",
+              "KSI-SVC-VRI-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-vri-08e76ca43cad": {
+      "content_hash": "52baa54a88051e93c4ccabd1a117dcb6ccf5f4abca59d7d85bd15ee203a7b236",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 08e76ca43cad3301aeaea8d4b5ebb1dc8b199d68eced86e88f5c2c98af21a20f preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The single outcome is cryptographic validation of actual machine-resource integrity. The method must establish integrity rather than merely compute an unexplained checksum. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "resources",
+            "machine",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "A trustworthy reference or trust anchor, verifier and resource-version mapping are necessary to make cryptographic comparison meaningful. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Verification runs/results tied to used or deployed resource revisions support acceptance; retained verification reports are alternatives to exports. Repository signatures alone cannot prove the integrity of different deployed bytes. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not select cryptographic algorithms or a fixed verification interval. Trustworthiness and representativeness of references must be justified for the resource classes examined.",
+            "citations": [
+              "KSI-SVC-VRI",
+              "KSI-SVC-VRI-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-svc-vri-243619805317": {
+      "content_hash": "62794c86d9b9a9697baaf9c884b36fb5a4e1a03c8c554c8863106316217c59b1",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 243619805317ae0968664ecae54246334486ad43896f797238493b3ee3430dea retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The single outcome is cryptographic validation of actual machine-resource integrity. The method must establish integrity rather than merely compute an unexplained checksum. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "resources",
+            "machine",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. A trustworthy reference or trust anchor, verifier and resource-version mapping are necessary to make cryptographic comparison meaningful. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Verification runs/results tied to used or deployed resource revisions support acceptance; retained verification reports are alternatives to exports. Repository signatures alone cannot prove the integrity of different deployed bytes. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SVC-VRI",
+            "KSI-SVC-VRI-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not select cryptographic algorithms or a fixed verification interval. Trustworthiness and representativeness of references must be justified for the resource classes examined.",
+            "citations": [
+              "KSI-SVC-VRI",
+              "KSI-SVC-VRI-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SVC-VRI",
+              "KSI-SVC-VRI-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

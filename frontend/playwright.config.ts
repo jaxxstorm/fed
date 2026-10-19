@@ -1,3 +1,4 @@
+import process from "node:process";
 import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
@@ -8,8 +9,14 @@ export default defineConfig({
     "connection-handoff.spec.ts",
     "provider-setup.spec.ts",
     "organization.spec.ts",
+    "guidance.spec.ts",
+    "readiness.spec.ts",
+    "readiness-journeys.spec.ts",
   ],
-  use: { baseURL: "http://127.0.0.1:5173" },
+  use: {
+    baseURL: "http://127.0.0.1:5173",
+    channel: process.env.PLAYWRIGHT_CHANNEL,
+  },
   webServer: {
     command: "bun run dev",
     url: "http://127.0.0.1:5173",

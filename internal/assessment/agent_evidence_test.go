@@ -242,6 +242,27 @@ func TestReusableDocumentaryEvidence(t *testing.T) {
 			t.Fatal("relevant finding invalidation", tc, status.Work, e)
 		}
 	}
+	instructions, err := s.RuleInstructions(ctx, a, service, "KSI-SVC-SIN")
+	if err != nil {
+		t.Fatal(err)
+	}
+	coverage := instructions.EvidenceCoverage
+	if coverage == nil || len(coverage.FindingGroups) != 1 || len(coverage.Candidates) == 0 {
+		t.Fatal("evidence matrix lost candidate artifacts or contradictory findings", coverage)
+	}
+	group := coverage.FindingGroups[0]
+	if !group.Explanation.Known || group.Explanation.Observed != "The database configuration reports storage encryption disabled." || group.AffectedTargets != 1 {
+		t.Fatal("finding interpretation lost retained configuration", group)
+	}
+	for _, assertion := range coverage.Assertions {
+		if len(assertion.States) == 1 && assertion.States[0] == "supported" {
+			t.Fatal("new contradiction left an unqualified support claim", assertion)
+		}
+	}
+	detail, err := s.ObservationDetail(ctx, a, service, group.Findings[0].ObservationID)
+	if err != nil || detail.ArtifactHash == "" || string(detail.Observation.Artifact.Configuration["storage_encrypted"]) != "false" {
+		t.Fatal("finding drill-down lost exact observation", detail, err)
+	}
 	snapshot, err := s.PreparePublication(ctx, a, service, "documentary")
 	if err != nil {
 		t.Fatal(err)

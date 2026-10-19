@@ -109,12 +109,15 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 			return receipt, ErrInvalid
 		}
 		seen[result.AssertionID] = true
+		if err := validateAssertionGaps(result); err != nil {
+			return receipt, err
+		}
 		if result.Outcome == "contradicted" {
 			work.Assessment = "contradicted"
 		} else if result.Outcome == "unknown" && work.Assessment == "supported" {
 			work.Assessment = "unknown"
 		}
-		if result.Outcome == "unknown" || len(result.Citations) == 0 {
+		if result.Outcome == "unknown" || len(result.Citations) == 0 || len(result.Gaps) > 0 {
 			work.MissingAssertions = append(work.MissingAssertions, result.AssertionID)
 		}
 		for _, citation := range result.Citations {
@@ -221,6 +224,23 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 		return receipt, err
 	}
 	return receipt, commitOperation(ctx, tx, a, in.ServiceID, "rule_result.submitted", Record{ID: receipt.Draft.ID, Revision: receipt.Draft.Revision})
+}
+
+func validateAssertionGaps(result AssertionResult) error {
+	if len(result.Gaps) > 100 || (result.Outcome == "supported" && len(result.Gaps) > 0) {
+		return fmt.Errorf("%w: supported assertions cannot retain unresolved coverage gaps", ErrInvalid)
+	}
+	seen := map[AssertionGap]bool{}
+	for _, gap := range result.Gaps {
+		if seen[gap] {
+			return fmt.Errorf("%w: duplicate assertion gap", ErrInvalid)
+		}
+		seen[gap] = true
+		if !slices.Contains([]string{"missing", "partial", "stale", "access_blocked"}, gap.Kind) || strings.TrimSpace(gap.Scope) == "" || strings.TrimSpace(gap.Reason) == "" || strings.TrimSpace(gap.NextAction) == "" || len(gap.Scope) > 4096 || len(gap.Period) > 4096 || len(gap.Reason) > 4096 || len(gap.NextAction) > 4096 {
+			return fmt.Errorf("%w: coverage gaps require a kind, scope, reason and next action", ErrInvalid)
+		}
+	}
+	return nil
 }
 
 // WorkStatus does not require a collection plan or a draft.

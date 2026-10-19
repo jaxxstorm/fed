@@ -1,0 +1,1405 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "agu-agc-aip-4751764514189e3a8f544893c5550b43ae167959934c7fb6f21dc4199aabb431": {
+      "content_hash": "0b612da42897595cb38ae3ba4e098c251da64ec6dc7c5c1d9273ee3da9baa11f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4751764514189e3a8f544893c5550b43ae167959934c7fb6f21dc4199aabb431: AGU-AGC-AIP: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-AGC-AIP-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Agency-wide policy must align with OMB M-24-15. A provider certification package cannot stand in for an agency policy or authorize an agency system. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-AGC-AIP-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Agency Internal Policies. The named decision owner must resolve How should the agency apply AGU-AGC-AIP under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-AGC-AIP-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Agency Internal Policies statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-AGC-AIP-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST maintain agency-wide policy that aligns with the requirements in OMB Memorandum M-24-15.",
+          "citations": [
+            "AGU-AGC-AIP-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-AGC-AIP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Agency Internal Policies were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-AGC-AIP-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-AGC-AIP even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-AGC-AIP-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-agc-grc-a424349859790f3cd8a7c3e060417bf36b03b287bfecce0e9fc31b11cd6f780c": {
+      "content_hash": "029edd01ac856424d1fc14a8e60251993a91d32e863ee7a6cd557561a1809fc0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a424349859790f3cd8a7c3e060417bf36b03b287bfecce0e9fc31b11cd6f780c: AGU-AGC-GRC: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-AGC-GRC-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Agency GRC/inventory tools must both produce and ingest OSCAL and JSON. Possessing provider JSON does not establish either agency tool capability. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-AGC-GRC-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Governance, Risk, and Compliance Tools. The named decision owner must resolve How should the agency apply AGU-AGC-GRC under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-AGC-GRC-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Governance, Risk, and Compliance Tools statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-AGC-GRC-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST ensure that internal governance, risk, compliance, and inventory tools can produce and ingest machine-readable artifacts using formats identified by FedRAMP, including at least:",
+          "citations": [
+            "AGU-AGC-GRC-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-AGC-GRC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Governance, Risk, and Compliance Tools were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-AGC-GRC-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-AGC-GRC even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-AGC-GRC-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-agc-lia-d2faad95a049c856189caccda0fcb398d4d9c024dfc3784d2383afc832769640": {
+      "content_hash": "8ce14fd0e754605032dbbd833fc68a8cb8c622f76ec41e781ed154a4056bfb88",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d2faad95a049c856189caccda0fcb398d4d9c024dfc3784d2383afc832769640: AGU-AGC-LIA: unresolved — Source ruleset is not stable. Source force: SHOULD (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-AGC-LIA-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The recommendation is at least one federal employee actively participating in the liaison program, not a contractor-only contact or a provider liaison. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-AGC-LIA-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Agency Liaison Program. The named decision owner must resolve How should the agency apply AGU-AGC-LIA under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-AGC-LIA-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Agency Liaison Program statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-AGC-LIA-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies SHOULD assign at least 1 federal employee to be an active participant in the FedRAMP Agency Liaison program.",
+          "citations": [
+            "AGU-AGC-LIA-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-AGC-LIA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Agency Liaison Program were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-AGC-LIA-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-AGC-LIA even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-AGC-LIA-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-agc-naa-93c6ea66261bd7f9f38d17db8868d26ab9b8722ce0889c3babdf63f067bf141f": {
+      "content_hash": "27ce82f86837e2d89f5ed46fd17626428916945082abbefcf4dc6d3e2f5070f9",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 93c6ea66261bd7f9f38d17db8868d26ab9b8722ce0889c3babdf63f067bf141f: AGU-AGC-NAA: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-AGC-NAA-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Upon authorization the agency supplies its system ATO letter and all supplemental form information through Submit an ATO Letter. The ATO is for the system leveraging the cloud service, not a standalone service ATO. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-AGC-NAA-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Notify FedRAMP After Authorization. The named decision owner must resolve How should the agency apply AGU-AGC-NAA under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-AGC-NAA-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Notify FedRAMP After Authorization statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-AGC-NAA-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST notify FedRAMP upon authorizing the use of a cloud service within the scope of FedRAMP, supplying at least the following information:",
+          "citations": [
+            "AGU-AGC-NAA-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-AGC-NAA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Notify FedRAMP After Authorization were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-AGC-NAA-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-AGC-NAA even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-AGC-NAA-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-agc-nai-b097f5d677e977979ad51292e4d36224aa45fa2b9f0a10ab39b115a4116a72f2": {
+      "content_hash": "2d0cf7f1c4249fdc848e2de77563089aee09c4385c41a655fbd0b9a09810e96c",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b097f5d677e977979ad51292e4d36224aa45fa2b9f0a10ab39b115a4116a72f2: AGU-AGC-NAI: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-AGC-NAI-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "After requesting additional materials beyond FedRAMP requirements, the agency notifies FedRAMP through the specified form. This notification is distinct from the demonstrable-need exception in NAR. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-AGC-NAI-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Notify Additional Information Requests. The named decision owner must resolve How should the agency apply AGU-AGC-NAI under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-AGC-NAI-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Notify Additional Information Requests statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-AGC-NAI-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST notify FedRAMP after requesting any additional information or materials from a FedRAMP Certified cloud service offering beyond those required by FedRAMP. Source note: Agencies are expected to notify FedRAMP under OMB Memorandum M-24-15 section IV (a).",
+          "citations": [
+            "AGU-AGC-NAI-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-AGC-NAI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Notify Additional Information Requests were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-AGC-NAI-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-AGC-NAI even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-AGC-NAI-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-agc-nar-29918af2eadb1c250f5c0ac015189c7e115a9c27e46b7ffa83c1262eae118077": {
+      "content_hash": "8abd0ad89cc709270cecb3c654993b00efb2dce381cc0cbed74232a2e0bca7d5",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 29918af2eadb1c250f5c0ac015189c7e115a9c27e46b7ffa83c1262eae118077: AGU-AGC-NAR: unresolved — Source ruleset is not stable. Source force: MUST NOT (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-AGC-NAR-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The prohibition has an exception only for agency-head/delegate demonstrable need plus FedRAMP notification. General questions/clarifications are outside it; a provider cannot grant the exception. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-AGC-NAR-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for No Additional Security Requirements. The named decision owner must resolve How should the agency apply AGU-AGC-NAR under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-AGC-NAR-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained No Additional Security Requirements statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-AGC-NAR-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST NOT require additional information or materials from FedRAMP Certified cloud service offerings beyond those required by FedRAMP UNLESS the head of the agency or an authorized delegate determines there is a demonstrable need and notifies FedRAMP; this does not apply to seeking clarification or asking general questions about FedRAMP Certification Data. Source note: This is related to the Presumption of Adequacy for a FedRAMP Certification and notification is mandated by OMB Memorandum M-24-15 section IV (a).",
+          "citations": [
+            "AGU-AGC-NAR-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-AGC-NAR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for No Additional Security Requirements were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-AGC-NAR-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-AGC-NAR even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-AGC-NAR-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-agc-sin-b057954b28e19e728a996dde560d7106713d002868a6388c9315adf5fc5a109c": {
+      "content_hash": "bca81c4bc5e8a809d4d27fd10db5e0fe93401de7ceb8ce3f981ae3f174208b71",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b057954b28e19e728a996dde560d7106713d002868a6388c9315adf5fc5a109c: AGU-AGC-SIN: unresolved — Source ruleset is not stable. Source force: SHOULD (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-AGC-SIN-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The shared agency inbox is recommended as the official agency/FedRAMP contact. The example address is illustrative, not a required naming convention or the provider FSI. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-AGC-SIN-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Shared FedRAMP Inbox. The named decision owner must resolve How should the agency apply AGU-AGC-SIN under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-AGC-SIN-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Shared FedRAMP Inbox statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-AGC-SIN-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies SHOULD establish and maintain a dedicated shared FedRAMP agency inbox to serve as the official point of contact for communications between FedRAMP and the agency. Source note: A shared FedRAMP agency inbox may follow an agency-specific format such as agency-fedramp@agency.gov.",
+          "citations": [
+            "AGU-AGC-SIN-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-AGC-SIN only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Shared FedRAMP Inbox were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-AGC-SIN-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-AGC-SIN even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-AGC-SIN-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-agc-tpp-603c75412c8c923cb1ea7133703e4dc6d7a0fc12939c429ba0a3b03418218bc9": {
+      "content_hash": "a46c525170f948919552be59ba97c6f9ff7dea4aadd9f38c9f15cac01c7bd6a2",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 603c75412c8c923cb1ea7133703e4dc6d7a0fc12939c429ba0a3b03418218bc9: AGU-AGC-TPP: unresolved — Source ruleset is not stable. Source force: MUST NOT (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-AGC-TPP-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "A specific type/path demand requires agency-head/delegate demonstrable need and notification. Reuse guidance supports preserving this boundary rather than giving all agency requests automatic precedence. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-AGC-TPP-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for No Certification Type or Path Preferences. The named decision owner must resolve How should the agency apply AGU-AGC-TPP under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-AGC-TPP-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained No Certification Type or Path Preferences statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-AGC-TPP-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST NOT require cloud service offerings to obtain or maintain a specific FedRAMP Certification Type or FedRAMP Certification Path, UNLESS the head of the agency or an authorized delegate determines there is a demonstrable need and notifies FedRAMP. Source note: This is related to the Presumption of Adequacy for a FedRAMP Certification and notification is mandated by OMB Memorandum M-24-15 section IV (a).",
+          "citations": [
+            "AGU-AGC-TPP-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-AGC-TPP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for No Certification Type or Path Preferences were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-AGC-TPP-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-AGC-TPP even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-AGC-TPP-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-agc-wkg-ff9c0e13c5f1ff989e4ddee2ca419e22a6b14fd9b39ad928270694925558b2df": {
+      "content_hash": "1d6a02143a2e95df51199c711946b549cd159f0eee593512e24eaf3cfa865114",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ff9c0e13c5f1ff989e4ddee2ca419e22a6b14fd9b39ad928270694925558b2df: AGU-AGC-WKG: unresolved — Source ruleset is not stable. Source force: SHOULD (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-AGC-WKG-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Participation in working groups, communities and stakeholder engagement is SHOULD; lack of participation is not rewritten as a provider compliance failure. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-AGC-WKG-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for FedRAMP Working Groups. The named decision owner must resolve How should the agency apply AGU-AGC-WKG under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-AGC-WKG-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained FedRAMP Working Groups statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-AGC-WKG-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies SHOULD participate in FedRAMP working groups, communities of practice, and stakeholder engagements to supply feedback and align practices across government.",
+          "citations": [
+            "AGU-AGC-WKG-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-AGC-WKG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for FedRAMP Working Groups were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-AGC-WKG-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-AGC-WKG even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-AGC-WKG-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-spn-mrc-1603ee15f5147a689be851a074f13784c57e7300c6021f012c35f842c4dc6719": {
+      "content_hash": "ae4603b8d9562f99a33dbec381e1d139997730a573a6decd15aaac160650dcd4",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1603ee15f5147a689be851a074f13784c57e7300c6021f012c35f842c4dc6719: AGU-SPN-MRC: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-SPN-MRC-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The most recent consolidated rules apply when initiating agency-sponsored certification; a pinned provider guidance snapshot cannot decide what was latest at a later initiation. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-SPN-MRC-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Most Recent Consolidated Rules. The named decision owner must resolve How should the agency apply AGU-SPN-MRC under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-SPN-MRC-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Most Recent Consolidated Rules statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-SPN-MRC-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST follow the most recent FedRAMP Consolidated Rules when initiating agency-sponsored FedRAMP Certification.",
+          "citations": [
+            "AGU-SPN-MRC-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-SPN-MRC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Most Recent Consolidated Rules were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-SPN-MRC-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-SPN-MRC even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-SPN-MRC-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-abu-a80a8f4162dfbf932b5db0b193d09c0a39da79ee5f11dde90a7a65fdf2cceec1": {
+      "content_hash": "bcc74cc673384a8c1913155a2117c1fba7ff956616bfcd429516c5dcc5e73823",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a80a8f4162dfbf932b5db0b193d09c0a39da79ee5f11dde90a7a65fdf2cceec1: AGU-USE-ABU: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-ABU-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Agency system authorization remains necessary despite FedRAMP certification. The narrative explicitly warns against a standalone ATO of the cloud offering itself and requires authorization before use. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-ABU-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Authorization Before Use. The named decision owner must resolve How should the agency apply AGU-USE-ABU under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-ABU-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Authorization Before Use statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-ABU-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST complete the Authorization to Operate process for federal information systems that use FedRAMP Certified cloud service offerings. Source note: FedRAMP provides technical assistance to help agencies navigate this process.",
+          "citations": [
+            "AGU-USE-ABU-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-ABU only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Authorization Before Use were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-ABU-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-ABU even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-ABU-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-afr-381e67942c9ec5c493a6bce78730e133e5752426882e27fdb1ea10ec9026f0ab": {
+      "content_hash": "c450afea42a2f273a10b88972649da8a10f88dc7bbbbee6fa6b506a820b92d49",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 381e67942c9ec5c493a6bce78730e133e5752426882e27fdb1ea10ec9026f0ab: AGU-USE-AFR: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-AFR-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Agencies must allow providers to follow FedRAMP rules. The narrative specifically cautions against contract terms that prevent obligations to other agencies. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-AFR-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Accept FedRAMP Rules. The named decision owner must resolve How should the agency apply AGU-USE-AFR under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-AFR-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Accept FedRAMP Rules statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-AFR-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST allow FedRAMP Certified cloud service offerings to follow FedRAMP rules.",
+          "citations": [
+            "AGU-USE-AFR-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-AFR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Accept FedRAMP Rules were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-AFR-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-AFR even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-AFR-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-cla-c7ef472aefefa06b55e5d8c94bcc6434b4dffa20c4f2915911b441c750690cbb": {
+      "content_hash": "a2c8542db2210d0037ef42d0d464f8c3fd9c762d2713f784ff59e13b71f4801c",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant c7ef472aefefa06b55e5d8c94bcc6434b4dffa20c4f2915911b441c750690cbb: AGU-USE-CLA: unresolved — Source ruleset is not stable. Source force: SHOULD NOT (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-CLA-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "SHOULD NOT authorize Class A use beyond 12 months has an UNLESS actively seeking B/C/D exception. It is not a blanket Class A expiration or unconditional 12-month ban. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-CLA-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Using FedRAMP Class A Certifications. The named decision owner must resolve How should the agency apply AGU-USE-CLA under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-CLA-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Using FedRAMP Class A Certifications statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-CLA-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies SHOULD NOT authorize the use of a FedRAMP Class A Certified cloud service offering for more than 12 months UNLESS the cloud service offering is actively seeking a FedRAMP Class B, C, or D Certification.",
+          "citations": [
+            "AGU-USE-CLA-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-CLA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Using FedRAMP Class A Certifications were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-CLA-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-CLA even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-CLA-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-dso-1b4d9e46f84bbf330e5d188c48987e41d262212a6728c19e1e10d2c8c479c713": {
+      "content_hash": "ffd0a0e5338767c2e5a9dce221927057ceee6e8ab116d279e88ed77fa8781e33",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1b4d9e46f84bbf330e5d188c48987e41d262212a6728c19e1e10d2c8c479c713: AGU-USE-DSO: unresolved — Source ruleset is not stable. Source force: SHOULD (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-DSO-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The designated federal senior information security official reviews OCRs and represents the agency at Quarterly Reviews. A provider-appointed official is not interchangeable. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-DSO-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Designate Senior Official. The named decision owner must resolve How should the agency apply AGU-USE-DSO under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-DSO-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Designate Senior Official statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-DSO-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies SHOULD designate a federal senior information security official to review Ongoing Certification Reports and represent the agency at Quarterly Reviews for cloud service offerings included in agency information systems.",
+          "citations": [
+            "AGU-USE-DSO-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-DSO only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Designate Senior Official were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-DSO-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-DSO even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-DSO-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-nfc-bbc444ccb2c611bd66b0ac4699b91b9eabd898accb2bec8b358303fbb1cec311": {
+      "content_hash": "3640a4104e335616ef159d09c19e694d85842e296860f030a9b7e5af79d33cf5",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant bbc444ccb2c611bd66b0ac4699b91b9eabd898accb2bec8b358303fbb1cec311: AGU-USE-NFC: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-NFC-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Significant concerns likely to cause ATO rescission trigger agency notification to FedRAMP using the concerns form. Any routine observation is not automatically this threshold. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-NFC-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Notify FedRAMP of Monitoring Concerns. The named decision owner must resolve How should the agency apply AGU-USE-NFC under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-NFC-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Notify FedRAMP of Monitoring Concerns statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-NFC-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST notify FedRAMP if information presented in an Ongoing Certification Report, Quarterly Review, or other FedRAMP Certification Data causes significant concerns for the authorizing official that would likely result in rescission of their Authorization to Operate. Source note: Agencies are expected to notify FedRAMP under OMB Memorandum M-24-15 section IV (a).",
+          "citations": [
+            "AGU-USE-NFC-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-NFC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Notify FedRAMP of Monitoring Concerns were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-NFC-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-NFC even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-NFC-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-npc-120abec12e0c6687593b502021c2c00cb15547bfe54bb3ffbadf60dc84f51c3f": {
+      "content_hash": "96e3cdd436a132aff75c1be5f68045a816065297a8abf25392ce0b492b6d6a29",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 120abec12e0c6687593b502021c2c00cb15547bfe54bb3ffbadf60dc84f51c3f: AGU-USE-NPC: unresolved — Source ruleset is not stable. Source force: SHOULD (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-NPC-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Formal provider notification is SHOULD at the significant-concern/likely-rescission threshold. It is distinct from the MUST notification to FedRAMP in NFC. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-NPC-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Notify Provider of Concerns. The named decision owner must resolve How should the agency apply AGU-USE-NPC under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-NPC-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Notify Provider of Concerns statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-NPC-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies SHOULD formally notify the cloud service provider if information presented in an Ongoing Certification Report, Quarterly Review, or other FedRAMP Certification Data causes significant concerns for the authorizing official that would likely result in rescission of their Authorization to Operate.",
+          "citations": [
+            "AGU-USE-NPC-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-NPC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Notify Provider of Concerns were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-NPC-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-NPC even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-NPC-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-rcf-549e62563d74b615368cf14019aefc399e937d2e16f318a77798edccc8783074": {
+      "content_hash": "62cb532a192d3e919cf39c39f57c74457dc6c05bca89d330e99c3414525d9e2e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 549e62563d74b615368cf14019aefc399e937d2e16f318a77798edccc8783074: AGU-USE-RCF: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-RCF-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Discrepancies between agency determinations and the common package require collaboration with FedRAMP; unilateral provider rewriting of an agency risk decision is not implied. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-RCF-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Resolve Certification Package Conflicts. The named decision owner must resolve How should the agency apply AGU-USE-RCF under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-RCF-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Resolve Certification Package Conflicts statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-RCF-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST collaborate with FedRAMP when discrepancies or conflicts arise between agency-specific security determinations and the FedRAMP Certification Package.",
+          "citations": [
+            "AGU-USE-RCF-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-RCF only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Resolve Certification Package Conflicts were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-RCF-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-RCF even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-RCF-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-rir-9e76ff81ac38adb481046a8fc69260367bfcd12e9b419c90b1653d76c4626b56": {
+      "content_hash": "4455b845f5b09a99efa6d170cd2bb779698b0f9c4b7b9e711b1c6779ccfa1d4e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 9e76ff81ac38adb481046a8fc69260367bfcd12e9b419c90b1653d76c4626b56: AGU-USE-RIR: unresolved — Source ruleset is not stable. Source force: SHOULD (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-RIR-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Third-party information resources should be considered during both initial and ongoing authorization; this agency review is distinct from provider MAS documentation. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-RIR-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Review All Information Resources. The named decision owner must resolve How should the agency apply AGU-USE-RIR under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-RIR-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Review All Information Resources statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-RIR-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies SHOULD consider third-party information resources used by the cloud service offering during initial and ongoing authorization activities.",
+          "citations": [
+            "AGU-USE-RIR-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-RIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Review All Information Resources were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-RIR-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-RIR even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-RIR-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-ror-964b20158ccc750091317fc4024653dba4ab4bf29a72e83b89c726545df4e8b7": {
+      "content_hash": "a2e946bc6d436691726e3307a172ff9f0b6e047268e93a284563c978c75e3a9d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 964b20158ccc750091317fc4024653dba4ab4bf29a72e83b89c726545df4e8b7: AGU-USE-ROR: unresolved — Source ruleset is not stable. Source force: SHOULD (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-ROR-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Each OCR is recommended for review against the agency system's documented risk tolerance; provider publication is not proof of agency review. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-ROR-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Review Ongoing Certification Reports. The named decision owner must resolve How should the agency apply AGU-USE-ROR under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-ROR-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Review Ongoing Certification Reports statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-ROR-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies SHOULD review each Ongoing Certification Report to understand how changes to the cloud service offering may impact the risk tolerance documented in the agency Authorization to Operate for the federal information system that includes the cloud service offering in its boundary. Source note: This agency review supports agency responsibilities under 44 USC § 35, OMB Circular A-130, FIPS-200, and OMB Memorandum M-24-15.",
+          "citations": [
+            "AGU-USE-ROR-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-ROR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Review Ongoing Certification Reports were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-ROR-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-ROR even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-ROR-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "agu-use-rsg-9d3ff3a4822a7b371732b6713ebaa1638592b941ec718796674c928fbd52086d": {
+      "content_hash": "af6d650929518068648d62ebe06b23dbd395b79ec0ef46a57d826aede937c813",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 9d3ff3a4822a7b371732b6713ebaa1638592b941ec718796674c928fbd52086d: AGU-USE-RSG: unresolved — Source ruleset is not stable. Source force: MUST (published rule; resolver stopped before force selection). AGU is marked placeholder in the structured source even though the narrative prints requirements and effective dates. Preserve the agency's legal and policy responsibilities for resolution rather than asserting provider compliance or erasing them. The unresolved decision is owned by the agency authorizing official/policy liaison, not a provider implementation owner.",
+          "citations": [
+            "AGU-metadata",
+            "AGU-USE-RSG-source",
+            "AGU-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The agency must both review supplied guides and configure relevant settings. Provider publication alone cannot prove agency review or customer-side configuration. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The agency-use narrative keeps agency system risk acceptance, configuration and authorization separate from certification of the offering; placeholder status does not repeal those responsibilities.",
+          "citations": [
+            "AGU-USE-RSG-source",
+            "AGU-page",
+            "AGU-definitions",
+            "AGU-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Review Secure Configuration Guides. The named decision owner must resolve How should the agency apply AGU-USE-RSG under its governing authority while the pinned AGU ruleset is placeholder? Obtain an agency/FedRAMP determination rather than converting it into a provider duty.",
+          "citations": [
+            "AGU-USE-RSG-source",
+            "AGU-page",
+            "AGU-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Review Secure Configuration Guides statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "AGU-USE-RSG-source",
+            "AGU-page",
+            "AGU-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "AGU remains placeholder despite July 4, 2026 obtain, maintain, optional-adoption and grace dates (no next-assessment extension). Those dates alone do not resolve this inventory; the agency must still address the stated legal/policy and event-specific timing. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Agencies MUST review the Secure Configuration Guides supplied by Providers and configure relevant security settings.",
+          "citations": [
+            "AGU-USE-RSG-source",
+            "AGU-page",
+            "AGU-metadata",
+            "AGU-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for AGU-USE-RSG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Review Secure Configuration Guides were supplied. This source comparison cannot establish that the named Agencies met the preserved rule or qualified for any exception.",
+            "citations": [
+              "AGU-USE-RSG-source",
+              "AGU-page",
+              "AGU-definitions"
+            ]
+          },
+          {
+            "finding": "Placeholder status is unresolved for AGU-USE-RSG even though the narrative prints substantive agency duties. An agency/FedRAMP determination under governing authority is needed; it would be incorrect either to claim provider compliance or erase agency duties.",
+            "citations": [
+              "AGU-USE-RSG-source",
+              "AGU-page",
+              "AGU-metadata",
+              "AGU-narrative"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

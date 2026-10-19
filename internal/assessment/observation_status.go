@@ -10,6 +10,7 @@ import (
 )
 
 type ObservationStatus struct {
+	Checks          []observation.Finding  `json:"checks,omitempty"`
 	Recovery        []observation.Recovery `json:"recovery"`
 	Errors          []string               `json:"errors"`
 	MissingMeasures int                    `json:"missing_measures"`
@@ -31,7 +32,7 @@ func (s *Store) observationStatus(ctx context.Context, service, requirement stri
 		return ObservationStatus{Freshness: "missing", Technical: "unknown", Findings: []observation.Finding{}, Sources: []string{}}, nil
 	}
 	out := ObservationStatus{Freshness: "missing", Technical: "unknown", Findings: []observation.Finding{}, Sources: []string{}}
-	rows, err := s.query().Query(ctx, `SELECT DISTINCT ON(o.target_key,l.measure_id) o.data,o.observed_at,o.source_kind,(m.data->>'freshness_hours')::int,l.data
+	rows, err := s.query().Query(ctx, `SELECT DISTINCT ON(o.target_key,l.measure_id) o.data,o.observed_at,o.source_kind,(m.data->>'freshness_hours')::int,l.data,o.id
 FROM observation_links l JOIN observations o ON o.service_id=l.service_id AND o.id=l.observation_id
 JOIN records m ON m.service_id=l.service_id AND m.kind='measure' AND m.id=l.measure_id AND m.revision=l.measure_revision
 WHERE l.service_id=$1 AND l.requirement_id=$2
@@ -52,8 +53,9 @@ ORDER BY o.target_key,l.measure_id,o.observed_at DESC,o.received_at DESC`, servi
 		var linkRaw []byte
 		var at time.Time
 		var source string
+		var observationID string
 		var hours int
-		if err = rows.Scan(&raw, &at, &source, &hours, &linkRaw); err != nil {
+		if err = rows.Scan(&raw, &at, &source, &hours, &linkRaw, &observationID); err != nil {
 			return out, err
 		}
 		var in observation.Submission
@@ -66,6 +68,7 @@ ORDER BY o.target_key,l.measure_id,o.observed_at DESC,o.received_at DESC`, servi
 			return out, err
 		}
 		out.Count++
+		out.Checks = append(out.Checks, observation.CheckRows(in, link, source, observationID, at, hours, now)...)
 		out.Expected += in.Coverage.Expected
 		out.Observed += in.Coverage.Observed
 		if out.LastObservedAt == nil || at.After(*out.LastObservedAt) {
@@ -125,7 +128,7 @@ ORDER BY o.target_key,l.measure_id,o.observed_at DESC,o.received_at DESC`, servi
 	if err != nil {
 		return out, err
 	}
-	findingRows, err := s.query().Query(ctx, `SELECT f.data FROM (SELECT DISTINCT ON(f.finding_id) f.finding_id,f.outcome,f.data
+	findingRows, err := s.query().Query(ctx, `SELECT f.data FROM (SELECT DISTINCT ON(f.finding_id) f.finding_id,f.outcome,f.data || jsonb_build_object('artifact_schema',o.data->'artifact'->>'schema','configuration',o.data->'artifact'->'configuration','coverage',o.data->'coverage','target',o.data->'target','observed_at',o.observed_at,'observation_id',o.id) AS data
 FROM finding_events f JOIN observations o ON o.service_id=f.service_id AND o.id=f.observation_id
 WHERE f.service_id=$1 AND o.scope_revision=(SELECT max(revision) FROM records WHERE service_id=$1 AND kind='scope' AND id='scope')
 AND EXISTS(SELECT 1 FROM observation_links l WHERE l.service_id=f.service_id AND l.observation_id=f.observation_id AND l.requirement_id=$2 AND (coalesce(jsonb_array_length(l.data->'conditions'),0)=0 OR (l.data->'conditions') ? f.condition))

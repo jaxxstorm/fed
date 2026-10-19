@@ -2,6 +2,7 @@ package mcp_test
 
 import (
 	"context"
+	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -15,6 +16,7 @@ import (
 	"github.com/jaxxstorm/fed/internal/catalog"
 	"github.com/jaxxstorm/fed/internal/checks"
 	adapter "github.com/jaxxstorm/fed/internal/mcp"
+	"github.com/jaxxstorm/fed/internal/readiness"
 	"github.com/jaxxstorm/fed/internal/storage"
 	"github.com/jaxxstorm/fed/internal/testutil"
 	"github.com/jaxxstorm/fed/internal/web"
@@ -25,6 +27,7 @@ func TestExternalDocumentWorkflowWithoutWorker(t *testing.T) {
 	ctx := context.Background()
 	db := testutil.Database(t)
 	store := &assessment.Store{DB: db, Artifacts: storage.Files{Directory: t.TempDir()}}
+	store.Guidance = &readiness.Store{DB: db}
 	admin, err := auth.BootstrapAdmin(ctx, db, "test", "admin")
 	if err != nil {
 		t.Fatal(err)
@@ -84,6 +87,9 @@ func TestExternalDocumentWorkflowWithoutWorker(t *testing.T) {
 		t.Fatal("configured sources unavailable")
 	}
 	i := unpack[assessment.RuleInstructions](t, call("get_rule_instructions", adapter.RequirementInput{ServiceID: service.ID, RequirementID: "KSI-SVC-SIN"}))
+	if i.Guidance == nil || i.Guidance.State != "missing" || i.Guidance.Label != "" {
+		t.Fatal("missing guidance misrepresented in MCP", i.Guidance)
+	}
 	if len(i.Sources) != 1 || len(i.Assertions) == 0 || i.ExpectedDraftRevision != 0 {
 		t.Fatal("instructions depend on collector setup")
 	}
@@ -115,6 +121,34 @@ func TestExternalDocumentWorkflowWithoutWorker(t *testing.T) {
 	}
 	app := &web.App{Store: store, Runner: runner}
 	browser := auth.Browser{DB: db, Dev: &admin}
+	queue := unpack[assessment.ReadinessQueue](t, call("get_readiness_requirements", assessment.ReadinessQueueInput{ServiceID: service.ID, Group: "evidence", Limit: 2}))
+	queueView := httptest.NewRecorder()
+	browser.Protect(app.Handler()).ServeHTTP(queueView, httptest.NewRequest("GET", "http://localhost/api/ui/v1/services/"+service.ID+"/readiness/requirements?group=evidence&limit=2", nil))
+	var browserQueue assessment.ReadinessQueue
+	if err = json.Unmarshal(queueView.Body.Bytes(), &browserQueue); err != nil || queueView.Code != 200 {
+		t.Fatal("browser queue unavailable", queueView.Code, err)
+	}
+	queue.AsOf = browserQueue.AsOf
+	wantQueue, _ := json.Marshal(queue)
+	gotQueue, _ := json.Marshal(browserQueue)
+	if string(wantQueue) != string(gotQueue) {
+		t.Fatal("browser/MCP requirement work differs", string(wantQueue), string(gotQueue))
+	}
+	quality := unpack[readiness.QualityPage](t, call("get_guidance_coverage", adapter.ListInput{ServiceID: service.ID, Limit: 2}))
+	if quality.Complete || quality.VariantCount != 1340 || quality.Counts["missing"] != quality.VariantCount || len(quality.Entries) != 2 || quality.NextOffset == nil {
+		t.Fatal("missing catalog coverage misrepresented", quality)
+	}
+	qualityView := httptest.NewRecorder()
+	browser.Protect(app.Handler()).ServeHTTP(qualityView, httptest.NewRequest("GET", "http://localhost/api/ui/v1/services/"+service.ID+"/readiness/coverage?limit=2", nil))
+	var browserQuality readiness.QualityPage
+	if err = json.Unmarshal(qualityView.Body.Bytes(), &browserQuality); err != nil || qualityView.Code != 200 {
+		t.Fatal("coverage unavailable in browser", qualityView.Code, err)
+	}
+	wantQuality, _ := json.Marshal(quality)
+	gotQuality, _ := json.Marshal(browserQuality)
+	if string(wantQuality) != string(gotQuality) {
+		t.Fatal("coverage differs between transports")
+	}
 	view := httptest.NewRecorder()
 	browser.Protect(app.Handler()).ServeHTTP(view, httptest.NewRequest("GET", "http://localhost/api/ui/v1/services/"+service.ID+"/pages/requirement/KSI-SVC-SIN", nil))
 	if view.Code != 200 || !strings.Contains(view.Body.String(), "evidence_complete") || !strings.Contains(view.Body.String(), ev.ID) || !strings.Contains(view.Body.String(), "contradicted") {
@@ -124,6 +158,26 @@ func TestExternalDocumentWorkflowWithoutWorker(t *testing.T) {
 	browser.Protect(app.Handler()).ServeHTTP(sourceView, httptest.NewRequest("GET", "http://localhost/api/ui/v1/services/"+service.ID+"/pages/sources", nil))
 	if sourceView.Code != 200 || !strings.Contains(sourceView.Body.String(), "Approved policies") {
 		t.Fatal("source UI differs from MCP", sourceView.Code)
+	}
+	detailView := httptest.NewRecorder()
+	browser.Protect(app.Handler()).ServeHTTP(detailView, httptest.NewRequest("GET", "http://localhost/api/ui/v1/services/"+service.ID+"/pages/requirement/KSI-SVC-SIN", nil))
+	var detail web.Page
+	if err = json.Unmarshal(detailView.Body.Bytes(), &detail); err != nil || detailView.Code != 200 {
+		t.Fatal("guidance detail unavailable", detailView.Code, err)
+	}
+	want, _ := json.Marshal(i.Guidance)
+	got, _ := json.Marshal(detail.Guidance)
+	if string(want) != string(got) {
+		t.Fatal("browser/MCP guidance differs", string(got), string(want))
+	}
+	coverageInstructions := unpack[assessment.RuleInstructions](t, call("get_rule_instructions", adapter.RequirementInput{ServiceID: service.ID, RequirementID: "KSI-SVC-SIN"}))
+	want, _ = json.Marshal(coverageInstructions.EvidenceCoverage)
+	got, _ = json.Marshal(detail.EvidenceCoverage)
+	if coverageInstructions.EvidenceCoverage == nil || string(want) != string(got) {
+		t.Fatal("browser/MCP evidence coverage differs", string(got), string(want))
+	}
+	if len(coverageInstructions.EvidenceCoverage.Assertions) != 1 || coverageInstructions.EvidenceCoverage.Assertions[0].States[0] != "contradicted" || len(coverageInstructions.EvidenceCoverage.Assertions[0].Citations) != 1 {
+		t.Fatal("coverage omitted contradictory assessment or exact citation", coverageInstructions.EvidenceCoverage)
 	}
 	forged := httptest.NewRecorder()
 	browser.Protect(app.Handler()).ServeHTTP(forged, httptest.NewRequest("POST", "http://localhost/services/"+service.ID+"/actions/evidence-source", strings.NewReader("id=policies")))

@@ -1,0 +1,20 @@
+{
+  "assembled_sha256": "c335557fc88800d076f6d01320fd9953dc0af4e15e53796fe04d114ca7aeaa42",
+  "subset_sha256": "aba91ecfaff9d13c40fdf4e431bf9a7ea5cc403e60038165f9fa6eb3f3bf50f4",
+  "selection": [
+    "aar-required",
+    "ksi-ced-rat-required",
+    "trc-required"
+  ],
+  "sources": {
+    "rules": {
+      "repository": "FedRAMP/rules",
+      "commit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6"
+    },
+    "site": {
+      "repository": "FedRAMP/2026",
+      "commit": "8404168e6c150b40e4d0e45152d18965ab27e001"
+    }
+  },
+  "notice": "Unchanged authored draft subset; no authenticated review receipt. Service evidence is supplied separately and is synthetic."
+}

@@ -32,6 +32,9 @@ type App struct {
 func (app *App) Handler() http.Handler {
 	m := http.NewServeMux()
 	app.registerOrganizationAPI(m)
+	if app.Store != nil && app.Store.Guidance != nil {
+		app.registerReadinessAPI(m)
+	}
 	if app.Connections != nil {
 		app.registerConnectionAPI(m)
 		m.HandleFunc("POST /connections/upload/{provider}", app.connectionUpload)
@@ -44,6 +47,14 @@ func (app *App) Handler() http.Handler {
 	m.HandleFunc("GET /api/ui/v1/services/{service}/pages/{page}/{requirement}", app.uiPage)
 	m.HandleFunc("GET /api/ui/v1/services/{service}/records/{kind}", app.uiRecords)
 	m.HandleFunc("GET /api/ui/v1/services/{service}/preview/{id}", app.uiArtifact)
+	m.HandleFunc("GET /api/ui/v1/services/{service}/observations/{id}", func(w http.ResponseWriter, r *http.Request) {
+		out, err := app.Store.ObservationDetail(r.Context(), auth.FromContext(r.Context()), r.PathValue("service"), r.PathValue("id"))
+		if err != nil {
+			uiFailure(w, err, r.Context())
+			return
+		}
+		jsonResponse(w, 200, out)
+	})
 	m.HandleFunc("POST /api/ui/v1/services/{service}/actions/{action}", app.uiAction)
 	m.HandleFunc("POST /api/ui/v1/services", app.uiCreate)
 	m.Handle("GET /assets/", frontendAssets())
@@ -559,6 +570,12 @@ func (app *App) detail(w http.ResponseWriter, r *http.Request) {
 	p.Metrics = []Metric{{"Evidence work", label(status.Work.State)}, {"Technical checks", label(status.Technical)}, {"Evidence freshness", label(status.Evidence)}, {"Human review", label(status.Review)}}
 	p.Diagnostics = append(p.Diagnostics, Section{"Evidence work · full details", pretty(status.Work)})
 	if instructions, e := app.Store.RuleInstructions(r.Context(), a, id, reqID); e == nil {
+		p.Guidance = instructions.Guidance
+		p.EvidenceCoverage = instructions.EvidenceCoverage
+		if instructions.Guidance != nil {
+			primary = assessment.WithGuidanceAction(primary, *instructions.Guidance)
+			p.Primary = &primary
+		}
 		if applicability != "not_applicable" {
 			for _, assertion := range instructions.Assertions {
 				needed := status.Work.State == "open" || status.Work.State == "" || slices.Contains(status.Work.MissingAssertions, assertion.ID)

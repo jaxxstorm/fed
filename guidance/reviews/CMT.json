@@ -1,0 +1,727 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "ksi-cmt-lmc-3b9f23df8c44": {
+      "content_hash": "8bbb2e81b70cee0e6d5f0102dd4bfd52f228d54a316d3227b87495a3576fac4f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 3b9f23df8c4431d57c2085ca21eb70e5974dbefc830843b27a0f7e6c8059c485 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Offering modifications must be logged AND monitored. The two assertions retain offering-wide scope, including out-of-band changes, instead of treating commits as both duties. Cloud Service Offering is the specific packaged cloud product/service subject to certification; change scope cannot stop at one repository. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "offering"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Change identification plus logging and monitoring mechanisms must cover actual modification paths. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Attributable actor/time/target/revision records support logging; monitoring findings tied to modifications support monitoring. Retained reports are alternatives, but an approved change plan or commit list does not establish executed-change monitoring. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a retention period nor monitoring interval. The offering definition anchors scope, but concrete modification categories require service-boundary explanation.",
+            "citations": [
+              "KSI-CMT-LMC",
+              "KSI-CMT-LMC-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CMT-LMC",
+              "KSI-CMT-LMC-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-lmc-5d6fa8941c72": {
+      "content_hash": "08e4a454980908f9aa05387d6feb7ba99404930fa00c6067104c3f32cf4dc54f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 5d6fa8941c726c09e3d9e252761c13bcf77d5b0e85748ec5d40fbdfca27bffd0 preserves required inclusion of KSI-CMT-LMC through FRC-CLA-MFR. Its Class A inclusion is distinct from ordinary class/profile resolution; the required outcome retains its full subject and conditions.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Offering modifications must be logged AND monitored. The two assertions retain offering-wide scope, including out-of-band changes, instead of treating commits as both duties. Cloud Service Offering is the specific packaged cloud product/service subject to certification; change scope cannot stop at one repository.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "offering"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Change identification plus logging and monitoring mechanisms must cover actual modification paths. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable actor/time/target/revision records support logging; monitoring findings tied to modifications support monitoring. Retained reports are alternatives, but an approved change plan or commit list does not establish executed-change monitoring. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a retention period nor monitoring interval. The offering definition anchors scope, but concrete modification categories require service-boundary explanation.",
+            "citations": [
+              "KSI-CMT-LMC",
+              "KSI-CMT-LMC-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-lmc-74e9e18037c9": {
+      "content_hash": "c456ba1eb13f0642b60cd1e614c845bd307149c40c7c3989f77b6870c3f4cc67",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 74e9e18037c9bce2a84cc7d6733d8efb33995d0453a01ad1f775e32dbb2aa487 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Offering modifications must be logged AND monitored. The two assertions retain offering-wide scope, including out-of-band changes, instead of treating commits as both duties. Cloud Service Offering is the specific packaged cloud product/service subject to certification; change scope cannot stop at one repository.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "offering"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Change identification plus logging and monitoring mechanisms must cover actual modification paths. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Attributable actor/time/target/revision records support logging; monitoring findings tied to modifications support monitoring. Retained reports are alternatives, but an approved change plan or commit list does not establish executed-change monitoring. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-CMT-LMC",
+            "KSI-CMT-LMC-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a retention period nor monitoring interval. The offering definition anchors scope, but concrete modification categories require service-boundary explanation.",
+            "citations": [
+              "KSI-CMT-LMC",
+              "KSI-CMT-LMC-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-rmv-14e4e858cb5b": {
+      "content_hash": "680bca89b37d0dd6f9f14250a6e6d5b3c6ee3aec57b04dbd90df3ad8d6770691",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 14e4e858cb5b9f0555a3767067c4af387262af98759a40ce629f4540d68d3edf retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Changes use redeployment of version-controlled machine resources wherever reasonable. This is one conditional outcome, not an absolute ban on direct modifications. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Version-controlled definitions and a functioning redeployment path are necessary; context-specific reasonableness criteria support exceptions. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Source/artifact/deployment links and execution observations establish redeployment; attributable direct-change rationale addresses the condition. A repository or unexecuted commit alone is insufficient, including on the documentary route. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not define every reasonable exception or require contemporaneous documentation as an official artifact. The guidance treats attributable rationale as recommended proof, not a new exception approval rule.",
+            "citations": [
+              "KSI-CMT-RMV",
+              "KSI-CMT-RMV-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CMT-RMV",
+              "KSI-CMT-RMV-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-rmv-32c8fa664edc": {
+      "content_hash": "3d1d7f4ec3f2ad4dc6945012490b65eb4091c7da2146360e3b2d5989cc1b64d9",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 32c8fa664edcde7fe364e0e902bfb394430a4c5a7b57328ffff2e95d3c952fca with FRC-CLA-MFR's enumerated KSI list: KSI-CMT-RMV is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Changes use redeployment of version-controlled machine resources wherever reasonable. This is one conditional outcome, not an absolute ban on direct modifications. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Version-controlled definitions and a functioning redeployment path are necessary; context-specific reasonableness criteria support exceptions. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Source/artifact/deployment links and execution observations establish redeployment; attributable direct-change rationale addresses the condition. A repository or unexecuted commit alone is insufficient, including on the documentary route. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not define every reasonable exception or require contemporaneous documentation as an official artifact. The guidance treats attributable rationale as recommended proof, not a new exception approval rule.",
+            "citations": [
+              "KSI-CMT-RMV",
+              "KSI-CMT-RMV-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-rmv-b0b7de50bb17": {
+      "content_hash": "90e831a122d1146a53fe861a08f20363595046bcef830a4ce2a39b574d766d8d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b0b7de50bb17c6936f99af8ca167e5f0fc9b0be4773bbf94a270282365c8e0e4 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Changes use redeployment of version-controlled machine resources wherever reasonable. This is one conditional outcome, not an absolute ban on direct modifications. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Version-controlled definitions and a functioning redeployment path are necessary; context-specific reasonableness criteria support exceptions. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Source/artifact/deployment links and execution observations establish redeployment; attributable direct-change rationale addresses the condition. A repository or unexecuted commit alone is insufficient, including on the documentary route. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-CMT-RMV",
+            "KSI-CMT-RMV-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not define every reasonable exception or require contemporaneous documentation as an official artifact. The guidance treats attributable rationale as recommended proof, not a new exception approval rule.",
+            "citations": [
+              "KSI-CMT-RMV",
+              "KSI-CMT-RMV-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-rvp-13938ea94a10": {
+      "content_hash": "b012e2035a8f67a195605a644373b9b9e27f373f38ff5d61e6eb1c0966ddef53",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 13938ea94a10cc4af941a89ad206433ecbf782076c4b8c849420b97d36b60ae7 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The recurring duty concerns effectiveness of documented change procedures, not just document existence, approval or currency.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Documented procedures and an outcome-based evaluation method are substantive prerequisites. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Procedure revisions, examined change populations, failure/rollback outcomes or justified exercises and dated conclusions support effectiveness review. Reports can provide these facts; meeting attendance cannot. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies no numeric success rate or minimum sample size. No-change periods and exercise representativeness constrain claims about actual operation.",
+            "citations": [
+              "KSI-CMT-RVP",
+              "KSI-CMT-RVP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-rvp-ba78be45f54c": {
+      "content_hash": "0b3d660b5fddd6e34144a1f3b94096f681721361ac15cd4a96e0f7efc0434f10",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant ba78be45f54c2ec2d3c5cb660d6ae5831d15ae2ffd2b751dbeaed516dbe45c28 with FRC-CLA-MFR's enumerated KSI list: KSI-CMT-RVP is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The recurring duty concerns effectiveness of documented change procedures, not just document existence, approval or currency.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Documented procedures and an outcome-based evaluation method are substantive prerequisites. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Procedure revisions, examined change populations, failure/rollback outcomes or justified exercises and dated conclusions support effectiveness review. Reports can provide these facts; meeting attendance cannot. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies no numeric success rate or minimum sample size. No-change periods and exercise representativeness constrain claims about actual operation.",
+            "citations": [
+              "KSI-CMT-RVP",
+              "KSI-CMT-RVP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-rvp-dee7729679a1": {
+      "content_hash": "0645d711687c3e609e5653a03a772ec49cf7ad02246ccf7ae11125e0766deb4a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant dee7729679a12ce314a947c62e2940102af8eec432a723fe6bcc2bb540bab644 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The recurring duty concerns effectiveness of documented change procedures, not just document existence, approval or currency.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Documented procedures and an outcome-based evaluation method are substantive prerequisites. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Procedure revisions, examined change populations, failure/rollback outcomes or justified exercises and dated conclusions support effectiveness review. Reports can provide these facts; meeting attendance cannot. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CMT-RVP",
+            "KSI-CMT-RVP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies no numeric success rate or minimum sample size. No-change periods and exercise representativeness constrain claims about actual operation.",
+            "citations": [
+              "KSI-CMT-RVP",
+              "KSI-CMT-RVP-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CMT-RVP",
+              "KSI-CMT-RVP-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-vtd-1c759588d520": {
+      "content_hash": "8a0cd3078208813784925592fdd6f889f8290da473b3fcf20187069396bf490b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1c759588d5200b2fbf19ff5053d860c6ba64c92ec9bde3a40be2d0ddd96a7f47 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent testing and objective validation throughout deployment must be automated. Separate assertions prevent a successful test or pipeline exit code from hiding validation. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Stage coverage, test criteria and expected-outcome validation criteria are needed before automation results are meaningful. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Stage-specific executed tests and objective validation results tied to changes/artifacts support distinct duties. Retained reports may replace integration, but manual checks cannot substitute for required automation. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Testing and validation span actual deployment stages, not just a pre-merge check; no universal stage list is imposed.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No universal deployment-stage list or numeric cadence is specified. The provider must explain how coverage spans its actual deployment process and disclose skipped stages.",
+            "citations": [
+              "KSI-CMT-VTD",
+              "KSI-CMT-VTD-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-vtd-8badc51b7f97": {
+      "content_hash": "736fe1474fd6ac27828cb62466c08c988501480764dc6ebc03a0ca4b718232cf",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 8badc51b7f97347fa0faad7508087e3c06c01bb69c6342f0a87fc76ef197e361 with FRC-CLA-MFR's enumerated KSI list: KSI-CMT-VTD is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent testing and objective validation throughout deployment must be automated. Separate assertions prevent a successful test or pipeline exit code from hiding validation. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Stage coverage, test criteria and expected-outcome validation criteria are needed before automation results are meaningful. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Stage-specific executed tests and objective validation results tied to changes/artifacts support distinct duties. Retained reports may replace integration, but manual checks cannot substitute for required automation. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Testing and validation span actual deployment stages, not just a pre-merge check; no universal stage list is imposed. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No universal deployment-stage list or numeric cadence is specified. The provider must explain how coverage spans its actual deployment process and disclose skipped stages.",
+            "citations": [
+              "KSI-CMT-VTD",
+              "KSI-CMT-VTD-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cmt-vtd-e41a17b92c3a": {
+      "content_hash": "fd0c72e53be7307e3d2ada7e5a027f454b729fd78a199fe049573c9883289523",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e41a17b92c3abb0ac9a8aac906501afdf0597bc65d33d99a81090b3e9621992c retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent testing and objective validation throughout deployment must be automated. Separate assertions prevent a successful test or pipeline exit code from hiding validation. Validation requires objective evidence of suitability and expected outcomes, not merely configuration or successful execution. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "validation"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Stage coverage, test criteria and expected-outcome validation criteria are needed before automation results are meaningful. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Stage-specific executed tests and objective validation results tied to changes/artifacts support distinct duties. Retained reports may replace integration, but manual checks cannot substitute for required automation. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. Testing and validation span actual deployment stages, not just a pre-merge check; no universal stage list is imposed. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CMT-VTD",
+            "KSI-CMT-VTD-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No universal deployment-stage list or numeric cadence is specified. The provider must explain how coverage spans its actual deployment process and disclose skipped stages.",
+            "citations": [
+              "KSI-CMT-VTD",
+              "KSI-CMT-VTD-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CMT-VTD",
+              "KSI-CMT-VTD-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

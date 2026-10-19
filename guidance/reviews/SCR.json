@@ -1,0 +1,366 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "ksi-scr-mit-376826a38e64": {
+      "content_hash": "e9e6d762ea994e7199d2e98f7831949fd8add2802e8c0d903ae0205e9a512719",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 376826a38e647123917867625be52339febbb0ffff4026dd16f74f22257bb1da with FRC-CLA-MFR's enumerated KSI list: KSI-SCR-MIT is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent identification, review and mitigation are three separate duties. Risk acceptance is not treated as mitigation, and potential supply-chain risks are not reduced to published CVEs.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. A supply-chain risk method and mechanisms to implement risk-reducing safeguards are necessary beyond supplier inventory. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Dated identification inputs, contextual analyses and implemented risk-linked safeguards support distinct assertions. Reports are valid alternatives when outcomes are traceable; an SBOM, questionnaire or mitigation plan alone cannot prove mitigation. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source sets no universal supplier score or elimination-of-all-risk threshold. Residual risk and uncertainty in reduction effectiveness need explicit treatment.",
+            "citations": [
+              "KSI-SCR-MIT",
+              "KSI-SCR-MIT-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-scr-mit-5b880e32842d": {
+      "content_hash": "5976ac760dc0a0c6f0610ee2d5ed74c928ec23acdff97e374a8a8b031d9f9d5f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 5b880e32842d537f18add46bf4155678ab491f6a925fe9aff6160bb0e2c63369 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent identification, review and mitigation are three separate duties. Risk acceptance is not treated as mitigation, and potential supply-chain risks are not reduced to published CVEs.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "A supply-chain risk method and mechanisms to implement risk-reducing safeguards are necessary beyond supplier inventory. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Dated identification inputs, contextual analyses and implemented risk-linked safeguards support distinct assertions. Reports are valid alternatives when outcomes are traceable; an SBOM, questionnaire or mitigation plan alone cannot prove mitigation. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source sets no universal supplier score or elimination-of-all-risk threshold. Residual risk and uncertainty in reduction effectiveness need explicit treatment.",
+            "citations": [
+              "KSI-SCR-MIT",
+              "KSI-SCR-MIT-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-scr-mit-8777e15ef68f": {
+      "content_hash": "3715b174d0e31422dce805093b6e73eff4cde0ec5c02f42a5884d13068956ae1",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 8777e15ef68f28d558491a3b8f59c3751bdae5751b2fb4369ad6702bf61228ac retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent identification, review and mitigation are three separate duties. Risk acceptance is not treated as mitigation, and potential supply-chain risks are not reduced to published CVEs.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. A supply-chain risk method and mechanisms to implement risk-reducing safeguards are necessary beyond supplier inventory. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Dated identification inputs, contextual analyses and implemented risk-linked safeguards support distinct assertions. Reports are valid alternatives when outcomes are traceable; an SBOM, questionnaire or mitigation plan alone cannot prove mitigation. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SCR-MIT",
+            "KSI-SCR-MIT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source sets no universal supplier score or elimination-of-all-risk threshold. Residual risk and uncertainty in reduction effectiveness need explicit treatment.",
+            "citations": [
+              "KSI-SCR-MIT",
+              "KSI-SCR-MIT-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SCR-MIT",
+              "KSI-SCR-MIT-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-scr-mon-1d7721441a71": {
+      "content_hash": "856cfa98e41351df4c4dda8f1ddba35548c2e0d9264ce36d195baa7a201e9b39",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1d7721441a7155bee94a211e851ab11d244a1dfafe8b8d5d1f20365171238671 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Third-party software requires automatic upstream-vulnerability monitoring. Contractual notification and active monitoring are permitted examples, not jointly required mechanisms. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Vulnerability includes protection weaknesses such as misconfiguration and weak credentials, not only software CVEs.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "resources",
+            "vulnerability"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Software/upstream mapping and an operating monitoring mechanism are needed beyond a signed notification clause. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Version-aware coverage and automated run/ingestion records support monitoring; contractual routes also need scoped obligations and delivery observations. Retained examinations cannot replace automation with manual vendor browsing. An empty feed does not establish no vulnerabilities. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not mandate machine-to-machine transport for every supplier notification; the overall mechanism must demonstrate automatic monitoring. The software version and advisory coverage remain service-specific.",
+            "citations": [
+              "KSI-SCR-MON",
+              "KSI-SCR-MON-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-scr-mon-38fc229ef87c": {
+      "content_hash": "ca8212f68a704183387009095ba29579cbb29441a2f88c3324122a72bed589e5",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 38fc229ef87c754691f32a9df21bbc632387eae391db81a6358b9aafb25d6443 with FRC-CLA-MFR's enumerated KSI list: KSI-SCR-MON is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Third-party software requires automatic upstream-vulnerability monitoring. Contractual notification and active monitoring are permitted examples, not jointly required mechanisms. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Vulnerability includes protection weaknesses such as misconfiguration and weak credentials, not only software CVEs. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "resources",
+            "vulnerability"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Software/upstream mapping and an operating monitoring mechanism are needed beyond a signed notification clause. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Version-aware coverage and automated run/ingestion records support monitoring; contractual routes also need scoped obligations and delivery observations. Retained examinations cannot replace automation with manual vendor browsing. An empty feed does not establish no vulnerabilities. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not mandate machine-to-machine transport for every supplier notification; the overall mechanism must demonstrate automatic monitoring. The software version and advisory coverage remain service-specific.",
+            "citations": [
+              "KSI-SCR-MON",
+              "KSI-SCR-MON-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-scr-mon-a674b1ec4e7d": {
+      "content_hash": "a6a573e3e4166b74a47e1f0c7b316962ce35383840353c5bcea2151f57e3ec34",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a674b1ec4e7d0f8beb9440350ceaf70a2ea47f70f29e936e2d0807d92704d4e4 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Third-party software requires automatic upstream-vulnerability monitoring. Contractual notification and active monitoring are permitted examples, not jointly required mechanisms. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Vulnerability includes protection weaknesses such as misconfiguration and weak credentials, not only software CVEs. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "resources",
+            "vulnerability"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Software/upstream mapping and an operating monitoring mechanism are needed beyond a signed notification clause. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Version-aware coverage and automated run/ingestion records support monitoring; contractual routes also need scoped obligations and delivery observations. Retained examinations cannot replace automation with manual vendor browsing. An empty feed does not establish no vulnerabilities. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-SCR-MON",
+            "KSI-SCR-MON-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not mandate machine-to-machine transport for every supplier notification; the overall mechanism must demonstrate automatic monitoring. The software version and advisory coverage remain service-specific.",
+            "citations": [
+              "KSI-SCR-MON",
+              "KSI-SCR-MON-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-SCR-MON",
+              "KSI-SCR-MON-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -29,13 +29,22 @@ function asObject(v: Value | undefined): Record<string, Value> {
 }
 
 import { ConnectionsPage } from "./connections";
+import { EvidenceCoveragePanel } from "./evidence-coverage";
 import { ActionForm, ErrorPanel, parseValue, Readable } from "./forms";
 import { OrganizationPage } from "./organization";
+import { PlaybookActions } from "./playbook-actions";
+import { ReadinessPage } from "./readiness";
+import {
+  ContextGaps,
+  GuidanceState,
+  ScopedReadiness,
+} from "./readiness-context";
 import { StatusBadge } from "./workspace";
 
 const pages = [
   "Overview",
   "Requirements",
+  "Readiness",
   "Evidence",
   "Activity",
   "Sources",
@@ -128,16 +137,18 @@ export function LiveApp() {
       </label>
       <nav aria-label="Main navigation">
         {id &&
-          pages.map((p) => (
-            <Link
-              key={p}
-              onClick={() => setMenu(false)}
-              to={`${base}?page=${p}`}
-              className={`nav-link ${p === page && !requirement && !run ? "selected" : ""}`}
-            >
-              {p}
-            </Link>
-          ))}
+          pages
+            .filter((p) => p !== "Readiness" || data.guidance_enabled)
+            .map((p) => (
+              <Link
+                key={p}
+                onClick={() => setMenu(false)}
+                to={`${base}?page=${p}`}
+                className={`nav-link ${p === page && !requirement && !run ? "selected" : ""}`}
+              >
+                {p}
+              </Link>
+            ))}
         <Link className="nav-link" to="/">
           All services
         </Link>
@@ -256,6 +267,12 @@ export function LiveApp() {
             <LegacyPage service={id} endpoint={`run/${run}`} bootstrap={data} />
           ) : page === "Overview" || page === "Requirements" ? (
             <ProgressPage service={id} listing={page === "Requirements"} />
+          ) : page === "Readiness" && data.guidance_enabled ? (
+            <ReadinessPage
+              service={id}
+              csrf={data.csrf}
+              canEdit={(data.capabilities[id] || []).includes("edit")}
+            />
           ) : page === "Connections" ? (
             <ConnectionsPage
               service={id}
@@ -598,6 +615,15 @@ function RuleRow({ rule, service }: { rule: Rule; service: string }) {
         </span>
         <h2>{rule.name}</h2>
         <p className="muted">{rule.state.reason}</p>
+        <GuidanceState
+          state={rule.state.guidance_state}
+          reason={rule.state.guidance_reason}
+        />
+        <ScopedReadiness progress={rule.state.readiness} compact />
+        <ContextGaps gaps={rule.state.context_gaps} />
+        {rule.state.next_steps?.[0] && (
+          <p className="small muted">{rule.state.next_steps[0].explanation}</p>
+        )}
         <span className="text-link">
           {rule.state.action} <ArrowUpRight size={14} />
         </span>
@@ -1151,11 +1177,70 @@ function LegacyPage({
                   : "Inspect automatic collection results and retry incomplete reads."
         }
       />
+      {p.Guidance && (
+        <section className="panel" aria-label="Requirement guidance">
+          <h2>{p.Guidance.label || "Requirement guidance"}</h2>
+          {p.Guidance.caveat && <p>{p.Guidance.caveat}</p>}
+          <GuidanceState state={p.Guidance.state} reason={p.Guidance.reason} />
+          <ScopedReadiness progress={p.Guidance.progress} />
+          {p.Guidance.guidance?.playbooks?.map((book) => (
+            <div key={book.id}>
+              <p>{book.purpose.text}</p>
+              <p>{book.applicability.text}</p>
+              {p.Guidance?.guidance && (
+                <PlaybookActions
+                  service={service}
+                  book={book}
+                  guidance={p.Guidance.guidance}
+                />
+              )}
+              {book.review && (
+                <>
+                  <p>
+                    Reviewed by {book.review.reviewer_type} ·{" "}
+                    {book.review.reviewed_at}
+                  </p>
+                  {book.review.comparison.limitations?.map((text) => (
+                    <p key={text}>{text}</p>
+                  ))}
+                  {book.review.comparison.uncertainties?.map((item) => (
+                    <p key={item.finding}>Uncertainty: {item.finding}</p>
+                  ))}
+                </>
+              )}
+            </div>
+          ))}
+          {p.Guidance.guidance && (
+            <details>
+              <summary>Official sources and review details</summary>
+              {p.Guidance.guidance.citations?.map((citation) => (
+                <div key={citation.id}>
+                  <h3>
+                    {citation.path} · {citation.anchor}
+                  </h3>
+                  <blockquote>{citation.excerpt}</blockquote>
+                  <p>
+                    Source revision:{" "}
+                    {p.Guidance?.guidance?.sources?.[citation.source]?.commit}
+                  </p>
+                </div>
+              ))}
+            </details>
+          )}
+        </section>
+      )}
+      {p.EvidenceCoverage && (
+        <EvidenceCoveragePanel
+          service={service}
+          coverage={p.EvidenceCoverage}
+        />
+      )}
       {p.Primary && (
         <section className="panel">
           <StatusBadge status={p.Primary.status} />
           <h2>{p.Primary.action}</h2>
           <p>{p.Primary.reason}</p>
+          <ContextGaps gaps={p.Primary.context_gaps} />
           {p.Primary.next_steps?.map((step, index) => (
             <div
               className="next-step"

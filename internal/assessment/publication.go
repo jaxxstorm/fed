@@ -13,6 +13,7 @@ import (
 	"github.com/jaxxstorm/fed/internal/auth"
 	"github.com/jaxxstorm/fed/internal/catalog"
 	"github.com/jaxxstorm/fed/internal/integrations"
+	"github.com/jaxxstorm/fed/internal/readiness"
 	"github.com/jaxxstorm/fed/internal/storage"
 )
 
@@ -29,17 +30,19 @@ type Publication struct {
 	Receipt     *integrations.Receipt `json:"receipt,omitempty"`
 }
 type Bundle struct {
-	CollectionPlans          []json.RawMessage  `json:"collection_plans"`
-	CollectionConfigurations []json.RawMessage  `json:"collection_configurations"`
-	Observations             []json.RawMessage  `json:"observations"`
-	Format                   string             `json:"format"`
-	Label                    string             `json:"label"`
-	ServiceID                string             `json:"service_id"`
-	PreparedAt               time.Time          `json:"prepared_at"`
-	Profile                  catalog.Profile    `json:"profile"`
-	Requirements             []catalog.Resolved `json:"requirements"`
-	Records                  []Record           `json:"records"`
-	Statuses                 []Status           `json:"statuses"`
+	ReadinessWork            []json.RawMessage           `json:"readiness_work,omitempty"`
+	Guidance                 []readiness.GuidanceContext `json:"guidance,omitempty"`
+	CollectionPlans          []json.RawMessage           `json:"collection_plans"`
+	CollectionConfigurations []json.RawMessage           `json:"collection_configurations"`
+	Observations             []json.RawMessage           `json:"observations"`
+	Format                   string                      `json:"format"`
+	Label                    string                      `json:"label"`
+	ServiceID                string                      `json:"service_id"`
+	PreparedAt               time.Time                   `json:"prepared_at"`
+	Profile                  catalog.Profile             `json:"profile"`
+	Requirements             []catalog.Resolved          `json:"requirements"`
+	Records                  []Record                    `json:"records"`
+	Statuses                 []Status                    `json:"statuses"`
 }
 
 func (s *Store) SaveDestination(ctx context.Context, a auth.Actor, service string, expected int, v Destination) (Record, error) {
@@ -87,6 +90,12 @@ func (s *Store) PreparePublication(ctx context.Context, a auth.Actor, service, k
 		return Record{}, err
 	}
 	bundle := Bundle{Format: "ksi-assessment-bundle/v1", Label: "Application assessment bundle; not a complete certification package or schema-validated official SDR", ServiceID: service, PreparedAt: time.Now().UTC(), Profile: profile, Requirements: resolved, Records: []Record{}}
+	if s.Guidance != nil {
+		bundle.Guidance, err = s.Guidance.ExportContexts(ctx, tx, a, service, profile.CatalogID, resolved, bundle.PreparedAt)
+		if err != nil {
+			return Record{}, err
+		}
+	}
 	rows, err := tx.Query(ctx, `SELECT service_id,kind,id,revision,requirement_id,actor_id,data,created_at FROM records WHERE service_id=$1 AND kind IN ('scope','profile','measure','evidence','assessment','review','gap','evidence_source','rule_result') ORDER BY kind,id,revision`, service)
 	if err != nil {
 		return Record{}, err
@@ -111,6 +120,7 @@ func (s *Store) PreparePublication(ctx context.Context, a auth.Actor, service, k
 		{`SELECT data FROM collection_plans WHERE service_id=$1 ORDER BY revision`, &bundle.CollectionPlans},
 		{`SELECT data FROM collection_configurations WHERE service_id=$1 ORDER BY revision`, &bundle.CollectionConfigurations},
 		{`SELECT to_jsonb(o) FROM observations o WHERE service_id=$1 ORDER BY observed_at,id`, &bundle.Observations},
+		{`SELECT to_jsonb(w) FROM readiness_work w WHERE service_id=$1 ORDER BY id,revision`, &bundle.ReadinessWork},
 	} {
 		rows, e := tx.Query(ctx, section.query, service)
 		if e != nil {

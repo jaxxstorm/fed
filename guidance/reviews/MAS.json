@@ -1,0 +1,1840 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "mas-cso-flo-4931c3457b04848720fe82a050b112e690cdf6c601eb450a2250fd72e5d4defc": {
+      "content_hash": "ff52c54c5d3f6c577688c5a85b1d90ed6e0efea921dc5dd2432140c0e5baf788",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4931c3457b04848720fe82a050b112e690cdf6c601eb450a2250fd72e5d4defc: MAS-CSO-FLO: optional — Optional adoption before required effective date. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-FLO-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "ALL resources or explicit sets need explained flows and security categories. Categories may vary, including for third parties; the recipe correctly separates FIPS 199 security category from FedRAMP certification class. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-flo-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Obtain the MAS resource set, connection sources and information/security-category decisions for each resource or documented resource group. This is an implementation inference needed to test Information Flows and Security Categories; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Permitted-connection output, human derivation and generation code support flow coverage; a diagram alone lacks category reasoning and a complete resource denominator. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Use flow, inventory and category versions corresponding to the assessed offering and record actual collection dates; no numeric update cadence is stated. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-FLO only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Resource grouping and category appropriateness require service data; the source does not prescribe a universal category for every dependency.",
+            "citations": [
+              "MAS-CSO-FLO-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-flo-88f518acb5c5ccbc3feaaeba25d4dfa1229111dbab6fddb9b7395e90e2c29ccf": {
+      "content_hash": "69aeb2930e750d6d48efef57f5206f3507d709c2c378b244b310bb52fe7f29a4",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 88f518acb5c5ccbc3feaaeba25d4dfa1229111dbab6fddb9b7395e90e2c29ccf: MAS-CSO-FLO: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-FLO-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "ALL resources or explicit sets need explained flows and security categories. Categories may vary, including for third parties; the recipe correctly separates FIPS 199 security category from FedRAMP certification class. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Information Flows and Security Categories. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Permitted-connection output, human derivation and generation code support flow coverage; a diagram alone lacks category reasoning and a complete resource denominator. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST clearly identify, document, and explain information flows and security categories for ALL information resources or sets of information resources in the cloud service offering. Source note: Information resources (including third-party information resources) MAY vary by security category as appropriate to the type of information handled by or impacted by the information resource.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-FLO only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Resource grouping and category appropriateness require service data; the source does not prescribe a universal category for every dependency.",
+            "citations": [
+              "MAS-CSO-FLO-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-flo-e75a8a1ebc6fcf3d9784b81b30428efa25fa24fd1f05a134f5882b0118580c81": {
+      "content_hash": "0deed8d01116c68a96f7b327009bc12ef5a3b86221ad1ff0f32d1bde986829f7",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e75a8a1ebc6fcf3d9784b81b30428efa25fa24fd1f05a134f5882b0118580c81: MAS-CSO-FLO: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-FLO-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "ALL resources or explicit sets need explained flows and security categories. Categories may vary, including for third parties; the recipe correctly separates FIPS 199 security category from FedRAMP certification class. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-flo-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Obtain the MAS resource set, connection sources and information/security-category decisions for each resource or documented resource group. This is an implementation inference needed to test Information Flows and Security Categories; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Permitted-connection output, human derivation and generation code support flow coverage; a diagram alone lacks category reasoning and a complete resource denominator. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Use flow, inventory and category versions corresponding to the assessed offering and record actual collection dates; no numeric update cadence is stated.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-FLO only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Resource grouping and category appropriateness require service data; the source does not prescribe a universal category for every dependency.",
+            "citations": [
+              "MAS-CSO-FLO-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-flo-e960193576e9a08f79e2ac6391c5bb6d71b939f96ffe1d83b7c9257b04f90064": {
+      "content_hash": "89e4ae766f0a4ecf2b968dc98041fef12e0e60f88b6b2c5570c15878c220c9ac",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e960193576e9a08f79e2ac6391c5bb6d71b939f96ffe1d83b7c9257b04f90064: MAS-CSO-FLO: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-FLO-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "ALL resources or explicit sets need explained flows and security categories. Categories may vary, including for third parties; the recipe correctly separates FIPS 199 security category from FedRAMP certification class. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Information Flows and Security Categories. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Permitted-connection output, human derivation and generation code support flow coverage; a diagram alone lacks category reasoning and a complete resource denominator. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST clearly identify, document, and explain information flows and security categories for ALL information resources or sets of information resources in the cloud service offering. Source note: Information resources (including third-party information resources) MAY vary by security category as appropriate to the type of information handled by or impacted by the information resource.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-FLO only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Resource grouping and category appropriateness require service data; the source does not prescribe a universal category for every dependency.",
+            "citations": [
+              "MAS-CSO-FLO-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-flo-f92c3e466f8707c08998da5272fceea6888bc730f4cd23c129103dc7e39f1cb5": {
+      "content_hash": "295d3a002894c0e90c92c061cb7aa0c79fa18b32cf8813b02fdc8bfb1b612268",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant f92c3e466f8707c08998da5272fceea6888bc730f4cd23c129103dc7e39f1cb5: MAS-CSO-FLO: unresolved — Transition grace depends on next independent assessment. Source force: MUST. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-FLO-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "ALL resources or explicit sets need explained flows and security categories. Categories may vary, including for third parties; the recipe correctly separates FIPS 199 security category from FedRAMP certification class. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Information Flows and Security Categories. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for MAS-CSO-FLO.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Permitted-connection output, human derivation and generation code support flow coverage; a diagram alone lacks category reasoning and a complete resource denominator. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers MUST clearly identify, document, and explain information flows and security categories for ALL information resources or sets of information resources in the cloud service offering. Source note: Information resources (including third-party information resources) MAY vary by security category as appropriate to the type of information handled by or impacted by the information resource.",
+          "citations": [
+            "MAS-CSO-FLO-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-FLO only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Resource grouping and category appropriateness require service data; the source does not prescribe a universal category for every dependency.",
+            "citations": [
+              "MAS-CSO-FLO-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for MAS-CSO-FLO. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "MAS-CSO-FLO-source",
+              "MAS-page",
+              "MAS-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-iir-02f763afb44a9d5d2ac16197ecd85e1939693203c595b2ceb5bea77fdb436548": {
+      "content_hash": "c77728b50235c34f862c968212d4cf216595a514f4f78f6549f20178c7b95908",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 02f763afb44a9d5d2ac16197ecd85e1939693203c595b2ceb5bea77fdb436548: MAS-CSO-IIR: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-IIR-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The boundary includes likely handling OR likely confidentiality/integrity/availability impact, including managerial information resources. The recipe preserves separately delivered, non-shared-responsibility software exclusion; agency-use scope is not reducible to a cloud-account export. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Identify Information Resources. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable resource output, derivation explanation and generating code are all source artifacts. Owner mappings and justified exclusions make completeness review possible; machine resources alone omit personnel/policy/process resources. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST identify a set of information resources to assess for FedRAMP Certification that includes all information resources that are likely to handle federal customer data or likely to impact the confidentiality, integrity, or availability of federal customer data handled by the cloud service offering; this set of information resources is the cloud service offering.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-IIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Likely is a contextual reasonable-probability judgment. Agency use-case scope exclusions require facts and agency judgment; they are not blanket provider-selected product exclusions.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-iir-1677c7f47cc0506859361e87318bced63f21449506a869c34d0d7642c611f1b5": {
+      "content_hash": "05958dbb854841a474d4deeecf53fe22dc7f97443a1e3e6522aff8008e3b6d74",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1677c7f47cc0506859361e87318bced63f21449506a869c34d0d7642c611f1b5: MAS-CSO-IIR: unresolved — Transition grace depends on next independent assessment. Source force: MUST. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-IIR-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The boundary includes likely handling OR likely confidentiality/integrity/availability impact, including managerial information resources. The recipe preserves separately delivered, non-shared-responsibility software exclusion; agency-use scope is not reducible to a cloud-account export. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Identify Information Resources. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for MAS-CSO-IIR.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable resource output, derivation explanation and generating code are all source artifacts. Owner mappings and justified exclusions make completeness review possible; machine resources alone omit personnel/policy/process resources. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers MUST identify a set of information resources to assess for FedRAMP Certification that includes all information resources that are likely to handle federal customer data or likely to impact the confidentiality, integrity, or availability of federal customer data handled by the cloud service offering; this set of information resources is the cloud service offering.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-IIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Likely is a contextual reasonable-probability judgment. Agency use-case scope exclusions require facts and agency judgment; they are not blanket provider-selected product exclusions.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for MAS-CSO-IIR. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-iir-5179039ed6c83ef6057454d3c387671031c777480dedc293cd5a77a3dd98f3f5": {
+      "content_hash": "5b25f99c9c9a2ab59b45e481684766cb19ea08b4c557fbc2655b360e91776862",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 5179039ed6c83ef6057454d3c387671031c777480dedc293cd5a77a3dd98f3f5: MAS-CSO-IIR: not_applicable — Requirement not yet effective. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "The boundary includes likely handling OR likely confidentiality/integrity/availability impact, including managerial information resources. The recipe preserves separately delivered, non-shared-responsibility software exclusion; agency-use scope is not reducible to a cloud-account export. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Identify Information Resources. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable resource output, derivation explanation and generating code are all source artifacts. Owner mappings and justified exclusions make completeness review possible; machine resources alone omit personnel/policy/process resources. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST identify a set of information resources to assess for FedRAMP Certification that includes all information resources that are likely to handle federal customer data or likely to impact the confidentiality, integrity, or availability of federal customer data handled by the cloud service offering; this set of information resources is the cloud service offering.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-IIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Likely is a contextual reasonable-probability judgment. Agency use-case scope exclusions require facts and agency judgment; they are not blanket provider-selected product exclusions.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-iir-7f7e9a4d57260b670a3d77477f5a01951b9e198de338ba935f2506d902d1c9e3": {
+      "content_hash": "2357f5e2715ea2ad023f22a2ded4e057ca41e7cb2461941441f700685e5ad6ad",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7f7e9a4d57260b670a3d77477f5a01951b9e198de338ba935f2506d902d1c9e3: MAS-CSO-IIR: required — Resolved from source class and profile metadata. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "The boundary includes likely handling OR likely confidentiality/integrity/availability impact, including managerial information resources. The recipe preserves separately delivered, non-shared-responsibility software exclusion; agency-use scope is not reducible to a cloud-account export. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-iir-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate architecture, data-handling paths, technical and managerial resource inventories and their accountable owners; identify federal customer data separately from provider-generated metadata. This is an implementation inference needed to test Identify Information Resources; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable resource output, derivation explanation and generating code are all source artifacts. Owner mappings and justified exclusions make completeness review possible; machine resources alone omit personnel/policy/process resources. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Retain the assessed inventory version and observation dates for the selected certification/assessment; update the boundary as the offering changes. MAS supplies no fixed inventory refresh deadline.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-IIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Likely is a contextual reasonable-probability judgment. Agency use-case scope exclusions require facts and agency judgment; they are not blanket provider-selected product exclusions.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-iir-95a9ad2cc1d913631e2278f917283b3154cb1665bba7b1f66818964a00b68b51": {
+      "content_hash": "9bad599cdf27608a90765d23690ea8ebf519c2012b779f846535b64b8a593012",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 95a9ad2cc1d913631e2278f917283b3154cb1665bba7b1f66818964a00b68b51: MAS-CSO-IIR: unresolved — Transition grace depends on next independent assessment. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "The boundary includes likely handling OR likely confidentiality/integrity/availability impact, including managerial information resources. The recipe preserves separately delivered, non-shared-responsibility software exclusion; agency-use scope is not reducible to a cloud-account export. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Identify Information Resources. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for MAS-CSO-IIR.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable resource output, derivation explanation and generating code are all source artifacts. Owner mappings and justified exclusions make completeness review possible; machine resources alone omit personnel/policy/process resources. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers MUST identify a set of information resources to assess for FedRAMP Certification that includes all information resources that are likely to handle federal customer data or likely to impact the confidentiality, integrity, or availability of federal customer data handled by the cloud service offering; this set of information resources is the cloud service offering.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-IIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Likely is a contextual reasonable-probability judgment. Agency use-case scope exclusions require facts and agency judgment; they are not blanket provider-selected product exclusions.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for MAS-CSO-IIR. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-iir-a1df125846df26773aaf469de58e2055d766396fb9f7347e6f675653bf54b0c4": {
+      "content_hash": "a3795ed84447d30cf6c153e5752d9feddf731fc0cd54872a35bddcabad5855db",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a1df125846df26773aaf469de58e2055d766396fb9f7347e6f675653bf54b0c4: MAS-CSO-IIR: required — Resolved from source class and profile metadata. Source force: MUST. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "The boundary includes likely handling OR likely confidentiality/integrity/availability impact, including managerial information resources. The recipe preserves separately delivered, non-shared-responsibility software exclusion; agency-use scope is not reducible to a cloud-account export. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-iir-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate architecture, data-handling paths, technical and managerial resource inventories and their accountable owners; identify federal customer data separately from provider-generated metadata. This is an implementation inference needed to test Identify Information Resources; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable resource output, derivation explanation and generating code are all source artifacts. Owner mappings and justified exclusions make completeness review possible; machine resources alone omit personnel/policy/process resources. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Retain the assessed inventory version and observation dates for the selected certification/assessment; update the boundary as the offering changes. MAS supplies no fixed inventory refresh deadline.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-IIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Likely is a contextual reasonable-probability judgment. Agency use-case scope exclusions require facts and agency judgment; they are not blanket provider-selected product exclusions.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-iir-b65e5c330e2d30e8a5b51fdfc10ecc65a8123c8ba251d11b1493361e0ac02cf9": {
+      "content_hash": "ed42a16ea0d7ac8be1c45889589108c1bfb56d7b177d24e046c92803333cc81a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b65e5c330e2d30e8a5b51fdfc10ecc65a8123c8ba251d11b1493361e0ac02cf9: MAS-CSO-IIR: optional — Optional adoption before required effective date. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "The boundary includes likely handling OR likely confidentiality/integrity/availability impact, including managerial information resources. The recipe preserves separately delivered, non-shared-responsibility software exclusion; agency-use scope is not reducible to a cloud-account export. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-iir-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate architecture, data-handling paths, technical and managerial resource inventories and their accountable owners; identify federal customer data separately from provider-generated metadata. This is an implementation inference needed to test Identify Information Resources; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable resource output, derivation explanation and generating code are all source artifacts. Owner mappings and justified exclusions make completeness review possible; machine resources alone omit personnel/policy/process resources. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Retain the assessed inventory version and observation dates for the selected certification/assessment; update the boundary as the offering changes. MAS supplies no fixed inventory refresh deadline. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-IIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Likely is a contextual reasonable-probability judgment. Agency use-case scope exclusions require facts and agency judgment; they are not blanket provider-selected product exclusions.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-iir-baf4e5787cda8a93fd5faa7de82b08db6cd7dc1806c83e3e88a0368912ad56e0": {
+      "content_hash": "25f835090265529db8ef5481f68436cb5a5757a62cddd53581f56f5bc5f2f71e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant baf4e5787cda8a93fd5faa7de82b08db6cd7dc1806c83e3e88a0368912ad56e0: MAS-CSO-IIR: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-IIR-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The boundary includes likely handling OR likely confidentiality/integrity/availability impact, including managerial information resources. The recipe preserves separately delivered, non-shared-responsibility software exclusion; agency-use scope is not reducible to a cloud-account export. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Identify Information Resources. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable resource output, derivation explanation and generating code are all source artifacts. Owner mappings and justified exclusions make completeness review possible; machine resources alone omit personnel/policy/process resources. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST identify a set of information resources to assess for FedRAMP Certification that includes all information resources that are likely to handle federal customer data or likely to impact the confidentiality, integrity, or availability of federal customer data handled by the cloud service offering; this set of information resources is the cloud service offering.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-IIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Likely is a contextual reasonable-probability judgment. Agency use-case scope exclusions require facts and agency judgment; they are not blanket provider-selected product exclusions.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-iir-e1296d4e3a57cfe2cef0719c6415f2e128a0f1d6bd0dd872bf0393aa61befc50": {
+      "content_hash": "ba0d55ae90c13acd0bc386ef1a9ff1799e335664df45901a9816311718b77769",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e1296d4e3a57cfe2cef0719c6415f2e128a0f1d6bd0dd872bf0393aa61befc50: MAS-CSO-IIR: optional — Optional adoption before required effective date. Source force: MUST. Explicit inclusion: FRC-CLA-MFR. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged. FRC-CLA-MFR explicitly includes the named rule for Class A; it is not authority to include every rule in this domain. Shared prerequisite reuse does not broaden that inclusion.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "The boundary includes likely handling OR likely confidentiality/integrity/availability impact, including managerial information resources. The recipe preserves separately delivered, non-shared-responsibility software exclusion; agency-use scope is not reducible to a cloud-account export. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-iir-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate architecture, data-handling paths, technical and managerial resource inventories and their accountable owners; identify federal customer data separately from provider-generated metadata. This is an implementation inference needed to test Identify Information Resources; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "FRC-CLA-MFR-related-source",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable resource output, derivation explanation and generating code are all source artifacts. Owner mappings and justified exclusions make completeness review possible; machine resources alone omit personnel/policy/process resources. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Retain the assessed inventory version and observation dates for the selected certification/assessment; update the boundary as the offering changes. MAS supplies no fixed inventory refresh deadline. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "MAS-CSO-IIR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-IIR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Likely is a contextual reasonable-probability judgment. Agency use-case scope exclusions require facts and agency judgment; they are not blanket provider-selected product exclusions.",
+            "citations": [
+              "MAS-CSO-IIR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-mdi-990ccfbc3d87e7bca0b100003d6f48324562b792f9f0da93f8a4481d359ede7c": {
+      "content_hash": "42b4f05ff3f3dc1ea141800897707e3399aaf561aa0c1b786a7d4cc27cada88b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 990ccfbc3d87e7bca0b100003d6f48324562b792f9f0da93f8a4481d359ede7c: MAS-CSO-MDI: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-MDI-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Metadata is included subject to the explicit IIR condition. The federal-customer-data definition excludes provider-created metadata from that term, but this does not remove metadata resources with relevant security impact from assessment scope. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-mdi-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Resolve MAS-CSO-IIR applicability and locate metadata stores, telemetry, account information, analytics and metadata about federal customer data. This is an implementation inference needed to test Metadata Inclusion; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable metadata output, derivation and generation code plus handling/impact rationale demonstrate inclusion; merely declaring metadata non-federal-customer-data is insufficient. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Retain metadata and scope versions for the assessment and dates of relevant changes; no independent metadata review deadline is supplied.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-MDI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source terms list expands IIR inconsistently with the explicit MAS-CSO-IIR reference. The named rule governs; which telemetry/account resources meet the handling/impact test must be established.",
+            "citations": [
+              "MAS-CSO-MDI-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-mdi-a91ee5ac021f22e08c2588800782ffce83e75b09d55a238e69f8307a34fdba9c": {
+      "content_hash": "52ea8026bd95010273fc4f579404a48b1f033ba4940b492f720590b4f9ce8514",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a91ee5ac021f22e08c2588800782ffce83e75b09d55a238e69f8307a34fdba9c: MAS-CSO-MDI: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-MDI-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Metadata is included subject to the explicit IIR condition. The federal-customer-data definition excludes provider-created metadata from that term, but this does not remove metadata resources with relevant security impact from assessment scope. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Metadata Inclusion. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable metadata output, derivation and generation code plus handling/impact rationale demonstrate inclusion; merely declaring metadata non-federal-customer-data is insufficient. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST include metadata (including metadata about federal customer data) in the Minimum Assessment Scope ONLY IF MAS-CSO-IIR (Identify Information Resources) APPLIES.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-MDI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source terms list expands IIR inconsistently with the explicit MAS-CSO-IIR reference. The named rule governs; which telemetry/account resources meet the handling/impact test must be established.",
+            "citations": [
+              "MAS-CSO-MDI-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-mdi-b79eadd2dac9891099381e63e48105be2f0734a45f161261503bd3ff21498acd": {
+      "content_hash": "8a8f78dc37be3bdeb30c1f97d44fddb4f739421998093cd85cab5df4ecd66d3e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b79eadd2dac9891099381e63e48105be2f0734a45f161261503bd3ff21498acd: MAS-CSO-MDI: optional — Optional adoption before required effective date. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-MDI-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Metadata is included subject to the explicit IIR condition. The federal-customer-data definition excludes provider-created metadata from that term, but this does not remove metadata resources with relevant security impact from assessment scope. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-mdi-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Resolve MAS-CSO-IIR applicability and locate metadata stores, telemetry, account information, analytics and metadata about federal customer data. This is an implementation inference needed to test Metadata Inclusion; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable metadata output, derivation and generation code plus handling/impact rationale demonstrate inclusion; merely declaring metadata non-federal-customer-data is insufficient. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Retain metadata and scope versions for the assessment and dates of relevant changes; no independent metadata review deadline is supplied. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-MDI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source terms list expands IIR inconsistently with the explicit MAS-CSO-IIR reference. The named rule governs; which telemetry/account resources meet the handling/impact test must be established.",
+            "citations": [
+              "MAS-CSO-MDI-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-mdi-dfd8c7ba367a20d76d020c7fc98197b900772f65cb170041e7fe769e51f8060b": {
+      "content_hash": "82cdfb560ddcd895f30e483529084a67ccc6bc0a672309feb789299934cf4fbd",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant dfd8c7ba367a20d76d020c7fc98197b900772f65cb170041e7fe769e51f8060b: MAS-CSO-MDI: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-MDI-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Metadata is included subject to the explicit IIR condition. The federal-customer-data definition excludes provider-created metadata from that term, but this does not remove metadata resources with relevant security impact from assessment scope. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Metadata Inclusion. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable metadata output, derivation and generation code plus handling/impact rationale demonstrate inclusion; merely declaring metadata non-federal-customer-data is insufficient. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST include metadata (including metadata about federal customer data) in the Minimum Assessment Scope ONLY IF MAS-CSO-IIR (Identify Information Resources) APPLIES.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-MDI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source terms list expands IIR inconsistently with the explicit MAS-CSO-IIR reference. The named rule governs; which telemetry/account resources meet the handling/impact test must be established.",
+            "citations": [
+              "MAS-CSO-MDI-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-mdi-fe60e6c47333c2b186b33b81bcb484dc9e352b344938afb61df7fb69725f3a09": {
+      "content_hash": "4adf4aaae4a90a7d0a1b802ab4763818325090229b19bf406d7a00302fc76841",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant fe60e6c47333c2b186b33b81bcb484dc9e352b344938afb61df7fb69725f3a09: MAS-CSO-MDI: unresolved — Transition grace depends on next independent assessment. Source force: MUST. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-MDI-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Metadata is included subject to the explicit IIR condition. The federal-customer-data definition excludes provider-created metadata from that term, but this does not remove metadata resources with relevant security impact from assessment scope. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Metadata Inclusion. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for MAS-CSO-MDI.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Machine-readable metadata output, derivation and generation code plus handling/impact rationale demonstrate inclusion; merely declaring metadata non-federal-customer-data is insufficient. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers MUST include metadata (including metadata about federal customer data) in the Minimum Assessment Scope ONLY IF MAS-CSO-IIR (Identify Information Resources) APPLIES.",
+          "citations": [
+            "MAS-CSO-MDI-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-MDI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source terms list expands IIR inconsistently with the explicit MAS-CSO-IIR reference. The named rule governs; which telemetry/account resources meet the handling/impact test must be established.",
+            "citations": [
+              "MAS-CSO-MDI-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for MAS-CSO-MDI. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "MAS-CSO-MDI-source",
+              "MAS-page",
+              "MAS-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-sup-157cea32b227f41e436ed55b5f41721b4c151fcfff53ce7c37c91f65a9fca509": {
+      "content_hash": "9532e0ee6d985e2cd44b75e5ca4b69a6fe14abd982abb697da3f117e868c5811",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 157cea32b227f41e436ed55b5f41721b4c151fcfff53ce7c37c91f65a9fca509: MAS-CSO-SUP: not_applicable — Requirement not yet effective. Source force: MAY. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-SUP-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "MAY governs whether to include an out-of-offering supplement. Once included, resources MUST be visibly marked and separated and are not certified. The combined assertion retains that conditional mandatory clause. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Supplemental Information. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Publication structure and certification-status labels establish separation. Non-use documentation only proves no optional supplement was selected; it cannot waive separation for one actually published. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MAY include additional materials about other information resources that are not part of the cloud service offering in a FedRAMP Certification Package supplement; these resources will not be FedRAMP Certified and MUST be clearly marked and separated from the cloud service offering. Source note: This is intended to allow inclusion of things like security materials for apps, supplemental marketing collateral, and other information that is not part of the cloud service offering but may be useful to agencies.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-SUP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Whether any annex contains out-of-offering resources is service-specific; supplemental inclusion cannot expand the certification boundary.",
+            "citations": [
+              "MAS-CSO-SUP-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-sup-1bcd78f2a2574d6c6011ff176d7c6b0f2632c6b4d980a2ff70ce5195946183bc": {
+      "content_hash": "370f70ba92ba5d70f837aaa876ec737875dd7c458d3261c80308acaefb6d4dbe",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1bcd78f2a2574d6c6011ff176d7c6b0f2632c6b4d980a2ff70ce5195946183bc: MAS-CSO-SUP: optional — Resolved from source class and profile metadata. Source force: MAY.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-SUP-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "MAY governs whether to include an out-of-offering supplement. Once included, resources MUST be visibly marked and separated and are not certified. The combined assertion retains that conditional mandatory clause. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-sup-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the defined offering boundary and any proposed supplemental materials for resources outside it. This is an implementation inference needed to test Supplemental Information; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Publication structure and certification-status labels establish separation. Non-use documentation only proves no optional supplement was selected; it cannot waive separation for one actually published. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: When a supplement is included or revised; retain the published version/date and boundary it accompanies. No periodic publication obligation is created. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-SUP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Whether any annex contains out-of-offering resources is service-specific; supplemental inclusion cannot expand the certification boundary.",
+            "citations": [
+              "MAS-CSO-SUP-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-sup-309c1cd84f7380c7a41833f9152b785f0087109387eb7403d9a75d7987e7ce30": {
+      "content_hash": "8f37930355ee5ffdf9ea6bec456db007f94583c020507471c8c9576fc8513438",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 309c1cd84f7380c7a41833f9152b785f0087109387eb7403d9a75d7987e7ce30: MAS-CSO-SUP: optional — Optional adoption before required effective date. Source force: MAY. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-SUP-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "MAY governs whether to include an out-of-offering supplement. Once included, resources MUST be visibly marked and separated and are not certified. The combined assertion retains that conditional mandatory clause. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-sup-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the defined offering boundary and any proposed supplemental materials for resources outside it. This is an implementation inference needed to test Supplemental Information; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Publication structure and certification-status labels establish separation. Non-use documentation only proves no optional supplement was selected; it cannot waive separation for one actually published. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: When a supplement is included or revised; retain the published version/date and boundary it accompanies. No periodic publication obligation is created. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-SUP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Whether any annex contains out-of-offering resources is service-specific; supplemental inclusion cannot expand the certification boundary.",
+            "citations": [
+              "MAS-CSO-SUP-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-sup-a5405a9898d2a3ec4089b5de6f8cde0039d9948164277ecefd546b7cab868e91": {
+      "content_hash": "7537ba29f23c78c038d32f32960213f9c8508e704c269fe826600e273b415b04",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a5405a9898d2a3ec4089b5de6f8cde0039d9948164277ecefd546b7cab868e91: MAS-CSO-SUP: unresolved — Transition grace depends on next independent assessment. Source force: MAY. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-SUP-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "MAY governs whether to include an out-of-offering supplement. Once included, resources MUST be visibly marked and separated and are not certified. The combined assertion retains that conditional mandatory clause. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Supplemental Information. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for MAS-CSO-SUP.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Publication structure and certification-status labels establish separation. Non-use documentation only proves no optional supplement was selected; it cannot waive separation for one actually published. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers MAY include additional materials about other information resources that are not part of the cloud service offering in a FedRAMP Certification Package supplement; these resources will not be FedRAMP Certified and MUST be clearly marked and separated from the cloud service offering. Source note: This is intended to allow inclusion of things like security materials for apps, supplemental marketing collateral, and other information that is not part of the cloud service offering but may be useful to agencies.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-SUP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Whether any annex contains out-of-offering resources is service-specific; supplemental inclusion cannot expand the certification boundary.",
+            "citations": [
+              "MAS-CSO-SUP-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for MAS-CSO-SUP. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "MAS-CSO-SUP-source",
+              "MAS-page",
+              "MAS-metadata"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-sup-cfdd1a032ccc94c40416cbc2d3cac6ac3fe23913242c8212620b6653fc6f70f7": {
+      "content_hash": "a5789ee96ab1028e48157d595c5fcb5d83b65926e343a33d8e6032468125e684",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant cfdd1a032ccc94c40416cbc2d3cac6ac3fe23913242c8212620b6653fc6f70f7: MAS-CSO-SUP: not_applicable — Class excluded by subset. Source force: MAY (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-SUP-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "MAY governs whether to include an out-of-offering supplement. Once included, resources MUST be visibly marked and separated and are not certified. The combined assertion retains that conditional mandatory clause. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Supplemental Information. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Publication structure and certification-status labels establish separation. Non-use documentation only proves no optional supplement was selected; it cannot waive separation for one actually published. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MAY include additional materials about other information resources that are not part of the cloud service offering in a FedRAMP Certification Package supplement; these resources will not be FedRAMP Certified and MUST be clearly marked and separated from the cloud service offering. Source note: This is intended to allow inclusion of things like security materials for apps, supplemental marketing collateral, and other information that is not part of the cloud service offering but may be useful to agencies.",
+          "citations": [
+            "MAS-CSO-SUP-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-SUP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Whether any annex contains out-of-offering resources is service-specific; supplemental inclusion cannot expand the certification boundary.",
+            "citations": [
+              "MAS-CSO-SUP-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-tpr-0130b7adb3e636d78bbc309f25ecdaf38f3d0c30ea1c8f4a26185137a588d9f0": {
+      "content_hash": "d1722cd6415d8ed3f6745ec41ca2c78717ea676637c57fd029dea39714ca698c",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 0130b7adb3e636d78bbc309f25ecdaf38f3d0c30ea1c8f4a26185137a588d9f0: MAS-CSO-TPR: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-TPR-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The ONLY IF MAS-CSO-IIR APPLIES gate survives. Four separate listed topics retain usage/configuration, justification, mitigation and compensating controls; the latter two are not interchangeable. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Third-Party Information Resources. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-resource records, machine-readable output, derivation and code are needed. A vendor certificate is not evidence of this offering's usage, impact or compensating controls. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST address the potential impact to federal customer data from third-party information resources used by the cloud service offering, ONLY IF MAS-CSO-IIR (Identify Information Resources) APPLIES, by documenting the following information about each applicable third-party information resource:",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-TPR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The terms list misleadingly expands IIR as Initial Incident Report, but the statement and related ID expressly identify MAS-CSO-IIR Identify Information Resources. That explicit dependency controls this interpretation; actual boundary applicability remains factual.",
+            "citations": [
+              "MAS-CSO-TPR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-tpr-119a8a8c545209399bf626802ff2e74ec126971956a21780bb0a14fd54bb7589": {
+      "content_hash": "efc47fe44943e70b4dbe8daa8cfdb9c9721819179921cd8f68e8b362ba1d13ab",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 119a8a8c545209399bf626802ff2e74ec126971956a21780bb0a14fd54bb7589: MAS-CSO-TPR: optional — Optional adoption before required effective date. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-TPR-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The ONLY IF MAS-CSO-IIR APPLIES gate survives. Four separate listed topics retain usage/configuration, justification, mitigation and compensating controls; the latter two are not interchangeable. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 5 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-tpr-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Resolve MAS-CSO-IIR applicability and obtain the offering boundary and dependency inventory; identify resources not entirely included in that scope. This is an implementation inference needed to test Third-Party Information Resources; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-resource records, machine-readable output, derivation and code are needed. A vendor certificate is not evidence of this offering's usage, impact or compensating controls. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Use the actual dependency/configuration and scope versions under assessment. Retain dates of impact and mitigation evaluation without inventing a vendor-review interval. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-TPR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The terms list misleadingly expands IIR as Initial Incident Report, but the statement and related ID expressly identify MAS-CSO-IIR Identify Information Resources. That explicit dependency controls this interpretation; actual boundary applicability remains factual.",
+            "citations": [
+              "MAS-CSO-TPR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-tpr-44942159eaeeb1d244060ec5f0f132938cf21316b67160a873f1e504f57f4f06": {
+      "content_hash": "0e357b3e4497f0bda4c354cfbf562a3eb99e117df6dac367b737929b7f6b2b29",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 44942159eaeeb1d244060ec5f0f132938cf21316b67160a873f1e504f57f4f06: MAS-CSO-TPR: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-TPR-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The ONLY IF MAS-CSO-IIR APPLIES gate survives. Four separate listed topics retain usage/configuration, justification, mitigation and compensating controls; the latter two are not interchangeable. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test. The draft has 5 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mas-cso-tpr-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Resolve MAS-CSO-IIR applicability and obtain the offering boundary and dependency inventory; identify resources not entirely included in that scope. This is an implementation inference needed to test Third-Party Information Resources; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-resource records, machine-readable output, derivation and code are needed. A vendor certificate is not evidence of this offering's usage, impact or compensating controls. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. Operational timing: Use the actual dependency/configuration and scope versions under assessment. Retain dates of impact and mitigation evaluation without inventing a vendor-review interval.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-TPR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The terms list misleadingly expands IIR as Initial Incident Report, but the statement and related ID expressly identify MAS-CSO-IIR Identify Information Resources. That explicit dependency controls this interpretation; actual boundary applicability remains factual.",
+            "citations": [
+              "MAS-CSO-TPR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-tpr-e60231f30e845d100ede374c6815653935652fb8b2219986e639de0d451f66b9": {
+      "content_hash": "50ad423ccbb55d1031f5a106da6d710049de00823ebb275f54dd54b96e248516",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e60231f30e845d100ede374c6815653935652fb8b2219986e639de0d451f66b9: MAS-CSO-TPR: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-TPR-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The ONLY IF MAS-CSO-IIR APPLIES gate survives. Four separate listed topics retain usage/configuration, justification, mitigation and compensating controls; the latter two are not interchangeable. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Third-Party Information Resources. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-resource records, machine-readable output, derivation and code are needed. A vendor certificate is not evidence of this offering's usage, impact or compensating controls. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST address the potential impact to federal customer data from third-party information resources used by the cloud service offering, ONLY IF MAS-CSO-IIR (Identify Information Resources) APPLIES, by documenting the following information about each applicable third-party information resource:",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-TPR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The terms list misleadingly expands IIR as Initial Incident Report, but the statement and related ID expressly identify MAS-CSO-IIR Identify Information Resources. That explicit dependency controls this interpretation; actual boundary applicability remains factual.",
+            "citations": [
+              "MAS-CSO-TPR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mas-cso-tpr-ec371a9200aa74f049ab936320cbe7206b2fdbd619f6c16a6ab2a5307095b466": {
+      "content_hash": "dff9b3e6eacf76bd0bb07c36cfd9d86b43de9fc78383af0d25d8123b2fc2e87f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ec371a9200aa74f049ab936320cbe7206b2fdbd619f6c16a6ab2a5307095b466: MAS-CSO-TPR: unresolved — Transition grace depends on next independent assessment. Source force: MUST. The ongoing-certification transition depends on whether the first independent assessment after the published boundary has started; missing assessment status stays unresolved.",
+          "citations": [
+            "MAS-metadata",
+            "MAS-CSO-TPR-source",
+            "MAS-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The ONLY IF MAS-CSO-IIR APPLIES gate survives. Four separate listed topics retain usage/configuration, justification, mitigation and compensating controls; the latter two are not interchangeable. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Scope.md assigns agency use-case scope decisions to agencies and recognizes OMB exclusions. That context is distinct from the provider's resource handling/security-impact boundary test.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions",
+            "MAS-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this needs_decision plan for Third-Party Information Resources. The named decision owner must resolve Has the first independent assessment after the published grace boundary started for this ongoing certification? Supply the actual start date and applicable transition decision for MAS-CSO-TPR.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Per-resource records, machine-readable output, derivation and code are needed. A vendor certificate is not evidence of this offering's usage, impact or compensating controls. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "For 20x, obtain/optional adoption begins July 4, 2026; maintain/default grace is January 1, 2027 with until-next-assessment true. Rev5 obtain is January 1, 2027; it is not substituted for the 20x boundary. No provider operation or invented deadline is scheduled for this needs_decision variant. The source statement remains: Providers MUST address the potential impact to federal customer data from third-party information resources used by the cloud service offering, ONLY IF MAS-CSO-IIR (Identify Information Resources) APPLIES, by documenting the following information about each applicable third-party information resource:",
+          "citations": [
+            "MAS-CSO-TPR-source",
+            "MAS-page",
+            "MAS-metadata",
+            "MAS-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MAS-CSO-TPR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The terms list misleadingly expands IIR as Initial Incident Report, but the statement and related ID expressly identify MAS-CSO-IIR Identify Information Resources. That explicit dependency controls this interpretation; actual boundary applicability remains factual.",
+            "citations": [
+              "MAS-CSO-TPR-source",
+              "MAS-page",
+              "MAS-definitions"
+            ]
+          },
+          {
+            "finding": "Actual first independent-assessment start after the published grace boundary is missing for MAS-CSO-TPR. The default date alone cannot establish ongoing transition completion; the needs-decision plan appropriately retains this fact question.",
+            "citations": [
+              "MAS-CSO-TPR-source",
+              "MAS-page",
+              "MAS-metadata"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+package guidancecontent
+
+import (
+	"github.com/jaxxstorm/fed/internal/readiness"
+	"io/fs"
+)
+
+// PIY includes managerial information resources and provider-wide governance evidence.
+func PIY(rules, markdown fs.FS) (readiness.Package, error) {
+	return technicalDraft(rules, markdown, "PIY", "policy-and-inventory", 15, []technicalRecipe{
+		{code: "GIV", statement: "Authoritative sources are used to automatically generate real-time inventories of all information resources when needed.",
+			purpose: "Demonstrate on-demand automated real-time inventory generation from authoritative sources for both machine and non-machine information resources; a cloud API export is only one portion of the denominator.", capability: "information-resource-authorities",
+			scope:   "All information resources of the offering, including personnel, equipment, funds, policies, procedures, software, hardware, code and cloud services. Identify the authoritative source and service boundary for each resource class.",
+			setup:   "Locate resource-class ownership, authoritative systems of record, generation/query automation and reconciliation rules across technical and business sources.",
+			records: "Authority/source mapping for each resource class, generator/query revisions, request and generation timestamps, source freshness, generated inventory snapshots and reconciliations of omissions, duplicates and inaccessible sources.",
+			review:  "Trace inventory entries to authoritative records and verify automated generation reflects current state when needed. Examine non-machine coverage and freshness; do not impose an arbitrary refresh SLA or equate cached output with real-time generation.", insufficient: "A manually updated spreadsheet, stale scheduled export or cloud-only inventory presented as all information resources.",
+			timing: "When inventories are needed, generation must be automatic and real time from authoritative sources. Retain request/generation timestamps and source observation times; no numeric latency allowance is supplied.",
+			facets: []technicalFacet{{"Authoritative sources", "Inventories derive from identified authoritative sources.", "Resource-class source ownership, source IDs and entry-to-source traceability.", "An unverified aggregation assumed authoritative."}, {"automatically generate real-time inventories", "Automation generates current inventories when needed.", "Generator versions, request/run timestamps, outputs and source freshness observations.", "A recent-looking file with no generation/source timing."}, {"all information resources", "Inventory coverage includes both machine and non-machine resources.", "Resource-class denominator and technical/business source reconciliation.", "Only cloud assets or containers."}}},
+		{code: "RES", statement: "Executive support for achieving the provider's security goals is persistently reviewed and demonstrated.",
+			purpose: "Assess repeated review and observable executive support tied to the provider's security goals, rather than accepting a policy signature as ongoing support.", capability: "provider-security-goals-and-governance",
+			scope:   "Provider security goals and accountable executives whose support affects the offering; provider-wide records must explain applicability to this service rather than being duplicated per cloud account.",
+			setup:   "Locate versioned provider security goals, executive accountability, decision forums and records of support and its review.",
+			records: "Security-goal versions, executive decisions, resource/priority commitments and follow-through records, review dates, evaluation methods and conclusions about executive support.",
+			review:  "Link executive actions to security goals and evaluate repeated review of whether support is present. Distinguish declared intent from demonstrated decisions, prioritization or resources and retain limitations without inferring a required budget level.", insufficient: "A signed security policy, executive title or annual meeting invitation without demonstrated support and repeated review.",
+			facets: []technicalFacet{{"reviewed", "Executive support receives repeated review.", "Dated goal-linked evaluation of support with method and conclusions.", "An executive endorsement never evaluated."}, {"demonstrated", "Executive support is demonstrated over time.", "Goal-linked decisions, commitments and follow-through attributable to executives.", "A mission statement without observable support."}}},
+		{code: "RIS", statement: "The effectiveness of the provider's investments in achieving security goals is persistently reviewed.",
+			purpose: "Evaluate whether security investments help achieve the provider's goals through repeated effectiveness reviews, without equating spending or tool purchases with security outcomes.", capability: "provider-security-goals-and-governance",
+			scope:   "Provider investments in people, process and technology intended to achieve security goals, with coverage and allocation to the offering explained.",
+			setup:   "Locate security goals, investment/initiative records, expected outcomes, observed measures and effectiveness-review ownership.",
+			records: "Goal-to-investment mapping, expected outcomes, measured results and limitations, review methods and dated effectiveness conclusions over time.",
+			review:  "Compare observed outcomes with the goals the investments support and examine review conclusions and uncertainty about causation. Include relevant staffing/process investments; neither a minimum spending amount nor a numeric return target is implied.", insufficient: "Budget totals, invoices or procurement approvals without goal-linked effectiveness review."},
+		{code: "RSD", statement: "The effectiveness of building security and privacy considerations into the Software Development Lifecycle and aligning with CISA Secure By Design principles is persistently reviewed.",
+			purpose: "Examine repeated effectiveness review of security and privacy integration throughout the SDLC and alignment with CISA Secure By Design principles, not merely the presence of pipeline scanners.", capability: "secure-development-review-boundary",
+			scope:   "The offering's software development lifecycle, including requirements, design, implementation, release and maintenance, with security, privacy and the cited CISA principle alignment identified.",
+			setup:   "Locate SDLC procedures, security/privacy design records, the provider's identified CISA Secure By Design principles/version mapping and effectiveness evaluations across lifecycle activities.",
+			records: "SDLC procedure versions, security and privacy consideration records, CISA principle/source/version mapping, evaluated project/release population, observed outcomes and repeated effectiveness-review conclusions.",
+			review:  "Evaluate security, privacy and Secure By Design alignment separately against actual lifecycle practices and outcomes. Retain the principle edition used without inventing an external checklist or treating scanner success as evidence of design/privacy effectiveness.", insufficient: "A secure-coding policy, vulnerability scan score or CISA link without reviewed alignment and privacy/security effectiveness.",
+			facets: []technicalFacet{{"security and privacy considerations", "Review assesses effectiveness of both security and privacy integration into the SDLC.", "Design/requirements/implementation records addressing both concerns and dated outcome-based evaluations.", "Security tests alone with privacy omitted."}, {"aligning with CISA Secure By Design principles", "Review assesses effectiveness of alignment with identified CISA Secure By Design principles.", "Principle/source/version mapping, actual development decisions and dated effectiveness conclusions.", "A logo or link with no mapped practice and review."}}},
+		{code: "RVD", statement: "The effectiveness of the provider's vulnerability disclosure program is persistently reviewed.",
+			purpose: "Assess repeated review of how well the provider's disclosure program works for receiving, evaluating and handling vulnerability disclosures, rather than only verifying a published contact address.", capability: "vulnerability-disclosure-program-history",
+			scope:   "The provider's vulnerability disclosure program and its service coverage, reporter channels, actual report population and handling stages; provider-wide evidence must map to the offering.",
+			setup:   "Locate disclosure policy/channel versions, report intake and handling records, program owners, evaluation methods and review conclusions.",
+			records: "Disclosure program versions, report/triage/communication history, measured handling outcomes or justified channel exercises, evaluated periods and dated effectiveness-review findings.",
+			review:  "Check that reviews evaluate the program against actual report handling or justified evaluations, including channel availability and reporter communication. Explain supported no-report periods and limitations; do not infer effectiveness from zero reports or substitute vulnerability scanning for disclosure review.", insufficient: "A security.txt file, published policy or empty report queue without repeated effectiveness evaluation."},
+	})
+}

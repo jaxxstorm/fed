@@ -3,7 +3,6 @@
 .env
 .data
 bin
-2026-markdown
 openspec
 testdata
 coverage.out

@@ -16,6 +16,8 @@ jobs:
       KSI_TEST_DATABASE_URL: postgres://ksi:development@127.0.0.1:5432/ksi?sslmode=disable
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - uses: actions/setup-go@v5
         with:
           go-version: "1.26"
@@ -32,7 +34,7 @@ jobs:
         working-directory: frontend
       - run: make build
       - run: go vet ./...
-      - run: go test -race ./...
+      - run: go test -race ./... -timeout=30m
       - run: docker compose -f compose.browser.yaml up -d --wait
       - run: bun run test:docker
         working-directory: frontend

@@ -1,0 +1,903 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "ksi-piy-giv-031d2dabae9b": {
+      "content_hash": "3e440d2c9754ab3bd7706e2ec32d3aceb1a5cb7ccedf7a3bdfea658f369e4b5a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 031d2dabae9bdd972167e40bc9bf0a2d389afa1edbeacffe2ac4f7263fabef7e preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Authoritative sources, automatic real-time generation when needed and all-information-resource coverage are separate proof duties. All includes technical and managerial resources, so cloud-only inventory fails the denominator. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "resources"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Authoritative systems for each resource class and on-demand generation/reconciliation capability are necessary, beyond export access. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Entry/source lineage, generation/request/freshness observations and technical/business reconciliation support distinct assertions. Attributable reports may demonstrate actual automation; a manually updated spreadsheet or recent-looking cached file cannot. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. Generation is real-time when needed; request/run and source-freshness timestamps are relevant without inventing a numeric latency allowance.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No numeric real-time latency allowance is specified. Source freshness and what constitutes when-needed generation must be explained without inventing an official SLA.",
+            "citations": [
+              "KSI-PIY-GIV",
+              "KSI-PIY-GIV-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-giv-61093090481e": {
+      "content_hash": "241874b711482d70795568e63f03d3140b5708570febe608715bdc3f60ff09fa",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 61093090481e23f7e47e092b770a3822e38f2eab536412ccbd04f4138992d10c retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Authoritative sources, automatic real-time generation when needed and all-information-resource coverage are separate proof duties. All includes technical and managerial resources, so cloud-only inventory fails the denominator. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "resources"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Authoritative systems for each resource class and on-demand generation/reconciliation capability are necessary, beyond export access. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Entry/source lineage, generation/request/freshness observations and technical/business reconciliation support distinct assertions. Attributable reports may demonstrate actual automation; a manually updated spreadsheet or recent-looking cached file cannot. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. Generation is real-time when needed; request/run and source-freshness timestamps are relevant without inventing a numeric latency allowance. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No numeric real-time latency allowance is specified. Source freshness and what constitutes when-needed generation must be explained without inventing an official SLA.",
+            "citations": [
+              "KSI-PIY-GIV",
+              "KSI-PIY-GIV-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-PIY-GIV",
+              "KSI-PIY-GIV-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-giv-df106ed141b1": {
+      "content_hash": "f647da02db6a5ade09b4e37de75ea32b0b4d82394f275838bfd08a66539e307b",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant df106ed141b13d344f67276dbbdea710b7788e1721a5200e0636279a3635a1c8 with FRC-CLA-MFR's enumerated KSI list: KSI-PIY-GIV is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Authoritative sources, automatic real-time generation when needed and all-information-resource coverage are separate proof duties. All includes technical and managerial resources, so cloud-only inventory fails the denominator. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "resources"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Authoritative systems for each resource class and on-demand generation/reconciliation capability are necessary, beyond export access. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Entry/source lineage, generation/request/freshness observations and technical/business reconciliation support distinct assertions. Attributable reports may demonstrate actual automation; a manually updated spreadsheet or recent-looking cached file cannot. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. Generation is real-time when needed; request/run and source-freshness timestamps are relevant without inventing a numeric latency allowance. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-GIV",
+            "KSI-PIY-GIV-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No numeric real-time latency allowance is specified. Source freshness and what constitutes when-needed generation must be explained without inventing an official SLA.",
+            "citations": [
+              "KSI-PIY-GIV",
+              "KSI-PIY-GIV-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-res-770617a06205": {
+      "content_hash": "384af2ff67ef06f1e0207467a027dd881095c843a7dd723f6286564c2e4ccd93",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 770617a062052c28e580da00e86959126ea05206576f386c85611d02a79902a7 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Executive support for provider security goals must be persistently reviewed AND demonstrated. These assertions separate evaluation from observable executive action.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Defined goals, accountable executives and a support-evaluation method are prerequisites; provider-wide records must map to the offering. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Goal-linked review conclusions and attributable executive decisions/commitments/follow-through support distinct duties. Documentary records are appropriate alternatives to exports; titles, policy signatures or meeting invitations alone are insufficient. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not impose a budget floor or one executive forum. Support must be judged against the provider goals without claiming a prescribed governance structure.",
+            "citations": [
+              "KSI-PIY-RES",
+              "KSI-PIY-RES-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-PIY-RES",
+              "KSI-PIY-RES-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-res-cbfc9aed94fd": {
+      "content_hash": "2516e632e6ee0dbc7bf9c5769e7fe3f699cebf592dfa4f76478091d7b74d53c0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant cbfc9aed94fd736b8e1f31fdfa0d1e5cbaae1ee6a0dbcf11668773529b8d10f6 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Executive support for provider security goals must be persistently reviewed AND demonstrated. These assertions separate evaluation from observable executive action.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Defined goals, accountable executives and a support-evaluation method are prerequisites; provider-wide records must map to the offering. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Goal-linked review conclusions and attributable executive decisions/commitments/follow-through support distinct duties. Documentary records are appropriate alternatives to exports; titles, policy signatures or meeting invitations alone are insufficient. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not impose a budget floor or one executive forum. Support must be judged against the provider goals without claiming a prescribed governance structure.",
+            "citations": [
+              "KSI-PIY-RES",
+              "KSI-PIY-RES-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-res-fa48a75cc4ba": {
+      "content_hash": "babc7d2bac22e3d5b68cb40080e4090681de03fc59fac1de7db1e1ca3f688b97",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant fa48a75cc4ba2a8a62c785fbe7310b8840ad89510d6d66847c5ae022a08a4145 with FRC-CLA-MFR's enumerated KSI list: KSI-PIY-RES is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Executive support for provider security goals must be persistently reviewed AND demonstrated. These assertions separate evaluation from observable executive action.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Defined goals, accountable executives and a support-evaluation method are prerequisites; provider-wide records must map to the offering. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Goal-linked review conclusions and attributable executive decisions/commitments/follow-through support distinct duties. Documentary records are appropriate alternatives to exports; titles, policy signatures or meeting invitations alone are insufficient. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-RES",
+            "KSI-PIY-RES-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not impose a budget floor or one executive forum. Support must be judged against the provider goals without claiming a prescribed governance structure.",
+            "citations": [
+              "KSI-PIY-RES",
+              "KSI-PIY-RES-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-ris-115d98a43aca": {
+      "content_hash": "daf10051fe4801b12cee360a355e7262b11030c174ea4b75740e50225642cf79",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 115d98a43acae71ad7e1a973cd3fb50647745bf5e0cfd0d6f81bf3fd39db74d4 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The duty is persistent review of investment effectiveness in achieving provider security goals, not proof of spending or a mandated return on investment.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Goal-to-investment mapping and expected-outcome evaluation criteria are needed before effectiveness can be assessed. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Measured outcomes, review methods and dated goal-linked conclusions support review; attributable evaluations are alternatives to raw systems exports. Invoices and procurement approvals alone cannot show effectiveness. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Attribution between investment and outcome may remain uncertain. The source supplies no numeric return target or investment minimum, and conclusions must retain causation limits.",
+            "citations": [
+              "KSI-PIY-RIS",
+              "KSI-PIY-RIS-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-PIY-RIS",
+              "KSI-PIY-RIS-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-ris-606217815cb3": {
+      "content_hash": "6a1bbff70c08c7eb4756408320449cdc96642334b9ed86d17d54c25052a1d8a5",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 606217815cb328786116aaa1c2466facb84cd5a424ca918d5d68907b1841d8da with FRC-CLA-MFR's enumerated KSI list: KSI-PIY-RIS is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The duty is persistent review of investment effectiveness in achieving provider security goals, not proof of spending or a mandated return on investment.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Goal-to-investment mapping and expected-outcome evaluation criteria are needed before effectiveness can be assessed. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Measured outcomes, review methods and dated goal-linked conclusions support review; attributable evaluations are alternatives to raw systems exports. Invoices and procurement approvals alone cannot show effectiveness. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Attribution between investment and outcome may remain uncertain. The source supplies no numeric return target or investment minimum, and conclusions must retain causation limits.",
+            "citations": [
+              "KSI-PIY-RIS",
+              "KSI-PIY-RIS-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-ris-63870f23ba7c": {
+      "content_hash": "9145bdbf43d1dcd36b7b556326c49429470fbcdc8166398680583a29e70dab45",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 63870f23ba7cf056c3e2dcc57b09f1e5781b8c58a367e534a8cd8e01deab6326 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The duty is persistent review of investment effectiveness in achieving provider security goals, not proof of spending or a mandated return on investment.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Goal-to-investment mapping and expected-outcome evaluation criteria are needed before effectiveness can be assessed. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Measured outcomes, review methods and dated goal-linked conclusions support review; attributable evaluations are alternatives to raw systems exports. Invoices and procurement approvals alone cannot show effectiveness. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-PIY-RIS",
+            "KSI-PIY-RIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Attribution between investment and outcome may remain uncertain. The source supplies no numeric return target or investment minimum, and conclusions must retain causation limits.",
+            "citations": [
+              "KSI-PIY-RIS",
+              "KSI-PIY-RIS-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-rsd-00857ca93e6c": {
+      "content_hash": "e15f67263e1072b1c082c9a1b16a5805df3ffe97df645b5f4d1f732b05baa06f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 00857ca93e6c3a593e45de5d9f87ea6f57639d4c442823c290bf1e38f57f4247 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent effectiveness review must address SDLC security, SDLC privacy and CISA Secure By Design alignment separately. The review split security and privacy so security test evidence cannot conceal missing privacy review.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Lifecycle practices, identified CISA principles and an effectiveness evaluation method are substantive prerequisites. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Security decisions/outcomes, privacy decisions/outcomes and mapped Secure By Design practices each need dated effectiveness conclusions. Retained reports are valid alternatives, while scanners, policy links and logos are insufficient. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned statement names CISA principles without identifying an edition or supplying their full text. The guidance retains the provider-used source/version; this comparison does not fabricate a CISA checklist or claim to have validated every external principle.",
+            "citations": [
+              "KSI-PIY-RSD",
+              "KSI-PIY-RSD-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-rsd-41109087c64d": {
+      "content_hash": "93b7cb6face3499279d1dda99049dd726b82ca952b0c6582cf440da5a093727b",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 41109087c64db2b4b60bb23341c2e1edced569ad9ec5bf55f3afc711cc494ac2 with FRC-CLA-MFR's enumerated KSI list: KSI-PIY-RSD is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent effectiveness review must address SDLC security, SDLC privacy and CISA Secure By Design alignment separately. The review split security and privacy so security test evidence cannot conceal missing privacy review.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Lifecycle practices, identified CISA principles and an effectiveness evaluation method are substantive prerequisites. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Security decisions/outcomes, privacy decisions/outcomes and mapped Secure By Design practices each need dated effectiveness conclusions. Retained reports are valid alternatives, while scanners, policy links and logos are insufficient. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned statement names CISA principles without identifying an edition or supplying their full text. The guidance retains the provider-used source/version; this comparison does not fabricate a CISA checklist or claim to have validated every external principle.",
+            "citations": [
+              "KSI-PIY-RSD",
+              "KSI-PIY-RSD-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-rsd-7a1ecabe858a": {
+      "content_hash": "ff4494d78a4b4a406935f95aff6e96e2695b2fc9013bead7f1d1bfd37b5a484d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7a1ecabe858a9c8800c33327abb167d19ec023c583f038f7253f6ef6c366fba9 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent effectiveness review must address SDLC security, SDLC privacy and CISA Secure By Design alignment separately. The review split security and privacy so security test evidence cannot conceal missing privacy review.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Lifecycle practices, identified CISA principles and an effectiveness evaluation method are substantive prerequisites. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Security decisions/outcomes, privacy decisions/outcomes and mapped Secure By Design practices each need dated effectiveness conclusions. Retained reports are valid alternatives, while scanners, policy links and logos are insufficient. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-RSD",
+            "KSI-PIY-RSD-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The pinned statement names CISA principles without identifying an edition or supplying their full text. The guidance retains the provider-used source/version; this comparison does not fabricate a CISA checklist or claim to have validated every external principle.",
+            "citations": [
+              "KSI-PIY-RSD",
+              "KSI-PIY-RSD-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-PIY-RSD",
+              "KSI-PIY-RSD-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-rvd-9a711da6b220": {
+      "content_hash": "48d2e588b6301158c88aa2b420b80c652c9fab43c3f856384bfe84b85c5bd66b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 9a711da6b2207993acea33207942a9514365bf0077a98a74b75ee04abf26db59 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The single recurring duty is effectiveness review of the provider disclosure program. A published channel or zero reports does not establish program effectiveness. Vulnerability includes protection weaknesses such as misconfiguration and weak credentials, not only software CVEs. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "vulnerability"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. An operating disclosure program and evaluation method are prerequisites; provider-wide operation must explain coverage of the offering. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Program versions, handling/communication outcomes or justified channel exercises and dated conclusions support review. Attributable reports may substitute for integration; a security.txt file and empty queue cannot. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source specifies no response SLA or minimum disclosure count. Supported no-report periods and exercises limit conclusions about actual report handling.",
+            "citations": [
+              "KSI-PIY-RVD",
+              "KSI-PIY-RVD-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-PIY-RVD",
+              "KSI-PIY-RVD-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-rvd-bcccdc92e17c": {
+      "content_hash": "6bfd555f1a6534788e524b4ccd923adb67530c3950a7e931a6ea2b6c96486eaf",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant bcccdc92e17cb48921c802b84d86446344a6338447e7ded09e5f2ed806d314f0 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The single recurring duty is effectiveness review of the provider disclosure program. A published channel or zero reports does not establish program effectiveness. Vulnerability includes protection weaknesses such as misconfiguration and weak credentials, not only software CVEs.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "vulnerability"
+          ]
+        },
+        "prerequisites": {
+          "finding": "An operating disclosure program and evaluation method are prerequisites; provider-wide operation must explain coverage of the offering. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Program versions, handling/communication outcomes or justified channel exercises and dated conclusions support review. Attributable reports may substitute for integration; a security.txt file and empty queue cannot. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source specifies no response SLA or minimum disclosure count. Supported no-report periods and exercises limit conclusions about actual report handling.",
+            "citations": [
+              "KSI-PIY-RVD",
+              "KSI-PIY-RVD-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-piy-rvd-c5d2ae1a7bef": {
+      "content_hash": "a0adc7e5555ab94077c246094eba5dd0b4ce70c5785fc576778a9b8afe36df3d",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant c5d2ae1a7bef9c65b2392c59fdd9bdbabb647926bf20c4a7df2e32fb11a65035 with FRC-CLA-MFR's enumerated KSI list: KSI-PIY-RVD is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The single recurring duty is effectiveness review of the provider disclosure program. A published channel or zero reports does not establish program effectiveness. Vulnerability includes protection weaknesses such as misconfiguration and weak credentials, not only software CVEs. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "vulnerability"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. An operating disclosure program and evaluation method are prerequisites; provider-wide operation must explain coverage of the offering. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Program versions, handling/communication outcomes or justified channel exercises and dated conclusions support review. Attributable reports may substitute for integration; a security.txt file and empty queue cannot. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-PIY-RVD",
+            "KSI-PIY-RVD-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source specifies no response SLA or minimum disclosure count. Supported no-report periods and exercises limit conclusions about actual report handling.",
+            "citations": [
+              "KSI-PIY-RVD",
+              "KSI-PIY-RVD-page"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,981 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "rec-frp-drd-46a2aff742eace4e9e1d21fad2def0f983aeffe89602e4137a824a0ffc0b7dec": {
+      "content_hash": "053cd5b04a9f6bf64f056b7a0404857b2666c56aa0f04ccdac85de2ecfbc5e2e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 46a2aff742eace4e9e1d21fad2def0f983aeffe89602e4137a824a0ffc0b7dec: REC-FRP-DRD: not_applicable — Different subset type or path. Source force: MUST NOT (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-FRP-DRD-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "After two FedRAMP Recognition revocations, FedRAMP must not restore Recognition. This is a count of revocations, not an elapsed two-year ban. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-FRP-DRD-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Double Revocation Disqualification. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-FRP-DRD-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Double Revocation Disqualification statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-FRP-DRD-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST NOT restore FedRAMP Recognition for an assessor after FedRAMP has revoked that assessor's FedRAMP Recognition 2 times.",
+          "citations": [
+            "REC-FRP-DRD-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-FRP-DRD only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Double Revocation Disqualification were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-FRP-DRD-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-frp-foc-aece99ecf602b4e41f170f4fc316539917cb575851141c741d5d4363b25f0815": {
+      "content_hash": "50fbefe9201e93789a7f63a30e363189cd4a573b89b6a178a81ae6a51ad2f3b5",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant aece99ecf602b4e41f170f4fc316539917cb575851141c741d5d4363b25f0815: REC-FRP-FOC: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-FRP-FOC-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "FedRAMP maintains a process collecting foreign ownership/control/influence declarations and updates. A provider cannot prove government process operation by retaining an assessor certificate. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-FRP-FOC-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Foreign Ownership Collection. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-FRP-FOC-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Foreign Ownership Collection statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-FRP-FOC-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST maintain a process to collect foreign ownership, control, or influence declarations from FedRAMP Recognized assessors and updates to those declarations.",
+          "citations": [
+            "REC-FRP-FOC-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-FRP-FOC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Foreign Ownership Collection were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-FRP-FOC-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-frp-rao-22d9b8bc881981e3cf57a834f119a9229d0262b576dac3fb96d6bf8629d8de15": {
+      "content_hash": "14d1273a06187c85db54d70731cb26c4747d4523310aaf0ec2c2d7a4ab1e13f0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 22d9b8bc881981e3cf57a834f119a9229d0262b576dac3fb96d6bf8629d8de15: REC-FRP-RAO: not_applicable — Different subset type or path. Source force: MUST NOT (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-FRP-RAO-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "FedRAMP must not accept verification, validation or other attestations from unrecognized assessors. The assessor narrative confirms only Recognized independent assessment services are accepted. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-FRP-RAO-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Recognized Assessors Only. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-FRP-RAO-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Recognized Assessors Only statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-FRP-RAO-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST NOT accept verification, validation, or other attestations from independent assessors who are not FedRAMP Recognized.",
+          "citations": [
+            "REC-FRP-RAO-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-FRP-RAO only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Recognized Assessors Only were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-FRP-RAO-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-acc-3ca73ac9ad83554a6a1f1d1ef6b45514c0fbf63a915b14613c95450bebc8dea2": {
+      "content_hash": "970f6778dfbaccbeca97f4f1a2d8c8ba20d32627ac23f21b26bcfdc4fa7d34a5",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 3ca73ac9ad83554a6a1f1d1ef6b45514c0fbf63a915b14613c95450bebc8dea2: REC-IAS-ACC: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-ACC-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "A2LA Cybersecurity Inspection Body accreditation must be obtained and maintained. Immediate removal follows A2LA notice of lapse; the rule does not grant an assessor grace period. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-ACC-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for A2LA Accreditation. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-ACC-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained A2LA Accreditation statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-ACC-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST obtain and maintain accreditation through the American Association for Laboratory Accreditation (A2LA) Cybersecurity Inspection Body Program to qualify for FedRAMP Recognition. Source note: FedRAMP will remove FedRAMP Recognition immediately after the American Association for Laboratory Accreditation notifies FedRAMP that an assessor's accreditation has lapsed.",
+          "citations": [
+            "REC-IAS-ACC-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-ACC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for A2LA Accreditation were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-ACC-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-ada-4550bde803fc321a5ddafe9a9746fbc213a62b78fb9d1e61f3fc8b30836ac29b": {
+      "content_hash": "3bac2f63a26d16089a685d3435aa16a4317ffa9dcb68bb3931f686a1b19a3b0f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4550bde803fc321a5ddafe9a9746fbc213a62b78fb9d1e61f3fc8b30836ac29b: REC-IAS-ADA: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-ADA-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "At least two initial or ongoing B/C/D assessments every two years are required. Newly recognized assessors start at initial Recognition if later than June 1, 2026; six-month advance warning and corrective-plan acceptance matter. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-ADA-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Actually Do Assessments. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-ADA-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Actually Do Assessments statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-ADA-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST complete at least 2 initial or ongoing assessments for Class B, C, or D FedRAMP Certifications every 2 years to maintain FedRAMP Recognition. Structured timeframe: 2 years. Corrective timing/conditions remain separate: FedRAMP will notify assessors when they are within 6 months of losing FedRAMP Recognition under this rule and request a corrective action plan. Assessors whose corrective action plan is not accepted will lose FedRAMP Recognition and must supply an alternative corrective action plan to move toward renewed FedRAMP Recognition. Source note: For a newly FedRAMP Recognized Assessor, this rule applies beginning on the initial date of FedRAMP Recognition if that date is later than 2026-06-01.",
+          "citations": [
+            "REC-IAS-ADA-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-ADA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Actually Do Assessments were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-ADA-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-afi-1a73884ab0923ff0657486c0fa402d34e8c0cabff137a20f20a1161d4274fd41": {
+      "content_hash": "e69e4328a091251955831561860512d0fb93f222f1eedfc24e528f86c2062a03",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1a73884ab0923ff0657486c0fa402d34e8c0cabff137a20f20a1161d4274fd41: REC-IAS-AFI: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-AFI-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Foreign interest/influence/control reporting is annual through the declaration form; the provider inventory exclusion is not relief from assessor reporting. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-AFI-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Annual Foreign Interest Reports. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-AFI-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Annual Foreign Interest Reports statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-AFI-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST report information relating to any foreign interest, foreign influence, or foreign control of the independent assessment service to FedRAMP annually. Structured timeframe: 1 years.",
+          "citations": [
+            "REC-IAS-AFI-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-AFI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Annual Foreign Interest Reports were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-AFI-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-anr-a822aed258747612b86dc83b390cda75b2533d01892d454fe3473efa4de3cec9": {
+      "content_hash": "e781daeade216490ab140d74003cbae21b698eb63a6ceee3ad3452f52af8368d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a822aed258747612b86dc83b390cda75b2533d01892d454fe3473efa4de3cec9: REC-IAS-ANR: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-ANR-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "A favorable annual surveillance assessment is required. Nonconformances have 75 days for correction, followed by A2LA status narrative, Marketplace Remediation and a corrective plan if exceeded. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-ANR-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Annual Surveillance Assessment. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-ANR-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Annual Surveillance Assessment statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-ANR-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST achieve a favorable annual surveillance assessment by the American Association for Laboratory Accreditation (A2LA) to maintain FedRAMP Recognition. Structured timeframe: 1 years. Corrective timing/conditions remain separate: Assessors have 75 days to complete corrective actions for nonconformances identified by the American Association for Laboratory Accreditation (A2LA)during a surveillance assessment. If an assessor exceeds the 75 day resolution timeframe, A2LA will supply FedRAMP with a narrative of the assessor's current status, the assessor will be designated as in Remediation in the FedRAMP Marketplace, and the assessor must supply a corrective action plan to FedRAMP.",
+          "citations": [
+            "REC-IAS-ANR-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-ANR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Annual Surveillance Assessment were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-ANR-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-cap-2ae5a15b2f08a14547bf0ae51b4c3279ca78567f3353a3e7b13a47be9011d9ef": {
+      "content_hash": "ec007b757308c4d4da734e740383c9e291388685e18519e5d58b4b5f99088a4a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 2ae5a15b2f08a14547bf0ae51b4c3279ca78567f3353a3e7b13a47be9011d9ef: REC-IAS-CAP: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-CAP-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "A corrective action plan is supplied when FedRAMP requires one for performance deficiencies or organizational risk. No universal unsolicited plan cadence is created. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-CAP-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Corrective Action Plan. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-CAP-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Corrective Action Plan statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-CAP-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST supply a corrective action plan when FedRAMP requires one for performance standards deficiencies or organizational risks.",
+          "citations": [
+            "REC-IAS-CAP-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-CAP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Corrective Action Plan were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-CAP-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-cfi-fc7774b2972efc6b456414c26be0b7b72e98805ce0d51fa29d78bd3bd56ae9c6": {
+      "content_hash": "cbfeeda3f4be306de97309d9cff00ff2034d5ad86d30fcbc5a70ad0cf6d7d41d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant fc7774b2972efc6b456414c26be0b7b72e98805ce0d51fa29d78bd3bd56ae9c6: REC-IAS-CFI: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-CFI-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Updated foreign-interest/influence/control information is due within 48 hours of a change in foreign ownership or control. The trigger is not every vague foreign contact, and annual reporting does not replace it. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-CFI-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Changes in Foreign Interest. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-CFI-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Changes in Foreign Interest statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-CFI-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST report updated information relating to any foreign interest, foreign influence, or foreign control of the independent assessment service within 48 hours of any change in foreign ownership or control. Structured timeframe: 48 hours.",
+          "citations": [
+            "REC-IAS-CFI-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-CFI only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Changes in Foreign Interest were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-CFI-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-inv-0cd90a9ae6ed578eb087d121c1e844710ba47eb75a3f9a494bf86be640687fde": {
+      "content_hash": "3ce93220315ac7e77201c2f586063eb5ad2ceec9e31f029a3de8339ccbdb91f1",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 0cd90a9ae6ed578eb087d121c1e844710ba47eb75a3f9a494bf86be640687fde: REC-IAS-INV: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-INV-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Deliverables prepared, performed or submitted by unqualified personnel are invalid for FedRAMP purposes; later cosmetic editing is not evidence of qualified performance. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-INV-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Invalid Deliverables. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-INV-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Invalid Deliverables statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-INV-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST treat deliverables prepared, performed, or submitted by personnel who do not meet required role qualifications as invalid for FedRAMP purposes.",
+          "citations": [
+            "REC-IAS-INV-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-INV only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Invalid Deliverables were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-INV-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-psc-2109f3c581bbab3f520b8e867bb3377e89ce05db54c52a1cd3f7a84d94f09685": {
+      "content_hash": "8bab019c68764276123d43af54325dccbfb9be84c3d686023ea02ad22a3b5b11",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 2109f3c581bbab3f520b8e867bb3377e89ce05db54c52a1cd3f7a84d94f09685: REC-IAS-PSC: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-PSC-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Assessors maintain compliance with latest A2LA R311. This pinned excerpt identifies that external standard but does not reproduce or audit all of its provisions. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-PSC-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Policy and Standards Compliance. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-PSC-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Policy and Standards Compliance statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-PSC-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST maintain compliance with the latest American Association for Laboratory Accreditation (A2LA) R311 - Specific Requirements - Federal Risk and Authorization Management Program to maintain FedRAMP Recognition.",
+          "citations": [
+            "REC-IAS-PSC-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-PSC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Policy and Standards Compliance were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-PSC-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-pst-b0f331390c309986dd3ee3c70ed31999bc0833527c8b4caf53e951cb0b0e216b": {
+      "content_hash": "d6ee21645b76307a8887c12d5bf85ef1db4cd7d1c05b2d79c62c8a2ca3a777db",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b0f331390c309986dd3ee3c70ed31999bc0833527c8b4caf53e951cb0b0e216b: REC-IAS-PST: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-PST-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Seven dimensions include complete first submissions, clear/complete/concise/consistent quality, applicable format, agreed schedule, accurate complete testing, independence from provider demands and chain of custody. Provider evidence cannot self-certify assessor independence. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-PST-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Performance Standards. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-PST-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Performance Standards statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-PST-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST meet FedRAMP performance standards for assessor deliverables to support independent, risk-based reviews by FedRAMP and federal agencies, including at least:",
+          "citations": [
+            "REC-IAS-PST-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-PST only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Performance Standards were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-PST-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-rar-4cf35da7620587b214dfc360217850e1d822eeef9c15a73a00845149d91861cf": {
+      "content_hash": "779406ef8b19a99a1b3bd1cedd869677e1742cae04b47fce09864d4dc375d582",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4cf35da7620587b214dfc360217850e1d822eeef9c15a73a00845149d91861cf: REC-IAS-RAR: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-RAR-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "All A2LA re-entry conditions precede restoration after revocation. Possible extended revoked status is not a fixed minimum waiting period or guaranteed restoration. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-RAR-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Re-entry after Revocation. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-RAR-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Re-entry after Revocation statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-RAR-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST satisfy all American Association for Laboratory Accreditation (A2LA) re-entry conditions before regaining FedRAMP Recognition after revocation. Source note: A revocation may require extended time in revoked status while the assessor demonstrates acceptable performance in the A2LA Cybersecurity Inspection Body Program before seeking FedRAMP Recognition again.",
+          "citations": [
+            "REC-IAS-RAR-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-RAR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Re-entry after Revocation were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-RAR-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-ras-2d4fcfb255d2fe5bf6d79cc63f7efe9f0156d0b960b08ab843ba46e31d64e6b1": {
+      "content_hash": "af43a1de2896fb02246ca1b0948583b3e1253e0e9d86ebc3b8980753e2508b06",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 2d4fcfb255d2fe5bf6d79cc63f7efe9f0156d0b960b08ab843ba46e31d64e6b1: REC-IAS-RAS: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-RAS-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Full favorable reassessment is at least every two years, distinct from annual surveillance. The 75-day corrective period is retained with the subsequent status and plan consequences. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-RAS-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Full A2LA Reassessment. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-RAS-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Full A2LA Reassessment statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-RAS-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST achieve a favorable full reassessment by the American Association for Laboratory Accreditation (A2LA) at least once every 2 years to maintain FedRAMP Recognition. Structured timeframe: 2 years. Corrective timing/conditions remain separate: Assessors have 75 days to complete corrective actions for nonconformances identified by the American Association for Laboratory Accreditation during a reassessment. If an assessor exceeds the 75 day resolution timeframe, the American Association for Laboratory Accreditation will supply FedRAMP with a narrative of the assessor's current status, the assessor will be designated as In Remediation in the FedRAMP Marketplace, and the assessor must supply a corrective action plan to FedRAMP.",
+          "citations": [
+            "REC-IAS-RAS-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-RAS only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Full A2LA Reassessment were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-RAS-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-rqu-b69c8693db7216d780c92ebe7fdfb294a5daa91d7ea1294cc1803db17410da0f": {
+      "content_hash": "efc1c98493cccd41b3e132c0536f9f04f6189ad86f728782003df4ed857744b9",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b69c8693db7216d780c92ebe7fdfb294a5daa91d7ea1294cc1803db17410da0f: REC-IAS-RQU: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-RQU-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "All R311 roles and qualifications apply unless FedRAMP publishes a limited pilot or explicitly scoped exception. A provider preference or assessor self-exception is insufficient. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-RQU-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Roles and Qualifications. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-RQU-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Roles and Qualifications statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-RQU-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST staff FedRAMP assessments with all roles required by the American Association for Laboratory Accreditation (A2LA) R311, including personnel who meet the qualifications for each role, unless FedRAMP publishes a specific exception for a limited pilot or other explicitly scoped process. Corrective timing/conditions remain separate: FedRAMP may require a consultation meeting, corrective action plan, or revocation for failure to comply.",
+          "citations": [
+            "REC-IAS-RQU-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-RQU only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Roles and Qualifications were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-RQU-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "rec-ias-sep-c98fbdb602ec521eb0b0d79450bbbd174e65890253d72496c29e825753231edb": {
+      "content_hash": "510f077f928e852337ab82864010289b9020fbeadbee174b072bd297ac7e4bfa",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant c98fbdb602ec521eb0b0d79450bbbd174e65890253d72496c29e825753231edb: REC-IAS-SEP: not_applicable — Different subset type or path. Source force: MUST NOT (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability. Both REC subsets have empty type/path/class arrays and name FedRAMP or Assessors. The provider-only inventory cannot adjudicate assessor Recognition compliance.",
+          "citations": [
+            "REC-metadata",
+            "REC-IAS-SEP-source",
+            "REC-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The same offering cannot be independently assessed within two years after advisory/consulting services unless FedRAMP publishes a scoped exception. Separation is offering-specific and not waived by a provider agreement. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The assessor narrative confirms that only FedRAMP Recognized independent services are accepted; it does not transfer accreditation or government Recognition decisions to the provider.",
+          "citations": [
+            "REC-IAS-SEP-source",
+            "REC-page",
+            "REC-definitions",
+            "REC-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Advisory Separation. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "REC-IAS-SEP-source",
+            "REC-page",
+            "REC-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Advisory Separation statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "REC-IAS-SEP-source",
+            "REC-page",
+            "REC-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "REC metadata gives July 4, 2026 obtain/maintain/adoption/grace and no next-assessment extension; its actor-specific operational clocks are separate. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST NOT perform a FedRAMP independent assessment of the same cloud service offering within 2 years after supplying advisory or consulting services for that offering, unless FedRAMP publishes a specific exception for a limited pilot or other explicitly scoped process. Structured timeframe: 2 years. Corrective timing/conditions remain separate: FedRAMP may require a consultation meeting, corrective action plan, or revocation for failure to comply.",
+          "citations": [
+            "REC-IAS-SEP-source",
+            "REC-page",
+            "REC-metadata",
+            "REC-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for REC-IAS-SEP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Advisory Separation were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "REC-IAS-SEP-source",
+              "REC-page",
+              "REC-definitions"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

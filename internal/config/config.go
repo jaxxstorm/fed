@@ -12,22 +12,25 @@ import (
 )
 
 type Config struct {
-	Mode               string
-	Listen             string
-	DatabaseURL        string
-	DevIdentity        bool
-	ConnectionsEnabled bool
-	OIDCIssuer         string
-	OIDCClientID       string
-	OIDCClientSecret   string
-	PublicURL          string
-	AdminSubject       string
-	AdminEmail         string
-	OIDCOrgClaim       string
-	OIDCOrgValue       string
-	ArtifactDirectory  string
-	ArtifactBucket     string
-	ArtifactEndpoint   string
+	Mode                      string
+	Listen                    string
+	DatabaseURL               string
+	DevIdentity               bool
+	ConnectionsEnabled        bool
+	GuidanceEnabled           bool
+	GuidanceRulesDirectory    string
+	GuidanceMarkdownDirectory string
+	OIDCIssuer                string
+	OIDCClientID              string
+	OIDCClientSecret          string
+	PublicURL                 string
+	AdminSubject              string
+	AdminEmail                string
+	OIDCOrgClaim              string
+	OIDCOrgValue              string
+	ArtifactDirectory         string
+	ArtifactBucket            string
+	ArtifactEndpoint          string
 }
 
 func Load() (Config, error) { return FromEnv(os.Getenv) }
@@ -47,11 +50,18 @@ func FromEnv(get func(string) string) (Config, error) {
 	if err != nil {
 		return Config{}, errors.New("KSI_CONNECTIONS_ENABLED must be a boolean")
 	}
+	guidanceEnabled, err := strconv.ParseBool(value("KSI_GUIDANCE_ENABLED", "false"))
+	if err != nil {
+		return Config{}, errors.New("KSI_GUIDANCE_ENABLED must be a boolean")
+	}
 	c := Config{
 		Mode: value("KSI_MODE", "server"), Listen: value("KSI_LISTEN", "127.0.0.1:8080"),
 		DatabaseURL: get("DATABASE_URL"), DevIdentity: dev,
-		ConnectionsEnabled: connectionManagement,
-		OIDCIssuer:         get("KSI_OIDC_ISSUER"), OIDCClientID: get("KSI_OIDC_CLIENT_ID"),
+		ConnectionsEnabled:        connectionManagement,
+		GuidanceEnabled:           guidanceEnabled,
+		GuidanceRulesDirectory:    value("KSI_GUIDANCE_RULES_DIRECTORY", "/app/catalog"),
+		GuidanceMarkdownDirectory: value("KSI_GUIDANCE_MARKDOWN_DIRECTORY", "/app/2026-markdown"),
+		OIDCIssuer:                get("KSI_OIDC_ISSUER"), OIDCClientID: get("KSI_OIDC_CLIENT_ID"),
 		OIDCClientSecret: get("KSI_OIDC_CLIENT_SECRET"), PublicURL: get("KSI_PUBLIC_URL"),
 		AdminSubject: get("KSI_ADMIN_SUBJECT"), ArtifactDirectory: value("KSI_ARTIFACT_DIRECTORY", ".data/artifacts"),
 		AdminEmail: get("KSI_ADMIN_EMAIL"), OIDCOrgClaim: get("KSI_OIDC_ORG_CLAIM"), OIDCOrgValue: get("KSI_OIDC_ORG_VALUE"),

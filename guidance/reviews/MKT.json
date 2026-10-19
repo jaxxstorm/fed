@@ -1,0 +1,892 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "mkt-cas-lrq-5d9fc09c4396271a6dd46b2dea02d46748faf71779ef38156e4c93c287427412": {
+      "content_hash": "939dac478bf653a9e8a8de1f396191e40e06ec0336ec2fc5fd7332f5c8dc94d9",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 5d9fc09c4396271a6dd46b2dea02d46748faf71779ef38156e4c93c287427412: MKT-CAS-LRQ: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-CAS-LRQ-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Advisor listing requests use the advisor form; this is neither a provider application nor recognition of an independent assessor. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-CAS-LRQ-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Listing Requests for Advisors. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-CAS-LRQ-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Listing Requests for Advisors statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-CAS-LRQ-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Advisors MUST complete the Advisor Listing Request Form to request listing in the FedRAMP Marketplace.",
+          "citations": [
+            "MKT-CAS-LRQ-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-CAS-LRQ only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Listing Requests for Advisors were supplied. This source comparison cannot establish that the named Advisors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-CAS-LRQ-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-cas-rfr-850d110201081795a206a1ff57532a34f92d3364dd1bebf41bd27d26bfa0b147": {
+      "content_hash": "172b8088312322325ca9f60611037dd90a25c5775014c822b066b7f11a501694",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 850d110201081795a206a1ff57532a34f92d3364dd1bebf41bd27d26bfa0b147: MKT-CAS-RFR: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-CAS-RFR-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Advisors reply within 5 business days, then have 5 business days after a follow-up before removal. Relisting is unavailable for at least 6 months absent extenuating circumstances; provider FSI deadlines are different. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-CAS-RFR-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Advisor Responses to FedRAMP. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-CAS-RFR-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Advisor Responses to FedRAMP statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-CAS-RFR-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Advisors MUST reply to all requests from @fedramp.gov or @gsa.gov email addresses sent to the contact information provided in their advisor listing within 5 business days. Structured timeframe: 5 bizdays. Corrective timing/conditions remain separate: If an advisor fails to respond to a request within 5 business days, FedRAMP will send a follow-up email. If an advisor fails to respond to the follow-up email within 5 business days, FedRAMP will remove their listing from the Marketplace. Advisors removed from the Marketplace for failure to respond to FedRAMP will not be eligible for listing for at least 6 months unless there are extenuating circumstances.",
+          "citations": [
+            "MKT-CAS-RFR-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-CAS-RFR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Advisor Responses to FedRAMP were supplied. This source comparison cannot establish that the named Advisors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-CAS-RFR-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-cas-web-56b0010fbe560f6373a2e13635b5dc9d8372ec96ed59a97ba020a94fb9db667b": {
+      "content_hash": "8f141eb5fc23589a593b75d7c6fab134bb78e73b5b43c226cb9b1fb47ee20376",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 56b0010fbe560f6373a2e13635b5dc9d8372ec96ed59a97ba020a94fb9db667b: MKT-CAS-WEB: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-CAS-WEB-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Advisors publish consistent machine/human-readable description, contact and service types. Positive attestations/references remain optional. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-CAS-WEB-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Website Requirements for Advisors. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-CAS-WEB-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Website Requirements for Advisors statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-CAS-WEB-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Advisors MUST have an appropriate web site that publicly supplies at least the following information in consistent machine-readable and human-readable formats:",
+          "citations": [
+            "MKT-CAS-WEB-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-CAS-WEB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Website Requirements for Advisors were supplied. This source comparison cannot establish that the named Advisors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-CAS-WEB-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-cso-mlr-0a474df51f4f6eb65fa71fc312b9c5d65d8ef19761e183d3d3f5c35b11557e19": {
+      "content_hash": "b16b865f9735a791b334d28597df89596b9e0c6a20fa3904bb72324f271ced49",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 0a474df51f4f6eb65fa71fc312b9c5d65d8ef19761e183d3d3f5c35b11557e19: MKT-CSO-MLR: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "CDS-CSO-PUB-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "The required dependency is CDS-CSO-PUB at both new listing and update. The bound public-information rule supplies applicable/available fields, human-readable and JSON publication; the recipe does not treat a completed form as satisfying that dependency. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing. The draft has 2 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "MKT-definitions",
+            "CDS-CSO-PUB-related-source",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mkt-cso-mlr-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Obtain the current CDS-CSO-PUB public-information requirements, offering identity and public human-readable/machine-readable endpoints. This is an implementation inference needed to test Marketplace Listing Requirements; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "CDS-CSO-PUB-related-source",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Published endpoints, captured human/JSON contents, schema validation and request revision mapping establish the package used. Logo accessibility and consistent facts need observation, not only a schema-valid sample. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. Operational timing: At application for a new listing OR request to update an existing listing. This clause creates no periodic listing-update deadline.",
+          "citations": [
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-CSO-MLR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Getting Listed describes additional initial-implementation expectations. These two CSO playbooks alone do not certify application completeness, particularly while IIP class arrays yield resolver exclusions.",
+            "citations": [
+              "MKT-CSO-MLR-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-cso-mlr-4b002f3aaf88ba435115f356e20dc495478725d7762a0d1de4267118fb5301d9": {
+      "content_hash": "8d08e00d7cc3216a23c8e6cab33e65abc06c73b11a44526d800af3b4b2a7da6e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4b002f3aaf88ba435115f356e20dc495478725d7762a0d1de4267118fb5301d9: MKT-CSO-MLR: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "CDS-CSO-PUB-related-source"
+          ]
+        },
+        "obligations": {
+          "finding": "The required dependency is CDS-CSO-PUB at both new listing and update. The bound public-information rule supplies applicable/available fields, human-readable and JSON publication; the recipe does not treat a completed form as satisfying that dependency. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "MKT-definitions",
+            "CDS-CSO-PUB-related-source",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Marketplace Listing Requirements. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "CDS-CSO-PUB-related-source",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Published endpoints, captured human/JSON contents, schema validation and request revision mapping establish the package used. Logo accessibility and consistent facts need observation, not only a schema-valid sample. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST address at least these FedRAMP rules to apply for a new FedRAMP Marketplace listing OR to request updates to an existing listing:",
+          "citations": [
+            "MKT-CSO-MLR-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-CSO-MLR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Getting Listed describes additional initial-implementation expectations. These two CSO playbooks alone do not certify application completeness, particularly while IIP class arrays yield resolver exclusions.",
+            "citations": [
+              "MKT-CSO-MLR-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-cso-pml-04d2a9fbbcfeda0cd39194620b0c6b53546e9657d1133390dcefbe7eba4fc5cd": {
+      "content_hash": "d8ab625fc6dc72daa78ccff58c7e407aafd5dd3ce58103814c6e8dbd5c922c00",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 04d2a9fbbcfeda0cd39194620b0c6b53546e9657d1133390dcefbe7eba4fc5cd: MKT-CSO-PML: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-CSO-PML-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Provider requests use the published provider form. The note explicitly rejects email applications; submitting a request is distinct from approval or certification. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "MKT-CSO-PML-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped mkt-cso-pml-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the service's listing information and authorized submitter; obtain the official FedRAMP Marketplace Provider Listing Request Form. This is an implementation inference needed to test Provider Marketplace Listing Requests; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "MKT-CSO-PML-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Submitted form contents, official URL and timestamped receipt prove submission for this offering; a draft or email does not. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "MKT-CSO-PML-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. Operational timing: When requesting listing; retain the actual submission timestamp. The rule does not supply a FedRAMP response-time guarantee.",
+          "citations": [
+            "MKT-CSO-PML-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-CSO-PML only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No response-time or approval guarantee is specified. Initial Implementation eligibility and other application rules still require separate resolution.",
+            "citations": [
+              "MKT-CSO-PML-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-cso-pml-a5bc71526f130d508807b51f870ddfad894134d70d9503b0b9e7d4c6ee5a0c2e": {
+      "content_hash": "d826614caf8b7ab64b7297c37e8deaed2a12e8218844d027426a178646775dc5",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a5bc71526f130d508807b51f870ddfad894134d70d9503b0b9e7d4c6ee5a0c2e: MKT-CSO-PML: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-CSO-PML-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Provider requests use the published provider form. The note explicitly rejects email applications; submitting a request is distinct from approval or certification. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-CSO-PML-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Provider Marketplace Listing Requests. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-CSO-PML-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "Submitted form contents, official URL and timestamped receipt prove submission for this offering; a draft or email does not. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-CSO-PML-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST notify FedRAMP using the FedRAMP Marketplace Providing Listing Request Form to request a listing in the FedRAMP Marketplace. Source note: FedRAMP does not accept applications for a FedRAMP Marketplace Listing via email!",
+          "citations": [
+            "MKT-CSO-PML-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-CSO-PML only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No response-time or approval guarantee is specified. Initial Implementation eligibility and other application rules still require separate resolution.",
+            "citations": [
+              "MKT-CSO-PML-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-frp-sof-4dfbeee6e63e47a35ec1465a6ad1be96b9df52f27543eabfeb0ac2dfa6b4afc6": {
+      "content_hash": "ca590cfbddb5d611c5560afffa795ca4b03b852ce506ede7faf168aa011fab5a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4dfbeee6e63e47a35ec1465a6ad1be96b9df52f27543eabfeb0ac2dfa6b4afc6: MKT-FRP-SOF: not_applicable — Different affected audience. Source force: MUST NOT (published rule; resolver stopped before force selection). The source names FedRAMP, an agency, assessor or advisor rather than the provider selected by this inventory. This is an actor boundary, not a waiver for that named actor.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-FRP-SOF-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "FedRAMP must determine scope before listing or certification activity. Marketplace appearance and a provider assertion are not substitutes for that government determination. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-FRP-SOF-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Scope of FedRAMP. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-FRP-SOF-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Scope of FedRAMP statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-FRP-SOF-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: FedRAMP MUST NOT list cloud service offerings in the Marketplace or perform any FedRAMP Certification activities unless it determines the cloud service offering is within the scope of FedRAMP.",
+          "citations": [
+            "MKT-FRP-SOF-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-FRP-SOF only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Scope of FedRAMP were supplied. This source comparison cannot establish that the named FedRAMP met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-FRP-SOF-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-ias-lrq-639ec8f0bc88851a084058495853e7d8d13b069dd3e1083e61a1e0d5685cf08e": {
+      "content_hash": "572d00f2b0054418b22ffa9f52127bd769a4bf1f4fa9fbc325c79547d7d37bbc",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 639ec8f0bc88851a084058495853e7d8d13b069dd3e1083e61a1e0d5685cf08e: MKT-IAS-LRQ: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-IAS-LRQ-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The assessor uses its own listing-request form, updated October 5; the provider form is not an interchangeable notification route. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-IAS-LRQ-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Listing Requests for Assessors. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-IAS-LRQ-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Listing Requests for Assessors statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-IAS-LRQ-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST complete the Assessor Listing Request Form to request listing in the FedRAMP Marketplace.",
+          "citations": [
+            "MKT-IAS-LRQ-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-IAS-LRQ only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Listing Requests for Assessors were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-IAS-LRQ-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-ias-ofr-c6df16da1a56a4f2a558e8aafd1ada82a824af86d7453d6ef2ac06ce637393a4": {
+      "content_hash": "6ec495cebbc6cd1b152d0e4dca92198d0957428359586533b49295e6487bf143",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant c6df16da1a56a4f2a558e8aafd1ada82a824af86d7453d6ef2ac06ce637393a4: MKT-IAS-OFR: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-IAS-OFR-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Assessors must obtain AND maintain Recognition for listing; an assessor listing condition is not a provider recognition obligation. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-IAS-OFR-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Only FedRAMP Recognized Assessors. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-IAS-OFR-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Only FedRAMP Recognized Assessors statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-IAS-OFR-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST obtain and maintain FedRAMP Recognition to be listed in the FedRAMP Marketplace.",
+          "citations": [
+            "MKT-IAS-OFR-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-IAS-OFR only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Only FedRAMP Recognized Assessors were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-IAS-OFR-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-ias-web-d3d9f278552505d895ed0b48fc527819d70838015534bac6f93a27ddbaad1033": {
+      "content_hash": "a5df64cb0de7661444fab969688d907d6ecb89544b835e64502d03318a75c637",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d3d9f278552505d895ed0b48fc527819d70838015534bac6f93a27ddbaad1033: MKT-IAS-WEB: not_applicable — Different subset type or path. Source force: MUST (published rule; resolver stopped before force selection). The published subset's certification types or paths do not match this supported 20x provider profile; empty source lists are preserved as resolver exclusions, not interpreted as universal applicability.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-IAS-WEB-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The assessor website supplies description, contact and service types in human-readable and JSON forms. Positive attestations/references are explicitly optional, not a fourth mandatory field. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-IAS-WEB-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Website Requirements for Assessors. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-IAS-WEB-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Website Requirements for Assessors statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-IAS-WEB-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Assessors MUST have an appropriate web site that publicly supplies at least the following information in human-readable and JSON formats:",
+          "citations": [
+            "MKT-IAS-WEB-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-IAS-WEB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Website Requirements for Assessors were supplied. This source comparison cannot establish that the named Assessors met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-IAS-WEB-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-iip-agu-95c38cc0af91de2404585e44a77ca1b8f7329e8bc99e1d3f637d74372ed2c242": {
+      "content_hash": "1de9e77e89d26597ab764530c89f7c9237b4c6d92931bfc1dedc0bfdf121114a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 95c38cc0af91de2404585e44a77ca1b8f7329e8bc99e1d3f637d74372ed2c242: MKT-IIP-AGU: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded. The source has an empty IIP class array even though it describes provider initial listing duties. This is the pinned resolver result, not a policy conclusion that initial applicants are exempt.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-IIP-AGU-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Direct agency system use OR indirect inclusion in another directly used offering qualifies. CMMC-only private use without either is insufficient. Empty IIP classes in metadata conflict with the narrative's initial-listing expectations; resolver exclusion is not a substantive waiver. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-IIP-AGU-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Agency Use Cases. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-IIP-AGU-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Agency Use Cases statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-IIP-AGU-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST demonstrate that a cloud service offering is intended for one of the following use cases:",
+          "citations": [
+            "MKT-IIP-AGU-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-IIP-AGU only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Agency Use Cases were supplied. This source comparison cannot establish that the named Providers met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-IIP-AGU-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          },
+          {
+            "finding": "Empty IIP class applicability conflicts with the initial-listing narrative. FedRAMP/catalog clarification is needed before treating this saved exclusion as actual applicant relief. Direct agency system use OR indirect inclusion in another directly used offering qualifies. CMMC-only private use without either is insufficient. Empty IIP classes in metadata conflict with the narrative's initial-listing expectations; resolver exclusion is not a substantive waiver.",
+            "citations": [
+              "MKT-IIP-AGU-source",
+              "MKT-page",
+              "MKT-metadata",
+              "MKT-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-iip-dcp-ba13c371d220f52e180c2f4f1c69d028837ba713519c024019e21e00fc9b9a0e": {
+      "content_hash": "bd6f35879d2a138fe5c2b23306553877686b281b5a24664713b8545d4ca974ec",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ba13c371d220f52e180c2f4f1c69d028837ba713519c024019e21e00fc9b9a0e: MKT-IIP-DCP: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded. The source has an empty IIP class array even though it describes provider initial listing duties. This is the pinned resolver result, not a policy conclusion that initial applicants are exempt.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-IIP-DCP-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Progress is against the provider's documented goals/milestones and updated at least quarterly on the Trust Center or website. Empty IIP classes do not erase this narrative expectation for actual initial applicants. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-IIP-DCP-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Demonstrating Continuous Progress. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-IIP-DCP-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Demonstrating Continuous Progress statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-IIP-DCP-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST demonstrate continuous progress towards a FedRAMP Certification, documented in their Trust Center or website and updated at least quarterly; progress is measured by the provider against documented goals and milestones. Source note: This is an opportunity for a business to showcase its goals and progress, and should be seen as a marketing and customer experience challenge instead of a compliance challenge.",
+          "citations": [
+            "MKT-IIP-DCP-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-IIP-DCP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Demonstrating Continuous Progress were supplied. This source comparison cannot establish that the named Providers met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-IIP-DCP-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          },
+          {
+            "finding": "Empty IIP class applicability conflicts with the initial-listing narrative. FedRAMP/catalog clarification is needed before treating this saved exclusion as actual applicant relief. Progress is against the provider's documented goals/milestones and updated at least quarterly on the Trust Center or website. Empty IIP classes do not erase this narrative expectation for actual initial applicants.",
+            "citations": [
+              "MKT-IIP-DCP-source",
+              "MKT-page",
+              "MKT-metadata",
+              "MKT-narrative"
+            ]
+          }
+        ]
+      }
+    },
+    "mkt-iip-dla-ddf348bc46bf7af88ccac33dbcf25dbfb525cddfabf54bcd1071d8bc346bfab4": {
+      "content_hash": "7de259b9a202837269e200de239539ea2de3c317ec9b599077e183860494c452",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ddf348bc46bf7af88ccac33dbcf25dbfb525cddfabf54bcd1071d8bc346bfab4: MKT-IIP-DLA: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded. The source has an empty IIP class array even though it describes provider initial listing duties. This is the pinned resolver result, not a policy conclusion that initial applicants are exempt.",
+          "citations": [
+            "MKT-metadata",
+            "MKT-IIP-DLA-source",
+            "MKT-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The structured rule requires evidence that a B/C/D assessment has been scheduled within 2 years of initial listing; the narrative says beginning an assessment within 2 years. Preserve this distinction and request clarification rather than silently choosing a stricter completion/start deadline. The selected official statement is retained verbatim; source list items and qualifiers remain visible. Getting Listed expects complete public JSON, eligibility, Trust Center and initial progress/assessment commitments; passing a provider-form checklist alone is not approval of a listing.",
+          "citations": [
+            "MKT-IIP-DLA-source",
+            "MKT-page",
+            "MKT-definitions",
+            "MKT-narrative"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Deadline for Assessment. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "MKT-IIP-DLA-source",
+            "MKT-page",
+            "MKT-narrative"
+          ]
+        },
+        "evidence": {
+          "finding": "The retained Deadline for Assessment statement and accompanying notes describe the named actor's duty, not observed performance. No provider assertions, collection routes or implementation prerequisites are emitted for this variant; the exclusion/decision explanation is not acceptable proof that the actor performed it. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "MKT-IIP-DLA-source",
+            "MKT-page",
+            "MKT-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "MKT obtain/maintain/optional adoption and default grace are July 4, 2026; no next-assessment extension is provided. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST demonstrate that an assessment for a FedRAMP Certification Class B, C, or D has been scheduled within 2 years of initial listing in the Initial Implementation Phase. Structured timeframe: 2 years. Corrective timing/conditions remain separate: If a provider fails to schedule an assessment for a FedRAMP Certification Class B, C, or D within 2 years of initial listing in the Initial Implementation Phase, FedRAMP will remove their listing from the Marketplace until they provide evidence of a scheduled assessment.",
+          "citations": [
+            "MKT-IIP-DLA-source",
+            "MKT-page",
+            "MKT-metadata",
+            "MKT-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for MKT-IIP-DLA only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No actor-specific performance records for Deadline for Assessment were supplied. This source comparison cannot establish that the named Providers met the preserved rule or qualified for any exception.",
+            "citations": [
+              "MKT-IIP-DLA-source",
+              "MKT-page",
+              "MKT-definitions"
+            ]
+          },
+          {
+            "finding": "Empty IIP class applicability conflicts with the initial-listing narrative. FedRAMP/catalog clarification is needed before treating this saved exclusion as actual applicant relief. The structured rule requires evidence that a B/C/D assessment has been scheduled within 2 years of initial listing; the narrative says beginning an assessment within 2 years. Preserve this distinction and request clarification rather than silently choosing a stricter completion/start deadline.",
+            "citations": [
+              "MKT-IIP-DLA-source",
+              "MKT-page",
+              "MKT-metadata",
+              "MKT-narrative"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

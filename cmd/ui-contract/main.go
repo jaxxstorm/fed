@@ -7,6 +7,7 @@ import (
 	"github.com/jaxxstorm/fed/internal/assessment"
 	"github.com/jaxxstorm/fed/internal/auth"
 	"github.com/jaxxstorm/fed/internal/connections"
+	"github.com/jaxxstorm/fed/internal/readiness"
 	"github.com/jaxxstorm/fed/internal/web"
 	"os"
 	"reflect"
@@ -41,6 +42,9 @@ func describe(t reflect.Type) schema {
 		return schema{"type": "object", "additionalProperties": describe(t.Elem()), "nullable": true}
 	case reflect.Struct:
 		name := t.Name()
+		if strings.HasSuffix(t.PkgPath(), "/readiness") {
+			name = "Readiness" + name
+		}
 		if _, exists := definitions[name]; exists {
 			return schema{"$ref": "#/components/schemas/" + name}
 		}
@@ -105,6 +109,15 @@ func main() {
 		return schema{"description": "Authorized browser response", "content": schema{"application/json": schema{"schema": body}}}
 	}
 	serviceParameter := schema{"name": "service", "in": "path", "required": true, "schema": schema{"type": "string"}}
+	paths["/api/ui/v1/services/{service}/readiness/capabilities/{id}"] = schema{"get": schema{"parameters": []any{serviceParameter, schema{"name": "id", "in": "path", "required": true, "schema": schema{"type": "string"}}, schema{"name": "limit", "in": "query", "schema": schema{"type": "integer", "minimum": 1, "maximum": 100}}, schema{"name": "offset", "in": "query", "schema": schema{"type": "integer", "minimum": 0}}}, "responses": schema{"200": response(describe(reflect.TypeFor[readiness.ServicePlan]())), "404": response(describe(reflect.TypeFor[web.UIError]()))}}}
+	paths["/api/ui/v1/services/{service}/readiness/coverage"] = schema{"get": schema{"parameters": []any{serviceParameter, schema{"name": "limit", "in": "query", "schema": schema{"type": "integer", "minimum": 1, "maximum": 100}}, schema{"name": "offset", "in": "query", "schema": schema{"type": "integer", "minimum": 0}}}, "responses": schema{"200": response(describe(reflect.TypeFor[readiness.QualityPage]()))}}}
+	paths["/api/ui/v1/services/{service}/observations/{id}"] = schema{"get": schema{"parameters": []any{serviceParameter, schema{"name": "id", "in": "path", "required": true, "schema": schema{"type": "string"}}}, "responses": schema{"200": response(describe(reflect.TypeFor[assessment.ObservationDetail]()))}}}
+	paths["/api/ui/v1/services/{service}/readiness/plan"] = schema{"get": schema{"parameters": []any{serviceParameter, schema{"name": "limit", "in": "query", "schema": schema{"type": "integer", "minimum": 1, "maximum": 100}}, schema{"name": "offset", "in": "query", "schema": schema{"type": "integer", "minimum": 0}}}, "responses": schema{"200": response(describe(reflect.TypeFor[readiness.ServicePlan]()))}}}
+	paths["/api/ui/v1/services/{service}/readiness/requirements"] = schema{"get": schema{"parameters": []any{serviceParameter, schema{"name": "limit", "in": "query", "schema": schema{"type": "integer", "minimum": 1, "maximum": 100}}, schema{"name": "cursor", "in": "query", "schema": schema{"type": "string"}}, schema{"name": "group", "in": "query", "schema": schema{"type": "string", "enum": []string{"evidence", "review", "scoping", "maintain", "excluded"}}}}, "responses": schema{"200": response(describe(reflect.TypeFor[assessment.ReadinessQueue]()))}}}
+	paths["/api/ui/v1/services/{service}/readiness/work"] = schema{
+		"get":  schema{"parameters": []any{serviceParameter, schema{"name": "limit", "in": "query", "schema": schema{"type": "integer", "minimum": 1, "maximum": 100}}, schema{"name": "offset", "in": "query", "schema": schema{"type": "integer", "minimum": 0}}}, "responses": schema{"200": response(describe(reflect.TypeFor[web.ReadinessWorkPage]()))}},
+		"post": schema{"parameters": []any{serviceParameter, schema{"name": "X-CSRF-Token", "in": "header", "required": true, "schema": schema{"type": "string"}}}, "requestBody": schema{"required": true, "content": schema{"application/json": schema{"schema": describe(reflect.TypeFor[readiness.WorkChange]())}}}, "responses": schema{"200": response(describe(reflect.TypeFor[readiness.WorkRecord]())), "400": response(describe(reflect.TypeFor[web.UIError]())), "403": response(describe(reflect.TypeFor[web.UIError]())), "409": response(describe(reflect.TypeFor[web.UIError]()))}},
+	}
 	recordSchema := schema{"$ref": "#/components/schemas/Record"}
 	records := schema{"type": "object", "required": []string{"items", "has_more", "offset"}, "properties": schema{"items": schema{"type": "array", "items": recordSchema}, "has_more": schema{"type": "boolean"}, "offset": schema{"type": "integer"}}}
 	parameters := []any{serviceParameter, schema{"name": "kind", "in": "path", "required": true, "schema": schema{"type": "string", "enum": []string{"evidence", "rule_result", "evidence_source", "snapshot", "publication"}}}}

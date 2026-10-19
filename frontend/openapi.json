@@ -69,6 +69,110 @@
         ],
         "type": "object"
       },
+      "Artifact": {
+        "properties": {
+          "configuration": {
+            "additionalProperties": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "schema": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema",
+          "configuration"
+        ],
+        "type": "object"
+      },
+      "AssertionEvidence": {
+        "properties": {
+          "acceptance": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessAcceptance"
+              }
+            ],
+            "nullable": true
+          },
+          "assertion_id": {
+            "type": "string"
+          },
+          "citations": {
+            "items": {
+              "$ref": "#/components/schemas/Citation"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "gaps": {
+            "items": {
+              "$ref": "#/components/schemas/AssertionGap"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "obligation": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "result": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Ref"
+              }
+            ],
+            "nullable": true
+          },
+          "states": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "assertion_id",
+          "obligation",
+          "states",
+          "rationale",
+          "citations"
+        ],
+        "type": "object"
+      },
+      "AssertionGap": {
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "next_action": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "scope",
+          "reason",
+          "next_action"
+        ],
+        "type": "object"
+      },
       "AuthorizationHandoff": {
         "properties": {
           "expires_at": {
@@ -118,6 +222,31 @@
           "provider",
           "idempotency_key",
           "input"
+        ],
+        "type": "object"
+      },
+      "Citation": {
+        "properties": {
+          "end_line": {
+            "type": "integer"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/Ref"
+          },
+          "json_pointer": {
+            "allOf": [
+              {
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "start_line": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "evidence"
         ],
         "type": "object"
       },
@@ -290,6 +419,40 @@
           "actor_id",
           "updated_at",
           "imported"
+        ],
+        "type": "object"
+      },
+      "Coverage": {
+        "properties": {
+          "complete": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string"
+          },
+          "expected": {
+            "type": "integer"
+          },
+          "observed": {
+            "type": "integer"
+          },
+          "recovery": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Recovery"
+              }
+            ],
+            "nullable": true
+          },
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "expected",
+          "observed",
+          "complete",
+          "state"
         ],
         "type": "object"
       },
@@ -475,6 +638,69 @@
         ],
         "type": "object"
       },
+      "Evaluation": {
+        "properties": {
+          "condition": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "condition",
+          "outcome",
+          "explanation"
+        ],
+        "type": "object"
+      },
+      "EvidenceCandidate": {
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/Ref"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "target": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Target"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "required": [
+          "evidence",
+          "description",
+          "observed_at",
+          "state",
+          "reason",
+          "limitations"
+        ],
+        "type": "object"
+      },
       "EvidenceCard": {
         "properties": {
           "Action": {
@@ -630,6 +856,154 @@
         ],
         "type": "object"
       },
+      "Finding": {
+        "properties": {
+          "artifact_schema": {
+            "type": "string"
+          },
+          "basis": {
+            "type": "string"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "configuration": {
+            "additionalProperties": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "coverage": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Coverage"
+              }
+            ],
+            "nullable": true
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "freshness": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "observation_id": {
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "target": {
+            "$ref": "#/components/schemas/Target"
+          }
+        },
+        "required": [
+          "target",
+          "observation_id",
+          "observed_at",
+          "id",
+          "condition",
+          "outcome",
+          "explanation",
+          "basis"
+        ],
+        "type": "object"
+      },
+      "FindingExplanation": {
+        "properties": {
+          "expected": {
+            "type": "string"
+          },
+          "known": {
+            "type": "boolean"
+          },
+          "limitations": {
+            "type": "string"
+          },
+          "next_action": {
+            "type": "string"
+          },
+          "observed": {
+            "type": "string"
+          },
+          "owner_role": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "title",
+          "expected",
+          "observed",
+          "limitations",
+          "next_action",
+          "owner_role",
+          "known"
+        ],
+        "type": "object"
+      },
+      "FindingGroup": {
+        "properties": {
+          "affected_targets": {
+            "type": "integer"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "explanation": {
+            "$ref": "#/components/schemas/FindingExplanation"
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "freshness": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "last_observed_at": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "outcome": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "id",
+          "condition",
+          "explanation",
+          "affected_targets",
+          "findings"
+        ],
+        "type": "object"
+      },
       "Form": {
         "properties": {
           "Action": {
@@ -672,6 +1046,49 @@
           "Button",
           "CSRF",
           "Fields"
+        ],
+        "type": "object"
+      },
+      "InstructionBinding": {
+        "properties": {
+          "assertion_hash": {
+            "type": "string"
+          },
+          "catalog_id": {
+            "type": "string"
+          },
+          "guidance_hash": {
+            "type": "string"
+          },
+          "guidance_revision": {
+            "type": "integer"
+          },
+          "guidance_variant": {
+            "type": "string"
+          },
+          "profile_revision": {
+            "type": "integer"
+          },
+          "scope_revision": {
+            "type": "integer"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Ref"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "catalog_id",
+          "profile_revision",
+          "scope_revision",
+          "version",
+          "sources"
         ],
         "type": "object"
       },
@@ -905,6 +1322,113 @@
         ],
         "type": "object"
       },
+      "ObservationDetail": {
+        "properties": {
+          "artifact_hash": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "observation": {
+            "$ref": "#/components/schemas/Submission"
+          },
+          "received_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "source_kind": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "source_kind",
+          "artifact_hash",
+          "received_at",
+          "observation"
+        ],
+        "type": "object"
+      },
+      "ObservationStatus": {
+        "properties": {
+          "checks": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "errors": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "expected": {
+            "type": "integer"
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "freshness": {
+            "type": "string"
+          },
+          "last_observed_at": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "missing_measures": {
+            "type": "integer"
+          },
+          "observed": {
+            "type": "integer"
+          },
+          "recovery": {
+            "items": {
+              "$ref": "#/components/schemas/Recovery"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "sources": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "technical": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "recovery",
+          "errors",
+          "missing_measures",
+          "count",
+          "freshness",
+          "technical",
+          "expected",
+          "observed",
+          "findings",
+          "sources"
+        ],
+        "type": "object"
+      },
       "Operation": {
         "properties": {
           "access": {
@@ -1048,6 +1572,14 @@
             "nullable": true,
             "type": "array"
           },
+          "EvidenceCoverage": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RequirementEvidenceContext"
+              }
+            ],
+            "nullable": true
+          },
           "Findings": {
             "items": {
               "$ref": "#/components/schemas/Section"
@@ -1061,6 +1593,14 @@
             },
             "nullable": true,
             "type": "array"
+          },
+          "Guidance": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessGuidanceContext"
+              }
+            ],
+            "nullable": true
           },
           "Links": {
             "items": {
@@ -1234,6 +1774,1388 @@
         ],
         "type": "object"
       },
+      "ReadinessAcceptance": {
+        "properties": {
+          "alternatives": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessEvidenceRoute"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "fact": {
+            "type": "string"
+          },
+          "insufficient": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/ReadinessStatement"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/ReadinessStatement"
+          },
+          "time_period": {
+            "$ref": "#/components/schemas/ReadinessStatement"
+          }
+        },
+        "required": [
+          "fact",
+          "scope",
+          "time_period",
+          "provenance",
+          "alternatives",
+          "insufficient"
+        ],
+        "type": "object"
+      },
+      "ReadinessAlternative": {
+        "properties": {
+          "explanation": {
+            "$ref": "#/components/schemas/ReadinessStatement"
+          },
+          "id": {
+            "type": "string"
+          },
+          "steps": {
+            "$ref": "#/components/schemas/ReadinessSteps"
+          }
+        },
+        "required": [
+          "id",
+          "explanation",
+          "steps"
+        ],
+        "type": "object"
+      },
+      "ReadinessAssertion": {
+        "properties": {
+          "acceptance": {
+            "$ref": "#/components/schemas/ReadinessAcceptance"
+          },
+          "clauses": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "obligation": {
+            "$ref": "#/components/schemas/ReadinessStatement"
+          }
+        },
+        "required": [
+          "id",
+          "obligation",
+          "clauses",
+          "acceptance"
+        ],
+        "type": "object"
+      },
+      "ReadinessCandidateEvidence": {
+        "properties": {
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "observed_at": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "reason": {
+            "type": "string"
+          },
+          "reference": {
+            "$ref": "#/components/schemas/ReadinessEvidenceRef"
+          },
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "reference",
+          "state",
+          "reason",
+          "limitations"
+        ],
+        "type": "object"
+      },
+      "ReadinessCapability": {
+        "properties": {
+          "alternatives": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessAlternative"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "dependencies": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessDependency"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "scope_kind": {
+            "type": "string"
+          },
+          "setup": {
+            "$ref": "#/components/schemas/ReadinessSteps"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "scope_kind",
+          "dependencies",
+          "setup",
+          "alternatives"
+        ],
+        "type": "object"
+      },
+      "ReadinessCapabilityReadiness": {
+        "properties": {
+          "alternative_id": {
+            "type": "string"
+          },
+          "alternatives": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessAlternative"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "blocked": {
+            "type": "boolean"
+          },
+          "capability_id": {
+            "type": "string"
+          },
+          "declaration": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessWorkRecord"
+              }
+            ],
+            "nullable": true
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessCandidateEvidence"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "evidence_state": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "implementation": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "needs_revalidation": {
+            "type": "boolean"
+          },
+          "next_action": {
+            "type": "string"
+          },
+          "prerequisite_ids": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "requirement_ids": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "review": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/ReadinessScopeKey"
+          },
+          "steps": {
+            "$ref": "#/components/schemas/ReadinessSteps"
+          },
+          "trigger": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidence",
+          "id",
+          "capability_id",
+          "name",
+          "scope",
+          "requirement_ids",
+          "prerequisite_ids",
+          "implementation",
+          "evidence_state",
+          "trigger",
+          "review",
+          "blocked",
+          "needs_revalidation",
+          "steps",
+          "alternatives",
+          "next_action",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "ReadinessCitation": {
+        "properties": {
+          "anchor": {
+            "type": "string"
+          },
+          "content_hash": {
+            "type": "string"
+          },
+          "excerpt": {
+            "type": "string"
+          },
+          "excerpt_hash": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "path",
+          "anchor",
+          "excerpt",
+          "content_hash",
+          "excerpt_hash"
+        ],
+        "type": "object"
+      },
+      "ReadinessCondition": {
+        "properties": {
+          "equals": {
+            "type": "string"
+          },
+          "fact": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "fact",
+          "equals",
+          "question"
+        ],
+        "type": "object"
+      },
+      "ReadinessCoverageEntry": {
+        "properties": {
+          "applicability": {
+            "type": "string"
+          },
+          "document": {
+            "type": "string"
+          },
+          "playbook_id": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "requirement_id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "variant_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "variant_id",
+          "requirement_id",
+          "document",
+          "applicability",
+          "state"
+        ],
+        "type": "object"
+      },
+      "ReadinessDependency": {
+        "properties": {
+          "capability_id": {
+            "type": "string"
+          },
+          "condition": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessCondition"
+              }
+            ],
+            "nullable": true
+          },
+          "reason": {
+            "$ref": "#/components/schemas/ReadinessStatement"
+          }
+        },
+        "required": [
+          "capability_id",
+          "reason"
+        ],
+        "type": "object"
+      },
+      "ReadinessDutyReadiness": {
+        "properties": {
+          "declaration": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessWorkRecord"
+              }
+            ],
+            "nullable": true
+          },
+          "duty": {
+            "$ref": "#/components/schemas/ReadinessDutyRef"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessCandidateEvidence"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "evidence_state": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "implementation": {
+            "type": "string"
+          },
+          "needs_revalidation": {
+            "type": "boolean"
+          },
+          "next_action": {
+            "type": "string"
+          },
+          "requirement_id": {
+            "type": "string"
+          },
+          "review": {
+            "type": "string"
+          },
+          "step": {
+            "$ref": "#/components/schemas/ReadinessStep"
+          },
+          "trigger": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidence",
+          "id",
+          "requirement_id",
+          "duty",
+          "step",
+          "implementation",
+          "trigger",
+          "evidence_state",
+          "review",
+          "needs_revalidation",
+          "next_action"
+        ],
+        "type": "object"
+      },
+      "ReadinessDutyRef": {
+        "properties": {
+          "playbook_id": {
+            "type": "string"
+          },
+          "step_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "playbook_id",
+          "step_id"
+        ],
+        "type": "object"
+      },
+      "ReadinessEvidenceRef": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "revision"
+        ],
+        "type": "object"
+      },
+      "ReadinessEvidenceRoute": {
+        "properties": {
+          "artifacts": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessStatement"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "limitations": {
+            "type": "string"
+          },
+          "proves": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "artifacts",
+          "proves",
+          "limitations"
+        ],
+        "type": "object"
+      },
+      "ReadinessGuidanceContext": {
+        "properties": {
+          "catalog_id": {
+            "type": "string"
+          },
+          "caveat": {
+            "type": "string"
+          },
+          "guidance": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessPackage"
+              }
+            ],
+            "nullable": true
+          },
+          "label": {
+            "type": "string"
+          },
+          "progress": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessRequirementProgress"
+              }
+            ],
+            "nullable": true
+          },
+          "reason": {
+            "type": "string"
+          },
+          "release_hash": {
+            "type": "string"
+          },
+          "release_revision": {
+            "type": "integer"
+          },
+          "state": {
+            "type": "string"
+          },
+          "variant_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "catalog_id",
+          "variant_id"
+        ],
+        "type": "object"
+      },
+      "ReadinessPackage": {
+        "properties": {
+          "capabilities": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessCapability"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "catalog_id": {
+            "type": "string"
+          },
+          "citations": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessCitation"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "format": {
+            "type": "string"
+          },
+          "playbooks": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessPlaybook"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "sources": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ReadinessSource"
+            },
+            "nullable": true,
+            "type": "object"
+          }
+        },
+        "required": [
+          "format",
+          "catalog_id",
+          "revision",
+          "sources",
+          "citations",
+          "capabilities",
+          "playbooks"
+        ],
+        "type": "object"
+      },
+      "ReadinessPlanQuestion": {
+        "properties": {
+          "capability_id": {
+            "type": "string"
+          },
+          "declaration": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessWorkRecord"
+              }
+            ],
+            "nullable": true
+          },
+          "expected_value": {
+            "type": "string"
+          },
+          "fact": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "requirement_id": {
+            "type": "string"
+          },
+          "scope": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessScopeKey"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "required": [
+          "requirement_id",
+          "question",
+          "reason"
+        ],
+        "type": "object"
+      },
+      "ReadinessPlaybook": {
+        "properties": {
+          "applicability": {
+            "$ref": "#/components/schemas/ReadinessStatement"
+          },
+          "assertions": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessAssertion"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "collect": {
+            "$ref": "#/components/schemas/ReadinessSteps"
+          },
+          "decision_owner_role": {
+            "type": "string"
+          },
+          "decision_question": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "no_prerequisites_reason": {
+            "type": "string"
+          },
+          "official_statement": {
+            "type": "string"
+          },
+          "operate": {
+            "$ref": "#/components/schemas/ReadinessSteps"
+          },
+          "prerequisites": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessDependency"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "purpose": {
+            "$ref": "#/components/schemas/ReadinessStatement"
+          },
+          "requirement_id": {
+            "type": "string"
+          },
+          "review": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessReview"
+              }
+            ],
+            "nullable": true
+          },
+          "review_steps": {
+            "$ref": "#/components/schemas/ReadinessSteps"
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "setup": {
+            "$ref": "#/components/schemas/ReadinessSteps"
+          },
+          "variant_ids": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "id",
+          "revision",
+          "requirement_id",
+          "variant_ids",
+          "official_statement",
+          "purpose",
+          "applicability",
+          "prerequisites",
+          "setup",
+          "operate",
+          "collect",
+          "review_steps",
+          "assertions"
+        ],
+        "type": "object"
+      },
+      "ReadinessQualityPage": {
+        "properties": {
+          "catalog_id": {
+            "type": "string"
+          },
+          "complete": {
+            "type": "boolean"
+          },
+          "count_unit": {
+            "type": "string"
+          },
+          "counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "entries": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessCoverageEntry"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "next_offset": {
+            "allOf": [
+              {
+                "type": "integer"
+              }
+            ],
+            "nullable": true
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "release_hash": {
+            "type": "string"
+          },
+          "release_revision": {
+            "type": "integer"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "variant_count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "service_id",
+          "catalog_id",
+          "release_revision",
+          "release_hash",
+          "count_unit",
+          "variant_count",
+          "counts",
+          "complete",
+          "entries",
+          "offset"
+        ],
+        "type": "object"
+      },
+      "ReadinessQueue": {
+        "properties": {
+          "as_of": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "binding": {
+            "$ref": "#/components/schemas/InstructionBinding"
+          },
+          "count_unit": {
+            "type": "string"
+          },
+          "counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessRequirement"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "next_cursor": {
+            "type": "string"
+          },
+          "ordering": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "view_hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "binding",
+          "as_of",
+          "count_unit",
+          "counts",
+          "total",
+          "items",
+          "view_hash",
+          "ordering"
+        ],
+        "type": "object"
+      },
+      "ReadinessRequirement": {
+        "properties": {
+          "applicability": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "presentation": {
+            "$ref": "#/components/schemas/RequirementPresentation"
+          },
+          "requirement_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "requirement_id",
+          "name",
+          "group",
+          "applicability",
+          "presentation"
+        ],
+        "type": "object"
+      },
+      "ReadinessRequirementProgress": {
+        "properties": {
+          "binding": {
+            "$ref": "#/components/schemas/ReadinessWorkBinding"
+          },
+          "capabilities": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessCapabilityReadiness"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "duties": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessDutyReadiness"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "questions": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessPlanQuestion"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "binding",
+          "capabilities",
+          "duties",
+          "questions"
+        ],
+        "type": "object"
+      },
+      "ReadinessReview": {
+        "properties": {
+          "comparison": {
+            "$ref": "#/components/schemas/ReadinessSourceComparison"
+          },
+          "content_hash": {
+            "type": "string"
+          },
+          "reviewed_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "reviewer_id": {
+            "type": "string"
+          },
+          "reviewer_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "reviewer_id",
+          "reviewer_type",
+          "reviewed_at",
+          "content_hash",
+          "comparison"
+        ],
+        "type": "object"
+      },
+      "ReadinessReviewFinding": {
+        "properties": {
+          "citations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "finding": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "finding",
+          "citations"
+        ],
+        "type": "object"
+      },
+      "ReadinessScopeKey": {
+        "properties": {
+          "account_id": {
+            "type": "string"
+          },
+          "cluster_id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "namespace_uid": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "repository": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "type": "object"
+      },
+      "ReadinessServicePlan": {
+        "properties": {
+          "binding": {
+            "$ref": "#/components/schemas/ReadinessWorkBinding"
+          },
+          "capabilities": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessCapabilityReadiness"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "caveat": {
+            "type": "string"
+          },
+          "count_unit": {
+            "type": "string"
+          },
+          "duties": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessDutyReadiness"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "duty_count": {
+            "type": "integer"
+          },
+          "label": {
+            "type": "string"
+          },
+          "next_offset": {
+            "allOf": [
+              {
+                "type": "integer"
+              }
+            ],
+            "nullable": true
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "question_count": {
+            "type": "integer"
+          },
+          "questions": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessPlanQuestion"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "sources": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ReadinessSource"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "state": {
+            "type": "string"
+          },
+          "total": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "duties",
+          "duty_count",
+          "question_count",
+          "service_id",
+          "binding",
+          "state",
+          "capabilities",
+          "questions",
+          "count_unit",
+          "total",
+          "offset"
+        ],
+        "type": "object"
+      },
+      "ReadinessSource": {
+        "properties": {
+          "commit": {
+            "type": "string"
+          },
+          "repository": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "repository",
+          "commit"
+        ],
+        "type": "object"
+      },
+      "ReadinessSourceComparison": {
+        "properties": {
+          "applicability": {
+            "$ref": "#/components/schemas/ReadinessReviewFinding"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/ReadinessReviewFinding"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "obligations": {
+            "$ref": "#/components/schemas/ReadinessReviewFinding"
+          },
+          "prerequisites": {
+            "$ref": "#/components/schemas/ReadinessReviewFinding"
+          },
+          "timing": {
+            "$ref": "#/components/schemas/ReadinessReviewFinding"
+          },
+          "uncertainties": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessReviewFinding"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "applicability",
+          "obligations",
+          "prerequisites",
+          "evidence",
+          "timing",
+          "limitations",
+          "uncertainties"
+        ],
+        "type": "object"
+      },
+      "ReadinessStatement": {
+        "properties": {
+          "basis": {
+            "type": "string"
+          },
+          "citations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "basis",
+          "citations",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "ReadinessStep": {
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/ReadinessStatement"
+          },
+          "completion_criteria": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessStatement"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "owner_role": {
+            "type": "string"
+          },
+          "timing": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessStatement"
+              }
+            ],
+            "nullable": true
+          },
+          "trigger": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "action",
+          "owner_role",
+          "trigger",
+          "completion_criteria"
+        ],
+        "type": "object"
+      },
+      "ReadinessSteps": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessStep"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "none_reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
+      "ReadinessWorkBinding": {
+        "properties": {
+          "catalog_id": {
+            "type": "string"
+          },
+          "profile_revision": {
+            "type": "integer"
+          },
+          "release_hash": {
+            "type": "string"
+          },
+          "release_revision": {
+            "type": "integer"
+          },
+          "scope_revision": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "catalog_id",
+          "release_revision",
+          "release_hash",
+          "profile_revision",
+          "scope_revision"
+        ],
+        "type": "object"
+      },
+      "ReadinessWorkChange": {
+        "properties": {
+          "binding": {
+            "$ref": "#/components/schemas/ReadinessWorkBinding"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ReadinessWorkData"
+          },
+          "expected_revision": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "idempotency_key",
+          "expected_revision",
+          "binding",
+          "data"
+        ],
+        "type": "object"
+      },
+      "ReadinessWorkData": {
+        "properties": {
+          "alternative_id": {
+            "type": "string"
+          },
+          "assignee_id": {
+            "type": "string"
+          },
+          "capability_id": {
+            "type": "string"
+          },
+          "decisions": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "duty": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessDutyRef"
+              }
+            ],
+            "nullable": true
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessEvidenceRef"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "implementation": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "owner_role": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/ReadinessScopeKey"
+          },
+          "trigger": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "capability_id",
+          "scope",
+          "owner_role",
+          "implementation",
+          "decisions",
+          "trigger",
+          "evidence",
+          "notes"
+        ],
+        "type": "object"
+      },
+      "ReadinessWorkPage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ReadinessWorkRecord"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "next_offset": {
+            "allOf": [
+              {
+                "type": "integer"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
+      "ReadinessWorkRecord": {
+        "properties": {
+          "actor_id": {
+            "type": "string"
+          },
+          "binding": {
+            "$ref": "#/components/schemas/ReadinessWorkBinding"
+          },
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ReadinessWorkData"
+          },
+          "id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "service_id",
+          "revision",
+          "actor_id",
+          "created_at",
+          "binding",
+          "data"
+        ],
+        "type": "object"
+      },
       "Record": {
         "properties": {
           "actor_id": {
@@ -1272,6 +3194,59 @@
           "actor_id",
           "data",
           "created_at"
+        ],
+        "type": "object"
+      },
+      "Recovery": {
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "connection_provider": {
+            "type": "string"
+          },
+          "environment": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "target": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "title",
+          "explanation",
+          "target",
+          "environment",
+          "action",
+          "retryable"
+        ],
+        "type": "object"
+      },
+      "Ref": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "revision"
         ],
         "type": "object"
       },
@@ -1329,6 +3304,65 @@
         ],
         "type": "object"
       },
+      "RequirementEvidenceContext": {
+        "properties": {
+          "assertions": {
+            "items": {
+              "$ref": "#/components/schemas/AssertionEvidence"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "blockers": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceCandidate"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "check_groups": {
+            "items": {
+              "$ref": "#/components/schemas/FindingGroup"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "collection": {
+            "$ref": "#/components/schemas/ObservationStatus"
+          },
+          "finding_groups": {
+            "items": {
+              "$ref": "#/components/schemas/FindingGroup"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "check_groups",
+          "blockers",
+          "assertions",
+          "candidates",
+          "finding_groups",
+          "collection",
+          "limitations"
+        ],
+        "type": "object"
+      },
       "RequirementNextStep": {
         "properties": {
           "action": {
@@ -1364,8 +3398,28 @@
           "action": {
             "type": "string"
           },
+          "context_gaps": {
+            "items": {
+              "$ref": "#/components/schemas/RequirementNextStep"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "evidence_complete": {
             "type": "boolean"
+          },
+          "finding_groups": {
+            "items": {
+              "$ref": "#/components/schemas/FindingGroup"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "guidance_reason": {
+            "type": "string"
+          },
+          "guidance_state": {
+            "type": "string"
           },
           "human_reviewed": {
             "type": "boolean"
@@ -1379,6 +3433,14 @@
             },
             "nullable": true,
             "type": "array"
+          },
+          "readiness": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReadinessRequirementProgress"
+              }
+            ],
+            "nullable": true
           },
           "reason": {
             "type": "string"
@@ -1935,6 +3997,128 @@
         ],
         "type": "object"
       },
+      "Submission": {
+        "properties": {
+          "artifact": {
+            "$ref": "#/components/schemas/Artifact"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "evaluations": {
+            "items": {
+              "$ref": "#/components/schemas/Evaluation"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "links": {
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "method": {
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "profile_revision": {
+            "type": "integer"
+          },
+          "scope_revision": {
+            "type": "integer"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "target": {
+            "$ref": "#/components/schemas/Target"
+          },
+          "tool_version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "scope_revision",
+          "profile_revision",
+          "idempotency_key",
+          "target",
+          "observed_at",
+          "method",
+          "tool_version",
+          "limitations",
+          "coverage",
+          "artifact",
+          "evaluations",
+          "links"
+        ],
+        "type": "object"
+      },
+      "Target": {
+        "properties": {
+          "account_id": {
+            "type": "string"
+          },
+          "cluster": {
+            "type": "string"
+          },
+          "cluster_id": {
+            "type": "string"
+          },
+          "commit": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "namespace_uid": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "repository": {
+            "type": "string"
+          },
+          "resource_id": {
+            "type": "string"
+          },
+          "resource_kind": {
+            "type": "string"
+          },
+          "uid": {
+            "type": "string"
+          },
+          "worktree": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "type": "object"
+      },
       "UIBootstrap": {
         "properties": {
           "can_create": {
@@ -1956,6 +4140,9 @@
           },
           "csrf": {
             "type": "string"
+          },
+          "guidance_enabled": {
+            "type": "boolean"
           },
           "profiles": {
             "additionalProperties": {
@@ -4558,6 +6745,40 @@
         }
       }
     },
+    "/api/ui/v1/services/{service}/observations/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObservationDetail"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
     "/api/ui/v1/services/{service}/overview": {
       "get": {
         "parameters": [
@@ -4707,6 +6928,324 @@
                     "content"
                   ],
                   "type": "object"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/readiness/capabilities/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadinessServicePlan"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/readiness/coverage": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadinessQualityPage"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/readiness/plan": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadinessServicePlan"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/readiness/requirements": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "group",
+            "schema": {
+              "enum": [
+                "evidence",
+                "review",
+                "scoping",
+                "maintain",
+                "excluded"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadinessQueue"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      }
+    },
+    "/api/ui/v1/services/{service}/readiness/work": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadinessWorkPage"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadinessWorkChange"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadinessWorkRecord"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
+                }
+              }
+            },
+            "description": "Authorized browser response"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UIError"
                 }
               }
             },

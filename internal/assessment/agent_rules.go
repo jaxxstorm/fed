@@ -22,6 +22,18 @@ func (s *Store) RuleInstructions(ctx context.Context, a auth.Actor, service, rid
 		if err := s.ReconcileEvidenceSources(ctx, a, service); err != nil {
 			return RuleInstructions{}, err
 		}
+		tx, err := s.DB.BeginTx(ctx, pgx.TxOptions{IsoLevel: pgx.RepeatableRead, AccessMode: pgx.ReadOnly})
+		if err != nil {
+			return RuleInstructions{}, err
+		}
+		defer tx.Rollback(ctx)
+		view := *s
+		view.reader = tx
+		out, err := view.RuleInstructions(ctx, a, service, rid)
+		if err != nil {
+			return out, err
+		}
+		return out, tx.Commit(ctx)
 	}
 	out := RuleInstructions{ServiceID: service, GuidanceKind: "generic", Assertions: []Assertion{}, Sources: []Record{}}
 	all, err := s.Requirements(ctx, a, service)
@@ -100,7 +112,38 @@ func (s *Store) RuleInstructions(ctx context.Context, a auth.Actor, service, rid
 	} else if !errors.Is(err, ErrNotFound) {
 		return out, err
 	}
-	out.Work, err = s.ruleWork(ctx, a, service, rid, out.Binding, time.Now().UTC())
+	if s.Guidance != nil {
+		if s.guidanceContexts == nil {
+			if err := s.loadGuidanceContexts(ctx, a, service, p.CatalogID, all, s.now()); err != nil {
+				return out, err
+			}
+		}
+		guidance, e := s.guidanceFor(ctx, a, service, rid, p.CatalogID, s.now())
+		if e != nil {
+			return out, e
+		}
+		out.Guidance = guidance
+		if assertions := bindGuidance(&out.Binding, guidance); len(assertions) > 0 {
+			out.Assertions = assertions
+			out.GuidanceKind = "source_reviewed_playbook"
+			out.Steps = []string{}
+			book := guidance.Guidance.Playbooks[0]
+			for _, step := range book.Collect.Items {
+				out.Steps = append(out.Steps, step.Action.Text)
+			}
+			for _, step := range book.ReviewSteps.Items {
+				out.Steps = append(out.Steps, step.Action.Text)
+			}
+		}
+	}
+	out.Work, err = s.ruleWork(ctx, a, service, rid, out.Binding, s.now())
+	if err == nil {
+		coverage, e := s.evidenceCoverage(ctx, a, out, s.now())
+		if e != nil {
+			return out, e
+		}
+		out.EvidenceCoverage = &coverage
+	}
 	return out, err
 }
 
@@ -128,6 +171,17 @@ type storedRuleResult struct {
 
 func (s *Store) ruleWork(ctx context.Context, a auth.Actor, service, rid string, binding InstructionBinding, now time.Time) (EvidenceWork, error) {
 	out := EvidenceWork{State: "open", Assessment: "unknown", MissingAssertions: []string{"whole-statement"}, Blockers: []string{}, Reasons: []string{}}
+	g, err := s.guidanceFor(ctx, a, service, rid, binding.CatalogID, now)
+	if err != nil {
+		return out, err
+	}
+	assertions := bindGuidance(&binding, g)
+	if len(assertions) > 0 {
+		out.MissingAssertions = []string{}
+		for _, assertion := range assertions {
+			out.MissingAssertions = append(out.MissingAssertions, assertion.ID)
+		}
+	}
 	r, err := s.Get(ctx, a, service, "rule_result", rid)
 	if errors.Is(err, ErrNotFound) {
 		return out, nil
@@ -141,6 +195,13 @@ func (s *Store) ruleWork(ctx context.Context, a auth.Actor, service, rid string,
 	}
 	out = stored.Receipt.Work
 	old := stored.Submission.Binding
+	if old.AssertionHash != binding.AssertionHash || old.GuidanceVariant != binding.GuidanceVariant || (g != nil && g.State == "needs_revalidation") {
+		out.Reasons = append(out.Reasons, "guidance or assertion coverage changed; reassess against current sources")
+		out.MissingAssertions = []string{}
+		for _, assertion := range assertions {
+			out.MissingAssertions = append(out.MissingAssertions, assertion.ID)
+		}
+	}
 	if old.CatalogID != binding.CatalogID || old.ProfileRevision != binding.ProfileRevision || old.ScopeRevision != binding.ScopeRevision || old.Version != binding.Version {
 		out.Reasons = append(out.Reasons, "rule or boundary changed")
 	}
@@ -263,6 +324,9 @@ func (s *Store) ListOpenRules(ctx context.Context, a auth.Actor, in OpenRulesInp
 	}
 	binding := InstructionBinding{CatalogID: profile.CatalogID, ProfileRevision: pr.Revision, ScopeRevision: sr.Revision, Version: instructionVersion}
 	now := s.now()
+	if err = view.loadGuidanceContexts(ctx, a, in.ServiceID, profile.CatalogID, all, now); err != nil {
+		return out, err
+	}
 	for _, r := range all {
 		if in.Kind != "" && r.Requirement.Kind != in.Kind {
 			continue

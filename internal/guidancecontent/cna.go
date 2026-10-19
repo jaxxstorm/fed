@@ -1,0 +1,65 @@
+package guidancecontent
+
+import (
+	"github.com/jaxxstorm/fed/internal/readiness"
+	"io/fs"
+)
+
+// CNA builds the 26 exact cloud-native architecture variants as unreviewed drafts.
+func CNA(rules, markdown fs.FS) (readiness.Package, error) {
+	return technicalDraft(rules, markdown, "CNA", "cloud-native-architecture", 26, []technicalRecipe{
+		{code: "DFP", statement: "The functionality and privileges for infrastructure and services are strictly defined.",
+			purpose: "Determine whether infrastructure and service functions and privileges have explicit boundaries, rather than inferring permission requirements from whatever happens to be deployed.", capability: "architecture-resource-boundary",
+			scope:   "Infrastructure and services throughout the offering, with accounts, clusters, shared services and provider/customer responsibilities identified.",
+			setup:   "Locate the infrastructure/service inventory, architecture specifications, permission definitions and owners; reconcile deployed resources with these definitions.",
+			records: "Versioned function specifications, role and permission definitions, resource-to-definition mapping, and owner explanations of allowed operations and boundaries.",
+			review:  "Compare each infrastructure/service category to explicit function and privilege definitions. Distinguish a strict definition from a broad administrator grant or descriptive architecture diagram.", insufficient: "A resource inventory or broad administrator policy without defined service functions and privileges.",
+			facets: []technicalFacet{{"functionality", "Infrastructure and service functionality is explicitly bounded.", "Function specifications and resource-to-function mapping.", "Permission lists without functional definitions."}, {"privileges", "Infrastructure and service privileges are explicitly bounded.", "Versioned permissions and resource-to-role mapping with allowed actions and targets.", "Function descriptions with no privilege definitions."}}},
+		{code: "EIS", statement: "Automated services are used to persistently assess the security of all machine-based information resources and automatically enforce their intended operational state.",
+			purpose: "Establish both repeated automated security assessment and automatic intended-state enforcement; a scanner or an infrastructure plan alone establishes neither combined outcome.", capability: "architecture-resource-boundary",
+			scope:   "All machine-based information resources, including ephemeral resources, managed services and resources outside the primary cloud account; reconcile each to assessment and enforcement coverage.",
+			setup:   "Locate the machine-resource denominator, intended-state definitions, assessment automation and enforcement controllers, including supported resource types and exclusions.",
+			records: "Inventory reconciliation, intended-state revisions, assessment run history, enforcement policy/controller versions, observed enforcement outcomes and uncovered-resource records.",
+			review:  "Trace resources from inventory through repeated automated assessments to intended-state enforcement records. Separate findings-only alerts, manual response and actual automatic enforcement; record unobservable coverage as unknown.", insufficient: "A scanner finding list or manual fix tickets without automatic enforcement evidence.",
+			facets: []technicalFacet{{"persistently assess the security of all machine-based information resources", "Automated assessments repeatedly cover the complete machine-resource population.", "Assessment schedules/status, dated runs and inventory-to-assessment reconciliation.", "One successful scan or only one subscribed account."}, {"automatically enforce their intended operational state", "Automation enforces a defined intended state.", "Controller configuration, baseline revisions and attributable enforcement outcomes tied to resource IDs.", "A desired-state file with no enforcement history."}}},
+		{code: "IBP", statement: "The use and configuration of third-party machine-based information resources is persistently compared against the original provider's best practices and guidance.",
+			purpose: "Show repeated comparison of actual third-party use and configuration with that original provider's guidance, including documented differences; comparison is not a blanket mandate to adopt every recommendation.", capability: "architecture-resource-boundary",
+			scope:   "Third-party machine-based resources used by the offering, mapped to original providers, product versions and relevant guidance editions.",
+			setup:   "Locate third-party resource ownership and product versions, archived original-provider guidance and configuration/use comparison records.",
+			records: "Provider guidance titles, URLs and versions; deployed configuration/use snapshots; dated comparison findings and repeated review status.",
+			review:  "Check that comparisons address actual usage as well as configuration and use original-provider guidance applicable to the deployed version. Retain differences and applicability rationale without treating a third-party checklist as the original authority.", insufficient: "A generic benchmark score with no mapping to original-provider guidance or actual use."},
+		{code: "MAT", statement: "Machine-based information resources are persistently reviewed to ensure they have a minimal attack surface and that lateral movement is minimized if compromised.",
+			purpose: "Examine repeated reviews of exposed functionality and compromise paths; a clean vulnerability scan does not show minimized attack surface or lateral movement.", capability: "architecture-resource-boundary",
+			scope:   "Machine-based resources, exposed interfaces, identities and trust paths within and across service accounts, clusters and network segments.",
+			setup:   "Locate current resource topology, exposed endpoint/service inventories, identity trust paths and attack-surface review records.",
+			records: "Dated exposure inventories, necessity rationale for exposed functions, compromise-path analysis, segmentation/access observations and review conclusions.",
+			review:  "Evaluate exposure necessity and plausible movement after compromise separately; reconcile reviewed topology with the live resource inventory and explain unreviewed paths.", insufficient: "Public port scans alone, which omit internal exposure and identity-based lateral movement.",
+			facets: []technicalFacet{{"minimal attack surface", "Reviews evaluate whether exposed functionality is minimal for intended operation.", "Exposure-to-business-need comparisons and dated conclusions.", "A firewall diagram without exposure-necessity review."}, {"lateral movement is minimized if compromised", "Reviews evaluate movement paths assuming a resource compromise.", "Compromise scenarios, reachable trust paths and review conclusions about containment.", "A statement that no compromise has occurred."}}},
+		{code: "OFA", statement: "Machine-based information resources are persistently reviewed to ensure they are appropriately optimized for high availability and rapid recovery.",
+			purpose: "Review resource design and observed behavior for both availability and recovery appropriateness; do not invent a universal uptime target or recovery-time objective.", capability: "architecture-resource-boundary",
+			scope:   "Machine-resource dependencies, failure domains, capacity and recovery paths for the service, including critical shared services.",
+			setup:   "Locate availability design, dependency maps, service-defined availability/recovery objectives, operational observations and recovery reviews.",
+			records: "Topology and failure-domain versions, availability observations, recovery exercise or event timings, bottleneck findings and dated optimization-review conclusions.",
+			review:  "Compare redundancy and dependency behavior to service needs, then examine recovery observations separately. Explain why reviewers considered optimization appropriate and how repeated review covers changing resources.", insufficient: "A multi-zone deployment label or backup-success report without availability and rapid-recovery review.",
+			facets: []technicalFacet{{"high availability", "Reviews assess resource optimization for high availability.", "Dependency/failure-domain analysis and availability review findings.", "A recovery plan alone."}, {"rapid recovery", "Reviews assess resource optimization for rapid recovery.", "Recovery observations, timings and review conclusions against service-defined needs.", "An uptime dashboard alone."}}},
+		{code: "RNT", statement: "Machine-based information resources are persistently reviewed to ensure they are appropriately configured to limit inbound and outbound network traffic.",
+			purpose: "Assess recurring review of both ingress and egress limits against intended communication needs, including effective combined rules rather than one firewall attachment.", capability: "architecture-network-boundary",
+			scope:   "Inbound and outbound paths for machine-based resources, including private endpoints, cross-account routes, public access and managed-service connections.",
+			setup:   "Locate traffic-flow requirements, route tables, security rules, proxies, service policies and review history with resource/account/cluster mappings.",
+			records: "Effective ingress and egress rule exports, topology versions, justified allowed flows, observed traffic or read-only reachability analysis and dated configuration-review conclusions.",
+			review:  "Compare effective inbound and outbound permissions to justified flows; examine broad ranges, inherited policies and bypass routes, and retain the reviewers' appropriateness conclusions.", insufficient: "Only inbound firewall rules, or a rule count without effective egress coverage.",
+			facets: []technicalFacet{{"inbound", "Review covers inbound network limits.", "Ingress configuration and flow-need comparison with dated review conclusions.", "Egress-only review."}, {"outbound", "Review covers outbound network limits.", "Egress routes, policies and destination restrictions with dated review conclusions.", "Default outbound allowance omitted from assessment."}}},
+		{code: "RVP", statement: "The effectiveness of protection against denial of service attacks and other unwanted activity for machine-based information resources is persistently reviewed.",
+			purpose: "Evaluate repeated effectiveness review of denial-of-service and other unwanted-activity protection using observed outcomes, not just enabled service settings.", capability: "architecture-network-boundary",
+			scope:   "Protected machine-resource entry points and dependencies, denial-of-service scenarios and other unwanted activity relevant to the offering.",
+			setup:   "Locate protection coverage, rate/capacity controls, relevant attack or safe exercise observations and effectiveness reviews.",
+			records: "Protection configuration versions, coverage maps, attack or exercise telemetry, filtering/availability results, limitations and dated effectiveness conclusions.",
+			review:  "Trace conclusions to protection behavior under relevant unwanted activity, including denial of service. Assess whether the observations support the stated effectiveness and explain untested scenarios; do not initiate attacks.", insufficient: "A protection subscription, enabled flag or a claim of no attacks without effectiveness review."},
+		{code: "ULN", statement: "Logical networking and related capabilities are used and persistently reviewed to enforce traffic flow controls.",
+			purpose: "Demonstrate operating logical-network traffic controls and repeated review of enforcement, rather than accepting a logical network's existence as isolation.", capability: "architecture-network-boundary",
+			scope:   "Logical networks, segments, routing domains, service-network policies and related flow-control boundaries supporting the offering.",
+			setup:   "Locate intended flow matrices, logical-network configurations, effective policy evaluation or observed flow records and review history.",
+			records: "Versioned flow matrices, segmentation/routing/policy exports, allowed/denied flow observations and repeated enforcement-review conclusions.",
+			review:  "Match intended flows to logical controls and evidence of allowed and denied paths, considering inherited routes and cross-segment bypass. Verify recurring review and current status.", insufficient: "Network names or diagrams without operating traffic-control and review evidence."},
+	})
+}

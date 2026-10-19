@@ -1,6 +1,10 @@
 package assessment
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/jaxxstorm/fed/internal/observation"
+	"github.com/jaxxstorm/fed/internal/readiness"
+)
 
 type RequirementNextStep struct {
 	Title       string   `json:"title"`
@@ -13,20 +17,82 @@ type RequirementNextStep struct {
 // RequirementPresentation is the common status vocabulary used by browser
 // summaries and details. The source domain states remain available separately.
 type RequirementPresentation struct {
-	NextSteps        []RequirementNextStep `json:"next_steps,omitempty"`
-	HumanReviewed    bool                  `json:"human_reviewed"`
-	Status           string                `json:"status"`
-	Label            string                `json:"label"`
-	Reason           string                `json:"reason"`
-	Action           string                `json:"action"`
-	EvidenceComplete bool                  `json:"evidence_complete"`
-	ReviewRemaining  bool                  `json:"review_remaining"`
-	Secondary        []string              `json:"secondary"`
+	ContextGaps      []RequirementNextStep          `json:"context_gaps,omitempty"`
+	Readiness        *readiness.RequirementProgress `json:"readiness,omitempty"`
+	GuidanceReason   string                         `json:"guidance_reason,omitempty"`
+	GuidanceState    string                         `json:"guidance_state,omitempty"`
+	FindingGroups    []observation.FindingGroup     `json:"finding_groups,omitempty"`
+	NextSteps        []RequirementNextStep          `json:"next_steps,omitempty"`
+	HumanReviewed    bool                           `json:"human_reviewed"`
+	Status           string                         `json:"status"`
+	Label            string                         `json:"label"`
+	Reason           string                         `json:"reason"`
+	Action           string                         `json:"action"`
+	EvidenceComplete bool                           `json:"evidence_complete"`
+	ReviewRemaining  bool                           `json:"review_remaining"`
+	Secondary        []string                       `json:"secondary"`
+}
+
+// WithGuidanceAction adds source-backed collection actions without changing the
+// compliance result or allowing guidance to hide findings and access failures.
+func WithGuidanceAction(p RequirementPresentation, g readiness.GuidanceContext) RequirementPresentation {
+	p.GuidanceState = g.State
+	p.GuidanceReason = g.Reason
+	p.Readiness = g.Progress
+	if g.State != "reviewed" || g.Guidance == nil || len(g.Guidance.Playbooks) != 1 {
+		return p
+	}
+	book := g.Guidance.Playbooks[0]
+	if p.Status == "needs_scoping" && book.Kind == "needs_decision" {
+		p.Action = book.DecisionOwnerRole + ": " + book.DecisionQuestion
+		p.Reason = book.Applicability.Text
+		return p
+	}
+	if book.Kind != "actionable" || (p.Status != "not_started" && p.Status != "in_progress" && p.Status != "needs_evidence") {
+		return p
+	}
+	setAction := func(title, action, reason string) RequirementPresentation {
+		p.Action = action
+		p.NextSteps = append([]RequirementNextStep{{Title: title, Explanation: reason, Action: action, Targets: []string{}}}, p.NextSteps...)
+		return p
+	}
+	if g.Progress != nil {
+		if len(g.Progress.Questions) > 0 {
+			q := g.Progress.Questions[0]
+			return setAction("Resolve prerequisite applicability", q.Question, q.Reason+" An unanswered condition does not establish applicability.")
+		}
+		for _, c := range g.Progress.Capabilities {
+			if c.NeedsRevalidation || c.Blocked || c.Implementation != "declared_present" || c.EvidenceState != "available_for_assessment" {
+				action := c.Name + ": " + c.NextAction
+				if !c.NeedsRevalidation && c.Implementation != "declared_present" && len(c.Steps.Items) > 0 {
+					step := c.Steps.Items[0]
+					action = step.OwnerRole + ": Confirm whether " + c.Name + " exists and request its records. Record any reported implementation gap; review setup recommendations separately."
+				}
+				return setAction("Shared prerequisite · "+c.Name, action, c.Rationale+" Check this scoped prerequisite before dependent evidence work; declarations are not verified support.")
+			}
+		}
+		for _, d := range g.Progress.Duties {
+			if d.Trigger == "due" || d.NeedsRevalidation {
+				return setAction("Operating records · "+d.Step.Action.Text, d.NextAction, "This operating duty needs current records before assessment; reported completion is not proof.")
+			}
+		}
+	}
+	if len(book.Collect.Items) == 0 {
+		return p
+	}
+	step := book.Collect.Items[0]
+	p.Action = step.OwnerRole + ": " + step.Action.Text
+	reason := "Collect and assess this record for the saved service boundary; collecting it alone does not establish the whole requirement."
+	if p.Status != "not_started" {
+		reason = "Compare existing artifacts with this evidence step and collect any missing scope or operating records."
+	}
+	return setAction("Requirement-specific evidence action", p.Action, reason)
 }
 
 func PresentRequirement(applicability string, s Status, hasActivity bool) RequirementPresentation {
 	current := s.Work.State == "evidence_complete" && s.Evidence == "current"
 	p := RequirementPresentation{EvidenceComplete: current, ReviewRemaining: current && s.Review != "reviewed", Secondary: []string{}}
+	p.FindingGroups = observation.GroupFindings(s.Collection.Findings)
 	p.HumanReviewed = s.Review == "reviewed"
 	groups := map[string]int{}
 	for _, r := range s.Collection.Recovery {
@@ -44,6 +110,7 @@ func PresentRequirement(applicability string, s Status, hasActivity bool) Requir
 	for _, blocker := range s.Work.Blockers {
 		p.NextSteps = append(p.NextSteps, RequirementNextStep{Title: "Evidence still needed", Explanation: blocker, Action: "Gather the missing records and ask your agent to update the requirement assessment with exact citations.", Targets: []string{}})
 	}
+	p.ContextGaps = append([]RequirementNextStep(nil), p.NextSteps...)
 	if current {
 		p.Secondary = append(p.Secondary, "Evidence gathered")
 	}
@@ -61,14 +128,22 @@ func PresentRequirement(applicability string, s Status, hasActivity bool) Requir
 		p.Label = label
 		p.Reason = reason
 		p.Action = action
-		for _, finding := range s.Collection.Findings {
+		for _, group := range p.FindingGroups {
 			if status != "failing" {
 				break
 			}
-			p.NextSteps = append(p.NextSteps, RequirementNextStep{Title: "Investigate failed condition: " + finding.Condition, Explanation: finding.Explanation, Targets: []string{finding.Target.ResourceID}, Action: "Inspect the affected resource against this condition. Record the remediation or justified exception, rerun the check, and update the assessment with the new result."})
+			targets := []string{}
+			for _, finding := range group.Findings {
+				targets = append(targets, finding.Target.ResourceID)
+			}
+			p.NextSteps = append(p.NextSteps, RequirementNextStep{Title: fmt.Sprintf("%s · %d affected targets", group.Explanation.Title, group.AffectedTargets), Explanation: group.Explanation.Observed + " " + group.Explanation.Limitations, Targets: targets, Action: group.Explanation.NextAction})
 		}
 		for _, why := range s.Work.Reasons {
 			p.NextSteps = append(p.NextSteps, RequirementNextStep{Title: "Assessment needs attention", Explanation: why, Targets: []string{}, Action: "Compare the assessment bindings with the current scope and evidence, then submit an updated assessment with exact citations."})
+		}
+		if (status == "failing" || status == "blocked") && len(p.NextSteps) > 0 {
+			p.Action = p.NextSteps[0].Action
+			p.Reason = p.NextSteps[0].Title + ": " + p.NextSteps[0].Explanation
 		}
 		guidance := map[string][2]string{
 			"not_started":    {"No assessment has been recorded for this requirement.", "Follow the requirement-specific evidence plan below. Gather records for the saved scope, cite exact evidence revisions, and submit an assessment for every assertion."},
@@ -79,7 +154,7 @@ func PresentRequirement(applicability string, s Status, hasActivity bool) Requir
 			"in_review":      {"Current evidence supports the requirement, but human review is outstanding.", "An authorized reviewer should inspect the cited evidence and assessment, then record a human review with notes. Agent results cannot grant human approval."},
 			"passing":        {"The requirement has current supporting evidence and a recorded human review.", "Maintain evidence freshness. Reassess after relevant scope, implementation or evidence changes; retain the reviewed revisions for audit history."},
 			"not_applicable": {"The current applicability decision excludes this requirement.", "Inspect the applicability rationale in this page's official-source details. Revisit the decision in service settings if the service boundary or implementation changes."},
-			"failing":        {"A technical finding or assessment contradicts the requirement.", "Inspect findings and assertion rationales below. Address the failed condition, gather proof of the change, rerun affected checks and resubmit the assessment before human review."},
+			"failing":        {"A technical finding or assessment contradicts the requirement.", "Preserve the contradictory observations, verify affected scope, and collect the missing configuration or operating records. Record any proposed remediation separately from evidence collection."},
 			"blocked":        {"An access error or missing input prevents the assessment from finishing.", "Resolve each recorded blocker above. If no detailed error was retained, inspect the latest run in collection activity and retry it to obtain diagnostics. Gather missing inputs and update the assessment; do not infer success from missing diagnostics."},
 		}
 		if g, ok := guidance[status]; ok {

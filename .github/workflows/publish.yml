@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
 
       # GHCR creates new packages as private. Never push to an existing
       # package whose visibility was changed to public or internal.

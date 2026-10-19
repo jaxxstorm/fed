@@ -10,6 +10,7 @@ import (
 )
 
 type PresentationSnapshot struct {
+	Binding         InstructionBinding
 	EvidenceRecords int
 	OpenGaps        map[string]bool
 	AsOf            time.Time
@@ -37,6 +38,21 @@ func (s *Store) Presentation(ctx context.Context, a auth.Actor, service string) 
 	if err != nil {
 		return out, err
 	}
+	if pr, e := view.Get(ctx, a, service, "profile", "profile"); e == nil {
+		profile, e := Decode[catalog.Profile](pr)
+		if e != nil {
+			return out, e
+		}
+		out.Binding.CatalogID = profile.CatalogID
+		out.Binding.ProfileRevision = pr.Revision
+	} else if !errors.Is(e, ErrNotFound) {
+		return out, e
+	}
+	if sr, e := view.Get(ctx, a, service, "scope", "scope"); e == nil {
+		out.Binding.ScopeRevision = sr.Revision
+	} else if !errors.Is(e, ErrNotFound) {
+		return out, e
+	}
 	out.OpenGaps = map[string]bool{}
 	for _, record := range view.presentationCache.latest {
 		if record.Kind == "gap" {
@@ -60,6 +76,19 @@ func (s *Store) Presentation(ctx context.Context, a auth.Actor, service string) 
 	}
 	if err != nil {
 		return out, err
+	}
+	if view.Guidance != nil {
+		pr, err := view.Get(ctx, a, service, "profile", "profile")
+		if err != nil {
+			return out, err
+		}
+		profile, err := Decode[catalog.Profile](pr)
+		if err != nil {
+			return out, err
+		}
+		if err = view.loadGuidanceContexts(ctx, a, service, profile.CatalogID, out.Requirements, out.AsOf); err != nil {
+			return out, err
+		}
 	}
 	rows, err := tx.Query(ctx, `SELECT requirement_id FROM records WHERE service_id=$1 AND kind IN ('assessment','rule_result','evidence') AND requirement_id<>'' UNION SELECT requirement_id FROM jobs WHERE service_id=$1 UNION SELECT requirement_id FROM observation_links WHERE service_id=$1 UNION SELECT requirement_id FROM rule_evidence_links WHERE service_id=$1`, service)
 	if err != nil {
@@ -88,6 +117,9 @@ func (s *Store) Presentation(ctx context.Context, a auth.Actor, service string) 
 			}
 		}
 		out.States[req.Requirement.ID] = PresentRequirement(req.Applicability, status, active[req.Requirement.ID])
+		if g, ok := view.guidanceContexts[req.Requirement.ID]; ok {
+			out.States[req.Requirement.ID] = WithGuidanceAction(out.States[req.Requirement.ID], g)
+		}
 	}
 	return out, tx.Commit(ctx)
 }

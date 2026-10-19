@@ -1,0 +1,1602 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "ksi-cna-dfp-afe4dfb940d7": {
+      "content_hash": "538bab704f21abd9434944be1cc6524649eb3fee01a65bedfa207e5bedef9b1a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant afe4dfb940d7e6df29ce1aaf1cdec285ab1eeba410dd2a96709bc3bcfdd2f71b preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Strict definition has two proof duties: functionality and privileges. Separate assertions now prevent a permission export from standing in for functional boundaries.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Resource ownership and allowed-operation/privilege boundaries are substantive prerequisites; merely locating an inventory was not enough. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Function specifications plus resource mapping support the first duty; permission definitions plus allowed actions/targets support the second. Documentary examination is a valid alternative to exports because this outcome concerns definitions, not a mandated runtime experiment. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The statement does not prescribe a notation for strict definitions or a numeric granularity. Broad administrator grants need explanation, but no particular role model is imposed here.",
+            "citations": [
+              "KSI-CNA-DFP",
+              "KSI-CNA-DFP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-dfp-d9426f5d4a78": {
+      "content_hash": "5aeb7456a635bcbd6c1318f60972c54dba63069ecc2af01f72a68f4893347d3f",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant d9426f5d4a786928c3957b20ac9a363b2970b5cde2417fa04dd3e02799481abb with FRC-CLA-MFR's enumerated KSI list: KSI-CNA-DFP is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Strict definition has two proof duties: functionality and privileges. Separate assertions now prevent a permission export from standing in for functional boundaries.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Resource ownership and allowed-operation/privilege boundaries are substantive prerequisites; merely locating an inventory was not enough. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Function specifications plus resource mapping support the first duty; permission definitions plus allowed actions/targets support the second. Documentary examination is a valid alternative to exports because this outcome concerns definitions, not a mandated runtime experiment. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The statement does not prescribe a notation for strict definitions or a numeric granularity. Broad administrator grants need explanation, but no particular role model is imposed here.",
+            "citations": [
+              "KSI-CNA-DFP",
+              "KSI-CNA-DFP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-dfp-fbfe66517165": {
+      "content_hash": "7514705cfae2eff22aa70edd37350dbdba500cf7686b04a54bd02794e938081e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant fbfe66517165f71983f9945646902137185864a69b358ae51647787f31eae764 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Strict definition has two proof duties: functionality and privileges. Separate assertions now prevent a permission export from standing in for functional boundaries.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Resource ownership and allowed-operation/privilege boundaries are substantive prerequisites; merely locating an inventory was not enough. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Function specifications plus resource mapping support the first duty; permission definitions plus allowed actions/targets support the second. Documentary examination is a valid alternative to exports because this outcome concerns definitions, not a mandated runtime experiment. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "The indicator supplies no fixed numeric operating cadence or minimum-history period. Dates and observation windows support attribution; the workflow recurrence is an implementation recommendation, not a newly invented official deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-DFP",
+            "KSI-CNA-DFP-page"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The statement does not prescribe a notation for strict definitions or a numeric granularity. Broad administrator grants need explanation, but no particular role model is imposed here.",
+            "citations": [
+              "KSI-CNA-DFP",
+              "KSI-CNA-DFP-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CNA-DFP",
+              "KSI-CNA-DFP-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-eis-3e8c1141a42a": {
+      "content_hash": "1930b28ed5140f00aef8eee1e1be33d299649efa2b72060292a722d177d4eaa2",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 3e8c1141a42ab1b76a64546c542590f91f885c4c500a061a21a1f9ced1bb2ef7 binds the explicit Class B Optional statement in Rules JSON, matching the page's B tab. The elective workflow does not become a mandatory certification gate. Missing D text is represented separately as unresolved, not as a Class-D optional variant.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "KSI-CNA-EIS-optional",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Automated persistent assessment of all machine resources and automatic intended-state enforcement are separately asserted. Scanner coverage cannot discharge enforcement, and manual remediation cannot replace automation. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "KSI-CNA-EIS-optional",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Intended states and assessment criteria must exist before controllers and run history can be evaluated. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "KSI-CNA-EIS-optional",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Inventory-reconciled assessment history and baseline/controller-linked enforcement outcomes prove different facts. Witnessed examination remains acceptable only when it retains the underlying automated execution evidence. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "KSI-CNA-EIS-optional",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "KSI-CNA-EIS-optional",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify acceptable uncovered resource types or enforcement latency. A convenient connector subset cannot silently replace all machine resources.",
+            "citations": [
+              "KSI-CNA-EIS",
+              "KSI-CNA-EIS-page",
+              "KSI-CNA-EIS-optional"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-eis-40e866b57437": {
+      "content_hash": "c31d639f55bd6fd0e5ec19c7a7e386b823ce31e23e3337e5fb0406a6527207e2",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 40e866b574371fe19fdde011aa3737119cb54192be9caa96b6c7622d0f6e6a68 preserves the required outcome selected from pinned source/profile metadata. For this class-varying indicator it is the explicit Class C statement; neither B optionality nor missing D text overrides it.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Automated persistent assessment of all machine resources and automatic intended-state enforcement are separately asserted. Scanner coverage cannot discharge enforcement, and manual remediation cannot replace automation. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Intended states and assessment criteria must exist before controllers and run history can be evaluated. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Inventory-reconciled assessment history and baseline/controller-linked enforcement outcomes prove different facts. Witnessed examination remains acceptable only when it retains the underlying automated execution evidence. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify acceptable uncovered resource types or enforcement latency. A convenient connector subset cannot silently replace all machine resources.",
+            "citations": [
+              "KSI-CNA-EIS",
+              "KSI-CNA-EIS-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-eis-6d9d0f8f5ac1": {
+      "content_hash": "c2df187aee10e6e7efb8fdb979bf7a2117ae7fce80ba1d47334fde67ddc1e8ac",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 6d9d0f8f5ac1a6020280a937db7df167b8cef21e71a799a73708731c5116c6ae retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Automated persistent assessment of all machine resources and automatic intended-state enforcement are separately asserted. Scanner coverage cannot discharge enforcement, and manual remediation cannot replace automation. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Intended states and assessment criteria must exist before controllers and run history can be evaluated. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Inventory-reconciled assessment history and baseline/controller-linked enforcement outcomes prove different facts. Witnessed examination remains acceptable only when it retains the underlying automated execution evidence. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify acceptable uncovered resource types or enforcement latency. A convenient connector subset cannot silently replace all machine resources.",
+            "citations": [
+              "KSI-CNA-EIS",
+              "KSI-CNA-EIS-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CNA-EIS",
+              "KSI-CNA-EIS-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-eis-ab74a71b02c0": {
+      "content_hash": "6485c2f49c1b9afd5cf1f59a50f3a04889cc03d53b96bffee0dd6fbabbab293f",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant ab74a71b02c06cc9953545772ac1791a493fd5dc1f5a4325b305d8da79f74766 with FRC-CLA-MFR's enumerated KSI list: KSI-CNA-EIS is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Automated persistent assessment of all machine resources and automatic intended-state enforcement are separately asserted. Scanner coverage cannot discharge enforcement, and manual remediation cannot replace automation. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Intended states and assessment criteria must exist before controllers and run history can be evaluated. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Inventory-reconciled assessment history and baseline/controller-linked enforcement outcomes prove different facts. Witnessed examination remains acceptable only when it retains the underlying automated execution evidence. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify acceptable uncovered resource types or enforcement latency. A convenient connector subset cannot silently replace all machine resources.",
+            "citations": [
+              "KSI-CNA-EIS",
+              "KSI-CNA-EIS-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-eis-c056ea10a137": {
+      "content_hash": "dda33b646346cf53dff0c999eabb9ab737b6ac9ab6efc75fbfb7c015686bfa51",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant c056ea10a137e6483254ed484fd2c67e282ad148e898427bea8d8501b4f5a09a retains the unresolved selected-class result. Rules JSON and the matching page provide B optional and C unprefixed statements for KSI-CNA-EIS, but no D statement. The pinned resolver does not inherit B or C into D. The decision-only plan correctly imposes no assertions.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Automated persistent assessment of all machine resources and automatic intended-state enforcement are separately asserted. Scanner coverage cannot discharge enforcement, and manual remediation cannot replace automation. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Intended states and assessment criteria must exist before controllers and run history can be evaluated. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Inventory-reconciled assessment history and baseline/controller-linked enforcement outcomes prove different facts. Witnessed examination remains acceptable only when it retains the underlying automated execution evidence. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-EIS",
+            "KSI-CNA-EIS-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not specify acceptable uncovered resource types or enforcement latency. A convenient connector subset cannot silently replace all machine resources.",
+            "citations": [
+              "KSI-CNA-EIS",
+              "KSI-CNA-EIS-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CNA-EIS",
+              "KSI-CNA-EIS-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-ibp-4da9ba9f8036": {
+      "content_hash": "982d540cda2a60a0ccfcf6654720afc3de0336e31420a6162e9378c8b0f11cd3",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant 4da9ba9f803603cd55078aef7ea2c7bbc370d54933a64aab098782fb9f94a307 with FRC-CLA-MFR's enumerated KSI list: KSI-CNA-IBP is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Use and configuration both require persistent comparison with the original provider guidance. The review split these duties; the source does not require blind adoption of every recommendation. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Product/version identification and applicable original-provider guidance are needed for a meaningful comparison. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Usage comparisons and configuration comparisons each retain guidance editions and findings; a benchmark score is insufficient without original-provider mapping. Reports may substitute for exports if actual compared revisions are identified. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Conflicting or version-ambiguous original-provider recommendations require service-specific explanation; the statement supplies no rule for ranking them.",
+            "citations": [
+              "KSI-CNA-IBP",
+              "KSI-CNA-IBP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-ibp-708df96921d7": {
+      "content_hash": "b68d38ba3b4ae23b9ba2539f238293c91bf256ee9d4a049d7b10eb429f95b2ae",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 708df96921d76bdf768583673a455408967dd3a2407c850fae2fbeae4f4137d3 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Use and configuration both require persistent comparison with the original provider guidance. The review split these duties; the source does not require blind adoption of every recommendation. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Product/version identification and applicable original-provider guidance are needed for a meaningful comparison. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Usage comparisons and configuration comparisons each retain guidance editions and findings; a benchmark score is insufficient without original-provider mapping. Reports may substitute for exports if actual compared revisions are identified. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Conflicting or version-ambiguous original-provider recommendations require service-specific explanation; the statement supplies no rule for ranking them.",
+            "citations": [
+              "KSI-CNA-IBP",
+              "KSI-CNA-IBP-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CNA-IBP",
+              "KSI-CNA-IBP-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-ibp-afa7ad91a3c0": {
+      "content_hash": "acd5af2528dc53002afaea4fa3503e77b8820ff6d19112c9fe8731acb031c94d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant afa7ad91a3c0fa819433cc96f0b560d21cd4992e9aed3b16e8548654213d4718 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Use and configuration both require persistent comparison with the original provider guidance. The review split these duties; the source does not require blind adoption of every recommendation. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Product/version identification and applicable original-provider guidance are needed for a meaningful comparison. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Usage comparisons and configuration comparisons each retain guidance editions and findings; a benchmark score is insufficient without original-provider mapping. Reports may substitute for exports if actual compared revisions are identified. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CNA-IBP",
+            "KSI-CNA-IBP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Conflicting or version-ambiguous original-provider recommendations require service-specific explanation; the statement supplies no rule for ranking them.",
+            "citations": [
+              "KSI-CNA-IBP",
+              "KSI-CNA-IBP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-mat-22db7432b219": {
+      "content_hash": "a087dd4f35fd17917711181782e102e8462d777ee774ea546154a784e1c9827d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 22db7432b219c6bdefaa659bb8deb03ad647fb86f13ff9d50afdacccf3a3675f preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The recurring review must examine minimal attack surface and minimized lateral movement assuming compromise. Separate exposure and compromise-path assertions retain that hypothetical condition. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "An exposure-necessity baseline and compromise-path model make both reviews substantive rather than a port-count exercise. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Exposure-to-need analysis supports minimal surface; reachable trust paths and containment conclusions support lateral movement. Retained analysis is an alternative to live examination, with topology/date limitations. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Minimality is contextual and no universal exposed-port count or required penetration-test method appears in the source.",
+            "citations": [
+              "KSI-CNA-MAT",
+              "KSI-CNA-MAT-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-mat-be392e977b70": {
+      "content_hash": "8d672d4b71eda864d32fa5b830b7a07d7f4056e005eb357feee1a90c57954e7f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant be392e977b70b4c68c9bcf2270ee72a3fcfd6ebc6fe83fe6540c2684f31ac239 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The recurring review must examine minimal attack surface and minimized lateral movement assuming compromise. Separate exposure and compromise-path assertions retain that hypothetical condition. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. An exposure-necessity baseline and compromise-path model make both reviews substantive rather than a port-count exercise. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Exposure-to-need analysis supports minimal surface; reachable trust paths and containment conclusions support lateral movement. Retained analysis is an alternative to live examination, with topology/date limitations. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Minimality is contextual and no universal exposed-port count or required penetration-test method appears in the source.",
+            "citations": [
+              "KSI-CNA-MAT",
+              "KSI-CNA-MAT-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CNA-MAT",
+              "KSI-CNA-MAT-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-mat-dcb7bd0f9f5a": {
+      "content_hash": "ed93343dd75ebf93d7cea9a1ad442cf6baf4d5ad44f2a4b99bb077cc175b36c7",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant dcb7bd0f9f5a2537608d66b223f02ba4303ab6f281412e8ddf598eebb48a65a2 with FRC-CLA-MFR's enumerated KSI list: KSI-CNA-MAT is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. The recurring review must examine minimal attack surface and minimized lateral movement assuming compromise. Separate exposure and compromise-path assertions retain that hypothetical condition. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. An exposure-necessity baseline and compromise-path model make both reviews substantive rather than a port-count exercise. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Exposure-to-need analysis supports minimal surface; reachable trust paths and containment conclusions support lateral movement. Retained analysis is an alternative to live examination, with topology/date limitations. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-MAT",
+            "KSI-CNA-MAT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Minimality is contextual and no universal exposed-port count or required penetration-test method appears in the source.",
+            "citations": [
+              "KSI-CNA-MAT",
+              "KSI-CNA-MAT-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-ofa-0e1d5b170b02": {
+      "content_hash": "982047f082c213a94f7d502936357e843aadf979b625200e31063bf2fb6a95f7",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 0e1d5b170b02949b53a550b33f36cec50f2cac250a04359e46772aa14ce4bfcd preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. High availability and rapid recovery are separate objects of persistent optimization review. The guidance correctly avoids replacing either with a backup-success metric. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Service availability/recovery needs and failure dependencies are necessary to assess whether optimization is appropriate. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Failure-domain analysis and availability findings support availability; recovery observations and timing conclusions support recovery. Reports and exercises can inform reviews without claiming actual recovery from a production incident. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The statement supplies neither uptime percentage nor recovery-time objective. The provider must explain appropriateness for the offering.",
+            "citations": [
+              "KSI-CNA-OFA",
+              "KSI-CNA-OFA-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-ofa-527e8ef095ff": {
+      "content_hash": "060f1c015a5fac93dc2eb7770962a7fee52dda6a721f7fb9fb9372aefe0acd7b",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 527e8ef095ffc91932f92e4a604e5b83b25170c720c7bf3bcf17f4e49d4babf3 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. High availability and rapid recovery are separate objects of persistent optimization review. The guidance correctly avoids replacing either with a backup-success metric. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Service availability/recovery needs and failure dependencies are necessary to assess whether optimization is appropriate. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Failure-domain analysis and availability findings support availability; recovery observations and timing conclusions support recovery. Reports and exercises can inform reviews without claiming actual recovery from a production incident. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The statement supplies neither uptime percentage nor recovery-time objective. The provider must explain appropriateness for the offering.",
+            "citations": [
+              "KSI-CNA-OFA",
+              "KSI-CNA-OFA-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CNA-OFA",
+              "KSI-CNA-OFA-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-ofa-ecac2f750656": {
+      "content_hash": "211923263e0aff8c01b006027b0d2e7b8dfeb1e27b183b21e00b0c6886dee63f",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant ecac2f75065678f02d85ef4dfdf561d83311632cd6fdab1eb1dbf159376748cb with FRC-CLA-MFR's enumerated KSI list: KSI-CNA-OFA is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. High availability and rapid recovery are separate objects of persistent optimization review. The guidance correctly avoids replacing either with a backup-success metric. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Service availability/recovery needs and failure dependencies are necessary to assess whether optimization is appropriate. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Failure-domain analysis and availability findings support availability; recovery observations and timing conclusions support recovery. Reports and exercises can inform reviews without claiming actual recovery from a production incident. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-OFA",
+            "KSI-CNA-OFA-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The statement supplies neither uptime percentage nor recovery-time objective. The provider must explain appropriateness for the offering.",
+            "citations": [
+              "KSI-CNA-OFA",
+              "KSI-CNA-OFA-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-rnt-a94d573dee56": {
+      "content_hash": "40961d5d4eaa3ad0626c33d76459f7eac0f68dc57631596043dad04696e1ed49",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant a94d573dee56e336bfe9ee2d37bcfc28f0bb80b30c7322b0dcccd6401d1c73f7 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent review covers both inbound and outbound configuration limits. Class A inclusion does not narrow the direction or machine-resource denominator. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Intended traffic flows and a method to evaluate combined effective restrictions are prerequisites to judging appropriateness. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Ingress and egress comparisons have distinct acceptance facts. Effective rules and flow-need conclusions, or an attributable read-only examination, are acceptable; inbound-only rules and default-egress omissions are insufficient. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No universal deny-all architecture or numeric review interval is specified; justified necessary flows and unmanaged paths need explicit treatment.",
+            "citations": [
+              "KSI-CNA-RNT",
+              "KSI-CNA-RNT-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CNA-RNT",
+              "KSI-CNA-RNT-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-rnt-b5187bf0b986": {
+      "content_hash": "553f04585c2f3295328995256809fe60c218cad979b0b6a6aae7009dde3121d0",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b5187bf0b986e1c5c4c9709ee858851a054aae3ee0f9b4321ec9eb4f6b7f02ad preserves required inclusion of KSI-CNA-RNT through FRC-CLA-MFR. Its Class A inclusion is distinct from ordinary class/profile resolution; the required outcome retains its full subject and conditions.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent review covers both inbound and outbound configuration limits. Class A inclusion does not narrow the direction or machine-resource denominator. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Intended traffic flows and a method to evaluate combined effective restrictions are prerequisites to judging appropriateness. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Ingress and egress comparisons have distinct acceptance facts. Effective rules and flow-need conclusions, or an attributable read-only examination, are acceptable; inbound-only rules and default-egress omissions are insufficient. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No universal deny-all architecture or numeric review interval is specified; justified necessary flows and unmanaged paths need explicit treatment.",
+            "citations": [
+              "KSI-CNA-RNT",
+              "KSI-CNA-RNT-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-rnt-d16bafc68fc5": {
+      "content_hash": "40611f489a9d6d4826a31f07edd17fb1ba2334638547d55b032b335b7f1c28a5",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d16bafc68fc547a669378dfd18dce1622187fa2521d43f59d4d796e79c01d803 preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Persistent review covers both inbound and outbound configuration limits. Class A inclusion does not narrow the direction or machine-resource denominator. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Intended traffic flows and a method to evaluate combined effective restrictions are prerequisites to judging appropriateness. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Ingress and egress comparisons have distinct acceptance facts. Effective rules and flow-need conclusions, or an attributable read-only examination, are acceptable; inbound-only rules and default-egress omissions are insufficient. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CNA-RNT",
+            "KSI-CNA-RNT-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No universal deny-all architecture or numeric review interval is specified; justified necessary flows and unmanaged paths need explicit treatment.",
+            "citations": [
+              "KSI-CNA-RNT",
+              "KSI-CNA-RNT-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-rvp-76ef4e430d64": {
+      "content_hash": "6036935ac8fa2befee3b3c684c9b9e4c154c2bfd92fa5f35920d1ca9ecbbcdbd",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 76ef4e430d6478b69e7720c1046f8e663624761e88493fc62c3505696d841ccd preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Effectiveness review concerns denial of service and other unwanted activity. These now have separate assertions instead of one aggregate assertion that could hide the second population. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "Protection coverage and relevant unwanted-activity evaluation scenarios are needed before effectiveness can be judged. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Observed attack or justified exercise behavior linked to dated conclusions supports review. A subscription, enabled control or no-attacks claim alone cannot show effectiveness; observational reports must state untested scenarios. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not require provoking real attacks or prescribe a traffic volume. Exercise representativeness remains a service-specific uncertainty.",
+            "citations": [
+              "KSI-CNA-RVP",
+              "KSI-CNA-RVP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-rvp-7b664bccc2bd": {
+      "content_hash": "00ccb4db769bedfbb64c9e2f92f04574a3a10dab2d480455dd5e4ef47a597e27",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7b664bccc2bd5941693267dae5c02d074a5a922973dd8619e3edfe489aa7f868 retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Effectiveness review concerns denial of service and other unwanted activity. These now have separate assertions instead of one aggregate assertion that could hide the second population. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. Protection coverage and relevant unwanted-activity evaluation scenarios are needed before effectiveness can be judged. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Observed attack or justified exercise behavior linked to dated conclusions supports review. A subscription, enabled control or no-attacks claim alone cannot show effectiveness; observational reports must state untested scenarios. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not require provoking real attacks or prescribe a traffic volume. Exercise representativeness remains a service-specific uncertainty.",
+            "citations": [
+              "KSI-CNA-RVP",
+              "KSI-CNA-RVP-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CNA-RVP",
+              "KSI-CNA-RVP-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-rvp-bd40e33cf52c": {
+      "content_hash": "de6d9f5a7da0efbb93e36b9ce4da018c59b19c7ae1dc2ae56fd0de74e517dd08",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant bd40e33cf52c191c795f78b61e0ad5c4453bfe1b18a30fab1aa0c93267d71357 with FRC-CLA-MFR's enumerated KSI list: KSI-CNA-RVP is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Effectiveness review concerns denial of service and other unwanted activity. These now have separate assertions instead of one aggregate assertion that could hide the second population. Information Resource includes technical and managerial resources; unqualified resource populations cannot be reduced to cloud assets. Machine-Based limits the named population to computer-dependent resources, including software/services and managed capabilities rather than only hosts. This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "resources",
+            "machine"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. Protection coverage and relevant unwanted-activity evaluation scenarios are needed before effectiveness can be judged. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Observed attack or justified exercise behavior linked to dated conclusions supports review. A subscription, enabled control or no-attacks claim alone cannot show effectiveness; observational reports must state untested scenarios. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-RVP",
+            "KSI-CNA-RVP-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not require provoking real attacks or prescribe a traffic volume. Exercise representativeness remains a service-specific uncertainty.",
+            "citations": [
+              "KSI-CNA-RVP",
+              "KSI-CNA-RVP-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-uln-61c201298b1d": {
+      "content_hash": "f19a3fb9ba356102106739f4fcb86ee111210749a0081a206fc9903fcfde8439",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 61c201298b1d8eea66431bee391e0d124c7cfbc146a4246d2cdc5fdcb44cd6fe preserves the required outcome selected from pinned source/profile metadata. The indicator has a common statement rather than per-class text. Class A inclusion/exclusion and unresolved path variants are separately retained.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Logical-network capabilities must be used to enforce flow controls and persistently reviewed. Operating enforcement and its recurring review now have independent proof duties.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "An intended flow matrix and logical enforcement mechanisms are substantive prerequisites, beyond a network diagram. The added substantive-prerequisite step is explicitly an implementation recommendation with an inference rationale, separate from the shared evidence-boundary capability. It identifies absent design/operation without treating a collection failure as control failure.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "Allowed/denied observations support enforcement; dated policy/flow/bypass reviews support repeated review. Retained examination can replace integration but cannot make unobserved paths proven. Each assertion has scope, period, provenance, alternative source-export/attributable-record routes and specific insufficiency. The KSI narrative supports outcome measurements and engineering participation, not a mandated connector, vendor or universal artifact format.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. The plan requires repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source permits related capabilities and does not mandate one network product or topology; effective cross-segment and inherited paths need service-specific coverage.",
+            "citations": [
+              "KSI-CNA-ULN",
+              "KSI-CNA-ULN-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-uln-a17f354f93a7": {
+      "content_hash": "3f3cb302545c0fad40a7d744aa528bf65fdc736ad49f5d26dc5751ebb4d0deb5",
+      "comparison": {
+        "applicability": {
+          "finding": "Compared exact variant a17f354f93a7b3c9807874c28f1ce4a4f9e7cc208926155f0f6f69739c516143 with FRC-CLA-MFR's enumerated KSI list: KSI-CNA-ULN is not included. The Class A exclusion is preserved and does not assert that the capability is absent, fulfilled, or irrelevant on another path.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Logical-network capabilities must be used to enforce flow controls and persistently reviewed. Operating enforcement and its recurring review now have independent proof duties.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this excluded variant. An intended flow matrix and logical enforcement mechanisms are substantive prerequisites, beyond a network diagram. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact excluded plan. Allowed/denied observations support enforcement; dated policy/flow/bypass reviews support repeated review. Retained examination can replace integration but cannot make unobserved paths proven. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source permits related capabilities and does not mandate one network product or topology; effective cross-segment and inherited paths need service-specific coverage.",
+            "citations": [
+              "KSI-CNA-ULN",
+              "KSI-CNA-ULN-page"
+            ]
+          }
+        ]
+      }
+    },
+    "ksi-cna-uln-ffb9def88473": {
+      "content_hash": "aef096e31a1c3834cc9014352fd2e7a3d7ca30ea13b6f557aef59aeefb6f58fc",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ffb9def884736625215d5f87e7dc88b0c0219febbd290bea741a45e1afede0de retains unresolved KSI path applicability. The pinned resolver supports the Program KSI path and leaves the Agency path for review; the Class A inclusion list cannot resolve the service's saved path. The certification owner must establish applicability before implementation is evaluated.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "class-a"
+          ]
+        },
+        "obligations": {
+          "finding": "Source context for the separate actionable interpretation: Compared Rules JSON with the matching generated provider page; the indicator wording agrees. Logical-network capabilities must be used to enforce flow controls and persistently reviewed. Operating enforcement and its recurring review now have independent proof duties.  This exact non-actionable plan has no assertions or implementation checklist; the preceding proof-duty analysis does not impose those duties on this variant.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No substantive implementation prerequisite is imposed by this needs_decision variant. An intended flow matrix and logical enforcement mechanisms are substantive prerequisites, beyond a network diagram. That prerequisite analysis applies only if a separate actionable variant is selected, not before applicability resolution.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "outcomes"
+          ]
+        },
+        "evidence": {
+          "finding": "No evidence acceptance workflow is imposed for this exact needs_decision plan. Allowed/denied observations support enforcement; dated policy/flow/bypass reviews support repeated review. Retained examination can replace integration but cannot make unobserved paths proven. These source limits explain the purpose but are not current checklist duties or a compliance finding.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "outcomes"
+          ]
+        },
+        "timing": {
+          "finding": "FRD-PER permits irregular cycles, intentional documented interruptions and waiting periods, with activity status always known. An actionable demonstration would require repeated observations over time rather than interpreting persistent as uninterrupted or imposing an annual/monthly deadline. This exact non-actionable plan schedules no implementation or decision deadline; definitions remain context only.",
+          "citations": [
+            "KSI-CNA-ULN",
+            "KSI-CNA-ULN-page",
+            "persistent"
+          ]
+        },
+        "limitations": [
+          "This is an agent interpretation of pinned official Rules JSON and 2026 Markdown; it may be incomplete or incorrect and is not an official FedRAMP determination.",
+          "No actual service implementation or evidence was assessed. Authenticated service-scoped recording and publication gates remain outstanding. Related control mappings were not expanded into additional KSI duties."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source permits related capabilities and does not mandate one network product or topology; effective cross-segment and inherited paths need service-specific coverage.",
+            "citations": [
+              "KSI-CNA-ULN",
+              "KSI-CNA-ULN-page"
+            ]
+          },
+          {
+            "finding": "The saved path or missing selected-class statement still requires an authoritative applicability decision. This comparison does not resolve it, infer Class D optionality, or authorize an implementation checklist.",
+            "citations": [
+              "KSI-CNA-ULN",
+              "KSI-CNA-ULN-page",
+              "class-a"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

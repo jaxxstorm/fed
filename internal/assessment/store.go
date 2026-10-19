@@ -13,6 +13,7 @@ import (
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/jaxxstorm/fed/internal/auth"
+	"github.com/jaxxstorm/fed/internal/readiness"
 	"github.com/jaxxstorm/fed/internal/storage"
 )
 
@@ -23,6 +24,8 @@ var ErrInvalid = errors.New("invalid_input")
 type Store struct {
 	DB                *pgxpool.Pool
 	Artifacts         storage.Artifacts
+	Guidance          *readiness.Store
+	guidanceContexts  map[string]readiness.GuidanceContext
 	reader            recordReader
 	clock             func() time.Time
 	presentationCache *presentationCache

@@ -1,0 +1,2129 @@
+{
+  "recording_state": "pending_authenticated_service_record",
+  "comparisons": {
+    "scg-cso-aup-04afe45d0e42659bc21f057264d101b5b84cf678313b759c0074c2aec2000060": {
+      "content_hash": "e9acc496907072f500ff976cf87b637ca97897639ba360949323f6272ec07343",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 04afe45d0e42659bc21f057264d101b5b84cf678313b759c0074c2aec2000060: SCG-CSO-AUP: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-AUP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Package instructions must explain both obtaining and using the guide. The source permits different presentation methods, including request-based access; a bare link does not necessarily satisfy use instructions. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Use Instructions. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "A customer-path walkthrough plus package instructions, request route and sharing policy establish accessibility/use. Internal-owner access cannot stand in for the intended customer path. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST include instructions in the FedRAMP Certification Package that explain how to obtain and use the Secure Configuration Guide. Source note: These instructions may appear in a variety of ways; it is up to the provider to do so in the most appropriate and effective ways for their specific customer needs.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-AUP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not mandate a particular publication layout or access SLA; appropriate customer-specific presentation requires judgment.",
+            "citations": [
+              "SCG-CSO-AUP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-aup-1ac898befd665838f137c99a3b37a29ba32e732109c069b12bbaa1eaf77e207d": {
+      "content_hash": "ca26f76af82a2e3d7eba86d429990bb631c5b7845a0344826c9ca07db48ebb1e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 1ac898befd665838f137c99a3b37a29ba32e732109c069b12bbaa1eaf77e207d: SCG-CSO-AUP: optional — Within published transition grace period. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-AUP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Package instructions must explain both obtaining and using the guide. The source permits different presentation methods, including request-based access; a bare link does not necessarily satisfy use instructions. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-cso-aup-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the actual guide, access/request mechanism and provider policies deciding whether to share the materials. This is an implementation inference needed to test Use Instructions; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "A customer-path walkthrough plus package instructions, request route and sharing policy establish accessibility/use. Internal-owner access cannot stand in for the intended customer path. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: When supplying or revising the certification package/access instructions; retain versions and actual access-observation dates. No numeric access SLA is inferred. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-AUP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not mandate a particular publication layout or access SLA; appropriate customer-specific presentation requires judgment.",
+            "citations": [
+              "SCG-CSO-AUP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-aup-5ba74a2d6c310ee87e0a9ea5358b364c11b5e9de29c93dd36ec8a240ae4d51af": {
+      "content_hash": "f946d038330965ec2ab2414792e881ea0f5e8f21932b64f7ecc895ff49512711",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 5ba74a2d6c310ee87e0a9ea5358b364c11b5e9de29c93dd36ec8a240ae4d51af: SCG-CSO-AUP: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-AUP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Package instructions must explain both obtaining and using the guide. The source permits different presentation methods, including request-based access; a bare link does not necessarily satisfy use instructions. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Use Instructions. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "A customer-path walkthrough plus package instructions, request route and sharing policy establish accessibility/use. Internal-owner access cannot stand in for the intended customer path. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST include instructions in the FedRAMP Certification Package that explain how to obtain and use the Secure Configuration Guide. Source note: These instructions may appear in a variety of ways; it is up to the provider to do so in the most appropriate and effective ways for their specific customer needs.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-AUP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not mandate a particular publication layout or access SLA; appropriate customer-specific presentation requires judgment.",
+            "citations": [
+              "SCG-CSO-AUP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-aup-bf01f05f7dd85ea0c38c40bd3a89513158306c56bd17d8216e514b4616a47ec9": {
+      "content_hash": "18684eade4b78cabbe1c4eceb48df91750fc2dd6ba782b8743a62d00ed5601b2",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant bf01f05f7dd85ea0c38c40bd3a89513158306c56bd17d8216e514b4616a47ec9: SCG-CSO-AUP: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-AUP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Package instructions must explain both obtaining and using the guide. The source permits different presentation methods, including request-based access; a bare link does not necessarily satisfy use instructions. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-cso-aup-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the actual guide, access/request mechanism and provider policies deciding whether to share the materials. This is an implementation inference needed to test Use Instructions; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "A customer-path walkthrough plus package instructions, request route and sharing policy establish accessibility/use. Internal-owner access cannot stand in for the intended customer path. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: When supplying or revising the certification package/access instructions; retain versions and actual access-observation dates. No numeric access SLA is inferred.",
+          "citations": [
+            "SCG-CSO-AUP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-AUP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source does not mandate a particular publication layout or access SLA; appropriate customer-specific presentation requires judgment.",
+            "citations": [
+              "SCG-CSO-AUP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-pub-6cad00890f1365d34ddb2a3e80323f70e9d8b183d7bdd0612647b11d2d1bafd9": {
+      "content_hash": "6ae53a1dd0b9c70ba6fdf74485502abf639bf3f3e478ae318da294de4979343e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 6cad00890f1365d34ddb2a3e80323f70e9d8b183d7bdd0612647b11d2d1bafd9: SCG-CSO-PUB: optional — Within published transition grace period. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-PUB-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Public publication is SHOULD. The draft retains an explanation for nonavailability, rather than asserting a private URL is public or making the recommendation absolute. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-cso-pub-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the current guide and publication controls, including whether authentication or approval is required. This is an implementation inference needed to test Public Secure Configuration Guidance; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Unauthenticated access to the current guide proves publication; a reasoned security-documentation departure establishes disposition only. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: At publication and relevant access/publication changes; record actual observation dates without imposing a numeric availability-test interval. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-PUB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No uptime percentage or periodic public-access test interval is supplied; actual access constraints remain service-specific.",
+            "citations": [
+              "SCG-CSO-PUB-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-pub-7a70e0c6b6503993c7be1582ba669d5c56ea362af078a9bc115180976db0c2ef": {
+      "content_hash": "e90cf40448ab9b77f11633074fa5f9b2c073aeef481bcb41a2700e58595cc271",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 7a70e0c6b6503993c7be1582ba669d5c56ea362af078a9bc115180976db0c2ef: SCG-CSO-PUB: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-PUB-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Public publication is SHOULD. The draft retains an explanation for nonavailability, rather than asserting a private URL is public or making the recommendation absolute. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-cso-pub-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate the current guide and publication controls, including whether authentication or approval is required. This is an implementation inference needed to test Public Secure Configuration Guidance; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Unauthenticated access to the current guide proves publication; a reasoned security-documentation departure establishes disposition only. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: At publication and relevant access/publication changes; record actual observation dates without imposing a numeric availability-test interval.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-PUB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No uptime percentage or periodic public-access test interval is supplied; actual access constraints remain service-specific.",
+            "citations": [
+              "SCG-CSO-PUB-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-pub-f9dd78291c5a43e4429cc0084a80ff4b5b6afe8a92f0c669ac4bfeab4093b713": {
+      "content_hash": "0c1d509feff32e59d1c2ee7bd64b6307bb19a5c2db98dee86e7b749eaf57e80a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant f9dd78291c5a43e4429cc0084a80ff4b5b6afe8a92f0c669ac4bfeab4093b713: SCG-CSO-PUB: not_applicable — Class excluded by subset. Source force: SHOULD (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-PUB-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Public publication is SHOULD. The draft retains an explanation for nonavailability, rather than asserting a private URL is public or making the recommendation absolute. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Public Secure Configuration Guidance. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Unauthenticated access to the current guide proves publication; a reasoned security-documentation departure establishes disposition only. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD make the Secure Configuration Guide available publicly.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-PUB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No uptime percentage or periodic public-access test interval is supplied; actual access constraints remain service-specific.",
+            "citations": [
+              "SCG-CSO-PUB-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-pub-fdcc78f9906bde116f73250c2c3a4d73fffd0df0832c5e88a4bf2154265e1c0a": {
+      "content_hash": "cc7ba0a3736972e087cbe91942133df78ba26e46b7f6abb5bb24f6d2ac7f632e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant fdcc78f9906bde116f73250c2c3a4d73fffd0df0832c5e88a4bf2154265e1c0a: SCG-CSO-PUB: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-PUB-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Public publication is SHOULD. The draft retains an explanation for nonavailability, rather than asserting a private URL is public or making the recommendation absolute. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Public Secure Configuration Guidance. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Unauthenticated access to the current guide proves publication; a reasoned security-documentation departure establishes disposition only. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD make the Secure Configuration Guide available publicly.",
+          "citations": [
+            "SCG-CSO-PUB-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-PUB only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No uptime percentage or periodic public-access test interval is supplied; actual access constraints remain service-specific.",
+            "citations": [
+              "SCG-CSO-PUB-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-rsc-3d018fb0b5b9e3d6bfaca00a119b2be83af8e30d3e06919e0c24b03b016372ba": {
+      "content_hash": "2e470f0db4830e20339fd28e506e86cda8c410c9a36220350b9a25ebd1dfd697",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 3d018fb0b5b9e3d6bfaca00a119b2be83af8e30d3e06919e0c24b03b016372ba: SCG-CSO-RSC: required — Resolved from source class and profile metadata. Source force: MUST.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-RSC-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The three topics distinguish two Required top-level-account topics from one Recommended privileged-account topic. Lifecycle access/configure/operate/decommission and exclusive-setting implications survive. Corrected the evidence alternatives so a weighed departure can address the recommended topic without waiving required coverage. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 4 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-cso-rsc-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Inventory top-level administrative and privileged accounts/roles, their product names, security settings and recommended configurations; obtain the current service release behavior. This is an implementation inference needed to test Recommended Secure Configuration; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Guide versions, account/role settings and lifecycle walkthroughs support coverage. Human/machine URL artifacts remain visible. A generic hardening checklist misses account naming, lifecycle and setting implications. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Create for the applicable certification and maintain as the offering changes; retain guide/release versions and review dates. No numeric guide-update interval is stated.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-RSC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source lists a machine-readable URL artifact while SCG-ENH-MRG recommends machine-readable guide capability; this comparison does not resolve that apparent format tension by silently upgrading MRG or dropping the listed artifact.",
+            "citations": [
+              "SCG-CSO-RSC-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-rsc-686ee2b16fde34264959de79bd7bf8e69a147f4b27b27792d95880f0451d5435": {
+      "content_hash": "6f7dbfbd9b76f9287b3b604c0b1b5e8075cc11aba289ce2ea278399fba5856ab",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 686ee2b16fde34264959de79bd7bf8e69a147f4b27b27792d95880f0451d5435: SCG-CSO-RSC: optional — Within published transition grace period. Source force: MUST. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-RSC-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The three topics distinguish two Required top-level-account topics from one Recommended privileged-account topic. Lifecycle access/configure/operate/decommission and exclusive-setting implications survive. Corrected the evidence alternatives so a weighed departure can address the recommended topic without waiving required coverage. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 4 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-cso-rsc-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Inventory top-level administrative and privileged accounts/roles, their product names, security settings and recommended configurations; obtain the current service release behavior. This is an implementation inference needed to test Recommended Secure Configuration; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Guide versions, account/role settings and lifecycle walkthroughs support coverage. Human/machine URL artifacts remain visible. A generic hardening checklist misses account naming, lifecycle and setting implications. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: Create for the applicable certification and maintain as the offering changes; retain guide/release versions and review dates. No numeric guide-update interval is stated. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-RSC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source lists a machine-readable URL artifact while SCG-ENH-MRG recommends machine-readable guide capability; this comparison does not resolve that apparent format tension by silently upgrading MRG or dropping the listed artifact.",
+            "citations": [
+              "SCG-CSO-RSC-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-rsc-89ef164562bd186f36025f8f4860bc9ab222e60ce8a4fc5eff4f8865cf7f90d0": {
+      "content_hash": "348dc5c37eafed67792a173853ad1e1aecb389cb13cad2afef2fad9179cfd594",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 89ef164562bd186f36025f8f4860bc9ab222e60ce8a4fc5eff4f8865cf7f90d0: SCG-CSO-RSC: not_applicable — Class excluded by subset. Source force: MUST (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-RSC-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The three topics distinguish two Required top-level-account topics from one Recommended privileged-account topic. Lifecycle access/configure/operate/decommission and exclusive-setting implications survive. Corrected the evidence alternatives so a weighed departure can address the recommended topic without waiving required coverage. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Recommended Secure Configuration. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Guide versions, account/role settings and lifecycle walkthroughs support coverage. Human/machine URL artifacts remain visible. A generic hardening checklist misses account naming, lifecycle and setting implications. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST create, maintain, and make available recommendations for securely configuring their cloud services (the Secure Configuration Guide) that includes at least the following information:",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-RSC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source lists a machine-readable URL artifact while SCG-ENH-MRG recommends machine-readable guide capability; this comparison does not resolve that apparent format tension by silently upgrading MRG or dropping the listed artifact.",
+            "citations": [
+              "SCG-CSO-RSC-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-rsc-e59398ebc2b9e1cccbfae15535c9b7eac109e6c5315296c870ce8a1df51212d1": {
+      "content_hash": "b40751005dd3551d74dc268ec0639fac7f8e9cdcea37a3536f131f64560af915",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e59398ebc2b9e1cccbfae15535c9b7eac109e6c5315296c870ce8a1df51212d1: SCG-CSO-RSC: not_applicable — Requirement not yet effective. Source force: MUST. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-RSC-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The three topics distinguish two Required top-level-account topics from one Recommended privileged-account topic. Lifecycle access/configure/operate/decommission and exclusive-setting implications survive. Corrected the evidence alternatives so a weighed departure can address the recommended topic without waiving required coverage. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Recommended Secure Configuration. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Guide versions, account/role settings and lifecycle walkthroughs support coverage. Human/machine URL artifacts remain visible. A generic hardening checklist misses account naming, lifecycle and setting implications. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers MUST create, maintain, and make available recommendations for securely configuring their cloud services (the Secure Configuration Guide) that includes at least the following information:",
+          "citations": [
+            "SCG-CSO-RSC-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-RSC only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source lists a machine-readable URL artifact while SCG-ENH-MRG recommends machine-readable guide capability; this comparison does not resolve that apparent format tension by silently upgrading MRG or dropping the listed artifact.",
+            "citations": [
+              "SCG-CSO-RSC-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-sdf-2b08f81c2cdede9c63af1f65270550de28eb3de2eb1f8fce41c989af5c2ccb2c": {
+      "content_hash": "1de1b65565255da10dd5a3d68988e3b2951767b5e44ae655da406e332baa99d4",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 2b08f81c2cdede9c63af1f65270550de28eb3de2eb1f8fce41c989af5c2ccb2c: SCG-CSO-SDF: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-SDF-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The recommendation concerns all settings for both top-level administrative and privileged accounts when initially provisioned. Later hardening is not initial secure defaults. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-cso-sdf-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify top-level administrative and privileged roles/accounts, the recommended-default version and each initial provisioning path. This is an implementation inference needed to test Secure Defaults; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Provisioning configuration and initial-state captures tied to the default version show the relevant point in time; a later screenshot cannot. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: When initially provisioned. Capture actual provisioning time and the then-applicable default version; this is not an ongoing mandatory drift-remediation interval.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-SDF only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source sets no mandatory ongoing drift-remediation cycle; provisioning-path coverage and recommended-default values must be supplied by the service.",
+            "citations": [
+              "SCG-CSO-SDF-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-sdf-adb88655cf998e6ab46b7f0b922ef3c15cbffdee9230a27fcfc85097d7b84bf7": {
+      "content_hash": "1c9b6e973177194c3be28d50e164aba7be20758c960d0590dff285ca14fc8412",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant adb88655cf998e6ab46b7f0b922ef3c15cbffdee9230a27fcfc85097d7b84bf7: SCG-CSO-SDF: optional — Within published transition grace period. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-SDF-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The recommendation concerns all settings for both top-level administrative and privileged accounts when initially provisioned. Later hardening is not initial secure defaults. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-cso-sdf-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify top-level administrative and privileged roles/accounts, the recommended-default version and each initial provisioning path. This is an implementation inference needed to test Secure Defaults; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Provisioning configuration and initial-state captures tied to the default version show the relevant point in time; a later screenshot cannot. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: When initially provisioned. Capture actual provisioning time and the then-applicable default version; this is not an ongoing mandatory drift-remediation interval. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-SDF only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source sets no mandatory ongoing drift-remediation cycle; provisioning-path coverage and recommended-default values must be supplied by the service.",
+            "citations": [
+              "SCG-CSO-SDF-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-sdf-d26f5ed2605bd8c3ef191245b1ffc5a388074119d3739fd44dfd302c466eb95a": {
+      "content_hash": "110ab2525687120f16b72643267b5eb50106a95b7ceade8eb36a357bd05e5bc1",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant d26f5ed2605bd8c3ef191245b1ffc5a388074119d3739fd44dfd302c466eb95a: SCG-CSO-SDF: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-SDF-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The recommendation concerns all settings for both top-level administrative and privileged accounts when initially provisioned. Later hardening is not initial secure defaults. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Secure Defaults. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Provisioning configuration and initial-state captures tied to the default version show the relevant point in time; a later screenshot cannot. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD set all settings to their recommended secure defaults for top-level administrative accounts and privileged accounts when initially provisioned.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-SDF only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source sets no mandatory ongoing drift-remediation cycle; provisioning-path coverage and recommended-default values must be supplied by the service.",
+            "citations": [
+              "SCG-CSO-SDF-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-cso-sdf-e4610af9ae818fb93379d310105841b231b97c089b3a477493ba389ee95bc965": {
+      "content_hash": "e884899fa513ab518041d50ef455746ddcc743380f17c94c8d1fd8ee6c08501f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant e4610af9ae818fb93379d310105841b231b97c089b3a477493ba389ee95bc965: SCG-CSO-SDF: not_applicable — Class excluded by subset. Source force: SHOULD (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-CSO-SDF-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The recommendation concerns all settings for both top-level administrative and privileged accounts when initially provisioned. Later hardening is not initial secure defaults. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Secure Defaults. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Provisioning configuration and initial-state captures tied to the default version show the relevant point in time; a later screenshot cannot. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD set all settings to their recommended secure defaults for top-level administrative accounts and privileged accounts when initially provisioned.",
+          "citations": [
+            "SCG-CSO-SDF-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-CSO-SDF only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source sets no mandatory ongoing drift-remediation cycle; provisioning-path coverage and recommended-default values must be supplied by the service.",
+            "citations": [
+              "SCG-CSO-SDF-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-api-28c1315e8565e2dfa0b696d01a9ddd6c7a6da12068b8e9e42eb648961131caf4": {
+      "content_hash": "30359f8c012fe2edf3d3307422a763c408ba7983b45f6a7762b32b3813a5eec2",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 28c1315e8565e2dfa0b696d01a9ddd6c7a6da12068b8e9e42eb648961131caf4: SCG-ENH-API: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-API-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "View AND adjust are separate functional expectations within the SHOULD. The recipe accepts API or similar capability rather than prescribing a vendor interface. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-api-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify security-setting read/write interfaces, supported settings, authentication and authorized customer roles. This is an implementation inference needed to test API Capability; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Read/change/read observations establish both operations with attributable setting state; API documentation or a read-only endpoint cannot demonstrate adjustment. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: During capability evaluation; retain request and result times, service version and observed setting versions. No automated change frequency is required.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-API only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Interface scope and permitted account roles are service-specific; the source does not define universal endpoint coverage or an automated adjustment frequency.",
+            "citations": [
+              "SCG-ENH-API-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-api-4bd05afb70421db98b2967b0ab012c452d8a478c38df4bda583836904c371375": {
+      "content_hash": "51c94efa2ed64be44e97d3f8288e548ec0798c1406dc50afa2ee39f75ae91e39",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4bd05afb70421db98b2967b0ab012c452d8a478c38df4bda583836904c371375: SCG-ENH-API: not_applicable — Class excluded by subset. Source force: SHOULD (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-API-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "View AND adjust are separate functional expectations within the SHOULD. The recipe accepts API or similar capability rather than prescribing a vendor interface. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for API Capability. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Read/change/read observations establish both operations with attributable setting state; API documentation or a read-only endpoint cannot demonstrate adjustment. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD offer the capability to view and adjust security settings via an API or similar capability.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-API only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Interface scope and permitted account roles are service-specific; the source does not define universal endpoint coverage or an automated adjustment frequency.",
+            "citations": [
+              "SCG-ENH-API-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-api-6c95256808fceb4aa1658fbca5f696c97d1756d66bb203604b79c32d8936b86f": {
+      "content_hash": "8f919bf377a19bd18d4f98b74e314c4536d2a2546deecfefd1947de521d89bf8",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 6c95256808fceb4aa1658fbca5f696c97d1756d66bb203604b79c32d8936b86f: SCG-ENH-API: optional — Within published transition grace period. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-API-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "View AND adjust are separate functional expectations within the SHOULD. The recipe accepts API or similar capability rather than prescribing a vendor interface. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-api-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Identify security-setting read/write interfaces, supported settings, authentication and authorized customer roles. This is an implementation inference needed to test API Capability; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Read/change/read observations establish both operations with attributable setting state; API documentation or a read-only endpoint cannot demonstrate adjustment. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: During capability evaluation; retain request and result times, service version and observed setting versions. No automated change frequency is required. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-API only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Interface scope and permitted account roles are service-specific; the source does not define universal endpoint coverage or an automated adjustment frequency.",
+            "citations": [
+              "SCG-ENH-API-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-api-85ebf6f99c63c99f59ac95a6354926e0aa3cdd944743edd36fa5411bd3060f62": {
+      "content_hash": "b23dbbad88b6f2657f86328e8a63064345166c3e896f341d685c55eb3efec51e",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 85ebf6f99c63c99f59ac95a6354926e0aa3cdd944743edd36fa5411bd3060f62: SCG-ENH-API: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-API-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "View AND adjust are separate functional expectations within the SHOULD. The recipe accepts API or similar capability rather than prescribing a vendor interface. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for API Capability. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Read/change/read observations establish both operations with attributable setting state; API documentation or a read-only endpoint cannot demonstrate adjustment. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD offer the capability to view and adjust security settings via an API or similar capability.",
+          "citations": [
+            "SCG-ENH-API-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-API only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "Interface scope and permitted account roles are service-specific; the source does not define universal endpoint coverage or an automated adjustment frequency.",
+            "citations": [
+              "SCG-ENH-API-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-cmp-01db5b8406d40c4b8cb8a3ac78bac9a73a84b72ca1eded4810e4c551cebccc69": {
+      "content_hash": "7aae8f81723cca5225c662ce2e2870619291d52a8b3bf878ad08ca7c403e3b18",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 01db5b8406d40c4b8cb8a3ac78bac9a73a84b72ca1eded4810e4c551cebccc69: SCG-ENH-CMP: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-CMP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Comparison covers all current settings for both account categories against recommended defaults. It recommends comparison capability, not automatic enforcement. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Comparison Capability. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Setting inventories, dated output and known difference/missing-value observations establish comparison coverage; an unexplained green badge lacks a denominator. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD offer the capability to compare all current settings for top-level administrative accounts and privileged accounts to the recommended secure defaults.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-CMP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a required comparison frequency nor a mandated tool; unsupported settings must remain visible.",
+            "citations": [
+              "SCG-ENH-CMP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-cmp-03cea8094e5e2fbce5b82033ce6b9a94c388d9c10447bb39cd0bf395a27627b5": {
+      "content_hash": "3d8811d9e65b84518d69af66565d64a1b755ee0ed831410781f24cc34688d3cc",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 03cea8094e5e2fbce5b82033ce6b9a94c388d9c10447bb39cd0bf395a27627b5: SCG-ENH-CMP: not_applicable — Class excluded by subset. Source force: SHOULD (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-CMP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Comparison covers all current settings for both account categories against recommended defaults. It recommends comparison capability, not automatic enforcement. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Comparison Capability. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Setting inventories, dated output and known difference/missing-value observations establish comparison coverage; an unexplained green badge lacks a denominator. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD offer the capability to compare all current settings for top-level administrative accounts and privileged accounts to the recommended secure defaults.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-CMP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a required comparison frequency nor a mandated tool; unsupported settings must remain visible.",
+            "citations": [
+              "SCG-ENH-CMP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-cmp-8abefd051f52a3646260113a0eb0e9fff9e9313708e7b84b8f881aebfdb3e250": {
+      "content_hash": "5fc42851b099618506a4c6007fd737ea934d4be158f9f3fc9ebc786c06482f5d",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 8abefd051f52a3646260113a0eb0e9fff9e9313708e7b84b8f881aebfdb3e250: SCG-ENH-CMP: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-CMP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Comparison covers all current settings for both account categories against recommended defaults. It recommends comparison capability, not automatic enforcement. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-cmp-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Obtain the full setting inventory, current-value access mechanism and versioned recommended defaults for both account categories. This is an implementation inference needed to test Comparison Capability; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Setting inventories, dated output and known difference/missing-value observations establish comparison coverage; an unexplained green badge lacks a denominator. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: When the comparison capability is used; retain observation time and both current/default versions. No automatic enforcement or comparison frequency is mandated here.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-CMP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a required comparison frequency nor a mandated tool; unsupported settings must remain visible.",
+            "citations": [
+              "SCG-ENH-CMP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-cmp-ff6ad2f9afa30893544ca520ebe2c9736c6fe586b413bfa2817859eb05d059d4": {
+      "content_hash": "89662af49febc3d41d0d760c62e998aad09aae45a2bf2daa2937945687f440eb",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ff6ad2f9afa30893544ca520ebe2c9736c6fe586b413bfa2817859eb05d059d4: SCG-ENH-CMP: optional — Within published transition grace period. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-CMP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Comparison covers all current settings for both account categories against recommended defaults. It recommends comparison capability, not automatic enforcement. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-cmp-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Obtain the full setting inventory, current-value access mechanism and versioned recommended defaults for both account categories. This is an implementation inference needed to test Comparison Capability; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Setting inventories, dated output and known difference/missing-value observations establish comparison coverage; an unexplained green badge lacks a denominator. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: When the comparison capability is used; retain observation time and both current/default versions. No automatic enforcement or comparison frequency is mandated here. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SCG-ENH-CMP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-CMP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "The source supplies neither a required comparison frequency nor a mandated tool; unsupported settings must remain visible.",
+            "citations": [
+              "SCG-ENH-CMP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-exp-377b002b1c5b9f4aef39e05768b94133534bd72769f27dfd74c680606db11802": {
+      "content_hash": "61e8a7b9e430e1017e74d40f1736f60702b2826714817b3eb39fee35d13fd4a6",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 377b002b1c5b9f4aef39e05768b94133534bd72769f27dfd74c680606db11802: SCG-ENH-EXP: optional — Within published transition grace period. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-EXP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Export addresses all security settings in machine-readable form, not only those selected in a UI. The definition requires retained meaning, not simply a file extension. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-exp-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Inventory all security settings, their meanings and the available export format and access route. This is an implementation inference needed to test Export Capability; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Parsing an actual export and reconciling it to authoritative settings tests semantics and completeness; screenshots and incomplete JSON samples are insufficient. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: At export capability evaluation and observed export time; record service and format versions. No export schedule is prescribed. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-EXP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No particular export format or schedule is mandated by this clause; completeness and semantic fidelity require an actual inventory.",
+            "citations": [
+              "SCG-ENH-EXP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-exp-4b09c848397807a222907919f6ee2f530483d011226dd8b31e511ed6dd87ecd5": {
+      "content_hash": "f9f8c6e8df4e5cf534b01101b2d8449b331b2b85ceaf437b7ca8a1383998a15f",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 4b09c848397807a222907919f6ee2f530483d011226dd8b31e511ed6dd87ecd5: SCG-ENH-EXP: not_applicable — Class excluded by subset. Source force: SHOULD (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-EXP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Export addresses all security settings in machine-readable form, not only those selected in a UI. The definition requires retained meaning, not simply a file extension. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Export Capability. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Parsing an actual export and reconciling it to authoritative settings tests semantics and completeness; screenshots and incomplete JSON samples are insufficient. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD offer the capability to export all security settings in a machine-readable format.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-EXP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No particular export format or schedule is mandated by this clause; completeness and semantic fidelity require an actual inventory.",
+            "citations": [
+              "SCG-ENH-EXP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-exp-64acd19cb154f70827a2a11db733f3bacda61ebc4c725657eeffe61535bc11c8": {
+      "content_hash": "2cfd6b60ed5955440762c97aa28ba20ce160dbaee67ef7f2729d4e6be89db2c8",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 64acd19cb154f70827a2a11db733f3bacda61ebc4c725657eeffe61535bc11c8: SCG-ENH-EXP: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-EXP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Export addresses all security settings in machine-readable form, not only those selected in a UI. The definition requires retained meaning, not simply a file extension. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Export Capability. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Parsing an actual export and reconciling it to authoritative settings tests semantics and completeness; screenshots and incomplete JSON samples are insufficient. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD offer the capability to export all security settings in a machine-readable format.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-EXP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No particular export format or schedule is mandated by this clause; completeness and semantic fidelity require an actual inventory.",
+            "citations": [
+              "SCG-ENH-EXP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-exp-ff8d85c38374cf00bb76c17898b94fb3247705007410f426a5666daf496c1394": {
+      "content_hash": "c9f52111dce216c9f7e07214520c2de695b06e215c0a5f3f347b2fe0e4608f89",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant ff8d85c38374cf00bb76c17898b94fb3247705007410f426a5666daf496c1394: SCG-ENH-EXP: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-EXP-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Export addresses all security settings in machine-readable form, not only those selected in a UI. The definition requires retained meaning, not simply a file extension. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-exp-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Inventory all security settings, their meanings and the available export format and access route. This is an implementation inference needed to test Export Capability; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Parsing an actual export and reconciling it to authoritative settings tests semantics and completeness; screenshots and incomplete JSON samples are insufficient. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: At export capability evaluation and observed export time; record service and format versions. No export schedule is prescribed.",
+          "citations": [
+            "SCG-ENH-EXP-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-EXP only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "No particular export format or schedule is mandated by this clause; completeness and semantic fidelity require an actual inventory.",
+            "citations": [
+              "SCG-ENH-EXP-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-mrg-01e8f2a2980a5ee2d6a5d7b8377fb774b8415f597db60e1a2ad19ab2e86e845b": {
+      "content_hash": "875d0356f1fbd7d078b31d9fb6499320630a62d4cbb3328b0526233810b96e71",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 01e8f2a2980a5ee2d6a5d7b8377fb774b8415f597db60e1a2ad19ab2e86e845b: SCG-ENH-MRG: not_applicable — Class excluded by subset. Source force: SHOULD (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-MRG-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The machine-readable guide must enable comparison with current settings. Exporting current settings alone is not providing machine-readable recommendations. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Machine-Readable Guidance. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "A parsed recommendation set mapped to product identifiers and a comparison demonstration establish usable semantics, beyond syntactic JSON validity. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD also provide the Secure Configuration Guide in a machine-readable format that can be used by customers or third-party tools to compare against current settings.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-MRG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "SCG-CSO-RSC lists a machine-readable URL while this capability is SHOULD. Preserve both statements and seek clarification if a proposed departure would omit that artifact.",
+            "citations": [
+              "SCG-ENH-MRG-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-mrg-6ae8a3e1d6452a63ea2c0702904f307d5e79690e81767346af281dbe2ec3e629": {
+      "content_hash": "f47efe96a2e797a357cb79978913c1d7389b37f1741ac53fcf005b6bb7157b97",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 6ae8a3e1d6452a63ea2c0702904f307d5e79690e81767346af281dbe2ec3e629: SCG-ENH-MRG: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-MRG-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The machine-readable guide must enable comparison with current settings. Exporting current settings alone is not providing machine-readable recommendations. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-mrg-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Obtain the guide's recommended settings, product setting identifiers and the current-settings representation used by customers. This is an implementation inference needed to test Machine-Readable Guidance; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "A parsed recommendation set mapped to product identifiers and a comparison demonstration establish usable semantics, beyond syntactic JSON validity. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: At guide publication/revision and comparison observation; retain guide and current-setting versions. No independent update cadence is specified.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-MRG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "SCG-CSO-RSC lists a machine-readable URL while this capability is SHOULD. Preserve both statements and seek clarification if a proposed departure would omit that artifact.",
+            "citations": [
+              "SCG-ENH-MRG-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-mrg-9a83390be778cbaf1e96bda60d2f75980d61b4b4854b37c63a882cecd9b7e1e4": {
+      "content_hash": "3d1c910f56258040c255b8c76160b2c89f1f98991b2738f1d0f6997415cfa034",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 9a83390be778cbaf1e96bda60d2f75980d61b4b4854b37c63a882cecd9b7e1e4: SCG-ENH-MRG: optional — Within published transition grace period. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-MRG-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The machine-readable guide must enable comparison with current settings. Exporting current settings alone is not providing machine-readable recommendations. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-mrg-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Obtain the guide's recommended settings, product setting identifiers and the current-settings representation used by customers. This is an implementation inference needed to test Machine-Readable Guidance; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "A parsed recommendation set mapped to product identifiers and a comparison demonstration establish usable semantics, beyond syntactic JSON validity. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: At guide publication/revision and comparison observation; retain guide and current-setting versions. No independent update cadence is specified. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-MRG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "SCG-CSO-RSC lists a machine-readable URL while this capability is SHOULD. Preserve both statements and seek clarification if a proposed departure would omit that artifact.",
+            "citations": [
+              "SCG-ENH-MRG-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-mrg-b4d2850f4a693b4fca8b0b152a210fc75883d1dd1c0dadc27f7297505988ca19": {
+      "content_hash": "02ece1beaa5df8000af4ae3db8dafafc76a8629842265b067ab1341077079585",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant b4d2850f4a693b4fca8b0b152a210fc75883d1dd1c0dadc27f7297505988ca19: SCG-ENH-MRG: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-MRG-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "The machine-readable guide must enable comparison with current settings. Exporting current settings alone is not providing machine-readable recommendations. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Machine-Readable Guidance. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "A parsed recommendation set mapped to product identifiers and a comparison demonstration establish usable semantics, beyond syntactic JSON validity. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD also provide the Secure Configuration Guide in a machine-readable format that can be used by customers or third-party tools to compare against current settings.",
+          "citations": [
+            "SCG-ENH-MRG-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-MRG only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "SCG-CSO-RSC lists a machine-readable URL while this capability is SHOULD. Preserve both statements and seek clarification if a proposed departure would omit that artifact.",
+            "citations": [
+              "SCG-ENH-MRG-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-vrh-52bb2ee6df92a874b7d9528682cbc7b808db499f6c1b6e16a5990dba1d8deb4d": {
+      "content_hash": "0a11dfe1cc394e88116ab5546f992ae654b54fd42b90ce2ded36caad994f0ceb",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 52bb2ee6df92a874b7d9528682cbc7b808db499f6c1b6e16a5990dba1d8deb4d: SCG-ENH-VRH: optional — Within published transition grace period. Source force: SHOULD. The saved date/context permits early adoption before the transition boundary; implementation steps apply when adopting and the published MUST, SHOULD or MAY force remains unchanged.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-VRH-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Versioning and release history concern recommended defaults for both account categories as adjusted over time; a general product version is not necessarily a defaults history. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-vrh-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate recommended-default sets for top-level administrative and privileged accounts and their actual change history. This is an implementation inference needed to test Versioning and Release History; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Successive default sets, change records and corresponding release entries demonstrate traceability. Latest-only guidance cannot establish history. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: As recommended defaults are adjusted over time. Retain actual version and release dates; no obligation to change defaults on a fixed schedule is invented. Adoption during grace does not turn SHOULD/MAY into MUST at the boundary; the corrected wording preserves force.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-VRH only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "There is no requirement to change defaults on a fixed cadence; whether defaults actually changed needs release records.",
+            "citations": [
+              "SCG-ENH-VRH-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-vrh-752a03c14a102d833cbbe648e77395ed2159d38ed87883cb5fd05223fbd173d0": {
+      "content_hash": "0ce91c8c0b2ed2094a2e19451050d651c4d8f1f1f34b97cc87c6968341ac575a",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 752a03c14a102d833cbbe648e77395ed2159d38ed87883cb5fd05223fbd173d0: SCG-ENH-VRH: not_applicable — Requirement not yet effective. Source force: SHOULD. The saved assessment date precedes the applicable published effective/adoption boundary. This is a date-specific exclusion, not permanent exemption.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-VRH-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Versioning and release history concern recommended defaults for both account categories as adjusted over time; a general product version is not necessarily a defaults history. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Versioning and Release History. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Successive default sets, change records and corresponding release entries demonstrate traceability. Latest-only guidance cannot establish history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD provide versioning and a release history for recommended secure default settings for top-level administrative accounts and privileged accounts as they are adjusted over time.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-VRH only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "There is no requirement to change defaults on a fixed cadence; whether defaults actually changed needs release records.",
+            "citations": [
+              "SCG-ENH-VRH-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-vrh-84d2d62014bbb3553d7eaee6000e55f39f47232bb29c35bebf19c17a0741d482": {
+      "content_hash": "c62d07436ab0dd39e9cd6bbabefc5edc2d176b28ca571accce93b429cb14a365",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant 84d2d62014bbb3553d7eaee6000e55f39f47232bb29c35bebf19c17a0741d482: SCG-ENH-VRH: not_applicable — Class excluded by subset. Source force: SHOULD (published rule; resolver stopped before force selection). The selected class is outside this subset's enumerated classes unless an explicit Class A inclusion is recorded.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-VRH-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Versioning and release history concern recommended defaults for both account categories as adjusted over time; a general product version is not necessarily a defaults history. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "No implementation dependency is imposed by this excluded plan for Versioning and Release History. The applicability reason is retained without turning the named actor's responsibility into provider setup.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Successive default sets, change records and corresponding release entries demonstrate traceability. Latest-only guidance cannot establish history. The draft intentionally has no acceptance assertions for this saved applicability state. Resolving it later requires the applicable operational criteria, not evidence that this explanation exists.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. No provider operation or invented deadline is scheduled for this excluded variant. The source statement remains: Providers SHOULD provide versioning and a release history for recommended secure default settings for top-level administrative accounts and privileged accounts as they are adjusted over time.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-VRH only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "There is no requirement to change defaults on a fixed cadence; whether defaults actually changed needs release records.",
+            "citations": [
+              "SCG-ENH-VRH-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    },
+    "scg-enh-vrh-f99b84fe6216de56a56fa6eefbf1e11dfab46226283b1efe64cbb3eec0e2a4e6": {
+      "content_hash": "22b29194360b1757afce8ecb13b89e5e39675ed94c9f683b0aafe36c25d8bc74",
+      "comparison": {
+        "applicability": {
+          "finding": "Exact variant f99b84fe6216de56a56fa6eefbf1e11dfab46226283b1efe64cbb3eec0e2a4e6: SCG-ENH-VRH: recommended — Resolved from source class and profile metadata. Source force: SHOULD.",
+          "citations": [
+            "SCG-metadata",
+            "SCG-ENH-VRH-source",
+            "SCG-page"
+          ]
+        },
+        "obligations": {
+          "finding": "Versioning and release history concern recommended defaults for both account categories as adjusted over time; a general product version is not necessarily a defaults history. The selected official statement is retained verbatim; source list items and qualifiers remain visible. The reference page and definitions retain the named actors and normative MUST/SHOULD/MAY distinctions. The draft has 1 assertions, retaining the lead statement and each selected following-information item; evidence review must address the conjunctive facts within each item, not merely mark the lead sentence complete.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "prerequisites": {
+          "finding": "The service-scoped scg-enh-vrh-inputs prerequisite is a reusable source-input capability, not a cross-service compliance claim. Locate recommended-default sets for top-level administrative and privileged accounts and their actual change history. This is an implementation inference needed to test Versioning and Release History; the setup is labeled recommendation, not an additional official rule. Reusing it across date/class variants does not resolve the selected variant or establish its evidence.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page"
+          ]
+        },
+        "evidence": {
+          "finding": "Successive default sets, change records and corresponding release entries demonstrate traceability. Latest-only guidance cannot establish history. Both routes retain the substantive records: native exports plus clause mapping, or witnessed observation with captured underlying records. Neither interviews nor collection success alone establish sufficiency; scope, versions, event time and responsible provenance must support each assertion.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-definitions"
+          ]
+        },
+        "timing": {
+          "finding": "SCG metadata gives March 1, 2026 obtain/maintain and July 1, 2026 grace end without next-assessment extension. Operational timing: As recommended defaults are adjusted over time. Retain actual version and release dates; no obligation to change defaults on a fixed schedule is invented.",
+          "citations": [
+            "SCG-ENH-VRH-source",
+            "SCG-page",
+            "SCG-metadata",
+            "SCG-definitions"
+          ]
+        },
+        "limitations": [
+          "Independent agent interpretation of the pinned rules/schema and official Markdown; not an official FedRAMP determination.",
+          "Source comparison for SCG-ENH-VRH only: no actual service evidence, actor performance or authenticated service-scoped review was supplied. Recording remains pending."
+        ],
+        "uncertainties": [
+          {
+            "finding": "There is no requirement to change defaults on a fixed cadence; whether defaults actually changed needs release records.",
+            "citations": [
+              "SCG-ENH-VRH-source",
+              "SCG-page",
+              "SCG-definitions"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

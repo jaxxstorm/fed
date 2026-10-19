@@ -1,0 +1,1500 @@
+{
+  "format": "requirement-playbooks/v1",
+  "catalog_id": "a89d78477ddea98dc57eca24f5007794c2b4eeb6:fb48d677a85d77fb72735a325de2c1945a1e0ceab1d2e655292fe9ebe3e4e0b4",
+  "revision": 1,
+  "sources": {
+    "rules": {
+      "repository": "FedRAMP/rules",
+      "commit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6"
+    },
+    "site": {
+      "repository": "FedRAMP/2026",
+      "commit": "8404168e6c150b40e4d0e45152d18965ab27e001"
+    }
+  },
+  "playbooks": [
+    {
+      "kind": "actionable",
+      "id": "aar-required",
+      "revision": 1,
+      "requirement_id": "KSI-INR-AAR",
+      "variant_ids": [
+        "fdcf18d017762f0ad1d66a5a1cac6557f48c961a03a1a62c88659b66fce3ac1f"
+      ],
+      "official_statement": "Incident after action reports are generated and lessons learned are persistently incorporated.",
+      "purpose": {
+        "text": "After an incident, retain an after-action report and show that lessons are repeatedly incorporated into how the service operates. Writing a report is not the same as incorporating its lessons.",
+        "basis": "implementation_recommendation",
+        "citations": [
+          "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c",
+          "citation-a62553848ad151dc6aabbadec89242c35c49e9913f6a68f247ba7c4ead680a2b",
+          "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7",
+          "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+        ],
+        "rationale": "This explanation distinguishes the specific incident-review outcome from records that only show setup or participation."
+      },
+      "applicability": {
+        "text": "This exact selected catalog variant resolves the indicator as required. Preserve the saved profile's class and certification path when assessing it.",
+        "basis": "implementation_recommendation",
+        "citations": [
+          "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c",
+          "citation-0686c77d3d89487ea9ace715111e068c9e4d3a5604386a15df9b6046bcc549c6",
+          "citation-f243429d1d6f8424f967a6311a7baf3e2bdafda8671285a79470ebdea65915cd"
+        ],
+        "rationale": "Applicability is bound to the inventoried variants rather than inferred from the incident-management implementation."
+      },
+      "prerequisites": [
+        {
+          "capability_id": "incident-history",
+          "reason": {
+            "text": "After-action reporting needs an identifiable incident and its retained investigation record; this inferred dependency does not mandate a ticketing product.",
+            "basis": "implementation_recommendation",
+            "citations": [
+              "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+            ],
+            "rationale": "The dependency supplies the object of this indicator's review; it is not a new separately quoted mandate."
+          }
+        }
+      ],
+      "setup": {
+        "items": null,
+        "none_reason": "Use the linked shared capability setup; this indicator prescribes no additional product integration."
+      },
+      "operate": {
+        "items": [
+          {
+            "id": "after-action-reports",
+            "action": {
+              "text": "Generate incident after-action reports.",
+              "basis": "official_obligation",
+              "citations": [
+                "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c",
+                "citation-a62553848ad151dc6aabbadec89242c35c49e9913f6a68f247ba7c4ead680a2b",
+                "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7",
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": ""
+            },
+            "owner_role": "Incident response owner",
+            "trigger": "event",
+            "timing": {
+              "text": "When an actual incident supplies the subject of an after-action report; this statement supplies no numeric reporting deadline.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c",
+                "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7"
+              ],
+              "rationale": "After-action reporting is event-dependent. Preserve any separately applicable incident communication deadlines under their own rules."
+            },
+            "completion_criteria": [
+              {
+                "text": "Incident identifiers, investigation timeline and attributable after-action reports reconciled to the incident inventory.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                ],
+                "rationale": "These records make the specific operating fact assessable; records are candidates until evaluated with exact citations."
+              }
+            ]
+          },
+          {
+            "id": "incorporated-lessons",
+            "action": {
+              "text": "Persistently incorporate lessons learned.",
+              "basis": "official_obligation",
+              "citations": [
+                "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c",
+                "citation-a62553848ad151dc6aabbadec89242c35c49e9913f6a68f247ba7c4ead680a2b",
+                "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7",
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": ""
+            },
+            "owner_role": "Incident response owner",
+            "trigger": "recurring",
+            "timing": {
+              "text": "Occurring in a firm, steady way that is repeated over a long period of time in spite of obstacles or difficulties. Persistent activities may vary between actors, may occur irregularly, and may include interruptions or waiting periods between cycles. These attributes of persistent activities should be intentional, understood, and documented; the status of persistent activities will always be known.",
+              "basis": "official_obligation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": ""
+            },
+            "completion_criteria": [
+              {
+                "text": "Lesson/action history linked to reports, dispositions and dated changes to procedures or operating practices; explain intentional interruptions.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                ],
+                "rationale": "These records make the specific operating fact assessable; records are candidates until evaluated with exact citations."
+              }
+            ]
+          }
+        ]
+      },
+      "collect": {
+        "items": [
+          {
+            "id": "collect-aar",
+            "action": {
+              "text": "Collect the incident inventory, after-action reports and records showing how identified lessons were incorporated over time.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+              ],
+              "rationale": "This makes the incident-related obligation assessable through retained records, without requiring a particular incident-management vendor."
+            },
+            "owner_role": "Incident response owner",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "Separate report generation from lesson incorporation. Link each claimed lesson to its disposition and resulting practice; preserve open lessons rather than treating a report as completion.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                ],
+                "rationale": "The record must connect the conclusion to the actual incident, procedure version or historical period evaluated."
+              }
+            ]
+          }
+        ]
+      },
+      "review_steps": {
+        "items": [
+          {
+            "id": "assess-aar",
+            "action": {
+              "text": "Separate report generation from lesson incorporation. Link each claimed lesson to its disposition and resulting practice; preserve open lessons rather than treating a report as completion.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+              ],
+              "rationale": "This makes the incident-related obligation assessable through retained records, without requiring a particular incident-management vendor."
+            },
+            "owner_role": "Service assessment owner",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "The assessment cites exact retained revisions, covers the relevant period and service boundary, and preserves unsupported assertions and limitations for separate human evidence review.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                ],
+                "rationale": "The record must connect the conclusion to the actual incident, procedure version or historical period evaluated."
+              }
+            ]
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "id": "after-action-reports",
+          "obligation": {
+            "text": "Generate incident after-action reports.",
+            "basis": "official_obligation",
+            "citations": [
+              "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c",
+              "citation-a62553848ad151dc6aabbadec89242c35c49e9913f6a68f247ba7c4ead680a2b",
+              "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7",
+              "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+            ],
+            "rationale": ""
+          },
+          "clauses": [
+            "Incident after action reports are generated"
+          ],
+          "acceptance": {
+            "fact": "Actual incidents have attributable after-action reports.",
+            "scope": {
+              "text": "Identify the service boundary and actual incident set or procedure versions evaluated, including differences in production, development and shared responsibilities where relevant.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+              ],
+              "rationale": "One incident or one team's procedure is not automatically coverage of the entire relevant service history."
+            },
+            "time_period": {
+              "text": "Retain review dates, historical period, actual cycles and current activity status. Explain intentional gaps; do not invent a numeric persistent-review interval.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": "FRD-PER permits irregular cycles and documented interruptions."
+            },
+            "provenance": {
+              "text": "Retain attributable incident/report or procedure identifiers, version dates, reviewer, method, findings and conclusions.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+              ],
+              "rationale": "Provenance connects the conclusion to the actual material evaluated."
+            },
+            "alternatives": [
+              {
+                "id": "system-records",
+                "artifacts": [
+                  {
+                    "text": "Authorized incident-management or document-system exports, plus the associated review/conclusion records and scope inventory.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                    ],
+                    "rationale": "These are alternative evidence combinations, not mandatory tooling."
+                  },
+                  {
+                    "text": "Incident identifiers, investigation timeline and attributable after-action reports reconciled to the incident inventory.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                    ],
+                    "rationale": "This material addresses the assertion's specific operating fact."
+                  }
+                ],
+                "proves": "System provenance and the recorded review or incorporation activity for the identified incidents or procedures.",
+                "limitations": "A ticket's existence or closed status alone does not establish the review's substance or incorporation of lessons."
+              },
+              {
+                "id": "retained-documents",
+                "artifacts": [
+                  {
+                    "text": "Dated, attributable reports or review minutes, versioned procedures/action records as relevant, and the corresponding scope/history inventory.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                    ],
+                    "rationale": "These are alternative evidence combinations, not mandatory tooling."
+                  },
+                  {
+                    "text": "Incident identifiers, investigation timeline and attributable after-action reports reconciled to the incident inventory.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                    ],
+                    "rationale": "This material addresses the assertion's specific operating fact."
+                  }
+                ],
+                "proves": "The same review/reporting facts without requiring a particular incident platform.",
+                "limitations": "Documentary accounts require traceable incident/procedure references; a template or unsupported retrospective claim is insufficient."
+              }
+            ],
+            "insufficient": [
+              "An empty report template, or a claim of no incidents based only on missing records.",
+              "A declaration, empty template or successful collection without sufficiency assessment."
+            ]
+          }
+        },
+        {
+          "id": "incorporated-lessons",
+          "obligation": {
+            "text": "Persistently incorporate lessons learned.",
+            "basis": "official_obligation",
+            "citations": [
+              "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c",
+              "citation-a62553848ad151dc6aabbadec89242c35c49e9913f6a68f247ba7c4ead680a2b",
+              "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7",
+              "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+            ],
+            "rationale": ""
+          },
+          "clauses": [
+            "and lessons learned are persistently incorporated"
+          ],
+          "acceptance": {
+            "fact": "Lessons from incidents are incorporated repeatedly, with current activity status known.",
+            "scope": {
+              "text": "Identify the service boundary and actual incident set or procedure versions evaluated, including differences in production, development and shared responsibilities where relevant.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+              ],
+              "rationale": "One incident or one team's procedure is not automatically coverage of the entire relevant service history."
+            },
+            "time_period": {
+              "text": "Retain review dates, historical period, actual cycles and current activity status. Explain intentional gaps; do not invent a numeric persistent-review interval.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": "FRD-PER permits irregular cycles and documented interruptions."
+            },
+            "provenance": {
+              "text": "Retain attributable incident/report or procedure identifiers, version dates, reviewer, method, findings and conclusions.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+              ],
+              "rationale": "Provenance connects the conclusion to the actual material evaluated."
+            },
+            "alternatives": [
+              {
+                "id": "system-records",
+                "artifacts": [
+                  {
+                    "text": "Authorized incident-management or document-system exports, plus the associated review/conclusion records and scope inventory.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                    ],
+                    "rationale": "These are alternative evidence combinations, not mandatory tooling."
+                  },
+                  {
+                    "text": "Lesson/action history linked to reports, dispositions and dated changes to procedures or operating practices; explain intentional interruptions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                    ],
+                    "rationale": "This material addresses the assertion's specific operating fact."
+                  }
+                ],
+                "proves": "System provenance and the recorded review or incorporation activity for the identified incidents or procedures.",
+                "limitations": "A ticket's existence or closed status alone does not establish the review's substance or incorporation of lessons."
+              },
+              {
+                "id": "retained-documents",
+                "artifacts": [
+                  {
+                    "text": "Dated, attributable reports or review minutes, versioned procedures/action records as relevant, and the corresponding scope/history inventory.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                    ],
+                    "rationale": "These are alternative evidence combinations, not mandatory tooling."
+                  },
+                  {
+                    "text": "Lesson/action history linked to reports, dispositions and dated changes to procedures or operating practices; explain intentional interruptions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c"
+                    ],
+                    "rationale": "This material addresses the assertion's specific operating fact."
+                  }
+                ],
+                "proves": "The same review/reporting facts without requiring a particular incident platform.",
+                "limitations": "Documentary accounts require traceable incident/procedure references; a template or unsupported retrospective claim is insufficient."
+              }
+            ],
+            "insufficient": [
+              "A list of lessons or open action items without evidence of incorporation.",
+              "A declaration, empty template or successful collection without sufficiency assessment."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "kind": "actionable",
+      "id": "ksi-ced-rat-required",
+      "revision": 1,
+      "requirement_id": "KSI-CED-RAT",
+      "variant_ids": [
+        "2e959240c5101e26990ad59de38559b7df6f4e39c4d4d5ee88f1a7a4058b129b",
+        "712c24e80c7d2f030e4a78c9a59113c301bd34e8159cc226b368e12f05f57271"
+      ],
+      "official_statement": "The effectiveness of relevant cybersecurity education and training is persistently reviewed, including at least general training for all employees, role-specific training for employees in high risk roles, training for development and engineering staff on secure software delivery, and training for staff involved with incident response or disaster recovery.",
+      "purpose": {
+        "text": "Check whether security training helps the relevant people perform their duties, and retain the repeated reviews. Attendance by itself does not show effectiveness was reviewed.",
+        "basis": "implementation_recommendation",
+        "citations": [
+          "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa",
+          "citation-3792b014fd358267ba2f3dd21ad0a878757facc4a4e937d1c487ce71536999a6"
+        ],
+        "rationale": "The indicator concerns persistent effectiveness review, not just delivery or attendance."
+      },
+      "applicability": {
+        "text": "The selected catalog profile resolves this indicator as required. The Class A required-rule list explicitly includes it; the other required variant resolves from the selected class/profile metadata.",
+        "basis": "implementation_recommendation",
+        "citations": [
+          "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa",
+          "citation-62cc33f5a8875aa83be25537cbcb058f33858a2e8072782b3976ec7b8ff090d3"
+        ],
+        "rationale": "These exact inventory IDs retain the resolver's distinction between inclusion by FRC-CLA-MFR and ordinary profile applicability."
+      },
+      "prerequisites": [
+        {
+          "capability_id": "workforce-training-review",
+          "reason": {
+            "text": "A relevant training/population map and review process are prerequisites to demonstrating repeated effectiveness review across the four named populations.",
+            "basis": "implementation_recommendation",
+            "citations": [
+              "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+            ],
+            "rationale": "This is an inferred dependency, not a separate FedRAMP-mandated tool or document format."
+          }
+        }
+      ],
+      "setup": {
+        "items": null,
+        "none_reason": "Use the shared workforce-training-review setup. This indicator does not prescribe an additional integration or training platform."
+      },
+      "operate": {
+        "items": [
+          {
+            "id": "review-training-effectiveness",
+            "action": {
+              "text": "Persistently review the effectiveness of relevant training, including all four named populations.",
+              "basis": "official_obligation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa",
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": ""
+            },
+            "owner_role": "Training owner and role leads",
+            "trigger": "recurring",
+            "timing": {
+              "text": "Occurring in a firm, steady way that is repeated over a long period of time in spite of obstacles or difficulties. Persistent activities may vary between actors, may occur irregularly, and may include interruptions or waiting periods between cycles. These attributes of persistent activities should be intentional, understood, and documented; the status of persistent activities will always be known.",
+              "basis": "official_obligation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": ""
+            },
+            "completion_criteria": [
+              {
+                "text": "Retain dated review methods, findings and conclusions for each population, with current activity status and intentional interruptions documented.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa",
+                  "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+                ],
+                "rationale": "Repeated reviews and known status demonstrate persistence; no numeric cycle or pass score is inferred."
+              }
+            ]
+          }
+        ]
+      },
+      "collect": {
+        "items": [
+          {
+            "id": "collect-training-review-records",
+            "action": {
+              "text": "Collect the current population-to-training map and dated effectiveness reviews for general employees, high-risk roles, engineers, and response/recovery staff.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "This makes the named training population and its effectiveness review assessable without prescribing a vendor."
+            },
+            "owner_role": "Training owner",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "Exact artifact revisions cover the training objectives, review period, methods, reviewer provenance, findings and limitations for each named population.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                ],
+                "rationale": "Reviewers need attributable records to distinguish actual review from a planned program."
+              }
+            ]
+          }
+        ]
+      },
+      "review_steps": {
+        "items": [
+          {
+            "id": "assess-training-review-coverage",
+            "action": {
+              "text": "Assess each population and persistence assertion separately; distinguish attendance, effectiveness-review activity and real-world security outcomes.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "This makes the named training population and its effectiveness review assessable without prescribing a vendor."
+            },
+            "owner_role": "Service assessment owner",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "The assessment cites exact revisions and explains missing populations or periods. A completed checklist cannot replace human evidence review.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                ],
+                "rationale": "Reviewers need attributable records to distinguish actual review from a planned program."
+              }
+            ]
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "id": "persistent-effectiveness-review",
+          "obligation": {
+            "text": "Relevant cybersecurity training effectiveness is persistently reviewed.",
+            "basis": "official_obligation",
+            "citations": [
+              "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa",
+              "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+            ],
+            "rationale": ""
+          },
+          "clauses": [
+            "The effectiveness of relevant cybersecurity education and training is persistently reviewed, including at least"
+          ],
+          "acceptance": {
+            "fact": "Review activity repeats over time and its current status is known.",
+            "scope": {
+              "text": "All relevant cybersecurity education and training in the service boundary.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "The named population must be identifiable before evidence can establish coverage."
+            },
+            "time_period": {
+              "text": "Retain the actual review dates and period, chosen cycle, current activity status and documented interruptions. No annual, quarterly or monthly deadline is supplied by this indicator.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": "FRD-PER permits intentional irregular cycles; the evidence must explain persistence rather than invent a fixed deadline."
+            },
+            "provenance": {
+              "text": "Identify the training version, population, reviewer, method, findings and conclusions in attributable retained records.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "Provenance connects the effectiveness conclusion to the actual training and population evaluated."
+            },
+            "alternatives": [
+              {
+                "id": "learning-system-and-reviews",
+                "artifacts": [
+                  {
+                    "text": "Learning-system exports plus role/population mapping and the corresponding effectiveness-review reports.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "Dated review history, chosen cycle/status record, and intentional interruption explanations.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "Recorded participation or evaluation results together with the reviewers' interpretation for the named population.",
+                "limitations": "Participation alone does not demonstrate review, real-world behavior, or coverage of unlisted populations."
+              },
+              {
+                "id": "documented-evaluation",
+                "artifacts": [
+                  {
+                    "text": "Retained training material plus dated exercise, interview or practical-evaluation records, the population map and effectiveness-review conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "Dated review history, chosen cycle/status record, and intentional interruption explanations.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "The same training-review facts without requiring a learning-system integration.",
+                "limitations": "A single exercise must identify the populations covered; it cannot silently establish all-population or long-term coverage."
+              }
+            ],
+            "insufficient": [
+              "A policy promising future reviews or one undated dashboard.",
+              "A declaration or successful data collection without a cited sufficiency assessment."
+            ]
+          }
+        },
+        {
+          "id": "general-employee-training",
+          "obligation": {
+            "text": "Effectiveness review includes general training for all employees.",
+            "basis": "official_obligation",
+            "citations": [
+              "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+            ],
+            "rationale": ""
+          },
+          "clauses": [
+            "general training for all employees"
+          ],
+          "acceptance": {
+            "fact": "General training effectiveness review covers the employee population.",
+            "scope": {
+              "text": "All employees relevant to the service, reconciled to the training population rather than a cloud-resource count.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "The named population must be identifiable before evidence can establish coverage."
+            },
+            "time_period": {
+              "text": "Retain the actual review dates and period, chosen cycle, current activity status and documented interruptions. No annual, quarterly or monthly deadline is supplied by this indicator.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": "FRD-PER permits intentional irregular cycles; the evidence must explain persistence rather than invent a fixed deadline."
+            },
+            "provenance": {
+              "text": "Identify the training version, population, reviewer, method, findings and conclusions in attributable retained records.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "Provenance connects the effectiveness conclusion to the actual training and population evaluated."
+            },
+            "alternatives": [
+              {
+                "id": "learning-system-and-reviews",
+                "artifacts": [
+                  {
+                    "text": "Learning-system exports plus role/population mapping and the corresponding effectiveness-review reports.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "Employee/population reconciliation, general-training objectives, evaluation results and review conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "Recorded participation or evaluation results together with the reviewers' interpretation for the named population.",
+                "limitations": "Participation alone does not demonstrate review, real-world behavior, or coverage of unlisted populations."
+              },
+              {
+                "id": "documented-evaluation",
+                "artifacts": [
+                  {
+                    "text": "Retained training material plus dated exercise, interview or practical-evaluation records, the population map and effectiveness-review conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "Employee/population reconciliation, general-training objectives, evaluation results and review conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "The same training-review facts without requiring a learning-system integration.",
+                "limitations": "A single exercise must identify the populations covered; it cannot silently establish all-population or long-term coverage."
+              }
+            ],
+            "insufficient": [
+              "A completion percentage without its employee denominator or effectiveness conclusions.",
+              "A declaration or successful data collection without a cited sufficiency assessment."
+            ]
+          }
+        },
+        {
+          "id": "high-risk-role-training",
+          "obligation": {
+            "text": "Effectiveness review includes role-specific training for employees in high-risk roles.",
+            "basis": "official_obligation",
+            "citations": [
+              "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+            ],
+            "rationale": ""
+          },
+          "clauses": [
+            "role-specific training for employees in high risk roles"
+          ],
+          "acceptance": {
+            "fact": "Identified high-risk roles have relevant training and effectiveness review.",
+            "scope": {
+              "text": "The service's high-risk employee roles, with the role-identification rationale retained.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "The named population must be identifiable before evidence can establish coverage."
+            },
+            "time_period": {
+              "text": "Retain the actual review dates and period, chosen cycle, current activity status and documented interruptions. No annual, quarterly or monthly deadline is supplied by this indicator.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": "FRD-PER permits intentional irregular cycles; the evidence must explain persistence rather than invent a fixed deadline."
+            },
+            "provenance": {
+              "text": "Identify the training version, population, reviewer, method, findings and conclusions in attributable retained records.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "Provenance connects the effectiveness conclusion to the actual training and population evaluated."
+            },
+            "alternatives": [
+              {
+                "id": "learning-system-and-reviews",
+                "artifacts": [
+                  {
+                    "text": "Learning-system exports plus role/population mapping and the corresponding effectiveness-review reports.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "High-risk role identification, role-specific content mapping and effectiveness-review records.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "Recorded participation or evaluation results together with the reviewers' interpretation for the named population.",
+                "limitations": "Participation alone does not demonstrate review, real-world behavior, or coverage of unlisted populations."
+              },
+              {
+                "id": "documented-evaluation",
+                "artifacts": [
+                  {
+                    "text": "Retained training material plus dated exercise, interview or practical-evaluation records, the population map and effectiveness-review conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "High-risk role identification, role-specific content mapping and effectiveness-review records.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "The same training-review facts without requiring a learning-system integration.",
+                "limitations": "A single exercise must identify the populations covered; it cannot silently establish all-population or long-term coverage."
+              }
+            ],
+            "insufficient": [
+              "Generic awareness assigned to everyone without role-specific effectiveness review.",
+              "A declaration or successful data collection without a cited sufficiency assessment."
+            ]
+          }
+        },
+        {
+          "id": "secure-delivery-training",
+          "obligation": {
+            "text": "Effectiveness review includes development and engineering staff training on secure software delivery.",
+            "basis": "official_obligation",
+            "citations": [
+              "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+            ],
+            "rationale": ""
+          },
+          "clauses": [
+            "training for development and engineering staff on secure software delivery"
+          ],
+          "acceptance": {
+            "fact": "Secure-delivery training effectiveness is reviewed for development and engineering staff.",
+            "scope": {
+              "text": "Development and engineering populations supporting the service, including distinct environment responsibilities where relevant.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "The named population must be identifiable before evidence can establish coverage."
+            },
+            "time_period": {
+              "text": "Retain the actual review dates and period, chosen cycle, current activity status and documented interruptions. No annual, quarterly or monthly deadline is supplied by this indicator.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": "FRD-PER permits intentional irregular cycles; the evidence must explain persistence rather than invent a fixed deadline."
+            },
+            "provenance": {
+              "text": "Identify the training version, population, reviewer, method, findings and conclusions in attributable retained records.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "Provenance connects the effectiveness conclusion to the actual training and population evaluated."
+            },
+            "alternatives": [
+              {
+                "id": "learning-system-and-reviews",
+                "artifacts": [
+                  {
+                    "text": "Learning-system exports plus role/population mapping and the corresponding effectiveness-review reports.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "Engineering population/content mapping, secure-delivery evaluation results and review conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "Recorded participation or evaluation results together with the reviewers' interpretation for the named population.",
+                "limitations": "Participation alone does not demonstrate review, real-world behavior, or coverage of unlisted populations."
+              },
+              {
+                "id": "documented-evaluation",
+                "artifacts": [
+                  {
+                    "text": "Retained training material plus dated exercise, interview or practical-evaluation records, the population map and effectiveness-review conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "Engineering population/content mapping, secure-delivery evaluation results and review conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "The same training-review facts without requiring a learning-system integration.",
+                "limitations": "A single exercise must identify the populations covered; it cannot silently establish all-population or long-term coverage."
+              }
+            ],
+            "insufficient": [
+              "A secure pipeline configuration, repository protections or a course catalog without review records.",
+              "A declaration or successful data collection without a cited sufficiency assessment."
+            ]
+          }
+        },
+        {
+          "id": "response-recovery-training",
+          "obligation": {
+            "text": "Effectiveness review includes training for incident-response or disaster-recovery staff.",
+            "basis": "official_obligation",
+            "citations": [
+              "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa",
+              "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7",
+              "citation-9bdac94c49aedd86b129262f3960faa42d28b6475883f9133553e756aba127b5"
+            ],
+            "rationale": ""
+          },
+          "clauses": [
+            "and training for staff involved with incident response or disaster recovery"
+          ],
+          "acceptance": {
+            "fact": "Relevant response and recovery training effectiveness is reviewed.",
+            "scope": {
+              "text": "Staff involved with the service's incident response or disaster recovery; establish the actual role coverage.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "The named population must be identifiable before evidence can establish coverage."
+            },
+            "time_period": {
+              "text": "Retain the actual review dates and period, chosen cycle, current activity status and documented interruptions. No annual, quarterly or monthly deadline is supplied by this indicator.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": "FRD-PER permits intentional irregular cycles; the evidence must explain persistence rather than invent a fixed deadline."
+            },
+            "provenance": {
+              "text": "Identify the training version, population, reviewer, method, findings and conclusions in attributable retained records.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "Provenance connects the effectiveness conclusion to the actual training and population evaluated."
+            },
+            "alternatives": [
+              {
+                "id": "learning-system-and-reviews",
+                "artifacts": [
+                  {
+                    "text": "Learning-system exports plus role/population mapping and the corresponding effectiveness-review reports.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "Responder/recovery role roster, training material and dated effectiveness conclusions from relevant evaluations.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "Recorded participation or evaluation results together with the reviewers' interpretation for the named population.",
+                "limitations": "Participation alone does not demonstrate review, real-world behavior, or coverage of unlisted populations."
+              },
+              {
+                "id": "documented-evaluation",
+                "artifacts": [
+                  {
+                    "text": "Retained training material plus dated exercise, interview or practical-evaluation records, the population map and effectiveness-review conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "This is an example evidence combination, not a mandated vendor or testing method."
+                  },
+                  {
+                    "text": "Responder/recovery role roster, training material and dated effectiveness conclusions from relevant evaluations.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                    ],
+                    "rationale": "These records address this assertion's specific fact and population."
+                  }
+                ],
+                "proves": "The same training-review facts without requiring a learning-system integration.",
+                "limitations": "A single exercise must identify the populations covered; it cannot silently establish all-population or long-term coverage."
+              }
+            ],
+            "insufficient": [
+              "Incident or restore records that never evaluate training effectiveness.",
+              "A declaration or successful data collection without a cited sufficiency assessment."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "kind": "actionable",
+      "id": "trc-required",
+      "revision": 1,
+      "requirement_id": "KSI-RPL-TRC",
+      "variant_ids": [
+        "2e5c6e11ce0747f737521c43a32cc6c184a08bdd3dd881bbedad179704cc4a01"
+      ],
+      "official_statement": "The capability to recover from incidents and contingencies aligned with defined recovery objectives is persistently tested.",
+      "purpose": {
+        "text": "Test recovery capability against the defined objectives repeatedly. A backup setting, recovery plan or objective review alone does not demonstrate an executed recovery test.",
+        "basis": "implementation_recommendation",
+        "citations": [
+          "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552",
+          "citation-ccd580917e3b71833cbbf5a7632a576f43e71cd5d8d718817ea2943a898fb236",
+          "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f",
+          "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7"
+        ],
+        "rationale": "The explanation preserves the distinct recovery outcome and the limits of configuration or documentary evidence."
+      },
+      "applicability": {
+        "text": "This exact selected profile variant resolves the recovery indicator as required; the separate Class A excluded and unresolved-path variants retain their own explanations.",
+        "basis": "implementation_recommendation",
+        "citations": [
+          "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552",
+          "citation-0686c77d3d89487ea9ace715111e068c9e4d3a5604386a15df9b6046bcc549c6"
+        ],
+        "rationale": "Do not reuse a required variant to override the catalog's exclusion or unresolved outcome."
+      },
+      "prerequisites": [
+        {
+          "capability_id": "recovery-objectives",
+          "reason": {
+            "text": "The recovery-objectives records identify the objective or object needed for this recovery comparison or test.",
+            "basis": "implementation_recommendation",
+            "citations": [
+              "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552",
+              "citation-7db7a8f01301fceb5296f0b58e4201d2cc011a00214a70ade5af748b0493a9e2"
+            ],
+            "rationale": "This is a prerequisite for evaluating the stated outcome, not a mandate to purchase or configure a particular product."
+          }
+        }
+      ],
+      "setup": {
+        "items": null,
+        "none_reason": "Use the shared prerequisite records. No additional vendor integration or infrastructure change is prescribed by this guidance."
+      },
+      "operate": {
+        "items": [
+          {
+            "id": "tested-recovery-capability",
+            "action": {
+              "text": "Persistently test the capability to recover from incidents and contingencies aligned with defined recovery objectives.",
+              "basis": "official_obligation",
+              "citations": [
+                "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552",
+                "citation-ccd580917e3b71833cbbf5a7632a576f43e71cd5d8d718817ea2943a898fb236",
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f",
+                "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7"
+              ],
+              "rationale": ""
+            },
+            "owner_role": "Recovery owner",
+            "trigger": "recurring",
+            "timing": {
+              "text": "Occurring in a firm, steady way that is repeated over a long period of time in spite of obstacles or difficulties. Persistent activities may vary between actors, may occur irregularly, and may include interruptions or waiting periods between cycles. These attributes of persistent activities should be intentional, understood, and documented; the status of persistent activities will always be known.",
+              "basis": "official_obligation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": ""
+            },
+            "completion_criteria": [
+              {
+                "text": "Executed test scenarios, resource/environment scope, dates, observed results, objective versions and comparison conclusions, including failures and untested components.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+                ],
+                "rationale": "These records make the specific recovery activity and its actual outcome assessable."
+              }
+            ]
+          }
+        ]
+      },
+      "collect": {
+        "items": [
+          {
+            "id": "collect-trc",
+            "action": {
+              "text": "Collect dated recovery-test execution records, the scenarios and resources tested, actual observed recovery results, and comparisons with the applicable objective versions.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+              ],
+              "rationale": "This identifies the actual recovery objective, configuration or operating record without prescribing a particular vendor or changing infrastructure."
+            },
+            "owner_role": "Recovery owner",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "Distinguish planned exercises from executed tests. Assess the incident/contingency scenarios and service scope covered, actual outcomes and objective comparisons; preserve failed results and untested dependencies.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+                ],
+                "rationale": "The evidence must identify the object and period assessed before it can support a recovery assertion."
+              }
+            ]
+          }
+        ]
+      },
+      "review_steps": {
+        "items": [
+          {
+            "id": "assess-trc",
+            "action": {
+              "text": "Distinguish planned exercises from executed tests. Assess the incident/contingency scenarios and service scope covered, actual outcomes and objective comparisons; preserve failed results and untested dependencies.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+              ],
+              "rationale": "This identifies the actual recovery objective, configuration or operating record without prescribing a particular vendor or changing infrastructure."
+            },
+            "owner_role": "Service assessment owner",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "Exact retained citations and scope/period limitations are recorded for each assertion; human service evidence review remains separate.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+                ],
+                "rationale": "The evidence must identify the object and period assessed before it can support a recovery assertion."
+              }
+            ]
+          }
+        ]
+      },
+      "assertions": [
+        {
+          "id": "tested-recovery-capability",
+          "obligation": {
+            "text": "Persistently test the capability to recover from incidents and contingencies aligned with defined recovery objectives.",
+            "basis": "official_obligation",
+            "citations": [
+              "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552",
+              "citation-ccd580917e3b71833cbbf5a7632a576f43e71cd5d8d718817ea2943a898fb236",
+              "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f",
+              "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7"
+            ],
+            "rationale": ""
+          },
+          "clauses": [
+            "The capability to recover from incidents and contingencies aligned with defined recovery objectives is persistently tested."
+          ],
+          "acceptance": {
+            "fact": "Recovery capability is actually tested repeatedly against the relevant defined objectives.",
+            "scope": {
+              "text": "Identify the actual service functions, resources, environments and dependencies addressed, and map them to the applicable recovery objective version.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+              ],
+              "rationale": "Evidence from one development resource does not automatically establish production or shared-dependency coverage."
+            },
+            "time_period": {
+              "text": "Retain actual definition, review or test dates and versions. For persistent activity, show repeated cycles, current status and intentional interruptions without inventing a numeric deadline.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f"
+              ],
+              "rationale": "The pinned definition permits intentional irregularity; initial activity alone is not long-term repetition."
+            },
+            "provenance": {
+              "text": "Identify the accountable owner, source system or document, objective version, reviewed/tested object, method and actual findings/results.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+              ],
+              "rationale": "These contextual facts distinguish stated intent from performed review or testing."
+            },
+            "alternatives": [
+              {
+                "id": "system-and-review-records",
+                "artifacts": [
+                  {
+                    "text": "Authorized system exports or execution logs together with objective records, scope mapping and attributable review/test conclusions.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+                    ],
+                    "rationale": "These are alternative evidence combinations, not mandated tooling."
+                  },
+                  {
+                    "text": "Executed test scenarios, resource/environment scope, dates, observed results, objective versions and comparison conclusions, including failures and untested components.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+                    ],
+                    "rationale": "This combination must establish this assertion's specific fact."
+                  }
+                ],
+                "proves": "Recorded configuration or execution facts together with the explicit comparison or test conclusions.",
+                "limitations": "Configuration alone does not demonstrate alignment review or successful execution; logs must identify the relevant objective and actual scope."
+              },
+              {
+                "id": "documented-operating-records",
+                "artifacts": [
+                  {
+                    "text": "Dated, attributable objective/review/test reports with their supporting configuration or execution evidence and scope mapping.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+                    ],
+                    "rationale": "These are alternative evidence combinations, not mandated tooling."
+                  },
+                  {
+                    "text": "Executed test scenarios, resource/environment scope, dates, observed results, objective versions and comparison conclusions, including failures and untested components.",
+                    "basis": "implementation_recommendation",
+                    "citations": [
+                      "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552"
+                    ],
+                    "rationale": "This combination must establish this assertion's specific fact."
+                  }
+                ],
+                "proves": "The same defined-objective, comparison or test facts without requiring a particular provider integration.",
+                "limitations": "Narrative reports need traceable supporting facts; a blank template, planned test or unsupported claim cannot prove operation."
+              }
+            ],
+            "insufficient": [
+              "Backup configuration, a plan, an objective review, an unexecuted test script, or a tabletop discussion claimed as proof of an untested technical restore.",
+              "A declaration or successful collection without a cited sufficiency assessment."
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "incident-history",
+      "name": "Retained incident history",
+      "scope_kind": "service",
+      "dependencies": null,
+      "setup": {
+        "items": [
+          {
+            "id": "identify-incident-history",
+            "action": {
+              "text": "Locate the service's incident register and retained investigation records. Record the period and service boundary covered, including any claimed no-incident period.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7"
+              ],
+              "rationale": "This makes the incident-related obligation assessable through retained records, without requiring a particular incident-management vendor."
+            },
+            "owner_role": "Incident response owner",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "The inventory identifies actual incidents or the supported no-incident period; missing access or absent records are not treated as no incidents.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7"
+                ],
+                "rationale": "The record must connect the conclusion to the actual incident, procedure version or historical period evaluated."
+              }
+            ]
+          }
+        ]
+      },
+      "alternatives": null
+    },
+    {
+      "id": "recovery-objectives",
+      "name": "Defined service recovery objectives",
+      "scope_kind": "service",
+      "dependencies": null,
+      "setup": {
+        "items": [
+          {
+            "id": "identify-objectives",
+            "action": {
+              "text": "Locate the desired Recovery Time Objectives and Recovery Point Objectives, their service/target coverage, and the business/capability rationale. If unavailable, record the gap rather than inventing targets.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-7db7a8f01301fceb5296f0b58e4201d2cc011a00214a70ade5af748b0493a9e2"
+              ],
+              "rationale": "This identifies the actual recovery objective, configuration or operating record without prescribing a particular vendor or changing infrastructure."
+            },
+            "owner_role": "Recovery owner and business owner",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "Retained objective versions identify the desired recovery targets and their applicable service functions; a declaration is not an alignment review.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-7db7a8f01301fceb5296f0b58e4201d2cc011a00214a70ade5af748b0493a9e2"
+                ],
+                "rationale": "The evidence must identify the object and period assessed before it can support a recovery assertion."
+              }
+            ]
+          }
+        ]
+      },
+      "alternatives": null
+    },
+    {
+      "id": "workforce-training-review",
+      "name": "Workforce training effectiveness review",
+      "scope_kind": "service",
+      "dependencies": null,
+      "setup": {
+        "items": [
+          {
+            "id": "map-training-populations",
+            "action": {
+              "text": "Identify all employees, high-risk roles, development/engineering staff, and incident-response/disaster-recovery staff covered by the service's training.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "This makes the named training population and its effectiveness review assessable without prescribing a vendor."
+            },
+            "owner_role": "Training owner",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "A dated population map identifies role overlap and any uncovered groups.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                ],
+                "rationale": "Reviewers need attributable records to distinguish actual review from a planned program."
+              }
+            ]
+          },
+          {
+            "id": "map-learning-objectives",
+            "action": {
+              "text": "Link each population to relevant training content and learning objectives; distinguish general awareness from secure-delivery and response/recovery training.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "This makes the named training population and its effectiveness review assessable without prescribing a vendor."
+            },
+            "owner_role": "Training owner and role leads",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "Each named population maps to relevant training versions and objectives.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                ],
+                "rationale": "Reviewers need attributable records to distinguish actual review from a planned program."
+              }
+            ]
+          },
+          {
+            "id": "choose-effectiveness-methods",
+            "action": {
+              "text": "Identify existing review methods and records, or document how effectiveness will be evaluated for each population.",
+              "basis": "implementation_recommendation",
+              "citations": [
+                "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+              ],
+              "rationale": "This makes the named training population and its effectiveness review assessable without prescribing a vendor."
+            },
+            "owner_role": "Training owner and role leads",
+            "trigger": "one_time",
+            "completion_criteria": [
+              {
+                "text": "The method identifies the security skill or behavior evaluated and the responsible reviewer; a learning-system product is not required.",
+                "basis": "implementation_recommendation",
+                "citations": [
+                  "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa"
+                ],
+                "rationale": "Reviewers need attributable records to distinguish actual review from a planned program."
+              }
+            ]
+          }
+        ]
+      },
+      "alternatives": []
+    }
+  ],
+  "citations": [
+    {
+      "id": "citation-0686c77d3d89487ea9ace715111e068c9e4d3a5604386a15df9b6046bcc549c6",
+      "source": "site",
+      "path": "providers/20x/rules/fedramp-certification.md",
+      "anchor": "mandatory-fedramp-rules-for-class-a",
+      "excerpt": "Providers seeking a Class A FedRAMP Certification [MUST](../../../definitions/#must){ data-preview } address all rules in this FedRAMP Class A Certification subset (FRC-CLA) AND the following additional FedRAMP Class A rules; the appropriate artifacts or information mapping for all rules [MUST](../../../definitions/#must){ data-preview } be supplied in the FedRAMP Certification Package.",
+      "content_hash": "6bd1a241507d9d6958641404b353ddc734da49dce89088228c7ee03adb75825d",
+      "excerpt_hash": "5eaa86f874fb07f5fa8485cf90cacc91740ecd55ada0dfa8f6e989044dc07d1a"
+    },
+    {
+      "id": "citation-2d9a6585222d28a9d7cc4753d04f1ef2bd3c8fb132522ea5229c949966e2b552",
+      "source": "rules",
+      "path": "rules.json",
+      "anchor": "/KSI/RPL/indicators/KSI-RPL-TRC/statement",
+      "excerpt": "The capability to recover from incidents and contingencies aligned with defined recovery objectives is persistently tested.",
+      "content_hash": "fb48d677a85d77fb72735a325de2c1945a1e0ceab1d2e655292fe9ebe3e4e0b4",
+      "excerpt_hash": "4ad7797ba09b3ba840fa30305bc533a1359dd2b1bbec22596227b59dca89a42b"
+    },
+    {
+      "id": "citation-3792b014fd358267ba2f3dd21ad0a878757facc4a4e937d1c487ce71536999a6",
+      "source": "site",
+      "path": "providers/20x/key-security-indicators/cybersecurity-education.md",
+      "anchor": "reviewing-all-training",
+      "excerpt": "The effectiveness of relevant cybersecurity education and training is persistently reviewed, including at least general training for all employees, role-specific training for employees in high risk roles, training for development and engineering staff on secure software delivery, and training for staff involved with incident response or disaster recovery.",
+      "content_hash": "e11681c2dee39e501de751548bb908b06564793d50d010116c799a1803913c2b",
+      "excerpt_hash": "29744c5dd65541b56a378b0126795c441b30de04d519a3781d1e6f38afb81a4d"
+    },
+    {
+      "id": "citation-4445b0f8e0845640a24eda0d214f0d5e46c0fe759e917bba5f74f57bcc4c5ce7",
+      "source": "site",
+      "path": "definitions.md",
+      "anchor": "incident",
+      "excerpt": "Has the meaning given in 44 USC § 3552 (b)(2) which is \"an occurrence that (A) actually or imminently jeopardizes, without lawful authority, the integrity, confidentiality, or availability of information or an information system; or (B) constitutes a violation or imminent threat of violation of law, security policies, security procedures, or acceptable use policies.\"",
+      "content_hash": "c20cc9acb9388f7c19465b0a0677bfd5486f0c2a4cb1c0c63e25d95fe072bd64",
+      "excerpt_hash": "cc2e25983afd0040524d206649c9f4b93b401bc9e0116f65932c59258d37d2a4"
+    },
+    {
+      "id": "citation-62cc33f5a8875aa83be25537cbcb058f33858a2e8072782b3976ec7b8ff090d3",
+      "source": "site",
+      "path": "providers/20x/rules/fedramp-certification.md",
+      "anchor": "mandatory-fedramp-rules-for-class-a",
+      "excerpt": "Key Security Indicators: [KSI-CED-RAT (Reviewing All Training)](../key-security-indicators/cybersecurity-education.md#reviewing-all-training){ data-preview }",
+      "content_hash": "6bd1a241507d9d6958641404b353ddc734da49dce89088228c7ee03adb75825d",
+      "excerpt_hash": "1835d3fdae61322a8eae3e3b2304c267a246c4235a761f6018bdb746dbad0565"
+    },
+    {
+      "id": "citation-7db7a8f01301fceb5296f0b58e4201d2cc011a00214a70ade5af748b0493a9e2",
+      "source": "rules",
+      "path": "rules.json",
+      "anchor": "/KSI/RPL/indicators/KSI-RPL-RRO/statement",
+      "excerpt": "The desired Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) are defined and persistently reviewed for alignment with the provider's business needs and capabilities.",
+      "content_hash": "fb48d677a85d77fb72735a325de2c1945a1e0ceab1d2e655292fe9ebe3e4e0b4",
+      "excerpt_hash": "289067f4b3fb03d5a7fecf06b6419c7f05e6417587ae85567564376b8d6f937e"
+    },
+    {
+      "id": "citation-94acbcbec1bfc4efd8fcf695ccae689990c861ba1ac600c34fa0ee7b5ad48a7f",
+      "source": "site",
+      "path": "definitions.md",
+      "anchor": "persistently",
+      "excerpt": "Occurring in a firm, steady way that is repeated over a long period of time in spite of obstacles or difficulties. Persistent activities may vary between actors, may occur irregularly, and may include interruptions or waiting periods between cycles. These attributes of persistent activities should be intentional, understood, and documented; the status of persistent activities will always be known.",
+      "content_hash": "c20cc9acb9388f7c19465b0a0677bfd5486f0c2a4cb1c0c63e25d95fe072bd64",
+      "excerpt_hash": "59f61a7d3890460693ded4ea231dd348c55ee457591ef9be533e8d2369d562f1"
+    },
+    {
+      "id": "citation-9bdac94c49aedd86b129262f3960faa42d28b6475883f9133553e756aba127b5",
+      "source": "site",
+      "path": "definitions.md",
+      "anchor": "vulnerability-response",
+      "excerpt": "The systematic process of tracking, evaluating, mitigating, monitoring, remediating, assessing exploitation, reporting, and otherwise managing detected vulnerabilities.",
+      "content_hash": "c20cc9acb9388f7c19465b0a0677bfd5486f0c2a4cb1c0c63e25d95fe072bd64",
+      "excerpt_hash": "216b193d338f215f21a7f419e4cc862c9ba408ad51ee13538e462aa09095b1de"
+    },
+    {
+      "id": "citation-a62553848ad151dc6aabbadec89242c35c49e9913f6a68f247ba7c4ead680a2b",
+      "source": "site",
+      "path": "providers/20x/key-security-indicators/incident-response.md",
+      "anchor": "generating-after-action-reports",
+      "excerpt": "Incident after action reports are generated and lessons learned are persistently incorporated.",
+      "content_hash": "92cb803d4608c30721c9bf00e17138f73122cf92aa6f5764fe9032eaf1323e40",
+      "excerpt_hash": "8ff9498aaff48a2f84b41550080eb297c0cd6906cc8ff08b7489924935eb50e9"
+    },
+    {
+      "id": "citation-b6e3560110a0b4b69595a7877c900337a69a101b26ef39bb7ba14650c48bddaa",
+      "source": "rules",
+      "path": "rules.json",
+      "anchor": "/KSI/CED/indicators/KSI-CED-RAT/statement",
+      "excerpt": "The effectiveness of relevant cybersecurity education and training is persistently reviewed, including at least general training for all employees, role-specific training for employees in high risk roles, training for development and engineering staff on secure software delivery, and training for staff involved with incident response or disaster recovery.",
+      "content_hash": "fb48d677a85d77fb72735a325de2c1945a1e0ceab1d2e655292fe9ebe3e4e0b4",
+      "excerpt_hash": "29744c5dd65541b56a378b0126795c441b30de04d519a3781d1e6f38afb81a4d"
+    },
+    {
+      "id": "citation-ccd580917e3b71833cbbf5a7632a576f43e71cd5d8d718817ea2943a898fb236",
+      "source": "site",
+      "path": "providers/20x/key-security-indicators/recovery-planning.md",
+      "anchor": "testing-recovery-capabilities",
+      "excerpt": "The capability to recover from incidents and contingencies aligned with defined recovery objectives is persistently tested.",
+      "content_hash": "ca26c741664c5c0cf693faa15825bb9d78f5dee46b2f50eb4107c8062c78f169",
+      "excerpt_hash": "4ad7797ba09b3ba840fa30305bc533a1359dd2b1bbec22596227b59dca89a42b"
+    },
+    {
+      "id": "citation-ce36e4069e8b05ed6f6b26fe64c5a8afe7d6f1b2ab6fcfcf996f43342911481c",
+      "source": "rules",
+      "path": "rules.json",
+      "anchor": "/KSI/INR/indicators/KSI-INR-AAR/statement",
+      "excerpt": "Incident after action reports are generated and lessons learned are persistently incorporated.",
+      "content_hash": "fb48d677a85d77fb72735a325de2c1945a1e0ceab1d2e655292fe9ebe3e4e0b4",
+      "excerpt_hash": "8ff9498aaff48a2f84b41550080eb297c0cd6906cc8ff08b7489924935eb50e9"
+    },
+    {
+      "id": "citation-f243429d1d6f8424f967a6311a7baf3e2bdafda8671285a79470ebdea65915cd",
+      "source": "site",
+      "path": "providers/20x/rules/fedramp-certification.md",
+      "anchor": "mandatory-fedramp-rules-for-class-a",
+      "excerpt": "Key Security Indicators: [KSI-INR-RIR (Reviewing Incident Response Procedures)](../key-security-indicators/incident-response.md#reviewing-incident-response-procedures){ data-preview }",
+      "content_hash": "6bd1a241507d9d6958641404b353ddc734da49dce89088228c7ee03adb75825d",
+      "excerpt_hash": "bac754837a3849a11adc78eaa034f9f5897c2d0b9569aa138048b27d71745d71"
+    }
+  ]
+}

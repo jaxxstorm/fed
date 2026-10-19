@@ -163,7 +163,7 @@ func (s *Store) loadPresentationCache(ctx context.Context, service, actor string
 	if err != nil {
 		return nil, err
 	}
-	rows, err = q.Query(ctx, `SELECT DISTINCT ON(l.requirement_id,o.target_key,l.measure_id) l.requirement_id,o.data,o.observed_at,o.source_kind,(m.data->>'freshness_hours')::int,l.data
+	rows, err = q.Query(ctx, `SELECT DISTINCT ON(l.requirement_id,o.target_key,l.measure_id) l.requirement_id,o.data,o.observed_at,o.source_kind,(m.data->>'freshness_hours')::int,l.data,o.id
  FROM observation_links l JOIN observations o ON o.service_id=l.service_id AND o.id=l.observation_id
  JOIN records m ON m.service_id=l.service_id AND m.kind='measure' AND m.id=l.measure_id AND m.revision=l.measure_revision
  WHERE l.service_id=$1 AND o.scope_revision=(SELECT max(revision) FROM records WHERE service_id=$1 AND kind='scope' AND id='scope')
@@ -176,11 +176,11 @@ func (s *Store) loadPresentationCache(ctx context.Context, service, actor string
 	}
 	seen := map[string]map[string]bool{}
 	for rows.Next() {
-		var rid, source string
+		var rid, source, observationID string
 		var raw, linkRaw []byte
 		var at time.Time
 		var hours int
-		if err = rows.Scan(&rid, &raw, &at, &source, &hours, &linkRaw); err != nil {
+		if err = rows.Scan(&rid, &raw, &at, &source, &hours, &linkRaw, &observationID); err != nil {
 			rows.Close()
 			return nil, err
 		}
@@ -195,6 +195,7 @@ func (s *Store) loadPresentationCache(ctx context.Context, service, actor string
 			return nil, err
 		}
 		v := c.collection[rid]
+		v.Checks = append(v.Checks, observation.CheckRows(in, link, source, observationID, at, hours, now)...)
 		if seen[rid] == nil {
 			seen[rid] = map[string]bool{}
 		}
@@ -250,7 +251,7 @@ func (s *Store) loadPresentationCache(ctx context.Context, service, actor string
 	if err != nil {
 		return nil, err
 	}
-	rows, err = q.Query(ctx, `SELECT requirement_id,data FROM (SELECT DISTINCT ON(l.requirement_id,f.finding_id) l.requirement_id,f.finding_id,f.outcome,f.data FROM finding_events f JOIN observations o ON o.service_id=f.service_id AND o.id=f.observation_id JOIN observation_links l ON l.service_id=f.service_id AND l.observation_id=f.observation_id WHERE f.service_id=$1 AND o.scope_revision=(SELECT max(revision) FROM records WHERE service_id=$1 AND kind='scope' AND id='scope') AND (coalesce(jsonb_array_length(l.data->'conditions'),0)=0 OR (l.data->'conditions') ? f.condition) ORDER BY l.requirement_id,f.finding_id,o.observed_at DESC,o.received_at DESC) f WHERE outcome='fail'`, service)
+	rows, err = q.Query(ctx, `SELECT requirement_id,data FROM (SELECT DISTINCT ON(l.requirement_id,f.finding_id) l.requirement_id,f.finding_id,f.outcome,f.data || jsonb_build_object('artifact_schema',o.data->'artifact'->>'schema','configuration',o.data->'artifact'->'configuration','coverage',o.data->'coverage','target',o.data->'target','observed_at',o.observed_at,'observation_id',o.id) AS data FROM finding_events f JOIN observations o ON o.service_id=f.service_id AND o.id=f.observation_id JOIN observation_links l ON l.service_id=f.service_id AND l.observation_id=f.observation_id WHERE f.service_id=$1 AND o.scope_revision=(SELECT max(revision) FROM records WHERE service_id=$1 AND kind='scope' AND id='scope') AND (coalesce(jsonb_array_length(l.data->'conditions'),0)=0 OR (l.data->'conditions') ? f.condition) ORDER BY l.requirement_id,f.finding_id,o.observed_at DESC,o.received_at DESC) f WHERE outcome='fail'`, service)
 	if err != nil {
 		return nil, err
 	}
