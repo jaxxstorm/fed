@@ -52,11 +52,35 @@ tests, and build passed, as did strict OpenSpec validation and diff whitespace
 checks. Both final walkthrough archives passed their offline checksum checks.
 
 Follow [the human walkthrough](assessment-human-acceptance.md) and record the
-actual responses and reviewed artifact hashes. Then follow commit/push, hosted CI
-and container publication, and the approved Pulumi rollout. Trust-centre delivery
-starts disabled. Verify the live package, browser/MCP parity, and scoped external
+actual responses and reviewed artifact hashes. The implementation rollout below
+keeps trust-centre delivery disabled. Verify the live package, browser/MCP parity, and scoped external
 access before an authorized human approves the actual service disclosure and
 publishes a release. Preserve the publication receipt.
 
-Guidance activation remains separately gated. No production rollout or live
-publication is asserted by this verification document.
+## Approved implementation deployment
+
+The user explicitly requested commit, push, and deployment. Application commit
+`59c83b015746ca616e3640b840247bd7fae38142` was pushed to `main` and deployed after:
+
+- [Application checks](https://github.com/jaxxstorm/fed/actions/runs/39369498871)
+  passed, including race tests, Docker browser tests, and container build;
+- [Container publication](https://github.com/jaxxstorm/fed/actions/runs/39369499042)
+  passed;
+- [Pulumi shared update 22](https://app.pulumi.com/ignistech/fedramp/shared/updates/22)
+  completed migration, runtime provisioning, catalog import, and rollout.
+
+Deployed image:
+`sha256:3d3c50cd9e704e19505bef4dff1e647c85bfef28a24bbe83751dcb0433f9bcf0`.
+Web task revision: **17**. Migration task revision: **15**.
+Pulumi verified the running digest and private HTTPS readiness; an independent
+post-update request to `/readyz` returned **200**. The unconfigured
+`/trust/ignis` route returned **404**, and the deployed task retains
+`KSI_GUIDANCE_ENABLED=false`.
+The ECS stability waiter completed, and a final service read showed one running
+task, desired count one, and a single `PRIMARY` deployment with rollout state
+`COMPLETED`. The post-rollout web-log error query returned no error events.
+
+Deployment approval does not constitute comprehension or disclosure acceptance.
+No trust-centre release was published. Authenticated live MCP verification remains
+pending because the temporary client token expired. Guidance activation remains
+separately gated.

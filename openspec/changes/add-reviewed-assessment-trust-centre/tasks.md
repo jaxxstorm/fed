@@ -71,5 +71,5 @@
 - [x] 9.3 Run contract checks, frontend lint/unit/build checks, PostgreSQL-backed race tests, browser access-control journeys, and package integrity checks appropriate to the change.
 - [ ] 9.4 Record genuine human comprehension and disclosure-preview acceptance; retain separate unresolved guidance acceptance gates.
 - [x] 9.5 Document MCP workflows, reviewer/assessor responsibilities, external-reader setup, package schema/limitations, reporting schedules, and withdrawal/rollback procedures.
-- [ ] 9.6 Commit/push the approved implementation, verify successful CI and container publication, and perform the approved Pulumi deployment with publication initially disabled.
+- [x] 9.6 Commit/push the approved implementation, verify successful CI and container publication, and perform the approved Pulumi deployment with publication initially disabled.
 - [ ] 9.7 Verify live browser/MCP parity, package integrity, scoped external access, and readiness; explicitly enable the service trust centre after the approved release/disclosure checks and record the publication receipt.
