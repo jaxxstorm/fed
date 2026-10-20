@@ -166,7 +166,13 @@ func TestFullAuthoredCatalogPublicationGate(t *testing.T) {
 	}
 	t.Logf("Published %d playbooks covering %d variants; projected %d requirement contexts in %s", len(p.Playbooks), inventory.VariantCount, len(contexts), time.Since(started))
 	t.Run("AuthoredCEDINRRPLTransportParity", func(t *testing.T) {
-		testAuthoredTransportParity(t, ctx, &store, admin, agent, service, token, p, hash)
+		// Full-catalog authoring/publication and the transport journeys are
+		// separately bounded phases. Reusing the setup deadline made the last
+		// journey fail based on time spent publishing 1,338 playbooks under race
+		// instrumentation rather than its own request behavior.
+		journeyContext, cancel := context.WithTimeout(t.Context(), 4*time.Minute)
+		defer cancel()
+		testAuthoredTransportParity(t, journeyContext, &store, admin, agent, service, token, p, hash)
 	})
 }
 
