@@ -10,6 +10,69 @@ import (
 )
 
 func registerAgentEvidence(server *sdk.Server, store *assessment.Store, a auth.Actor) {
+	add(server, "list_reporting_candidates", "List reporting candidates and owner notifications. Candidates require human review and never automatically publish. Use get_rule_instructions and get_assessment_review_target to investigate the reported evidence and review work.", func(ctx context.Context, in ListInput) (any, error) {
+		if in.Limit == 0 {
+			in.Limit = 25
+		}
+		items, err := store.ReportingRuns(ctx, a, in.ServiceID, in.Limit, in.Offset)
+		page := Page{Items: items}
+		if len(items) == in.Limit {
+			next := in.Offset + in.Limit
+			page.NextOffset = &next
+		}
+		return page, err
+	})
+	add(server, "list_assessment_releases", "List frozen assessment packages, blockers and comparisons. Preparation, human approval and publication are distinct.", func(ctx context.Context, in ListInput) (any, error) {
+		if in.Limit == 0 {
+			in.Limit = 25
+		}
+		items, err := store.ListReleases(ctx, a, in.ServiceID, in.Limit, in.Offset)
+		page := Page{Items: items}
+		if len(items) == in.Limit {
+			next := in.Offset + in.Limit
+			page.NextOffset = &next
+		}
+		return page, err
+	})
+	add(server, "get_assessment_review_target", "Read exact assessment dependencies, organizational adoption and internal/independent human review status. This tool cannot record a human decision.", func(ctx context.Context, in RequirementInput) (any, error) {
+		return store.ReviewTarget(ctx, a, in.ServiceID, in.RequirementID)
+	})
+	add(server, "save_assessment_issue", "Track an issue, owner, milestone dates and supporting evidence. Closing requires a human review decision and reasoned disposition; this tool does not remediate infrastructure.", func(ctx context.Context, in assessment.AssessmentIssueChange) (any, error) {
+		return store.SaveAssessmentIssue(ctx, a, in)
+	})
+	add(server, "list_assessment_issues", "List revisioned issues for a service or requirement. Follow next_offset. Planned milestones do not establish completed work.", func(ctx context.Context, in ListInput) (any, error) {
+		if in.Limit == 0 {
+			in.Limit = 25
+		}
+		items, err := store.List(ctx, a, in.ServiceID, "assessment_issue", in.RequirementID, in.Limit, in.Offset)
+		page := Page{Items: items}
+		if len(items) == in.Limit {
+			next := in.Offset + in.Limit
+			page.NextOffset = &next
+		}
+		return page, err
+	})
+	add(server, "save_evidence_request", "Create or revise an evidence request, or submit exact citations as fulfillment. Requires current instruction bindings and expected revision. Acceptance/cancellation and rejection of submitted work require human review authority.", func(ctx context.Context, in assessment.EvidenceRequestChange) (any, error) {
+		return store.SaveEvidenceRequest(ctx, a, in)
+	})
+	add(server, "list_evidence_requests", "Discover owned or unassigned evidence requests filtered by requirement, owner or state. Follow next_offset. Revalidation-needed requests cannot be accepted against obsolete bindings.", func(ctx context.Context, in assessment.EvidenceRequestQuery) (any, error) {
+		if in.Limit == 0 {
+			in.Limit = 25
+		}
+		items, err := store.EvidenceRequests(ctx, a, in)
+		page := Page{Items: items}
+		if len(items) == in.Limit {
+			next := in.Offset + in.Limit
+			page.NextOffset = &next
+		}
+		return page, err
+	})
+	add(server, "get_evidence_request", "Read the latest immutable revision of one service-scoped evidence request.", func(ctx context.Context, in GetInput) (any, error) {
+		return store.Get(ctx, a, in.ServiceID, "evidence_request", in.ID)
+	})
+	add(server, "submit_implementation_assessment", assessment.ImplementationInvestigationInstructions, func(ctx context.Context, in assessment.ImplementationSubmission) (any, error) {
+		return store.SubmitImplementation(ctx, a, in)
+	})
 	add(server, "get_observation_detail", "Read one retained observation's exact target, time, configuration, coverage, source kind and artifact hash. Configuration observations do not establish tested enforcement or whole-requirement compliance.", func(ctx context.Context, in GetInput) (any, error) {
 		return store.ObservationDetail(ctx, a, in.ServiceID, in.ID)
 	})

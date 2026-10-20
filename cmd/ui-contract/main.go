@@ -104,6 +104,13 @@ func main() {
 		paths[path] = schema{"get": schema{"parameters": parameters, "responses": schema{"200": schema{"description": "Authorized browser response", "content": schema{"application/json": schema{"schema": describe(typ)}}}}}}
 	}
 	describe(reflect.TypeFor[assessment.Record]())
+	describe(reflect.TypeFor[assessment.ImplementationSubmission]())
+	describe(reflect.TypeFor[assessment.ImplementationReceipt]())
+	describe(reflect.TypeFor[assessment.AssessmentDecision]())
+	describe(reflect.TypeFor[assessment.EvidenceRequestChange]())
+	describe(reflect.TypeFor[assessment.EvidenceRequestView]())
+	describe(reflect.TypeFor[assessment.AssessmentIssueChange]())
+	describe(reflect.TypeFor[assessment.AssessmentReviewTarget]())
 	describe(reflect.TypeFor[web.UIError]())
 	response := func(body schema) schema {
 		return schema{"description": "Authorized browser response", "content": schema{"application/json": schema{"schema": body}}}
@@ -130,7 +137,7 @@ func main() {
 	for _, path := range []string{"/api/ui/v1/services", "/api/ui/v1/services/{service}/actions/{action}"} {
 		parameters := []any{schema{"name": "X-CSRF-Token", "in": "header", "required": true, "schema": schema{"type": "string"}}}
 		if strings.Contains(path, "{service}") {
-			parameters = append(parameters, serviceParameter, schema{"name": "action", "in": "path", "required": true, "schema": schema{"type": "string", "enum": []string{"evidence-source", "collect", "collection-config", "scope", "preview-profile", "profile", "measure", "evidence", "draft", "review", "gap", "check", "token", "revoke-token", "destination", "prepare"}}})
+			parameters = append(parameters, serviceParameter, schema{"name": "action", "in": "path", "required": true, "schema": schema{"type": "string", "enum": []string{"evidence-source", "evidence-request", "assessment-issue", "assessment-decision", "assessor-designation", "collect", "collection-config", "scope", "preview-profile", "profile", "measure", "evidence", "draft", "review", "gap", "check", "token", "revoke-token", "destination", "prepare"}}})
 		}
 		paths[path] = schema{"post": schema{"parameters": parameters, "requestBody": schema{"required": true, "content": schema{"application/x-www-form-urlencoded": schema{"schema": schema{"type": "object", "additionalProperties": schema{"type": "string"}}}}}, "responses": schema{"200": response(schema{"oneOf": []schema{describe(reflect.TypeFor[web.Page]()), {"type": "object", "required": []string{"redirect"}, "properties": schema{"redirect": schema{"type": "string"}}}}}), "400": response(describe(reflect.TypeFor[web.UIError]())), "403": response(describe(reflect.TypeFor[web.UIError]())), "409": response(describe(reflect.TypeFor[web.UIError]()))}}}
 	}

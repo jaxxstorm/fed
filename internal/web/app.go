@@ -69,6 +69,8 @@ func (app *App) Handler() http.Handler {
 		frontendPage(w, r)
 	})
 	m.HandleFunc("POST /services/{service}/actions/{action}", app.action)
+	m.HandleFunc("GET /services/{service}/assessment-releases/{release}/", app.internalAssessmentRelease)
+	m.HandleFunc("GET /services/{service}/assessment-releases/{release}/evidence/{hash}", app.internalReleaseArtifact)
 	m.HandleFunc("GET /services/{service}/runs/{id}", func(w http.ResponseWriter, r *http.Request) {
 		frontendPage(w, r)
 	})
@@ -346,6 +348,26 @@ func (app *App) service(w http.ResponseWriter, r *http.Request) {
 		}
 		p.Forms = append(p.Forms, form(r, base(id)+"/actions/scope", "Assessment scope", "Save scope", hidden("expected_revision", strconv.Itoa(revision)), area("payload", "Scope JSON (accounts, regions, clusters, repositories at pinned commits)", pretty(scope))))
 		p.Forms = append(p.Forms, form(r, base(id)+"/actions/token", "Agent access", "Issue scoped token", field("hours", "Lifetime in hours", "24"), choice("connect", "Allow connection management", "no", "no", "yes")))
+		if auth.Authorize(r.Context(), app.Store.DB, a, id, "admin") == nil {
+			designations, e := app.Store.List(r.Context(), a, id, "assessor_designation", "", 100, 0)
+			if e != nil {
+				failure(w, r, e)
+				return
+			}
+			p.Forms = append(p.Forms, form(r, base(id)+"/actions/assessor-designation", "Designate an independent assessor", "Save designation", hidden("id", uuid.NewString()), hidden("expected_revision", "0"), field("identity_id", "Verified human identity ID", ""), field("organization", "Assessor organization", ""), field("expires_at", "Expires at (RFC3339)", ""), area("reason", "Designation basis", ""), hidden("revoked", "no")))
+			for _, item := range designations {
+				v, e := assessment.Decode[assessment.AssessorDesignation](item)
+				if e != nil {
+					failure(w, r, e)
+					return
+				}
+				revoked := "no"
+				if v.Revoked {
+					revoked = "yes"
+				}
+				p.Forms = append(p.Forms, form(r, base(id)+"/actions/assessor-designation", "Assessor · "+v.Organization, "Update designation", hidden("id", item.ID), hidden("expected_revision", strconv.Itoa(item.Revision)), hidden("identity_id", v.IdentityID), field("organization", "Assessor organization", v.Organization), field("expires_at", "Expires at (RFC3339)", v.ExpiresAt.Format(time.RFC3339)), area("reason", "Designation basis", v.Reason), choice("revoked", "Revoke designation", revoked, "no", "yes")))
+			}
+		}
 		if isUI(r) && auth.Authorize(r.Context(), app.Store.DB, a, id, "admin") == nil {
 			rows, e := app.Store.DB.Query(r.Context(), `SELECT hash,created_at,expires_at FROM api_tokens WHERE $1=ANY(service_ids) AND revoked_at IS NULL AND expires_at>now() ORDER BY created_at DESC`, id)
 			if e != nil {
@@ -385,6 +407,10 @@ func (app *App) service(w http.ResponseWriter, r *http.Request) {
 		}
 		p.Forms = append(p.Forms, form(r, base(id)+"/actions/destination", "Optional trust-centre destination", "Save destination", hidden("expected_revision", strconv.Itoa(revision)), field("name", "Name", destination.Name), field("adapter_type", "Adapter type (live connectors are not installed)", destination.AdapterType), field("configuration_ref", "Configuration reference, not credentials", destination.ConfigurationRef)))
 	case "history":
+		if err = app.releaseWorkspace(r, &p, id); err != nil {
+			failure(w, r, err)
+			return
+		}
 		hasSnapshots := false
 		for _, kind := range []string{"publication", "snapshot"} {
 			items, e := app.Store.List(r.Context(), a, id, kind, "", 100, 0)
@@ -568,9 +594,13 @@ func (app *App) detail(w http.ResponseWriter, r *http.Request) {
 	primary := assessment.PresentRequirement(applicability, status, false)
 	p.Primary = &primary
 	p.Metrics = []Metric{{"Evidence work", label(status.Work.State)}, {"Technical checks", label(status.Technical)}, {"Evidence freshness", label(status.Evidence)}, {"Human review", label(status.Review)}}
+	if inventory := status.Collection.Inventory; inventory != nil {
+		p.Sections = append(p.Sections, Section{"Resource inventory coverage", fmt.Sprintf("%d retained current resources · %d retired identities · %d without verified inventory provenance. %s %s", inventory.CurrentResources, inventory.RetiredResources, inventory.UnfencedResources, inventory.Definition, inventory.Limitations)})
+	}
 	p.Diagnostics = append(p.Diagnostics, Section{"Evidence work · full details", pretty(status.Work)})
 	if instructions.ServiceID != "" {
 		p.ActionItems = instructions.ActionItems
+		p.Implementation = instructions.Implementation
 		p.ActionExpectations = instructions.ActionExpectations
 		p.Guidance = instructions.Guidance
 		p.EvidenceCoverage = instructions.EvidenceCoverage
@@ -673,6 +703,10 @@ func (app *App) detail(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	p.Diagnostics = append(p.Diagnostics, Section{"Pinned assessment profile", pretty(profile)})
+	if err = app.assessmentWork(r, &p, id, reqID); err != nil {
+		failure(w, r, err)
+		return
+	}
 	measures, err := app.Store.List(r.Context(), a, id, "measure", reqID, 100, 0)
 	if err != nil {
 		failure(w, r, err)
@@ -932,8 +966,95 @@ func (app *App) action(w http.ResponseWriter, r *http.Request) {
 		} else {
 			_, err = app.Store.Review(ctx, a, id, reqID, assessment.Review{Assessment: assessment.Ref{ID: reqID, Revision: integer(r, "revision")}, Notes: r.FormValue("notes")})
 		}
+	case "assessment-decision":
+		var ref assessment.Ref
+		var binding assessment.InstructionBinding
+		ref, err = parse[assessment.Ref](r.FormValue("assessment"))
+		if err == nil {
+			binding, err = parse[assessment.InstructionBinding](r.FormValue("binding"))
+		}
+		if err == nil {
+			_, err = app.Store.RecordAssessmentDecision(ctx, a, id, reqID, assessment.AssessmentDecisionInput{Assessment: ref, Binding: binding, DependencyHash: r.FormValue("dependency_hash"), Capacity: r.FormValue("capacity"), Conclusion: r.FormValue("conclusion"), Procedures: r.FormValue("procedures"), Sampling: r.FormValue("sampling"), Notes: r.FormValue("notes")})
+		}
+	case "assessor-designation":
+		var expires time.Time
+		expires, err = time.Parse(time.RFC3339, r.FormValue("expires_at"))
+		if err == nil {
+			_, err = app.Store.SaveAssessorDesignation(ctx, a, id, r.FormValue("id"), revision, assessment.AssessorDesignation{IdentityID: r.FormValue("identity_id"), Organization: r.FormValue("organization"), ExpiresAt: expires, Reason: r.FormValue("reason"), Revoked: r.FormValue("revoked") == "yes"})
+		}
 	case "gap":
 		_, err = app.Store.SaveGap(ctx, a, id, r.FormValue("id"), reqID, revision, assessment.Gap{Explanation: r.FormValue("explanation"), Status: r.FormValue("status")})
+	case "service-context":
+		var deliverables []assessment.ReleaseDeliverable
+		deliverables, err = parse[[]assessment.ReleaseDeliverable](r.FormValue("deliverables"))
+		if err == nil {
+			_, err = app.Store.SaveServiceContext(ctx, a, id, revision, assessment.ServiceContext{Description: r.FormValue("description"), Boundary: r.FormValue("boundary"), Responsibilities: r.FormValue("responsibilities"), Contacts: strings.Split(strings.TrimSpace(r.FormValue("contacts")), "\n"), Deliverables: deliverables})
+		}
+	case "prepare-release":
+		var in assessment.PrepareReleaseInput
+		in.ServiceID = id
+		in.IdempotencyKey = r.FormValue("key")
+		in.PreviousReleaseID = r.FormValue("previous_release_id")
+		in.Period.Start, err = time.Parse(time.RFC3339, r.FormValue("period_start"))
+		if err == nil {
+			in.Period.End, err = time.Parse(time.RFC3339, r.FormValue("period_end"))
+		}
+		if err == nil {
+			in.Public, err = parse[assessment.PublicRelease](r.FormValue("public"))
+		}
+		if err == nil {
+			if r.FormValue("preparation") == "queued" {
+				_, err = app.Store.QueueReportingCandidate(ctx, a, in)
+			} else {
+				_, err = app.Store.PrepareAssessmentRelease(ctx, a, in)
+			}
+		}
+	case "reporting-schedule":
+		var v assessment.ReportingSchedule
+		v.Enabled = r.FormValue("enabled") == "yes"
+		v.IntervalHours, err = strconv.Atoi(r.FormValue("interval_hours"))
+		if err == nil {
+			v.NextPeriodStart, err = time.Parse(time.RFC3339, r.FormValue("period_start"))
+		}
+		if err == nil {
+			v.NextRunAt, err = time.Parse(time.RFC3339, r.FormValue("next_run_at"))
+		}
+		if err == nil {
+			v.Configuration, err = parse[assessment.PrepareReleaseInput](r.FormValue("configuration"))
+		}
+		if err == nil {
+			err = app.Store.SaveReportingSchedule(ctx, a, id, revision, v)
+		}
+	case "release-transition":
+		if r.FormValue("confirmed") != "yes" {
+			err = assessment.ErrInvalid
+		} else {
+			_, err = app.Store.TransitionRelease(ctx, a, assessment.ReleaseTransition{ServiceID: id, ID: r.FormValue("id"), ExpectedRevision: revision, ManifestHash: r.FormValue("manifest_hash"), AudienceHash: r.FormValue("audience_hash"), Action: r.FormValue("transition"), Reason: r.FormValue("reason"), IdempotencyKey: r.FormValue("key")})
+		}
+	case "trust-config":
+		err = app.Store.ConfigureTrustCentre(ctx, a, id, r.FormValue("slug"), r.FormValue("enabled") == "yes")
+	case "trust-access":
+		var expiry time.Time
+		if r.FormValue("approve") == "yes" {
+			expiry, err = time.Parse(time.RFC3339, r.FormValue("expires_at"))
+		}
+		if err == nil {
+			err = app.Store.DecideTrustAccess(ctx, a, id, r.FormValue("id"), r.FormValue("capacity"), expiry, r.FormValue("approve") == "yes")
+		}
+	case "trust-revoke":
+		err = app.Store.RevokeTrustGrant(ctx, a, id, r.FormValue("id"))
+	case "evidence-request":
+		var payload assessment.EvidenceRequest
+		payload, err = parse[assessment.EvidenceRequest](r.FormValue("payload"))
+		if err == nil {
+			_, err = app.Store.SaveEvidenceRequest(ctx, a, assessment.EvidenceRequestChange{ServiceID: id, RequirementID: reqID, ID: r.FormValue("id"), ExpectedRevision: revision, Request: payload})
+		}
+	case "assessment-issue":
+		var payload assessment.AssessmentIssue
+		payload, err = parse[assessment.AssessmentIssue](r.FormValue("payload"))
+		if err == nil {
+			_, err = app.Store.SaveAssessmentIssue(ctx, a, assessment.AssessmentIssueChange{ServiceID: id, RequirementID: reqID, ID: r.FormValue("id"), ExpectedRevision: revision, Issue: payload})
+		}
 	case "check":
 		var job checks.Job
 		job, err = app.Runner.Enqueue(ctx, a, id, reqID, r.FormValue("check_id"), r.FormValue("key"), checks.Input{ScopeRevision: integer(r, "scope_revision"), Measure: assessment.Ref{ID: r.FormValue("id"), Revision: integer(r, "revision")}})

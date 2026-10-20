@@ -13,6 +13,10 @@ import (
 )
 
 func legacyMembershipDatabase(t *testing.T) *pgxpool.Pool {
+	return databaseBeforeMigration(t, "migrations/014_")
+}
+
+func databaseBeforeMigration(t *testing.T, before string) *pgxpool.Pool {
 	t.Helper()
 	url := os.Getenv("KSI_TEST_DATABASE_URL")
 	if url == "" {
@@ -54,7 +58,7 @@ func legacyMembershipDatabase(t *testing.T) *pgxpool.Pool {
 	}
 	sort.Strings(names)
 	for _, name := range names {
-		if name >= "migrations/014_" {
+		if name >= before {
 			break
 		}
 		b, err := migrationFiles.ReadFile(name)

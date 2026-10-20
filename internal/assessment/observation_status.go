@@ -11,18 +11,19 @@ import (
 )
 
 type ObservationStatus struct {
-	Checks          []observation.Finding  `json:"checks,omitempty"`
-	Recovery        []observation.Recovery `json:"recovery"`
-	Errors          []string               `json:"errors"`
-	MissingMeasures int                    `json:"missing_measures"`
-	Count           int                    `json:"count"`
-	Freshness       string                 `json:"freshness"`
-	Technical       string                 `json:"technical"`
-	LastObservedAt  *time.Time             `json:"last_observed_at,omitempty"`
-	Expected        int                    `json:"expected"`
-	Observed        int                    `json:"observed"`
-	Findings        []observation.Finding  `json:"findings"`
-	Sources         []string               `json:"sources"`
+	Inventory       *ResourceInventorySummary `json:"inventory,omitempty"`
+	Checks          []observation.Finding     `json:"checks,omitempty"`
+	Recovery        []observation.Recovery    `json:"recovery"`
+	Errors          []string                  `json:"errors"`
+	MissingMeasures int                       `json:"missing_measures"`
+	Count           int                       `json:"count"`
+	Freshness       string                    `json:"freshness"`
+	Technical       string                    `json:"technical"`
+	LastObservedAt  *time.Time                `json:"last_observed_at,omitempty"`
+	Expected        int                       `json:"expected"`
+	Observed        int                       `json:"observed"`
+	Findings        []observation.Finding     `json:"findings"`
+	Sources         []string                  `json:"sources"`
 }
 
 func partitionAccessOnly(in observation.Submission) bool {
@@ -46,7 +47,7 @@ func (s *Store) observationStatus(ctx context.Context, service, requirement stri
 	}
 	out := ObservationStatus{Freshness: "missing", Technical: "unknown", Findings: []observation.Finding{}, Sources: []string{}}
 	rows, err := s.query().Query(ctx, `SELECT DISTINCT ON(o.target_key,l.measure_id) o.data,o.observed_at,o.source_kind,(m.data->>'freshness_hours')::int,l.data,o.id
-FROM observation_links l JOIN observations o ON o.service_id=l.service_id AND o.id=l.observation_id
+FROM observation_links l JOIN current_resource_observations o ON o.service_id=l.service_id AND o.id=l.observation_id
 JOIN records m ON m.service_id=l.service_id AND m.kind='measure' AND m.id=l.measure_id AND m.revision=l.measure_revision
 WHERE l.service_id=$1 AND l.requirement_id=$2
 AND o.scope_revision=(SELECT max(revision) FROM records WHERE service_id=$1 AND kind='scope' AND id='scope')
@@ -145,8 +146,9 @@ ORDER BY o.target_key,l.measure_id,o.observed_at DESC,o.received_at DESC`, servi
 		return out, err
 	}
 	findingRows, err := s.query().Query(ctx, `SELECT f.data FROM (SELECT DISTINCT ON(f.finding_id) f.finding_id,f.outcome,f.data || jsonb_build_object('artifact_schema',o.data->'artifact'->>'schema','configuration',o.data->'artifact'->'configuration','coverage',o.data->'coverage','target',o.data->'target','observed_at',o.observed_at,'observation_id',o.id) AS data
-FROM finding_events f JOIN observations o ON o.service_id=f.service_id AND o.id=f.observation_id
+FROM finding_events f JOIN current_resource_observations o ON o.service_id=f.service_id AND o.id=f.observation_id
 WHERE f.service_id=$1 AND o.scope_revision=(SELECT max(revision) FROM records WHERE service_id=$1 AND kind='scope' AND id='scope')
+AND o.profile_revision=(SELECT max(revision) FROM records WHERE service_id=$1 AND kind='profile' AND id='profile')
 AND EXISTS(SELECT 1 FROM observation_links l WHERE l.service_id=f.service_id AND l.observation_id=f.observation_id AND l.requirement_id=$2 AND (coalesce(jsonb_array_length(l.data->'conditions'),0)=0 OR (l.data->'conditions') ? f.condition))
 ORDER BY f.finding_id,o.observed_at DESC,o.received_at DESC) f WHERE f.outcome='fail'`, service, requirement)
 	if err != nil {
@@ -178,6 +180,13 @@ ORDER BY f.finding_id,o.observed_at DESC,o.received_at DESC) f WHERE f.outcome='
 		return out, err
 	}
 	out.MissingMeasures = max(0, expectedMeasures-len(measuresSeen))
+	inventories, err := s.inventorySummaries(ctx, service)
+	if err != nil {
+		return out, err
+	}
+	if v, ok := inventories[requirement]; ok {
+		out.Inventory = &v
+	}
 	if out.MissingMeasures > 0 && out.Technical == "pass" {
 		out.Technical = "unknown"
 	}

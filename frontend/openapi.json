@@ -204,6 +204,294 @@
         ],
         "type": "object"
       },
+      "AssessmentDecision": {
+        "properties": {
+          "actor_id": {
+            "type": "string"
+          },
+          "assessor_designation": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Ref"
+              }
+            ],
+            "nullable": true
+          },
+          "assessor_organization": {
+            "type": "string"
+          },
+          "current_freshness": {
+            "type": "string"
+          },
+          "decided_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "decision": {
+            "$ref": "#/components/schemas/AssessmentDecisionInput"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/Ref"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "current_freshness",
+          "version",
+          "decision",
+          "actor_id",
+          "organization_id",
+          "decided_at",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "AssessmentDecisionInput": {
+        "properties": {
+          "assessment": {
+            "$ref": "#/components/schemas/Ref"
+          },
+          "binding": {
+            "$ref": "#/components/schemas/InstructionBinding"
+          },
+          "capacity": {
+            "type": "string"
+          },
+          "conclusion": {
+            "type": "string"
+          },
+          "dependency_hash": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "procedures": {
+            "type": "string"
+          },
+          "sampling": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "assessment",
+          "binding",
+          "dependency_hash",
+          "capacity",
+          "conclusion",
+          "procedures",
+          "sampling",
+          "notes"
+        ],
+        "type": "object"
+      },
+      "AssessmentIssue": {
+        "properties": {
+          "binding": {
+            "$ref": "#/components/schemas/InstructionBinding"
+          },
+          "closure_evidence": {
+            "items": {
+              "$ref": "#/components/schemas/Citation"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "disposition": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "finding_ids": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "gaps": {
+            "items": {
+              "$ref": "#/components/schemas/Ref"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "milestones": {
+            "items": {
+              "$ref": "#/components/schemas/IssueMilestone"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "owner_id": {
+            "type": "string"
+          },
+          "requests": {
+            "items": {
+              "$ref": "#/components/schemas/Ref"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "state": {
+            "type": "string"
+          },
+          "target_at": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "required": [
+          "binding",
+          "explanation",
+          "owner_id",
+          "state",
+          "disposition",
+          "gaps",
+          "finding_ids",
+          "requests",
+          "milestones",
+          "closure_evidence"
+        ],
+        "type": "object"
+      },
+      "AssessmentIssueChange": {
+        "properties": {
+          "expected_revision": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "issue": {
+            "$ref": "#/components/schemas/AssessmentIssue"
+          },
+          "requirement_id": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "requirement_id",
+          "id",
+          "expected_revision",
+          "issue"
+        ],
+        "type": "object"
+      },
+      "AssessmentPeriod": {
+        "properties": {
+          "end": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "start": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "type": "object"
+      },
+      "AssessmentReadinessBlocker": {
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "next_action": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "explanation",
+          "next_action"
+        ],
+        "type": "object"
+      },
+      "AssessmentReviewTarget": {
+        "properties": {
+          "adoption": {
+            "type": "string"
+          },
+          "assessment": {
+            "$ref": "#/components/schemas/Ref"
+          },
+          "decisions": {
+            "items": {
+              "$ref": "#/components/schemas/Record"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "dependencies": {
+            "items": {
+              "$ref": "#/components/schemas/ReviewDependency"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "dependency_hash": {
+            "type": "string"
+          },
+          "independent_review": {
+            "type": "string"
+          },
+          "internal_review": {
+            "type": "string"
+          },
+          "reasons": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "review": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "assessment",
+          "dependency_hash",
+          "dependencies",
+          "decisions",
+          "adoption",
+          "review",
+          "internal_review",
+          "independent_review",
+          "reasons"
+        ],
+        "type": "object"
+      },
       "AuthorizationHandoff": {
         "properties": {
           "expires_at": {
@@ -767,6 +1055,124 @@
         ],
         "type": "object"
       },
+      "EvidenceRequest": {
+        "properties": {
+          "acceptance_criteria": {
+            "type": "string"
+          },
+          "assertion_ids": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "binding": {
+            "$ref": "#/components/schemas/InstructionBinding"
+          },
+          "decision_reason": {
+            "type": "string"
+          },
+          "due_at": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "fulfillment": {
+            "items": {
+              "$ref": "#/components/schemas/Citation"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "owner_id": {
+            "type": "string"
+          },
+          "period": {
+            "$ref": "#/components/schemas/AssessmentPeriod"
+          },
+          "readiness_work": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Ref"
+              }
+            ],
+            "nullable": true
+          },
+          "source_hints": {
+            "items": {
+              "$ref": "#/components/schemas/Ref"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "state": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "binding",
+          "assertion_ids",
+          "title",
+          "acceptance_criteria",
+          "owner_id",
+          "source_hints",
+          "period",
+          "state",
+          "fulfillment",
+          "decision_reason"
+        ],
+        "type": "object"
+      },
+      "EvidenceRequestChange": {
+        "properties": {
+          "expected_revision": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "request": {
+            "$ref": "#/components/schemas/EvidenceRequest"
+          },
+          "requirement_id": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "requirement_id",
+          "id",
+          "expected_revision",
+          "request"
+        ],
+        "type": "object"
+      },
+      "EvidenceRequestView": {
+        "properties": {
+          "record": {
+            "$ref": "#/components/schemas/Record"
+          },
+          "revalidation_needed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "record",
+          "revalidation_needed"
+        ],
+        "type": "object"
+      },
       "EvidenceSource": {
         "properties": {
           "access_hint": {
@@ -853,6 +1259,37 @@
           "requirement_ids",
           "enabled",
           "freshness_hours"
+        ],
+        "type": "object"
+      },
+      "EvidenceSupport": {
+        "properties": {
+          "citations": {
+            "items": {
+              "$ref": "#/components/schemas/Citation"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "rationale",
+          "citations",
+          "limitations"
         ],
         "type": "object"
       },
@@ -1080,6 +1517,188 @@
         ],
         "type": "object"
       },
+      "ImplementationAssertion": {
+        "properties": {
+          "assertion_id": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "implementation": {
+            "$ref": "#/components/schemas/EvidenceSupport"
+          },
+          "operating": {
+            "$ref": "#/components/schemas/EvidenceSupport"
+          },
+          "sample": {
+            "$ref": "#/components/schemas/OperationalSample"
+          }
+        },
+        "required": [
+          "assertion_id",
+          "claim",
+          "implementation",
+          "operating",
+          "sample"
+        ],
+        "type": "object"
+      },
+      "ImplementationAssessment": {
+        "properties": {
+          "assertions": {
+            "items": {
+              "$ref": "#/components/schemas/ImplementationAssertion"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "narrative": {
+            "$ref": "#/components/schemas/ImplementationNarrative"
+          },
+          "period": {
+            "$ref": "#/components/schemas/AssessmentPeriod"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "narrative",
+          "period",
+          "assertions"
+        ],
+        "type": "object"
+      },
+      "ImplementationContext": {
+        "properties": {
+          "assessment": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ImplementationAssessment"
+              }
+            ],
+            "nullable": true
+          },
+          "current_freshness": {
+            "type": "string"
+          },
+          "draft": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Ref"
+              }
+            ],
+            "nullable": true
+          },
+          "readiness": {
+            "$ref": "#/components/schemas/StructuralReviewReadiness"
+          },
+          "review": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "readiness",
+          "current_freshness",
+          "review"
+        ],
+        "type": "object"
+      },
+      "ImplementationNarrative": {
+        "properties": {
+          "boundary": {
+            "$ref": "#/components/schemas/NarrativeField"
+          },
+          "description": {
+            "$ref": "#/components/schemas/NarrativeField"
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/NarrativeField"
+          },
+          "mechanisms": {
+            "$ref": "#/components/schemas/NarrativeField"
+          },
+          "procedures": {
+            "$ref": "#/components/schemas/NarrativeField"
+          },
+          "responsible_roles": {
+            "$ref": "#/components/schemas/NarrativeField"
+          }
+        },
+        "required": [
+          "description",
+          "responsible_roles",
+          "mechanisms",
+          "procedures",
+          "frequency",
+          "boundary"
+        ],
+        "type": "object"
+      },
+      "ImplementationReceipt": {
+        "properties": {
+          "current_freshness": {
+            "type": "string"
+          },
+          "draft": {
+            "$ref": "#/components/schemas/Ref"
+          },
+          "period": {
+            "$ref": "#/components/schemas/AssessmentPeriod"
+          },
+          "readiness": {
+            "$ref": "#/components/schemas/StructuralReviewReadiness"
+          },
+          "result": {
+            "$ref": "#/components/schemas/Ref"
+          }
+        },
+        "required": [
+          "result",
+          "draft",
+          "readiness",
+          "current_freshness",
+          "period"
+        ],
+        "type": "object"
+      },
+      "ImplementationSubmission": {
+        "properties": {
+          "assessment": {
+            "$ref": "#/components/schemas/ImplementationAssessment"
+          },
+          "binding": {
+            "$ref": "#/components/schemas/InstructionBinding"
+          },
+          "expected_draft_revision": {
+            "type": "integer"
+          },
+          "expected_result_revision": {
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "requirement_id": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_id",
+          "requirement_id",
+          "idempotency_key",
+          "binding",
+          "expected_result_revision",
+          "expected_draft_revision",
+          "assessment"
+        ],
+        "type": "object"
+      },
       "InstructionBinding": {
         "properties": {
           "assertion_hash": {
@@ -1209,6 +1828,47 @@
           "actor_id",
           "access_mode",
           "session_id"
+        ],
+        "type": "object"
+      },
+      "IssueMilestone": {
+        "properties": {
+          "completed_at": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          },
+          "description": {
+            "type": "string"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/Citation"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "target_at": {
+            "allOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "evidence"
         ],
         "type": "object"
       },
@@ -1353,12 +2013,34 @@
         ],
         "type": "object"
       },
+      "NarrativeField": {
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "text",
+          "reason"
+        ],
+        "type": "object"
+      },
       "ObservationDetail": {
         "properties": {
           "artifact_hash": {
             "type": "string"
           },
           "id": {
+            "type": "string"
+          },
+          "lifecycle_explanation": {
             "type": "string"
           },
           "observation": {
@@ -1368,11 +2050,16 @@
             "format": "date-time",
             "type": "string"
           },
+          "retired": {
+            "type": "boolean"
+          },
           "source_kind": {
             "type": "string"
           }
         },
         "required": [
+          "retired",
+          "lifecycle_explanation",
           "id",
           "source_kind",
           "artifact_hash",
@@ -1412,6 +2099,14 @@
           },
           "freshness": {
             "type": "string"
+          },
+          "inventory": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceInventorySummary"
+              }
+            ],
+            "nullable": true
           },
           "last_observed_at": {
             "allOf": [
@@ -1457,6 +2152,26 @@
           "observed",
           "findings",
           "sources"
+        ],
+        "type": "object"
+      },
+      "OperatingEvent": {
+        "properties": {
+          "citation": {
+            "$ref": "#/components/schemas/Citation"
+          },
+          "description": {
+            "type": "string"
+          },
+          "occurred_at": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "citation",
+          "occurred_at",
+          "description"
         ],
         "type": "object"
       },
@@ -1514,6 +2229,49 @@
           "expected_revision",
           "generation",
           "idempotency_key"
+        ],
+        "type": "object"
+      },
+      "OperationalSample": {
+        "properties": {
+          "coverage": {
+            "type": "string"
+          },
+          "coverage_reason": {
+            "type": "string"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/OperatingEvent"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "method": {
+            "type": "string"
+          },
+          "population": {
+            "allOf": [
+              {
+                "type": "integer"
+              }
+            ],
+            "nullable": true
+          },
+          "population_unknown_reason": {
+            "type": "string"
+          },
+          "sample_size": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "method",
+          "population_unknown_reason",
+          "sample_size",
+          "coverage",
+          "coverage_reason",
+          "events"
         ],
         "type": "object"
       },
@@ -1643,6 +2401,14 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/ReadinessGuidanceContext"
+              }
+            ],
+            "nullable": true
+          },
+          "Implementation": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ImplementationContext"
               }
             ],
             "nullable": true
@@ -3564,6 +4330,43 @@
         ],
         "type": "object"
       },
+      "ResourceInventorySummary": {
+        "properties": {
+          "current_resources": {
+            "type": "integer"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "first_observed_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_observed_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "limitations": {
+            "type": "string"
+          },
+          "retired_resources": {
+            "type": "integer"
+          },
+          "unfenced_resources": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "current_resources",
+          "retired_resources",
+          "unfenced_resources",
+          "first_observed_at",
+          "last_observed_at",
+          "definition",
+          "limitations"
+        ],
+        "type": "object"
+      },
       "ResourceKey": {
         "properties": {
           "id": {
@@ -3584,6 +4387,21 @@
           "tenant",
           "kind",
           "id"
+        ],
+        "type": "object"
+      },
+      "ReviewDependency": {
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "reference": {
+            "$ref": "#/components/schemas/Ref"
+          }
+        },
+        "required": [
+          "kind",
+          "reference"
         ],
         "type": "object"
       },
@@ -4041,6 +4859,29 @@
           "expected_revision",
           "expected_binding_revision",
           "idempotency_key"
+        ],
+        "type": "object"
+      },
+      "StructuralReviewReadiness": {
+        "properties": {
+          "basis": {
+            "type": "string"
+          },
+          "blockers": {
+            "items": {
+              "$ref": "#/components/schemas/AssessmentReadinessBlocker"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "ready": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ready",
+          "basis",
+          "blockers"
         ],
         "type": "object"
       },
@@ -4594,6 +5435,10 @@
             "schema": {
               "enum": [
                 "evidence-source",
+                "evidence-request",
+                "assessment-issue",
+                "assessment-decision",
+                "assessor-designation",
                 "collect",
                 "collection-config",
                 "scope",

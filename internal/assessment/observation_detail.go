@@ -12,11 +12,13 @@ import (
 )
 
 type ObservationDetail struct {
-	ID           string                 `json:"id"`
-	SourceKind   string                 `json:"source_kind"`
-	ArtifactHash string                 `json:"artifact_hash"`
-	ReceivedAt   time.Time              `json:"received_at"`
-	Observation  observation.Submission `json:"observation"`
+	Retired              bool                   `json:"retired"`
+	LifecycleExplanation string                 `json:"lifecycle_explanation"`
+	ID                   string                 `json:"id"`
+	SourceKind           string                 `json:"source_kind"`
+	ArtifactHash         string                 `json:"artifact_hash"`
+	ReceivedAt           time.Time              `json:"received_at"`
+	Observation          observation.Submission `json:"observation"`
 }
 
 func (s *Store) ObservationDetail(ctx context.Context, a auth.Actor, service, id string) (ObservationDetail, error) {
@@ -33,5 +35,13 @@ func (s *Store) ObservationDetail(ctx context.Context, a auth.Actor, service, id
 		return out, err
 	}
 	err = json.Unmarshal(raw, &out.Observation)
+	if err == nil {
+		err = s.query().QueryRow(ctx, `SELECT NOT EXISTS(SELECT 1 FROM current_resource_observations WHERE service_id=$1 AND id=$2)`, service, id).Scan(&out.Retired)
+		if out.Retired {
+			out.LifecycleExplanation = "A newer complete server inventory with matching scope, profile, source and credential generation confirmed this stable resource identity absent. Historical evidence is preserved."
+		} else {
+			out.LifecycleExplanation = "Retained evidence; absence has not been established by a newer complete compatible inventory."
+		}
+	}
 	return out, err
 }

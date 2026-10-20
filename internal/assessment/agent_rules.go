@@ -68,7 +68,7 @@ func (s *Store) RuleInstructions(ctx context.Context, a auth.Actor, service, rid
 		}
 		return out, tx.Commit(ctx)
 	}
-	out := RuleInstructions{ServiceID: service, GuidanceKind: "generic", Assertions: []Assertion{}, Sources: []Record{}}
+	out := RuleInstructions{ServiceID: service, GuidanceKind: "generic", Assertions: []Assertion{}, Sources: []Record{}, ImplementationInstructions: ImplementationInvestigationInstructions}
 	all, err := s.Requirements(ctx, a, service)
 	if err != nil {
 		return out, err
@@ -172,6 +172,17 @@ func (s *Store) RuleInstructions(ctx context.Context, a auth.Actor, service, rid
 		}
 	}
 	out.Work, err = s.ruleWork(ctx, a, service, rid, out.Binding, s.now())
+	if err == nil {
+		out.Implementation, err = s.implementationContext(ctx, out, draft, result)
+		if err == nil && draft.Revision > 0 {
+			target, e := s.reviewTarget(ctx, a, service, rid, out)
+			if e != nil {
+				return out, e
+			}
+			out.ReviewTarget = &target
+			out.Implementation.Review = target.Review
+		}
+	}
 	if err == nil {
 		coverage, e := s.evidenceCoverage(ctx, a, out, s.now())
 		if e != nil {

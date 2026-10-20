@@ -89,21 +89,24 @@ type InstructionBinding struct {
 }
 
 type RuleInstructions struct {
-	ActionItems            []ActionItem                `json:"action_items"`
-	ActionExpectations     []string                    `json:"action_expectations"`
-	EvidenceCoverage       *RequirementEvidenceContext `json:"evidence_coverage,omitempty"`
-	Guidance               *readiness.GuidanceContext  `json:"guidance,omitempty"`
-	ServiceID              string                      `json:"service_id"`
-	Rule                   catalog.Resolved            `json:"rule"`
-	Binding                InstructionBinding          `json:"binding"`
-	GuidanceKind           string                      `json:"guidance_kind"`
-	Assertions             []Assertion                 `json:"assertions"`
-	Steps                  []string                    `json:"steps"`
-	Sources                []Record                    `json:"sources"`
-	ExistingEvidence       []Record                    `json:"existing_evidence"`
-	Work                   EvidenceWork                `json:"work"`
-	ExpectedResultRevision int                         `json:"expected_result_revision"`
-	ExpectedDraftRevision  int                         `json:"expected_draft_revision"`
+	ReviewTarget               *AssessmentReviewTarget     `json:"review_target,omitempty"`
+	Implementation             *ImplementationContext      `json:"implementation,omitempty"`
+	ImplementationInstructions string                      `json:"implementation_instructions"`
+	ActionItems                []ActionItem                `json:"action_items"`
+	ActionExpectations         []string                    `json:"action_expectations"`
+	EvidenceCoverage           *RequirementEvidenceContext `json:"evidence_coverage,omitempty"`
+	Guidance                   *readiness.GuidanceContext  `json:"guidance,omitempty"`
+	ServiceID                  string                      `json:"service_id"`
+	Rule                       catalog.Resolved            `json:"rule"`
+	Binding                    InstructionBinding          `json:"binding"`
+	GuidanceKind               string                      `json:"guidance_kind"`
+	Assertions                 []Assertion                 `json:"assertions"`
+	Steps                      []string                    `json:"steps"`
+	Sources                    []Record                    `json:"sources"`
+	ExistingEvidence           []Record                    `json:"existing_evidence"`
+	Work                       EvidenceWork                `json:"work"`
+	ExpectedResultRevision     int                         `json:"expected_result_revision"`
+	ExpectedDraftRevision      int                         `json:"expected_draft_revision"`
 }
 
 type Citation struct {
@@ -133,16 +136,17 @@ type AssertionGap struct {
 }
 
 type RuleResultSubmission struct {
-	ServiceID              string             `json:"service_id"`
-	RequirementID          string             `json:"requirement_id"`
-	IdempotencyKey         string             `json:"idempotency_key"`
-	Binding                InstructionBinding `json:"binding"`
-	ExpectedResultRevision int                `json:"expected_result_revision"`
-	ExpectedDraftRevision  int                `json:"expected_draft_revision"`
-	Assertions             []AssertionResult  `json:"assertions"`
-	Blockers               []string           `json:"blockers"`
-	Explanation            string             `json:"explanation"`
-	RequestedState         string             `json:"requested_state"`
+	Implementation         *ImplementationAssessment `json:"implementation,omitempty"`
+	ServiceID              string                    `json:"service_id"`
+	RequirementID          string                    `json:"requirement_id"`
+	IdempotencyKey         string                    `json:"idempotency_key"`
+	Binding                InstructionBinding        `json:"binding"`
+	ExpectedResultRevision int                       `json:"expected_result_revision"`
+	ExpectedDraftRevision  int                       `json:"expected_draft_revision"`
+	Assertions             []AssertionResult         `json:"assertions"`
+	Blockers               []string                  `json:"blockers"`
+	Explanation            string                    `json:"explanation"`
+	RequestedState         string                    `json:"requested_state"`
 }
 
 type EvidenceWork struct {
@@ -154,9 +158,11 @@ type EvidenceWork struct {
 }
 
 type RuleReceipt struct {
-	Result   Ref          `json:"result"`
-	Draft    Ref          `json:"draft"`
-	Evidence []Ref        `json:"evidence"`
-	Work     EvidenceWork `json:"work"`
-	Review   string       `json:"review"`
+	CurrentFreshness    string                     `json:"current_freshness,omitempty"`
+	StructuralReadiness *StructuralReviewReadiness `json:"structural_readiness,omitempty"`
+	Result              Ref                        `json:"result"`
+	Draft               Ref                        `json:"draft"`
+	Evidence            []Ref                      `json:"evidence"`
+	Work                EvidenceWork               `json:"work"`
+	Review              string                     `json:"review"`
 }

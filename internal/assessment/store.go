@@ -141,7 +141,12 @@ func (s *Store) Get(ctx context.Context, a auth.Actor, service, kind, id string)
 		if r, ok := c.latest[kind+"/"+id]; ok {
 			return r, nil
 		}
-		return Record{}, ErrNotFound
+		// Only kinds materialized by loadPresentationCache have authoritative
+		// negative cache entries. New workflow kinds still require a query.
+		switch kind {
+		case "scope", "profile", "measure", "evidence", "assessment", "review", "rule_result", "evidence_source", "gap":
+			return Record{}, ErrNotFound
+		}
 	}
 	if err := auth.Authorize(ctx, s.query(), a, service, "read"); err != nil {
 		return Record{}, err

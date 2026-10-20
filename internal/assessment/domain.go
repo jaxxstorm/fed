@@ -92,11 +92,12 @@ type Evidence struct {
 	Limitations   []string               `json:"limitations"`
 }
 type Draft struct {
-	Explanation     string `json:"explanation"`
-	Evidence        []Ref  `json:"evidence"`
-	Measures        []Ref  `json:"measures"`
-	ProfileRevision int    `json:"profile_revision"`
-	ScopeRevision   int    `json:"scope_revision"`
+	Implementation  *ImplementationAssessment `json:"implementation,omitempty"`
+	Explanation     string                    `json:"explanation"`
+	Evidence        []Ref                     `json:"evidence"`
+	Measures        []Ref                     `json:"measures"`
+	ProfileRevision int                       `json:"profile_revision"`
+	ScopeRevision   int                       `json:"scope_revision"`
 }
 type Review struct {
 	Assessment Ref    `json:"assessment"`

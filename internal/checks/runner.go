@@ -36,13 +36,14 @@ type Observation struct {
 	Error       string                   `json:"error,omitempty"`
 }
 type Result struct {
-	Outcome          string        `json:"outcome"`
-	Expected         int           `json:"expected"`
-	Observed         int           `json:"observed"`
-	Observations     []Observation `json:"observations"`
-	EvidenceIDs      []string      `json:"evidence_ids"`
-	Limitations      []string      `json:"limitations"`
-	CollectorVersion string        `json:"collector_version"`
+	Inventories      []assessment.InventorySnapshot `json:"inventories,omitempty"`
+	Outcome          string                         `json:"outcome"`
+	Expected         int                            `json:"expected"`
+	Observed         int                            `json:"observed"`
+	Observations     []Observation                  `json:"observations"`
+	EvidenceIDs      []string                       `json:"evidence_ids"`
+	Limitations      []string                       `json:"limitations"`
+	CollectorVersion string                         `json:"collector_version"`
 }
 
 // A fresh partition access observation supersedes an older partition error at
@@ -510,6 +511,40 @@ func (r *Runner) finish(ctx context.Context, a auth.Actor, j Job, result Result,
 	}
 	now := time.Now().UTC()
 	var b []byte
+	inventoryMembership := map[string]string{}
+	if len(result.Inventories) > 0 {
+		if err = tx.QueryRow(ctx, `SELECT $2=(SELECT max(revision) FROM records WHERE service_id=$1 AND kind='scope') AND $3=(SELECT max(revision) FROM records WHERE service_id=$1 AND kind='profile')`, j.ServiceID, j.Input.ScopeRevision, j.Input.ProfileRevision).Scan(&valid); err != nil {
+			return err
+		}
+		if !valid {
+			return assessment.ErrConflict
+		}
+		for _, inventory := range result.Inventories {
+			fenced := false
+			for _, access := range accesses {
+				if access.Connection.ID == inventory.ConnectionID && access.Connection.Generation == inventory.Generation && access.SourceID == inventory.SourceID && access.SourceRevision == inventory.SourceRevision && access.BindingRevision == inventory.BindingRevision {
+					fenced = true
+					break
+				}
+			}
+			if !fenced {
+				return assessment.ErrConflict
+			}
+			keys := []string{}
+			for _, target := range inventory.Targets {
+				raw, _ := json.Marshal(target)
+				targetKey := storage.Hash(raw)
+				if old := inventoryMembership[targetKey]; old != "" && old != inventory.Partition {
+					return assessment.ErrConflict
+				}
+				inventoryMembership[targetKey] = inventory.Partition
+				keys = append(keys, targetKey)
+			}
+			if _, err = tx.Exec(ctx, `INSERT INTO resource_inventories(service_id,job_id,partition,scope_revision,profile_revision,connection_id,generation,source_id,source_revision,binding_revision,complete,target_keys,observed_at) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)`, j.ServiceID, j.ID, inventory.Partition, j.Input.ScopeRevision, j.Input.ProfileRevision, inventory.ConnectionID, inventory.Generation, inventory.SourceID, inventory.SourceRevision, inventory.BindingRevision, inventory.Complete, keys, now); err != nil {
+				return err
+			}
+		}
+	}
 	if j.Input.ProfileRevision > 0 && len(j.Input.Bindings) > 0 {
 		result.EvidenceIDs = []string{}
 		for index, o := range result.Observations {
@@ -548,6 +583,12 @@ func (r *Runner) finish(ctx context.Context, a auth.Actor, j Job, result Result,
 			receipt, err := assessment.StageCollected(ctx, tx, a, j.ID, j.LeaseID, key, in)
 			if err != nil {
 				return err
+			}
+			targetRaw, _ := json.Marshal(in.Target)
+			if partition := inventoryMembership[storage.Hash(targetRaw)]; partition != "" {
+				if _, err = tx.Exec(ctx, `INSERT INTO observation_inventory_bindings(service_id,observation_id,job_id,partition) VALUES($1,$2,$3,$4)`, j.ServiceID, receipt.ID, j.ID, partition); err != nil {
+					return err
+				}
 			}
 			for _, ref := range receipt.Evidence {
 				result.EvidenceIDs = append(result.EvidenceIDs, ref.ID)

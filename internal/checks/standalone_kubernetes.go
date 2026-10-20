@@ -27,12 +27,15 @@ func (r *Runner) collectStandalone(ctx context.Context, a auth.Actor, service st
 			namespaces = []assessment.NamespaceScope{{}}
 		}
 		for _, selected := range namespaces {
+			partitionStart := len(out.Observations)
+			inventoryComplete := true
 			kind, id := "namespace", selected.UID
 			if cluster.ClusterWide {
 				kind, id = "cluster", cluster.ClusterID
 			}
 			label := cluster.ClusterID + "/" + selected.Name
 			failure := func(code string) {
+				inventoryComplete = false
 				out.Observations = append(out.Observations, Observation{Scope: label, Outcome: "error", Error: code})
 			}
 			locator := "kubernetes://cluster/" + url.PathEscape(cluster.ClusterID) + "/" + kind + "/" + url.PathEscape(id)
@@ -172,6 +175,13 @@ func (r *Runner) collectStandalone(ctx context.Context, a auth.Actor, service st
 					}
 				}
 			}
+			inventory := assessment.InventorySnapshot{Partition: "kubernetes/" + cluster.ClusterID + "/" + kind + "/" + id, ConnectionID: access.Connection.ID, Generation: access.Connection.Generation, SourceID: access.SourceID, SourceRevision: access.SourceRevision, BindingRevision: access.BindingRevision, Complete: inventoryComplete, Targets: []observation.Target{}}
+			for _, o := range out.Observations[partitionStart:] {
+				if o.Target != nil {
+					inventory.Targets = append(inventory.Targets, *o.Target)
+				}
+			}
+			out.Inventories = append(out.Inventories, inventory)
 		}
 	}
 	out.Summarize()

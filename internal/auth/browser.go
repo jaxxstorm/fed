@@ -7,6 +7,7 @@ import (
 	"errors"
 	"html/template"
 	"net/http"
+	"regexp"
 	"strings"
 	"time"
 
@@ -43,7 +44,11 @@ func (b *Browser) Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	state, nonce, verifier := Secret(), Secret(), oauth2.GenerateVerifier()
-	_, err := b.DB.Exec(r.Context(), `INSERT INTO login_attempts(state_hash,nonce,verifier,expires_at) VALUES($1,$2,$3,$4)`, storage.Hash([]byte(state)), nonce, verifier, time.Now().Add(5*time.Minute))
+	returnPath := "/"
+	if candidate := r.URL.Query().Get("return_to"); regexp.MustCompile(`^/trust/[a-z0-9]+(-[a-z0-9]+)*/access$`).MatchString(candidate) {
+		returnPath = candidate
+	}
+	_, err := b.DB.Exec(r.Context(), `INSERT INTO login_attempts(state_hash,nonce,verifier,expires_at,return_path) VALUES($1,$2,$3,$4,$5)`, storage.Hash([]byte(state)), nonce, verifier, time.Now().Add(5*time.Minute), returnPath)
 	if err != nil {
 		http.Error(w, "login unavailable", 503)
 		return
@@ -64,8 +69,8 @@ func (b *Browser) Callback(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	cookie(w, "ksi_login", "", -1, true)
-	var nonce, verifier string
-	err = b.DB.QueryRow(r.Context(), `DELETE FROM login_attempts WHERE state_hash=$1 AND expires_at>now() RETURNING nonce,verifier`, storage.Hash([]byte(state))).Scan(&nonce, &verifier)
+	var nonce, verifier, returnPath string
+	err = b.DB.QueryRow(r.Context(), `DELETE FROM login_attempts WHERE state_hash=$1 AND expires_at>now() RETURNING nonce,verifier,return_path`, storage.Hash([]byte(state))).Scan(&nonce, &verifier, &returnPath)
 	if err != nil {
 		http.Error(w, "expired login state", 400)
 		return
@@ -105,6 +110,10 @@ func (b *Browser) Callback(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	cookie(w, "ksi_session", session, 8*3600, true)
+	if regexp.MustCompile(`^/trust/[a-z0-9]+(-[a-z0-9]+)*/access$`).MatchString(returnPath) {
+		http.Redirect(w, r, returnPath, http.StatusFound)
+		return
+	}
 	if member.State == "pending" {
 		http.Redirect(w, r, "/approval", http.StatusFound)
 		return
@@ -224,7 +233,7 @@ func (b *Browser) Protect(next http.Handler) http.Handler {
 				_ = approvalPage.Execute(w, struct{ Email, CSRF string }{m.Email, csrf})
 				return
 			}
-			if errors.Is(err, ErrMembershipPending) && r.URL.Path != "/auth/logout" {
+			if errors.Is(err, ErrMembershipPending) && r.URL.Path != "/auth/logout" && !strings.HasPrefix(r.URL.Path, "/trust/") {
 				if strings.HasPrefix(r.URL.Path, "/api/") {
 					browserAPIError(w, 403, "membership_pending", "Waiting for approval", "An administrator must approve your access.")
 				} else {

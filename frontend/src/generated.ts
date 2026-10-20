@@ -272,7 +272,7 @@ export interface paths {
                 };
                 path: {
                     service: string;
-                    action: "evidence-source" | "collect" | "collection-config" | "scope" | "preview-profile" | "profile" | "measure" | "evidence" | "draft" | "review" | "gap" | "check" | "token" | "revoke-token" | "destination" | "prepare";
+                    action: "evidence-source" | "evidence-request" | "assessment-issue" | "assessment-decision" | "assessor-designation" | "collect" | "collection-config" | "scope" | "preview-profile" | "profile" | "measure" | "evidence" | "draft" | "review" | "gap" | "check" | "token" | "revoke-token" | "destination" | "prepare";
                 };
                 cookie?: never;
             };
@@ -3042,6 +3042,71 @@ export interface components {
             reason: string;
             scope: string;
         };
+        AssessmentDecision: {
+            actor_id: string;
+            assessor_designation?: components["schemas"]["Ref"] | null;
+            assessor_organization?: string;
+            current_freshness: string;
+            /** Format: date-time */
+            decided_at: string;
+            decision: components["schemas"]["AssessmentDecisionInput"];
+            evidence: components["schemas"]["Ref"][] | null;
+            organization_id: string;
+            version: string;
+        };
+        AssessmentDecisionInput: {
+            assessment: components["schemas"]["Ref"];
+            binding: components["schemas"]["InstructionBinding"];
+            capacity: string;
+            conclusion: string;
+            dependency_hash: string;
+            notes: string;
+            procedures: string;
+            sampling: string;
+        };
+        AssessmentIssue: {
+            binding: components["schemas"]["InstructionBinding"];
+            closure_evidence: components["schemas"]["Citation"][] | null;
+            disposition: string;
+            explanation: string;
+            finding_ids: string[] | null;
+            gaps: components["schemas"]["Ref"][] | null;
+            milestones: components["schemas"]["IssueMilestone"][] | null;
+            owner_id: string;
+            requests: components["schemas"]["Ref"][] | null;
+            state: string;
+            target_at?: string | null;
+        };
+        AssessmentIssueChange: {
+            expected_revision: number;
+            id: string;
+            issue: components["schemas"]["AssessmentIssue"];
+            requirement_id: string;
+            service_id: string;
+        };
+        AssessmentPeriod: {
+            /** Format: date-time */
+            end: string;
+            /** Format: date-time */
+            start: string;
+        };
+        AssessmentReadinessBlocker: {
+            code: string;
+            explanation: string;
+            next_action: string;
+            path: string;
+        };
+        AssessmentReviewTarget: {
+            adoption: string;
+            assessment: components["schemas"]["Ref"];
+            decisions: components["schemas"]["Record"][] | null;
+            dependencies: components["schemas"]["ReviewDependency"][] | null;
+            dependency_hash: string;
+            independent_review: string;
+            internal_review: string;
+            reasons: string[] | null;
+            review: string;
+        };
         AuthorizationHandoff: {
             /** Format: date-time */
             expires_at: string;
@@ -3187,6 +3252,31 @@ export interface components {
             Title: string;
             URL: string;
         };
+        EvidenceRequest: {
+            acceptance_criteria: string;
+            assertion_ids: string[] | null;
+            binding: components["schemas"]["InstructionBinding"];
+            decision_reason: string;
+            due_at?: string | null;
+            fulfillment: components["schemas"]["Citation"][] | null;
+            owner_id: string;
+            period: components["schemas"]["AssessmentPeriod"];
+            readiness_work?: components["schemas"]["Ref"] | null;
+            source_hints: components["schemas"]["Ref"][] | null;
+            state: string;
+            title: string;
+        };
+        EvidenceRequestChange: {
+            expected_revision: number;
+            id: string;
+            request: components["schemas"]["EvidenceRequest"];
+            requirement_id: string;
+            service_id: string;
+        };
+        EvidenceRequestView: {
+            record: components["schemas"]["Record"];
+            revalidation_needed: boolean;
+        };
         EvidenceSource: {
             access_hint?: string;
             account_id?: string;
@@ -3210,6 +3300,12 @@ export interface components {
             resource_kind?: string;
             scope_revision: number;
             type: string;
+        };
+        EvidenceSupport: {
+            citations: components["schemas"]["Citation"][] | null;
+            limitations: string[] | null;
+            outcome: string;
+            rationale: string;
         };
         Field: {
             Label: string;
@@ -3266,6 +3362,50 @@ export interface components {
             References?: components["schemas"]["ReferenceOption"][] | null;
             Title: string;
         };
+        ImplementationAssertion: {
+            assertion_id: string;
+            claim: string;
+            implementation: components["schemas"]["EvidenceSupport"];
+            operating: components["schemas"]["EvidenceSupport"];
+            sample: components["schemas"]["OperationalSample"];
+        };
+        ImplementationAssessment: {
+            assertions: components["schemas"]["ImplementationAssertion"][] | null;
+            narrative: components["schemas"]["ImplementationNarrative"];
+            period: components["schemas"]["AssessmentPeriod"];
+            version: string;
+        };
+        ImplementationContext: {
+            assessment?: components["schemas"]["ImplementationAssessment"] | null;
+            current_freshness: string;
+            draft?: components["schemas"]["Ref"] | null;
+            readiness: components["schemas"]["StructuralReviewReadiness"];
+            review: string;
+        };
+        ImplementationNarrative: {
+            boundary: components["schemas"]["NarrativeField"];
+            description: components["schemas"]["NarrativeField"];
+            frequency: components["schemas"]["NarrativeField"];
+            mechanisms: components["schemas"]["NarrativeField"];
+            procedures: components["schemas"]["NarrativeField"];
+            responsible_roles: components["schemas"]["NarrativeField"];
+        };
+        ImplementationReceipt: {
+            current_freshness: string;
+            draft: components["schemas"]["Ref"];
+            period: components["schemas"]["AssessmentPeriod"];
+            readiness: components["schemas"]["StructuralReviewReadiness"];
+            result: components["schemas"]["Ref"];
+        };
+        ImplementationSubmission: {
+            assessment: components["schemas"]["ImplementationAssessment"];
+            binding: components["schemas"]["InstructionBinding"];
+            expected_draft_revision: number;
+            expected_result_revision: number;
+            idempotency_key: string;
+            requirement_id: string;
+            service_id: string;
+        };
         InstructionBinding: {
             assertion_hash?: string;
             catalog_id: string;
@@ -3302,6 +3442,13 @@ export interface components {
             source_lifecycle?: string;
             source_revision: number;
         };
+        IssueMilestone: {
+            completed_at?: string | null;
+            description: string;
+            evidence: components["schemas"]["Citation"][] | null;
+            id: string;
+            target_at?: string | null;
+        };
         KindCoverage: {
             authoritative: boolean;
             complete: boolean;
@@ -3336,12 +3483,19 @@ export interface components {
             Label: string;
             Value: string;
         };
+        NarrativeField: {
+            reason: string;
+            state: string;
+            text: string;
+        };
         ObservationDetail: {
             artifact_hash: string;
             id: string;
+            lifecycle_explanation: string;
             observation: components["schemas"]["Submission"];
             /** Format: date-time */
             received_at: string;
+            retired: boolean;
             source_kind: string;
         };
         ObservationStatus: {
@@ -3351,12 +3505,19 @@ export interface components {
             expected: number;
             findings: components["schemas"]["Finding"][] | null;
             freshness: string;
+            inventory?: components["schemas"]["ResourceInventorySummary"] | null;
             last_observed_at?: string | null;
             missing_measures: number;
             observed: number;
             recovery: components["schemas"]["Recovery"][] | null;
             sources: string[] | null;
             technical: string;
+        };
+        OperatingEvent: {
+            citation: components["schemas"]["Citation"];
+            description: string;
+            /** Format: date-time */
+            occurred_at: string;
         };
         Operation: {
             access?: components["schemas"]["AccessHealth"] | null;
@@ -3371,6 +3532,15 @@ export interface components {
             generation: number;
             idempotency_key: string;
             service_id: string;
+        };
+        OperationalSample: {
+            coverage: string;
+            coverage_reason: string;
+            events: components["schemas"]["OperatingEvent"][] | null;
+            method: string;
+            population?: number | null;
+            population_unknown_reason: string;
+            sample_size: number;
         };
         Organization: {
             allowed_domains: string[] | null;
@@ -3396,6 +3566,7 @@ export interface components {
             Findings: components["schemas"]["Section"][] | null;
             Forms: components["schemas"]["Form"][] | null;
             Guidance?: components["schemas"]["ReadinessGuidanceContext"] | null;
+            Implementation?: components["schemas"]["ImplementationContext"] | null;
             Links: components["schemas"]["Link"][] | null;
             Metrics: components["schemas"]["Metric"][] | null;
             Notice: string;
@@ -3833,11 +4004,26 @@ export interface components {
             generation: number;
             repository_id: string;
         };
+        ResourceInventorySummary: {
+            current_resources: number;
+            definition: string;
+            /** Format: date-time */
+            first_observed_at: string;
+            /** Format: date-time */
+            last_observed_at: string;
+            limitations: string;
+            retired_resources: number;
+            unfenced_resources: number;
+        };
         ResourceKey: {
             id: string;
             kind: string;
             provider: string;
             tenant: string;
+        };
+        ReviewDependency: {
+            kind: string;
+            reference: components["schemas"]["Ref"];
         };
         Row: {
             Applicability: string;
@@ -3953,6 +4139,11 @@ export interface components {
             source_id: string;
             target_connection_id?: string;
             target_generation?: number;
+        };
+        StructuralReviewReadiness: {
+            basis: string;
+            blockers: components["schemas"]["AssessmentReadinessBlocker"][] | null;
+            ready: boolean;
         };
         Submission: {
             artifact: components["schemas"]["Artifact"];

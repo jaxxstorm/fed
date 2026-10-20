@@ -29,6 +29,18 @@ import (
 	"github.com/rs/zerolog"
 )
 
+func runAssessmentWorkers(ctx context.Context, runner *checks.Runner, store *assessment.Store) error {
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
+	results := make(chan error, 2)
+	go func() { results <- runner.Run(ctx) }()
+	go func() { results <- store.RunReporting(ctx) }()
+	err := <-results
+	cancel()
+	<-results
+	return err
+}
+
 func main() {
 	if err := run(); err != nil {
 		os.Exit(1)
@@ -176,11 +188,13 @@ func run() (runErr error) {
 	runner.Connections = connectionService
 	if cfg.Mode == "worker" {
 		stage = "worker"
-		return runner.Run(ctx)
+		return runAssessmentWorkers(ctx, runner, &assessment.Store{DB: db, Artifacts: artifacts})
 	}
 	workerResult := make(chan error, 1)
 	if cfg.Mode == "all" {
-		go func() { workerResult <- runner.Run(ctx) }()
+		go func() {
+			workerResult <- runAssessmentWorkers(ctx, runner, &assessment.Store{DB: db, Artifacts: artifacts})
+		}()
 	}
 	var browser *auth.Browser
 	stage = "authentication"
@@ -221,6 +235,7 @@ func run() (runErr error) {
 	}
 	e.Any("/mcp", echo.WrapHandler(mcpserver.Handler(store, runner, mcpserver.ConnectionOptions{Service: app.Connections, PublicOrigin: cfg.PublicURL})))
 	protected := echo.WrapHandler(browser.Protect(app.Handler()))
+	e.Any("/trust/*", echo.WrapHandler(app.TrustHandler(browser)))
 	e.GET("/", protected)
 	e.GET("/approval", protected)
 	e.GET("/organization", protected)

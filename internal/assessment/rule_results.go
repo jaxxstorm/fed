@@ -97,6 +97,17 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 	if string(data(instructions.Binding)) != string(data(in.Binding)) || instructions.ExpectedResultRevision != in.ExpectedResultRevision || instructions.ExpectedDraftRevision != in.ExpectedDraftRevision {
 		return receipt, ErrConflict
 	}
+	var structural *StructuralReviewReadiness
+	if in.Implementation != nil {
+		readiness, err := ImplementationReadiness(*in.Implementation, instructions.Assertions, time.Now())
+		if err != nil {
+			return receipt, err
+		}
+		// Derivation is server-side so callers cannot validate one set of
+		// citations while persisting a different structured assessment.
+		in.Assertions = implementationAssertionResults(*in.Implementation)
+		structural = &readiness
+	}
 	work := EvidenceWork{State: in.RequestedState, Assessment: "supported", MissingAssertions: []string{}, Blockers: in.Blockers, Reasons: []string{}}
 	assertions := map[string]Assertion{}
 	for _, v := range instructions.Assertions {
@@ -104,6 +115,7 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 	}
 	seen := map[string]bool{}
 	evidence := map[string]Ref{}
+	currentFreshness := "missing"
 	for _, result := range in.Assertions {
 		if _, ok := assertions[result.AssertionID]; !ok || seen[result.AssertionID] || strings.TrimSpace(result.Rationale) == "" || len(result.Rationale) > 16384 || len(result.Citations) > 100 || !slices.Contains([]string{"supported", "contradicted", "unknown"}, result.Outcome) {
 			return receipt, ErrInvalid
@@ -121,6 +133,9 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 			work.MissingAssertions = append(work.MissingAssertions, result.AssertionID)
 		}
 		for _, citation := range result.Citations {
+			if currentFreshness == "missing" {
+				currentFreshness = "current"
+			}
 			er, err := reference(ctx, tx, in.ServiceID, "evidence", citation.Evidence)
 			if err != nil {
 				return receipt, err
@@ -139,7 +154,10 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 					return receipt, ErrConflict
 				}
 				if !ev.ObservedAt.Add(time.Duration(ev.Document.FreshnessHours) * time.Hour).After(time.Now()) {
-					return receipt, fmt.Errorf("%w: evidence %s expired", ErrInvalid, citation.Evidence.ID)
+					if in.Implementation == nil {
+						return receipt, fmt.Errorf("%w: evidence %s expired", ErrInvalid, citation.Evidence.ID)
+					}
+					currentFreshness = "stale"
 				}
 			} else {
 				// Legacy records retain their original requirement/measure contract.
@@ -151,7 +169,10 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 					return receipt, err
 				}
 				if hours == nil || !ev.ObservedAt.Add(time.Duration(*hours)*time.Hour).After(time.Now()) {
-					return receipt, ErrInvalid
+					if in.Implementation == nil {
+						return receipt, ErrInvalid
+					}
+					currentFreshness = "stale"
 				}
 			}
 			if s.Artifacts == nil || ev.ArtifactKey == "" {
@@ -187,6 +208,10 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 		return receipt, fmt.Errorf("%w: complete requires cited required assertions, resolved applicability and no blockers; missing=%v", ErrInvalid, work.MissingAssertions)
 	}
 	receipt = RuleReceipt{Result: Ref{in.RequirementID, in.ExpectedResultRevision + 1}, Draft: Ref{in.RequirementID, in.ExpectedDraftRevision + 1}, Evidence: []Ref{}, Work: work, Review: "pending"}
+	receipt.StructuralReadiness = structural
+	if structural != nil {
+		receipt.CurrentFreshness = currentFreshness
+	}
 	for _, ref := range evidence {
 		receipt.Evidence = append(receipt.Evidence, ref)
 	}
@@ -209,6 +234,7 @@ func (s *Store) SubmitRuleResult(ctx context.Context, a auth.Actor, in RuleResul
 		}
 	}
 	draft := Draft{Explanation: in.Explanation, Evidence: receipt.Evidence, Measures: []Ref{}, ProfileRevision: in.Binding.ProfileRevision, ScopeRevision: in.Binding.ScopeRevision}
+	draft.Implementation = in.Implementation
 	// Preserve legacy measure references for legacy evidence freshness.
 	measures, err := view.List(ctx, a, in.ServiceID, "measure", in.RequirementID, 100, 0)
 	if err != nil {

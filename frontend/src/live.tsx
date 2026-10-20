@@ -31,6 +31,7 @@ function asObject(v: Value | undefined): Record<string, Value> {
 import { ConnectionsPage } from "./connections";
 import { EvidenceCoveragePanel } from "./evidence-coverage";
 import { ActionForm, ErrorPanel, parseValue, Readable } from "./forms";
+import { ImplementationAssessmentPanel } from "./implementation-assessment";
 import { OrganizationPage } from "./organization";
 import { PlaybookActions } from "./playbook-actions";
 import { ReadinessPage } from "./readiness";
@@ -145,7 +146,9 @@ export function LiveApp() {
                 key={p}
                 onClick={() => setMenu(false)}
                 to={`${base}?page=${p}`}
-                className={`nav-link ${p === page && !requirement && !run ? "selected" : ""}`}
+                className={`nav-link ${
+                  p === page && !requirement && !run ? "selected" : ""
+                }`}
               >
                 {p}
               </Link>
@@ -528,7 +531,11 @@ function ProgressPage({
               />
               <span
                 style={{
-                  width: `${c.required ? ((c.statuses?.in_review || 0) / c.required) * 100 : 0}%`,
+                  width: `${
+                    c.required
+                      ? ((c.statuses?.in_review || 0) / c.required) * 100
+                      : 0
+                  }%`,
                 }}
               />
               <span style={{ flex: 1 }} />
@@ -806,7 +813,9 @@ function RecordList({
               </span>
               <h2>
                 {kind === "rule_result"
-                  ? `${item.requirement_id} · ${human(text(asObject(asObject(item.data.receipt).work).state))} investigation`
+                  ? `${item.requirement_id} · ${human(
+                      text(asObject(asObject(item.data.receipt).work).state),
+                    )} investigation`
                   : text(item.data.description)
                       .replace(/^(aws|github|kubernetes)\./, "$1 · ")
                       .replaceAll(
@@ -901,7 +910,9 @@ function RecordList({
             {hasFilters && (
               <Link
                 className="text-link"
-                to={`/services/${service}?page=${kind === "evidence" ? "Evidence" : "Activity"}`}
+                to={`/services/${service}?page=${
+                  kind === "evidence" ? "Evidence" : "Activity"
+                }`}
               >
                 Clear filters
               </Link>
@@ -935,7 +946,9 @@ function PointerPreview({
     return (
       <dl className={`readable ${selected === path ? "cited-field" : ""}`}>
         {Object.entries(value).map(([key, item]) => {
-          const next = `${path}/${key.replaceAll("~", "~0").replaceAll("/", "~1")}`;
+          const next = `${path}/${key
+            .replaceAll("~", "~0")
+            .replaceAll("/", "~1")}`;
           return (
             <div className={selected === next ? "cited-field" : ""} key={next}>
               <dt>
@@ -1139,9 +1152,9 @@ function LegacyPage({
   const p = data.data;
   const caps = bootstrap.capabilities[service] || [];
   const permission = (action: string) =>
-    action.endsWith("/review")
+    action.endsWith("/review") || action.endsWith("/assessment-decision")
       ? "review"
-      : /\/(profile|preview-profile|token|revoke-token|destination)$/.test(
+      : /\/(profile|preview-profile|token|revoke-token|destination|assessor-designation)$/.test(
             action,
           )
         ? "admin"
@@ -1179,6 +1192,9 @@ function LegacyPage({
         }
       />
       {endpoint.startsWith("requirement/") && <RequirementActions page={p} />}
+      {p.Implementation && (
+        <ImplementationAssessmentPanel context={p.Implementation} />
+      )}
       {p.Guidance && (
         <section className="panel" aria-label="Requirement guidance">
           <h2>{p.Guidance.label || "Requirement guidance"}</h2>
@@ -1246,7 +1262,9 @@ function LegacyPage({
           {p.Primary.next_steps?.map((step, index) => (
             <div
               className="next-step"
-              key={`${step.title}-${step.explanation}-${step.targets?.join(",")}`}
+              key={`${step.title}-${step.explanation}-${step.targets?.join(
+                ",",
+              )}`}
             >
               <h3>
                 {index + 1}. {step.title}
@@ -1270,7 +1288,9 @@ function LegacyPage({
               {step.provider && (
                 <Link
                   className="text-link"
-                  to={`/services/${service}?page=Connections&provider=${encodeURIComponent(step.provider)}`}
+                  to={`/services/${service}?page=Connections&provider=${encodeURIComponent(
+                    step.provider,
+                  )}`}
                 >
                   Open {human(step.provider)} connections
                 </Link>
@@ -1585,7 +1605,11 @@ function AgentHandoff({
   requirement?: string;
 }) {
   const [copied, setCopied] = useState(false);
-  const prompt = `Connect to ${window.location.origin}/mcp using your scoped bearer token. For service ${service}${requirement ? `, requirement ${requirement}` : ""}, call list_evidence_sources, list_open_rules, and get_rule_instructions. Investigate using your own read-only tools and credentials within configured scope. Submit artifacts with submit_evidence_artifact and cited results with submit_rule_result. Report missing access and evidence honestly; retain exact source revisions.`;
+  const prompt = `Connect to ${
+    window.location.origin
+  }/mcp using your scoped bearer token. For service ${service}${
+    requirement ? `, requirement ${requirement}` : ""
+  }, call list_evidence_sources, list_open_rules, and get_rule_instructions. Investigate using your own read-only tools and credentials within configured scope. Submit artifacts with submit_evidence_artifact and cited results with submit_rule_result. Report missing access and evidence honestly; retain exact source revisions.`;
   return (
     <section className="panel">
       <h2>Connect an external agent</h2>
