@@ -147,10 +147,12 @@ func collectRDS(ctx context.Context, cfg aws.Config, account, region string) []O
 	client := rds.NewFromConfig(cfg)
 	out := []Observation{}
 	label := account + "/" + region
+	instancesComplete, clustersComplete := true, true
 	instances := rds.NewDescribeDBInstancesPaginator(client, &rds.DescribeDBInstancesInput{})
 	for instances.HasMorePages() {
 		page, err := instances.NextPage(ctx)
 		if err != nil {
+			instancesComplete = false
 			out = append(out, Observation{Scope: label + "/instances", Outcome: "error", Error: "rds_instance_enumeration_failed"})
 			break
 		}
@@ -168,6 +170,7 @@ func collectRDS(ctx context.Context, cfg aws.Config, account, region string) []O
 	for clusters.HasMorePages() {
 		page, err := clusters.NextPage(ctx)
 		if err != nil {
+			clustersComplete = false
 			out = append(out, Observation{Scope: label + "/clusters", Outcome: "error", Error: "rds_cluster_enumeration_failed"})
 			break
 		}
@@ -181,6 +184,14 @@ func collectRDS(ctx context.Context, cfg aws.Config, account, region string) []O
 	}
 	if len(out) == 0 {
 		out = append(out, Observation{Scope: label, Outcome: "unknown", Data: map[string]string{"inventory": "no_resources"}})
+	} else if instancesComplete && clustersComplete {
+		out = append(out, partitionAccessObserved(label, "RDS instance and cluster enumeration completed; resource findings remain separate."))
+	}
+	if instancesComplete {
+		out = append(out, partitionAccessObserved(label+"/instances", "RDS instance enumeration completed."))
+	}
+	if clustersComplete {
+		out = append(out, partitionAccessObserved(label+"/clusters", "RDS cluster enumeration completed."))
 	}
 	return out
 }
@@ -188,10 +199,12 @@ func collectRedis(ctx context.Context, cfg aws.Config, account, region string) [
 	client := elasticache.NewFromConfig(cfg)
 	out := []Observation{}
 	label := account + "/" + region
+	complete := true
 	groups := elasticache.NewDescribeReplicationGroupsPaginator(client, &elasticache.DescribeReplicationGroupsInput{})
 	for groups.HasMorePages() {
 		page, err := groups.NextPage(ctx)
 		if err != nil {
+			complete = false
 			out = append(out, Observation{Scope: label, Outcome: "error", Error: "redis_replication_group_enumeration_failed"})
 			break
 		}
@@ -208,6 +221,7 @@ func collectRedis(ctx context.Context, cfg aws.Config, account, region string) [
 	for caches.HasMorePages() {
 		page, err := caches.NextPage(ctx)
 		if err != nil {
+			complete = false
 			out = append(out, Observation{Scope: label, Outcome: "error", Error: "redis_cache_enumeration_failed"})
 			break
 		}
@@ -222,6 +236,7 @@ func collectRedis(ctx context.Context, cfg aws.Config, account, region string) [
 	for {
 		page, err := client.DescribeServerlessCaches(ctx, &elasticache.DescribeServerlessCachesInput{NextToken: next})
 		if err != nil {
+			complete = false
 			out = append(out, Observation{Scope: label, Outcome: "error", Error: "redis_serverless_enumeration_failed"})
 			break
 		}
@@ -238,6 +253,8 @@ func collectRedis(ctx context.Context, cfg aws.Config, account, region string) [
 	}
 	if len(out) == 0 {
 		out = append(out, Observation{Scope: label, Outcome: "unknown", Data: map[string]string{"inventory": "no_resources"}})
+	} else if complete {
+		out = append(out, partitionAccessObserved(label, "ElastiCache replication-group, cache-cluster and serverless enumeration completed; resource findings remain separate."))
 	}
 	return out
 }

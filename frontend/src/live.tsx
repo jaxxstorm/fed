@@ -629,9 +629,6 @@ function RuleRow({ rule, service }: { rule: Rule; service: string }) {
         />
         <ScopedReadiness progress={rule.state.readiness} compact />
         <ContextGaps gaps={rule.state.context_gaps} />
-        {rule.state.next_steps?.[0] && (
-          <p className="small muted">{rule.state.next_steps[0].explanation}</p>
-        )}
         <span className="text-link">
           {rule.state.action} <ArrowUpRight size={14} />
         </span>

@@ -11,12 +11,23 @@ export function ContextGaps({
   if (!gaps?.length) return null;
   return (
     <section aria-label="Evidence access and input gaps">
-      <h3>Evidence access and input gaps</h3>
+      <h3>Action Items</h3>
       <ul>
         {gaps.map((gap) => (
           <li key={`${gap.title}-${gap.explanation}-${gap.targets?.join(",")}`}>
-            <strong>{gap.title}</strong>: {gap.explanation}{" "}
-            {gap.targets?.join(", ")}
+            <strong>{gap.title}</strong>: {gap.explanation}
+            {!!gap.targets?.length && (
+              <details>
+                <summary>
+                  Affected targets ({new Set(gap.targets).size})
+                </summary>
+                <ul>
+                  {[...new Set(gap.targets)].map((target) => (
+                    <li key={target}>{target}</li>
+                  ))}
+                </ul>
+              </details>
+            )}
             <p>{gap.action}</p>
           </li>
         ))}

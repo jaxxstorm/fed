@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/jaxxstorm/fed/internal/observation"
 	"github.com/jaxxstorm/fed/internal/readiness"
+	"slices"
 )
 
 type RequirementNextStep struct {
@@ -96,14 +97,14 @@ func PresentRequirement(applicability string, s Status, hasActivity bool) Requir
 	p.HumanReviewed = s.Review == "reviewed"
 	groups := map[string]int{}
 	for _, r := range s.Collection.Recovery {
-		key := r.Code + "/" + r.Environment
+		key := r.Environment + "\x00" + r.ConnectionProvider + "\x00" + r.Title + "\x00" + r.Explanation + "\x00" + r.Action
 		index, ok := groups[key]
 		if !ok {
 			index = len(p.NextSteps)
 			groups[key] = index
 			p.NextSteps = append(p.NextSteps, RequirementNextStep{Title: r.Title, Explanation: r.Explanation, Action: r.Action, Provider: r.ConnectionProvider, Targets: []string{}})
 		}
-		if r.Target != "" {
+		if r.Target != "" && !slices.Contains(p.NextSteps[index].Targets, r.Target) {
 			p.NextSteps[index].Targets = append(p.NextSteps[index].Targets, r.Target)
 		}
 	}

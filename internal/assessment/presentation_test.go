@@ -17,6 +17,17 @@ func TestBlockedGuidanceGroupsTargetsAndPreservesMissingEvidence(t *testing.T) {
 	}
 }
 
+func TestServerAWSRecoveryDeduplicatesTargets(t *testing.T) {
+	recovery := observation.ExplainError("credentials_or_account_validation_failed", "186241287477/us-east-1", "collector_observation")
+	p := PresentRequirement("required", Status{Technical: "error", Collection: ObservationStatus{Recovery: []observation.Recovery{recovery, recovery}}}, true)
+	if len(p.ContextGaps) != 1 || len(p.ContextGaps[0].Targets) != 1 {
+		t.Fatalf("duplicate target shown: %+v", p.ContextGaps)
+	}
+	if strings.Contains(p.ContextGaps[0].Explanation, "AWS profile") || p.ContextGaps[0].Action != "Open Connections" {
+		t.Fatalf("server collection has local-profile advice: %+v", p.ContextGaps)
+	}
+}
+
 func TestPresentationPrecedence(t *testing.T) {
 	ready := Status{Evidence: "current", Review: "reviewed", Work: EvidenceWork{State: "evidence_complete", Assessment: "supported"}}
 	for _, tc := range []struct {

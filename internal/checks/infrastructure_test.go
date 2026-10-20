@@ -54,15 +54,29 @@ func TestInfrastructureReadOnlyFixtures(t *testing.T) {
 	}
 	scope := assessment.Scope{Accounts: []assessment.Account{{ID: "123456789012", Regions: []string{"us-east-1"}, Clusters: []string{"prod"}}}}
 	result, err := (Infrastructure{Kind: "rds", Config: config}).Collect(context.Background(), scope, assessment.Measure{Policy: map[string]json.RawMessage{"minimum_retention_days": json.RawMessage(`7`)}})
-	if err != nil || len(result.Observations) != 3 || pages != 2 {
+	if err != nil || len(result.Observations) != 6 || result.Expected != 3 || pages != 2 {
 		t.Fatalf("RDS pagination: %+v %v", result, err)
 	}
 	if result.Observations[0].Evaluations[1].Outcome != "fail" || result.Observations[1].Evaluations[1].Outcome != "unknown" || result.Observations[2].Evaluations[1].Outcome != "fail" {
 		t.Fatalf("backup ownership/policy: %+v", result)
 	}
+	for _, scope := range []string{"123456789012/us-east-1", "123456789012/us-east-1/instances", "123456789012/us-east-1/clusters"} {
+		found := false
+		for _, o := range result.Observations {
+			if o.Scope == scope && accessObservation(o) {
+				found = true
+			}
+		}
+		if !found {
+			t.Fatalf("successful RDS collection did not supersede %s", scope)
+		}
+	}
 	result, err = (Infrastructure{Kind: "elasticache", Config: config}).Collect(context.Background(), scope, assessment.Measure{})
 	if err != nil || result.Outcome != "fail" {
 		t.Fatalf("preferred TLS passed: %+v %v", result, err)
+	}
+	if result.Expected != 1 || !accessObservation(result.Observations[len(result.Observations)-1]) {
+		t.Fatal("cache recovery missing or counted as a control observation")
 	}
 	result, err = (Infrastructure{Kind: "endpoint", Config: config}).Collect(context.Background(), scope, assessment.Measure{})
 	if err != nil || result.Outcome != "fail" {
@@ -89,7 +103,64 @@ func TestEndpointPolicyAndEmptyInventory(t *testing.T) {
 	cfg := aws.Config{Region: "us-east-1", BaseEndpoint: aws.String(srv.URL), Credentials: credentials.NewStaticCredentialsProvider("test", "test", "")}
 	result := Result{Observations: collectRDS(context.Background(), cfg, "123456789012", "us-east-1")}
 	result.Summarize()
-	if result.Outcome != "unknown" || len(result.Observations) != 1 {
+	if result.Outcome != "unknown" || len(result.Observations) != 3 || result.Expected != 1 {
 		t.Fatal("empty inventory passed")
+	}
+}
+
+func TestRDSPartialPaginationDoesNotClearUnfinishedPartition(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/xml")
+		if r.FormValue("Action") == "DescribeDBInstances" {
+			if r.FormValue("Marker") == "next" {
+				w.WriteHeader(403)
+				fmt.Fprint(w, `<ErrorResponse><Error><Code>AccessDenied</Code></Error></ErrorResponse>`)
+				return
+			}
+			fmt.Fprint(w, `<DescribeDBInstancesResponse><DescribeDBInstancesResult><Marker>next</Marker><DBInstances/></DescribeDBInstancesResult></DescribeDBInstancesResponse>`)
+			return
+		}
+		fmt.Fprint(w, `<DescribeDBClustersResponse><DescribeDBClustersResult><DBClusters/></DescribeDBClustersResult></DescribeDBClustersResponse>`)
+	}))
+	defer srv.Close()
+	cfg := aws.Config{Region: "us-east-1", BaseEndpoint: aws.String(srv.URL), Credentials: credentials.NewStaticCredentialsProvider("test", "test", ""), RetryMaxAttempts: 1}
+	observations := collectRDS(context.Background(), cfg, "123456789012", "us-east-1")
+	foundFailure, foundClusterRecovery := false, false
+	for _, o := range observations {
+		if o.Error == "rds_instance_enumeration_failed" {
+			foundFailure = true
+		}
+		if accessObservation(o) {
+			if o.Scope != "123456789012/us-east-1/clusters" {
+				t.Fatalf("partial enumeration cleared %s", o.Scope)
+			}
+			foundClusterRecovery = true
+		}
+	}
+	if !foundFailure || !foundClusterRecovery {
+		t.Fatalf("partial recovery provenance: %+v", observations)
+	}
+}
+
+func TestRedisPartialInventoryDoesNotClearAccountError(t *testing.T) {
+	for _, failed := range []string{"DescribeReplicationGroups", "DescribeCacheClusters", "DescribeServerlessCaches"} {
+		t.Run(failed, func(t *testing.T) {
+			srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				w.Header().Set("Content-Type", "text/xml")
+				action := r.FormValue("Action")
+				if action == failed {
+					w.WriteHeader(403)
+					fmt.Fprint(w, `<ErrorResponse><Error><Code>AccessDenied</Code></Error></ErrorResponse>`)
+					return
+				}
+				fmt.Fprintf(w, "<%sResponse><%sResult/></%sResponse>", action, action, action)
+			}))
+			defer srv.Close()
+			cfg := aws.Config{Region: "us-east-1", BaseEndpoint: aws.String(srv.URL), Credentials: credentials.NewStaticCredentialsProvider("test", "test", ""), RetryMaxAttempts: 1}
+			out := collectRedis(context.Background(), cfg, "123456789012", "us-east-1")
+			if len(out) != 1 || out[0].Error == "" {
+				t.Fatalf("incomplete inventory cleared access error: %+v", out)
+			}
+		})
 	}
 }

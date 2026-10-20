@@ -31,6 +31,22 @@ func ExplainError(code, target, environment string) Recovery {
 		r.Title = "AWS access could not be verified"
 		r.Explanation = "Check the configured AWS profile, sign-in and account binding in the collection environment, then retry."
 		r.Retryable = true
+		if environment == "Server collector" {
+			r.Explanation = "Verify the saved AWS connection and its account/role binding in Connections, then rerun read-only collection. Historical access errors remain until a successful collection covers the same target."
+			r.Action = "Open Connections"
+		}
+	case "rds_instance_enumeration_failed", "rds_cluster_enumeration_failed":
+		r.ConnectionProvider = "aws"
+		r.Title = "Database inventory could not be collected"
+		r.Explanation = "Verify the saved AWS connection can list database instances and clusters in the selected account and region, then rerun collection."
+		r.Action = "Open Connections"
+		r.Retryable = true
+	case "redis_replication_group_enumeration_failed", "redis_cache_enumeration_failed", "redis_serverless_enumeration_failed":
+		r.ConnectionProvider = "aws"
+		r.Title = "Cache inventory could not be collected"
+		r.Explanation = "Verify the saved AWS connection can list replication groups, cache clusters and serverless caches in the selected account and region, then rerun collection."
+		r.Action = "Open Connections"
+		r.Retryable = true
 	case "github_credentials_missing":
 		r.ConnectionProvider = "github"
 		r.Title = "GitHub access is missing"

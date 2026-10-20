@@ -97,12 +97,15 @@ describe("shared requirement readiness presentation", () => {
             title: "Read access denied",
             explanation: "Production records could not be read.",
             action: "Ask the source owner for a dated record.",
-            targets: ["production"],
+            targets: ["production", "production"],
           },
         ]}
       />,
     );
     expect(html).toContain("Production records could not be read.");
+    expect(html).toContain("<h3>Action Items</h3>");
+    expect(html).toContain("<details><summary>Affected targets (1)</summary>");
+    expect(html.match(/<li>production<\/li>/g)).toHaveLength(1);
     expect(html).toContain("Ask the source owner for a dated record.");
     expect(html).toContain("does not establish that implementation is absent");
   });
